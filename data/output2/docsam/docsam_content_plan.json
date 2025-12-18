@@ -1,0 +1,123 @@
+{
+  "slides": [
+    {
+      "id": "slide_01",
+      "title": "DOCSAM: UNIFIED DOCUMENT IMAGE SEGMENTATION VIA QUERY DECOMPOSITION AND HETEROGENEOUS MIXED LEARNING",
+      "content": "Xiao-Hui Li¹, Fei Yin¹, Cheng-Lin Liu¹,²\n\n1 MAIS, Institute of Automation of Chinese Academy of Sciences, Beijing, 100190, China\n2 School of Artificial Intelligence, University of Chinese Academy of Sciences, Beijing, 100049, China\n\nContact: {xiaohui.li, fyin, liucl}@nlpr.ia.ac.cn",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_02",
+      "title": "Problem Statement and Limitations of Existing Methods",
+      "content": "Document image segmentation (DIS) is a fundamental task in document analysis and recognition (DAR), serving as a cornerstone for downstream applications like text recognition, information extraction, and DocVQA. However, DIS remains challenging due to the wide diversity of document types, page layouts, content annotations, and structural complexities.\n\nExisting approaches suffer from several critical limitations:\n• They address specific DIS sub-tasks (e.g., layout analysis, text detection, table recognition) separately, leading to fragmented, specialized solutions.\n• This fragmentation impedes individual task performance and causes redundant computational and storage overheads.\n• Most models become static after training and cannot efficiently incorporate new data or adapt to unseen tasks.\n• Current methods rely on fully connected layers with predefined parameters for specific datasets, making generalization across heterogeneous tasks difficult.\n\nThese limitations hinder large-scale deployment and robust cross-domain performance, necessitating a unified framework that can handle diverse DIS tasks efficiently.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Figure 1",
+          "caption": "Examples of various segmentation tasks on heterogeneous document datasets."
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "title": "DocSAM Framework Overview",
+      "content": "DocSAM (Document Segment Anything Model) is a transformer-based unified framework designed to simultaneously handle various document image segmentation tasks—including document layout analysis, multi-granularity text segmentation, and table structure recognition—by modeling them as a combination of instance and semantic segmentation.\n\nThe architecture comprises four primary modules:\n1. **Vision Backbone**: Extracts multi-scale image features using Swin-Transformer.\n2. **Deformable Encoder**: Refines features through deformable attention layers.\n3. **Sentence-BERT**: Maps natural language category names into semantic queries.\n4. **Hybrid Query Decoder (HQD)**: Enables interaction between semantic and instance queries for joint segmentation.\n\nGiven a document image and class names in natural text, DocSAM first extracts multi-scale features, maps class names to semantic queries via Sentence-BERT, then processes both semantic and learnable instance queries through stacked HQD layers. The outputs feed into prediction heads for masks, bounding boxes, and classification.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Figure 2",
+          "focus": "architecture",
+          "caption": "Network structure of the proposed DocSAM. DocSAM unify various document image segmentation tasks into one single model through instance and semantic query decomposition and interaction. Skip connections and norm layers are omitted for simplicity."
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "title": "Query Decomposition and Prediction Mechanism",
+      "content": "DocSAM introduces a novel query decomposition strategy where:\n• **Instance queries** \\( Q_I \\in \\mathbb{R}^{N \\times C} \\) are standard learnable embeddings (\\( N = 500 \\) or \\( 900 \\)).\n• **Semantic queries** \\( Q_S \\in \\mathbb{R}^{M \\times C} \\) are derived by embedding dataset-specific class names using Sentence-BERT.\n\nInside each HQD layer, \\( Q_S \\) and \\( Q_I \\) are concatenated and passed through multi-head self-attention (MHSA) and feed-forward networks (FFN) for information exchange. They are then separately cross-attended with multi-scale image features in a coarse-to-fine manner via two Multi-Scale Decoders (MSD).\n\nKey prediction formulas:\n- Semantic and instance masks:\n  \\[\n  M_S = \\sigma(Q_S \\times X_M^T), \\quad M_I = \\sigma(Q_I \\times X_M^T)\n  \\]\n- Instance classification via dot product with semantic queries:\n  \\[\n  Y_I = \\mathrm{Softmax}(Q_I \\times Q_S^T)\n  \\]\nHere, \\( X_M \\) is the fused mask feature, \\( \\sigma \\) is sigmoid, and \\( \\times \\) denotes matrix multiplication. This prototype-based approach transforms classification into an open-set problem, enabling unified training across heterogeneous datasets.",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_05",
+      "title": "Heterogeneous Mixed Learning and Training Strategy",
+      "content": "DocSAM enables joint training on heterogeneous datasets through three key innovations:\n\n1. **Heterogeneous Mixed Learning**: Nearly 50 DIS datasets covering layout analysis, handwritten text, table recognition, and scene text are combined into a single mixed dataset. The semantic query mechanism allows seamless integration without task-specific output layers.\n\n2. **Curriculum Learning (CL)**: Datasets are grouped by task/style similarity, and training starts with simpler groups before gradually introducing more complex ones to stabilize convergence.\n\n3. **Instance Query Selection (IQS)**: At the \\( k \\)-th HQD layer, only instance queries with class scores above threshold \\( T_k = T_{\\text{max}} / 2^{K-k} \\) (where \\( T_{\\text{max}} = 0.01 \\)) are retained. This reduces computation without performance loss.\n\nAdditionally, batch sampling is weighted by \\( \\sqrt{C_i} \\) (number of classes in dataset \\( i \\)) to prioritize complex datasets. During training/testing, images are processed at multiple scales: whole-image (640×640) for large objects and high-res patches (sliding window) for fine details, with boundary-aware confidence adjustment and NMS for result fusion.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Figure 3",
+          "caption": "Loss curves and on-the-fly validation during training."
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "title": "Datasets and Evaluation Metrics",
+      "content": "Experiments use 48 heterogeneous datasets spanning four DIS tasks:\n• **Document Layout Analysis (DLA)**: 10 datasets including PubLayNet (364k pages, 5 classes), DocLayNet (80k pages, 11 classes), and M⁶Doc (9k pages, 74 multilingual classes).\n• **Ancient/Handwritten Document Segmentation (AHDS)**: 8 datasets like SCUT-CAB (4k ancient Chinese book images, 4 physical / 27 logical classes) and CASIA-HWDB (6k handwritten pages).\n• **Table Structure Recognition (TSR)**: 11 datasets such as PubTabNet (619k tables), FinTabNet (76k scientific/financial pages), and TableBank (278k pages).\n• **Scene Text Detection (STD)**: 19 datasets including CTW1500 (1.5k curved text images), Total-Text (1.2k irregular text images), and ICDAR2015 (1.6k incidental scene texts).\n\nEvaluation metrics:\n• **Semantic segmentation**: mIoU\n• **Instance segmentation**: mAP (mask), mAP_b (bounding box), and mAF (mean F-score across IoU thresholds 0.5–0.95)",
+      "tables": [
+        {
+          "table_id": "Table 1",
+          "extract": "<table><tr><td rowspan=1 colspan=2>Task                                                    Dataset</td></tr><tr><td rowspan=1 colspan=1>DocumentLayout</td><td rowspan=2 colspan=1>BaDLAD[20],CDLA[21],D4LA[22],DocBank [5],DocLayNet[7],ICDAR2017-POD[4],IT-AR-13K[23],Doc[8],PubLayNet [6],RanLayNet [24]</td></tr><tr><td rowspan=1 colspan=1>Analysis</td></tr><tr><td rowspan=1 colspan=1>Ancient and Hand-writtenDocumentSegmentation</td><td rowspan=1 colspan=1>CASIA-AHCDB [25], CHDAC-2022 [26],ICDAR2019-HDRC [27],SCUT-CAB [19], MTHv2[10],HJDataset [28],CASIA-HWDB [29], SCUT-HCCDoc [11]</td></tr><tr><td rowspan=1 colspan=1>Table  StructureRecognition</td><td rowspan=1 colspan=1>FinTabNet [30],ICDAR2013[31],ICDAR2017-POD[4,17],ICDAR2019-cTDaR[14,17],NTable [32],PubTables-1M[18],PubTabNet [16], STDW [33],TableBank[15],TNCR[34],WTW[35]</td></tr><tr><td rowspan=1 colspan=1>Scene Text Detec-tion</td><td rowspan=1 colspan=1>CASIA-10k[36],COCO-Text [37],CTW1500[12],CTW-Public [38],HUST-TR400 [39],ICDAR2015[40],ICDAR2017-RCTW[41],ICDAR2017-MLT[42],CDAR2019-ArT[43],ICDAR2019-LSVT[44],ICDAR2019-MLT[45],ICDAR2019-ReCTS[46],ICDAR2023-HerText [47],ICDAR2023-ReST[48],ICPR2018-TWI[49],SRA-D500[50],opig[51],Total-Text [13], USTB-SV1K [52]</td></tr></table>",
+          "caption": "Datasets involved in DocSAM."
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_07",
+      "title": "Ablation Studies and Main Results",
+      "content": "Ablation studies (averaged over 15 datasets) validate design choices:\n• **Curriculum Learning** improves mAP from 0.3804 to 0.3869.\n• **Instance Query Selection** boosts mAP to 0.3900 (DocSAM-large).\n• Removing **masked attention** or **query interaction** causes significant drops (mAP ↓0.08–0.15).\n• Freezing Sentence-BERT has negligible impact (mIoU: 0.6677 vs 0.6615), so weights are frozen during training.\n\nMain results after joint pre-training (DocSAM-large):\n• **DLA**: PubLayNet mAP=0.830, mIoU=0.911; DocLayNet mAP=0.517, mIoU=0.669.\n• **AHDS**: SCUT-CAB-physical mAP=0.786, mIoU=0.942; CASIA-HWDB mAP=0.714, mIoU=0.939.\n• **TSR**: TableBank-latex mAP=0.915, mIoU=0.951; PubTabNet cell mAP=0.648.\n• **STD**: CTW1500 mAP=0.441, mIoU=0.817; Total-Text mAP=0.428, mIoU=0.764.\n\nFine-tuning further improves performance: e.g., on PubLayNet, mAP increases from 0.830 (pre-trained) to 0.854 (fine-tuned). On unseen datasets (IIIT-AR-13K, CHDAC-2022), fine-tuning yields substantial gains, demonstrating strong transfer capability.",
+      "tables": [
+        {
+          "table_id": "Table 2",
+          "extract": "<table><tr><td rowspan=\"2\">Ablation Setting</td><td colspan=\"3\">Instance</td><td>Semantic</td></tr><tr><td>mAP</td><td>mAPb</td><td>mAF</td><td>mIoU</td></tr><tr><td>DocSAMbase</td><td>0.3804</td><td>0.3517</td><td>0.4256</td><td>0.6615</td></tr><tr><td>DocSAMbase +Curriculum</td><td>0.3869</td><td>0.3704</td><td>0.4338</td><td>0.6622</td></tr><tr><td>DocSAMbase +SimMIM</td><td>0.3843</td><td>0.0658</td><td>0.4295</td><td>0.3882</td></tr><tr><td>DocSAMbase+FreezingBERT</td><td>0.3510</td><td>0.2322</td><td>0.2846</td><td>0.6677</td></tr><tr><td>DocSAMbase - Masked Attention</td><td>0.2990</td><td>0.0938</td><td>0.3509</td><td>0.6327</td></tr><tr><td>DocSAMbase - Query Interaction</td><td>0.1779</td><td>0.2990</td><td>0.3509</td><td>0.6327</td></tr><tr><td>DocSAMbase - Query Selection</td><td>0.3341</td><td>0.3134</td><td></td><td>0.6511</td></tr><tr><td>DocSAMlarge</td><td>0.3900</td><td>0.3658</td><td>0.4320</td><td>0.6726</td></tr></table>",
+          "focus": "impact of components"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_08",
+      "title": "Comparison with State-of-the-Art Methods",
+      "content": "DocSAM achieves competitive or superior performance against specialized models:\n\nOn **M⁶Doc** (74-class layout analysis):\n• DocSAM mAP=0.661 vs. DAT=0.657, TransDLANet=0.638, Deformable DETR=0.556.\n\nOn **SCUT-CAB**:\n• Physical layout: DocSAM mAP=0.811 (vs. SCNet=0.820, Mask R-CNN=0.795).\n• Logical layout: DocSAM mAP=0.575 (slightly below Deformable DETR=0.620 due to single-modality limitation).\n\nOn **scene text detection**:\n• CTW1500: DocSAM F=0.842 vs. DAT-SEG=0.917, DPText-DETR=0.888.\n• Total-Text: DocSAM F=0.770 vs. DAT-SEG=0.920.\n\nWhile DocSAM lags behind task-specific models on complex scene text (due to greater shape/background diversity), it excels as a unified model—outperforming all baselines on layout and table tasks while using a single architecture. Notably, it avoids task-specific modifications, data augmentation, or training tricks, demonstrating the efficacy of its unified design.",
+      "tables": [
+        {
+          "table_id": "Table 5",
+          "extract": "<table><tr><td rowspan=2 colspan=2>Method</td><td rowspan=1 colspan=3>Object</td><td rowspan=1 colspan=3>Instance</td></tr><tr><td rowspan=1 colspan=1>mAP</td><td rowspan=1 colspan=1>AP50</td><td rowspan=1 colspan=1>AP75</td><td rowspan=1 colspan=1>mAP</td><td rowspan=1 colspan=1>AP50</td><td rowspan=1 colspan=1>AP75</td></tr><tr><td>Faster R-CNN [53]</td><td>0.490</td><td>0.678</td><td>0.572</td><td>0.478</td><td>0.678</td><td>0.552</td></tr><tr><td>Mask R-CNN [54]</td><td>0.401</td><td>0.584</td><td>0.462</td><td>0.397</td><td>0.584</td><td>0.456</td></tr><tr><td>Deformable DETR [3]</td><td>0.572</td><td>0.768</td><td>0.634</td><td>0.556</td><td>0.765</td><td>0.611</td></tr><tr><td>ISTR [87]</td><td>0.627</td><td>0.808</td><td>0.708</td><td>0.620</td><td>0.807</td><td>0.702</td></tr><tr><td>TransDLANet [8]</td><td>0.645</td><td>0.827</td><td>0.727</td><td>0.638</td><td>0.826</td><td>0.719</td></tr><tr><td>DAT[80]</td><td>0.712</td><td>1.000</td><td>1.000</td><td>0.657</td><td>1.000</td><td>0.750</td></tr><tr><td>DocSAM</td><td>0.663</td><td>0.840</td><td>0.755</td><td>0.661</td><td>0.840</td><td>0.750</td></tr></table>",
+          "focus": "M⁶Doc comparison"
+        },
+        {
+          "table_id": "Table 7",
+          "extract": "<table><tr><td rowspan=\"2\">Method</td><td colspan=\"3\">CTW1500</td><td colspan=\"3\">Total-Text</td></tr><tr><td>P</td><td>R</td><td>F</td><td>P</td><td>R</td><td>F</td></tr><tr><td>HierText [47]</td><td>0.846</td><td>0.874</td><td>0.860</td><td>0.855</td><td>0.905</td><td>0.879</td></tr><tr><td>SIR[106]</td><td>0.874</td><td>0.837</td><td>0.855</td><td>0.909</td><td>0.856</td><td>0.882</td></tr><tr><td>DPText-DETR [107]</td><td>0.917</td><td>0.862</td><td>0.888</td><td>0.918</td><td>0.864</td><td>0.890</td></tr><tr><td>UNITS [108]</td><td>1</td><td>1</td><td></td><td>1</td><td>1</td><td>0.898</td></tr><tr><td>ESTextSpotter [109]</td><td>0.915</td><td>0.886</td><td>0.900</td><td>0.920</td><td>0.881</td><td>0.900</td></tr><tr><td>DAT-DET [80]</td><td>0.893</td><td>0.893</td><td>0.893</td><td>0.940</td><td>0.882</td><td>0.910</td></tr><tr><td>DAT-SEG [80]</td><td>0.925</td><td>0.909</td><td>0.917</td><td>0.950</td><td>0.892</td><td>0.920</td></tr><tr><td>DocSAM</td><td>0.805</td><td>0.881</td><td>0.842</td><td>0.721</td><td>0.826</td><td>0.770</td></tr></table>",
+          "focus": "scene text detection"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_09",
+      "title": "Conclusion and Contributions",
+      "content": "DocSAM makes three key contributions:\n1. **Unified Framework**: Integrates diverse DIS tasks (layout analysis, text segmentation, table recognition) into a single transformer-based model, eliminating the need for specialized architectures and reducing computational/storage overhead.\n2. **Robust Generalization**: Trained on 48 heterogeneous datasets, DocSAM demonstrates strong cross-task and cross-domain performance. Fine-tuning on specific datasets yields significant gains (e.g., PubLayNet mAP ↑0.024), and transfer to unseen datasets (IIIT-AR-13K, CHDAC-2022) proves its adaptability.\n3. **Efficiency and Scalability**: Through query decomposition, heterogeneous mixed learning, and IQS, DocSAM achieves state-of-the-art accuracy while maintaining practical efficiency. It serves both as a versatile segmenter and a pre-trained foundation for downstream tasks.\n\nExperimental results confirm DocSAM surpasses existing methods in accuracy, efficiency, and adaptability across modern/historical documents, tables, and scene text. Future work includes extending to multi-modal inputs and refining training strategies for faster convergence.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Figure 4",
+          "caption": "Qualitative results on public document layout analysis benchmarks produced by our DocSAM model."
+        },
+        {
+          "figure_id": "Figure 5",
+          "caption": "Qualitative results on public ancient and handwritten document segmentation benchmarks produced by our DocSAM model."
+        },
+        {
+          "figure_id": "Figure 6",
+          "caption": "Qualitative results on public table detection and structure recognition benchmarks produced by our DocSAM model."
+        },
+        {
+          "figure_id": "Figure 7",
+          "caption": "Qualitative results on public scene text detection benchmarks produced by our DocSAM model."
+        }
+      ]
+    }
+  ]
+}

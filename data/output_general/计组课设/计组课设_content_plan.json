@@ -1,0 +1,123 @@
+{
+  "slides": [
+    {
+      "id": "slide_01",
+      "title": "基本模型计算机微程序控制器实验",
+      "content": "本实验旨在通过构建一台基本模型计算机，深入理解计算机的功能组成、典型指令执行流程及微程序控制器的设计方法。实验要求掌握 LPM_ROM 的配置方法，在单元电路基础上集成整机系统，并定义五条（实际扩展为八条）机器指令，编写对应的微程序并上机调试。最终目标是全面掌握微程序控制方式下计算机的设计原理与实现技术，包括微指令代码表的编写、数据通路控制、以及整机联调。",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_02",
+      "title": "实验目的与环境",
+      "content": "实验目的包括：(1) 深入理解基本模型计算机的功能与组成；(2) 学习各类典型指令的执行流程；(3) 掌握微程序控制器设计及 LPM_ROM 配置；(4) 将单元电路整合为完整系统；(5) 定义五条机器指令（IN、ADD、STA、OUT、JMP），编写微程序并调试，掌握整机概念和微程序设计方法；(6) 全面了解微程序控制方式的计算机设计方法。实验环境包括：PC 计算机、Quartus II 开发软件、计算机组成原理试验箱。",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_03",
+      "title": "指令格式与控制台操作",
+      "content": "本实验采用寄存器直接寻址方式，指令格式为8位：高4位为操作码（OP-CODE），低4位分为 rs（源寄存器）和 rd（目的寄存器），各占2位。初始设计包含五条指令：IN（00H）、ADD（10H XXH）、STA（20H XXH）、OUT（30H XXH）、JMP（40H XXH）。其中 IN 为单字长，其余为双字长。此外，设计三种控制台操作微程序：KRD（SWB=0, SWA=0，读内存）、KWE（SWB=0, SWA=1，写内存）、RP（SWB=1, SWA=1，启动程序运行）。这些操作通过控制台开关设置，在复位后进入对应微地址执行。",
+      "tables": [
+        {
+          "table_id": "Table 1-1",
+          "extract": "<table><tr><td>SWB</td><td>SWA</td><td>控制台指令</td></tr><tr><td>0</td><td>0</td><td>读内存（KRD）</td></tr><tr><td>0</td><td>1</td><td>写内存（KWE）</td></tr><tr><td>1</td><td>1</td><td>启动程序 （RP）</td></tr></table>",
+          "focus": "控制台操作模式选择"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "Figure 1-1",
+          "focus": "数据通路整体结构"
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "title": "24位微指令格式与字段功能",
+      "content": "微指令为24位，结构如下：位24–21为 S3–S0（ALU操作选择）；位20为 M（M=0 算术操作，M=1 逻辑操作）；位19为 /Cn（=0 表示最低位有进位）；位18为 WE（WE=1 写 RAM，WE=0 读 RAM）；位17–16为 A9、A8（用于产生 CS0/CS1/CS2 选通信号）；位15–13为 A 字段（控制总线输入，如 LDRi、LDDR1、LDAR 等）；位12–10为 B 字段（控制总线输出，如 RS-B、ALU-B、PC-B）；位9–7为 C 字段（产生 P(1)~P(4) 分支测试信号及 LDPC）；位6–1为 uA5–uA0（下一条微地址）。该格式支持复杂的微程序流程控制，包括取指、执行及控制台分支。",
+      "tables": [
+        {
+          "table_id": "Table 1-2",
+          "extract": "<table><tr><td colspan='4'>A字段</td><td colspan='4'>B字段</td><td colspan='4'>C字段</td></tr><tr><td>15</td><td>14</td><td>13</td><td>选择</td><td>12</td><td>11</td><td>10</td><td>选择</td><td>9</td><td>8</td><td>7</td><td>选择</td></tr><tr><td>0</td><td>0</td><td>1</td><td>LDRi</td><td>0</td><td>0</td><td>1</td><td>RS-B</td><td></td><td></td><td></td><td></td></tr><tr><td>0</td><td>1</td><td>0</td><td>LDDR1</td><td>0</td><td>1</td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>0</td><td>1</td><td>1</td><td>LDDR2</td><td>0</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1</td><td>0</td><td>0</td><td>LDIR</td><td>1</td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1</td><td>0</td><td>1</td><td>LOAD</td><td>1</td><td>0</td><td>1</td><td>ALU-B</td><td></td><td>0</td><td></td><td>LDAR</td></tr><tr><td>1</td><td>1</td><td>0</td><td>LDAR</td><td>1</td><td>1</td><td>0</td><td>PC-B</td><td></td><td></td><td></td><td>LDPC</td></tr></table>",
+          "focus": "A/B/C字段译码功能"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_05",
+      "title": "微程序流程与LCD显示功能",
+      "content": "微程序流程包含两个关键测试点：P(1) 测试用于“取指令”后的指令译码，根据 IR7–IR4（操作码）产生5路分支；P(4) 测试用于控制台操作，根据 SWB/SWA 产生3路分支（KRD/KWE/RP）。所有微地址固定后，其余微指令顺序存放。实验中使用 LCD 液晶屏实时显示 CPU 各单元状态，包括：IN（输入）、OUT（输出）、ALU、BUS、R0/R1/R2、DR1/DR2、PC、AR、RAM、IR 和 MC（微程序控制器）。下载 B100_C.sof 文件并复位后，LCD 即可显示当前各寄存器值，便于调试与验证。",
+      "tables": [
+        {
+          "table_id": "LCD Display Table",
+          "extract": "<table><tr><td>名称</td><td>作用</td><td>名称</td><td>作用</td></tr><tr><td>IN</td><td>输入单元INPUT</td><td>DR1</td><td>暂存器DR1</td></tr><tr><td>OUT</td><td>输出单元OUTPUT</td><td>DR2</td><td>暂存器DR2</td></tr><tr><td>ALU</td><td>算术逻辑单元</td><td>PC</td><td>程序计数器</td></tr><tr><td>BUS</td><td>内部数据总线</td><td>AR</td><td>地址寄存器</td></tr><tr><td>R0</td><td>寄存器RO</td><td>RAM</td><td>程序/数据存储器</td></tr><tr><td>R1</td><td>寄存器R1</td><td>IR</td><td>指令寄存器</td></tr><tr><td>R2</td><td>寄存器R2</td><td>MC</td><td>微程序控制器</td></tr></table>",
+          "focus": "LCD监控的CPU组件"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "Figure 1-2",
+          "focus": "P(1)和P(4)测试分支流程"
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "title": "扩展指令集与微代码设计",
+      "content": "实验最终设计了八条指令：IN（从控制台读入数据）、SUB（两数相减）、INC（自增一）、XOR（异或）、CLR（清空 R0）、NOT（R0 取反）、STA（写内存）、SHL（左移）。每条指令对应特定的微程序流程。全部微程序设计完成后，按24位格式转化为二进制微代码表。例如，微地址00的微指令为018110，对应 S3–S0=0000, M=0, Cn=0, WE=1, A9A8=10, A=100 (LDAR), B=000, C=100, uA=010000。微地址01为公用“取指”微指令（01ED82），后续地址根据操作码跳转至不同执行序列。",
+      "tables": [
+        {
+          "table_id": "Instruction List",
+          "extract": "<table><tr><td>指令 功能</td></tr><tr><td>IN 从控制台读入数据</td></tr><tr><td>SUB 两数相减</td></tr><tr><td>INC 自增一运算</td></tr><tr><td>XOR 异或运算</td></tr><tr><td>CLR 清空RO 寄存器</td></tr><tr><td>NOT R0 寄存器取反</td></tr><tr><td>STA 写内存</td></tr><tr><td>SHL 左移运算</td></tr></table>",
+          "focus": "八条自定义指令"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_07",
+      "title": "测试程序与RAM内容",
+      "content": "编写测试程序验证八条指令功能。程序从地址00H开始：00H执行 IN（输入→R0）；01H执行 SHL（R0=R0+R0）；03H执行 SUB [0BH]（R0 = R0 - [0BH]）；05H执行 INC（R0=R0+1）；06H执行 XOR [0CH]；08H执行 CLR（R0=0）；09H执行 NOT；0AH执行 STA [0DH]（R0→[0DH]）。数据区：0BH= D5H（被减数），0CH= ACH（异或操作数），0DH为结果存储位置。RAM内容经EAB工具验证，地址00–0C依次为：00, 70, 10, (空), 20, 30, 0C, 40, 50, 60, 0D, D5, AC。",
+      "tables": [
+        {
+          "table_id": "Test Program",
+          "extract": "<table><tr><td>地址 （二进制）</td><td>内容 （二进制）</td><td>助记符</td><td>说明</td></tr><tr><td>0000 0000</td><td>00000000</td><td>IN</td><td>\"INPUT DEVICE—&gt; RO</td></tr><tr><td>0000 0001</td><td>0111 0000</td><td>SHL</td><td>R0 = RO+RO</td></tr><tr><td>0000 0011</td><td>0001 0000</td><td>SUB [0BH]</td><td>R0 = R0 - [OBH]</td></tr><tr><td>0000 0101</td><td>0010 0000</td><td>INC</td><td>R0 =R0+1</td></tr><tr><td>0000 0110</td><td>00110000</td><td>XOR [0CH]</td><td>R0 = RO xor [0CH]</td></tr><tr><td>0000 1000</td><td>0100 0000</td><td>CLR</td><td>R0 = 0</td></tr><tr><td>0000 1001</td><td>0101 0000</td><td>NOT</td><td>RO = !RO</td></tr><tr><td>0000 1010</td><td>0110 0000</td><td>STA [OD]</td><td>[0D] = R0</td></tr></table>",
+          "focus": "指令序列与功能"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_08",
+      "title": "实验结果：ROM/RAM内容与FPGA验证",
+      "content": "CPU ROM 前32字节包含完整微程序，如地址00: 018110, 01: 01ED82, 02: 00C048, ..., 18: 699A01（SHL微指令）, 19: 018219, 1A: 099A01（SUB）, 1B: 00E01D, 1C: 038201（INC）, 1D: C19A01（XOR）。RAM 内容显示程序与数据正确加载：00H=00（IN）, 01H=70（SHL）, 02H=10（addr for ADD, unused）, 04H=20（INC）, 05H=30（XOR）, 06H=0C（addr=0CH）, 07H=40（CLR）, 08H=50（NOT）, 09H=60（STA）, 0AH=0D（addr=0DH）, 0BH=D5, 0CH=AC。FPGA 实测截图依次验证：IN 读入77H → SHL 得EEH → SUB D5H → INC → XOR AC → CLR → NOT → STA 写入0DH，最终指定位置成功写入结果。",
+      "tables": [
+        {
+          "table_id": "CPU ROM Content",
+          "extract": "<table><tr><td>Addr</td><td>+0</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td><td>+7</td></tr><tr><td>0</td><td>018110</td><td>01ED82</td><td>00C048</td><td>00E004</td><td>008005</td><td>01A206</td><td>619A01</td><td>059A01</td></tr><tr><td>08</td><td>001001</td><td>01ED83</td><td>01A207</td><td>01ED95</td><td>01A21A</td><td>01A21日</td><td>01ED9C</td><td>01A21E</td></tr><tr><td>10</td><td>01ED92</td><td>01ED94</td><td>01A010</td><td>018001</td><td>062011</td><td>00E016</td><td>008017</td><td>008018</td></tr><tr><td>18</td><td>01A219</td><td>699A01</td><td>018219</td><td>099A01</td><td>00E01D</td><td>038201</td><td>C19A01</td><td>000000</td></tr></table>",
+          "focus": "关键微指令地址"
+        },
+        {
+          "table_id": "CPU RAM Content",
+          "extract": "<table><tr><td>Addr</td><td>+0</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td><td>+7</td></tr><tr><td>00</td><td>00</td><td>70</td><td>10</td><td></td><td>20</td><td>30</td><td>0C</td><td>40</td></tr><tr><td>08</td><td>50</td><td>60</td><td>0D</td><td>D5</td><td>AC</td><td>OD</td><td>03</td><td>00</td></tr></table>",
+          "focus": "程序与数据布局"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "FPGA Test Images",
+          "focus": "各指令执行阶段的寄存器值变化"
+        }
+      ]
+    },
+    {
+      "id": "slide_09",
+      "title": "实验总结与心得",
+      "content": "本次计算机组成原理课程设计通过亲手设计八条指令、编写微程序、调试整机系统，使我对计算机的基本结构、数据通路、微程序控制器工作原理有了深刻理解。从微指令格式定义、24位控制信号分配，到ROM/RAM内容配置及FPGA实测验证，全过程强化了理论与实践结合。尽管受限于课时，未能深入更多指令或优化性能，但已为后续学习打下坚实基础。计算机组成原理作为专业核心课程，其重要性在于揭示计算机底层工作机制，而本实验正是连接抽象理论与硬件实现的关键桥梁。未来将继续深入研究CPU微架构、流水线等高级主题。",
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

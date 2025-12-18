@@ -1,0 +1,92 @@
+你是一个前端工程师，请根据我提供的 PPT 规划 JSON，生成一个【完整、可直接在浏览器打开并使用的 HTML 文件】。
+
+【输入说明】
+- 我会提供一个 JSON 对象，结构如下：
+  - slides：幻灯片数组
+  - 每个 slide 包含：
+    - id：幻灯片唯一标识
+    - title：该页标题
+    - content：正文内容
+    - tables：表格数组（JPG，Base64）
+    - figures：图片数组（JPG/PNG，Base64）
+
+【核心约束（非常重要）】
+- 最终只允许生成一个 HTML 文件
+- 不允许引用任何外部资源
+- 所有图片必须以内嵌 Base64 的方式写入 HTML
+
+【PPT 布局与翻页（必须严格遵守）】
+1. PPT 必须是 **横向手动翻页**
+2. 页面结构必须包含三层：
+   - 外层 viewport 容器（负责裁剪，`overflow: hidden`）
+   - 中间 slides 容器（横向排列所有幻灯片）
+   - 内部多个 slide 页面
+3. 同一时间只能显示一个 slide
+
+【关键布局约束（禁止省略）】
+- slides 容器必须横向排列（`display: flex`）
+- **slides 容器的总宽度必须等于：幻灯片数量 × 100vw**
+- 不允许将 slides 容器宽度写死为 `100vw`
+- 必须使用 JavaScript 在页面初始化时：
+  - 统计 slide 数量
+  - 动态设置 slides 容器宽度（如 `slides.style.width = slideCount * 100 + 'vw'`）
+
+【翻页实现要求】
+- 翻页通过修改 slides 容器的 `transform: translateX(-N * 100vw)` 实现
+- 使用原生 JavaScript
+- 支持：
+  - “上一页 / 下一页”按钮
+  - 键盘左右方向键
+- 翻页不可越界
+
+【内容生成要求】
+- 每一页使用 `<section class="slide">`
+- 每个 slide 必须包含：
+  - `<h1>` 标题
+  - `<p>` 正文
+- 图片规则：
+  - 使用 `<img>`
+  - `src` 为 Base64
+  - `alt` 使用 fig_id / table_id
+- 表格只允许以图片形式展示，不使用 `<table>`
+
+【CSS 要求】
+- 使用内嵌 `<style>`
+- slide 宽度：`100vw`
+- slide 高度：`100vh`
+- 页面整体禁止纵向滚动
+
+【重要说明】
+- 不要输出任何解释性文字
+- 不要使用 Markdown
+- 输出必须是完整、可运行 HTML
+- 如果 Base64 未提供，使用：
+  `data:image/jpeg;base64,{{BASE64_DATA_FOR_xxx}}`
+
+【输出代码风格】
+pptData 必须是【人类可读的 JSON】格式：
+   - 必须多行展示，禁止单行 JSON
+   - 使用标准 JSON pretty-print 风格
+   - 使用 2 个空格或 4 个空格缩进
+   - slides 数组中的每一个 slide 对象必须单独成块
+   - 每个字段（id / title / content / tables / figures）各占一行
+   - 花括号 { } 不得与其他内容挤在同一行
+   - 严禁输出压缩 / minified JSON（例如一整行的那种）
+   示例风格（仅示意，内容请根据实际生成）：
+   const pptData = {
+     "slides": [
+       {
+         "id": "slide_01",
+         "title": "...",
+         "content": "...",
+         "tables": [],
+         "figures": []
+       },
+       {
+         "id": "slide_02",
+         ...
+       }
+     ]
+   };
+【输入 JSON 如下】
+{{contentplan}}

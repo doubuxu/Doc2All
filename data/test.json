@@ -1,0 +1,129 @@
+{
+  "slides": [
+    {
+      "id": "slide_01",
+      "title": "The Response of Flow Duration Curves to Afforestation",
+      "content": "Patrick N.J. Lane (School of Forest and Ecosystem Studies, University of Melbourne), Alice E. Best (CSIRO Division of Land and Water; Cooperative Research Centre for Catchment Hydrology; Department of Civil and Environmental Engineering, University of Melbourne), Klaus Hickel (CSIRO Division of Land and Water; Cooperative Research Centre for Catchment Hydrology), Lu Zhang (CSIRO Division of Land and Water; Cooperative Research Centre for Catchment Hydrology). This study develops a method to assess how afforestation alters the annual flow duration curve (FDC) by removing rainfall variability and isolating the hydrologic signal attributable solely to plantation evapotranspiration.",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_02",
+      "title": "Research Problem and Knowledge Gap",
+      "content": "While the mean annual hydrologic impact of replacing pasture or crops with trees is reasonably well understood〞especially the increased evapotranspiration (ET) once annual rainfall exceeds 400每500 mm〞the effect on the full flow regime, as described by the annual Flow Duration Curve (FDC), remains uncertain. Existing paired-catchment experiments provide robust insights but are scarce, especially across diverse climates and species. Moreover, observed flow changes can be obscured by interannual rainfall variability: for example, in Pine Creek (Australia), 1996 showed very low flows (<20% of time flowing), while 2000 had substantially higher flows〞not due to vegetation change, but climate fluctuations. Thus, there is a critical need for a methodology that can isolate vegetation-driven FDC changes without requiring paired catchments, enabling assessment in data-limited regions where afforestation planning is urgent.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Figure 1",
+          "focus": "Annual FDCs from Pine Creek showing high interannual variability due to rainfall"
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "title": "Methodological Framework Overview",
+      "content": "The study proposes a three-step method to quantify afforestation impacts on FDCs: (1) Fit a statistical model to observed annual time series of FDC percentiles (e.g., 10th, 50th) using annual rainfall and plantation age as predictors; (2) Replace actual annual rainfall with the long-term mean to generate 'climate-adjusted' FDCs, thereby removing climatic noise; (3) Quantify how FDC percentiles change as plantations age under this adjusted climate. The core assumption is that rainfall and forest age are the principal drivers of evapotranspiration. This approach enables attribution of flow changes solely to vegetation, even without control catchments. The method was applied to 10 catchments across Australia, South Africa, and New Zealand with known afforestation histories.",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_04",
+      "title": "Core Modeling Approach",
+      "content": "For each FDC percentile (e.g., Q??, Q??), a model was fitted of the form: \\\\[\nQ_{\\\\%} = a + b(\\\\Delta P) + \\\\frac{Y}{1 + \\\\exp\\\\left( \\\\frac{T - T_{\\\\mathrm{half}}}{S} \\\\right)}\n\\\\] where \\(Q_{\\\\%}\\) is the flow percentile, \\(\\\\Delta P\\) is deviation of annual rainfall from the long-term mean, \\(T\\) is plantation age (years), \\(Y\\) is the magnitude of flow reduction due to afforestation, \\(T_{\\\\mathrm{half}}\\) is the time (years) at which half the total reduction occurs, and \\(S\\) controls the sigmoidal shape. The rainfall term \\(b(\\\\Delta P)\\) captures climate variability, while the sigmoidal term models increasing ET as the plantation matures. Under average climate conditions (\\(\\\\Delta P = 0\\)), the equilibrium post-afforestation flow is \\(a\\), and the pre-treatment flow approximates \\(a + Y\\). A similar inverse sigmoidal model was used for zero-flow days (\\(N_{\\\\mathrm{zero}}\\)).",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Figure 2",
+          "focus": "Schematic of FDC change over time and model parameter definitions"
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "title": "Study Catchments and Data Characteristics",
+      "content": "The analysis used daily streamflow data from 10 catchments in southeastern Australia, New Zealand, and South Africa. Key criteria included known vegetation history and good-quality flow records. Most catchments were converted from grassland/crops to pine (Pinus radiata or P. patula), except Traralgon Creek (Eucalyptus regnans). Afforestation coverage ranged from 67% to 100%. Mean annual rainfall varied from 775 mm (Pine Creek) to 1504 mm (Cathedral Peak 3). Pre-treatment records existed for some sites (e.g., 22 years at Traralgon, 9 years at Stewarts Creek), but for consistency, all analyses started at treatment year. Baseflow Index (BFI) values revealed lower groundwater contribution in Australian catchments (BFI 0.26每0.39) versus South African/New Zealand sites (BFI 0.64每0.87), suggesting differences in storage capacity.",
+      "tables": [
+        {
+          "table_id": "Table 1",
+          "extract": "<table><tr><td></td><td>Area (ha)</td><td>Species</td><td>% Area planted</td><td>Mean annual rainfall (mm)</td><td>Rain distrib.</td><td>Pre-treat- ment (years)</td><td>Forest age (years)</td><td>Mean soil depth (m)</td><td>BFI</td></tr><tr><td>Traralgon Ck (Vic)</td><td>8700</td><td>Eucalypt</td><td>~70</td><td>1472</td><td>U</td><td>22</td><td>19</td><td>2.0</td><td>0.37</td></tr><tr><td>Redhill (NSW)</td><td>195</td><td>P.radiata</td><td>78</td><td>866</td><td>W</td><td>0</td><td>9</td><td>1.0</td><td>0.39</td></tr><tr><td>Pine Ck (Vic)</td><td>320</td><td>P.radiata</td><td>100</td><td>775</td><td>W</td><td>0</td><td>11</td><td>&lt;1.0</td><td>0.26</td></tr><tr><td>Stewarts Ck 5 (Vic)</td><td>18</td><td>P.radiata</td><td>100</td><td>1156</td><td>W</td><td>9</td><td>20</td><td>&lt;1.0</td><td>0.28</td></tr><tr><td>Glendhu 2 (NZ)</td><td>310</td><td>P.radiata</td><td>67</td><td>1282</td><td>U</td><td>3</td><td>17</td><td>1.0</td><td>0.64</td></tr><tr><td>Cathedral Peak 2(SA)</td><td>190</td><td>P. patula</td><td>75</td><td>1436</td><td>S</td><td>2</td><td>20</td><td>1.5-2.0</td><td>0.66</td></tr><tr><td>Cathedral Peak 3(SA)</td><td>139</td><td>P. patula</td><td>86</td><td>1504</td><td>S</td><td>6</td><td>17</td><td>1.5-2.0</td><td>0.75</td></tr><tr><td>Lambrechtbos A(SA)</td><td>31</td><td>P.radiata</td><td>82</td><td>1134</td><td>W</td><td>30</td><td>19</td><td>1.5-2.0</td><td>0.78</td></tr><tr><td>Lambrechtbos B (SA)</td><td>66</td><td>P.radiata</td><td>89</td><td>1088</td><td>W</td><td>17</td><td>20</td><td>1.5-2.0</td><td>0.87</td></tr><tr><td>Biesievlei (SA)</td><td>27</td><td>P.radiata</td><td>98</td><td>1332</td><td>W</td><td>10</td><td>20</td><td>1.5-2.0</td><td>0.72</td></tr></table>",
+          "focus": "Catchment characteristics including rainfall, species, and hydrologic indicators"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_06",
+      "title": "Model Evaluation and Statistical Validation",
+      "content": "Model performance was evaluated using the Nash-Sutcliffe coefficient of efficiency (E), where E > 0.7 was deemed adequate. The complete model (Eq. 2) achieved E > 0.7 for 77% of all decile-catchment combinations, and E ≡ 0.8 for 60%. Performance was best for the 10每50th percentiles. Significance of rainfall (b) and time (Y) terms was tested via one-tailed t-tests comparing full vs. reduced models. The rainfall term was significant (p < 0.05) for 75% of deciles, rising to 90% for 10每50th percentiles. The time term was significant at p < 0.05 for 80% of deciles. Poorer fits occurred at Lambrechtsbos A/B (E as low as 0.47) and for high percentiles (80每100th), where seasonal storage effects dominate over annual rainfall. These results confirm that both climate and vegetation age are essential drivers of FDC dynamics.",
+      "tables": [
+        {
+          "table_id": "Table 3",
+          "extract": "<table><tr><td>Site</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr><tr><td>Traralgon Ck</td><td>0.82</td><td>0.85</td><td>0.81</td><td>0.81</td><td>0.83</td><td>0.78</td><td>0.80</td><td>0.77</td><td>0.65</td><td>0.56</td></tr><tr><td>Redhill</td><td>0.90</td><td>0.95</td><td>0.82</td><td>0.80</td><td>0.92</td><td>0.88</td><td>0.89</td><td>0.77</td><td>0.65</td><td>0.42</td></tr><tr><td>Pine Ck</td><td>0.56</td><td>0.76</td><td>0.88</td><td>0.99</td><td>0.99</td><td>0.99</td><td>0.71</td><td>0.99</td><td>na</td><td>na</td></tr><tr><td>Stewarts Ck 5</td><td>0.82</td><td>0.85</td><td>0.81</td><td>0.88</td><td>0.87</td><td>0.88</td><td>0.88</td><td>na</td><td>na</td><td>na</td></tr><tr><td>Glendhu 2</td><td>0.76</td><td>0.77</td><td>0.82</td><td>0.84</td><td>ns</td><td>0.87</td><td>0.89</td><td>0.90</td><td>0.86</td><td>0.76</td></tr><tr><td>Cathedral Peak 2</td><td>0.83</td><td>0.91</td><td>0.93</td><td>0.92</td><td>0.81</td><td>0.73</td><td>0.89</td><td>0.95</td><td>0.96</td><td>0.95</td></tr><tr><td>Cathedral Peak 3</td><td>0.68</td><td>0.75</td><td>0.78</td><td>0.91</td><td>0.96</td><td>0.95</td><td>0.94</td><td>0.81</td><td>0.84</td><td>0.79</td></tr><tr><td>Lambrechtsbos A</td><td>0.71</td><td>0.60</td><td>0.57</td><td>0.47</td><td>0.47</td><td>0.47</td><td>0.47</td><td>0.50</td><td>0.49</td><td>0.51</td></tr><tr><td>Lambrechtsbos B</td><td>0.82</td><td>0.76</td><td>0.70</td><td>0.66</td><td>0.65</td><td>0.65</td><td>0.62</td><td>0.59</td><td>0.58</td><td>0.58</td></tr><tr><td>Biesievlei</td><td>0.96</td><td>0.96</td><td>0.90</td><td>0.82</td><td>0.81</td><td>0.88</td><td>0.92</td><td>0.94</td><td>0.91</td><td>0.81</td></tr></table>",
+          "focus": "Coefficient of efficiency (E) across percentiles and catchments"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_07",
+      "title": "Climate-Adjusted FDCs and Flow Reduction Patterns",
+      "content": "After fitting, FDCs were adjusted to long-term mean rainfall (忖P = 0) to isolate vegetation effects. Two distinct response groups emerged: Group 1 (Stewarts Creek, Pine Creek, Redhill) shows disproportionate low-flow reductions, with substantial increases in zero-flow days〞low flows (70每100th percentiles) are more affected than high flows. Group 2 (Cathedral Peak 2/3, Lambrechtsbos A/B, Glendhu 2, Biesievlei, Traralgon Creek) exhibits more uniform proportional reductions across all percentiles. The net flow reduction, expressed as Y/(Y + a), varies widely: Group 1 catchments show up to 100% low-flow reduction, while Group 2 reductions range from ~30% (Glendhu 2) to ~60% (Cathedral Peak 3). These patterns suggest that catchment storage characteristics〞indicated by shallow soils and low BFI in Group 1〞modulate the hydrologic response to afforestation.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Figure 3",
+          "focus": "Climate-adjusted FDCs for Stewarts Creek 5 showing convergence after canopy closure"
+        },
+        {
+          "figure_id": "Figure 4",
+          "focus": "Net flow reductions (Y/(Y+a)) across all catchments revealing two response groups"
+        }
+      ]
+    },
+    {
+      "id": "slide_08",
+      "title": "Timing of Hydrologic Response (T_half)",
+      "content": "The speed of flow reduction is characterized by \\(T_{\\\\mathrm{half}}\\)〞the time (years) to achieve half the total flow reduction. Most catchments show \\(T_{\\\\mathrm{half}}\\) between 5每10 years for median flows. Fast responders include Redhill (~6 years across percentiles) and Stewarts Creek (3.9每6.5 years). Pine Creek shows rapid high-flow response (\\(T_{\\\\mathrm{half}}\\) = 0.6每1.3 years for 70每80th percentiles) but slower low-flow response (~10 years). South African catchments generally align with published paired-catchment studies, though Cathedral Peak 3 shows unusually slow low-flow response (\\(T_{\\\\mathrm{half}}\\) = 13每14 years for 10每20th percentiles). Glendhu 2 exhibits highly variable \\(T_{\\\\mathrm{half}}\\) (1.6每19.6 years), possibly due to slow growth. Biesievlei shows the most consistent and slow response (~10 years across percentiles).",
+      "tables": [
+        {
+          "table_id": "Table 4",
+          "extract": "<table><tr><td>Site</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr><tr><td>Traralgon Ck</td><td>9.68</td><td>9.59</td><td>9.99</td><td>10.02</td><td>4.92</td><td>7.59</td><td>4.92</td><td>3.97</td><td>4.39</td><td>5.97</td></tr><tr><td>Redhill</td><td>6.13</td><td>6.07</td><td>5.99</td><td>5.99</td><td>6.07</td><td>6.04</td><td>6.79</td><td>6.81</td><td>6.02</td><td>6.00</td></tr><tr><td>Pine Ck</td><td>9.87</td><td>5.52</td><td>5.45</td><td>5.22</td><td>5.69</td><td>5.86</td><td>0.64</td><td>1.25</td><td>na</td><td>na</td></tr><tr><td>Stewarts Ck 5</td><td>6.49</td><td>6.41</td><td>6.09</td><td>5.96</td><td>3.89</td><td>3.03</td><td>2.31</td><td>na</td><td>na</td><td>na</td></tr><tr><td>Glendhu 2</td><td>19.59</td><td>2.67</td><td>2.24</td><td>2.08</td><td>ns</td><td>2.06</td><td>2.07</td><td>1.62</td><td>6.63</td><td>2.02</td></tr><tr><td>Cathedral Peak 2</td><td>4.96</td><td>3.92</td><td>5.78</td><td>7.68</td><td>8.64</td><td>8.95</td><td>9.26</td><td>9.08</td><td>8.93</td><td>9.47</td></tr><tr><td>Cathedral Peak 3</td><td>14.13</td><td>13.20</td><td>7.02</td><td>7.44</td><td>9.01</td><td>8.68</td><td>8.87</td><td>9.46</td><td>8.16</td><td>6.98</td></tr><tr><td>Lambrechtsbos A</td><td>6.89</td><td>6.87</td><td>6.93</td><td>6.89</td><td>6.88</td><td>6.97</td><td>6.94</td><td>6.93</td><td>6.94</td><td>6.97</td></tr><tr><td>Lambrechtsbos B</td><td>14.52</td><td>14.84</td><td>14.89</td><td>10.98</td><td>6.89</td><td>5.69</td><td>5.55</td><td>6.01</td><td>6.23</td><td>6.29</td></tr><tr><td>Biesievlei</td><td>9.36</td><td>9.17</td><td>9.59</td><td>10.32</td><td>10.78</td><td>10.46</td><td>10.06</td><td>10.08</td><td>10</td><td>10.10</td></tr></table>",
+          "focus": "T_half values across percentiles showing response timing variability"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_09",
+      "title": "Validation Against Paired Catchment Studies",
+      "content": "Model-derived flow reductions were compared to published paired-catchment results under near-average rainfall conditions. Total flow reductions estimated here closely match literature values: e.g., Cathedral Peak 2 (57% vs. 50%), Lambrechtsbos A (41% vs. 41%), Biesievlei (52% vs. 52%), and Redhill (75% vs. 66%). Low-flow reductions also align well: Cathedral Peak 3 (53% vs. 53%), Biesievlei (60% vs. 62%), and Redhill (100% vs. 100%). Minor discrepancies exist〞e.g., Lambrechtsbos B shows 58% modeled vs. 69% observed total reduction〞likely due to poorer model fit (E ＞ 0.6). Overall, the strong agreement validates that the method successfully removes rainfall variability and isolates vegetation-driven changes, offering a viable alternative where paired data are unavailable.",
+      "tables": [
+        {
+          "table_id": "Table 5",
+          "extract": "<table><tr><td>Catchment</td><td>Year</td><td>Rainfalla (mm)</td><td>Total flow reduction (%)</td><td>Low flow reduction (%)</td><td>Estimated total (%)</td><td>Estimated low (%)</td></tr><tr><td>Cathedral Peak 2</td><td>21</td><td>1516 (+80)</td><td>50</td><td>48</td><td>57</td><td>54</td></tr><tr><td>Cathedral Peak 3</td><td>18</td><td>1556(+52)</td><td>60</td><td>53</td><td>62</td><td>53</td></tr><tr><td>Lambrechtsbos A</td><td>13</td><td>1111 (-23)</td><td>41</td><td>34</td><td>41</td><td>38</td></tr><tr><td>Lambrechtsbos B</td><td>18</td><td>1079 (-9)</td><td>69</td><td>78</td><td>58</td><td>63</td></tr><tr><td>Biesievlei</td><td>20</td><td>1388 (+6)</td><td>52</td><td>62</td><td>52</td><td>60</td></tr><tr><td>Redhill</td><td>9</td><td>783 (-93)</td><td>66</td><td>100</td><td>75</td><td>100</td></tr><tr><td>Stewarts Ck 5</td><td>20</td><td>1249 (+93)</td><td>69</td><td></td><td>64</td><td></td></tr><tr><td>Glendhu</td><td colspan=\"2\">Average reduction</td><td>27</td><td>&lt;20</td><td>32</td><td>35</td></tr></table>",
+          "focus": "Comparison of modeled vs. observed flow reductions"
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "slide_10",
+      "title": "Zero-Flow Day Analysis",
+      "content": "An additional model quantified afforestation＊s impact on stream intermittency by analyzing zero-flow days (\\(N_{\\\\mathrm{zero}}\\)). Applied to Group 1 catchments (Stewarts Creek, Pine Creek, Redhill), it used an inverse sigmoidal form: \\\\[\nN_{\\\\mathrm{zero}} = a + b(\\\\Delta P) + \\\\frac{Y}{1 + \\\\exp\\\\left( \\\\frac{T - T_{\\\\mathrm{half}}}{S} \\\\right)}\n\\\\] where \\(Y > 0\\) indicates increased zero days with plantation age. The model performed exceptionally well (E = 0.95每0.99) and both rainfall and time terms were significant (p < 0.05). Climate-adjusted results show dramatic increases: by year 8, Stewarts and Pine Creeks flow less than 50% of the time; Redhill shifts from near-permanent to highly intermittent flow by year 11. This confirms that afforestation in small, low-storage catchments can drastically alter flow regime continuity, with implications for aquatic ecosystems and water supply reliability.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Figure 5",
+          "focus": "Climate-adjusted zero-flow days increasing rapidly with plantation age"
+        }
+      ]
+    },
+    {
+      "id": "slide_11",
+      "title": "Key Conclusions and Implications",
+      "content": "This study successfully developed and validated a method to isolate afforestation impacts on FDCs without paired catchments. Key findings: (1) The model effectively removes rainfall variability, with 77% of decile fits achieving E > 0.7; (2) Two response types exist: Group 1 (small, shallow-soil Australian catchments) shows amplified low-flow reductions and increased zero-flow days, while Group 2 exhibits uniform reductions; (3) Flow reductions align closely with paired-catchment studies, confirming method validity; (4) Zero-flow day modeling reveals severe intermittency risks in vulnerable catchments. The approach provides a practical tool for land-use planning in data-scarce regions. However, results likely represent maximum impacts due to small catchment size, high afforestation coverage, and shallow soils. Further research is needed on hardwood (eucalypt) plantations, as 9 of 10 sites used pines.",
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

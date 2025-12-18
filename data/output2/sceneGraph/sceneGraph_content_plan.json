@@ -1,0 +1,122 @@
+{
+  "slides": [
+    {
+      "id": "slide_01",
+      "title": "A Comprehensive Survey of Scene Graphs: Generation and Application",
+      "content": "Authors: Xiaojun Chang (University of Technology Sydney), Pengzhen Ren (Northwest University), Pengfei Xu (Northwest University), Zhihui Li (Shandong Artificial Intelligence Institute, Qilu University of Technology), Xiaojiang Chen (Northwest University), and Alex Hauptmann (Carnegie Mellon University). This survey provides the first systematic and comprehensive review of scene graph research, covering definitions, generation methods (including CRF-, TransE-, CNN-, RNN/LSTM-, and GNN-based approaches), applications (image generation, captioning, VQA, retrieval, 3D understanding, and human interaction detection), datasets, evaluation metrics, challenges (especially long-tailed distribution), and future directions. The work fills a critical gap as no prior comprehensive survey existed despite the rapid growth of cross-modal scene graph research.",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_02",
+      "title": "Scene Graph Definition and Construction Process",
+      "content": "A scene graph \\( SG = (O, R, E) \\) is a directed graph where \\( O = \\{o_1, ..., o_n\\} \\) is the set of detected objects (each \\( o_i = (c_i, A_i) \\) with category \\( c_i \\) and attributes \\( A_i \\)), \\( R \\) is the set of relationships \\( r_{ij} \\) between object pairs, and \\( E \\subseteq O \\times R \\times O \\) represents edges. Relationships are expressed as \\( \\langle subject - predicate - object \\rangle \\) triplets. Given an image \\( I \\), the SGG method outputs \\( SG^I_{O,R,E} = SGG(I) \\). The general SGG process involves three stages: (1) Feature extraction using Faster R-CNN to get bounding boxes \\( B \\) and features \\( X \\); (2) Contextualization via object classification (\\( X \\to Z \\)) and relationship prediction using object labels (\\( Z \\to \\widetilde{Y} \\)), object features (\\( X \\to \\widetilde{Y} \\)), or visual context (\\( I \\to \\bar{Y} \\)); (3) Graph construction and inference to predict predicates. Two main paradigms exist: bottom-up (sequential object detection then relationship recognition: \\( P(SG|I) = P(B|I) * P(O|B,I) * P(R|B,O,I) \\)) and top-down (joint object-relationship inference: \\( P(SG|I) = P(B|I) * P(O,R|B,I) \\)).",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Doc Figure 2",
+          "focus": "Scene graph structure showing objects, attributes, and relationships"
+        },
+        {
+          "figure_id": "Doc Figure 3",
+          "focus": "Causal graph of SGG process with feature extraction and contextualization links"
+        }
+      ]
+    },
+    {
+      "id": "slide_03",
+      "title": "SGG Methods: CRF, TransE, and CNN-Based Approaches",
+      "content": "CRF-based SGG models statistical correlations between object pairs and predicates. The probability \\( P(r_{so}|X) = \\frac{1}{Z} \\exp(\\Phi(r_{so}|X; W)) \\) uses appearance/spatial features \\( X = [x_r, x_s, x_o] \\). SG-CRF improves semantic compatibility and subject-object ordering. TransE-based methods (e.g., VTransE) embed relationships as vector translations: \\( s + p \\approx o \\). MATransE adds multimodal attention, while UVTransE uses union features \\( u \\) for rare relationships (\\( p \\approx u - s - o \\)). CNN-based SGG extracts visual features via region proposals. LinkNet models inter-object dependencies with global/geometric modules. Rel-PN reduces complexity by selecting meaningful subject-object pairs. ViP-CNN uses phrase-guided message passing, and Zoom-Net employs SCA-M for spatially-aware context fusion. BAR-CNN introduces box attention to enhance receptive fields without complex components.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Doc Figure 4",
+          "focus": "CRF-based SGG structure with object detection and relationship prediction"
+        },
+        {
+          "figure_id": "Doc Figure 8",
+          "focus": "Comparison of CNN-based SGG models"
+        }
+      ]
+    },
+    {
+      "id": "slide_04",
+      "title": "SGG Methods: RNN/LSTM and GNN-Based Approaches",
+      "content": "RNN/LSTM-based methods capture contextual information through sequential processing. IMP uses iterative message passing with primal-dual GRUs for node-edge updates. MotifNet employs LSTMs for global context encoding. PANet uses RNNs to model predicate associations across instance/scene levels. AHRNN treats triples as sequences with hierarchical RNNs to avoid probabilistic ranking. VCTree constructs dynamic trees (using TreeLSTM) to represent hierarchical/parallel relationships, outperforming chain or fully-connected structures. GNN-based methods leverage graph topology: Factorizable Net uses subgraphs for efficiency; Graph R-CNN trims graphs then applies AGCN. ARN uses graph self-attention for holistic representation. RAAL-SGG introduces region-aware attention for fine-grained reasoning (using object region sets \\( F \\) beyond bounding boxes \\( B \\)). CMAT frames SGG as multi-agent reinforcement learning to optimize graph-level consistency. EBM replaces cross-entropy with energy-based loss for joint object-relationship likelihood.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Doc Figure 12",
+          "focus": "RNN/LSTM-based SGG models"
+        },
+        {
+          "figure_id": "Doc Figure 13",
+          "focus": "Comparison of scene graph structures (chain, fully-connected, tree)"
+        },
+        {
+          "figure_id": "Doc Figure 14",
+          "focus": "GNN-based SGG models"
+        }
+      ]
+    },
+    {
+      "id": "slide_05",
+      "title": "Prior Knowledge in SGG and Long-Tailed Distribution Challenge",
+      "content": "Prior knowledge mitigates data sparsity: (1) Language priors (e.g., Lu et al.) use word embeddings to infer unseen relationships (e.g., \"person riding elephant\" from \"person riding horse\"). VRL uses semantic action graphs, while CDDN combines semantic/spatial graphs. (2) Statistical priors leverage co-occurrence (e.g., MotifNet’s LSTM-regularized predictions). LKD distills linguistic knowledge from Wikipedia to compute \\( P(pred|subj,obj) \\). DR-Net explicitly models triple correlations. (3) Knowledge graphs (e.g., GB-Net, KB-GAN) bridge scene graphs with commonsense bases like ConceptNet. The long-tailed distribution—where head predicates (\"on\", \"have\") dominate—remains critical. Solutions include: zero/few-shot learning (VRF treats predicates as transferable functions), causal debiasing (TDE removes bad bias via counterfactuals), and energy-based modeling (EBM’s structured loss improves mR@K by 2-3% over cross-entropy). Density-normalized losses (Knyazev et al.) address sparse graph training.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Doc Figure 15",
+          "focus": "Semantic similarity aiding relationship inference"
+        },
+        {
+          "figure_id": "Doc Figure 17",
+          "focus": "Long-tailed predicate distribution in Visual Genome"
+        }
+      ]
+    },
+    {
+      "id": "slide_06",
+      "title": "Applications of Scene Graphs",
+      "content": "Scene graphs enhance diverse tasks: (1) **Image Generation**: Johnson et al. generate images from scene graphs; PasteGAN improves visual quality via object cropping; SS-SGN enables user-editable graphs for image modification. (2) **Captioning**: SGAE uses auto-encoders for less dataset bias; ASG controls captions via abstract graphs; SGD decomposes graphs for diverse subtitles. Unpaired methods (Gu et al.) align scene graphs without image-caption pairs. (3) **Cross-Modal Retrieval**: SQIR uses structured queries (e.g., \"girl riding elephant\"); GEDR edits graphs interactively for retrieval. (4) **VQA**: Scene GCN encodes graphs for reasoning; XQA generates natural language explanations from scene graph evidence. (5) **3D Understanding**: 3DSSG uses PointNet/GCN for point cloud-to-graph regression; 3D-DSG captures dynamic semantics for robot perception. (6) **Human Interaction**: HOI detection (HICO-DET, HCVRD) uses GCNs (GPNN) or human-centric networks (InteractNet); HHI models social relationships via attention/GCNs.",
+      "tables": [],
+      "figures": [
+        {
+          "figure_id": "Doc Figure 18",
+          "focus": "Application scenarios including generation, retrieval, VQA, and 3D understanding"
+        }
+      ]
+    },
+    {
+      "id": "slide_07",
+      "title": "Datasets and Evaluation Metrics",
+      "content": "Key datasets include: **Image**: Visual Genome (108K images, 33.8K object categories), VRD (5K images, 100 objects/70 predicates), HCVRD (53K images, 1.8K objects/927 predicates). **Video**: Action Genome (10K videos, 82h). **3D**: 3DSSG (1,482 scans). Evaluation uses three standard tasks: (1) Predicate Detection (given objects, predict predicates); (2) Phrase Detection (predict triplet + localize relationship box); (3) Relationship Detection (full scene graph from scratch). SGG Diagnosis adds: Zero-Shot Retrieval (unseen relationships) and Sentence-to-Graph Retrieval (graph-level matching). Metrics: Recall@K (R@K) is biased toward head predicates; mean Recall@K (mR@K) averages per-predicate recall for fairness. Graph constraints vary (single vs. multiple relationships per pair). Density-normalized metrics address sparse annotations.",
+      "tables": [
+        {
+          "table_id": "Table 1",
+          "extract": "<table><tr><td>Dataset</td><td>Size</td><td>Objects (#bbox cat.)</td><td>Relationships (#triplet)</td></tr><tr><td>VG [44]</td><td>108K</td><td>3.8M (33.8K)</td><td>42K</td></tr><tr><td>VRD [18]</td><td>5K</td><td>- (100)</td><td>7K (70)</td></tr><tr><td>HCVRD [150]</td><td>53K</td><td>- (1.8K)</td><td>28K (927)</td></tr><tr><td>Action Genome [131]</td><td>10K</td><td>64K (35)</td><td>6</td></tr><tr><td>3DSSG [172]</td><td>1482 scans</td><td>48K (534)</td><td>40</td></tr></table>",
+          "focus": "Dataset statistics highlighting scale and long-tail characteristics"
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "Doc Figure 19",
+          "focus": "Four evaluation methods: Predicate, Phrase, Relationship Detection, and SGG Diagnosis"
+        }
+      ]
+    },
+    {
+      "id": "slide_08",
+      "title": "Performance Comparison and Future Directions",
+      "content": "On VG150, EBM [26] achieves state-of-the-art mR@100: PredCls 29.97%, SGCls 20.45%, SGDet 11.6% by replacing cross-entropy with energy-based loss. Prior knowledge integration boosts performance: KERN [20] (statistical priors) reaches SGDet mR@100=8.0%; GB-Net [122] (knowledge graphs) achieves 7.3%. GNN/RNN methods dominate (VCTree, CMAT). However, zero-shot performance remains low (most methods omit ZSRR evaluation). Future directions: (1) **Long-tailed relationships**: Develop better few-shot/zero-shot metrics and analogy-based reasoning. (2) **Distant object relationships**: Extend datasets/models to capture non-local interactions. (3) **Dynamic SGG**: Advance video-based spatio-temporal scene graphs (beyond static images). (4) **Social relationship detection**: Scale human-human interaction models to infer complex social contexts. (5) **Visual reasoning**: Integrate online/reinforcement learning for continuous model improvement. Addressing these will enable more complete, robust scene understanding.",
+      "tables": [
+        {
+          "table_id": "Table 2",
+          "extract": "<table><tr><th>Method</th><th>SGDet mR@100</th></tr><tr><td>VTransE* [48]</td><td>6.0</td></tr><tr><td>Motifs-TDE [15]</td><td>9.8</td></tr><tr><td>VCTree-TDE+EBM [26]</td><td><b>11.6</b></td></tr><tr><td>CMAT [102]</td><td>9.9</td></tr><tr><td>GB-Net [122]</td><td>7.3</td></tr></table>",
+          "focus": "Comparison of mR@100 on SGDet task showing SOTA performance of EBM"
+        }
+      ],
+      "figures": []
+    }
+  ]
+}

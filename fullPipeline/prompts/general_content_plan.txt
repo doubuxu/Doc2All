@@ -1,0 +1,73 @@
+Organize the document into several slides by distributing the content below.
+
+## Document Content
+{{summary}}
+
+## Output Fields
+- **id**: Slide identifier
+- **title**: A concise title for this slide, such as document title or topic name
+- **content**: The main text for this slide. This is the MOST IMPORTANT field. Requirements:
+  - **DETAILED DESCRIPTIONS**: If there are multiple points/steps, describe each one. Don't compress into vague summaries.
+  - **PRESERVE KEY FORMULAS**: If present, include relevant mathematical or technical formulas.
+  - **PRESERVE SPECIFIC NUMBERS**: Key percentages, statistics, dates, quantities, and comparison values.
+  - **SUBSTANTIAL CONTENT**: Each slide should contain enough detail to fully explain its topic.
+  - **COPY FROM SOURCE**: Extract and adapt text from the content. Do not over-simplify into vague one-liners.
+  - Only use information provided above. Do not invent details.
+- **tables**: Tables you want to show on this slide
+  - table_id: e.g., "Table 1", "Doc Table 1"
+  - extract: (optional) Partial table in HTML format. INCLUDE ACTUAL DATA VALUES from the original table, not placeholders
+  - focus: (optional) What aspect to emphasize
+- **figures**: Figures you want to show on this slide
+  - figure_id: e.g., "Figure 1", "Doc Figure 1"
+  - focus: (optional) What to highlight
+- Note: A slide can have both tables and figures together if they complement each other.
+
+## Content Guidelines
+
+Distribute content into several slides. Identify the document's own structure and follow it:
+
+1. **Title/Cover**: Document title, authors/source if available
+
+2. **Main Content** (can span multiple slides):
+   - Organize into logical slides based on the document's natural structure
+   - Each slide should focus on one topic with full details
+   - If the content has multiple stages/steps, dedicate content to each
+   - Include specific numbers, data points, and examples
+   - Match relevant tables/figures with their explanations
+
+3. **Summary/Conclusion**: Key takeaways with specific numbers if applicable
+
+## Output Format (JSON)
+```json
+{
+  "slides": [
+    {
+      "id": "slide_01",
+      "title": "[Document title]",
+      "content": "[Authors/source if available]",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_02",
+      "title": "[Topic name]",
+      "content": "[Detailed description: This section covers X, Y, Z. The key aspects include... Specific data shows...]",
+      "tables": [],
+      "figures": [{"figure_id": "Figure X", "focus": "[what to highlight]"}]
+    },
+    {
+      "id": "slide_03",
+      "title": "[Key Data/Statistics]",
+      "content": "[Full details with specific numbers, statistics, and comparisons...]",
+      "tables": [{"table_id": "Table X", "extract": "<table><tr><th>Item</th><th>Value</th></tr><tr><td>A</td><td>XX.X</td></tr></table>", "focus": "[key point]"}],
+      "figures": []
+    }
+  ]
+}
+```
+
+## CRITICAL REQUIREMENTS
+1. **FORMULAS**: If present, include any formulas or technical expressions exactly as they appear.
+2. **MINIMUM CONTENT LENGTH**: Each slide content should be at least 150-200 words (except title). Avoid overly brief summaries.
+3. **SPECIFIC NUMBERS**: Use precise values from source.
+4. **TABLE DATA**: Extract tables with actual numerical values from the original.

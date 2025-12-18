@@ -1,0 +1,91 @@
+
+Organize the document into several slides by distributing the content below.
+
+## Document Summary
+
+{{summary}}
+
+## Output Fields
+- **id**: Slide identifier
+- **title**: A concise title suitable for this slide, such as paper title, method name, or topic name
+- **content**: The main text for this slide. This is the MOST IMPORTANT field. Requirements:
+  - **DETAILED METHOD DESCRIPTION**: For method slides, describe each step/component in detail. If there are multiple steps, explain each one (what it does, how it works, what's the input/output). Don't compress into one vague sentence.
+  - **PRESERVE KEY FORMULAS**: If the source has formulas, include 1-2 relevant ones in LaTeX (\\( ... \\) or \\[ ... \\]) with variable meanings.
+  - **PRESERVE SPECIFIC NUMBERS**: Key percentages, metrics, dataset sizes, and comparison values.
+  - **SUBSTANTIAL CONTENT**: Each slide should contain enough detail to fully explain its topic.
+  - **COPY FROM SOURCE**: Extract and adapt text from the summary. Do not over-simplify into vague one-liners.
+  - Only use information provided above. Do not invent details.
+- **tables**: Tables you want to show on this slide
+  - table_id: e.g., "Table 1", "Doc Table 1"
+  - extract:whole table in HTML format. The table must starts with <table> and ends with <table>,or the Table code is Illegal!!!
+  - focus: (optional) What aspect to emphasize
+  - caption: whole image caption from the Document i give you
+- **figures**: Figures you want to show on this slide
+  - figure_id: e.g., "Figure 1", "Doc Figure 1"
+  - focus: (optional) What to highlight
+  - caption: whole image caption from the Document i give you
+- Note: A slide can have both tables and figures together if they complement each other.
+
+## Content Guidelines
+
+Distribute content into several slides covering these areas:
+
+1. **Title/Cover**: Paper title or method name, all author names, affiliations
+
+2. **Background/Problem**:
+   - The research problem with full context
+   - Specific limitations of existing approaches (list each one)
+   - Why these limitations matter
+
+3. **Method/Approach** (can span multiple slides):
+   - Framework overview with component names and their roles
+   - If the method has multiple stages, dedicate content to each stage
+   - Include 1-2 key formulas with variable explanations
+   - Technical details: algorithms, parameters, implementation specifics
+   - Match figures showing architecture or pipeline
+
+4. **Results/Experiments** (can span multiple slides):
+   - Dataset details: name, size, splits, categories with EXACT numbers
+   - Main evaluation metrics and what they measure
+   - Performance numbers with EXACT values and comparisons
+   - Ablation findings with specific impact numbers
+   - Match tables showing results
+
+5. **Conclusion**:
+   - Each main contribution listed explicitly
+   - Key findings with specific numbers
+
+## Output Format (JSON)
+```json
+{
+  "slides": [
+    {
+      "id": "slide_01",
+      "title": "[Paper/Method name]",
+      "content": "[All authors with affiliations]",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_02",
+      "title": "[Method/Framework name]",
+      "content": "[Detailed description: The framework consists of X components. Component A does... Component B handles... The process flow is...]",
+      "tables": [],
+      "figures": [{"figure_id": "Figure X", "focus": "[architecture/pipeline]"}]
+    },
+    {
+      "id": "slide_03",
+      "title": "[Results/Evaluation]",
+      "content": "[Full results: Evaluated on Dataset (size, categories). Metrics include X, Y, Z. Main results show... Compared to baselines...]",
+      "tables": [{"table_id": "Table X", "extract": "<table><tr><th>Method</th><th>Metric</th></tr><tr><td>Ours</td><td>XX.X</td></tr><tr><td>Baseline</td><td>XX.X</td></tr></table>", "focus": "[comparison]"}],
+      "figures": []
+    }
+  ]
+}
+```
+
+## CRITICAL REQUIREMENTS
+1. **MATHEMATICAL FORMULAS**: If the source contains formulas, include at least 1-2 key/representative formulas in Method slides using LaTeX notation. In JSON, escape backslashes as \\\\ (e.g., \\\\( \\\\mathcal{{X}} \\\\)).
+2. **MINIMUM CONTENT LENGTH**: Each slide content should be at least 150-200 words (except title). Avoid overly brief summaries.
+3. **SPECIFIC NUMBERS**: Use precise values from source.
+4. **TABLE DATA**: Extract tables with actual numerical values from the original.

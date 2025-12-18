@@ -1,0 +1,101 @@
+[
+  {
+    "table_id": "table_1",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_1.jpg",
+    "caption": [
+      "Table 1: Datasets involved in DocSAM. "
+    ],
+    "content_list_index": 19,
+    "llm_description": "This table categorizes benchmark datasets by task type: Document Layout Analysis, Ancient/Handwritten Document Segmentation, Table Structure Recognition, and Scene Text Detection, listing specific datasets with their citation numbers for each category.",
+    "weight": 1178,
+    "height": 347
+  },
+  {
+    "table_id": "table_2",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_2.jpg",
+    "caption": [
+      "Table 2: Ablation studies on model structure and training strategy. "
+    ],
+    "content_list_index": 75,
+    "llm_description": "This table evaluates the impact of various ablation settings on DocSAM’s performance across four metrics—instance mAP, instance mAP_b, instance mAF, and semantic mIoU—showing that adding SimMIM and Curriculum learning improves results, while removing Masked Attention or Query Interaction degrades performance, and scaling to DocSAM_large yields the best overall scores.",
+    "weight": 620,
+    "height": 252
+  },
+  {
+    "table_id": "table_3",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_3.jpg",
+    "caption": [
+      "Table 3: Performance of DocSAM after joint pre-training. "
+    ],
+    "content_list_index": 87,
+    "llm_description": "This table compares the performance of DocSAM-base and DocSAM-large models across four tasks—Document Layout Analysis, Ancient/Handwritten Document Segmentation, Table Structure Recognition, and Scene Text Detection—on multiple datasets, evaluating metrics including AP50, AP75, mAP, mAPb, mAF, and mIoU.",
+    "weight": 1242,
+    "height": 525
+  },
+  {
+    "table_id": "table_4",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_4.jpg",
+    "caption": [
+      "Table 4: Performance of DocSAM after dataset specific fine-tuning. "
+    ],
+    "content_list_index": 88,
+    "llm_description": "This table compares the performance of DocSAM-large models trained from scratch versus pretrained on various document analysis tasks (Document Layout Analysis, Document Segmentation, Table Structure Recognition, Scene Text Detection, and an unseen dataset), across multiple benchmark datasets, using metrics including AP50, AP75, mAP, mAPb, mAF, and mIoU.",
+    "weight": 1244,
+    "height": 584
+  },
+  {
+    "table_id": "table_5",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_5.jpg",
+    "caption": [
+      "Table 5: Performance comparison on $\\mathbf { M } ^ { \\mathrm { 6 } } \\mathbf { D } \\mathbf { o c }$ "
+    ],
+    "content_list_index": 93,
+    "llm_description": "This table compares the performance of seven object detection methods—Faster R-CNN, Mask R-CNN, Deformable DETR, ISTR, TransDLANet, DAT, and DocSAM—across two tasks (Object and Instance detection), measured by mAP, AP50, and AP75 metrics. Results show DAT achieves the highest scores overall (mAP: 0.712, AP50: 0.840, AP75: 0.755), while DocSAM ranks second with strong performance (mAP: 0.663, AP50: 0.840, AP75: 0.750).",
+    "weight": 605,
+    "height": 230
+  },
+  {
+    "table_id": "table_6",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_6.jpg",
+    "caption": [
+      "Table 6: Performance comparison on SCUT-CAB. "
+    ],
+    "content_list_index": 94,
+    "llm_description": "This table compares the performance of six object detection methods (Faster R-CNN, Mask R-CNN, SCNet, Deformable DETR, VSR, and DocSAM) across physical and logical detection tasks, measuring accuracy via mAP, AP50, and AP75 for both object and instance levels. SCNet achieves the highest overall performance with 0.813 mAP on physical object detection, while Deformable DETR leads in logical instance detection with 0.851 mAP.",
+    "weight": 1008,
+    "height": 231
+  },
+  {
+    "table_id": "table_7",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_7.jpg",
+    "caption": [
+      "Table 7: Performance comparison on CTW1500 and Total-Text. "
+    ],
+    "content_list_index": 95,
+    "llm_description": "This table compares the performance of eight text detection methods on two datasets — CTW1500 and Total-Text — using Precision (P), Recall (R), and F1-score (F) metrics. HierText [47] achieves the highest overall performance with an F1-score of 0.905 on Total-Text, while DAT-SEG [80] shows strong results on CTW1500 with F1=0.917. Methods like SIR [106] and DPText-DETR [107] perform well across both datasets, whereas DocSAM yields the lowest scores overall.",
+    "weight": 592,
+    "height": 253
+  },
+  {
+    "table_id": "table_8",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_8.jpg",
+    "caption": [
+      "Table 8: Dataset statistics. Numbers with “†” means the datasets or their ground-truth annotations are not public available. "
+    ],
+    "content_list_index": 130,
+    "llm_description": "This table presents a comprehensive survey of datasets used in four key text recognition tasks—Document Layout Analysis (DLA), Handwritten/Printed Document Recognition (AHDS), Text Spotting in Real-world Scenes (TSR), and Scene Text Detection (STD)—detailing their split sizes (Train/Val/Test), number of classes, and language for both public benchmarks and custom datasets.",
+    "weight": 1350,
+    "height": 775
+  },
+  {
+    "table_id": "table_9",
+    "path": "/data/huangyc/Document2All/data/output/docsam/visuals/tables/table_9.jpg",
+    "caption": [
+      "Table 9: Performance of DocSAM on heterogeneous datasets and tasks. "
+    ],
+    "content_list_index": 138,
+    "llm_description": "This table presents comprehensive performance metrics (AP50, AP75, mAP, mAP_b, mAF, mIoU) for three text detection tasks — DLA, AHDS, and TSR — across 23 datasets, alongside results for the STD task on 13 datasets. Each row corresponds to a dataset with its reference citation, and columns show instance-level and semantic segmentation accuracy measures, enabling direct comparison of model efficacy across diverse text-rich scenes including documents, tables, and natural images.",
+    "weight": 1280,
+    "height": 756
+  }
+]
