@@ -60,8 +60,15 @@
 - 不要输出任何解释性文字
 - 不要使用 Markdown
 - 输出必须是完整、可运行 HTML
-- 如果 Base64 未提供，使用：
-  `data:image/jpeg;base64,{{BASE64_DATA_FOR_xxx}}`
+- 我不会提供图像的Base64编码，但我会在pptData的"figures"字段手动加入完整的"base64_code"字段。因此你生成的html代码要可以通过这个字段加载图像编码，例如：
+      if (slide.figures && slide.figures.length > 0) {
+        slide.figures.forEach(fig => {
+          const img = document.createElement('img');
+          img.src = fig.base64_code
+          img.alt = fig.fig_id;
+          section.appendChild(img);
+        });
+      }
 
 【输出代码风格】
 pptData 必须是【人类可读的 JSON】格式：

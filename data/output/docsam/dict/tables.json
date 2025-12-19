@@ -28,7 +28,7 @@
       "Table 3: Performance of DocSAM after joint pre-training. "
     ],
     "content_list_index": 87,
-    "llm_description": "This table compares the performance of DocSAM-base and DocSAM-large models across four tasks—Document Layout Analysis, Ancient/Handwritten Document Segmentation, Table Structure Recognition, and Scene Text Detection—on multiple datasets, evaluating metrics including AP50, AP75, mAP, mAPb, mAF, and mIoU.",
+    "llm_description": "This table compares the performance of DocSAM-base and DocSAM-large models across four vision tasks—Document Layout Analysis, Ancient/Handwritten Document Segmentation, Table Structure Recognition, and Scene Text Detection—on multiple benchmark datasets. For each task and dataset, it reports metrics including AP50, AP75, mAP, mAP_b, mAF, and mIoU for both instance-level and semantic segmentation under each model variant.",
     "weight": 1242,
     "height": 525
   },
@@ -39,7 +39,7 @@
       "Table 4: Performance of DocSAM after dataset specific fine-tuning. "
     ],
     "content_list_index": 88,
-    "llm_description": "This table compares the performance of DocSAM-large models trained from scratch versus pretrained on various document analysis tasks (Document Layout Analysis, Document Segmentation, Table Structure Recognition, Scene Text Detection, and an unseen dataset), across multiple benchmark datasets, using metrics including AP50, AP75, mAP, mAPb, mAF, and mIoU.",
+    "llm_description": "This table compares the performance of DocSAM-large models trained from scratch versus pretrained on various document analysis tasks (Document Layout Analysis, Document Segmentation, Table Structure Recognition, Scene Text Detection) across multiple datasets, reporting metrics including AP50, AP75, mAP, mAPb, mAF, and mIoU.",
     "weight": 1244,
     "height": 584
   },
@@ -61,7 +61,7 @@
       "Table 6: Performance comparison on SCUT-CAB. "
     ],
     "content_list_index": 94,
-    "llm_description": "This table compares the performance of six object detection methods (Faster R-CNN, Mask R-CNN, SCNet, Deformable DETR, VSR, and DocSAM) across physical and logical detection tasks, measuring accuracy via mAP, AP50, and AP75 for both object and instance levels. SCNet achieves the highest overall performance with 0.813 mAP on physical object detection, while Deformable DETR leads in logical instance detection with 0.851 mAP.",
+    "llm_description": "This table compares object and instance detection performance (measured by mAP, AP50, AP75) across six methods—Faster R-CNN, Mask R-CNN, SCNet, Deformable DETR, VSR, and DocSAM—under both physical and logical settings, revealing SCNet’s strong overall performance and DocSAM’s notable gains in logical instance detection.",
     "weight": 1008,
     "height": 231
   },
@@ -72,8 +72,8 @@
       "Table 7: Performance comparison on CTW1500 and Total-Text. "
     ],
     "content_list_index": 95,
-    "llm_description": "This table compares the performance of eight text detection methods on two datasets — CTW1500 and Total-Text — using Precision (P), Recall (R), and F1-score (F) metrics. HierText [47] achieves the highest overall performance with an F1-score of 0.905 on Total-Text, while DAT-SEG [80] shows strong results on CTW1500 with F1=0.917. Methods like SIR [106] and DPText-DETR [107] perform well across both datasets, whereas DocSAM yields the lowest scores overall.",
-    "weight": 592,
+    "llm_description": "This table compares the performance of eight text detection methods on two benchmarks—CTW1500 and Total-Text—using precision (P), recall (R), and F1-score (F) metrics. HierText [47] achieves the highest overall score (0.905 F1 on Total-Text), while DAT-SEG [80] shows strong balanced performance across both datasets, particularly excelling on CTW1500 with a 0.917 F1 score.",
+    "weight": 589,
     "height": 253
   },
   {
@@ -94,7 +94,7 @@
       "Table 9: Performance of DocSAM on heterogeneous datasets and tasks. "
     ],
     "content_list_index": 138,
-    "llm_description": "This table presents comprehensive performance metrics (AP50, AP75, mAP, mAP_b, mAF, mIoU) for three text detection tasks — DLA, AHDS, and TSR — across 23 datasets, alongside results for the STD task on 13 datasets. Each row corresponds to a dataset with its reference citation, and columns show instance-level and semantic segmentation accuracy measures, enabling direct comparison of model efficacy across diverse text-rich scenes including documents, tables, and natural images.",
+    "llm_description": "This table presents performance metrics (AP50, AP75, mAP, mAP_b, mAF, mIoU) for three table recognition tasks—DLA, AHDS, and TSR—across multiple datasets. It compares results on left-side datasets (e.g., BaDLAD, CASIA-AHCDB-style1) with right-side datasets (e.g., CDLA, CASIA-AHCDB-style2), showing that performance varies significantly by task and dataset, with some datasets achieving notably higher scores than others in each metric category.",
     "weight": 1280,
     "height": 756
   }

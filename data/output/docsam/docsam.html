@@ -1,4 +1,116 @@
-{
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOCSAM: UNIFIED DOCUMENT IMAGE SEGMENTATION VIA QUERY DECOMPOSITION AND HETEROGENEOUS MIXED LEARNING</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .viewport {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slides-container {
+      display: flex;
+      height: 100vh;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      scroll-behavior: smooth;
+    }
+
+    .slide h1 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    .slide p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      max-width: 900px;
+    }
+
+    .slide img {
+      max-width: 90%;
+      max-height: 70vh;
+      margin-top: 20px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .nav-btn {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .nav-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="viewport">
+    <div class="slides-container" id="slidesContainer"></div>
+    <div class="nav-buttons">
+      <button class="nav-btn" id="prevBtn">&lt;</button>
+      <button class="nav-btn" id="nextBtn">&gt;</button>
+    </div>
+  </div>
+
+  <script>
+    const pptData = {
   "slides": [
     {
       "id": "slide_01",
@@ -139,4 +251,85 @@
       "figures": []
     }
   ]
-}
+};
+
+    // 初始化
+    const slidesContainer = document.getElementById('slidesContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let currentIndex = 0;
+    const slideCount = pptData.slides.length;
+
+    // 动态设置 slides 容器宽度
+    slidesContainer.style.width = `${slideCount * 100}vw`;
+
+    // 创建幻灯片
+    pptData.slides.forEach((slide) => {
+      const section = document.createElement('section');
+      section.className = 'slide';
+
+      const titleEl = document.createElement('h1');
+      titleEl.textContent = slide.title;
+      section.appendChild(titleEl);
+
+      const contentEl = document.createElement('p');
+      contentEl.textContent = slide.content;
+      section.appendChild(contentEl);
+
+      // 添加 figures
+      if (slide.figures && slide.figures.length > 0) {
+        slide.figures.forEach(fig => {
+          const img = document.createElement('img');
+          img.src = fig.base64_code || ''; // 若无 base64_code 则留空（占位）
+          img.alt = fig.fig_id;
+          section.appendChild(img);
+        });
+      }
+
+      // 添加 tables（以图片形式）
+      if (slide.tables && slide.tables.length > 0) {
+        slide.tables.forEach(table => {
+          const img = document.createElement('img');
+          img.src = table.base64_code || '';
+          img.alt = table.table_id;
+          section.appendChild(img);
+        });
+      }
+
+      slidesContainer.appendChild(section);
+    });
+
+    // 更新幻灯片位置
+    function updateSlidePosition() {
+      slidesContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === slideCount - 1;
+    }
+
+    // 翻页函数
+    function goToSlide(index) {
+      if (index >= 0 && index < slideCount) {
+        currentIndex = index;
+        updateSlidePosition();
+      }
+    }
+
+    // 绑定按钮事件
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // 键盘事件
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        goToSlide(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        goToSlide(currentIndex + 1);
+      }
+    });
+
+    // 初始化显示第一页
+    updateSlidePosition();
+  </script>
+</body>
+</html>
