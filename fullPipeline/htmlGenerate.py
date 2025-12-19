@@ -60,7 +60,40 @@ def add_base64_code(pptData:str,id_to_code_map):
             base64_code=id_to_code_map[figure_id]
             figure["base64_code"]=base64_code
     save_json(pptData,'./codeTest.json')
-    
+    return pptData
+
+def replace_pptData_block(html_code: str, new_pptData: dict) -> str:
+    """
+    用 new_pptData 重新生成美化后的 JSON，替换原 HTML 中的 pptData 区块。
+    返回完整的新 HTML 字符串。
+    """
+    # 1. 美化序列化（ensure_ascii=False 保证中文不转义）
+    new_json_str = json.dumps(new_pptData, ensure_ascii=False, indent=2)
+
+    # 2. 正则定位原区块
+    pattern = re.compile(r'(const\s+pptData\s*=\s*)(\{.*?\})\s*;', re.S)
+    match = pattern.search(html_code)
+    if not match:
+        raise RuntimeError('找不到 pptData 区块，无法替换')
+
+    # 3. 拼接新内容（保留原来的 const pptData =  和  分号）
+    replaced_html = (
+        html_code[:match.start(1)]        # const pptData = 之前的部分
+        + match.group(1)                  # "const pptData = " 本身
+        + new_json_str                    # 新的 JSON 美化串
+        + ';'                             # 原来的分号
+        + html_code[match.end():]         # 分号之后的所有 HTML
+    )
+    return replaced_html
+
+def htmlCodeWithbase64(prompt:str,output_path,file_name):
+    htmlCode=htmlCodeGenerate(prompt)
+    pptData=find_block(htmlCode)
+    id_map=generate_id_to_basecode(output_path,file_name)
+    pptDataWithCode=add_base64_code(pptData,id_map)
+    html_codeWithbase64=replace_pptData_block(htmlCode,pptDataWithCode)
+    return html_codeWithbase64
+
 
 if __name__=="__main__":
     """
@@ -70,8 +103,15 @@ if __name__=="__main__":
     html_code=htmlCodeGenerate(prompt)
     save_html('../data/output/docsam/final.html',html_code)
     """
+    """
     html_code=load_html('../data/output/docsam/final.html')
     pptData=find_block(html_code)
     map_a=generate_id_to_basecode('../data/output','docsam')
     save_json(map_a,'./test.json')
     add_base64_code(pptData,map_a)
+    """
+    content_plan=load_json('../data/output/docsam/docsam_content_plan.json')
+    prompt_template=Template(open('./prompts/htmlGenerate.txt').read())
+    prompt=prompt_template.render(contentplan=content_plan)
+    htmlcode=htmlCodeWithbase64(prompt,'../data/output','docsam')
+    save_html('./finalHtml.html',htmlcode)
