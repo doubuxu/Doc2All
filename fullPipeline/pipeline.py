@@ -41,8 +41,8 @@ def ppt_generate(input_path,output_path):
     images_dict=load_json(image_dict_path)
     table_dict=load_json(table_dict_path)
     content_plan_prompt=content_plan_prompt_template.render(document=markdown_content,images=images_dict,tables=table_dict)
-    content_plan_json=Path(output_path)/file_name/f"{file_name}_content_plan.json"
-    contentPlan=content_plan(content_plan_prompt,content_plan_json)
+    content_plan_json_path=Path(output_path)/file_name/f"{file_name}_content_plan.json"
+    contentPlan=content_plan(content_plan_prompt,content_plan_json_path)
 
     #generate�׶�
     html_generate_prompt_template=Template(open('prompts/htmlGenerate.txt').read())
