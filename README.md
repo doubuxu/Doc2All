@@ -8,6 +8,14 @@
 
 ![alt text](baseline1.svg)
 
+## baseline2模型
+
+**在baseline1的基础上为contentPlan加上了check**
+
+check提示词效果不好
+
+![alt text](baseline2.svg)
+
 ## 创新方向
 
 * 通用文档的解析
