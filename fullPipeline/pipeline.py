@@ -23,7 +23,7 @@ def args_analyse():
     return args
 
 
-def ppt_generate(input_path,output_path):
+def ppt_generate(input_path,output_path):#baselineModel1
     input_path=Path(arg.doc_path).resolve()
     output_path=Path(arg.output).resolve()
     file_name=input_path.stem

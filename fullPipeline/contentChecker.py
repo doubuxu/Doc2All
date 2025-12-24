@@ -7,7 +7,7 @@ from utils.JsonTools import extract_llm_json,load_json,save_json
 #输入应该是md文件和plan
 
 
-def ContentCheck(content_plan,raw_content_path,max_try):
+def ContentCheck_test(content_plan,raw_content_path,max_try):
     content_plan_check_prompt_template=Template(open('./prompts/contentPlanCheck.txt').read())
     raw_content=Path(raw_content_path).read_text(encoding='utf-8')
     content_plan_check_prompt=content_plan_check_prompt_template.render(contentPlan=content_plan,docContent=raw_content)
@@ -34,10 +34,28 @@ def ContentCheck(content_plan,raw_content_path,max_try):
         print(json_data["improvementSuggestions"])
         break
 
+def content_check(prompt,save_path):
+    client = OpenAI(
+        api_key="sk-606d0363b5b84ae49603caa5a32e04ed",
+        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"   # 若用中转/本地，可改
+    )
+
+        #test=Template(open('prompts/paper_content_plan.txt').read())
+    response = client.chat.completions.create(
+            model="qwen3-max",
+            messages=[{"role": "user", "content": prompt}],
+            stream=False,
+            extra_body={"enable_thinking": False}
+        )
+    json_data=extract_llm_json(response.choices[0].message.content)
+    save_json(json_data,save_path)
+    return json_data
+        
+
 if __name__=="__main__":
     content_plan=load_json('../data/output/docsam/docsam_content_plan.json')
     #doc_content=Path('../data/output/docsam/docsam.md').read_text(encoding='utf-8')
     doc_path='../data/output/docsam/docsam.md'
-    ContentCheck(content_plan,doc_path,1)
+    ContentCheck_test(content_plan,doc_path,1)
 
 
