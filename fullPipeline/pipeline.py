@@ -7,7 +7,7 @@ from contentPlan import content_plan
 from jinja2 import Environment
 from jinja2 import Template
 import json
-from generateCaption import getCaption,postProcessImages
+from Document2All.fullPipeline.visualsProcess import getCaption,postProcessImages
 from utils.JsonTools import load_json,save_json
 from htmlGenerate import htmlCodeWithbase64
 from utils.htmlTools import load_html,save_html

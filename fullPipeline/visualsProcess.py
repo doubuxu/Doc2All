@@ -76,6 +76,29 @@ def postProcessImages(output_path,file_name):#输入路径和文件名，为图�
         table["height"]=h
     save_json(table_dict,table_dict_path)
 
+def insertDictInMD(output_dir,file_name):
+    md_path=Path(output_dir)/file_name/f'{file_name}.md'
+    image_dict_path=Path(output_dir)/file_name/"dict"/"images.json"
+    table_dict_path=Path(output_dir)/file_name/"dict"/"tables.json"
+    md_content=Path(md_path).read_text(encoding='utf-8')
+    images_dict=load_json(image_dict_path)
+    tables_dict=load_json(table_dict_path)
+
+    for index,img in enumerate(images_dict):
+        img_path=img["img_path"]
+        img_path=img_path[1:-1]
+        #在md_content中找到img_path对应的位置，插入描述
+        md_content=md_content.replace(img_path,img)
+
+    for index,table in enumerate(tables_dict):
+        table_body=table["table_body"]
+        table_body=table_body[1:-1]
+        #在dict中table是一行，在md中是多行，要考虑换行符对字符串匹配的影响
+        md_content=md_content.replace(table_body,table)
+
+    with open(md_path,'w',encoding='utf-8') as f:
+        f.write(md_content)  
+    
 
 if __name__=="__main__":
     postProcessImages("../data/output_general","docsam")

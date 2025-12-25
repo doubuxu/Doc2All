@@ -126,7 +126,7 @@ def do_parse(
                             "path":entity["img_path"],
                             "caption":entity["table_caption"],
                             "content_list_index":index,
-                            #"table_body":entity["table_body"]
+                            "table_body":entity["table_body"]
                         }
                         tables_name.append(Path(entity["img_path"]).name)
                         tables_list.append(table_info)
