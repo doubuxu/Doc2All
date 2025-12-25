@@ -91,7 +91,7 @@ def content_plan(prompt,path):
     #test=Template(open('prompts/paper_content_plan.txt').read())
 
     response = client.chat.completions.create(
-        model="qwen3-max",
+        model="qwen-plus-2025-12-01",
         messages=[{"role": "user", "content": prompt}],
         stream=False,
         extra_body={"enable_thinking": False}
@@ -100,6 +100,7 @@ def content_plan(prompt,path):
     #print(response.choices[0].message.content)
     save_json(json_data,path)
     return json_data
+
 
 def content_replan(prompt,save_path):
     client = OpenAI(
@@ -110,7 +111,7 @@ def content_replan(prompt,save_path):
     #test=Template(open('prompts/paper_content_plan.txt').read())
 
     response = client.chat.completions.create(
-        model="qwen3-max",
+        model="qwen-plus-2025-12-01",
         messages=[{"role": "user", "content": prompt}],
         stream=False,
         extra_body={"enable_thinking": False}
