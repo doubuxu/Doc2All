@@ -18,7 +18,7 @@ from mineru.backend.pipeline.pipeline_middle_json_mkcontent import union_make as
 from mineru.backend.pipeline.model_json_to_middle_json import result_to_middle_json as pipeline_result_to_middle_json
 from mineru.backend.vlm.vlm_middle_json_mkcontent import union_make as vlm_union_make
 from mineru.utils.guess_suffix_or_lang import guess_suffix_by_path
-
+from visualsProcess import postProcessImages,insertDictInMD
 
 def do_parse(
     output_dir:str,  # Output directory for storing parsing results
@@ -91,7 +91,7 @@ def do_parse(
                 f"{pdf_file_name}.md",
                 md_content_str,
             )
-            print(f"md_content_str:{md_content_str}")
+            #print(f"md_content_str:{md_content_str}")
 
             
             #准备写入content_list内容
@@ -151,40 +151,44 @@ def do_parse(
             os.makedirs(equations_dir,exist_ok=True)
             for file in Path(local_image_dir).iterdir():
                 #file是包含完整路径的
+                file=file.resolve()
                 name=Path(file).name
-                print(f"name:{name}")
+                #print(f"path:{file}")
                 #print("name")
                 #print(name)
                 if name in images_name:
                     index=images_name.index(name)
                     new_name=images_list[index]["fig_id"]+".jpg"
-                    print(f"new_name:{new_name}")
+                    
                     dst=images_dir/new_name
+                    #print(f"new_path:{dst}")
                     shutil.move(str(file),str(dst))
                     images_list[index]["path"]=str(dst)
                     content_list_index=images_list[index]["content_list_index"]
                     content_list[content_list_index]["img_path"]=str(dst)#替换content_list中的图片路径
-                    md_content_str=md_content_str.replace(name,new_name)
+                    md_content_str=md_content_str.replace(str(file),str(dst))
                 elif name in tables_name:
                     index=tables_name.index(name)
                     new_name=tables_list[index]["table_id"]+".jpg"
-                    print(f"new_name:{new_name}")
+                    
                     dst=tables_dir/new_name
+                    #print(f"new_path:{dst}")
                     shutil.move(str(file),str(dst))
                     tables_list[index]["path"]=str(dst)
                     content_list_index=tables_list[index]["content_list_index"]
                     content_list[content_list_index]["img_path"]=str(dst)
-                    md_content_str=md_content_str.replace(name,new_name)
+                    md_content_str=md_content_str.replace(str(file),str(dst))
                 elif name in eqs_name:
                     index=eqs_name.index(name)
                     new_name=equations_list[index]["equations_id"]+".jpg"
-                    print(f"new_name:{new_name}")
+                    
                     dst=equations_dir/new_name
+                    #print(f"new_path:{dst}")
                     shutil.move(str(file),str(dst))
                     equations_list[index]["path"]=str(dst)
                     content_list_index=equations_list[index]["content_list_index"]
                     content_list[content_list_index]["img_path"]=str(dst)
-                    md_content_str=md_content_str.replace(name,new_name)
+                    md_content_str=md_content_str.replace(str(file),str(dst))
 
             dict_path=Path(local_md_dir)/"dict"
             os.makedirs(dict_path, exist_ok=True)
@@ -200,6 +204,10 @@ def do_parse(
                 f"{pdf_file_name}_content_list.json",
                 json.dumps(content_list, ensure_ascii=False, indent=4),
             )  
+            md_writer.write_string(
+                f"{pdf_file_name}.md",
+                md_content_str,
+            )
             '''
             _process_output(
                 pdf_info, pdf_bytes, pdf_file_name, local_md_dir, local_image_dir,
@@ -362,7 +370,7 @@ if __name__ == '__main__':
     pdf_path="../data/pdfs/docsam.pdf"
     output_dir="../data/output2"
     parse_doc(pdf_path, output_dir, backend="pipeline")
-
+    insertDictInMD(output_dir,"docsam")
     """To enable VLM mode, change the backend to 'vlm-xxx'"""
     # parse_doc(doc_path_list, output_dir, backend="vlm-transformers")  # more general.
     # parse_doc(doc_path_list, output_dir, backend="vlm-mlx-engine")  # faster than transformers in macOS 13.5+.

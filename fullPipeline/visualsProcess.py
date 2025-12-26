@@ -3,6 +3,7 @@ from pathlib import Path
 from openai import OpenAI
 from PIL import Image
 from utils.JsonTools import save_json,load_json
+import json
 def getCaption(image_path:str,object:str):
     client=OpenAI(
         api_key="sk-606d0363b5b84ae49603caa5a32e04ed",
@@ -85,16 +86,18 @@ def insertDictInMD(output_dir,file_name):
     tables_dict=load_json(table_dict_path)
 
     for index,img in enumerate(images_dict):
-        img_path=img["img_path"]
-        img_path=img_path[1:-1]
+        img_path=img["path"]
+        #img_path=img_path[1:-1]
         #在md_content中找到img_path对应的位置，插入描述
-        md_content=md_content.replace(img_path,img)
+        img_str = json.dumps(img, ensure_ascii=False, indent=2)
+        md_content=md_content.replace(img_path,img_str)
 
     for index,table in enumerate(tables_dict):
         table_body=table["table_body"]
-        table_body=table_body[1:-1]
+        #table_body=table_body[1:-1]
+        table_str = json.dumps(table, ensure_ascii=False, indent=2)
         #在dict中table是一行，在md中是多行，要考虑换行符对字符串匹配的影响
-        md_content=md_content.replace(table_body,table)
+        md_content=md_content.replace(table_body,table_str)
 
     with open(md_path,'w',encoding='utf-8') as f:
         f.write(md_content)  
