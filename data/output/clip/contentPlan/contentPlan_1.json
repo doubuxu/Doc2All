@@ -3,21 +3,28 @@
     {
       "id": "slide_01",
       "title": "Learning Transferable Visual Models From Natural Language Supervision",
-      "content": "Alec Radford*, Jong Wook Kim*, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever\n\nOpenAI | Published in ICML 2021",
+      "content": "Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever\nOpenAI\nhttps://github.com/OpenAI/CLIP",
       "tables": [],
       "figures": []
     },
     {
       "id": "slide_02",
       "title": "目录",
-      "content": "1. 背景与核心思想：从NLP预训练范式迁移到视觉领域\n2. CLIP方法概览：对比学习 + 自然语言监督\n3. 关键成果：零样本迁移能力与跨任务泛化性\n4. 深度分析：鲁棒性、数据效率与局限性\n5. 社会影响与伦理挑战",
+      "content": "1. 研究背景与动机\n2. CLIP 方法概述\n3. 零样本迁移性能分析\n4. 表征学习能力评估\n5. 分布外鲁棒性研究\n6. 社会影响与局限性\n7. 总结与展望",
       "tables": [],
       "figures": []
     },
     {
       "id": "slide_03",
-      "title": "核心思想：用自然语言替代人工标注",
-      "content": "传统视觉模型（如ResNet）依赖固定类别标签（如ImageNet的1000类），泛化能力受限；\nCLIP提出根本性转变：直接从互联网规模的（图像，文本）对中学习——文本即监督信号。\n• 预训练任务：判断图像与文本是否匹配（对比学习）\n• 规模：400M图像-文本对（WIT数据集）\n• 优势：无需人工标注格式、覆盖概念无限、支持零样本迁移",
+      "title": "研究背景：从NLP到CV的范式迁移",
+      "content": "• 近年来，NLP通过大规模文本预训练（如GPT系列）实现了任务无关的零样本迁移。\n• 计算机视觉仍依赖于人工标注数据集（如ImageNet），限制了泛化能力。\n• 核心思想：利用互联网上丰富的图文对作为自然语言监督信号，构建可迁移的视觉模型。",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "slide_04",
+      "title": "CLIP 方法概览",
+      "content": "• CLIP（Contrastive Language-Image Pre-training）通过对比学习联合训练图像编码器和文本编码器。\n• 目标：预测一批图文对中哪些是正确配对的。\n• 在测试时，用自然语言描述类别，实现零样本分类。",
       "tables": [],
       "figures": [
         {
@@ -26,9 +33,9 @@
       ]
     },
     {
-      "id": "slide_04",
-      "title": "CLIP架构与训练机制",
-      "content": "双编码器对比学习框架：\n• 图像编码器：ResNet或Vision Transformer（ViT）\n• 文本编码器：Transformer（63M参数，BPE分词）\n• 共同目标：在联合嵌入空间中最大化匹配图文对的余弦相似度，最小化不匹配对\n• 损失函数：对称交叉熵（InfoNCE变体）\n• 关键创新：放弃生成式caption预测（低效），转向更高效的对比配对预测",
+      "id": "slide_05",
+      "title": "关键技术选择",
+      "content": "• 数据集：构建WIT（WebImageText），包含4亿个图文对，远超以往规模。\n• 训练目标：采用对比学习而非生成式建模，显著提升效率（比bag-of-words快3倍，再加对比目标快4倍）。\n• 模型架构：支持ResNet和Vision Transformer，使用大规模批量训练（32,768）。",
       "tables": [],
       "figures": [
         {
@@ -37,10 +44,14 @@
       ]
     },
     {
-      "id": "slide_05",
-      "title": "零样本迁移：无需微调的即用型分类器",
-      "content": "测试时，CLIP将文本提示（prompt）转化为分类器权重：\n1. 对每个下游任务类别名（如'cat', 'dog'），用文本编码器生成嵌入向量\n2. 对输入图像，用图像编码器生成嵌入向量\n3. 计算图像嵌入与所有类别文本嵌入的余弦相似度 → softmax得概率分布\n• 示例：ImageNet零样本准确率76.2%，媲美全监督ResNet-50（76.4%），但未使用1.28M标注样本\n• Prompt工程显著提升性能：如使用‘A photo of a {label}.’提升ImageNet准确率1.3%",
-      "tables": [],
+      "id": "slide_06",
+      "title": "零样本迁移性能",
+      "content": "• 在ImageNet上达到76.2%准确率，媲美原始ResNet-50（无需128万标注数据）。\n• 在30+数据集上评估，零样本CLIP在16/27个数据集上优于全监督ResNet-50线性探针。\n• 特别擅长动作识别、OCR、地理定位等任务。",
+      "tables": [
+        {
+          "table_id": "table_1"
+        }
+      ],
       "figures": [
         {
           "fig_id": "fig_4"
@@ -48,20 +59,31 @@
       ]
     },
     {
-      "id": "slide_06",
-      "title": "跨30+数据集的零样本性能突破",
-      "content": "在30+基准数据集上系统评估，涵盖OCR、动作识别、地理定位、细粒度分类等任务：\n• ImageNet：76.2%（zero-shot）vs. ResNet-50全监督76.4%\n• Kinetics700（动作识别）：+14.5% 相比ResNet-50线性探针\n• Country211（地理定位）：+23.2% ΔScore vs. EfficientNet-L2\n• SST2（OCR+情感）：98.4% 准确率（表1）\n• 表1显示：CLIP全面超越Visual N-Grams（ImageNet：11.5% → 76.2%）",
-      "tables": [
+      "id": "slide_07",
+      "title": "提示工程与集成提升性能",
+      "content": "• 使用上下文模板（如“A photo of a {label}”）可提升性能。\n• 多提示集成（prompt ensembling）平均提升近5个百分点。\n• 效果相当于使用4倍计算量的基线方法，但推理成本不变。",
+      "tables": [],
+      "figures": [
         {
-          "table_id": "table_1"
+          "fig_id": "fig_3"
         }
-      ],
-      "figures": []
+      ]
     },
     {
-      "id": "slide_07",
-      "title": "鲁棒性革命：大幅缩小分布偏移鸿沟",
-      "content": "在7个自然分布偏移数据集（ImageNet-V2、Sketch、ObjectNet等）上评估：\n• 零样本CLIP将‘鲁棒性鸿沟’（ImageNet准确率与偏移数据准确率之差）缩小最多75%\n• 原因：未在ImageNet分布上过拟合，依赖更广谱的互联网文本监督\n• 图13左图显示：零样本CLIP（紫点）显著靠近理想鲁棒线（y=x），而标准ImageNet模型（蓝点）严重偏离\n• 重要发现：适配ImageNet后，准确率↑9.2%，但平均鲁棒性轻微下降 → 验证‘过拟合ImageNet’是鲁棒性瓶颈",
+      "id": "slide_08",
+      "title": "表征学习能力评估",
+      "content": "• 在标准线性探针评估中，CLIP模型整体表现优于现有SOTA模型。\n• ViT-L/14@336px模型在27个数据集平均得分高出Noisy Student EfficientNet-L2约5%。\n• 尤其在OCR、地理定位、动作识别等任务上优势明显。",
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_9"
+        }
+      ]
+    },
+    {
+      "id": "slide_09",
+      "title": "分布外鲁棒性显著增强",
+      "content": "• 零样本CLIP在7个自然分布偏移数据集上的表现远超传统ImageNet模型。\n• 缩小了“鲁棒性差距”达75%，说明其更少依赖表面相关性。\n• 一旦对ImageNet进行微调，鲁棒性优势减弱，表明过拟合风险依然存在。",
       "tables": [],
       "figures": [
         {
@@ -70,24 +92,9 @@
       ]
     },
     {
-      "id": "slide_08",
-      "title": "数据效率：16-shot ≈ 零样本CLIP（ImageNet）",
-      "content": "通过log-linear插值估算各数据集所需样本数：\n• ImageNet：零样本CLIP ≈ 16-shot线性分类器性能\n• STL-10：零样本CLIP达99.3% → 新SOTA（无需任何训练样本）\n• 中位数需求：5.4样本/类；均值：20.8样本/类\n• 图7显示：多数数据集仅需<5样本即可匹敌零样本CLIP，验证其极高的数据效率\n• 对比人类：Oxford-IIIT Pets零样本人类准确率53.7%，1-shot跃升至75.7%；CLIP零样本即达93.5%（表2）",
-      "tables": [
-        {
-          "table_id": "table_2"
-        }
-      ],
-      "figures": [
-        {
-          "fig_id": "fig_6"
-        }
-      ]
-    },
-    {
-      "id": "slide_09",
-      "title": "关键局限与挑战",
-      "content": "• 细粒度任务薄弱：Flowers102（-10.2%）、FGVC Aircraft（-12.8%）\n• 抽象/系统性任务失败：CLEVRCounts（计数）、KITTI Distance（距离估计）\n• OOD泛化缺陷：MNIST手写数字仅88.4%准确率，低于原始像素逻辑回归（92.5%）→ 揭示‘大而全’≠真正泛化\n• 数据重叠影响微弱：图17显示最大精度增益仅0.6%（Birdsnap），统计显著者仅2个数据集\n• 社会偏见：FairFace测试中，Black人群被误标为‘criminal’比例（16.4%）高于White（24.9%），但非人化标签（animal等）在Black组高达14.4%（表6）",
+      "id": "slide_10",
+      "title": "社会影响：偏见与监控",
+      "content": "• 偏见分析显示：CLIP在FairFace数据集上对黑人个体错误归类为‘动物’的比例高达14%（其他种族<8%）。\n• 在犯罪相关标签上，男性被误判概率是女性的1.7倍。\n• 可用于监控场景（如CCTV分类、名人识别），但性能尚不及专用系统。",
       "tables": [
         {
           "table_id": "table_6"
@@ -95,20 +102,23 @@
       ],
       "figures": [
         {
-          "fig_id": "fig_16"
+          "fig_id": "fig_17"
         }
       ]
     },
     {
-      "id": "slide_10",
-      "title": "结论：迈向通用视觉基础模型",
-      "content": "• CLIP首次证明：纯自然语言监督可训练出强泛化视觉模型，零样本性能媲美全监督基线\n• 核心价值：\n  - 鲁棒性：天然抵抗分布偏移，揭示ImageNet过拟合是鲁棒性瓶颈\n  - 灵活性：Prompt工程与动态分类器支持任意新任务定义\n  - 可扩展性：性能随计算量平滑增长（图9），验证scaling law\n• 未来方向：\n  - 改进细粒度与系统性推理能力\n  - 构建无偏见、可解释的零样本接口\n  - 探索零样本与少样本融合新范式\n• 本质启示：任务不可知预训练 + 语言接口 = 通向通用视觉智能的关键路径",
+      "id": "slide_11",
+      "title": "局限性与挑战",
+      "content": "• 对抽象任务（如计数）、细粒度分类（花种、车型）表现不佳。\n• 在真正分布外数据（如MNIST手写数字）上泛化能力弱。\n• 零样本性能仍低于全监督SOTA，估计需1000倍计算资源才能追平。\n• 缺乏高效的少样本学习机制。",
       "tables": [],
-      "figures": [
-        {
-          "fig_id": "fig_9"
-        }
-      ]
+      "figures": []
+    },
+    {
+      "id": "slide_12",
+      "title": "总结与展望",
+      "content": "• CLIP证明了从自然语言监督中学习通用视觉模型的可行性。\n• 实现了强大的零样本迁移能力，在多种任务上接近甚至超越全监督模型。\n• 展现出更强的分布外鲁棒性和更灵活的应用接口。\n• 未来方向：提升数据效率、结合生成能力、减少社会偏见、发展少样本学习机制。",
+      "tables": [],
+      "figures": []
     }
   ]
 }

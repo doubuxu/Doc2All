@@ -28,7 +28,7 @@
       "Figure 4. Prompt engineering and ensembling improve zeroshot performance. Compared to the baseline of using contextless class names, prompt engineering and ensembling boost zero-shot classification performance by almost 5 points on average across 36 datasets. This improvement is similar to the gain from using 4 times more compute with the baseline zero-shot method but is “free” when amortized over many predictions. "
     ],
     "content_list_index": 77,
-    "llm_description": "A line graph comparing model efficiency and performance: green line (prompt engineering + ensembling) shows higher average scores with significantly greater GFLOPs than the blue line (contextless class names), highlighting a 4x efficiency gain and 5-point score improvement for the larger RN50x64 model.",
+    "llm_description": "A line graph comparing model efficiency and performance: green line (prompt engineering + ensembling) shows higher average scores (up to 69%) with significantly higher GFLOPs (up to 265.9), while the blue line (contextless class names) achieves lower scores (~60%) at lower GFLOPs (~75.3). Key annotations highlight a \"4X efficiency gain\" for the green method over the blue at intermediate points, and a \"5 point improvement\" for the green method at its highest point.",
     "weight": 653,
     "height": 633
   },
@@ -39,7 +39,7 @@
       "Figure 5. Zero-shot CLIP is competitive with a fully supervised baseline. Across a 27 dataset eval suite, a zero-shot CLIP classifier outperforms a fully supervised linear classifier fitted on ResNet-50 features on 16 datasets, including ImageNet. "
     ],
     "content_list_index": 89,
-    "llm_description": "Bar chart comparing zero-shot CLIP and linear probe performance on ResNet50 across 20 datasets, showing Δ Score (%)—green bars indicate positive gains for datasets like StanfordCars (+28.9%) and Country211 (+23.2%), while blue bars show negative impacts for datasets like EuroSAT (-37.1%) and KITTI Distance (-34.0%).",
+    "llm_description": "Bar chart comparing Zero-Shot CLIP and Linear Probe performance on ResNet50 across 23 datasets, showing Δ Score (%) — green bars indicate positive gains for datasets like StanfordCars (+28.9%) and Country211 (+23.2%), while blue bars show negative performance drops for datasets like EuroSAT (-37.1%) and KITTI Distance (-34.0%).",
     "weight": 648,
     "height": 730
   },
@@ -127,7 +127,7 @@
       "Figure 13. Zero-shot CLIP is much more robust to distribution shift than standard ImageNet models. (Left) An ideal robust model (dashed line) performs equally well on the ImageNet distribution and on other natural image distributions. Zero-shot CLIP models shrink this “robustness gap” by up to $7 5 \\%$ . Linear fits on logit transformed values are shown with bootstrap estimated $9 5 \\%$ confidence intervals. (Right) Visualizing distribution shift for bananas, a class shared across 5 of the 7 natural distribution shift datasets. The performance of the best zero-shot CLIP model, ViT-L $/ 1 4 @ 3 3 6 \\mathrm { p x }$ , is compared with a model that has the same performance on the ImageNet validation set, ResNet-101. "
     ],
     "content_list_index": 148,
-    "llm_description": "This chart compares the robustness of different image classification models across seven natural distribution shift datasets. The ideal robust model (y=x, dashed line) shows perfect correlation between accuracy on standard ImageNet and shifted datasets. Zero-Shot CLIP (purple dots) significantly outperforms Standard ImageNet training (blue dots) and existing techniques (grey dots), especially on challenging shifts like ImageNet-R (+51.2%) and ImageNet-A (+74.4%), as demonstrated by the dataset examples showing increasingly distorted banana images.",
+    "llm_description": "This chart compares the robustness of different image classification models across seven natural distribution shift datasets. The \"Ideal robust model\" (dashed line) shows perfect correlation between accuracy on standard ImageNet and shifted datasets. Zero-Shot CLIP (purple dots) significantly outperforms standard training (blue dots) and existing techniques (gray dots), especially under severe shifts like ImageNet-A (where it achieves 77.1% vs 2.7%). The right side displays dataset examples and performance scores, illustrating that Zero-Shot CLIP maintains high accuracy even when images are highly distorted or artistically rendered.",
     "weight": 1317,
     "height": 512
   },
@@ -160,7 +160,7 @@
       "Figure 16. The hardest problems for CLIP also tend to be the hardest problems for humans. Here we rank image categories by difficulty for CLIP as measured as probability of the correct label. "
     ],
     "content_list_index": 181,
-    "llm_description": "This line chart compares the accuracy (%) of three methods—Zero-Shot CLIP (blue), One-Shot Human (orange), and Zero-Shot Human (green)—across 25 dog breeds. Zero-Shot CLIP consistently outperforms the others, maintaining high accuracy above 80% for most breeds. One-Shot Human accuracy is generally higher than Zero-Shot Human but more volatile. Zero-Shot Human accuracy is lowest and shows the most fluctuation, often dipping below 40%. The performance gap between Zero-Shot CLIP and the human-based methods is largest for breeds like the English Cocker Spaniel and Ragdoll.",
+    "llm_description": "This line chart compares the accuracy (%) of three methods—Zero-Shot CLIP (blue), One-Shot Human (orange), and Zero-Shot Human (green)—across 25 dog breeds. Zero-Shot CLIP consistently outperforms the others, maintaining high accuracy (>80%) for most breeds. One-Shot Human accuracy fluctuates but remains above 60% for most breeds. Zero-Shot Human accuracy is generally lower and more volatile, dropping below 40% for several breeds like the English Cocker Spaniel and Ragdoll.",
     "weight": 636,
     "height": 600
   },
@@ -171,7 +171,7 @@
       "Figure 17. Few statistically significant improvements in accuracy due to detected data overlap. (Left) While several datasets have up to $\\pm 2 0 \\%$ apparent differences in zero-shot accuracy on detected overlapping vs clean examples only 5 datasets out of 35 total have $9 9 . 5 \\%$ Clopper-Pearson confidence intervals that exclude a $0 \\%$ accuracy difference. 2 of these datasets do worse on overlapping data. (Right) Since the percentage of detected overlapping examples is almost always in the single digits, the overall test accuracy gain due to overlap is much smaller with the largest estimated increase being only $0 . 6 \\%$ on Birdsnap. Similarly, for only 6 datasets are the accuracy improvements statistically significant when calculated using a one-sided binomial test. "
     ],
     "content_list_index": 194,
-    "llm_description": "Two scatter plots analyze how detected data overlap (%) affects model accuracy across datasets: left plot shows absolute accuracy difference (with error bars), revealing CIFAR-100 and SUN397 benefit from overlap while Kinetics-700 suffers; right plot shows overall accuracy change due to overlap, with color-coded significance levels (p < 1e-3, p < 0.05, p > 0.05) indicating statistical impact on datasets like CIFAR-100, Birdsnap, and Country211.",
+    "llm_description": "Two scatter plots analyze how detected data overlap (%) affects model accuracy: the left plot shows mean accuracy difference (with error bars) across datasets, revealing negative impacts for Kinetics-700 and ImageNet Sketch; the right plot correlates overlap with overall accuracy change, color-coded by statistical significance (p-values), indicating most datasets show negligible or negative effects except CIFAR-100 and Birdsnap.",
     "weight": 1350,
     "height": 473
   },
@@ -182,7 +182,7 @@
       "Figure 18. CLIP performance on Member of Congress images when given the combined returned label set for the images from Google Cloud Vision, Amazon Rekognition and Microsoft Azure Computer Vision. The 20 most gendered labels for men and women were identified with $\\chi ^ { 2 }$ tests with the threshold at $0 . 5 \\%$ . Labels are sorted by absolute frequencies. Bars denote the percentage of images for a certain label by gender. "
     ],
     "content_list_index": 254,
-    "llm_description": "Two bar charts compare the most frequent labels assigned to images of women (left, red bars) versus men (right, green bars), revealing stark gender-based biases: women are overwhelmingly labeled with identity terms (\"woman,\" \"lady,\" \"female\") and appearance descriptors (\"blonde,\" \"hot\"), while men are dominated by occupation/role labels (\"man,\" \"male,\" \"player,\" \"military officer\") and physical attributes (\"face,\" \"head,\" \"suit\").",
+    "llm_description": "Bar charts comparing top image labels for women (left, red/green bars) and men (right, red/green bars), showing frequency percentages; women are most often labeled \"woman\" or \"lady,\" while men dominate \"man\" and \"male\" labels.",
     "weight": 1211,
     "height": 616
   },
@@ -193,7 +193,7 @@
       "Figure 19. Two example images from the Rendered SST2 dataset "
     ],
     "content_list_index": 552,
-    "llm_description": "Two contrasting film reviews side by side: one praises the director's energetic, nuanced storytelling and quirky, non-stereotypical cast; the other criticizes the filmmakers for lacking direction and technical skill, resulting in an undetermined narrative destination.",
+    "llm_description": "Two contrasting film reviews side-by-side: one praises the director's energetic, nuanced storytelling and quirky, non-stereotypical cast; the other criticizes the filmmakers for lacking direction and technical skill, resulting in an undetermined narrative destination.",
     "weight": 1186,
     "height": 564
   },
@@ -204,7 +204,7 @@
       "Figure 20. Linear probe performance plotted for each of the 27 datasets, using the data from Table 10. "
     ],
     "content_list_index": 570,
-    "llm_description": "A grid of 25 performance plots comparing 10 different visual models (CLIP-ViT, EfficientNet, ViT, ResNet, etc.) across 25 diverse datasets (Food101, ImageNet, EuroSAT, etc.), showing how each model's accuracy evolves with increasing computational cost (GFLOPs/image) or training data size (log scale), revealing clear performance trade-offs and relative strengths.",
+    "llm_description": "A grid of 25 line charts comparing the accuracy of 10 different visual models (including CLIP-ViT, EfficientNet, ViT, and ResNet) across 25 diverse datasets (like ImageNet, CIFAR-10, and Birdsnap), with each chart plotting performance against computational cost (GFLOPs/image or GFLOPs/image) on a logarithmic scale.",
     "weight": 1275,
     "height": 1769
   },
@@ -227,7 +227,7 @@
       "Figure 22. CLIP’s zero-shot performance compared to linear-probe ResNet performance "
     ],
     "content_list_index": 577,
-    "llm_description": "Performance comparison of CLIP-ViT, CLIP-ResNet, and ResNet across 25 datasets, plotting accuracy (or mean per class) vs. computational cost (GFLOPs/image), revealing that CLIP-ViT consistently outperforms the others on most benchmarks while CLIP-ResNet often matches or exceeds ResNet.",
+    "llm_description": "Performance comparison of CLIP-ViT (red stars), CLIP-ResNet (pink stars), and ResNet (yellow line) across 25 datasets, plotting accuracy vs. computational cost (GFLOPs/image), revealing CLIP-ViT's superior performance on most vision tasks despite higher compute requirements.",
     "weight": 1347,
     "height": 1064
   }

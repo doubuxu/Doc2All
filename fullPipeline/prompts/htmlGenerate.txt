@@ -86,8 +86,13 @@ pptData 必须是【人类可读的 JSON】格式：
          "id": "slide_01",
          "title": "...",
          "content": "...",
-         "tables": [],
-         "figures": []
+         "tables": [
+          {"table_id":"table_1"},
+          {"table_id":"table_2"}
+          ],
+         "figures": [
+          {"fig_id":"fig_1"}
+         ]
        },
        {
          "id": "slide_02",
@@ -97,3 +102,8 @@ pptData 必须是【人类可读的 JSON】格式：
    };
 【输入 JSON 如下】
 {{contentplan}}
+
+**输出要点：**
+
+* 输出的html应该是可以执行的，不需要任何多余的字符
+* 要使contentplan中的换行符在最终的html中生效

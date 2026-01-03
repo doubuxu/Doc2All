@@ -23,7 +23,7 @@ def ContentCheck_test(content_plan,raw_content_path,max_try):
         #test=Template(open('prompts/paper_content_plan.txt').read())
 
         response = client.chat.completions.create(
-            model="qwen-plus-2025-12-01",
+            model="qwen-long",
             messages=[{"role": "user", "content": content_plan_check_prompt}],
             stream=False,
             extra_body={"enable_thinking": False}
@@ -42,7 +42,7 @@ def content_check(prompt,save_path):
 
         #test=Template(open('prompts/paper_content_plan.txt').read())
     response = client.chat.completions.create(
-            model="qwen-plus-2025-12-01",
+            model="qwen-long",
             messages=[{"role": "user", "content": prompt}],
             stream=False,
             extra_body={"enable_thinking": False}

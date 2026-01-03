@@ -23,7 +23,7 @@ def htmlCodeGenerate(prompt:str) -> str:
     #test=Template(open('prompts/paper_content_plan.txt').read())
 
     response = client.chat.completions.create(
-        model="qwen-plus-2025-12-01",
+        model="qwen-max",
         messages=[{"role": "user", "content": prompt}],
         stream=False,
         temperature=0,
@@ -41,24 +41,39 @@ def find_block(html_code:str)->str:#查找html代码中的pptData 区块
     return data
 
 def generate_id_to_basecode(output_path:str,file_name:str):#生成fig_id到base64编码的映射
-    id_to_code_map={}
+    fig_id_to_code_map={}
+    table_id_to_code_map={}
     image_dict_path=Path(output_path)/file_name/"dict"/"images.json"
     image_dict=load_json(image_dict_path)
+    table_dict_path=Path(output_path)/file_name/"dict"/"tables.json"
+    table_dict=load_json(table_dict_path)
     for index,image in enumerate(image_dict):
         fig_id=image["fig_id"]
         base64_code=imgEncoder(image["path"])
-        id_to_code_map[fig_id]=base64_code
-    return id_to_code_map
+        fig_id_to_code_map[fig_id]=base64_code
+    
+    for index,table in enumerate(table_dict):
+        table_id=table["table_id"]
+        base64_code=imgEncoder(table["path"])
+        table_id_to_code_map[table_id]=base64_code
+    return fig_id_to_code_map,table_id_to_code_map
 
-def add_base64_code(pptData:str,id_to_code_map):
+def add_base64_code(pptData:str,fig_id_to_code_map,table_id_to_code_map):
     for index,slide in enumerate(pptData["slides"]):
         figures=slide["figures"]
+        tables=slide["tables"]
         #figures_num=len(figures)
         for i in range(len(figures)):
             figure=figures[i]
             figure_id=figure["fig_id"]
-            base64_code=id_to_code_map[figure_id]
+            base64_code=fig_id_to_code_map[figure_id]
             figure["base64_code"]=base64_code
+        for i in range(len(tables)):
+            table=tables[i]
+            table_id=table["table_id"]
+            base64_code=table_id_to_code_map[table_id]
+            table["base64_code"]=base64_code
+
     save_json(pptData,'./codeTest.json')
     return pptData
 
@@ -89,8 +104,8 @@ def replace_pptData_block(html_code: str, new_pptData: dict) -> str:
 def htmlCodeWithbase64(prompt:str,output_path,file_name):
     htmlCode=htmlCodeGenerate(prompt)
     pptData=find_block(htmlCode)
-    id_map=generate_id_to_basecode(output_path,file_name)
-    pptDataWithCode=add_base64_code(pptData,id_map)
+    figid_map,tableid_map=generate_id_to_basecode(output_path,file_name)
+    pptDataWithCode=add_base64_code(pptData,figid_map,tableid_map)
     html_codeWithbase64=replace_pptData_block(htmlCode,pptDataWithCode)
     return html_codeWithbase64
 

@@ -11,7 +11,8 @@ from visualsProcess import getCaption,postProcessImages
 from utils.JsonTools import load_json,save_json
 from htmlGenerate import htmlCodeWithbase64
 from utils.htmlTools import load_html,save_html
-
+from logger import get_logger
+log = get_logger(__name__)
 #pdf_path=""
 #parse_doc()
 
@@ -56,15 +57,21 @@ def ppt_generate2(input_path,output_path):#baselineModel2
     input_path=Path(arg.doc_path).resolve()
     output_path=Path(arg.output).resolve()
     file_name=input_path.stem
+    log.info("Start document parsing...")
     parse_doc(input_path,output_path)
+    log.info("Document parsing completed.")
 
+    log.info("start planing slides content...")
     content_plan=content_plan_with_check(output_path,file_name,"",max_try=3)
+    log.info("Slides content planning completed.")
 
+    log.info("Start html code generation...")
     html_generate_prompt_template=Template(open('prompts/htmlGenerate.txt').read())
     html_generate_prompt=html_generate_prompt_template.render(contentplan=content_plan)
     html_code=htmlCodeWithbase64(html_generate_prompt,output_path,file_name)
     html_path=Path(output_path)/file_name/f"{file_name}.html"
     save_html(html_path,html_code)
+    log.info("Html code generation completed.")
 
     
 
@@ -76,6 +83,7 @@ if __name__=="__main__":
     input_path=Path(arg.doc_path).resolve()
     output_path=Path(arg.output).resolve()
     file_name=input_path.stem
+    log.info(f"Processing document: {input_path}, output to: {output_path},file_name: {file_name}")
     ppt_generate2(input_path,output_path)
     """
     #基于mineru做pdf文档解析，解析结果保存到output_path
