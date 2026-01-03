@@ -1,0 +1,20 @@
+{
+  "exact": false,
+  "improvementSuggestions": [
+    {
+      "suggestions1": "Slide 03 ('核心思想：用自然语言替代人工标注') claims CLIP uses '400M图像-文本对（WIT数据集）', but the original document states WIT is the *newly constructed* dataset of 400M pairs, and explicitly clarifies that 'WIT' stands for 'WebImageText' (Section 2.2). The slide incorrectly implies WIT is a pre-existing, standard dataset like ImageNet. It should be revised to '400M图像-文本对（作者构建的WIT数据集，即WebImageText）' to avoid misattribution and align with the source."
+    },
+    {
+      "suggestions2": "Slide 05 ('零样本迁移：无需微调的即用型分类器') states 'ImageNet零样本准确率76.2%，媲美全监督ResNet-50（76.4%）' and cites Table 1. However, the original document's Table 1 shows CLIP's ImageNet accuracy as 76.2% and Visual N-Grams as 11.5%, but *does not list ResNet-50's 76.4% in that table*. The 76.4% figure appears only in the Abstract and Section 3.1.3 text. The slide's claim is factually correct per the text, but the citation to 'Table 1' is inaccurate and misleading. It should cite the Abstract or Section 3.1.3 instead."
+    },
+    {
+      "suggestions3": "Slide 06 ('跨30+数据集的零样本性能突破') lists 'SST2（OCR+情感）：98.4% 准确率（表1）'. This is incorrect: Table 1 in the original document contains only three datasets (aYahoo, ImageNet, SUN) and shows CLIP's score for aYahoo as 98.4%, not SST2. SST2 results are reported in Table 14 (OCR section) and Figure 5/11, where CLIP's performance is 98.4% on *aYahoo*, not SST2. The slide conflates two different datasets and misattributes the number. It must be corrected to 'aYahoo：98.4%（表1）' or remove the erroneous reference to SST2."
+    },
+    {
+      "suggestions4": "Slide 07 ('鲁棒性革命：大幅缩小分布偏移鸿沟') states '零样本CLIP将‘鲁棒性鸿沟’...缩小最多75%' and references '图13左图'. The original document's Figure 13 caption states 'shrink this “robustness gap” by up to 75%', which matches. However, the slide's phrasing '大幅缩小' is vague and potentially overstates the finding; the paper's more precise language is 'up to 75%'. More critically, the slide says '图13左图显示：零样本CLIP（紫点）显著靠近理想鲁棒线（y=x）', but Figure 13's left plot shows *logit-transformed* values and the ideal line is y=x *in logit space*, not raw accuracy. The slide's description omits this crucial technical nuance, risking misinterpretation of the robustness metric. It should clarify '在logit变换后的坐标系中' or use the paper's exact phrasing."
+    },
+    {
+      "suggestions5": "Slide 09 ('关键局限与挑战') states 'OOD泛化缺陷：MNIST手写数字仅88.4%准确率，低于原始像素逻辑回归（92.5%）'. The original document's Table 14 shows 'MNIST' row under 'ZS' (zero-shot) as '88.4', and under 'Raw Pixels' as '92.5'. However, the paper's text in Section E.2 explicitly says 'CLIP’s zero-shot MNIST performance is also poor and is outperformed by supervised logistic regression on raw pixels, one of the simplest possible machine learning baselines.' The slide's wording '低于原始像素逻辑回归（92.5%）' is ambiguous—it could imply the 92.5% is a baseline *for MNIST*, but the paper presents it as a simple baseline *for comparison*. The slide should rephrase to '低于一个简单的基线：基于原始像素的逻辑回归（92.5%）' to accurately reflect the paper's intent and avoid implying 92.5% is the 'correct' or 'expected' MNIST accuracy."
+    }
+  ]
+}

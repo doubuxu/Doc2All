@@ -345,6 +345,9 @@ def parse_doc( #供pipeline使用的函数接口
             start_page_id=start_page_id,
             end_page_id=end_page_id
         )
+        postProcessImages(output_dir,pdf_file_name)
+        insertDictInMD(output_dir,pdf_file_name)
+        
     except Exception as e:
         logger.exception(e)
 
@@ -370,7 +373,7 @@ if __name__ == '__main__':
     pdf_path="../data/pdfs/docsam.pdf"
     output_dir="../data/output2"
     parse_doc(pdf_path, output_dir, backend="pipeline")
-    insertDictInMD(output_dir,"docsam")
+    #insertDictInMD(output_dir,"docsam")
     """To enable VLM mode, change the backend to 'vlm-xxx'"""
     # parse_doc(doc_path_list, output_dir, backend="vlm-transformers")  # more general.
     # parse_doc(doc_path_list, output_dir, backend="vlm-mlx-engine")  # faster than transformers in macOS 13.5+.

@@ -3,14 +3,15 @@ import argparse
 import os
 from pathlib import Path 
 from parse import parse_doc
-from contentPlan import content_plan
+from contentPlan import content_plan,content_plan_with_check
 from jinja2 import Environment
 from jinja2 import Template
 import json
-from Document2All.fullPipeline.visualsProcess import getCaption,postProcessImages
+from visualsProcess import getCaption,postProcessImages
 from utils.JsonTools import load_json,save_json
 from htmlGenerate import htmlCodeWithbase64
 from utils.htmlTools import load_html,save_html
+
 #pdf_path=""
 #parse_doc()
 
@@ -51,6 +52,23 @@ def ppt_generate(input_path,output_path):#baselineModel1
     html_path=Path(output_path)/file_name/f"{file_name}.html"
     save_html(html_path,html_code)
 
+def ppt_generate2(input_path,output_path):#baselineModel2
+    input_path=Path(arg.doc_path).resolve()
+    output_path=Path(arg.output).resolve()
+    file_name=input_path.stem
+    parse_doc(input_path,output_path)
+
+    content_plan=content_plan_with_check(output_path,file_name,"",max_try=3)
+
+    html_generate_prompt_template=Template(open('prompts/htmlGenerate.txt').read())
+    html_generate_prompt=html_generate_prompt_template.render(contentplan=content_plan)
+    html_code=htmlCodeWithbase64(html_generate_prompt,output_path,file_name)
+    html_path=Path(output_path)/file_name/f"{file_name}.html"
+    save_html(html_path,html_code)
+
+    
+
+
 if __name__=="__main__":
 
     #输入参数指定output，在output下结构存储md等文件
@@ -58,7 +76,7 @@ if __name__=="__main__":
     input_path=Path(arg.doc_path).resolve()
     output_path=Path(arg.output).resolve()
     file_name=input_path.stem
-    ppt_generate(input_path,output_path)
+    ppt_generate2(input_path,output_path)
     """
     #基于mineru做pdf文档解析，解析结果保存到output_path
     parse_doc(input_path,output_path)

@@ -23,7 +23,7 @@ def htmlCodeGenerate(prompt:str) -> str:
     #test=Template(open('prompts/paper_content_plan.txt').read())
 
     response = client.chat.completions.create(
-        model="qwen3-max",
+        model="qwen-plus-2025-12-01",
         messages=[{"role": "user", "content": prompt}],
         stream=False,
         temperature=0,

@@ -4,6 +4,8 @@ from openai import OpenAI
 from PIL import Image
 from utils.JsonTools import save_json,load_json
 import json
+
+#基于VLLM对图表做caption
 def getCaption(image_path:str,object:str):
     client=OpenAI(
         api_key="sk-606d0363b5b84ae49603caa5a32e04ed",
@@ -77,6 +79,8 @@ def postProcessImages(output_path,file_name):#输入路径和文件名，为图�
         table["height"]=h
     save_json(table_dict,table_dict_path)
 
+
+#在md中把图片和表格的占位符替换为dict描述
 def insertDictInMD(output_dir,file_name):
     md_path=Path(output_dir)/file_name/f'{file_name}.md'
     image_dict_path=Path(output_dir)/file_name/"dict"/"images.json"

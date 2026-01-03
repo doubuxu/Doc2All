@@ -50,23 +50,23 @@ def load_original_contentPlan_prompt(raw_content_dir,file_name):
     prompt_template=Template(open(Path('./prompts/content_plan.txt')).read())
     
     md_path=Path(raw_content_dir)/file_name/f"{file_name}.md"
-    images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
-    tables_dict_path=Path(raw_content_dir)/file_name/"dict"/"tables.json"
+    #images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
+    #tables_dict_path=Path(raw_content_dir)/file_name/"dict"/"tables.json"
     md_content=Path(md_path).read_text(encoding='utf-8')
-    images_dict=load_json(images_dict_path)
-    tables_dict=load_json(tables_dict_path)
-    content_plan_prompt=prompt_template.render(document=md_content,images=images_dict,tables=tables_dict)
+    #images_dict=load_json(images_dict_path)
+    #tables_dict=load_json(tables_dict_path)
+    content_plan_prompt=prompt_template.render(document=md_content)
     return content_plan_prompt
 
 def load_contentReplan_prompt(raw_content_dir,file_name,content_plan,suggestions):
     prompt_template=Template(open(Path('./prompts/Recontent_plan.txt')).read())
     md_path=Path(raw_content_dir)/file_name/f"{file_name}.md"
-    images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
-    tables_dict_path=Path(raw_content_dir)/file_name/"dict"/"tables.json"
+    #images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
+    #tables_dict_path=Path(raw_content_dir)/file_name/"dict"/"tables.json"
     md_content=Path(md_path).read_text(encoding='utf-8')
-    images_dict=load_json(images_dict_path)
-    tables_dict=load_json(tables_dict_path)
-    prompt=prompt_template.render(document=md_content,images=images_dict,tables=tables_dict,originContentPLan=content_plan,improvementSuggestions=suggestions)
+    #images_dict=load_json(images_dict_path)
+    #tables_dict=load_json(tables_dict_path)
+    prompt=prompt_template.render(document=md_content,originContentPLan=content_plan,improvementSuggestions=suggestions)
     return prompt
 
 
@@ -74,12 +74,12 @@ def load_contentReplan_prompt(raw_content_dir,file_name,content_plan,suggestions
 def load_content_check_prompt(raw_content_dir,file_name,contentPlan):
     prompt_template=Template(open(Path('./prompts/contentPlanCheck.txt')).read())
     md_path=Path(raw_content_dir)/file_name/f"{file_name}.md"
-    images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
-    tables_dict_path=Path(raw_content_dir)/file_name/"dict"/"tables.json"
+    #images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
+    #tables_dict_path=Path(raw_content_dir)/file_name/"dict"/"tables.json"
     md_content=Path(md_path).read_text(encoding='utf-8')
-    images_dict=load_json(images_dict_path)
-    tables_dict=load_json(tables_dict_path)
-    prompt=prompt_template.render(contentPlan=contentPlan,docContent=md_content,images=images_dict,tables=tables_dict)
+    #images_dict=load_json(images_dict_path)
+    #tables_dict=load_json(tables_dict_path)
+    prompt=prompt_template.render(contentPlan=contentPlan,docContent=md_content)
     return prompt  
 
 def content_plan(prompt,path):
@@ -121,7 +121,7 @@ def content_replan(prompt,save_path):
     save_json(json_data,save_path)
     return json_data
 
-def content_plan_with_check(raw_content_dir,file_name,save_path,max_try):
+def content_plan_with_check(raw_content_dir,file_name,save_path,max_try=3):
     #搭建提示词
 
     original_contentPlan_prompt=load_original_contentPlan_prompt(raw_content_dir,file_name)

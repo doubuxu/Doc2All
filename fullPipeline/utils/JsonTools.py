@@ -2,7 +2,8 @@ import json
 from pathlib import Path
 import re
 def save_json(data,path):
-
+    out_file = Path(path)
+    out_file.parent.mkdir(parents=True, exist_ok=True)
     with open(path,'w',encoding='utf-8') as f:
         json.dump(data,f,ensure_ascii=False,indent=2)
 
