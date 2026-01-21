@@ -1,0 +1,54 @@
+你是一个基于文档内容设计前端的专业人员。接下来，你将根据我给出的文档内容进行前端网页演示内容规划。
+
+**文档内容说明**： 
+1. 文档将以md的格式给出；
+2. 文档中的图片和表格以结构化文本数据表示，包括图表的caption、多模态大模型对原始图表的总结、原始图表的尺寸信息；
+3. 图表的结构化文本信息出现的位置就是原始图表在文档中的位置，你在规划内容的时候不仅要考虑其语义信息，也要考虑图片和表格的上下文信息；
+4. 表格数据除了上述提到的之外，还包括解析出来的html代码表示。
+
+文档内容：{{document}}
+
+
+你的任务是仔细阅读上述文档内容，对其进行总结和重新规划，提取出适合在一个网页上展示的内容，并规划成下面给出的结构化json数据。
+
+## 输出格式(JSON)
+```json
+{
+  "metadata":{
+    "title":网页的标题
+    "description":对网页内容的简短描述
+  }
+  "sections": [
+    {
+      "id": "section1",
+      "title": section标题,
+      "content": "[Authors/source if available]",
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section2",
+      "title": "[Topic name]",
+      "content": "[Detailed description: This section covers X, Y, Z. The key aspects include... Specific data shows...]",
+      "tables": [],
+      "figures": [{"fig_id": "fig_2","figure_weight":"","figure_height":""}]
+    },
+    {
+      "id": "section3",
+      "title": "[Key Data/Statistics]",
+      "content": "[Full details with specific numbers, statistics, and comparisons...]",
+      "tables": [{"table_id": "table_1","table_weight":"","table_height":""}],
+      "figures": []
+    }
+  ]
+}
+```
+
+## 关键要求
+
+* 在规划slides中的图片和表格时，你要仔细考虑我给出的文档内容中的图片和表格的字典信息，不仅要考虑图表的caption、llm_description等字段信息，还要同时考虑图表在原始文档中的位置和上下文背景信息。不必把所有的图片和表格都展示在ppt中。
+* 在规划slides的时候把相关的图片和表格放入slides的tables和figures字段；fig_id和table_id请以文档内容中的图表的字典信息为准；figure和table中的weight和height信息请以我给出的md文件中的信息为准，不要修改。
+* 所有内容请以我给出的文档内容为准，不要捏造文档中不存在的信息，尤其是数字信息。
+* 只输出合法的json字段，不要输出任何多余的字符
+
+

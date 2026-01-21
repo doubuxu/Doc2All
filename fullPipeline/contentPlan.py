@@ -8,6 +8,7 @@ from typing import Any, Dict, Union
 from utils.JsonTools import load_json,save_json,extract_llm_json
 from contentChecker import content_check
 from logger import get_logger
+import os
 log = get_logger(__name__)
 """
 client = OpenAI(
@@ -47,9 +48,14 @@ def save_json(content:str,path):
     return file_path
 """
 
-def load_original_contentPlan_prompt(raw_content_dir,file_name):
-
-    prompt_template=Template(open(Path('./prompts/content_plan.txt')).read())
+def load_original_contentPlan_prompt(raw_content_dir,file_name,mode):
+    if mode=="ppt":
+        prompt_template=Template(open(Path('./prompts/ppt_content_plan.txt')).read())
+    elif mode=="poster":
+        prompt_template=Template(open(Path('./prompts/poster_content_plan.txt')).read())
+    elif mode=="web":   
+        prompt_template=Template(open(Path('./prompts/web_content_plan.txt')).read())
+    #prompt_template=Template(open(Path('./prompts/content_plan.txt')).read())
     
     md_path=Path(raw_content_dir)/file_name/f"{file_name}.md"
     #images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
@@ -60,8 +66,13 @@ def load_original_contentPlan_prompt(raw_content_dir,file_name):
     content_plan_prompt=prompt_template.render(document=md_content)
     return content_plan_prompt
 
-def load_contentReplan_prompt(raw_content_dir,file_name,content_plan,suggestions):
-    prompt_template=Template(open(Path('./prompts/Recontent_plan.txt')).read())
+def load_contentReplan_prompt(raw_content_dir,file_name,content_plan,suggestions,mode):
+    if mode=="ppt":
+        prompt_template=Template(open(Path('./prompts/ppt_recontent_plan.txt')).read())
+    elif mode=="poster":
+        prompt_template=Template(open(Path('./prompts/poster_recontent_plan.txt')).read())
+    elif mode=="web":
+        prompt_template=Template(open(Path('./prompts/web_recontent_plan.txt')).read())
     md_path=Path(raw_content_dir)/file_name/f"{file_name}.md"
     #images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
     #tables_dict_path=Path(raw_content_dir)/file_name/"dict"/"tables.json"
@@ -73,8 +84,14 @@ def load_contentReplan_prompt(raw_content_dir,file_name,content_plan,suggestions
 
 
 
-def load_content_check_prompt(raw_content_dir,file_name,contentPlan):
-    prompt_template=Template(open(Path('./prompts/contentPlanCheck.txt')).read())
+def load_content_check_prompt(raw_content_dir,file_name,contentPlan,mode):
+    if mode=="ppt":
+        prompt_template=Template(open(Path('./prompts/ppt_contentPlanCheck.txt')).read())
+    elif mode=="poster":
+        prompt_template=Template(open(Path('./prompts/poster_contentPlanCheck.txt')).read())
+    elif mode=="web":      
+        prompt_template=Template(open(Path('./prompts/web_contentPlanCheck.txt')).read())
+    
     md_path=Path(raw_content_dir)/file_name/f"{file_name}.md"
     #images_dict_path=Path(raw_content_dir)/file_name/"dict"/"images.json"
     #tables_dict_path=Path(raw_content_dir)/file_name/"dict"/"tables.json"
@@ -85,15 +102,18 @@ def load_content_check_prompt(raw_content_dir,file_name,contentPlan):
     return prompt  
 
 def content_plan(prompt,path):
+    api=os.getenv("API_KEY")
+    url=os.getenv("BASE_URL")
+    model_name=os.getenv("TEXT_GENERATION_MODEL","qwen3-max")
     client = OpenAI(
-    api_key="sk-606d0363b5b84ae49603caa5a32e04ed",
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"   # 若用中转/本地，可改
+        api_key=api,
+        base_url=url   # 若用中转/本地，可改
     )
 
     #test=Template(open('prompts/paper_content_plan.txt').read())
 
     response = client.chat.completions.create(
-        model="qwen-long",
+        model=model_name,
         messages=[{"role": "user", "content": prompt}],
         stream=False,
         extra_body={"enable_thinking": False}
@@ -105,15 +125,18 @@ def content_plan(prompt,path):
 
 
 def content_replan(prompt,save_path):
+    api=os.getenv("API_KEY")
+    url=os.getenv("BASE_URL")
+    model_name=os.getenv("TEXT_GENERATION_MODEL","qwen3-max")
     client = OpenAI(
-    api_key="sk-606d0363b5b84ae49603caa5a32e04ed",
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"   # 若用中转/本地，可改
+        api_key=api,
+        base_url=url   # 若用中转/本地，可改
     )
 
     #test=Template(open('prompts/paper_content_plan.txt').read())
 
     response = client.chat.completions.create(
-        model="qwen-long",
+        model=model_name,   
         messages=[{"role": "user", "content": prompt}],
         stream=False,
         extra_body={"enable_thinking": False}
@@ -123,10 +146,9 @@ def content_replan(prompt,save_path):
     save_json(json_data,save_path)
     return json_data
 
-def content_plan_with_check(raw_content_dir,file_name,save_path,max_try=3):
-    #搭建提示词
-
-    original_contentPlan_prompt=load_original_contentPlan_prompt(raw_content_dir,file_name)
+def content_plan_with_check(raw_content_dir,file_name,save_path,max_try=3,mode="ppt"):
+    #搭建提示词,根据不同mode选择不同提示词
+    original_contentPlan_prompt=load_original_contentPlan_prompt(raw_content_dir,file_name,mode)
     #content_replan_prompt=load_contentReplan_prompt()
     #content_plan_check_prompt=load_content_check_prompt()
 
@@ -135,10 +157,10 @@ def content_plan_with_check(raw_content_dir,file_name,save_path,max_try=3):
     while try_index<max_try and not is_pass:
         if try_index==0:#第一次内容规划
             log.info(f"Content planning try {try_index+1}...")
-            contentPlanPath=Path(raw_content_dir)/file_name/"contentPlan"/f"contentPlan_{try_index+1}.json"
+            contentPlanPath=Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"contentPlan_{try_index+1}.json"
             contentPlan=content_plan(original_contentPlan_prompt,contentPlanPath)#生成规划内容
-            content_plan_check_prompt=load_content_check_prompt(raw_content_dir,file_name,contentPlan)
-            suggestions_path=Path(raw_content_dir)/file_name/"contentPlan"/f"suggestions_{try_index+1}.json"
+            content_plan_check_prompt=load_content_check_prompt(raw_content_dir,file_name,contentPlan,mode)
+            suggestions_path=Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"suggestions_{try_index+1}.json"
             if try_index==max_try-1:
                 break
             log.info(f"Content plan checking try {try_index+1}...")
@@ -146,18 +168,18 @@ def content_plan_with_check(raw_content_dir,file_name,save_path,max_try=3):
             is_pass=suggenstions["exact"]#是否通过
         else:
             log.info(f"Content planning try {try_index+1}...")
-            contentPlanPath=Path(raw_content_dir)/file_name/"contentPlan"/f"contentPlan_{try_index+1}.json"
+            contentPlanPath=Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"contentPlan_{try_index+1}.json"
 
-            originalContentPlan=load_json(Path(raw_content_dir)/file_name/"contentPlan"/f"contentPlan_{try_index}.json")
-            originalSuggenstions=load_json(Path(raw_content_dir)/file_name/"contentPlan"/f"suggestions_{try_index}.json")
-            prompt=load_contentReplan_prompt(raw_content_dir,file_name,originalContentPlan,originalSuggenstions)
+            originalContentPlan=load_json(Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"contentPlan_{try_index}.json")
+            originalSuggenstions=load_json(Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"suggestions_{try_index}.json")
+            prompt=load_contentReplan_prompt(raw_content_dir,file_name,originalContentPlan,originalSuggenstions,mode)
 
             contentPlan=content_replan(prompt,contentPlanPath)#生成规划内容
             if try_index==max_try-1:
                 break
             log.info(f"Content plan checking try {try_index+1}...")
-            content_plan_check_prompt=load_content_check_prompt(raw_content_dir,file_name,contentPlan)
-            suggestions_path=Path(raw_content_dir)/file_name/"contentPlan"/f"suggestions_{try_index+1}.json"
+            content_plan_check_prompt=load_content_check_prompt(raw_content_dir,file_name,contentPlan,mode)
+            suggestions_path=Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"suggestions_{try_index+1}.json"
             suggenstions=content_check(content_plan_check_prompt,suggestions_path)
             is_pass=suggenstions["exact"]#是否通过
         try_index+=1

@@ -4,12 +4,15 @@ from openai import OpenAI
 from PIL import Image
 from utils.JsonTools import save_json,load_json
 import json
-
+import os
 #基于VLLM对图表做caption
 def getCaption(image_path:str,object:str):
+    api=os.getenv("API_KEY")
+    url=os.getenv("BASE_URL")
+    model_name=os.getenv("VISUAL_GENERATION_MODEL","qwen3-vl-8b-instruct")
     client=OpenAI(
-        api_key="sk-606d0363b5b84ae49603caa5a32e04ed",
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+        api_key=api,
+        base_url=url
     )
     with open(image_path, "rb") as f:
         b64 = base64.b64encode(f.read()).decode()
@@ -45,7 +48,7 @@ def getCaption(image_path:str,object:str):
         }
         ]     
     caption=client.chat.completions.create(
-        model="qwen3-vl-8b-instruct",
+        model=model_name,
         messages=message,
         temperature=0
     )

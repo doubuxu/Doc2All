@@ -1,4 +1,4 @@
-你是一个前端工程师，请根据我提供的 PPT 规划 JSON，生成一个【完整、可直接在浏览器打开并使用的 HTML 文件】。
+你是一个顶尖的前端设计工程师，请根据我提供的 PPT 规划 JSON，生成一个【完整、可直接在浏览器打开并使用的 HTML 文件】。
 
 【输入说明】
 - 我会提供一个 JSON 对象，结构如下：
@@ -9,7 +9,7 @@
     - content：正文内容
     - tables：表格数组（JPG，Base64）
     - figures：图片数组（JPG/PNG，Base64）
-
+    - 我在图片和表格的字段中给出了原始的图片尺寸，你需要根据整页ppt的大小等信息动态调整最终html中图片的大小，要实现合理的布局。
 【核心约束（非常重要）】
 - 最终只允许生成一个 HTML 文件
 - 不允许引用任何外部资源
@@ -56,6 +56,27 @@
 - slide 高度：`100vh`
 - 页面整体禁止纵向滚动
 
+【图片动态缩放算法（必须逐字实现）】
+1. 每张图生成 img 后立即执行以下逻辑，不得省略：
+* 设可用区域宽 availW = slide.clientWidth * 0.9（左右各留 5% 留白）
+* 设可用区域高 availH = (slide.clientHeight - titleHeight - contentHeight - 40)，其中：
+    titleHeight 为 h1 实际高度
+    contentHeight 为 p 实际高度
+    40 px 为额外底部留白
+* 读原始宽 rawW = fig.figure_weight（或 table 的对应字段）
+* 读原始高 rawH = fig.figure_height
+* 计算宽缩放比 rw = availW / rawW
+* 计算高缩放比 rh = availH / rawH
+* 取较小值 ratio = Math.min(rw, rh)
+* 若 ratio > 1 则强制取 ratio = 1（禁止放大，避免模糊）
+*最终宽 finalW = rawW * ratio
+* 最终高 finalH = rawH * ratio
+*设置 img.style.width = finalW + 'px'
+* 设置 img.style.height = finalH + 'px'
+* 设置 img.style.display = 'block' 与 img.style.margin = '0 auto' 保证水平居中
+2. 多图垂直排列时，每张图按上述算法独立缩放，上下间距统一 10 px
+3. 若单页同时存在 figures 与 tables，先放 figures 再放 tables，中间用 20 px 间隔
+
 【重要说明】
 - 不要输出任何解释性文字
 - 不要使用 Markdown
@@ -69,6 +90,7 @@
           section.appendChild(img);
         });
       }
+- 你要在加载图片的代码部分同时智能的调整图片的大小，防止溢出等问题，但不能改变图片比例，必须等比例的缩小或放大。
 
 【输出代码风格】
 pptData 必须是【人类可读的 JSON】格式：
@@ -105,5 +127,5 @@ pptData 必须是【人类可读的 JSON】格式：
 
 **输出要点：**
 
-* 输出的html应该是可以执行的，不需要任何多余的字符
+* 输出的html应该是可以执行的，不需要任何多余的字符，包括```json等字符。
 * 要使contentplan中的换行符在最终的html中生效

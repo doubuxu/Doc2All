@@ -4,6 +4,7 @@ from jinja2 import Template
 import json
 from pathlib import Path
 from utils.JsonTools import extract_llm_json,load_json,save_json
+import os
 #输入应该是md文件和plan
 
 
@@ -35,14 +36,17 @@ def ContentCheck_test(content_plan,raw_content_path,max_try):
         break
 
 def content_check(prompt,save_path):
+    api=os.getenv("API_KEY")
+    url=os.getenv("BASE_URL")
+    model_name=os.getenv("TEXT_GENERATION_MODEL","qwen3-max")
     client = OpenAI(
-        api_key="sk-606d0363b5b84ae49603caa5a32e04ed",
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"   # 若用中转/本地，可改
+        api_key=api,
+        base_url=url   # 若用中转/本地，可改
     )
 
         #test=Template(open('prompts/paper_content_plan.txt').read())
     response = client.chat.completions.create(
-            model="qwen-long",
+            model=model_name,
             messages=[{"role": "user", "content": prompt}],
             stream=False,
             extra_body={"enable_thinking": False}

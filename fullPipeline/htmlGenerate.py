@@ -4,6 +4,7 @@ from utils.JsonTools import load_json,save_json
 from utils.imgEncode import imgEncoder
 from jinja2 import Template
 import re, json, base64, pathlib
+import os
 def save_html(save_path:str,code:str):
     with open(save_path,'w',encoding='utf-8') as f:
         f.write(code)
@@ -15,15 +16,18 @@ def load_html(html_path):
 
 
 def htmlCodeGenerate(prompt:str) -> str:
+    api=os.getenv("API_KEY")
+    url=os.getenv("BASE_URL")
+    model_name=os.getenv("TEXT_GENERATION_MODEL","qwen3-max")
     client = OpenAI(
-    api_key="sk-606d0363b5b84ae49603caa5a32e04ed",
-    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"   # 若用中转/本地，可改
+        api_key=api,
+        base_url=url   # 若用中转/本地，可改
     )
 
     #test=Template(open('prompts/paper_content_plan.txt').read())
 
     response = client.chat.completions.create(
-        model="qwen-max",
+        model=model_name,
         messages=[{"role": "user", "content": prompt}],
         stream=False,
         temperature=0,
@@ -32,8 +36,13 @@ def htmlCodeGenerate(prompt:str) -> str:
     print(response.choices[0].message.content)
     return response.choices[0].message.content
 
-def find_block(html_code:str)->str:#查找html代码中的pptData 区块
-    m = re.search(r'(const\s+pptData\s*=\s*)(\{.*?\})\s*;', html_code, flags=re.S)
+def find_block(html_code:str,mode)->str:#查找html代码中的pptData 区块
+    if mode=="ppt":
+        m = re.search(r'(const\s+pptData\s*=\s*)(\{.*?\})\s*;', html_code, flags=re.S)
+    elif mode=="poster":
+        m = re.search(r'(const\s+posterData\s*=\s*)(\{.*?\})\s*;', html_code, flags=re.S)
+    elif mode=="web":
+        m = re.search(r'(const\s+pageData\s*=\s*)(\{.*?\})\s*;', html_code, flags=re.S)
     if not m:
         raise RuntimeError('找不到 pptData 区块')
     prefix, json_block = m.groups()
@@ -58,7 +67,7 @@ def generate_id_to_basecode(output_path:str,file_name:str):#生成fig_id到base6
         table_id_to_code_map[table_id]=base64_code
     return fig_id_to_code_map,table_id_to_code_map
 
-def add_base64_code(pptData:str,fig_id_to_code_map,table_id_to_code_map):
+def add_base64_code_ppt(pptData:str,fig_id_to_code_map,table_id_to_code_map):
     for index,slide in enumerate(pptData["slides"]):
         figures=slide["figures"]
         tables=slide["tables"]
@@ -77,7 +86,26 @@ def add_base64_code(pptData:str,fig_id_to_code_map,table_id_to_code_map):
     save_json(pptData,'./codeTest.json')
     return pptData
 
-def replace_pptData_block(html_code: str, new_pptData: dict) -> str:
+def add_base64_code_web(pageData:str,fig_id_to_code_map,table_id_to_code_map):
+    for index,section in enumerate(pageData["sections"]):
+        figures=section["figures"]
+        tables=section["tables"]
+        #figures_num=len(figures)
+        for i in range(len(figures)):
+            figure=figures[i]
+            figure_id=figure["fig_id"]
+            base64_code=fig_id_to_code_map[figure_id]
+            figure["base64_code"]=base64_code
+        for i in range(len(tables)):
+            table=tables[i]
+            table_id=table["table_id"]
+            base64_code=table_id_to_code_map[table_id]
+            table["base64_code"]=base64_code
+
+    save_json(pageData,'./codeTest.json')
+    return pageData
+
+def replace_pptData_block(html_code: str, new_pptData: dict,mode) -> str:
     """
     用 new_pptData 重新生成美化后的 JSON，替换原 HTML 中的 pptData 区块。
     返回完整的新 HTML 字符串。
@@ -86,7 +114,12 @@ def replace_pptData_block(html_code: str, new_pptData: dict) -> str:
     new_json_str = json.dumps(new_pptData, ensure_ascii=False, indent=2)
 
     # 2. 正则定位原区块
-    pattern = re.compile(r'(const\s+pptData\s*=\s*)(\{.*?\})\s*;', re.S)
+    if mode=="ppt":
+        pattern = re.compile(r'(const\s+pptData\s*=\s*)(\{.*?\})\s*;', re.S)
+    elif mode=="poster":
+        pattern = re.compile(r'(const\s+posterData\s*=\s*)(\{.*?\})\s*;', re.S)
+    elif mode=="web":
+        pattern = re.compile(r'(const\s+pageData\s*=\s*)(\{.*?\})\s*;', re.S)
     match = pattern.search(html_code)
     if not match:
         raise RuntimeError('找不到 pptData 区块，无法替换')
@@ -101,14 +134,23 @@ def replace_pptData_block(html_code: str, new_pptData: dict) -> str:
     )
     return replaced_html
 
-def htmlCodeWithbase64(prompt:str,output_path,file_name):
+def htmlCodeWithbase64(prompt:str,output_path,file_name,mode):
     htmlCode=htmlCodeGenerate(prompt)
-    pptData=find_block(htmlCode)
+    if mode=="ppt":
+        pptData=find_block(htmlCode,mode)
+    elif mode=="poster":
+        pptData=find_block(htmlCode,mode)
+    elif mode=="web":
+        pptData=find_block(htmlCode,mode)
     figid_map,tableid_map=generate_id_to_basecode(output_path,file_name)
-    pptDataWithCode=add_base64_code(pptData,figid_map,tableid_map)
-    html_codeWithbase64=replace_pptData_block(htmlCode,pptDataWithCode)
+    if mode=="ppt":
+        pptDataWithCode=add_base64_code_ppt(pptData,figid_map,tableid_map)
+    elif mode=="web":
+        pptDataWithCode=add_base64_code_web(pptData,figid_map,tableid_map)
+    #pptDataWithCode=add_base64_code(pptData,figid_map,tableid_map)
+    html_codeWithbase64=replace_pptData_block(htmlCode,pptDataWithCode,mode=mode)
     return html_codeWithbase64
-
+    #return htmlCode
 
 if __name__=="__main__":
     """

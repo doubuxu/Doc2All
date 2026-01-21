@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-01-18T09:54:07.766205",
+  "input_folder": "../../posterData/",
+  "output_folder": "../../posterData",
+  "total_files": 100,
+  "success_count": 1,
+  "failed_count": 0,
+  "total_duration_seconds": 10.23,
+  "average_duration_seconds": 0.1,
+  "settings": {
+    "backend": "vlm-vllm-engine",
+    "cache_max_entry_count": "0.8",
+    "device": "cuda",
+    "source": "local",
+    "max_batch_size": "8"
+  },
+  "results": [
+    {
+      "file": "Color Equivariant Convolutional Networks_poster.pdf",
+      "output_dir": "../../posterData/Color Equivariant Convolutional Networks_poster",
+      "success": true,
+      "message": "成功",
+      "duration_seconds": 10.23
+    }
+  ]
+}
