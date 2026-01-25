@@ -157,10 +157,10 @@ def content_plan_with_check(raw_content_dir,file_name,save_path,max_try=3,mode="
     while try_index<max_try and not is_pass:
         if try_index==0:#第一次内容规划
             log.info(f"Content planning try {try_index+1}...")
-            contentPlanPath=Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"contentPlan_{try_index+1}.json"
+            contentPlanPath=Path(raw_content_dir)/file_name/"contentPlan"/f"contentPlan_{try_index+1}.json"
             contentPlan=content_plan(original_contentPlan_prompt,contentPlanPath)#生成规划内容
             content_plan_check_prompt=load_content_check_prompt(raw_content_dir,file_name,contentPlan,mode)
-            suggestions_path=Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"suggestions_{try_index+1}.json"
+            suggestions_path=Path(raw_content_dir)/file_name/"contentPlan"/f"suggestions_{try_index+1}.json"
             if try_index==max_try-1:
                 break
             log.info(f"Content plan checking try {try_index+1}...")
@@ -168,10 +168,10 @@ def content_plan_with_check(raw_content_dir,file_name,save_path,max_try=3,mode="
             is_pass=suggenstions["exact"]#是否通过
         else:
             log.info(f"Content planning try {try_index+1}...")
-            contentPlanPath=Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"contentPlan_{try_index+1}.json"
+            contentPlanPath=Path(raw_content_dir)/file_name/"contentPlan"/f"contentPlan_{try_index+1}.json"
 
-            originalContentPlan=load_json(Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"contentPlan_{try_index}.json")
-            originalSuggenstions=load_json(Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"suggestions_{try_index}.json")
+            originalContentPlan=load_json(Path(raw_content_dir)/file_name/"contentPlan"/f"contentPlan_{try_index}.json")
+            originalSuggenstions=load_json(Path(raw_content_dir)/file_name/"contentPlan"/f"suggestions_{try_index}.json")
             prompt=load_contentReplan_prompt(raw_content_dir,file_name,originalContentPlan,originalSuggenstions,mode)
 
             contentPlan=content_replan(prompt,contentPlanPath)#生成规划内容
@@ -179,7 +179,7 @@ def content_plan_with_check(raw_content_dir,file_name,save_path,max_try=3,mode="
                 break
             log.info(f"Content plan checking try {try_index+1}...")
             content_plan_check_prompt=load_content_check_prompt(raw_content_dir,file_name,contentPlan,mode)
-            suggestions_path=Path(raw_content_dir)/file_name/f"{mode}"/"contentPlan"/f"suggestions_{try_index+1}.json"
+            suggestions_path=Path(raw_content_dir)/file_name/"contentPlan"/f"suggestions_{try_index+1}.json"
             suggenstions=content_check(content_plan_check_prompt,suggestions_path)
             is_pass=suggenstions["exact"]#是否通过
         try_index+=1

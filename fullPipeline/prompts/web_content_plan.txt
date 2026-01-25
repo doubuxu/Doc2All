@@ -17,27 +17,28 @@
   "metadata":{
     "title":网页的主标题（参考文档标题给出）
     "authors":按照文档中的顺序给出所有的作者
+    "github":如果文档中提供了相关的GitHub连接，则填入本字段，否则留空，例如"github":""。
     "description":对网页内容的简短描述
   }
   "sections": [
     {
       "id": "section1",
       "title": section标题,
-      "content": "[Authors/source if available]",
+      "content": "",
       "tables": [],
       "figures": []
     },
     {
       "id": "section2",
-      "title": "[Topic name]",
-      "content": "[Detailed description: This section covers X, Y, Z. The key aspects include... Specific data shows...]",
+      "title": "",
+      "content": "",
       "tables": [],
       "figures": [{"fig_id": "fig_2","figure_weight":"","figure_height":""}]
     },
     {
       "id": "section3",
-      "title": "[Key Data/Statistics]",
-      "content": "[Full details with specific numbers, statistics, and comparisons...]",
+      "title": "",
+      "content": "[]",
       "tables": [{"table_id": "table_1","table_weight":"","table_height":""}],
       "figures": []
     }

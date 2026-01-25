@@ -136,6 +136,9 @@ def replace_pptData_block(html_code: str, new_pptData: dict,mode) -> str:
 
 def htmlCodeWithbase64(prompt:str,output_path,file_name,mode):
     htmlCode=htmlCodeGenerate(prompt)
+    temp_path=Path(output_path)/file_name/"htmlGenerate"
+    pathlib.Path(temp_path).mkdir(parents=True, exist_ok=True)
+    save_html(temp_path/"original.html",htmlCode)
     if mode=="ppt":
         pptData=find_block(htmlCode,mode)
     elif mode=="poster":

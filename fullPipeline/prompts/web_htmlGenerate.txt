@@ -10,7 +10,10 @@
 
 - metadata：
   - title：网页标题
-  - authors / affiliation / date（如有）
+  - authors :文档的所有作者
+  - github: 原始文档对应的github链接,如果字段信息为""表示没有对应的信息，则不必在html中显示
+  - description:对原文档的一个总结，只是为了llm易于理解文档，不必在html中展示
+  - arxiv_id:文档对应的arxiv链接，如果是""则表示未找到对应信息，则不必在html中显示
 
 - sections：网页的 section 数组  
   每个 section 包含：

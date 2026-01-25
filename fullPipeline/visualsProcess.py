@@ -68,8 +68,8 @@ def postProcessImages(output_path,file_name):#输入路径和文件名，为图�
         description=getCaption(img["path"],"image")
         img["llm_description"]=description
         w,h=get_image_size(img["path"])
-        img["weight"]=w
-        img["height"]=h
+        img["weight"]=f"{w}px"
+        img["height"]=f"{h}px"
     save_json(image_dict,image_dict_path)
     
     for index,table in enumerate(table_dict):
@@ -78,8 +78,8 @@ def postProcessImages(output_path,file_name):#输入路径和文件名，为图�
         description=getCaption(table["path"],"table")
         table["llm_description"]=description
         w,h=get_image_size(table["path"])
-        table["weight"]=w
-        table["height"]=h
+        table["weight"]=f"{w}px"
+        table["height"]=f"{h}px"
     save_json(table_dict,table_dict_path)
 
 

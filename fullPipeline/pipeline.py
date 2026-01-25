@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import argparse
 import os
-from pathlib import Path 
+from pathlib import Path
+import shutil 
 from parse import parse_doc
 from contentPlan import content_plan,content_plan_with_check
 from jinja2 import Environment
@@ -12,8 +13,11 @@ from utils.JsonTools import load_json,save_json
 from htmlGenerate import htmlCodeWithbase64
 from utils.htmlTools import load_html,save_html
 from logger import get_logger
+import arxiv
 log = get_logger(__name__)
 import dotenv
+import time
+import datetime
 dotenv.load_dotenv()
 #pdf_path=""
 #parse_doc()
@@ -66,6 +70,16 @@ def ppt_generate2(input_path,output_path,mode):#baselineModel2
 
     log.info("start planing slides content...")
     content_plan=content_plan_with_check(output_path,file_name,"",max_try=1,mode=mode)
+
+    #针对学术论文，搜索arxiv id并添加到metadata中
+    title=content_plan["metadata"]["title"]
+    results = list(arxiv.Search(query=f'ti:"{title}"', max_results=1).results())
+    if len(results)>0:
+        content_plan["metadata"]["arxiv_id"]=results[0].entry_id
+    else:
+        content_plan["metadata"]["arxiv_id"]=""
+    save_json(content_plan,Path(output_path)/file_name/"contentPlan"/"final_content_plan.json")
+
     log.info("Slides content planning completed.")
     log.info("Start html code generation...")
     if mode=="ppt":
@@ -75,9 +89,9 @@ def ppt_generate2(input_path,output_path,mode):#baselineModel2
     elif mode=="web":
         html_generate_prompt_template=Template(open('prompts/web_htmlGenerate.txt').read())
     html_generate_prompt=html_generate_prompt_template.render(contentplan=content_plan)
-    print(html_generate_prompt)
+    #print(html_generate_prompt)
     html_code=htmlCodeWithbase64(html_generate_prompt,output_path,file_name,mode)
-    html_path=Path(output_path)/file_name/f"{mode}"/f"{file_name}.html"
+    html_path=Path(output_path)/file_name/"htmlGenerate"/f"{file_name}.html"
     save_html(html_path,html_code)
     log.info("Html code generation completed.")
     
@@ -93,7 +107,7 @@ def presentation_generate(input_path,output_path,mode):
 
 
 if __name__=="__main__":
-    
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     #输入参数指定output，在output下结构存储md等文件
     arg=args_analyse()
     input_path=Path(arg.doc_path).resolve()
@@ -102,6 +116,8 @@ if __name__=="__main__":
     file_name=input_path.stem
     log.info(f"Processing document: {input_path}, output to: {output_path},file_name: {file_name}")
     ppt_generate2(input_path,output_path,mode=mode)
+    new_path=output_path/f"{timestamp}_{file_name}_{mode}"
+    shutil.move(output_path/file_name,new_path)
     """
     #基于mineru做pdf文档解析，解析结果保存到output_path
     parse_doc(input_path,output_path)
