@@ -53,7 +53,7 @@ def content_check(prompt,save_path):
         )
     json_data=extract_llm_json(response.choices[0].message.content)
     save_json(json_data,save_path)
-    return json_data
+    return json_data,response
         
 
 if __name__=="__main__":

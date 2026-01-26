@@ -19,7 +19,7 @@
   每个 section 包含：
   - id：章节唯一标识
   - title：章节标题（如 Introduction / Method / Experiments）
-  - content：正文内容（可能包含换行）
+  - content：包含正文内容的一个列表，每个元素表示一段内容
   - tables：表格数组（JPG，Base64）
   - figures：图片数组（JPG / PNG，Base64）
 

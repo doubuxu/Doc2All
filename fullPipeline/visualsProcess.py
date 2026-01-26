@@ -5,6 +5,7 @@ from PIL import Image
 from utils.JsonTools import save_json,load_json
 import json
 import os
+from utils.token_claculate import token_logger
 #基于VLLM对图表做caption
 def getCaption(image_path:str,object:str):
     api=os.getenv("API_KEY")
@@ -52,7 +53,7 @@ def getCaption(image_path:str,object:str):
         messages=message,
         temperature=0
     )
-    return caption.choices[0].message.content
+    return caption.choices[0].message.content,caption
 
 def get_image_size(path):
     w, h = Image.open(path).size
@@ -65,7 +66,8 @@ def postProcessImages(output_path,file_name):#输入路径和文件名，为图�
     table_dict=load_json(table_dict_path)
     
     for index,img in enumerate(image_dict):
-        description=getCaption(img["path"],"image")
+        description,response=getCaption(img["path"],"image")
+        token_logger(response, output_path, file_name, f"image_caption_{index}")
         img["llm_description"]=description
         w,h=get_image_size(img["path"])
         img["weight"]=f"{w}px"
@@ -75,7 +77,8 @@ def postProcessImages(output_path,file_name):#输入路径和文件名，为图�
     for index,table in enumerate(table_dict):
         print(index)
         print(table["path"])
-        description=getCaption(table["path"],"table")
+        description,response=getCaption(table["path"],"table")
+        token_logger(response, output_path, file_name, f"table_caption_{index}")
         table["llm_description"]=description
         w,h=get_image_size(table["path"])
         table["weight"]=f"{w}px"

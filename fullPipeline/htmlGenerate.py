@@ -5,6 +5,7 @@ from utils.imgEncode import imgEncoder
 from jinja2 import Template
 import re, json, base64, pathlib
 import os
+from utils.token_claculate import token_logger
 def save_html(save_path:str,code:str):
     with open(save_path,'w',encoding='utf-8') as f:
         f.write(code)
@@ -34,7 +35,7 @@ def htmlCodeGenerate(prompt:str) -> str:
         extra_body={"enable_thinking": False}
     )
     print(response.choices[0].message.content)
-    return response.choices[0].message.content
+    return response.choices[0].message.content,response
 
 def find_block(html_code:str,mode)->str:#查找html代码中的pptData 区块
     if mode=="ppt":
@@ -134,8 +135,9 @@ def replace_pptData_block(html_code: str, new_pptData: dict,mode) -> str:
     )
     return replaced_html
 
-def htmlCodeWithbase64(prompt:str,output_path,file_name,mode):
-    htmlCode=htmlCodeGenerate(prompt)
+def htmlCodeWithbase64(prompt:str,output_path,file_name,mode,log):
+    htmlCode,response=htmlCodeGenerate(prompt)
+    token_logger(response, output_path, file_name, "html_code_generation")
     temp_path=Path(output_path)/file_name/"htmlGenerate"
     pathlib.Path(temp_path).mkdir(parents=True, exist_ok=True)
     save_html(temp_path/"original.html",htmlCode)

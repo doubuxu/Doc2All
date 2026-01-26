@@ -3,11 +3,11 @@ import logging
 import logging.handlers
 from pathlib import Path
 
-LOG_DIR = Path("logs")          # 日志文件夹
-LOG_DIR.mkdir(exist_ok=True)    # 自动创建
 
-def get_logger(name: str = None) -> logging.Logger:
-    """统一拿 logger 的入口，name 不传默认用模块名"""
+def get_logger(output_dir:str | Path,filename,name: str = None) -> logging.Logger:
+    output_dir=Path(output_dir)
+    log_file=output_dir/f"{filename}"/"log"/"app.log"
+    log_file.parent.mkdir(parents=True, exist_ok=True)
     logger = logging.getLogger(name or __name__)
 
     # 只初始化一次，防止重复 addHandler
@@ -25,9 +25,7 @@ def get_logger(name: str = None) -> logging.Logger:
     )
 
     # 2. 按天分割文件，保留 14 天
-    file_handler = logging.handlers.TimedRotatingFileHandler(
-        LOG_DIR / "app.log", when="midnight", backupCount=14, encoding="utf-8"
-    )
+    file_handler = logging.FileHandler(log_file, encoding="utf-8")
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(
         logging.Formatter("%(asctime)s | %(levelname)-8s | %(name)s:%(lineno)d | %(message)s")
