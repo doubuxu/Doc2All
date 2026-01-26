@@ -48,8 +48,8 @@
 
 ## 关键要求
 
-* 在规划slides中的图片和表格时，你要仔细考虑我给出的文档内容中的图片和表格的字典信息，不仅要考虑图表的caption、llm_description等字段信息，还要同时考虑图表在原始文档中的位置和上下文背景信息。不必把所有的图片和表格都展示在ppt中。
-* 在规划slides的时候把相关的图片和表格放入slides的tables和figures字段；fig_id和table_id请以文档内容中的图表的字典信息为准；figure和table中的weight和height信息请以我给出的md文件中的信息为准，不要修改。
+* 在规划web中的图片和表格时，你要仔细考虑我给出的文档内容中的图片和表格的字典信息，不仅要考虑图表的caption、llm_description等字段信息，还要同时考虑图表在原始文档中的位置和上下文背景信息。不必把所有的图片和表格都展示在ppt中。
+* 在规划web的时候把相关的图片和表格放入slides的tables和figures字段；fig_id和table_id请以文档内容中的图表的字典信息为准；figure和table中的weight和height信息请以我给出的md文件中的信息为准，不要修改。
 * 所有内容请以我给出的文档内容为准，不要捏造文档中不存在的信息，尤其是数字信息。
 * 只输出合法的json字段，不要输出任何多余的字符
 

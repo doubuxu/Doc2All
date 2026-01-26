@@ -45,7 +45,7 @@ def find_block(html_code:str,mode)->str:#查找html代码中的pptData 区块
     elif mode=="web":
         m = re.search(r'(const\s+pageData\s*=\s*)(\{.*?\})\s*;', html_code, flags=re.S)
     if not m:
-        raise RuntimeError('找不到 pptData 区块')
+        raise RuntimeError('找不到 Data 区块')
     prefix, json_block = m.groups()
     data = json.loads(json_block)
     return data
@@ -84,7 +84,7 @@ def add_base64_code_ppt(pptData:str,fig_id_to_code_map,table_id_to_code_map):
             base64_code=table_id_to_code_map[table_id]
             table["base64_code"]=base64_code
 
-    save_json(pptData,'./codeTest.json')
+    #save_json(pptData,'./codeTest.json')
     return pptData
 
 def add_base64_code_web(pageData:str,fig_id_to_code_map,table_id_to_code_map):
@@ -103,8 +103,27 @@ def add_base64_code_web(pageData:str,fig_id_to_code_map,table_id_to_code_map):
             base64_code=table_id_to_code_map[table_id]
             table["base64_code"]=base64_code
 
-    save_json(pageData,'./codeTest.json')
+    #save_json(pageData,'./codeTest.json')
     return pageData
+
+def add_base64_code_poster(posterData:str,fig_id_to_code_map,table_id_to_code_map):
+    for index,section in enumerate(posterData["sections"]):
+        figures=section["figures"]
+        tables=section["tables"]
+        #figures_num=len(figures)
+        for i in range(len(figures)):
+            figure=figures[i]
+            figure_id=figure["fig_id"]
+            base64_code=fig_id_to_code_map[figure_id]
+            figure["base64_code"]=base64_code
+        for i in range(len(tables)):
+            table=tables[i]
+            table_id=table["table_id"]
+            base64_code=table_id_to_code_map[table_id]
+            table["base64_code"]=base64_code
+
+    #save_json(posterData,'./codeTest.json')
+    return posterData
 
 def replace_pptData_block(html_code: str, new_pptData: dict,mode) -> str:
     """
@@ -152,6 +171,8 @@ def htmlCodeWithbase64(prompt:str,output_path,file_name,mode,log):
         pptDataWithCode=add_base64_code_ppt(pptData,figid_map,tableid_map)
     elif mode=="web":
         pptDataWithCode=add_base64_code_web(pptData,figid_map,tableid_map)
+    elif mode=="poster":
+        pptDataWithCode=add_base64_code_poster(pptData,figid_map,tableid_map)
     #pptDataWithCode=add_base64_code(pptData,figid_map,tableid_map)
     html_codeWithbase64=replace_pptData_block(htmlCode,pptDataWithCode,mode=mode)
     return html_codeWithbase64
