@@ -85,12 +85,12 @@ def build_multimodal_prompt(images):#构建多模态输入的prompt
 
 def get_json_data(poster_path,poster_name,sub_image_path):#针对一个海报，调用llm获取json数据
     poster_path=poster_path/poster_name
-    print("poster_path:",poster_path)
+    #print("poster_path:",poster_path)
     poster_base64=image_encode(poster_path)
     images_path=get_figures_path(sub_image_path,poster_name)
     tables_path=get_tables_path(sub_image_path,poster_name)
-    print("images_path:",images_path)
-    print("tables_path:",tables_path)
+    #print("images_path:",images_path)
+    #print("tables_path:",tables_path)
     image_contents=build_images_message(images_path,tables_path)
     multimodal_content=build_multimodal_prompt(image_contents)
     prompt="""
@@ -188,7 +188,7 @@ def get_json_data(poster_path,poster_name,sub_image_path):#针对一个海报，
     api=os.getenv("API_KEY")
     url=os.getenv("BASE_URL")
     model_name=os.getenv("VISUAL_MODEL","qwen3-max")
-    print(f"api:{api}")
+    #print(f"api:{api}")
     client=OpenAI(
         api_key=api,
         base_url=url
@@ -198,11 +198,24 @@ def get_json_data(poster_path,poster_name,sub_image_path):#针对一个海报，
         messages=messages,
         temperature=0
     )
-    print(response.choices[0].message.content)
+    #print(response.choices[0].message.content)
+    return response.choices[0].message.content
 
+def get_json_data_batch(poster_path,sub_image_path,save_path):
+    poster_path=Path(poster_path)
+    for item in poster_path.iterdir():
+        if item.suffix=='.jpg':
+            poster_name=item
+            json_data=get_json_data(poster_path,poster_name,sub_image_path)
+            poster_name_with_no_suffix=poster_name[:-4]
+            save_file=save_path/f"{poster_name_with_no_suffix}.json"
+            save_file.parent.mkdir(parents=True,exist_ok=True)
+            with open(save_file,'w',encoding='utf-8') as f:
+                json.dump(json_data,f,ensure_ascii=False,indent=2)
 
 if __name__ == "__main__":
     poster_path=Path("../posterData")
-    poster_name="[Re] Graph Edit Networks_poster.jpg"
+    #poster_name="[Re] Graph Edit Networks_poster.jpg"
     sub_image_path=Path("../posterDataOutput")
-    get_json_data(poster_path,poster_name,sub_image_path)
+    #get_json_data(poster_path,poster_name,sub_image_path)
+    get_json_data_batch(poster_path,sub_image_path,save_path=sub_image_path)
