@@ -1,0 +1,352 @@
+[
+  {
+    "type": "text",
+    "text": "Boost, Comply and Accelerate Generative Image Editing ",
+    "text_level": 1,
+    "bbox": [
+      203,
+      40,
+      792,
+      47
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Yuxi Ren , Jie Wu , Yanzuo Lu , Huafeng Kuang, Xin Xia, Xionghui Wang, Qianqian Wang, Yixing Zhu,* *† * Pan Xie, Shiyin Wang, Xuefeng Xiao, Yitong Wang, Min Zheng, Lean Fu ",
+    "bbox": [
+      156,
+      51,
+      839,
+      63
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "ByteDance Inc. Equal Contribution Project Lead * † ",
+    "bbox": [
+      350,
+      65,
+      647,
+      72
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "ECCV 2024 ",
+    "text_level": 1,
+    "bbox": [
+      436,
+      72,
+      559,
+      80
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Research Paper ",
+    "bbox": [
+      443,
+      85,
+      554,
+      91
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Inpainting Demo ",
+    "text_level": 1,
+    "bbox": [
+      144,
+      104,
+      307,
+      112
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      146,
+      116,
+      854,
+      211
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Outpainting Demo ",
+    "text_level": 1,
+    "bbox": [
+      144,
+      222,
+      325,
+      231
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      146,
+      234,
+      498,
+      376
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      500,
+      234,
+      850,
+      376
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Abstract ",
+    "text_level": 1,
+    "bbox": [
+      144,
+      390,
+      229,
+      398
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Recent advancements in diffusion-based generative image editing have sparked a profound revolution, reshaping the landscape of image outpainting and inpainting tasks. Despite these strides, the field grapples with inherent challenges, including: i) inferior quality; ii) poor consistency; iii) insufficient instrcution adherence; iv) suboptimal generation efficiency. To address these obstacles, we present ByteEdit, an innovative feedback learning framework meticulously designed to Boost, Comply, and Accelerate Generative Image Editing tasks. ByteEdit seamlessly integrates image reward models dedicated to enhancing aesthetics and image-text alignment, while also introducing a dense, pixel-level reward model tailored to foster coherence in the output. Furthermore, we propose a pioneering adversarial and progressive feedback learning strategy to expedite the model's inference speed. Through extensive largescale user evaluations, we demonstrate that ByteEdit surpasses leading generative image editing products, including Adobe, Canva, and MeiTu, in both generation quality and consistency. ByteEdit-Outpainting exhibits a remarkable enhancement of 388% and 135% in quality and consistency, respectively, when compared to the baseline model. Experiments also verfied that our acceleration models maintains excellent performance results in terms of quality and consistency. ",
+    "bbox": [
+      142,
+      402,
+      854,
+      487
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Examples ",
+    "text_level": 1,
+    "bbox": [
+      145,
+      502,
+      244,
+      510
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      152,
+      513,
+      398,
+      606
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      443,
+      516,
+      548,
+      545
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      436,
+      564,
+      561,
+      589
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      598,
+      513,
+      846,
+      606
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Pipeline ",
+    "text_level": 1,
+    "bbox": [
+      144,
+      620,
+      226,
+      627
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "ByteEdit formulates a comprehensive feedback learning framework that facilitating aesthetics, image-text matching, consistency and inference speed. ",
+    "bbox": [
+      143,
+      630,
+      854,
+      643
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      143,
+      645,
+      853,
+      713
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Human Evaluation ",
+    "text_level": 1,
+    "bbox": [
+      144,
+      726,
+      327,
+      734
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "To further investigate the gap between Adobe and our proposed ByteEdit, we solicited feedback from a large number of volunteers on the images generated by both, and the results are illustrated in the figure below. More than 12,000 samples are collected for each task. \"Good\" indicates the generated images by our ByteEdit is preferred and vice versa. The results show that users generally found the images we generated to be more natural in overall perception. Our GSB superiority percentages (i.e. (G+S)/(S+B) * 100%) on three different tasks are 105%, 163%, and 112%, respectively. ",
+    "bbox": [
+      142,
+      738,
+      854,
+      774
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      150,
+      780,
+      847,
+      824
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Human Perference Evaluation on our proposed PeFL and Acceleration. Our proposed PeFL significantly improves the generation quality, outperforming the baseline on all different tasks. Especially in the outpainting task with PeFL, our method exceeds the baseline by about 60% in terms of structure and aesthetic. Moreover, our model has no significant loss in either consistency or structure and aesthetic with the progressive training strategy. To our surprise, we have even achieved both increasing speed and quality in the outpainting and inpainting-editing tasks. ",
+    "bbox": [
+      142,
+      829,
+      854,
+      864
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      146,
+      867,
+      496,
+      927
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/ByteEdit_Generative_Image_Editing/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      500,
+      867,
+      847,
+      928
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "BibTex ",
+    "text_level": 1,
+    "bbox": [
+      145,
+      940,
+      214,
+      947
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "@InProceedings{ren2024byteedit, title={ByteEdit: Boost, Comply and Accelerate Generative Image Editing}, author={Ren, Yuxi and Wu, Jie and Lu, Yanzuo and Kuang, Huafeng and Xia, Xin and Wang, Xiongh booktitle={ECCV}, year={2024} ",
+    "bbox": [
+      179,
+      955,
+      868,
+      975
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ByteEdit ",
+    "bbox": [
+      411,
+      24,
+      588,
+      37
+    ],
+    "page_idx": 0
+  }
+]

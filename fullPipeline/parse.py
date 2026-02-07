@@ -6,7 +6,10 @@ import os
 from pathlib import Path
 import shutil
 from loguru import logger
-
+import sys
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.insert(0, parent_dir)
 
 from mineru.cli.common import convert_pdf_bytes_to_bytes_by_pypdfium2, prepare_env, read_fn
 from mineru.data.data_reader_writer import FileBasedDataWriter
@@ -120,7 +123,7 @@ def do_parse(
                     images_list.append(image_info)
                     fig_index+=1
                 elif entity["type"]=="table" :
-                    if entity["img_path"] !="" and "table_body" in entity:
+                    if entity["img_path"] !="" and "table_body" in entity :
                         table_info={
                             "table_id":f"table_{table_index}",
                             "path":entity["img_path"],
@@ -216,7 +219,12 @@ def do_parse(
                 f_make_md_mode, middle_json, model_json, is_pipeline=True
             )
             '''
+            pdf_bytes=pdf_bytes[idx]
+            local_md_dir = Path(output_dir) / pdf_file_name
+            draw_layout_bbox(pdf_info, pdf_bytes, local_md_dir, f"{pdf_file_name}_layout.pdf")
 
+    
+            draw_span_bbox(pdf_info, pdf_bytes, local_md_dir, f"{pdf_file_name}_span.pdf")
     #backend
     
 
@@ -345,8 +353,8 @@ def parse_doc( #供pipeline使用的函数接口
             start_page_id=start_page_id,
             end_page_id=end_page_id
         )
-        postProcessImages(output_dir,pdf_file_name)
-        insertDictInMD(output_dir,pdf_file_name)
+        #postProcessImages(output_dir,pdf_file_name)
+        #insertDictInMD(output_dir,pdf_file_name)
         
     except Exception as e:
         logger.exception(e)
@@ -370,8 +378,8 @@ if __name__ == '__main__':
     '''
     """Use pipeline mode if your environment does not support VLM"""
 
-    pdf_path="../data/pdfs/docsam.pdf"
-    output_dir="../data/output2"
+    pdf_path="../posterData/[Re] Graph Edit Networks_poster.pdf"
+    output_dir="./"
     parse_doc(pdf_path, output_dir, backend="pipeline")
     #insertDictInMD(output_dir,"docsam")
     """To enable VLM mode, change the backend to 'vlm-xxx'"""

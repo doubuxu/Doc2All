@@ -1,0 +1,554 @@
+[
+    {
+        "type": "text",
+        "text": "Quantifying Network Similarity using Graph Cumulants ",
+        "text_level": 1,
+        "bbox": [
+            234,
+            19,
+            760,
+            57
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Gecia Bravo-Hermsdorf1Lee M.Gunderson1Pierre-André Maugis²Carey E.Priebe3 epartentateritti ",
+        "bbox": [
+            204,
+            61,
+            801,
+            109
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "TL;DR: ",
+        "text_level": 1,
+        "bbox": [
+            31,
+            157,
+            314,
+            226
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Using only moments is awkward ",
+        "bbox": [
+            24,
+            271,
+            187,
+            292
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "“The length of a human averages 1.7 meters, and their average squared length is 2.9 square meters\" ",
+        "bbox": [
+            59,
+            298,
+            289,
+            336
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Using cumulants is easier to understand ",
+        "bbox": [
+            25,
+            348,
+            224,
+            370
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\"The length of a human has: a variance of 0.01 meters, a standard deviation of 0.1 meters, arelative fluctuation of $6 \\% ^ { \\because }$ ",
+        "bbox": [
+            59,
+            376,
+            322,
+            432
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Graph Cumulants: the Better Subgraph Statistics ",
+        "text_level": 1,
+        "bbox": [
+            39,
+            482,
+            310,
+            505
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Erdós-Renyi is the new Gaussian... ",
+        "bbox": [
+            27,
+            533,
+            168,
+            550
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            36,
+            550,
+            170,
+            642
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "...degrees are encoded instars.. ",
+        "bbox": [
+            182,
+            602,
+            312,
+            620
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "...c.lustering is encoded in cycles... ",
+        "bbox": [
+            31,
+            677,
+            169,
+            694
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            188,
+            621,
+            316,
+            709
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            37,
+            696,
+            167,
+            783
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "..and bipartite-ness as well! ",
+        "bbox": [
+            182,
+            752,
+            296,
+            769
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            183,
+            769,
+            316,
+            859
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "But are graphcumulants beterfortesting7 (than subgraph densities) ",
+        "bbox": [
+            51,
+            872,
+            295,
+            937
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Apples-to-Apples: A Two-Sample Test ",
+        "text_level": 1,
+        "bbox": [
+            395,
+            148,
+            605,
+            172
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            366,
+            189,
+            620,
+            460
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "When estimating the covariance.. ",
+        "bbox": [
+            363,
+            486,
+            503,
+            505
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/equations/equations_1.jpg",
+        "text": "$$\n\\begin{array} { r } { \\mathsf { C o v } ( \\hat { \\mu } _ { g } , \\hat { \\mu } _ { g ^ { \\prime } } ) = \\underbrace { \\left. \\hat { \\mu } _ { g } \\hat { \\mu } _ { g ^ { \\prime } } \\right. } _ { \\mathrm { ~ \\bar { \\boldsymbol { \\mu } } h a r d ^ { \\prime } ~ } } - \\underbrace { \\left. \\hat { \\mu } _ { g } \\right. \\left. \\hat { \\mu } _ { g ^ { \\prime } } \\right. } _ { \\mathrm { ~ \\bar { \\boldsymbol { \\mu } } _ { e a s y ^ { \\prime } } ~ } } } \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            383,
+            508,
+            541,
+            554
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "..the \"hard” part uses a combinatorial disjoint union rule ",
+        "bbox": [
+            403,
+            558,
+            631,
+            578
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/equations/equations_2.jpg",
+        "text": "$$\nc _ { \\Lambda } c _ { \\prime } = 4 c _ { \\Lambda } + 2 c _ { \\Delta } + 2 c _ { \\curlyeq } + 4 c _ { \\Pi } + c _ { \\iota \\Lambda }\n$$",
+        "text_format": "latex",
+        "bbox": [
+            448,
+            583,
+            604,
+            604
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Combinatorial Construction of Cumulants ",
+        "text_level": 1,
+        "bbox": [
+            385,
+            649,
+            614,
+            672
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(X)= mean   \nμ= K1 (X2)= variance + mean2   \nμ2 K2 +K1K1   \n$\\begin{array} { r l r l r l r l } { \\mu _ { 3 } } & { { } = } & { \\kappa _ { 3 } } & { } & { { } + \\kappa _ { 2 } \\kappa _ { 1 } } & { { } + \\kappa _ { 2 } \\kappa _ { 1 } \\cdot } & { { } + \\kappa _ { 2 } \\kappa _ { 1 } \\cdot } & { { } + \\kappa _ { 1 } \\kappa _ { 1 } \\kappa _ { 1 } } \\end{array}$ N门门A   \nμ=κ+κκ+κκ+κ/κ+κκκ/ ",
+        "bbox": [
+            363,
+            692,
+            625,
+            943
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Graph Cumulants Clearly Conquer ",
+        "text_level": 1,
+        "bbox": [
+            730,
+            148,
+            920,
+            172
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Graph cumulants outperform subgraph densities in general.. ",
+        "bbox": [
+            674,
+            189,
+            927,
+            208
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "...and graph cumulants also work for single graph samples! ",
+        "bbox": [
+            729,
+            210,
+            970,
+            229
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            677,
+            237,
+            973,
+            417
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Why do graph cumulants perform better? ",
+        "bbox": [
+            673,
+            439,
+            849,
+            458
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "...because their fluctuations look more Vormal! ",
+        "bbox": [
+            774,
+            461,
+            970,
+            480
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            677,
+            494,
+            970,
+            624
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$\" Z ^ { 2 }$ -score\" for graphs sampled from the same distribution ",
+        "bbox": [
+            708,
+            628,
+            944,
+            648
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Graph Cumulants in the (semi-)Wild! ",
+        "text_level": 1,
+        "bbox": [
+            724,
+            671,
+            926,
+            694
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Varying: ",
+        "text_level": 1,
+        "bbox": [
+            865,
+            716,
+            895,
+            730
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Number of subgraphs used byboth tests ",
+        "bbox": [
+            865,
+            731,
+            941,
+            760
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            673,
+            715,
+            855,
+            814
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Comparing: ",
+        "text_level": 1,
+        "bbox": [
+            865,
+            768,
+            907,
+            781
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Genetic interaction networks of Arabidopsisand Mouse ",
+        "bbox": [
+            865,
+            782,
+            967,
+            812
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Varying: ",
+        "text_level": 1,
+        "bbox": [
+            753,
+            830,
+            783,
+            845
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Numberof graphspersample used by both tests ",
+        "bbox": [
+            680,
+            846,
+            784,
+            875
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Comparing: ",
+        "text_level": 1,
+        "bbox": [
+            742,
+            883,
+            782,
+            896
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Genetic interaction networks of Humanand Rat ",
+        "bbox": [
+            682,
+            897,
+            784,
+            926
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Quantifying Network Similarity using Graph Cumulants_poster/auto/images/images/fig_9.jpg",
+        "image_caption": [
+            "false positive "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            794,
+            832,
+            975,
+            928
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "Journal of Machine Learning Research vol.24 (2023)1-27 ",
+        "bbox": [
+            381,
+            974,
+            587,
+            991
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "gecia.bravo@gmail.com ",
+        "bbox": [
+            882,
+            975,
+            972,
+            991
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "gecia.github.io ",
+        "bbox": [
+            29,
+            974,
+            85,
+            991
+        ],
+        "page_idx": 0
+    }
+]

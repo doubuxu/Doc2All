@@ -10,7 +10,7 @@ import base64
 from PIL import Image
 import json
 from dotenv import load_dotenv
-
+import re
 # 加载 .env 文件（必须在 getenv 之前执行）
 load_dotenv() 
 def image_encode(img_path):
@@ -105,7 +105,7 @@ def get_json_data(poster_path,poster_name,sub_image_path):#针对一个海报，
 
     "github":如果海报中提供了相关的GitHub连接，则填入本字段，否则留空，例如"github":""。
 
-    "description":对海报内容的简短描述
+    "figures":[],我不会提供metadat部分的子图文件，请你根据海报自动识别，并生成不重复的图片名来表示，并给出你估计的子图大小，数据格式与下方正文部分一致
 
   }
 
@@ -121,7 +121,11 @@ def get_json_data(poster_path,poster_name,sub_image_path):#针对一个海报，
 
       "tables": [],
 
-      "figures": []
+      "tables_caption":["",""],表格对应的caption，如果表格标题出现在表格子图中则不必提取，用""表示；否则提取对应的表格标题信息，如果表格没有标题，则用""表示
+
+      "figures": [],
+
+      "figures_caption":["",""]图片对应的caption，如果图片标题出现在图片子图中则不必提取，用""表示；否则提取对应的图片标题信息，如果图片没有标题，则用""表示
 
     },
 
@@ -135,7 +139,11 @@ def get_json_data(poster_path,poster_name,sub_image_path):#针对一个海报，
 
       "tables": [],
 
-      "figures": [{"fig_id": "fig_2","figure_weight":"","figure_height":""}]
+      "tables_caption":["",""],
+
+      "figures": [{"fig_id": "fig_2","figure_width":"","figure_height":""}],
+
+      "figures_caption":["",""]
 
     },
 
@@ -147,9 +155,13 @@ def get_json_data(poster_path,poster_name,sub_image_path):#针对一个海报，
 
       "content": ["",""],
 
-      "tables": [{"table_id": "table_1","table_weight":"","table_height":""}],
+      "tables": [{"table_id": "table_1","table_width":"","table_height":""}],
 
-      "figures": []
+      "tables_caption":["",""],
+
+      "figures": [],
+
+      "figures_caption":["",""]
 
     }
 
@@ -160,18 +172,20 @@ def get_json_data(poster_path,poster_name,sub_image_path):#针对一个海报，
 请注意以下几点：
 1. JSON结构必须严格遵循上述格式，包括metadata和sections字段。
 2. metadata部分包含海报的基本信息，如标题、作者、GitHub链接和描述。
-3. sections部分是一个数组，每个元素代表海报的一个章节。每个章节包含标题、正文内容、图像和表格。
+3. sections部分是一个数组，每个元素代表海报的一个章节。每个章节包含标题、正文内容、图像和表格和其对应的caption。请你按照阅读顺序提取sections。
 4. content字段是一个列表，列表中的每个元素是一段正文文本，你必须精准的提取文本内容，不能对原图的信息进行修改或省略等。
 5. figures和tables字段分别包含文件名和尺寸信息。我会给出图像和表格的文件名、尺寸信息以及分割出来的图表，你需要将这些文件名与海报中的实际内容对应起来，并填写尺寸信息，单位为px。
 6. 只输出要求的结构化json数据，不要输出任何多余的字符
-
+7. 请仔细识别海报中的公式信息，在写入json时使用latex语法，注意区分行内公式和独立公式。
+8. 请仔细比对我给出的子图和海报图的内容，如果是子图中包含的文本或公式等信息，则不必写入content字段，避免造成同样的信息重复；content字段只生成子图中不包含的正文和公式等信息。
+9. 在判断metadata中的子图时，你要根据已知的海报尺寸和其他子图尺寸合理估计logo的尺寸信息
 """
 
     messages=[
         {"role": "system", "content": "你是一个专业的学术海报内容提取助手，能够从学术海报中提取对应的文本内容、图像和表格，并将其组织成结构化的JSON格式。"},
         {"role": "user", "content":[
             {"type":"text","text":prompt},
-            {"type":"text","text":"我将给出海报的图片，以及海报中分割出来的图像和表格，请根据这些内容生成对应的JSON数据。"},
+            {"type":"text","text":"我将给出海报的图片，以及海报中分割出来的图像和表格(不包括海报metadata部分的子图，例如学术会议logo、大学logo等，这一部分需要你自行识别其尺寸)，请根据这些内容生成对应的JSON数据。"},
             {
                 "type":"image_url",
                 "image_url":{
@@ -213,9 +227,32 @@ def get_json_data_batch(poster_path,sub_image_path,save_path):
             with open(save_file,'w',encoding='utf-8') as f:
                 json.dump(json_data,f,ensure_ascii=False,indent=2)
 
+def extract_json_from_markdown(text):
+    """从 markdown 代码块中提取 JSON"""
+    if not isinstance(text, str):
+        return text  # 已经是解析后的对象
+    
+    # 尝试匹配 ```json ... ``` 或 ``` ... ```
+    patterns = [
+        r'```json\s*(.*?)\s*```',  # ```json
+        r'```\s*(.*?)\s*```',       # ```
+    ]
+    
+    for pattern in patterns:
+        match = re.search(pattern, text, re.DOTALL)
+        if match:
+            return json.loads(match.group(1))
+    
+    # 如果没有代码块标记，尝试直接解析
+    return json.loads(text.strip())
+
 if __name__ == "__main__":
     poster_path=Path("../posterData")
-    #poster_name="[Re] Graph Edit Networks_poster.jpg"
+    poster_name="Active Learning with Table Language Models_poster.jpg"
     sub_image_path=Path("../posterDataOutput")
-    #get_json_data(poster_path,poster_name,sub_image_path)
-    get_json_data_batch(poster_path,sub_image_path,save_path=sub_image_path)
+    json_data=get_json_data(poster_path,poster_name,sub_image_path)
+    json_data=extract_json_from_markdown(json_data)
+    #json_data=json.loads(json_data)
+    with open(f'./{poster_name}.json','w',encoding='utf-8') as f:
+        json.dump(json_data,f,ensure_ascii=False,indent=2)    
+    #get_json_data_batch(poster_path,sub_image_path,save_path=sub_image_path)

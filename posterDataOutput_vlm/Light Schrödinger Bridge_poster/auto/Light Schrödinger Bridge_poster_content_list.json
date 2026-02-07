@@ -1,0 +1,935 @@
+[
+    {
+        "type": "text",
+        "text": "Alexander Korotin1,2 ",
+        "bbox": [
+            279,
+            63,
+            433,
+            90
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nikita Gushchin\\*1 (\\*-equal contribution) ",
+        "bbox": [
+            446,
+            59,
+            579,
+            116
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Motivation: Unpaired Domain Translation ",
+        "text_level": 1,
+        "bbox": [
+            62,
+            134,
+            418,
+            159
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Proposed Algorithm: Light Schrodinger Bridge (LightSB) ",
+        "text_level": 1,
+        "bbox": [
+            535,
+            136,
+            934,
+            160
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            25,
+            175,
+            195,
+            267
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nopairedtrainingexamplesareavailable. ",
+        "bbox": [
+            226,
+            176,
+            340,
+            187
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The(informal) task:givensamples $\\mathsf { X } ,$ Y from two domains,construct a mapTwhich can translate new samples from the input domain to the target domain. ",
+        "bbox": [
+            11,
+            277,
+            211,
+            318
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Unpaired setup ",
+        "text_level": 1,
+        "bbox": [
+            243,
+            161,
+            317,
+            174
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            350,
+            206,
+            459,
+            254
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1.Optimal parameterization of the Schrodinger bridge using mixtures of Gaussians: ",
+        "bbox": [
+            480,
+            180,
+            755,
+            196
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            228,
+            189,
+            333,
+            325
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Good solution (keeps the content) ",
+        "bbox": [
+            348,
+            260,
+            459,
+            273
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            107,
+            383,
+            233,
+            442
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ambiguity in translations Bad solution (changes the content) ",
+        "bbox": [
+            348,
+            178,
+            460,
+            202
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "X10 T（X1）T（x2）",
+        "bbox": [
+            351,
+            276,
+            458,
+            324
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Single-cell (SC) sequencing extracts features for individual cells fromapopulation but destroys them.Therefore, tostudy individual cell dynamics one needsa method tomapcells between different observation times. ",
+        "bbox": [
+            245,
+            358,
+            457,
+            410
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1.Formulation of the Schrodinger Bridge Problem: ",
+        "text_level": 1,
+        "bbox": [
+            21,
+            618,
+            223,
+            633
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "For two continuous distributions $\\pmb { p } _ { 0 }$ and $p _ { 1 }$ on $\\mathbb { R } ^ { D }$ ，isthe Schrodingerbridge problem: ",
+        "bbox": [
+            22,
+            634,
+            223,
+            662
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Background: Diffusion Schrodinger Bridge (SB) ",
+        "text_level": 1,
+        "bbox": [
+            43,
+            540,
+            440,
+            566
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            262,
+            416,
+            439,
+            514
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2. Structure of the Schrodinger Bridge. ",
+        "text_level": 1,
+        "bbox": [
+            249,
+            615,
+            407,
+            630
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Examples of image unpaired domain translation ",
+        "text_level": 1,
+        "bbox": [
+            39,
+            334,
+            209,
+            374
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_6.jpg",
+        "image_caption": [
+            "Example II:image style transfer "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            106,
+            455,
+            234,
+            515
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Given two probability distributions $\\mathsf { p } _ { 0 } , \\mathsf { p } _ { 1 } ,$ how to transform $\\mathsf { p } _ { 0 }$ to $\\mathsf { p } _ { 1 }$ viaadiffusion processand preserve the input-output similarity? ",
+        "bbox": [
+            70,
+            572,
+            391,
+            605
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2.New loss function for training the Schrodinger bridge: ",
+        "bbox": [
+            482,
+            250,
+            670,
+            265
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ExampleI:image super-resolution ",
+        "bbox": [
+            12,
+            393,
+            96,
+            424
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Advantages: ",
+        "bbox": [
+            489,
+            337,
+            564,
+            354
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Single-cell data domain translation ",
+        "text_level": 1,
+        "bbox": [
+            247,
+            336,
+            458,
+            355
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "TheSchrodinger bridge problem can be fully characterized by the initial distribution $\\pmb { p } _ { 0 }$ and the Schrodingerpotential $\\phi ^ { * } ( x ) : \\mathbb { R } ^ { D }  \\mathbb { R } _ { + }$ .The optimal drift can be expressed by the Schrodingerpotentialas ",
+        "bbox": [
+            249,
+            631,
+            454,
+            689
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/equations/equations_1.jpg",
+        "text": "$$\n\\mathsf { i n f } _ { T \\in \\mathcal { F } ( p _ { 0 } , p _ { 1 } ) } \\mathsf { K L } ( T | | W ^ { \\epsilon } ) ,\n$$",
+        "text_format": "latex",
+        "bbox": [
+            82,
+            670,
+            162,
+            694
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Our solver is based on: ",
+        "bbox": [
+            481,
+            166,
+            559,
+            178
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Toy examples ",
+        "text_level": 1,
+        "bbox": [
+            495,
+            390,
+            601,
+            414
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/equations/equations_2.jpg",
+        "text": "$$\nv _ { \\theta } ( x _ { 1 } ) = \\sum _ { k = 1 } ^ { K } \\alpha _ { k } \\mathcal { N } ( x _ { 1 } | r _ { k } , \\epsilon S _ { k } ) , \\quad c _ { \\theta } ( x _ { 0 } ) = \\sum _ { k = 1 } ^ { K } \\alpha _ { k } \\exp \\big ( \\frac { { x _ { 0 } ^ { T } S _ { k } x _ { 0 } + 2 r _ { k } ^ { T } x _ { 0 } } } { 2 \\epsilon } \\big ) .\n$$",
+        "text_format": "latex",
+        "bbox": [
+            497,
+            202,
+            739,
+            243
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/equations/equations_3.jpg",
+        "text": "$$\n\\mathsf { K L } ( T ^ { * } | | T _ { \\theta } ) = \\underbrace { \\int _ { \\mathbb { R } ^ { D } } \\mathsf { l o g } c _ { \\theta } ( x _ { 0 } ) p _ { 0 } ( x _ { 0 } ) d x _ { 0 } - \\int _ { \\mathbb { R } ^ { D } } \\mathsf { l o g } v _ { \\theta } ( x _ { 1 } ) p _ { 1 } ( x _ { 1 } ) d x _ { 1 } } _ { \\mathcal { L } ( \\theta ) } + \\mathsf { C o n s t }\n$$",
+        "text_format": "latex",
+        "bbox": [
+            497,
+            271,
+            741,
+            323
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Fast training （ $\\textbf { < 1 }$ minute on 4 CPU cores, not hours of training on GPU,like others). ",
+        "bbox": [
+            586,
+            324,
+            756,
+            363
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Qualitative results of our solverapplied to 2D model distributions(\"Gaussian\" to \"swiss-roll\"). ",
+        "bbox": [
+            502,
+            421,
+            703,
+            452
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Thevolatility of trajectories increaseswithε, and the distributions $\\pi ( x _ { \\mathit { 1 } } | x _ { \\mathit { 0 } } )$ becomemore disperse. ",
+        "bbox": [
+            508,
+            456,
+            702,
+            483
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            475,
+            492,
+            727,
+            609
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(d)ε = 0.1. ",
+        "bbox": [
+            664,
+            616,
+            708,
+            631
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "until converged; ",
+        "bbox": [
+            761,
+            294,
+            827,
+            308
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Samplebatches{x,..,x}\\~Ppo，{x1,..,xM}\\~P1; $\\theta$ $\\frac { \\partial \\widehat { \\mathcal { L } } _ { \\theta } } { \\partial \\theta }$ ",
+        "bbox": [
+            766,
+            214,
+            989,
+            292
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(a)x\\~ Po,y\\~ P1. (c) ε = 0.01. ",
+        "bbox": [
+            480,
+            616,
+            628,
+            632
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Algorithm 1: Light Schrodinger Bridge (LightSB) ",
+        "bbox": [
+            762,
+            175,
+            959,
+            192
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "repeat ",
+        "text_level": 1,
+        "bbox": [
+            761,
+            200,
+            790,
+            212
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Main problem ",
+        "text_level": 1,
+        "bbox": [
+            370,
+            161,
+            434,
+            175
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Theoretical validity (the guaranteesof themethod's learning ability from the point of view of statistical learningand approximation theories). ",
+        "bbox": [
+            767,
+            323,
+            978,
+            363
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Schrodinger Bridge Benchmark ",
+        "text_level": 1,
+        "bbox": [
+            761,
+            388,
+            984,
+            410
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Quantitative results of our solver on the standard benchmark for the Schrodinger bridge problem. ",
+        "bbox": [
+            778,
+            415,
+            960,
+            441
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ε=0.1 e=1 ∈=10 D=2D=16D=64 D=128 D=2 D=16 D=64 D=128D=2D=16D=64D=128   \nBest solver 1.94 13.67 11.74 11.4 1.04 9.08 18.05 15.23 1.40 1.27 2.36 1.31   \nLightSB] 0.03 0.08 0.28 0.60 0.05 0.09 0.24 0.62 0.07 0.11 0.21 0.37 ±std ±0.01 ±0.04 ±0.02 ±0.02 ±0.003 ±0.006 ±0.007 ±0.007 ±0.02 ±0.01 ±0.01 ±0.01 \\*Themetric cBW-UVP isused for comparising build schrodinger bridge with ground-truth bridge (lower=better). ",
+        "bbox": [
+            744,
+            448,
+            988,
+            506
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Single cell experiment ",
+        "text_level": 1,
+        "bbox": [
+            795,
+            520,
+            954,
+            542
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Quantitative results in the problem of predicting single-cell trajectories in the feature space (single-cell trajectory inference). ",
+        "bbox": [
+            752,
+            549,
+            985,
+            575
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/tables/table_1.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Setup</td><td>Solver type</td><td>DIM Solver</td><td>50</td><td>100</td><td>1000</td></tr><tr><td>DiscreteEOT</td><td>Sinkhon</td><td>(Cuturi,2013)[1GPUV100]</td><td>2.34(90 s)</td><td>2.24(2.5m)</td><td>1.864（9m)</td></tr><tr><td>Continuous EOT</td><td>Langevin-based</td><td>(Mokrov etal.,2023)[1GPUV100]</td><td>2.39±0.06（19m）</td><td>2.32±0.15（19m）</td><td>1.46±0.20（15m）</td></tr><tr><td>Continuous EOT</td><td>Minimax</td><td>(Gushchin etal.,2023)[1GPUV100]</td><td>2.44±0.13（43m）</td><td>2.24±0.13（45m）</td><td>1.32±0.06（71m）</td></tr><tr><td>Continuous EOT</td><td>IPF</td><td>(Vargasetal.,2021)[1GPUV100]</td><td>3.14±0.27（8m）</td><td>2.86±0.26（8m）</td><td>2.05±0.19（11m）</td></tr><tr><td>Continuous EOT</td><td>KLminimization</td><td>LightSB(ours)[4CPU cores]</td><td>2.31 ±0.27(65 s)</td><td>2.16±0.26(66 s)</td><td>1.27±0.19(146s)</td></tr></table>",
+        "bbox": [
+            744,
+            581,
+            990,
+            626
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Unpaired Image-to-image Translation ",
+        "text_level": 1,
+        "bbox": [
+            498,
+            658,
+            790,
+            683
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "where $\\mathcal { F } ( p _ { 0 } , p _ { 1 } )$ are stochastic processes with marginals $\\pmb { p } _ { 0 }$ ， $_ { p _ { 1 } }$ at $t = 0$ and $t = 1$ ,respectively，while $W ^ { \\epsilon }$ isthe Wiener processwith variance∈,i.e.，given by the SDE: ",
+        "bbox": [
+            19,
+            701,
+            225,
+            744
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "This problem has a unique solution,which is a diffusion process $\\tau ^ { * }$ described by the SDE: ",
+        "bbox": [
+            22,
+            776,
+            223,
+            805
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/equations/equations_4.jpg",
+        "text": "$$\nW ^ { \\epsilon } : \\quad d X _ { t } = { \\sqrt { \\epsilon } } d W _ { t } .\n$$",
+        "text_format": "latex",
+        "bbox": [
+            82,
+            751,
+            163,
+            767
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/equations/equations_5.jpg",
+        "text": "$$\nT ^ { * } : \\quad d X _ { t } = g ^ { * } ( X _ { t } , t ) d t + \\sqrt { \\epsilon } d W _ { t } .\n$$",
+        "text_format": "latex",
+        "bbox": [
+            59,
+            812,
+            186,
+            829
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            27,
+            841,
+            205,
+            941
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The minimizer T\\* is called the Schrodinger Bridge. ",
+        "bbox": [
+            51,
+            951,
+            181,
+            979
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/equations/equations_6.jpg",
+        "text": "$$\n\\begin{array} { r } { \\pmb { g } ^ { * } ( x , t ) = \\epsilon \\nabla _ { x } \\log \\displaystyle \\int _ { \\mathbb R ^ { D } } \\mathcal { N } ( x ^ { \\prime } | x , ( 1 - t ) \\epsilon I _ { D } ) \\phi ^ { * } ( x ^ { \\prime } ) d x ^ { \\prime } } \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            259,
+            693,
+            443,
+            729
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Inourwork，we introduce (for convenience） the adjusted Schrodinger bridge potential $\\begin{array} { r } { v ^ { * } ( x _ { 1 } ) \\stackrel { \\mathrm { d e f } } { = } \\exp ( - \\frac { \\| x _ { 1 } \\| ^ { 2 } } { 2 \\epsilon } ) \\phi ^ { * } ( x _ { 1 } ) } \\end{array}$ ",
+        "bbox": [
+            249,
+            735,
+            454,
+            768
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "3. Integration of the Schrodinger Bridge SDE. The Schrodinger bridge SDE: ",
+        "bbox": [
+            249,
+            785,
+            435,
+            816
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/equations/equations_7.jpg",
+        "text": "$$\nT ^ { * } : \\quad d X _ { t } = g ^ { * } ( X _ { t } , t ) d t + \\sqrt { \\epsilon } d W _ { t } .\n$$",
+        "text_format": "latex",
+        "bbox": [
+            288,
+            822,
+            415,
+            839
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "admits a closed-form solution $\\pi ^ { * } ( x _ { 1 } | x _ { 0 } )$ expressed through theadjusted Schrodinger potential $v ^ { * }$ ： ",
+        "bbox": [
+            250,
+            847,
+            455,
+            876
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/equations/equations_8.jpg",
+        "text": "$$\n\\pi ^ { * } ( x _ { 1 } | x _ { 0 } ) \\ { \\stackrel { \\mathrm { d e f } } { = } } \\ { \\frac { \\exp \\left( \\left. x _ { 0 } , x _ { 1 } \\right. / \\epsilon \\right) v ^ { * } ( x _ { 1 } ) } { c ^ { * } ( x _ { 0 } ) } } ,\n$$",
+        "text_format": "latex",
+        "bbox": [
+            287,
+            880,
+            414,
+            917
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "where $\\begin{array} { r } { c ^ { * } ( x _ { 0 } ) \\ { \\stackrel { \\mathrm { d e f } } { = } } \\ \\int _ { \\mathbb { R } ^ { D } } \\exp \\left( \\langle x _ { 0 } , x _ { 1 } \\rangle / \\epsilon \\right) v ^ { * } ( x _ { 1 } ) d x _ { 1 } } \\end{array}$ is the normalizing constant. ",
+        "bbox": [
+            250,
+            925,
+            453,
+            958
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Qualitative results of our solver for   \nsolving the domain   \ntranslation problem   \n(in the latent space of the ALAE autoencoder). ",
+        "bbox": [
+            485,
+            736,
+            593,
+            869
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Imagesresolution is 1024×1024. ",
+        "bbox": [
+            491,
+            888,
+            591,
+            925
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/images/fig_9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            607,
+            697,
+            987,
+            977
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "Skoltech Skolkovo Institute of Scienceand Technology ",
+        "bbox": [
+            9,
+            13,
+            273,
+            121
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "",
+        "bbox": [
+            473,
+            388,
+            492,
+            414
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "AIRi ",
+        "bbox": [
+            748,
+            13,
+            989,
+            122
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "",
+        "bbox": [
+            742,
+            518,
+            762,
+            543
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "III ",
+        "bbox": [
+            474,
+            133,
+            494,
+            159
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "",
+        "bbox": [
+            744,
+            385,
+            762,
+            411
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "I ",
+        "bbox": [
+            6,
+            132,
+            25,
+            159
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "VII ",
+        "bbox": [
+            474,
+            658,
+            498,
+            682
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "1 ",
+        "bbox": [
+            6,
+            538,
+            25,
+            564
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "Evgeny Burnaev1,2 ",
+        "bbox": [
+            600,
+            62,
+            734,
+            91
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "Light Schrodinger Bridge ",
+        "bbox": [
+            344,
+            18,
+            681,
+            57
+        ],
+        "page_idx": 0
+    }
+]

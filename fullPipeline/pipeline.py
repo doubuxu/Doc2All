@@ -22,9 +22,23 @@ import dotenv
 import time
 import datetime
 from utils.token_claculate import token_sum
+from utils.logo_fetch import LogoFetcher
+from utils.download_logo import download_logo_simple
+import requests
+from urllib.parse import urlparse
 dotenv.load_dotenv()
 #pdf_path=""
 #parse_doc()
+
+def get_logo_by_domain(institution_name):
+    """通过机构域名获取Logo"""
+    # 需要先获取机构的官方域名
+    # 可通过OpenAlex的institution API获取homepage_url
+    
+    # 示例：MIT -> mit.edu
+    domain = "mit.edu"  # 从OpenAlex获取
+    logo_url = f"https://logo.clearbit.com/{domain}"
+    return logo_url
 
 def args_analyse():
     parser = argparse.ArgumentParser(description='input args')
@@ -77,11 +91,38 @@ def ppt_generate2(input_path,output_path,mode,log):#baselineModel2
 
     #针对学术论文，搜索arxiv id并添加到metadata中
     title=content_plan["metadata"]["title"]
-    results = list(arxiv.Search(query=f'ti:"{title}"', max_results=1).results())
+    client=arxiv.Client()
+    search=arxiv.Search(query=f'ti:"{title}"', max_results=1)
+    results = list(client.results(search))
     if len(results)>0:
-        content_plan["metadata"]["arxiv_id"]=results[0].entry_id
+        paper = results[0]
+        content_plan["metadata"]["arxiv_id"]=paper.entry_id
+        comment=paper.comment
+        print(f"comment:{comment}")
     else:
         content_plan["metadata"]["arxiv_id"]=""
+        paper = None
+        print("未找到arXiv论文")
+    if paper:  # 确保找到论文后才继续
+        fetcher = LogoFetcher()
+        institutions = content_plan["metadata"]["organizations"]
+        
+        for inst in institutions:
+            result = fetcher.fetch_logo(inst)
+            print(f"{result['name']}: {result['logo_url']}")
+            
+            if result["logo_url"]:
+                # 修复路径拼接
+                download_path = Path(output_path) / file_name / "logos"
+                download_path.mkdir(parents=True, exist_ok=True)
+                
+                download_logo_simple(
+                    result["logo_url"], 
+                    result["name"], 
+                    str(download_path)  # 转字符串或保持Path对象
+                )
+    
+
     save_json(content_plan,Path(output_path)/file_name/"contentPlan"/"final_content_plan.json")
 
     log.info("Slides content planning completed.")

@@ -1,0 +1,433 @@
+[
+    {
+        "type": "text",
+        "text": "Fast,Scalable,Warm-StartSemidefinite Programming with Spectral Bundlingand Sketching ",
+        "text_level": 1,
+        "bbox": [
+            53,
+            42,
+            948,
+            85
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Rico Angell1 and Andrew McCallum1 1University of Massachusetts Amherst ",
+        "bbox": [
+            394,
+            95,
+            605,
+            148
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Motivation ",
+        "text_level": 1,
+        "bbox": [
+            130,
+            184,
+            205,
+            210
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "· Semidefinite programming (SDP) is an important tool for many applications ",
+        "bbox": [
+            10,
+            228,
+            301,
+            247
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            23,
+            258,
+            311,
+            507
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Unified Spectral Bundling ",
+        "text_level": 1,
+        "bbox": [
+            408,
+            181,
+            582,
+            212
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "·Many existing methods for solving or approximately solving SDPs ·Need for a method that is fast, scalable,and provably correct for massive SDPs · Need a method where hyperparameters can modulate memory, accuracy, speed,and scalability of solving general SDPs ",
+        "bbox": [
+            12,
+            512,
+            310,
+            585
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Problem Setup ",
+        "text_level": 1,
+        "bbox": [
+            118,
+            600,
+            219,
+            629
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "max (C,x) X0 s.t. $\\boldsymbol { \\mathcal { A } } _ { \\mathcal { T ^ { \\prime } } } \\boldsymbol { X } = \\boldsymbol { b _ { \\mathbb { Z ^ { \\prime } } } }$ AX≤b $A : \\mathbb { S } ^ { n }  \\mathbb { R } ^ { \\acute { m } }$ linear operator ",
+        "bbox": [
+            27,
+            675,
+            133,
+            790
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            168,
+            646,
+            304,
+            809
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "· Want to solve general SDPs with both equality and inequality constraints · Want to have theoretical guarantees about convergence to optimal solution $\\bullet$ Assume cost matrix $C$ is sparse and a upper bound $\\alpha \\geq \\mathrm { t r } ( X _ { \\star } )$ exists ·Assume the number of constraints is small compared to the problem size · Want to be able to solve ${ \\tt S D P s }$ where $X$ will not fit in memory ·Want solvertobeabletotakeadvantage ofawarm-start initialization ",
+        "bbox": [
+            13,
+            832,
+            305,
+            952
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "·Reformulated SDPas a the following penalized dual objective: ",
+        "bbox": [
+            335,
+            222,
+            580,
+            240
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/equations/equations_1.jpg",
+        "text": "$$\n\\begin{array} { r } { f ( y ) : = \\alpha \\left[ \\lambda _ { \\operatorname* { m a x } } ( C - \\mathcal { A } ^ { * } y ) \\right] _ { + } + \\langle b , y \\rangle + \\iota _ { \\mathcal { V } } ( y ) ^ { \\sim } } \\\\ { = \\underset { ( X , \\nu ) \\in \\mathcal { X } \\times \\mathrm { N } } { \\operatorname* { s u p } } \\langle C - \\mathcal { A } ^ { * } y , X \\rangle + \\langle b - \\nu , y \\rangle } \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            409,
+            245,
+            576,
+            308
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "· Solve the SDP by minimizing $f$ using a proximal bundle method: ",
+        "bbox": [
+            336,
+            318,
+            588,
+            336
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/equations/equations_2.jpg",
+        "text": "$$\n\\tilde { y } _ { t + 1 }  \\underset { y \\in \\mathbb { R } ^ { m } } { \\arg \\operatorname* { m i n } } \\hat { f } _ { t } ( y ) + \\frac { \\rho } { 2 } \\Vert y - y _ { t } \\Vert ^ { 2 }\n$$",
+        "text_format": "latex",
+        "bbox": [
+            427,
+            336,
+            556,
+            368
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "where the model $\\hat { f } _ { t }$ is parameterized by the low dimensional subspace of $\\mathcal { X }$ ： ",
+        "bbox": [
+            342,
+            374,
+            633,
+            392
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            366,
+            395,
+            598,
+            491
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "· The size of $V$ determines the rank $k$ of each update, specified by the user ",
+        "bbox": [
+            336,
+            504,
+            618,
+            522
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": ", Only update $y _ { t + 1 } \\gets \\tilde { y } _ { t + 1 }$ if $\\beta ( f ( y _ { t } ) - \\hat { f } _ { t } ( \\tilde { y } _ { t + 1 } ) ) \\leq f ( y _ { t } ) - f ( \\tilde { y } _ { t + 1 } )$ ",
+        "bbox": [
+            340,
+            525,
+            582,
+            544
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "·Always use $\\tilde { y } _ { t + 1 }$ to create $\\hat { \\mathcal { X } } _ { t + 1 } , V _ { t + 1 }$ is the top- $k$ eigenvectors of $C - A ^ { * } \\tilde { y } _ { t + 1 }$ ",
+        "bbox": [
+            338,
+            547,
+            615,
+            566
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "· Analytical solution to the proximal bundle method lead to the folowing updates ",
+        "bbox": [
+            332,
+            570,
+            645,
+            586
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/equations/equations_3.jpg",
+        "text": "$$\n\\begin{array} { c } { \\displaystyle \\ddot { y } _ { t + 1 } = y _ { t } - \\frac { 1 } { \\rho } ( b - \\nu _ { t + 1 } - A X _ { t + 1 } ) } \\\\ { \\displaystyle ( X _ { t + 1 } , \\nu _ { t + 1 } ) \\in \\operatorname * { a r g m a x } _ { ( X , \\nu ) \\in \\dot { \\mathcal X } _ { t } \\times \\mathrm { N } } \\langle C , X \\rangle + \\langle b - \\nu - A X , y _ { t } \\rangle - \\frac { 1 } { 2 \\rho } \\| b - \\nu - A X \\| ^ { 2 } } \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            374,
+            585,
+            620,
+            650
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$f ( y _ { t } ) - \\operatorname* { i n f } f \\leq \\varepsilon$ after $t \\geq O ( 1 / \\varepsilon )$ iterations, $O ( \\cdot )$ suppresses dependence on $n , m$ ",
+        "bbox": [
+            336,
+            652,
+            652,
+            670
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Scaling with Matrix Sketching ",
+        "text_level": 1,
+        "bbox": [
+            395,
+            685,
+            595,
+            717
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "·Only need to keep track of projections of $X$ such as $\\langle C , X \\rangle$ and $_ { A X }$ ·All of the memoization can be done eficiently due to linearity of operations ·Apply low-rank matrix sketching techniques to enable scaling to problems where $X$ cannot fit in memory—track projection $P$ instead of $X$ ",
+        "bbox": [
+            339,
+            726,
+            635,
+            804
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/images/fig_4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            354,
+            809,
+            637,
+            956
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Results ",
+        "text_level": 1,
+        "bbox": [
+            800,
+            183,
+            851,
+            210
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Max-Cut ",
+        "text_level": 1,
+        "bbox": [
+            809,
+            230,
+            842,
+            246
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/images/fig_5.jpg",
+        "image_caption": [
+            ">1013 decision variables "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            673,
+            259,
+            976,
+            430
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": ">2 billion decision variables tindicates thananε-approximate solution was notachieved in72 hours. ",
+        "bbox": [
+            730,
+            432,
+            907,
+            456
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/images/fig_6.jpg",
+        "image_caption": [
+            "Traveling Salesman Problem "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            670,
+            501,
+            981,
+            622
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "USBSeffectivelytakingadvantage ofwarm-start initialization ",
+        "bbox": [
+            757,
+            616,
+            911,
+            629
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching_poster/auto/images/images/fig_7.jpg",
+        "image_caption": [
+            "Clustering with -constraints ",
+            "Problem size increases "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            672,
+            676,
+            979,
+            805
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "UMassAmherst ",
+        "text_level": 1,
+        "bbox": [
+            683,
+            851,
+            774,
+            873
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Manning College of Information & Computer Sciences ",
+        "bbox": [
+            684,
+            886,
+            821,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "",
+        "bbox": [
+            833,
+            840,
+            986,
+            939
+        ],
+        "page_idx": 0
+    }
+]

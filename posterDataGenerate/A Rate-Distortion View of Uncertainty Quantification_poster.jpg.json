@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "title": "A Rate-Distortion View of Uncertainty Quantification",
+    "authors": [
+      "Ifigeneia Apostolopoulou",
+      "Benjamin Eysenbach",
+      "Frank Nielsen",
+      "Artur Dubrawski"
+    ],
+    "github": "https://github.com/ifiaposto/Distance_Aware_Bottleneck",
+    "description": "This poster presents Distance-Aware Bottleneck (DAB), a method for efficient uncertainty quantification that views the problem through a rate-distortion lens, aiming for reliable, lightweight, and sampling-free models.",
+    "figures": [
+      {
+        "fig_id": "logo_cmu_auton",
+        "figure_width": "350px",
+        "figure_height": "120px"
+      },
+      {
+        "fig_id": "logo_princeton_sony",
+        "figure_width": "350px",
+        "figure_height": "120px"
+      },
+      {
+        "fig_id": "qr_code",
+        "figure_width": "150px",
+        "figure_height": "150px"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section1",
+      "title": "Problem: Efficient Uncertainty Quantification",
+      "content": [
+        "Goal: reliable & lightweight models that \"know what they know.\"",
+        "• Principled: How much evidence?",
+        "• Efficient: Single Model & Sampling-Free",
+        "• Post-hoc: Works on pre-trained models"
+      ],
+      "tables": [],
+      "tables_caption": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "figure_width": "505px",
+          "figure_height": "374px"
+        }
+      ],
+      "figures_caption": [
+        ""
+      ]
+    },
+    {
+      "id": "section2",
+      "title": "Key Idea: Distance-Awareness",
+      "content": [],
+      "tables": [],
+      "tables_caption": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "figure_width": "1023px",
+          "figure_height": "398px"
+        }
+      ],
+      "figures_caption": [
+        ""
+      ]
+    },
+    {
+      "id": "section3",
+      "title": "Our Method: Distance-Aware Bottleneck (DAB)",
+      "content": [
+        "1> Treat the training dataset as a source generating training examples.",
+        "2> Map each datapoint to a $distribution$ through a stochastic encoder.",
+        "3> The codebook contains the centroids of the encoders in terms of a $statistical\\ distance$. Uncertainty is quantified by the expected distance from the codebook: $uncertainty(x_{test}) = \\mathbb{E}[D(p(z \\mid x_{test}; \\theta), q_k(z; \\phi))]$"
+      ],
+      "tables": [],
+      "tables_caption": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "figure_width": "468px",
+          "figure_height": "426px"
+        },
+        {
+          "fig_id": "fig_4",
+          "figure_width": "988px",
+          "figure_height": "429px"
+        }
+      ],
+      "figures_caption": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "section4",
+      "title": "Codebook Visualization",
+      "content": [
+        "Number of CIFAR-10 test datapoints assigned to each centroid during training. Each centroid progressively attracts datapoints of the same class."
+      ],
+      "tables": [],
+      "tables_caption": [],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "figure_width": "1086px",
+          "figure_height": "389px"
+        }
+      ],
+      "figures_caption": [
+        ""
+      ]
+    },
+    {
+      "id": "section5",
+      "title": "DAB's performance on ImageNet 1-K",
+      "content": [
+        "DAB outperforms ensembles at predicting misclassifications!",
+        "DAB can better distinguish out-of-distribution images.",
+        "Many fewer parameters!"
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "table_width": "2171px",
+          "table_height": "220px"
+        }
+      ],
+      "tables_caption": [
+        ""
+      ],
+      "figures": [],
+      "figures_caption": []
+    },
+    {
+      "id": "section6",
+      "title": "References",
+      "content": [
+        "[1] Alemi, A. A., Fischer, I., Dillon, J. V., and Murphy, K. Deep variational information bottleneck. In International Conference on Learning Representations, 2017.",
+        "[2] Alemi, A. A., Fischer, I., and Dillon, J. V. Uncertainty in the variational information bottleneck. arXiv preprint arXiv:1807.00906, 2018",
+        "[3] Liu, J., Lin, Z., Padhy, S., Tran, D., Bedrax Weiss, T., and Lakshminarayanan, B. Simple and principled uncertainty estimation with deterministic deep learning via distance awareness. Advances in Neural Information Processing Systems, 2020.",
+        "[4] Banerjee, A., Merugu, S., Dhillon, I. S., Ghosh, J., and Lafferty, J. Clustering with Bregman divergences. Journal of Machine Learning Research, 2005.",
+        "[5] Van Amersfoort, J., Smith, L., Teh, Y. W., and Gal, Y. Uncertainty estimation using a single deep deterministic neural network. In International Conference on Learning Representations, 2020."
+      ],
+      "tables": [],
+      "tables_caption": [],
+      "figures": [],
+      "figures_caption": []
+    }
+  ]
+}

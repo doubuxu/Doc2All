@@ -60,87 +60,92 @@ def do_parse(
 
         infer_results, all_image_lists, all_pdf_docs, lang_list, ocr_enabled_list = pipeline_doc_analyze(pdf_bytes, p_lang, parse_method=parse_method, formula_enable=formula_enable,table_enable=table_enable)
         
+        model_list = infer_results[0]
+        images_list = all_image_lists[0]
+        pdf_doc = all_pdf_docs[0]
+        _lang = lang_list[0]
+        _ocr_enable = ocr_enabled_list[0]
 
-        for idx, model_list in enumerate(infer_results):
-            model_json = copy.deepcopy(model_list)
-            pdf_file_name = input_file_name
-            local_image_dir, local_md_dir = prepare_env(output_dir, pdf_file_name, parse_method)#设置输出的md和图片路径
-            #local_md_dir:outpout_dir/filename
-            #local_image_dir:outpout_dir/filename/images
+        
+        model_json = copy.deepcopy(model_list)
+        pdf_file_name = input_file_name
+        local_image_dir, local_md_dir = prepare_env(output_dir, pdf_file_name, parse_method)#设置输出的md和图片路径
+        #local_md_dir:outpout_dir/filename
+        #local_image_dir:outpout_dir/filename/images
 
-            image_writer, md_writer = FileBasedDataWriter(local_image_dir), FileBasedDataWriter(local_md_dir)#写文件的类包装
+        image_writer, md_writer = FileBasedDataWriter(local_image_dir), FileBasedDataWriter(local_md_dir)#写文件的类包装
             
             #images_writer=FileBasedDataWriter(str(images_dir))
             #tables_writer=FileBasedDataWriter(str(tables_dir))
             #equations_writer=FileBasedDataWriter(str(equations_dir))
-            images_list = all_image_lists[idx]
-            pdf_doc = all_pdf_docs[idx]
-            _lang = lang_list[idx]
-            _ocr_enable = ocr_enabled_list[idx]
+        images_list = all_image_lists[idx]
+        pdf_doc = all_pdf_docs[idx]
+        _lang = lang_list[idx]
+        _ocr_enable = ocr_enabled_list[idx]
 
             #标准中间输出
-            middle_json = pipeline_result_to_middle_json(model_list, images_list, pdf_doc, image_writer,image_writer,image_writer,image_writer ,_lang, _ocr_enable, formula_enable)
+        middle_json = pipeline_result_to_middle_json(model_list, images_list, pdf_doc, image_writer ,_lang, _ocr_enable, formula_enable)
 
-            pdf_info = middle_json["pdf_info"]
+        pdf_info = middle_json["pdf_info"]
 
             
             #写入md文件
-            image_dir_abs=os.path.abspath(local_image_dir)
-            make_func = pipeline_union_make
-            md_content_str = make_func(pdf_info, f_make_md_mode, image_dir_abs)
-            md_writer.write_string(
+        image_dir_abs=os.path.abspath(local_image_dir)
+        make_func = pipeline_union_make
+        md_content_str = make_func(pdf_info, f_make_md_mode, image_dir_abs)
+        md_writer.write_string(
                 f"{pdf_file_name}.md",
                 md_content_str,
-            )
+        )
             #print(f"md_content_str:{md_content_str}")
 
             
             #准备写入content_list内容
             #content_list中的visuals的路径是local_image_dir与相对路径的拼接
-            make_func = pipeline_union_make 
-            content_list = make_func(pdf_info, MakeMode.CONTENT_LIST,image_dir_abs)
+        make_func = pipeline_union_make 
+        content_list = make_func(pdf_info, MakeMode.CONTENT_LIST,image_dir_abs)
             
-            images_list=[]
-            tables_list=[]
-            equations_list=[]
-            images_name=[]
-            tables_name=[]
-            eqs_name=[]
-            fig_index=1
-            table_index=1
-            eq_index=1
-            for index,entity in enumerate(content_list):
-                if entity["type"]=="image":
-                    image_info={
+        images_list=[]
+        tables_list=[]
+        equations_list=[]
+        images_name=[]
+        tables_name=[]
+        eqs_name=[]
+        fig_index=1
+        table_index=1
+        eq_index=1
+        for index,entity in enumerate(content_list):
+            if entity["type"]=="image":
+                image_info={
                         "fig_id":f"fig_{fig_index}",
                         "path": entity["img_path"],
                         "caption":entity["image_caption"],
                         "content_list_index":index
-                    }
-                    images_name.append(Path(entity["img_path"]).name)
-                    images_list.append(image_info)
-                    fig_index+=1
-                elif entity["type"]=="table" :
-                    if entity["img_path"] !="" and "table_body" in entity:
-                        table_info={
+                }
+                images_name.append(Path(entity["img_path"]).name)
+                images_list.append(image_info)
+                fig_index+=1
+            elif entity["type"]=="table" :
+                if entity["img_path"] !="" and "table_body" in entity:
+                    table_info={
                             "table_id":f"table_{table_index}",
                             "path":entity["img_path"],
                             "caption":entity["table_caption"],
                             "content_list_index":index,
                             "table_body":entity["table_body"]
-                        }
-                        tables_name.append(Path(entity["img_path"]).name)
-                        tables_list.append(table_info)
-                        table_index+=1
-                elif entity["type"]=="equation":
-                    equations_info={
+                    }
+                    tables_name.append(Path(entity["img_path"]).name)
+                    tables_list.append(table_info)
+                    table_index+=1
+            elif entity["type"]=="equation":
+                equations_info={
                         "equations_id":f"equations_{eq_index}",
                         "path":entity["img_path"],
                         "content_list_index":index
-                    }
-                    eqs_name.append(Path(entity["img_path"]).name)
-                    equations_list.append(equations_info)
-                    eq_index+=1
+                }
+                eqs_name.append(Path(entity["img_path"]).name)
+                equations_list.append(equations_info)
+                eq_index+=1
             
             
 
@@ -382,7 +387,7 @@ if __name__ == '__main__':
     for poster_file in Path(poster_path).iterdir():
         if poster_file.suffix.lower()==".pdf":
             pdf_path=poster_file.resolve()
-            parse_doc(poster_file, output_dir, backend="pipeline",method="auto")
+            parse_doc(poster_file, output_dir,method="auto")
     
     #insertDictInMD(output_dir,"docsam")
     """To enable VLM mode, change the backend to 'vlm-xxx'"""

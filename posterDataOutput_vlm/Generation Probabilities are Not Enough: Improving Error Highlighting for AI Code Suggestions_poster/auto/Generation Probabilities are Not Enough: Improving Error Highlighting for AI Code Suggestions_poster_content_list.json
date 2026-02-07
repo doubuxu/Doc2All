@@ -1,0 +1,166 @@
+[
+    {
+        "type": "text",
+        "text": "Generation Probabilities are Not Enough: Improving Error Highlighting in Al Code Suggestions ",
+        "text_level": 1,
+        "bbox": [
+            15,
+            19,
+            459,
+            234
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Helena Vasconcelos,GaganBansal,AdamFourney, Vera Liao, Jennifer Wortman Vaughan ",
+        "bbox": [
+            16,
+            252,
+            316,
+            314
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Programmers increasingly use Al generated code (e.g., from CoPilot) in IDEs! ",
+        "bbox": [
+            17,
+            379,
+            467,
+            465
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "However,generated code may be erroneous!We need to help programmers double-check Al code and identify whenand where it may be incorrect. ",
+        "bbox": [
+            17,
+            514,
+            459,
+            645
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We explore two options to highlight uncertain, potentially erroneous regions: ",
+        "bbox": [
+            18,
+            691,
+            443,
+            777
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Use generation probabilities or “confidence scores\"toshowwherethemodel isuncertain Learn an edit model to show where programmers are most likely to make edits ",
+        "bbox": [
+            35,
+            783,
+            454,
+            958
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mixed-methods, within-subjects study with 30 programmers showed that edit model leads to: ",
+        "bbox": [
+            507,
+            16,
+            949,
+            86
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "-Significantly faster task completion time ",
+        "bbox": [
+            525,
+            89,
+            849,
+            121
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Generation Probabilities are Not Enough: Improving Error Highlighting for AI Code Suggestions_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [
+            "Significantly more localized edits "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            602,
+            125,
+            812,
+            362
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Generation Probabilities are Not Enough: Improving Error Highlighting for AI Code Suggestions_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            601,
+            412,
+            814,
+            648
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Stronger preference ",
+        "text_level": 1,
+        "bbox": [
+            558,
+            661,
+            704,
+            693
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Generation Probabilities are Not Enough: Improving Error Highlighting for AI Code Suggestions_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            602,
+            695,
+            810,
+            934
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "compared to the generation probability and no-highlights ",
+        "bbox": [
+            507,
+            943,
+            924,
+            979
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "GResearch ",
+        "bbox": [
+            318,
+            249,
+            456,
+            318
+        ],
+        "page_idx": 0
+    }
+]

@@ -1,0 +1,415 @@
+[
+    {
+        "type": "text",
+        "text": "Learning to Reach Goals via Diffusion ",
+        "text_level": 1,
+        "bbox": [
+            301,
+            33,
+            701,
+            69
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Vineet Jain Siamak Ravanbakhsh ",
+        "bbox": [
+            374,
+            84,
+            628,
+            111
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Generate trajectories that “diffuse away\" from potential goals, and train a policy to reverse them ",
+        "bbox": [
+            108,
+            144,
+            888,
+            173
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Denoising Diffusion Models ",
+        "text_level": 1,
+        "bbox": [
+            105,
+            207,
+            222,
+            223
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A Simple 2D Navigation Problem ",
+        "text_level": 1,
+        "bbox": [
+            420,
+            194,
+            583,
+            213
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Constructing the Forward Process ",
+        "text_level": 1,
+        "bbox": [
+            748,
+            194,
+            912,
+            212
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Learning to Reach Goals via Diffusion_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [
+            "Noise Sample ",
+            "TargetSample "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            28,
+            232,
+            314,
+            304
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Learning to Reach Goals via Diffusion_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [
+            "Goal-conditioned Reinforcement Learning "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            32,
+            371,
+            306,
+            548
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Goal Conditioned RLas Diffusion ",
+        "text_level": 1,
+        "bbox": [
+            92,
+            570,
+            253,
+            589
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Diffusion models: map any point from Gaussian data manifold Goal-conditioned RL: learn optimal path from any state goal state ",
+        "bbox": [
+            22,
+            614,
+            323,
+            649
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Learning to Reach Goals via Diffusion_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            16,
+            666,
+            329,
+            794
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Task:Navigate to goalXStates: $( x , y )$ ；Actions:unit length displacement in $( x , y )$ Forward process:Takerandomactions startingfrom goal Reverseprocess:Train policytoreverse the forward trajectories ",
+        "bbox": [
+            341,
+            225,
+            659,
+            275
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "10.0 Forward Diffusion Trajectories 50 Sampled actions from Diffusion policy Mean actionsfrom GCSLpolicy   \n10.0 10.0   \n7.5 40 7.5 8888 7.5   \n5.0 5.0 1888888 5.0   \n2.5 0.0 2.5 0.0 养 2.5 0.0   \n−2.5 −2.5 -2.5 1   \n-5.0 -5.0 1111551555445 -5.0   \n10 −7.5 -7.5   \n-7.5 10.0 10.0   \n10100-7.5-5.0-2.50.0 2.55.07.510.0 0 −10.0-7.5-5.0-2.50.02.55.07.510.0 −10.0-7.5-5.0-2.50.02.55.07.510.0 ",
+        "bbox": [
+            341,
+            280,
+            658,
+            407
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(a)Visualizationof trajectoriesstartingfromthegoalXgeneratedduringtheforwardprocess, (b) Predictedactions from Merlin policy，(c) Predictedactions from GCSLpolicy ",
+        "bbox": [
+            341,
+            413,
+            661,
+            443
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Backward view of diffusion gives us control over the goal distribution ",
+        "bbox": [
+            362,
+            457,
+            639,
+            475
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Effect of Time Conditioning ",
+        "text_level": 1,
+        "bbox": [
+            434,
+            495,
+            568,
+            513
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Analogous to the score function indiffusion,the Merlinpolicy isconditioned on the time Thistimeindicates how“noisy\"current stateis,or howfarweare from the target goal state Policy takesoptimalaction faraway fromgoal and becomesuncertainasitapproaches the goal;thisuncertaintyappearsfarther fromgoalas time horizon increases ",
+        "bbox": [
+            340,
+            527,
+            662,
+            591
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "10.0 5.5 10.0 7.5 5.0 10.0 10.0 7.5 5.0   \n  \n2.5 2.5 2.5   \n0.0 0.0 0.0 0.0   \n-5 -5   \n−7.5 -7.5 −7.5   \n10.0 10.0 -10.0   \n−10.0-7.5-5.0-2.50.02.5 5.07.510.0 -10.0-7.5-5.0-2.50.02.55.07.510.0 -10.0-7.5-5.0-2.50.02.55.07.510.0 10.0-7.5-5.0-2.50.02.55.0 7.510.0 ",
+        "bbox": [
+            343,
+            598,
+            653,
+            696
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(a) h=1 (b) h=5 (c）h=10 (d)h=20 ",
+        "bbox": [
+            361,
+            703,
+            638,
+            722
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The time conditioning affects policy uncertainty based on expected number of steps to reach the goal ",
+        "bbox": [
+            383,
+            739,
+            619,
+            775
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Merlin:Usepre-colected offline trajectories,train policy using behavior cloning Merlin-P:Learn reversedynamicsmodel to simulate trajectories backward fromgoal Merlin-NP:Useproposed trajectory stitching methodto construct backward trajectories ",
+        "bbox": [
+            670,
+            226,
+            983,
+            275
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Learning to Reach Goals via Diffusion_poster/auto/images/images/fig_4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            703,
+            293,
+            959,
+            455
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Learning to Reach Goals via Diffusion_poster/auto/images/images/fig_5.jpg",
+        "image_caption": [
+            "Experimental Results "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            672,
+            507,
+            988,
+            782
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Optimization Objective ",
+        "text_level": 1,
+        "bbox": [
+            445,
+            808,
+            557,
+            828
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/Learning to Reach Goals via Diffusion_poster/auto/images/tables/table_1.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>diffusion model</td><td>GCRL (Merlin)</td></tr><tr><td>target dataset</td><td>goal states</td></tr><tr><td>score function</td><td>policy</td></tr><tr><td>forward process</td><td>q(st|St+1)</td></tr><tr><td>reverse process</td><td>Pπ(St+1lSt)</td></tr></table>",
+        "bbox": [
+            62,
+            807,
+            282,
+            929
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Merlin outperforms previous methods, whilebeing highly-efficient! ",
+        "bbox": [
+            695,
+            801,
+            964,
+            820
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Actions that lead usaway from the goal in place of Gaussian noise; Policy that reverses these actions in place of score function ",
+        "bbox": [
+            35,
+            951,
+            310,
+            986
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Givenanoffline dataset $\\mathcal { D }$ ,wecan view the trajectoriesasforward diffusion chains generated bysome unknown policy Asper below Theorem,behaviorcloningmaximizes the probabilityof reaching thegoal states $\\theta ^ { * } = \\arg \\operatorname* { m a x } _ { \\theta } \\mathbb { E } _ { g \\sim p ( g ) , ( s , a ) \\sim D ( g ) } [ \\log \\pi _ { \\theta } ( a \\mid s , g ) ]$ ",
+        "bbox": [
+            341,
+            841,
+            662,
+            912
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Theorem:Givenadataset $\\mathcal { D }$ andtarget goaldistribution $p ( g )$ behavior cloning usinga goal-conditionedpolicymaximizesa lowerboundonthelog-likelihood of thegoal states $L = \\mathbb { E } _ { g \\sim p ( g ) , s _ { T } \\sim q ( s _ { T } | g ) } [ \\log p _ { \\theta } ( s _ { T } ) ] .$ ",
+        "bbox": [
+            349,
+            926,
+            655,
+            976
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Conclusions and future work ",
+        "text_level": 1,
+        "bbox": [
+            762,
+            842,
+            898,
+            860
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "paper code ",
+        "bbox": [
+            882,
+            880,
+            970,
+            893
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Merlinconstructstrajectoriesthat“difuseaway\" fromgoalsandtrainsa policytoreverse them Simple trainingdynamics indicate potential for scalability，asprovenbydenoisingdiffusionmodels Directionsfor future work include extendingto online settingandpartiallyobservableenvironments ",
+        "bbox": [
+            670,
+            880,
+            858,
+            972
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "Mila ",
+        "bbox": [
+            67,
+            27,
+            192,
+            96
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "山山 McGill",
+        "bbox": [
+            800,
+            34,
+            961,
+            89
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "",
+        "bbox": [
+            865,
+            899,
+            988,
+            977
+        ],
+        "page_idx": 0
+    }
+]

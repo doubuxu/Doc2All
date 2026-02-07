@@ -1,0 +1,411 @@
+[
+    {
+        "type": "text",
+        "text": "A Geometric Framework for Understanding Memorization in Generative Models ",
+        "text_level": 1,
+        "bbox": [
+            241,
+            14,
+            743,
+            49
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "layer6 ",
+        "text_level": 1,
+        "bbox": [
+            18,
+            54,
+            195,
+            97
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Brendan Leigh Ross,Hamidreza Kamkari, Zhaoyan Liu,Tongzi Wu, George Stein,Gabriel Loaiza-Ganem,Jesse C.Cresswell ",
+        "bbox": [
+            223,
+            55,
+            759,
+            90
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Layer6Al,Toronto,Canada ",
+        "bbox": [
+            378,
+            97,
+            606,
+            113
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Background ",
+        "text_level": 1,
+        "bbox": [
+            199,
+            133,
+            312,
+            150
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Explaining Memorization ",
+        "text_level": 1,
+        "bbox": [
+            630,
+            133,
+            861,
+            150
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Memorization and Overfitting in Deep Generative Models ",
+        "text_level": 1,
+        "bbox": [
+            27,
+            158,
+            472,
+            173
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Deepgenerativemodelsare known to memorizeand reproduce   \ntheir trainingdata   \nThis behaviour reduces model utility and may have severe   \nprivacy and legal implications   \nContributing factors [4]:data complexity，duplication of training   \npoints,and highly specific conditioning   \nThereis as yet no systematic framework describing   \nmemorization in DGMs ",
+        "bbox": [
+            40,
+            175,
+            478,
+            289
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The Manifold Hypothesis ",
+        "text_level": 1,
+        "bbox": [
+            29,
+            296,
+            223,
+            310
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "High-dimensional data lies ona manifold $\\mathcal { M } _ { * }$ with multiple   \ncomponentsofvarying dimensionalities   \nDGMsalso generate samples fromamanifold $\\mathcal { M } _ { \\theta }$ with the goal   \nofmatching $\\mathcal { M } _ { \\ell }$ to $\\mathcal { M } _ { \\ast }$   \nThe local intrinsic dimension of $x \\in \\mathcal { M } _ { * }$ (resp. $x \\in \\mathcal { M } _ { \\theta }$ ），   \ndenoted $\\mathsf { L I D } _ { * } ( x )$ (resp. $\\lfloor \\mathsf { I D } _ { \\theta } ( x ) )$ ,is the dimension of the   \nmanifold component containing $x$   \nIntuitively,theLIDof $\\mathscr { X }$ captures the complexity of the   \ndatapoint $x$ and constraints on the dataset's structure ",
+        "bbox": [
+            40,
+            311,
+            479,
+            441
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Our Geometric Framework ",
+        "text_level": 1,
+        "bbox": [
+            131,
+            455,
+            377,
+            471
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/A Geometric Framework for Understanding Memorization in Generative Models_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [
+            "Figure1:LIDvalues for three red model manifoldswith different degrees of memorization of the three leftmostdatapoints,which are depicted asdark blue crosses. The true manifold is light blue. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            30,
+            490,
+            478,
+            600
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We propose that $x \\in \\mathcal { M } _ { * }$ is memorized when $\\mathsf { L } | \\mathsf { D } _ { \\theta } ( x )$ is small. ",
+        "bbox": [
+            25,
+            654,
+            443,
+            668
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "This encompasses both exact copying of training images $( \\mathsf { L I D } _ { \\theta } ( x ) = 0 )$ and copying of styles or parts of an image as in Figure2 $\\langle \\mathsf { L } | \\mathsf { D } _ { \\theta } ( x ) > 0 \\rangle$ but still small) ",
+        "bbox": [
+            40,
+            670,
+            466,
+            712
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "From this definition,memorization can be split into two types: ",
+        "bbox": [
+            28,
+            715,
+            439,
+            729
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$\\mathsf { L I D } _ { \\theta } ( x ) < \\mathsf { L I D } _ { * } ( x )$ :overfitting-driven memorization (OD-Mem), in which the model fails to generalize to the ground truth manifold correctly (Figure1) $\\mathsf { L I D } _ { \\theta } ( x ) = \\mathsf { L I D } _ { * } ( x )$ :data-drivenmemorization(DD-Mem),in which the ground truth datadistribution hasbeen learned correctly，but itselfcontainsvery fewdegreesof freedomat $x$ ",
+        "bbox": [
+            38,
+            731,
+            480,
+            816
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/A Geometric Framework for Understanding Memorization in Generative Models_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [
+            "Figure2:8images alonga relatively low-dimensional manifold learned by Stable Diffusion v1.5.Thefirstisarealimage fromLAlON (flaggedasmemorized by [2]),and the remainder were generated by the model. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            28,
+            828,
+            481,
+            869
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The geometric framework explains memorization-related phenomena in the literature: ",
+        "bbox": [
+            516,
+            159,
+            973,
+            187
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Duplicated Data It has been observed that memorization occurs when training pointsare duplicated.Here we identify that data duplication isequivalent to an LID of 0: ",
+        "bbox": [
+            516,
+            192,
+            973,
+            234
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Theorem (Informal).Withhigh probabilityandasufficiently large dataset,duplicate samples occurat $x _ { 0 }$ if andonly if $\\mathsf { L } | \\mathsf { D } _ { * } ( x _ { 0 } ) = 0$ ",
+        "bbox": [
+            516,
+            240,
+            974,
+            269
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Complexity. [4] observes that simple imagesare memorized more often.This isneatlyexplainedby the fact that they have lower $\\mathsf { L } | \\mathsf { D } _ { * }$ ",
+        "bbox": [
+            516,
+            274,
+            974,
+            302
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Conditioning. Highly-specific conditioning inputs encourage the reproduction of memorized samples.We explain this by the fact that conditioning ona prompt $c$ decreases LID: ",
+        "bbox": [
+            517,
+            307,
+            973,
+            350
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Proposition. I $\\begin{array} { r } { \\mathsf { I D } _ { \\theta } ( x | c ) \\le \\mathsf { L I D } _ { \\theta } ( x ) . } \\end{array}$ ",
+        "bbox": [
+            531,
+            355,
+            760,
+            370
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Classifier-Free Guidance (CFG).A large classifier-free guidance vectorin diffusion models correlates strongly with memorization [5]. This is explainable by observations in the literature that faster explosion of model norms during sampling corresponds to lower $\\mathsf { L } | \\mathsf { D } _ { \\theta }$ ",
+        "bbox": [
+            516,
+            374,
+            972,
+            432
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Empirical Verification ",
+        "text_level": 1,
+        "bbox": [
+            645,
+            445,
+            845,
+            463
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We can test this framework using the $\\mathsf { L I D } _ { \\vartheta }$ estimator of [3]: ",
+        "bbox": [
+            516,
+            472,
+            912,
+            486
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "von Mises Distribution We train a diffusion model on a von Mises distribution;in Figure 3b we depict model samples with their corresponding LIDs,and a couple of samples are clearly memorized with $\\mathsf { L } | \\mathsf { D } _ { \\theta } ( x ) = 0$ ,while the remaining samples have $\\mathsf { L } | \\mathsf { D } _ { \\theta } ( x ) = 1$ ",
+        "bbox": [
+            516,
+            492,
+            973,
+            548
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/A Geometric Framework for Understanding Memorization in Generative Models_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [
+            "=igure:Traininga diffusion model ona von Mises distribution. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            585,
+            557,
+            911,
+            655
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Stable Diffusion on LAlON,COCO,and Tuxemon We compute $\\mathsf { L } | \\mathsf { D } _ { \\theta }$ of Stable Diffusion [1] on ",
+        "bbox": [
+            517,
+            682,
+            972,
+            712
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Unmemorized images fromamixofLAlONAesthetics $6 . 5 +$ ，   \nCOCO,and Tuxemon   \nMemorized images from LAION [2] ",
+        "bbox": [
+            530,
+            715,
+            946,
+            759
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We find that low LIDs correspond better to memorized images than PNG size,a proxy for image complexity. ",
+        "bbox": [
+            516,
+            764,
+            973,
+            792
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/A Geometric Framework for Understanding Memorization in Generative Models_poster/auto/images/images/fig_4.jpg",
+        "image_caption": [
+            "Figure4:Density histograms for each memorization metric on the different datasets. "
+        ],
+        "image_footnote": [],
+        "bbox": [
+            518,
+            802,
+            974,
+            879
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "Open Review net ICML InternationalConference OnMachine Learning ",
+        "bbox": [
+            804,
+            22,
+            982,
+            113
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "国 Rombach，Blatmanrenzssemmer.\"Hgsolutiogesthesisithlatentdiiondes.V2022. Webster.Areproducibleextractionoftrainingimagesfromdifusionmodels.arXiv2305.08694. Somepall,SinglaGoldbumGeipingGldsteinUderstandinganditigatingcopyingindifusionmodelsNeur2023. Wen,Liu,ChenLyu“Detecting,explaining,andmitigatingmermorizationindiffusionmodels\".ICML2023. ",
+        "bbox": [
+            29,
+            929,
+            637,
+            978
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "",
+        "bbox": [
+            19,
+            0,
+            982,
+            8
+        ],
+        "page_idx": 0
+    }
+]

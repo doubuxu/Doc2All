@@ -1,0 +1,619 @@
+[
+    {
+        "type": "text",
+        "text": "MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images ",
+        "text_level": 1,
+        "bbox": [
+            178,
+            7,
+            851,
+            68
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Xurui Li1\\*, Ziming Huang1,\\*, Feng Xue³， Yu Zhou1,2",
+        "bbox": [
+            332,
+            70,
+            693,
+            94
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "H {xrli_plus,zmhuang，yuzhou}@hust.edu.cn},feng.xue@unitn.it ",
+        "bbox": [
+            227,
+            97,
+            782,
+            126
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Motivation ",
+        "text_level": 1,
+        "bbox": [
+            13,
+            145,
+            118,
+            171
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Framework ",
+        "text_level": 1,
+        "bbox": [
+            371,
+            145,
+            478,
+            171
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "LNAMD ",
+        "text_level": 1,
+        "bbox": [
+            827,
+            144,
+            900,
+            170
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A rich amount of normal information implicit in unlabeled test images can be exploited for anomaly detection. ",
+        "bbox": [
+            33,
+            193,
+            269,
+            259
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MVTecADdataset   \n2.74%   \n97.26%   \nVisAdataset   \n0.55%   \n99.45%   \nnormal pixelsabnormal pixels ",
+        "bbox": [
+            274,
+            182,
+            347,
+            308
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A discriminative characteristic: the normal image patches could find a relatively large number of similar patches in other unlabeled images, while the abnormal ones only have a few similar patches. ",
+        "bbox": [
+            32,
+            284,
+            260,
+            417
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            264,
+            310,
+            353,
+            419
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Contributions ",
+        "text_level": 1,
+        "bbox": [
+            14,
+            432,
+            141,
+            459
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The first method that only uses the unlabeled test images for industrial anomaly detection. We reveal the potential capability of normal and abnormal patches contained in unlabeled images. $2 1 . 1 \\%$ PRO gains and $2 1 . 9 \\%$ seg-AP gains on MVTec AD and $1 9 . 4 \\%$ seg-AP gains on VisA. ",
+        "bbox": [
+            32,
+            469,
+            351,
+            603
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            365,
+            176,
+            818,
+            441
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mutual Scoring Mechanism ",
+        "text_level": 1,
+        "bbox": [
+            371,
+            450,
+            623,
+            479
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Image $I _ { j }$ assigns a score to each aggregated patch token of image $I _ { i }$ ",
+        "bbox": [
+            377,
+            485,
+            790,
+            506
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/equations/equations_1.jpg",
+        "text": "$$\n\\begin{array} { r } { a _ { i , l } ^ { m , r } ( I _ { j } ) = \\operatorname* { m i n } _ { n } \\| \\hat { p } _ { i , l } ^ { m , r } - \\hat { p } _ { j , l } ^ { n , r } \\| _ { 2 } } \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            387,
+            510,
+            574,
+            536
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Interval Average (minimum $30 \\%$ ）$\\overline { { a } } _ { i , l } ^ { m , r } = \\frac { 1 } { K } \\sum _ { k \\in \\left[ 1 , K \\right] } a _ { i , l } ^ { m , r } ( \\overline { { I } } _ { k } )$ ",
+        "bbox": [
+            386,
+            546,
+            591,
+            615
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Neighborhood range $1 \\times 1 \\ 3 \\times 3 \\ 5 \\times 5$ ",
+        "bbox": [
+            838,
+            179,
+            982,
+            222
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Aggregate function: Adaptive average pooling ",
+        "bbox": [
+            838,
+            232,
+            994,
+            276
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "35 normal 7 normal 30 abnormal 6 abnormal   \n25 overlap 5 overlap 20 4 15 3 10 2 5 1 0 0 0.0 anomaly scoresofallnormalpatches 1.000 anomalyscoresofallabnormalpatches 1.0 201e2 20.1e2   \n15 15 10 10 5 0 0 0.0 wholevalueinterlavege 1.00.0 theminimum30%valuenteralaverage 1.0 ",
+        "bbox": [
+            597,
+            508,
+            814,
+            613
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Multi-degree aggregation To segment abnormal regions of varying sizes. ",
+        "bbox": [
+            837,
+            285,
+            993,
+            352
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            840,
+            363,
+            985,
+            434
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mean: ",
+        "bbox": [
+            836,
+            488,
+            877,
+            505
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$r$ and $l$ ",
+        "bbox": [
+            854,
+            510,
+            906,
+            528
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/equations/equations_2.jpg",
+        "text": "$$\n\\pmb { a } _ { i } ^ { m } = \\frac { 1 } { L } \\sum _ { l \\in \\{ 1 , . . . , L \\} } \\frac { 1 } { 3 } \\sum _ { r \\in \\{ 1 , 3 , 5 \\} } \\overline { { { a } } } _ { i , l } ^ { m , r }\n$$",
+        "text_format": "latex",
+        "bbox": [
+            833,
+            535,
+            984,
+            585
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Experiments ",
+        "text_level": 1,
+        "bbox": [
+            16,
+            621,
+            131,
+            649
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RsCIN ",
+        "text_level": 1,
+        "bbox": [
+            536,
+            623,
+            592,
+            648
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Comparison with O-shot methods ",
+        "text_level": 1,
+        "bbox": [
+            24,
+            665,
+            228,
+            685
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/tables/table_1.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "No training No prompt "
+        ],
+        "table_body": "<table><tr><td rowspan=1 colspan=1>Methods</td><td rowspan=1 colspan=1>WinCLIPli</td><td rowspan=1 colspan=1>APRIL-GANI2I</td><td rowspan=1 colspan=1>ACRI31</td><td rowspan=1 colspan=1>MuSc(ours)</td></tr><tr><td rowspan=1 colspan=2></td><td rowspan=1 colspan=3>MVTec ADDataset</td></tr><tr><td rowspan=1 colspan=1>cls-AUROC</td><td rowspan=1 colspan=1>91.8</td><td rowspan=1 colspan=1>86.1</td><td rowspan=1 colspan=1>85.8</td><td rowspan=1 colspan=1>97.8(+6.0)</td></tr><tr><td rowspan=1 colspan=1>PRO</td><td rowspan=1 colspan=1>64.6</td><td rowspan=1 colspan=1>44.0</td><td rowspan=1 colspan=1>72.7</td><td rowspan=1 colspan=1>93.8(+12.4)</td></tr><tr><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1>VisA Dataset</td><td rowspan=1 colspan=2></td></tr><tr><td rowspan=1 colspan=1>cls-AUROC</td><td rowspan=1 colspan=1>78.1</td><td rowspan=1 colspan=1>78.0</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1>92.8(+10.7)</td></tr><tr><td rowspan=1 colspan=1>PRO</td><td rowspan=1 colspan=1>56.8</td><td rowspan=1 colspan=1>86.8</td><td rowspan=1 colspan=1>=</td><td rowspan=1 colspan=1>92.7(+5.7)</td></tr></table>",
+        "bbox": [
+            23,
+            691,
+            243,
+            790
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Comparison with 4-shot methods ",
+        "text_level": 1,
+        "bbox": [
+            24,
+            819,
+            228,
+            837
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Image GT GAN(0) APRIL- · 言 (redundancy) ",
+        "bbox": [
+            249,
+            659,
+            514,
+            978
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Image-level feature $\\mathcal { F } _ { i }$ Extracted by ViT ",
+        "bbox": [
+            557,
+            661,
+            694,
+            698
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Similarity matrix $W _ { i , j } = \\mathcal { F } _ { i } \\cdot \\mathcal { F } _ { j }$ ",
+        "bbox": [
+            736,
+            660,
+            843,
+            700
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Multi-window Mask ",
+        "bbox": [
+            557,
+            703,
+            682,
+            722
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/equations/equations_3.jpg",
+        "text": "$$\nM _ { k } ( i , j ) = \\left\\{ \\begin{array} { l l } { 1 , } & { \\mathrm { i f } I _ { j } \\in \\mathcal { N } _ { k } ( I _ { i } ) } \\\\ { 0 , } & { \\mathrm { o t h e r w i s e } , } \\end{array} \\right. \\ k \\in \\{ k _ { 1 } , k _ { 2 } \\}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            560,
+            725,
+            827,
+            770
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/equations/equations_4.jpg",
+        "text": "$$\n\\begin{array} { r l } & { D ( i , i ) \\ = \\ \\sum _ { j = 1 } ^ { N } M _ { k } \\odot W ( i , j ) } \\\\ & { \\hat { \\mathbf { C } } = ( \\ \\sum _ { M _ { k } \\in \\overline { { M } } } ( D ^ { - 1 } ( M _ { k } \\odot W ) \\mathbf { C } ) + \\mathbf { C } ) / ( K + 1 ) } \\\\ & { \\qquad M _ { k } \\in \\overline { { M } } } \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            560,
+            789,
+            795,
+            862
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "References ",
+        "text_level": 1,
+        "bbox": [
+            537,
+            875,
+            639,
+            900
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images_poster/auto/images/tables/table_2.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=1 colspan=1>Methods</td><td rowspan=1 colspan=1>PatchCorel4l</td><td rowspan=1 colspan=1>WinCLIPI</td><td rowspan=1 colspan=1>APRIL-GANI2I</td><td rowspan=1 colspan=1>MuSc(ours)</td></tr><tr><td rowspan=1 colspan=5>MVTec ADDataset</td></tr><tr><td rowspan=1 colspan=1>cls-AUROC</td><td rowspan=1 colspan=1>88.8</td><td rowspan=1 colspan=1>95.2</td><td rowspan=1 colspan=1>92.8</td><td rowspan=1 colspan=1> 97.8(+2.6)</td></tr><tr><td rowspan=1 colspan=1>PRO</td><td rowspan=1 colspan=1>84.3</td><td rowspan=1 colspan=1>89.0</td><td rowspan=1 colspan=1>91.8</td><td rowspan=1 colspan=1>93.8(+2.0)</td></tr><tr><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1>VisA Dataset</td><td rowspan=1 colspan=1></td><td rowspan=1 colspan=1></td></tr><tr><td rowspan=1 colspan=1>cls-AUROC</td><td rowspan=1 colspan=1>85.3</td><td rowspan=1 colspan=1>87.3</td><td rowspan=1 colspan=1>92.6</td><td rowspan=1 colspan=1>92.8(+0.2)</td></tr><tr><td rowspan=1 colspan=1>PRO</td><td rowspan=1 colspan=1>84.9</td><td rowspan=1 colspan=1>87.6</td><td rowspan=1 colspan=1>90.2</td><td rowspan=1 colspan=1> 92.7(+2.5)</td></tr></table>",
+        "bbox": [
+            23,
+            843,
+            242,
+            943
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Optimize score Ci of Ii Optimized score i k2 G 1 Ci Wi,jCj 3 j=1 Weighted average of scores within   \n$\\begin{array} { l } { | } \\\\ { | } \\end{array}$ the window mask   \n$\\begin{array} { r } { \\mathbf { \\ i } _ { \\overline { { w } } _ { i , j } } ^ { \\mathsf { I } } = \\left\\{ \\begin{array} { r } { \\hat { w } _ { i , j } ^ { k _ { 1 } } + \\hat { w } _ { i , j } ^ { k _ { 2 } } , \\quad \\mathrm { ~ i f ~ } 0 < j \\leq k _ { 1 } } \\\\ { \\hat { w } _ { i , j } ^ { k _ { 2 } } , \\quad \\mathrm { i f ~ } k _ { 1 } < j \\leq k _ { 2 } } \\end{array} \\right. \\mathbf { \\mathsf { I } } } \\\\ { \\mathbf { \\ell } _ { 1 } ^ { \\mathsf { I } } . } \\end{array}$ ",
+        "bbox": [
+            845,
+            659,
+            992,
+            814
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "[1]JeongJ,ZouYKiTtal.ncip:Zero-/fe-shotaomlyssificaiondgmtationC//roing of the IEEE/CVF Conferenceon ComputerVisionand Pattern Recognition.2023:19606-19616. ",
+        "bbox": [
+            533,
+            905,
+            835,
+            924
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jniversal module for other AD methods [2]ChenX，HanYZhangJ.Azero-/few-shotanomalyclasificationandsegmentationmethodforcpr2023 vandworkshopchallenge tracks1&2:1stplaceonzero-shotadand4thplaceonfew-shotad[J].arXivpreprint arXiv:2305.17382，2023. ",
+        "bbox": [
+            792,
+            843,
+            988,
+            860
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            534,
+            925,
+            835,
+            950
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "3]LiA，QiuC，KloftM,etal.Zero-shot anomalydetectionviabatchnormalization[J].AdvancesinNeura nformation Processing Systems,2024,36. ",
+        "bbox": [
+            537,
+            951,
+            831,
+            968
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "[4]RothK，PemulaL,ZepedaJetal.Towardstotalrecallinindustrialnomalyetection[C]/Proceedingsofthe IEEE/CVFConferenceonComputerVisionandPatternRecognition.2022:14318-14328. ",
+        "bbox": [
+            534,
+            969,
+            835,
+            987
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Detect various types of defects ",
+        "text_level": 1,
+        "bbox": [
+            54,
+            955,
+            209,
+            972
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "",
+        "bbox": [
+            847,
+            882,
+            992,
+            988
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "> ",
+        "bbox": [
+            820,
+            488,
+            831,
+            502
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "ICLR ",
+        "bbox": [
+            11,
+            38,
+            187,
+            97
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "科技大HUDT 華中科技大学HUAZHONG UNIVERSITY OF SCIENCE AND TECHNOLOGYJINGCEELECTRONIC精溜电子UNIVERSITADI TRENTO",
+        "bbox": [
+            879,
+            0,
+            994,
+            122
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "> ",
+        "bbox": [
+            12,
+            819,
+            24,
+            834
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "> ",
+        "bbox": [
+            13,
+            666,
+            24,
+            681
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "> ",
+        "bbox": [
+            541,
+            704,
+            552,
+            718
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "$\\blacktriangleright$ ",
+        "bbox": [
+            371,
+            488,
+            382,
+            500
+        ],
+        "page_idx": 0
+    }
+]

@@ -1,0 +1,394 @@
+[
+    {
+        "type": "text",
+        "text": "SiT Dataset : Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots ",
+        "text_level": 1,
+        "bbox": [
+            254,
+            16,
+            786,
+            91
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jongwook Bae Jungho Kim Junyong Yun ChangwonKang Jeongseon Choi KimChanhyeok Junho Lee Jun Won Choi\\* SPA Laboratory,epartmentof rtificial Intelligence,Hanyang Unversityeoul, Republicof Koea ",
+        "bbox": [
+            222,
+            93,
+            776,
+            141
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Contributions ",
+        "text_level": 1,
+        "bbox": [
+            12,
+            155,
+            87,
+            178
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Robot Setup",
+        "text_level": 1,
+        "bbox": [
+            361,
+            155,
+            429,
+            179
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Tasks and Benchmark ",
+        "text_level": 1,
+        "bbox": [
+            731,
+            155,
+            846,
+            178
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "√Static collection ",
+        "text_level": 1,
+        "bbox": [
+            9,
+            188,
+            93,
+            210
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "■ Many pedestrian trajectory datasets were collected from fixed positions, limiting variability. ",
+        "bbox": [
+            15,
+            213,
+            318,
+            260
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "√ Missing ego motion ",
+        "text_level": 1,
+        "bbox": [
+            9,
+            263,
+            114,
+            284
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "■ Many existing robot datasets lack ego-motion information. ",
+        "bbox": [
+            12,
+            287,
+            300,
+            309
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Vehicle-centric bias ",
+        "text_level": 1,
+        "bbox": [
+            13,
+            312,
+            112,
+            331
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "■ Most autonomous datasets were collected from vehicles, exhibiting a gap from realistic robot-pedestrian interaction behavior. ",
+        "bbox": [
+            15,
+            335,
+            301,
+            405
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/auto/images/tables/table_1.jpg",
+        "table_caption": [
+            "\\*+: Multi - layered map "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Dataset</td><td>Platform</td><td>Task</td><td>Sync.</td><td>Map</td><td>E2E</td><td>Location</td></tr><tr><td>UCY</td><td>Fixed</td><td>Tracking,Prediction</td><td>-</td><td></td><td></td><td>Outdoor</td></tr><tr><td>ETH</td><td>Fixed</td><td>Tracking, Prediction</td><td>-</td><td></td><td></td><td>Outdoor</td></tr><tr><td>SDD</td><td>Fixed</td><td>Tracking, Prediction</td><td>-</td><td></td><td></td><td>Outdoor</td></tr><tr><td>CITR-DUT</td><td>Fixed</td><td>Tracking,Prediction</td><td>-</td><td></td><td></td><td>Outdoor</td></tr><tr><td>nuScenes</td><td>Vehicle</td><td>Detection,Tracking,Prediction</td><td>=</td><td>羊</td><td></td><td>Outdoor</td></tr><tr><td>Waymo Open</td><td>Vehicle</td><td>Detection,Tracking,Prediction</td><td></td><td></td><td></td><td>Outdoor</td></tr><tr><td>Argoverse</td><td>Vehicle</td><td>Detection,Tracking,Prediction</td><td></td><td></td><td>√</td><td>Outdoor</td></tr><tr><td>JRDB</td><td>Robot</td><td>Detection, Tracking</td><td></td><td></td><td></td><td>Indoor&amp;Outdoor</td></tr><tr><td>STCrowd</td><td>Fixed</td><td>Detection,Tracking,Prediction</td><td>√</td><td></td><td></td><td>Outdoor</td></tr><tr><td>SiT(Ours)</td><td>Robot</td><td>Detection, Tracking, Prediction</td><td>√</td><td>&lt;+</td><td>√</td><td>Indoor &amp; Outdoor</td></tr></table>",
+        "bbox": [
+            7,
+            418,
+            347,
+            647
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Overview ",
+        "text_level": 1,
+        "bbox": [
+            15,
+            667,
+            69,
+            690
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Real-world context ",
+        "text_level": 1,
+        "bbox": [
+            10,
+            708,
+            107,
+            728
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "■ Collected data from dense areas like campuses and public roads /Comprehensive data ■Sequential raw data from various sensors ■ 60 scenes with 6OK images and 12K point cloud frames at $1 0 \\mathsf { H z }$ ■2D and 3D bounding boxes for 6 classes ",
+        "bbox": [
+            8,
+            726,
+            325,
+            852
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "√Unique features ",
+        "text_level": 1,
+        "bbox": [
+            8,
+            855,
+            94,
+            875
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "■Emphasis on Human-Robot Interactions (HRl) Precise multi-sensor synchronization ■ Multi-layered indoor & outdoor semantic maps from SLAM ■ Cover tasks from 3D detection to motion forecasting (end-to-end) ",
+        "bbox": [
+            14,
+            878,
+            331,
+            975
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "√Multi-sensors equipped on UGV ",
+        "text_level": 1,
+        "bbox": [
+            355,
+            188,
+            517,
+            210
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "■ 1 x Husky UGV platform ■ 2 x Velodyne VLP-16 5x Basler a2A1920-51gc cameras ■1xMTi-680G IMU& RTK ■ 1 x VectorNav VN-100 IMU ",
+        "bbox": [
+            362,
+            213,
+            529,
+            331
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            537,
+            182,
+            714,
+            334
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Details of SiT Dataset ",
+        "text_level": 1,
+        "bbox": [
+            361,
+            340,
+            475,
+            363
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            353,
+            369,
+            718,
+            683
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "√Comparison with other datasets ",
+        "text_level": 1,
+        "bbox": [
+            355,
+            687,
+            517,
+            707
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Benchmark ",
+        "text_level": 1,
+        "bbox": [
+            736,
+            312,
+            792,
+            330
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "√Perception tasks ",
+        "text_level": 1,
+        "bbox": [
+            725,
+            189,
+            813,
+            209
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "■ 3D Object Detection based on image or point clouds   \n3D Multi-Object Tracking Trajectory Prediction   \nEnd-to-End 3D Detection to Motion Forecasting ",
+        "bbox": [
+            733,
+            213,
+            988,
+            308
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "■ Plan to release benchmarks and pre-trained models. ■ Challenges open on Eval.Al (Feb.2024) ",
+        "bbox": [
+            734,
+            335,
+            988,
+            383
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Samples of dataset ",
+        "text_level": 1,
+        "bbox": [
+            733,
+            407,
+            835,
+            432
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "√Real-world captures   \n■Candid shots from diverse urban environments   \n√3D visualization   \n■ Dynamic representations of objects and trajectories   \n√Semantic maps   \n■ 12 Color-coded layouts detailing regions ",
+        "bbox": [
+            726,
+            448,
+            987,
+            593
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            351,
+            708,
+            727,
+            996
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/auto/images/images/fig_4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            723,
+            599,
+            995,
+            992
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "HANYANG SPALAB 1939 KXK ",
+        "bbox": [
+            9,
+            16,
+            213,
+            131
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "Github Homepage NEURAL INFORMATION PROCESSING SYSTEMS ",
+        "bbox": [
+            794,
+            5,
+            997,
+            124
+        ],
+        "page_idx": 0
+    }
+]

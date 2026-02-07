@@ -1,0 +1,9 @@
+[
+  {
+    "table_id": "table_1",
+    "path": "/data/huangyc/Document2All/posterDataOutput_vlm/Light Schrödinger Bridge_poster/auto/images/tables/table_1.jpg",
+    "caption": [],
+    "content_list_index": 51,
+    "table_body": "<table><tr><td>Setup</td><td>Solver type</td><td>DIM Solver</td><td>50</td><td>100</td><td>1000</td></tr><tr><td>DiscreteEOT</td><td>Sinkhon</td><td>(Cuturi,2013)[1GPUV100]</td><td>2.34(90 s)</td><td>2.24(2.5m)</td><td>1.864（9m)</td></tr><tr><td>Continuous EOT</td><td>Langevin-based</td><td>(Mokrov etal.,2023)[1GPUV100]</td><td>2.39±0.06（19m）</td><td>2.32±0.15（19m）</td><td>1.46±0.20（15m）</td></tr><tr><td>Continuous EOT</td><td>Minimax</td><td>(Gushchin etal.,2023)[1GPUV100]</td><td>2.44±0.13（43m）</td><td>2.24±0.13（45m）</td><td>1.32±0.06（71m）</td></tr><tr><td>Continuous EOT</td><td>IPF</td><td>(Vargasetal.,2021)[1GPUV100]</td><td>3.14±0.27（8m）</td><td>2.86±0.26（8m）</td><td>2.05±0.19（11m）</td></tr><tr><td>Continuous EOT</td><td>KLminimization</td><td>LightSB(ours)[4CPU cores]</td><td>2.31 ±0.27(65 s)</td><td>2.16±0.26(66 s)</td><td>1.27±0.19(146s)</td></tr></table>"
+  }
+]

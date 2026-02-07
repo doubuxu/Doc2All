@@ -1,0 +1,23 @@
+[
+  {
+    "table_id": "table_1",
+    "path": "/data/huangyc/Document2All/posterDataOutput_vlm/RNA-Protein Interaction Classification via Sequence Embeddings_poster/auto/images/tables/table_1.jpg",
+    "caption": [],
+    "content_list_index": 17,
+    "table_body": "<table><tr><td>Feature</td><td>TRinter</td><td>TSfam</td><td>RPI28252</td></tr><tr><td>Unique RNAFamilies</td><td>976</td><td>172</td><td>N/A</td></tr><tr><td>Unique Protein Clans</td><td>152</td><td>152</td><td>N/A</td></tr><tr><td>Positive Interactions</td><td>35,852</td><td>4,887</td><td>871</td></tr><tr><td>Negative Interactions</td><td>73,362</td><td>8,116</td><td>0</td></tr><tr><td>Total Interactions</td><td>109,214</td><td>13,003</td><td>871</td></tr></table>"
+  },
+  {
+    "table_id": "table_2",
+    "path": "/data/huangyc/Document2All/posterDataOutput_vlm/RNA-Protein Interaction Classification via Sequence Embeddings_poster/auto/images/tables/table_2.jpg",
+    "caption": [],
+    "content_list_index": 19,
+    "table_body": "<table><tr><td>Model</td><td>Prec.</td><td>Rec.</td><td>F1</td><td>Acc.</td></tr><tr><td>RPlembeddor</td><td>0.563±0.019</td><td>0.659±0.071</td><td>0.605±0.019</td><td>0.678±0.009</td></tr><tr><td>One-Hot</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td></tr><tr><td>Random-Protein</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td></tr><tr><td>RNA-Random</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td></tr></table>"
+  },
+  {
+    "table_id": "table_3",
+    "path": "/data/huangyc/Document2All/posterDataOutput_vlm/RNA-Protein Interaction Classification via Sequence Embeddings_poster/auto/images/tables/table_3.jpg",
+    "caption": [],
+    "content_list_index": 22,
+    "table_body": "<table><tr><td rowspan=\"2\">ModellTest set</td><td colspan=\"4\">TSfam</td><td colspan=\"4\">RPI2825</td></tr><tr><td>Prec.</td><td>Rec.</td><td>F1</td><td>Acc.</td><td>Prec.</td><td>Rec.</td><td>F1</td><td>Acc.</td></tr><tr><td>RPlembeddor</td><td>0.550 ±0.010</td><td>0.627 ±0.017</td><td>0.586 ±0.013</td><td>0.667 ±0.009</td><td>1.0 ±0.0</td><td>0.667 ±0.085</td><td>0.8 ±0.049</td><td>0.667 ±0.085</td></tr><tr><td>IPMiner</td><td>0.357</td><td>0.375</td><td>0.366</td><td>0.512</td><td>1.0</td><td>0.107</td><td>0.193</td><td>0.107</td></tr><tr><td>XRPI</td><td>0.375</td><td>0.909</td><td>0.531</td><td>0.398</td><td>1.0*</td><td>0.982*</td><td>0.991*</td><td>0.982*</td></tr></table>"
+  }
+]

@@ -14,6 +14,7 @@
   - github: 原始文档对应的github链接,如果字段信息为""表示没有对应的信息，则不必在html中显示
   - description:对原文档的一个总结，只是为了llm易于理解文档，不必在html中展示
   - arxiv_id:文档对应的arxiv链接，如果是""则表示未找到对应信息，则不必在html中显示
+  - figures:在metadata栏展示的图片
 
 - sections：海报的 section 数组，每个section对应海报中的一个panel  
   每个 section 包含：
@@ -21,7 +22,9 @@
   - title：章节标题（如 Introduction / Method / Experiments）
   - content：包含正文内容的一个列表，每个元素表示一段内容
   - tables：表格数组（JPG，Base64）
+  - tables_caption:表格的caption，与上面的tables一一对应，在生成布局时默认table的caption在table正下方
   - figures：图片数组（JPG / PNG，Base64）
+  - figures_caption:图片的caption，与上面的figures一一对应，在生成时默认caption在对应图片的正下方
 
 输入json：
 

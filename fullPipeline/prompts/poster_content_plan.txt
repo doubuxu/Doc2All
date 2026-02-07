@@ -12,13 +12,14 @@
 你的任务是仔细阅读上述文档内容，对其进行总结和重新规划，提取出适合在一张海报上展示的内容，并规划成下面给出的结构化json数据。其中，海报的阅读顺序是先从上到下，再从左到右，每个section对应海报上的一个panel,你规划的sectioning也应该以指定的阅读顺序给出。
 
 ## 输出格式(JSON)
-```json
 {
   "metadata":{
     "title":海报的标题（参考文档标题给出）
     "authors":按照文档中的顺序给出所有的作者
+    "organizations":["xxx","xxx"],创作文档的所有机构，例如某某大学、某某公司等，按照原文档的内容给出所有参与的机构或组织等。
     "github":如果文档中提供了相关的GitHub连接，则填入本字段，否则留空，例如"github":""。
-    "description":对海报内容的简短描述
+    "figures":[]:在metadata部分的图片，例如机构logo等
+
   }
   "sections": [
     {
@@ -26,31 +27,39 @@
       "title": section标题,
       "content": ["",""],content部分以一个list给出，list的每个元素是一段正文文本，不同元素表示不同分段
       "tables": [],
-      "figures": []
+      "tables_caption":["table_1:xxxxxx","table_2:xxxxx"],规划的表格对应的图注，应该与tables的元素数量相等，并一一对应
+      "figures": [],
+      "figures_caption":[]
+
     },
     {
       "id": "section2",
       "title": "",
       "content": ["",""],
       "tables": [],
-      "figures": [{"fig_id": "fig_2","figure_weight":"","figure_height":""}]
+      "tables_caption":[],
+      "figures": [{"fig_id": "fig_2","figure_width":"","figure_height":""}],
+      "figures_caption":["fig_1:xxxxx","fig_2:xxxxx"]图注，应与figures元素数量相等，并一一对应
     },
     {
       "id": "section3",
       "title": "",
       "content": ["",""],
-      "tables": [{"table_id": "table_1","table_weight":"","table_height":""}],
-      "figures": []
+      "tables": [{"table_id": "table_1","table_width":"","table_height":""}],
+      "tables_caption":[],
+      "figures": [],
+      "figures_caption":[]
     }
   ]
 }
-```
+
 
 ## 关键要求
 
-* 在规划海报中的图片和表格时，你要仔细考虑我给出的文档内容中的图片和表格的字典信息，不仅要考虑图表的caption、llm_description等字段信息，还要同时考虑图表在原始文档中的位置和上下文背景信息。不必把所有的图片和表格都展示在ppt中，也不是每个section都必须包括图表，你只需从合不合适的角度考虑。
-* 在规划海报的时候把相关的图片和表格放入section的tables和figures字段；fig_id和table_id请以文档内容中的图表的字典信息为准；figure和table中的weight和height信息请以我给出的md文件中的信息为准，不要修改。
+* 在规划海报中的图片和表格时，你要仔细考虑我给出的文档内容中的图片和表格的字典信息，不仅要考虑图表的caption、llm_description等字段信息，还要同时考虑图表在原始文档中的位置和上下文背景信息。不必把所有的图片和表格都展示在海报中，也不是每个section都必须包括图表，你只需从合不合适的角度考虑。
+* 在规划海报的时候把相关的图片和表格放入section的tables和figures字段；fig_id和table_id请以文档内容中的图表的字典信息为准；figure和table中的width和height信息请以我给出的md文件中的信息为准，不要修改。
 * 所有内容请以我给出的文档内容为准，不要捏造文档中不存在的信息，尤其是数字信息。
 * 只输出合法的json字段，不要输出任何多余的字符
+* 在规划海报中的图片和表格时，要同时生成其在海报中展示时的图注/表注。但是**不能照搬原文档中的caption**，要根据原文档和海报上下文生成适合在海报中展示的caption。
 
 

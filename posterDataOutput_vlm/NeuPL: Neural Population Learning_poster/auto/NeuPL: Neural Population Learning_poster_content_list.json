@@ -1,0 +1,333 @@
+[
+    {
+        "type": "text",
+        "text": "NeuPL: Neural Population Learning ",
+        "text_level": 1,
+        "bbox": [
+            270,
+            71,
+            732,
+            110
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Siqi Liu, Luke Marris,Daniel Hennes,Josh Merel, Nicolas Heess,Thore Graepel ",
+        "bbox": [
+            266,
+            117,
+            735,
+            136
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Background ",
+        "text_level": 1,
+        "bbox": [
+            21,
+            181,
+            112,
+            205
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Methods ",
+        "text_level": 1,
+        "bbox": [
+            295,
+            182,
+            360,
+            204
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/NeuPL: Neural Population Learning_poster/auto/images/images/fig_1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            20,
+            214,
+            270,
+            334
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The policy space of symmetric zero-sum Game-of-Skilsl iscomposed oftransitive skilldimensionsand intransitive strategic cycles[2]. ",
+        "bbox": [
+            20,
+            349,
+            262,
+            391
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/NeuPL: Neural Population Learning_poster/auto/images/images/fig_2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            20,
+            400,
+            268,
+            473
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Solving intransitive strategy games ",
+        "text_level": 1,
+        "bbox": [
+            20,
+            488,
+            172,
+            502
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Game-theoretic population learningalgorithms (e.g.FP, PSROl3l) offerconvergence guarantees toan NE,where eachpolicybest-respondstoa mixture over predecessors: ",
+        "bbox": [
+            18,
+            505,
+            247,
+            560
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Algorithm 1 Neural Population Learning (Ours) ",
+        "text_level": 1,
+        "bbox": [
+            303,
+            220,
+            560,
+            241
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1:II(-|s,σ） Conditional neural population net.   \n2E=1 Initial interaction graph.   \n3: F:RNXN →RNXN Meta-graph solver.   \n4: while true do   \n5: V $\\Pi _ { \\theta } ^ { \\Sigma }  \\{ \\Pi _ { \\theta } ( \\cdot | s , \\sigma _ { i } ) \\} _ { i = 1 } ^ { N }$ Neural population.   \n6: foroiEUNIQUE $( \\Sigma )$ do   \n7: $\\Pi _ { \\theta } ^ { \\sigma _ { i } } \\gets \\Pi _ { \\theta } ( \\cdot | s , \\sigma _ { i } )$   \n8: $\\Pi _ { \\theta } ^ { \\sigma _ { i } } \\gets \\mathbf { A B R } ( \\Pi _ { \\theta } ^ { \\sigma _ { i } } , \\sigma _ { i } , \\Pi _ { \\theta } ^ { \\Sigma } )$ Self-play.   \n9: U←EVAL(I） (Optional) if $\\mathcal { F }$ adaptive.   \n10: ∑←F(u） (Optional) if $\\mathcal { F }$ adaptive.   \n11:return Iθ,∑ ",
+        "bbox": [
+            303,
+            246,
+            573,
+            448
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lack of positive transfer across policies; Suboptimal \"good-\"responses populating the policy population; ",
+        "bbox": [
+            20,
+            717,
+            247,
+            758
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "However,when combined with modern deep RL techniquesl4l，populationlearningcomesat significant costs,fortwo reasons: ",
+        "bbox": [
+            19,
+            672,
+            246,
+            713
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/NeuPL: Neural Population Learning_poster/auto/images/images/fig_3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            37,
+            571,
+            232,
+            661
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/NeuPL: Neural Population Learning_poster/auto/images/images/fig_4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            21,
+            767,
+            262,
+            866
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Canwe leverage the expressiveness ofmoderndeep NNs toenableasinglemodel toexplore,representand reason aboutdiverse strategieswhileretaininggame theoretic guaranteesusingthe same infrastructureas\"self-play\"? ",
+        "bbox": [
+            18,
+            888,
+            259,
+            943
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/NeuPL: Neural Population Learning_poster/auto/images/images/fig_5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            583,
+            224,
+            958,
+            447
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Experiments (RwS) ",
+        "text_level": 1,
+        "bbox": [
+            292,
+            490,
+            433,
+            514
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/NeuPL: Neural Population Learning_poster/auto/images/images/fig_6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            304,
+            500,
+            930,
+            678
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Forward Transfer ",
+        "text_level": 1,
+        "bbox": [
+            295,
+            693,
+            423,
+            715
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Transfer from NeuPLagent atdifferent epochs to MPO agents Against Nash with n=2 Against Nash with n=7 25 fromepoch Ot 50 20 200 params.epoch Encoder …initalize·. Encoder 15 ↓ 1,000 Memory .….initialize... Memory 5 10 0 S-1 Policy S S1 Policy S -5 0 9 0k gdietstepoo -100 dientstep40 ",
+        "bbox": [
+            307,
+            725,
+            616,
+            848
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Improved Population Learning ",
+        "text_level": 1,
+        "bbox": [
+            644,
+            693,
+            866,
+            716
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "/data/huangyc/Document2All/posterDataOutput_vlm/NeuPL: Neural Population Learning_poster/auto/images/images/fig_7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            651,
+            727,
+            949,
+            847
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "References ",
+        "text_level": 1,
+        "bbox": [
+            292,
+            866,
+            374,
+            887
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "[1] Czarnecki,Wojciech $\\mathsf { M } _ { \\cdot } ,$ et al.\"Real WorldGames Look Like SpinningTops.\"Advances inNeural Information Processing Systems 33(2020). 2]Balduividtddgtricetioereeca1 tott [4]VinyalsOrlteiftglgtefoettue7O)54 ",
+        "bbox": [
+            300,
+            897,
+            961,
+            967
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "UCL ",
+        "bbox": [
+            21,
+            0,
+            217,
+            141
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "DeepMind ",
+        "bbox": [
+            444,
+            21,
+            556,
+            55
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "discarded",
+        "text": "",
+        "bbox": [
+            896,
+            0,
+            998,
+            128
+        ],
+        "page_idx": 0
+    }
+]
