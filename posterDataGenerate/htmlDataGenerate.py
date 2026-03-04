@@ -95,6 +95,7 @@ def singele_poster_process(poster_path,poster_name,sub_image_path)->str:
     multimodal_content=build_multimodal_prompt(image_contents)
     content_list_path=Path(sub_image_path) / poster_name / f"{poster_name}_content_list.json"
     content_list = load_json(content_list_path)
+    
     prompt="""
 我将给出原始海报的图片和海报中的子图(包括图片和表格)以及这些图片对应的尺寸信息，请根据这些信息输出能表达海报布局信息的html代码
 请注意以下几点：
@@ -109,8 +110,61 @@ def singele_poster_process(poster_path,poster_name,sub_image_path)->str:
 9. 你只需要生成可以直接在浏览器中展示的html代码，不要输出任何多余的字符。
 10. 请你仔细比对子图和海报的内容，出现在子图中的任何信息都用子图占位符表示，不需要在html的其余部分展示，避免信息重复。例如子图中包括了图片本身和图片的caption，那么你就不必另外生成caption，否则会和子图中的caption重复。
 """
+    prompt = """
+### 任务目标
+你是一个顶尖的前端布局专家。你的任务是根据提供的【海报原图】、【子图列表（含尺寸）】以及【MinerU 版面分析 JSON (含 bbox)】，编写一段单文件的 HTML 代码，1:1 复刻海报的物理布局。
+
+### 核心布局协议 (必须遵守)
+为了确保布局精准且易于解析，请遵循以下 HTML 结构规范：
+
+1. **全局容器**：使用一个固定宽高的 `div#poster-canvas` 作为根容器，尺寸严格设置为海报原图尺寸。
+2. **多栏架构**：根据原图视觉效果，使用 `display: flex` 或 `grid` 将 `main` 划分为若干 `.column`。
+3. **语义化 Section**：每个逻辑区块必须包裹在 `<section class="layout-block" data-section-id="section_n">` 中。
+4. **标题识别**：每个 section 内部的标题必须使用 `<h2 class="section-header">`。
+5. **内容载体**：
+   - 纯文本：包裹在 `<p class="text-block">` 中。
+   - 列表：使用 `<ul><li class="list-item">` 结构。
+   - 公式：使用 `div.equation` 并在内部书写 LaTeX。
+6. **图表占位**：
+   - 使用 `<div class="figure-container">` 承载图片。
+   - 必须包含 `<img>` 标签，`src` 使用子图文件名（如 `./fig_1.jpg`）。
+   - 图片尺寸必须通过内联 style 显式指定，例如：`style="width: 280px; height: 62px;"`。
+   - 如果子图中已包含 caption，HTML 中不得重复生成文本。
+
+### 布局精度要求
+- **BBox 对齐**：严格参考 content_list.json 中的 `bbox` 坐标。确保 HTML 元素的物理相对位置、排列顺序与 bbox 反映的逻辑一致。
+- **空白控制**：利用 `margin`、`padding` 和 `gap` 消除不必要的留白，使元素分布密度与原图一致。
+- **文本流**：通过设置 `font-size` 和 `line-height`（参考原图比例），确保文本块的视觉面积与原图对齐。
+
+### Flexbox 布局规范：
+1. 根容器使用 `display: flex; flex-direction: column;`。
+2. 头部（Header）和主体（Main）作为根容器的直接子元素。
+3. 主体（Main）必须设置为 `display: flex; flex-direction: row;`，并根据原图划分出若干 `.column` 容器。
+4. 每个 `.column` 内部使用 `display: flex; flex-direction: column;` 来垂直排列各个 `.layout-block`。
+5. 使用 `gap` 属性来控制列间距和块间距，严禁使用硬编码的换行符来挤占空间。
+
+### 禁令
+- 严禁修改、增删、润色任何文本内容。
+- 严禁生成任何背景颜色、边框阴影等装饰性 style。
+- 严禁输出 Markdown 格式，直接输出以 `<!DOCTYPE html>` 开头的代码字符串。
+
+### 示例结构
+<section class="layout-block" data-section-id="section1">
+    <h2 class="section-header">标题内容</h2>
+    <p class="text-block">正文内容...</p>
+    <div class="figure-container">
+        <img src="./fig_1.jpg" style="width: 274px; height: 82px;">
+    </div>
+</section>
+"""
     message=[
-        {"role": "system", "content": "你是一个专业的学术海报布局信息提取助手，能够精准的识别学术海报的布局信息，并输出一段html代码来一比一的复现原图中的布局"},
+        {"role": "system", "content": """你是一个资深的前端布局工程师。你擅长使用现代 CSS Flexbox 技术复刻复杂的学术海报布局。
+你的代码风格要求：
+1. 必须使用 Flexbox (display: flex) 处理多栏布局。
+2. 严禁使用 <table>、<float> 或过度的 position: absolute。
+3. 代码结构必须语义化，通过容器嵌套来表达层级逻辑。
+4. 所有布局参数（gap, width, padding）必须参考视觉特征和 bbox 坐标。"""},
+
         {"role": "user", "content":[
             {"type":"text","text":prompt},
             {"type":"text","text":"我将给出海报的图片，以及海报中分割出来的图像和表格，请根据这些内容生成对应的HTML数据。"},
@@ -158,11 +212,11 @@ def poster_html_generate_batch(poster_path,sub_image_path,save_path):
         save_json(html_data,html_file)
 
 if __name__ == "__main__":
-    img_path="./test.jpg"
+    img_path="./[Re] Graph Edit Networks_poster.jpg"
     poster_name=Path(img_path).stem
     print(poster_name)
     sub_image_path=f'./output'
     html_code=singele_poster_process(img_path,poster_name,sub_image_path)
     print(html_code)
-    html_path=f'./{poster_name}2.html'
+    html_path=f'./{poster_name}3.html'
     save_html(html_path,html_code)
