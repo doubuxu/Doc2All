@@ -1,0 +1,876 @@
+[
+  {
+    "type": "text",
+    "text": "Trustworthy Machine Learning ICML 2024 ",
+    "text_level": 1,
+    "bbox": [
+      178,
+      41,
+      542,
+      70
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Unveiling Privacy, Memorization,and Input Curvature Links ",
+    "text_level": 1,
+    "bbox": [
+      65,
+      85,
+      562,
+      179
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Deepak Ravikumar, Efstathia Soufleri,Abolfazl Hashemi,Kaushik Roy ",
+    "bbox": [
+      72,
+      189,
+      554,
+      218
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      612,
+      89,
+      698,
+      204
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      745,
+      33,
+      792,
+      69
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "PURDUE ",
+    "bbox": [
+      725,
+      72,
+      811,
+      97
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "UNIVERSITY ",
+    "bbox": [
+      725,
+      97,
+      811,
+      109
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      822,
+      35,
+      870,
+      100
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "ICML ",
+    "bbox": [
+      877,
+      38,
+      964,
+      72
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "InternationalConference ",
+    "bbox": [
+      879,
+      77,
+      964,
+      89
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "On Machine Learning ",
+    "bbox": [
+      879,
+      89,
+      952,
+      99
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      727,
+      132,
+      821,
+      200
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "CoCoSys ",
+    "bbox": [
+      831,
+      132,
+      968,
+      183
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      833,
+      181,
+      899,
+      191
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      833,
+      191,
+      967,
+      201
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "OVERVIEW ",
+    "text_level": 1,
+    "bbox": [
+      34,
+      234,
+      132,
+      264
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Deep Neural Nets (DNNs)oftenoverfitand memorize training data,impactinggeneralization,noisy learning,and priacy. Feldman(2o19)proposedaformalmemorizationscore,butitiscomputationallyintensive.Recentworklinksinputloss curvaturewithmemorization,showingittobemuchmoreefficient.Wetheoreticallonnectmemorizationdierential privacy,and input loss curvature, validating our findings on CIFAR and ImageNet datasets. ",
+    "bbox": [
+      164,
+      234,
+      681,
+      301
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Motivation and Background ",
+    "text_level": 1,
+    "bbox": [
+      22,
+      334,
+      235,
+      361
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Low Input Curvature Typical Easy ",
+    "text_level": 1,
+    "bbox": [
+      25,
+      376,
+      97,
+      473
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      102,
+      375,
+      250,
+      473
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Images from ImageNet ranked using input loss curvature. Input loss curvature was obtained using a single ResNet18 trained on ImageNet. Ten lowest curvature samples (top) and ten highest curvature samples (bottom) from the training set are visualized for5classes (each row isa class) from ImageNet.Low curvature samplesare‘prototypical'of theirclass,while high curvature samples are rare,difficult,and more likely memorized instances ",
+    "bbox": [
+      15,
+      496,
+      249,
+      609
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      17,
+      617,
+      163,
+      715
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "High Input Curvature Atypical Hard ",
+    "text_level": 1,
+    "bbox": [
+      171,
+      618,
+      246,
+      714
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theory ",
+    "text_level": 1,
+    "bbox": [
+      16,
+      738,
+      72,
+      765
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      74,
+      769,
+      215,
+      906
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Our theoretical framework provides upper bounds in Theorems 5.1, ",
+    "bbox": [
+      11,
+      915,
+      254,
+      929
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "5.3,and 5.4.These are visualizedas links between Differential ",
+    "bbox": [
+      19,
+      929,
+      247,
+      943
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Privacy,Memorization,and Input Loss Curvature. ",
+    "bbox": [
+      44,
+      944,
+      222,
+      957
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theoretical Results ",
+    "text_level": 1,
+    "bbox": [
+      275,
+      334,
+      427,
+      359
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Input Curvature is given by ",
+    "bbox": [
+      276,
+      369,
+      370,
+      382
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\operatorname {C u r v} _ {\\phi} \\left(z _ {i}, S\\right) = \\operatorname {t r} (H) = \\operatorname {t r} \\left(\\nabla_ {z _ {i}} ^ {2} l \\left(h _ {s} ^ {\\phi}, z _ {i}\\right)\\right)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      301,
+      383,
+      436,
+      401
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Theorem5.1Input Curvature Upper Bounds Memorization ",
+    "bbox": [
+      276,
+      405,
+      427,
+      430
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Lemma 5.2 Privacy $\\Rightarrow$ Stability ",
+    "bbox": [
+      276,
+      435,
+      388,
+      449
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theorem5.3Privacy $\\Rightarrow$ Low Input Loss Curvature ",
+    "bbox": [
+      276,
+      452,
+      445,
+      466
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theorem5.4Privacy $\\Rightarrow$ Less Memorization ",
+    "bbox": [
+      276,
+      469,
+      424,
+      482
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Empirical Results ",
+    "text_level": 1,
+    "bbox": [
+      276,
+      500,
+      411,
+      526
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Memorization vs.Input Curvature ",
+    "bbox": [
+      276,
+      534,
+      409,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Theorem5.1 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      303,
+      558,
+      354,
+      600
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      394,
+      557,
+      447,
+      599
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Herewe aim tounderstand howmemorization changes withcurvature.Theexperimentaims to plot the memorization scorevs.curvature score to validateour theoretical results.Wecalculatecurvature scores by averagingovermany seedsat theend of training.This measurement is proportional to the expected curvature score in Theorem 5.1 ",
+    "bbox": [
+      275,
+      613,
+      469,
+      707
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      276,
+      715,
+      402,
+      837
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Plotof memorization score vs.input los curvatureat the end of trainingfor CIFAR100(averag over1000Small Inception models) ",
+    "bbox": [
+      408,
+      721,
+      469,
+      824
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "memorizationscore vs.input loss curvature at the end of training for ImageNet(average over100ResNet50 models) ",
+    "bbox": [
+      281,
+      872,
+      351,
+      960
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_11.jpg",
+    "image_caption": [
+      "Plotof "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      355,
+      848,
+      476,
+      967
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Differential Privacy vs.Input Curvature ",
+    "bbox": [
+      482,
+      335,
+      624,
+      350
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "Theorem5.3 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      522,
+      360,
+      573,
+      403
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      616,
+      360,
+      667,
+      403
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Westudy the relation betweenprivacy and curvature,we train private ResNet18 models on CIFAR10 and CIFAR10O using DP-SGD (Abadi et al.,2016).We aim to plot privacy budget vs curvature score and validate Theorem 5.3 ",
+    "bbox": [
+      481,
+      416,
+      701,
+      469
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Result of studying the link between input loss curvature and privacy budget.All these results stronglycorrelate with theoryand validate Theorem 5.3. ",
+    "bbox": [
+      487,
+      491,
+      572,
+      581
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      581,
+      479,
+      708,
+      602
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Differential Privacyvs.Memorization ",
+    "bbox": [
+      485,
+      609,
+      622,
+      623
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_15.jpg",
+    "image_caption": [
+      "Theorem5.4 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      522,
+      641,
+      574,
+      685
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_16.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      616,
+      641,
+      667,
+      685
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We how privacy affects memorization for the top 5oo most memorized examples.This is done by varying the privacy budget. The results align with Theorem 5.4,showingan increase in memorization as the privacy budget increases. ",
+    "bbox": [
+      485,
+      706,
+      712,
+      759
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Plot of differential privacy vs memorization for CIFAR100 and the upperbound from the Theorem 5.4 ",
+    "bbox": [
+      507,
+      787,
+      573,
+      867
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_17.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      586,
+      771,
+      709,
+      896
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The memorization scores are significantly lower than the bound fromTheorem 5.4 supportingNasretal.(2021)'sobservation that DP-SGD may be overly conservative. ",
+    "bbox": [
+      488,
+      908,
+      710,
+      947
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_18.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      727,
+      231,
+      776,
+      297
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Semiconductor Research Corporation ",
+    "bbox": [
+      780,
+      244,
+      845,
+      286
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_19.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      857,
+      227,
+      904,
+      294
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "U.S. National ",
+    "bbox": [
+      908,
+      234,
+      971,
+      249
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Science ",
+    "bbox": [
+      908,
+      253,
+      943,
+      269
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Foundation ",
+    "bbox": [
+      908,
+      273,
+      962,
+      288
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Summary ",
+    "text_level": 1,
+    "bbox": [
+      816,
+      346,
+      881,
+      369
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·We explore the theoretical link between memorization, curvature,and privacy. ",
+      "·Theoretical analysis is based on assumptions of stability,generalization,and Lipschitzness,applicable to non-convex settings like DNNs. ",
+      "·Main result:Memorization is upper-bounded by the curvature of the loss with respect to input and privacy. ",
+      "·Privacy bounds input curvature and memorization ",
+      "·Theory validated using DNNson CIFAR100 and ImageNet,showinga strongmatch between theoretical predictions and empirical results. "
+    ],
+    "bbox": [
+      743,
+      387,
+      954,
+      555
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "MIA Perspective ",
+    "text_level": 1,
+    "bbox": [
+      736,
+      583,
+      829,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Acommonapproach to measure privacy is viamembership inferenceattack (MlA),WeusedtheLiRA (Carlini etal.,2022). More memorized samples are easier to detect using MlA attacks. ForlmageNet MlA performance dependsontheaccuracy of the samples in the trainset.If theaccuracy on the trainset is high and memorization is low,MlA is unsuccessful (mem.score $< 0 . 1 $ .If the memorizationishighbut themodel is inaccurate (scorerange0.4 -0.7)then due to lack of model learning MIA is unsuccessful but toa lesser extent. However,if memorization is high and accuracy onthesamples is high MlA is successful (mem. score $> 0 . 7$ ). ",
+    "bbox": [
+      735,
+      609,
+      968,
+      746
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_20.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      741,
+      755,
+      844,
+      857
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Unveiling Privacy, Memorization, and Input Curvature Links_poster/visuals/images/fig_21.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      860,
+      757,
+      963,
+      857
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      737,
+      868,
+      804,
+      886
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Abadi,M.,Chu,A.,Goodfellow,I.,McMahan,H.B.,Mironov,1.,Talwar,K.,andZhang,L.Deeplearning withdifferentialprivacy.In Proceedingsof the2016ACMSIGSACconference oncomputerand communicationssecurity,pp.308-318,2016 ",
+    "bbox": [
+      736,
+      891,
+      961,
+      915
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Feldman,V.Does learning require memorization?ashort taleabouta longtail.arXivpreprint arXiv:1906.05271,2019 ",
+    "bbox": [
+      736,
+      918,
+      944,
+      934
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Nasr,M.,Songi,S.,Thakurta,A.,Papernot,N.andCarlini,N.Adversary instantiation:Lowerboundsfor diferentiallyprivatemachine learning.In2021IEEESymposiumonsecurityandprivacy(SP),pp.866 882.IEEE,2021. ",
+    "bbox": [
+      736,
+      936,
+      964,
+      960
+    ],
+    "page_idx": 0
+  }
+]

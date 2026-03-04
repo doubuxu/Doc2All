@@ -1,0 +1,16 @@
+[
+  {
+    "table_id": "table_1",
+    "path": "output/Light Schrödinger Bridge_poster/visuals/tables/table_1.jpg",
+    "caption": [],
+    "content_list_index": 57,
+    "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">ε=0.1</td><td colspan=\"4\">ε=1</td><td colspan=\"4\">ε=10</td></tr><tr><td>D=2</td><td>D=16</td><td>D=64</td><td>D=128</td><td>D=2</td><td>D=16</td><td>D=64</td><td>D=128</td><td>D=2</td><td>D=16</td><td>D=64</td><td>D=128</td></tr><tr><td>Best solver</td><td>1.94</td><td>13.67</td><td>11.74</td><td>11.4</td><td>1.04</td><td>9.08</td><td>18.05</td><td>15.23</td><td>1.40</td><td>1.27</td><td>2.36</td><td>1.31</td></tr><tr><td>|LightSB|</td><td>0.03</td><td>0.08</td><td>0.28</td><td>0.60</td><td>0.05</td><td>0.09</td><td>0.24</td><td>0.62</td><td>0.07</td><td>0.11</td><td>0.21</td><td>0.37</td></tr><tr><td>±std</td><td>±0.01</td><td>±0.04</td><td>±0.02</td><td>±0.02</td><td>±0.003</td><td>±0.006</td><td>±0.007</td><td>±0.007</td><td>±0.02</td><td>±0.01</td><td>±0.01</td><td>±0.01</td></tr></table>"
+  },
+  {
+    "table_id": "table_2",
+    "path": "output/Light Schrödinger Bridge_poster/visuals/tables/table_2.jpg",
+    "caption": [],
+    "content_list_index": 60,
+    "table_body": "<table><tr><td>Setup</td><td>Solver type</td><td>DIM Solver</td><td>50</td><td>100</td><td>1000</td></tr><tr><td>Discrete EOT</td><td>Sinkhorn</td><td>(Cuturi, 2013) [GPU V100]</td><td>2.34 (90 s)</td><td>2.24 (2.5 m)</td><td>1.864 (9 m)</td></tr><tr><td>Continuous EOT</td><td>Langevin-based</td><td>(Mokrov et al., 2023) [GPU V100]</td><td>2.39 ± 0.06 (19 m)</td><td>2.32 ± 0.15 (19 m)</td><td>1.46 ± 0.20 (15 m)</td></tr><tr><td>Continuous EOT</td><td>Minimax</td><td>(Gushchin et al., 2023) [GPU V100]</td><td>2.44 ± 0.13 (43 m)</td><td>2.24 ± 0.13 (45 m)</td><td>1.32 ± 0.06 (71 m)</td></tr><tr><td>Continuous EOT</td><td>IPF</td><td>(Vargas et al., 2021) [GPU V100]</td><td>3.14 ± 0.27 (8 m)</td><td>2.86 ± 0.26 (8 m)</td><td>2.05 ± 0.19 (11 m)</td></tr><tr><td>Continuous EOT</td><td>KL minimization</td><td>LightSB (ours) [4 CPU cores]</td><td>2.31 ± 0.27 (65 s)</td><td>2.16 ± 0.26 (66 s)</td><td>1.27 ± 0.19 (146 s)</td></tr></table>"
+  }
+]

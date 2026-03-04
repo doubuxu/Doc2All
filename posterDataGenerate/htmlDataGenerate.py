@@ -113,7 +113,7 @@ def singele_poster_process(poster_path,poster_name,sub_image_path)->str:
         {"role": "system", "content": "你是一个专业的学术海报布局信息提取助手，能够精准的识别学术海报的布局信息，并输出一段html代码来一比一的复现原图中的布局"},
         {"role": "user", "content":[
             {"type":"text","text":prompt},
-            {"type":"text","text":"我将给出海报的图片，以及海报中分割出来的图像和表格，请根据这些内容生成对应的JSON数据。"},
+            {"type":"text","text":"我将给出海报的图片，以及海报中分割出来的图像和表格，请根据这些内容生成对应的HTML数据。"},
             {
                 "type":"image_url",
                 "image_url":{

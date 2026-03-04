@@ -1,0 +1,2731 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        825,
+                        130,
+                        1790,
+                        170
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                831,
+                                127,
+                                1790,
+                                173
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        831,
+                                        127,
+                                        1790,
+                                        173
+                                    ],
+                                    "type": "text",
+                                    "content": "Yuni Lai1 Bailin Pan² Kaihuang Chen² Yancheng Yuan² Kai Zhou 1",
+                                    "score": 0.96
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        295,
+                        223,
+                        450,
+                        253
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                293,
+                                218,
+                                455,
+                                259
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        293,
+                                        218,
+                                        455,
+                                        259
+                                    ],
+                                    "type": "text",
+                                    "content": "Introduction",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        71,
+                        282,
+                        772,
+                        596
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                77,
+                                280,
+                                769,
+                                317
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        280,
+                                        769,
+                                        317
+                                    ],
+                                    "type": "text",
+                                    "content": "Deep Graph Learning (DGL) has emerged as a crucial",
+                                    "score": 0.975
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                319,
+                                767,
+                                352
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        319,
+                                        767,
+                                        352
+                                    ],
+                                    "type": "text",
+                                    "content": "technique across various domains. However， recent",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                352,
+                                767,
+                                387
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        352,
+                                        767,
+                                        387
+                                    ],
+                                    "type": "text",
+                                    "content": "studies have exposed vulnerabilities in DGL models,such",
+                                    "score": 0.983
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                387,
+                                769,
+                                425
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        387,
+                                        769,
+                                        425
+                                    ],
+                                    "type": "text",
+                                    "content": "as susceptibility to graph injection attacks (GlAs). Existing",
+                                    "score": 0.99
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                422,
+                                769,
+                                459
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        422,
+                                        769,
+                                        459
+                                    ],
+                                    "type": "text",
+                                    "content": "research only provides sample-wise certificatesby",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                457,
+                                767,
+                                492
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        457,
+                                        767,
+                                        492
+                                    ],
+                                    "type": "text",
+                                    "content": "verifying each node independently, leading to very limited",
+                                    "score": 0.973
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                491,
+                                769,
+                                526
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        491,
+                                        769,
+                                        526
+                                    ],
+                                    "type": "text",
+                                    "content": "certifying performance.In this paper,we present the first",
+                                    "score": 0.993
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                526,
+                                769,
+                                559
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        526,
+                                        769,
+                                        559
+                                    ],
+                                    "type": "text",
+                                    "content": "collective certificate against GlAs,which certifies a set of",
+                                    "score": 0.959
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                561,
+                                420,
+                                596
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        561,
+                                        420,
+                                        596
+                                    ],
+                                    "type": "text",
+                                    "content": "target nodes simultaneously.",
+                                    "score": 0.991
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        197,
+                        673,
+                        484,
+                        704
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                197,
+                                668,
+                                490,
+                                709
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        197,
+                                        668,
+                                        490,
+                                        709
+                                    ],
+                                    "type": "text",
+                                    "content": " Randomized Smoothing",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        82,
+                        727,
+                        743,
+                        795
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                722,
+                                740,
+                                765
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        722,
+                                        354,
+                                        765
+                                    ],
+                                    "type": "text",
+                                    "content": "Forany node classifier",
+                                    "score": 0.956
+                                },
+                                {
+                                    "bbox": [
+                                        354,
+                                        727,
+                                        410,
+                                        762
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "f ( \\cdot ) .",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        410,
+                                        722,
+                                        684,
+                                        765
+                                    ],
+                                    "type": "text",
+                                    "content": ",its smoothed classifier",
+                                    "score": 0.972
+                                },
+                                {
+                                    "bbox": [
+                                        687,
+                                        727,
+                                        740,
+                                        762
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g ( \\cdot )",
+                                    "score": 0.86
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                85,
+                                760,
+                                253,
+                                802
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        760,
+                                        253,
+                                        802
+                                    ],
+                                    "type": "text",
+                                    "content": "is created by:",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        85,
+                        808,
+                        727,
+                        882
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                805,
+                                727,
+                                843
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        805,
+                                        727,
+                                        843
+                                    ],
+                                    "type": "text",
+                                    "content": "1.Node-aware Bi-Smoothing (Y. Lai.et.al.S&P2024):",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                271,
+                                840,
+                                575,
+                                883
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        271,
+                                        840,
+                                        575,
+                                        883
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\phi ( G ) = { \\bigl ( } \\phi _ { e } ( G ) , \\phi _ { n } ( G ) { \\bigr ) } ;",
+                                    "score": 0.85
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        111,
+                        883,
+                        466,
+                        941
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 16,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                111,
+                                883,
+                                463,
+                                910
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 14,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        141,
+                                        875,
+                                        466,
+                                        917
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                141,
+                                                880,
+                                                210,
+                                                910
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\phi _ { e } ( G )",
+                                            "score": 0.74
+                                        },
+                                        {
+                                            "bbox": [
+                                                213,
+                                                875,
+                                                466,
+                                                917
+                                            ],
+                                            "type": "text",
+                                            "content": ":randomly delete edges.",
+                                            "score": 0.965
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                111,
+                                912,
+                                466,
+                                941
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 15,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        141,
+                                        907,
+                                        471,
+                                        944
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                141,
+                                                912,
+                                                210,
+                                                941
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\phi _ { n } ( G )",
+                                            "score": 0.78
+                                        },
+                                        {
+                                            "bbox": [
+                                                213,
+                                                907,
+                                                471,
+                                                944
+                                            ],
+                                            "type": "text",
+                                            "content": ": randomly delete nodes.",
+                                            "score": 0.986
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        85,
+                        957,
+                        735,
+                        1041
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 17,
+                    "lines": [
+                        {
+                            "bbox": [
+                                82,
+                                947,
+                                735,
+                                1043
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        947,
+                                        306,
+                                        1006
+                                    ],
+                                    "type": "text",
+                                    "content": "2. Majority vote:",
+                                    "score": 0.998
+                                },
+                                {
+                                    "bbox": [
+                                        309,
+                                        958,
+                                        735,
+                                        1043
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\begin{array} { r l } & { g _ { v } ( G ) : = \\arg m a x _ { y \\in \\{ 1 , . . . , K \\} } p _ { v , y } ( G ) , } \\\\ & { \\quad p _ { v , y } ( G ) : = P \\big ( f _ { v } \\big ( \\phi ( G ) \\big ) = y \\big ) . } \\end{array}",
+                                    "score": 0.72
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        85,
+                        1047,
+                        604,
+                        1081
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 18,
+                    "lines": [
+                        {
+                            "bbox": [
+                                87,
+                                1043,
+                                607,
+                                1084
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        1043,
+                                        607,
+                                        1084
+                                    ],
+                                    "type": "text",
+                                    "content": "The goal of certified robustness is to verify:",
+                                    "score": 0.974
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        223,
+                        1089,
+                        626,
+                        1137
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                223,
+                                1089,
+                                626,
+                                1137
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        223,
+                                        1089,
+                                        626,
+                                        1137
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "g _ {v} (G) \\stackrel {?} {=} g _ {v} \\left(G ^ {\\prime}\\right), \\forall G ^ {\\prime} \\in B _ {\\rho , \\tau} (G).",
+                                    "image_path": "8ab0c040427ee43467c2d018a7edd8a2d123b6e88bf283a5f0ac7ea1a8a4db0f.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19
+                },
+                {
+                    "bbox": [
+                        226,
+                        1197,
+                        580,
+                        1228
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 20,
+                    "lines": [
+                        {
+                            "bbox": [
+                                221,
+                                1193,
+                                583,
+                                1232
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        221,
+                                        1193,
+                                        583,
+                                        1232
+                                    ],
+                                    "type": "text",
+                                    "content": " Collective Certificate Problem",
+                                    "score": 0.97
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        71,
+                        1261,
+                        756,
+                        1335
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 21,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                1258,
+                                761,
+                                1299
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        1261,
+                                        170,
+                                        1299
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "B _ { \\rho , \\tau } ( G )",
+                                    "score": 0.74
+                                },
+                                {
+                                    "bbox": [
+                                        170,
+                                        1258,
+                                        450,
+                                        1298
+                                    ],
+                                    "type": "text",
+                                    "content": ": the attacker can inject",
+                                    "score": 0.976
+                                },
+                                {
+                                    "bbox": [
+                                        452,
+                                        1268,
+                                        474,
+                                        1296
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\rho",
+                                    "score": 0.7
+                                },
+                                {
+                                    "bbox": [
+                                        474,
+                                        1258,
+                                        761,
+                                        1298
+                                    ],
+                                    "type": "text",
+                                    "content": "malicious nodes, with t",
+                                    "score": 0.976
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                69,
+                                1299,
+                                388,
+                                1336
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        1299,
+                                        388,
+                                        1336
+                                    ],
+                                    "type": "text",
+                                    "content": "malicious edges per node.",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        71,
+                        1350,
+                        372,
+                        1381
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 22,
+                    "lines": [
+                        {
+                            "bbox": [
+                                71,
+                                1350,
+                                375,
+                                1382
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1350,
+                                        375,
+                                        1382
+                                    ],
+                                    "type": "text",
+                                    "content": "T : A set of target nodes.",
+                                    "score": 0.974
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        109,
+                        1398,
+                        697,
+                        1478
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                1398,
+                                697,
+                                1478
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        1398,
+                                        697,
+                                        1478
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\min  _ {G ^ {\\prime} \\in B _ {\\rho , \\tau} (G)} | \\mathbb {T} | - \\sum_ {v \\in \\mathbb {T}} \\mathbb {I} \\{g _ {v} \\left(G ^ {\\prime}\\right) \\neq g _ {v} (G) \\},",
+                                    "image_path": "04c5de851396a1d8c5847100bd8922ccd665a9b3bf60e6a6552887c0e1e3d2ad.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23
+                },
+                {
+                    "bbox": [
+                        213,
+                        1489,
+                        660,
+                        1534
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 24,
+                    "lines": [
+                        {
+                            "bbox": [
+                                205,
+                                1483,
+                                660,
+                                1535
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        205,
+                                        1483,
+                                        285,
+                                        1535
+                                    ],
+                                    "type": "text",
+                                    "content": "s.t.",
+                                    "score": 0.965
+                                },
+                                {
+                                    "bbox": [
+                                        285,
+                                        1484,
+                                        660,
+                                        1535
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "| \\tilde { \\mathcal { V } } | \\leq \\rho , \\delta ( \\tilde { v } ) \\leq \\tau , \\forall \\tilde { v } \\in \\tilde { \\mathcal { V } } .",
+                                    "score": 0.54
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        919,
+                        189,
+                        1774,
+                        261
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 25,
+                    "lines": [
+                        {
+                            "bbox": [
+                                916,
+                                189,
+                                1710,
+                                228
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        916,
+                                        189,
+                                        1710,
+                                        228
+                                    ],
+                                    "type": "text",
+                                    "content": "1.Department of Computing, The Hong Kong Polytechnic University",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                913,
+                                226,
+                                1771,
+                                263
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        913,
+                                        226,
+                                        1771,
+                                        263
+                                    ],
+                                    "type": "text",
+                                    "content": "partment of Applied Mathematics, The Hong Kong Polytechnic University",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        836,
+                        301,
+                        1712,
+                        677
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                836,
+                                301,
+                                1712,
+                                677
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        836,
+                                        301,
+                                        1712,
+                                        677
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                836,
+                                                301,
+                                                1712,
+                                                677
+                                            ],
+                                            "type": "image",
+                                            "image_path": "1666d84f127a4d67be56d309f22951141228b658632c62838e512abd798b9179.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 26,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                852,
+                                693,
+                                1752,
+                                756
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        860,
+                                        692,
+                                        1672,
+                                        725
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                860,
+                                                692,
+                                                1672,
+                                                725
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure1:While the sample-wise certificate verifies target nodes one by one,our",
+                                            "score": 0.974
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        860,
+                                        720,
+                                        1755,
+                                        757
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                860,
+                                                720,
+                                                1755,
+                                                757
+                                            ],
+                                            "type": "text",
+                                            "content": "collective certificate verifies a set of target nodes simultaneously by linear programming.",
+                                            "score": 0.972
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 27,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 26
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        881,
+                        784,
+                        1241,
+                        1059
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                881,
+                                784,
+                                1241,
+                                1059
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        881,
+                                        784,
+                                        1241,
+                                        1059
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                881,
+                                                784,
+                                                1241,
+                                                1059
+                                            ],
+                                            "type": "image",
+                                            "image_path": "7aebaff517bdada895e1bfdd8c3008ec0232f27843053e650f822f36df7b9a6a.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 28,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                881,
+                                1062,
+                                1308,
+                                1175
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        884,
+                                        1059,
+                                        1308,
+                                        1094
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                884,
+                                                1062,
+                                                959,
+                                                1094
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure",
+                                            "score": 0.999
+                                        },
+                                        {
+                                            "bbox": [
+                                                975,
+                                                1063,
+                                                1012,
+                                                1090
+                                            ],
+                                            "type": "text",
+                                            "content": "2:",
+                                            "score": 0.954
+                                        },
+                                        {
+                                            "bbox": [
+                                                1033,
+                                                1059,
+                                                1142,
+                                                1090
+                                            ],
+                                            "type": "text",
+                                            "content": "Malicious",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                1153,
+                                                1062,
+                                                1254,
+                                                1094
+                                            ],
+                                            "type": "text",
+                                            "content": "message",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                1262,
+                                                1063,
+                                                1308,
+                                                1090
+                                            ],
+                                            "type": "text",
+                                            "content": "has",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        881,
+                                        1092,
+                                        1308,
+                                        1121
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                881,
+                                                1092,
+                                                1260,
+                                                1121
+                                            ],
+                                            "type": "text",
+                                            "content": "probability to be interceptedin",
+                                            "score": 0.982
+                                        },
+                                        {
+                                            "bbox": [
+                                                1262,
+                                                1092,
+                                                1308,
+                                                1118
+                                            ],
+                                            "type": "text",
+                                            "content": "the",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        884,
+                                        1121,
+                                        1313,
+                                        1151
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                884,
+                                                1121,
+                                                1313,
+                                                1151
+                                            ],
+                                            "type": "text",
+                                            "content": "Node-aware Bi-smoothing (2-layer GNNs).",
+                                            "score": 0.984
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        889,
+                                        1149,
+                                        1302,
+                                        1177
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                889,
+                                                1149,
+                                                1302,
+                                                1177
+                                            ],
+                                            "type": "text",
+                                            "content": "(Adapted fromY.Scholten.et.al.NeurIPS2022.)",
+                                            "score": 0.958
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 29,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 28
+                },
+                {
+                    "bbox": [
+                        1265,
+                        810,
+                        1718,
+                        984
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 30,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1270,
+                                808,
+                                1720,
+                                848
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1270,
+                                        808,
+                                        1324,
+                                        848
+                                    ],
+                                    "type": "text",
+                                    "content": "Let",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        1324,
+                                        811,
+                                        1401,
+                                        846
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "p ( E _ { v } )",
+                                    "score": 0.82
+                                },
+                                {
+                                    "bbox": [
+                                        1401,
+                                        808,
+                                        1720,
+                                        848
+                                    ],
+                                    "type": "text",
+                                    "content": "denotes the probability",
+                                    "score": 0.98
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1270,
+                                845,
+                                1720,
+                                880
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1270,
+                                        845,
+                                        1720,
+                                        880
+                                    ],
+                                    "type": "text",
+                                    "content": "that the malicious messages is NOT",
+                                    "score": 0.995
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1270,
+                                882,
+                                1718,
+                                913
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1270,
+                                        882,
+                                        1718,
+                                        913
+                                    ],
+                                    "type": "text",
+                                    "content": "intercepted, then we have that the",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1262,
+                                913,
+                                1720,
+                                953
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1262,
+                                        913,
+                                        1720,
+                                        953
+                                    ],
+                                    "type": "text",
+                                    "content": ":absolutechangeofprediction",
+                                    "score": 0.975
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1270,
+                                950,
+                                1662,
+                                987
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1270,
+                                        950,
+                                        1577,
+                                        987
+                                    ],
+                                    "type": "text",
+                                    "content": "probability is bounded by",
+                                    "score": 0.983
+                                },
+                                {
+                                    "bbox": [
+                                        1577,
+                                        950,
+                                        1651,
+                                        984
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "p ( E _ { v } )",
+                                    "score": 0.9
+                                },
+                                {
+                                    "bbox": [
+                                        1651,
+                                        950,
+                                        1662,
+                                        987
+                                    ],
+                                    "type": "text",
+                                    "content": "：",
+                                    "score": 0.916
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1302,
+                        990,
+                        1715,
+                        1035
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1302,
+                                990,
+                                1715,
+                                1035
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1302,
+                                        990,
+                                        1715,
+                                        1035
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\left| p _ {v, y} (G) - p _ {v, y} \\left(G ^ {\\prime}\\right) \\right| \\leq p \\left(E _ {v}\\right).",
+                                    "image_path": "e3c2f3843a4934522ef3d404a4ace04a7641198cb24e27d2cd04a363c4e9f682.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 31
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1497,
+                        1095,
+                        1582,
+                        1178
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1497,
+                                1095,
+                                1582,
+                                1178
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1497,
+                                        1095,
+                                        1582,
+                                        1178
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1497,
+                                                1095,
+                                                1582,
+                                                1178
+                                            ],
+                                            "type": "image",
+                                            "image_path": "9897c664fa6d671cc3f72c101fa756bb2ed26e7b50229e6dcec507825706c166.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 32,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 32
+                },
+                {
+                    "bbox": [
+                        1014,
+                        1201,
+                        1459,
+                        1234
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 33,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1012,
+                                1196,
+                                1462,
+                                1239
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1012,
+                                        1196,
+                                        1462,
+                                        1239
+                                    ],
+                                    "type": "text",
+                                    "content": "Collective Certificatevia Optimization",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        860,
+                        1250,
+                        1694,
+                        1333
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 34,
+                    "lines": [
+                        {
+                            "bbox": [
+                                865,
+                                1248,
+                                1694,
+                                1288
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        865,
+                                        1250,
+                                        940,
+                                        1285
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "p ( E _ { v } )",
+                                    "score": 0.81
+                                },
+                                {
+                                    "bbox": [
+                                        940,
+                                        1248,
+                                        1694,
+                                        1288
+                                    ],
+                                    "type": "text",
+                                    "content": ":the probability that the malicious messages is not intercepted.",
+                                    "score": 0.985
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                865,
+                                1290,
+                                1273,
+                                1331
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        865,
+                                        1290,
+                                        1273,
+                                        1331
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "c _ { v } : = p _ { v , y * } ( G ) \\mathfrak { - } m a x _ { y \\neq y * } p _ { v , y } ( G ) .",
+                                    "score": 0.63
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        993,
+                        1342,
+                        1593,
+                        1432
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                993,
+                                1342,
+                                1593,
+                                1432
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        993,
+                                        1342,
+                                        1593,
+                                        1432
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\max  _ {G ^ {\\prime} \\in B _ {\\rho , \\tau} (G)} M = \\sum_ {v \\in \\mathbb {T}} \\mathbb {I} \\left\\{\\overline {{p \\left(E _ {v}\\right)}} \\geq c _ {v} / 2 \\right\\},",
+                                    "image_path": "79f7ee4bf8af39b05eaed200c023c1e08942c2c51c1cc83d7fcc430fe97d2ace.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 35
+                },
+                {
+                    "bbox": [
+                        1108,
+                        1440,
+                        1587,
+                        1491
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 36,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1185,
+                                1438,
+                                1593,
+                                1492
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1185,
+                                        1438,
+                                        1593,
+                                        1492
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "| \\tilde { \\mathcal { V } } | \\leq \\rho , \\delta ( \\tilde { v } ) \\leq \\tau , \\forall \\tilde { v } \\in \\tilde { \\mathcal { V } } ,",
+                                    "score": 0.71
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        876,
+                        1512,
+                        1483,
+                        1545
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 37,
+                    "lines": [
+                        {
+                            "bbox": [
+                                873,
+                                1507,
+                                1486,
+                                1547
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        873,
+                                        1507,
+                                        1486,
+                                        1547
+                                    ],
+                                    "type": "text",
+                                    "content": "The remaining |Tl - M*nodes are certified robust.",
+                                    "score": 0.975
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1899,
+                        250,
+                        2410,
+                        285
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 38,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1894,
+                                247,
+                                2416,
+                                288
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1894,
+                                        247,
+                                        2416,
+                                        288
+                                    ],
+                                    "type": "text",
+                                    "content": "Sample-wise v.s.Collective Certificate",
+                                    "score": 0.995
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1750,
+                        299,
+                        2562,
+                        437
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 39,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1758,
+                                298,
+                                2560,
+                                334
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1758,
+                                        298,
+                                        2560,
+                                        334
+                                    ],
+                                    "type": "text",
+                                    "content": "Sample-wise certificates (Bojchevski et al.， 202O; Lai et al., 2023)",
+                                    "score": 0.948
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1755,
+                                331,
+                                2562,
+                                371
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1755,
+                                        331,
+                                        2562,
+                                        371
+                                    ],
+                                    "type": "text",
+                                    "content": "essentially verify the prediction for a node one by one,assuming",
+                                    "score": 0.987
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1755,
+                                368,
+                                2560,
+                                403
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1755,
+                                        368,
+                                        2560,
+                                        403
+                                    ],
+                                    "type": "text",
+                                    "content": "that the attacker can craft a different perturbed graph each time to",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1758,
+                                401,
+                                2227,
+                                440
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1758,
+                                        401,
+                                        2227,
+                                        440
+                                    ],
+                                    "type": "text",
+                                    "content": "attack every single node (Figure 1, top).",
+                                    "score": 0.978
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1750,
+                        454,
+                        2562,
+                        558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 40,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1755,
+                                452,
+                                2560,
+                                492
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1755,
+                                        452,
+                                        2560,
+                                        492
+                                    ],
+                                    "type": "text",
+                                    "content": "However，in reality，the attacker can only produce a single",
+                                    "score": 0.968
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1755,
+                                489,
+                                2562,
+                                524
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1755,
+                                        489,
+                                        2562,
+                                        524
+                                    ],
+                                    "type": "text",
+                                    "content": "perturbed graph to simultaneously disrupt all predictions for a set",
+                                    "score": 0.99
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1758,
+                                524,
+                                2171,
+                                559
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1758,
+                                        524,
+                                        2171,
+                                        559
+                                    ],
+                                    "type": "text",
+                                    "content": "of target nodes (Figure1,bottom).",
+                                    "score": 0.974
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1758,
+                        596,
+                        2080,
+                        875
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1758,
+                                596,
+                                2080,
+                                875
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1758,
+                                        596,
+                                        2080,
+                                        875
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1758,
+                                                596,
+                                                2080,
+                                                875
+                                            ],
+                                            "type": "image",
+                                            "image_path": "a4e695019ae52c7a0e64e64311b9d7830dbd4f2c2716899090af570a15fbe075.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 41,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 41
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        2109,
+                        596,
+                        2549,
+                        875
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                2109,
+                                596,
+                                2549,
+                                875
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2109,
+                                        596,
+                                        2549,
+                                        875
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2109,
+                                                596,
+                                                2549,
+                                                875
+                                            ],
+                                            "type": "image",
+                                            "image_path": "cb8f58803151f1981b9f18c6c3f2be001c2a379cb2a0d8b43a2fcf09d0a333b4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 42,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 42
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1760,
+                        886,
+                        2085,
+                        1162
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1760,
+                                886,
+                                2085,
+                                1162
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1760,
+                                        886,
+                                        2085,
+                                        1162
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1760,
+                                                886,
+                                                2085,
+                                                1162
+                                            ],
+                                            "type": "image",
+                                            "image_path": "b86eef25475c8a036df50838d870532e217a2a2187d005431e35592f994c8930.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 43,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 43
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        2112,
+                        886,
+                        2562,
+                        1164
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                2112,
+                                886,
+                                2562,
+                                1164
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2112,
+                                        886,
+                                        2562,
+                                        1164
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2112,
+                                                886,
+                                                2562,
+                                                1164
+                                            ],
+                                            "type": "image",
+                                            "image_path": "0a97f234c9469a5043a6ea1661fbfccee92e9f93ba9209c6d38e5263a86fb51a.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 44,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                1907,
+                                1180,
+                                2410,
+                                1210
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1910,
+                                        1175,
+                                        2413,
+                                        1215
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1910,
+                                                1175,
+                                                2413,
+                                                1215
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure 3: Certified ratio comparison (GCN model).",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 45,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 44
+                },
+                {
+                    "bbox": [
+                        2043,
+                        1223,
+                        2264,
+                        1253
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 46,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2040,
+                                1220,
+                                2267,
+                                1256
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2040,
+                                        1220,
+                                        2267,
+                                        1256
+                                    ],
+                                    "type": "text",
+                                    "content": "Evaluation Results",
+                                    "score": 0.995
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1787,
+                        1280,
+                        2600,
+                        1558
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 47,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1792,
+                                1277,
+                                2600,
+                                1320
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1792,
+                                        1277,
+                                        2600,
+                                        1320
+                                    ],
+                                    "type": "text",
+                                    "content": "With the same smoothing parameter， both proposed colective",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1792,
+                                1314,
+                                2600,
+                                1355
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1792,
+                                        1315,
+                                        2424,
+                                        1350
+                                    ],
+                                    "type": "text",
+                                    "content": "certificates achieve a higher certifiableradius",
+                                    "score": 0.968
+                                },
+                                {
+                                    "bbox": [
+                                        2437,
+                                        1314,
+                                        2600,
+                                        1355
+                                    ],
+                                    "type": "text",
+                                    "content": "(Figure 3),",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1795,
+                                1350,
+                                2597,
+                                1386
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1795,
+                                        1350,
+                                        2573,
+                                        1386
+                                    ],
+                                    "type": "text",
+                                    "content": "outperforming the sample-wise approach significantly when the",
+                                    "score": 0.995
+                                },
+                                {
+                                    "bbox": [
+                                        2573,
+                                        1355,
+                                        2597,
+                                        1384
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\rho",
+                                    "score": 0.78
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1787,
+                                1384,
+                                2600,
+                                1421
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1787,
+                                        1384,
+                                        2432,
+                                        1421
+                                    ],
+                                    "type": "text",
+                                    "content": "is large. For example, in the Citeseer dataset, when",
+                                    "score": 0.963
+                                },
+                                {
+                                    "bbox": [
+                                        2432,
+                                        1384,
+                                        2544,
+                                        1419
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\rho = 1 4 0 ,",
+                                    "score": 0.89
+                                },
+                                {
+                                    "bbox": [
+                                        2544,
+                                        1384,
+                                        2600,
+                                        1421
+                                    ],
+                                    "type": "text",
+                                    "content": "our",
+                                    "score": 0.999
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1787,
+                                1419,
+                                2597,
+                                1454
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1787,
+                                        1419,
+                                        2512,
+                                        1454
+                                    ],
+                                    "type": "text",
+                                    "content": "Collective-LP1 and Collective-LP2 have the certified ratios of",
+                                    "score": 0.993
+                                },
+                                {
+                                    "bbox": [
+                                        2512,
+                                        1421,
+                                        2586,
+                                        1453
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "7 3 . 0 \\%",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        2589,
+                                        1419,
+                                        2597,
+                                        1454
+                                    ],
+                                    "type": "text",
+                                    "content": "，",
+                                    "score": 0.78
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1787,
+                                1454,
+                                2600,
+                                1488
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1787,
+                                        1454,
+                                        1851,
+                                        1488
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        1851,
+                                        1454,
+                                        1931,
+                                        1488
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "8 1 . 2 \\%",
+                                    "score": 0.84
+                                },
+                                {
+                                    "bbox": [
+                                        1931,
+                                        1454,
+                                        2315,
+                                        1488
+                                    ],
+                                    "type": "text",
+                                    "content": "，while sample-wise can certify",
+                                    "score": 0.973
+                                },
+                                {
+                                    "bbox": [
+                                        2317,
+                                        1454,
+                                        2381,
+                                        1486
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "0 . 0 \\%",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        2381,
+                                        1454,
+                                        2600,
+                                        1488
+                                    ],
+                                    "type": "text",
+                                    "content": "nodes. Since the",
+                                    "score": 0.99
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1787,
+                                1491,
+                                2600,
+                                1521
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1787,
+                                        1491,
+                                        2600,
+                                        1521
+                                    ],
+                                    "type": "text",
+                                    "content": "sample-wise and collective certificate share the same smoothed",
+                                    "score": 0.995
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1790,
+                                1523,
+                                2386,
+                                1561
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1790,
+                                        1523,
+                                        2386,
+                                        1561
+                                    ],
+                                    "type": "text",
+                                    "content": "model, they always have the same clean accuracy.",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        2,
+                        15,
+                        133,
+                        116
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                0,
+                                22,
+                                162,
+                                110
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        0,
+                                        22,
+                                        162,
+                                        110
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        143,
+                        30,
+                        468,
+                        65
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                143,
+                                27,
+                                474,
+                                73
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        143,
+                                        27,
+                                        474,
+                                        73
+                                    ],
+                                    "type": "text",
+                                    "content": "THE HONG KONG",
+                                    "score": 0.966
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        143,
+                        68,
+                        639,
+                        103
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                141,
+                                65,
+                                644,
+                                113
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        141,
+                                        65,
+                                        644,
+                                        113
+                                    ],
+                                    "type": "text",
+                                    "content": "POLYTECHNICUNIVERSITY",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        679,
+                        62,
+                        1982,
+                        116
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                679,
+                                55,
+                                1984,
+                                122
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        679,
+                                        55,
+                                        1984,
+                                        122
+                                    ],
+                                    "type": "text",
+                                    "content": "Collective Certified Robustness Against Graph Injection Attacks",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2304,
+                        17,
+                        2413,
+                        130
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2309,
+                                7,
+                                2421,
+                                118
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2309,
+                                        7,
+                                        2421,
+                                        118
+                                    ],
+                                    "type": "text",
+                                    "content": ":9",
+                                    "score": 0.632
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2432,
+                        20,
+                        2632,
+                        84
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2426,
+                                22,
+                                2634,
+                                90
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2426,
+                                        22,
+                                        2634,
+                                        90
+                                    ],
+                                    "type": "text",
+                                    "content": "ICML",
+                                    "score": 0.995
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2432,
+                        87,
+                        2637,
+                        105
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2437,
+                                87,
+                                2634,
+                                111
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2437,
+                                        87,
+                                        2634,
+                                        111
+                                    ],
+                                    "type": "text",
+                                    "content": "International Conference",
+                                    "score": 0.975
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2432,
+                        106,
+                        2605,
+                        127
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2434,
+                                102,
+                                2608,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2434,
+                                        102,
+                                        2608,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "OnMachine Learning",
+                                    "score": 0.979
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "page_size": [
+                2664,
+                1595
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

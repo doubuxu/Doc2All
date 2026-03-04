@@ -1,0 +1,682 @@
+[
+  {
+    "type": "text",
+    "text": "Preliminary ",
+    "text_level": 1,
+    "bbox": [
+      124,
+      188,
+      213,
+      213
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A Robust Test for the Stationarity Assumption in Sequential Decision Making_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Sequential Decision Making "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      33,
+      243,
+      299,
+      391
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Markov Decision Process (MDP): $p _ { t } ( S _ { t + 1 } , R _ { t } | A _ { t } , S _ { t } )$ ",
+      "Stationarity assumption "
+    ],
+    "bbox": [
+      17,
+      396,
+      227,
+      433
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "H:{pi(S+1R|S $H _ { 0 } \\colon \\{ p _ { j } ( S _ { j + 1 } , R _ { j } | S _ { j } , A _ { j } ) \\} _ { 0 \\leq j \\leq T - 1 }$ are homogeneous over time j; ",
+    "bbox": [
+      33,
+      439,
+      278,
+      462
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Offline reinforcement learning (RL) : static dataset without further interactions. ",
+      "Additional challenges in modern RL problems "
+    ],
+    "bbox": [
+      17,
+      467,
+      315,
+      505
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "State variable $S _ { t }$ can be high-dimensional (e.g.,7056 for Atari). ",
+      "Dynamics $p _ { t }$ can be highlycomplex (e.g,autonomous driving). "
+    ],
+    "bbox": [
+      33,
+      511,
+      274,
+      550
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Modern ML methods well-suited for non-linearity and high-dimensionality, however, need careful treatment for proper statistical inference. ",
+    "bbox": [
+      17,
+      554,
+      323,
+      586
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Proposed Test ",
+    "text_level": 1,
+    "bbox": [
+      115,
+      593,
+      222,
+      618
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A Robust Test for the Stationarity Assumption in Sequential Decision Making_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Graphical illustration "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      13,
+      644,
+      313,
+      893
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The proposed test is based on sample spliting[1]. ",
+    "bbox": [
+      16,
+      900,
+      213,
+      917
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Maximum-type test statistic: ",
+    "bbox": [
+      335,
+      183,
+      449,
+      200
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\hat{\\Gamma} = \\max_{\\substack{\\epsilon T\\leq t\\leq (1 - \\epsilon)T\\\\ b\\in \\{1,\\ldots ,B\\}}}\\sqrt{\\frac{t(T - t)}{T^{2}}}\\hat{\\sigma} (t,h_{b})^{-1}\\frac{1}{|I_{2}|}\\sum_{i = 1}^{|I_{2}|}\\hat{\\psi}_{i},\n$$",
+    "text_format": "latex",
+    "bbox": [
+      408,
+      206,
+      599,
+      258
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "where ",
+    "bbox": [
+      334,
+      262,
+      359,
+      276
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\hat {\\psi} _ {i} = \\underbrace {\\int \\left| \\hat {E} _ {[ t , T ]} \\left[ h _ {b} \\left(S ^ {\\prime}\\right) | a , s \\right] - \\hat {E} _ {[ 0 , t ]} \\left[ h _ {b} \\left(S ^ {\\prime}\\right) | a , s \\right] \\right| g (a , s) \\lambda (d a , d s)} _ {\\hat {\\Delta} (a, s; h _ {b}, t)} \\quad \\begin{array}{l} \\text {p l u g - i n t e r m} \\\\ \\text {a u g m e n t e d t e r m} \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      334,
+      276,
+      674,
+      330
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} + \\frac {1}{T - t} \\sum_ {j = t} ^ {T - 1} \\operatorname {s g n} (\\widehat {\\Delta} (A _ {i, j}, S _ {i, j}; h _ {b}, t)) [ h _ {b} (S _ {i, j + 1}) - \\widehat {E} _ {[ t, T ]} [ h _ {b} (S ^ {\\prime}) | A _ {i, j}, S _ {i, j} ] ] \\frac {g (A _ {i , j} , S _ {i , j})}{\\widehat {\\omega} _ {[ t , T ]} (A _ {i , j} , S _ {i , j})} \\\\ - \\frac {1}{t} \\sum_ {j = 0} ^ {t - 1} \\operatorname {s g n} \\left(\\widehat {\\Delta} \\left(A _ {i, j}, S _ {i, j}; h _ {b}, t\\right)\\right) \\left[ h _ {b} \\left(S _ {i, j + 1}\\right) - \\widehat {E} _ {[ 0, t ]} \\left[ h _ {b} \\left(S ^ {\\prime}\\right) \\mid A _ {i, j}, S _ {i, j} \\right] \\right] \\frac {g \\left(A _ {i , j} , S _ {i , j}\\right)}{\\widehat {\\omega} _ {[ 0 , t ]} \\left(A _ {i , j} , S _ {i , j}\\right)}. \\\\ \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      334,
+      330,
+      671,
+      417
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "□ $h _ { b }$ is a test function from a rich function class and $B$ is the number of test functions; $g$ is some reference density function. $\\epsilon \\in ( 0 , 0 . 5 )$ is the boundary removal parameter. ",
+      "□ $\\mid \\sqrt { t ( T - t ) / T ^ { 2 } } \\hat { \\sigma } ( t , h _ { b } ) ^ { - 1 }$ is the normalized factor for different $( t , h _ { b } )$ where $\\hat { \\sigma } ^ { 2 } ( t , h _ { b } )$ is the sampling variance estimator. ",
+      "Nuisance functions $\\widehat { p } _ { [ 0 , t ] } , \\widehat { p } _ { [ t , T ] } , \\widehat { \\omega } _ { [ 0 , t ] } , \\widehat { \\omega }$ $\\widehat { \\omega } _ { [ t , T ] }$ are estimated using the data from $I _ { 1 }$ . One can use flexible machine/deep learning tools. The estimator $\\hat { \\psi } _ { i }$ is evaluated by directly plugging estimated nuisancefunctions and samples from $I _ { 2 }$ ",
+      "Gaussian multiplier bootstrap is used to approximate the limiting distribution and compute theresulting p-vale,i.e. $\\textstyle { \\widehat { p } } = \\sum _ { q = 1 } ^ { Q } I ( { \\widehat { \\Gamma } } \\geq { \\widehat { \\Gamma } } ^ { q } ) / Q$ "
+    ],
+    "bbox": [
+      334,
+      422,
+      671,
+      586
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theoretical Property ",
+    "text_level": 1,
+    "bbox": [
+      423,
+      593,
+      579,
+      618
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Double Robustnes: Suppose $H _ { 0 }$ holds. For any $h \\in H$ and $t \\in ( 0 , T - 1 )$ , we have ",
+    "bbox": [
+      335,
+      627,
+      647,
+      644
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nE \\psi_ {i} ^ {*} = 0, i = 1, \\dots , N,\n$$",
+    "text_format": "latex",
+    "bbox": [
+      457,
+      649,
+      543,
+      666
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Moreover, theabove equation is doubly robust,i.e.,forany $p _ { [ 0 , t ] } , \\ p _ { [ t , T ] } , \\omega _ { [ 0 , t ] } , \\omega _ { [ t , T ] } ,$ ,the following holds as long as either $p _ { [ 0 , t ] } = p _ { [ t , T ] } = p ^ { * }$ or $\\omega _ { [ 0 , t ] } = \\omega _ { [ 0 , t ] } ^ { * } , \\omega _ { [ t , T ] } = \\omega _ { [ t , T ] } ^ { * }$ ",
+    "bbox": [
+      335,
+      672,
+      664,
+      707
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nE \\psi_ {i} = 0, i = 1, \\dots , N.\n$$",
+    "text_format": "latex",
+    "bbox": [
+      457,
+      710,
+      542,
+      728
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "$\\boldsymbol { \\mathbf { \\nabla } } \\sqcup \\psi _ { i } ^ { * }$ is the oracle version of $\\hat { \\psi } _ { i }$ by replacing the estimated nuisance functions with the oracle ones. $\\psi _ { i }$ is similar to $\\hat { \\psi } _ { i }$ by replacing estimated ones with general functions. ",
+    "bbox": [
+      335,
+      744,
+      663,
+      779
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Size: Suppose $B = O ( ( N T ) ^ { c } )$ for any $c > 0$ and $t = O ( T )$ for any $t \\in [ \\epsilon T , ( 1 - \\epsilon T ) ]$ hold.Inadditionupposeuniformboussf $\\frac { g } { \\omega _ { [ 0 , t ] } } , \\frac { g } { \\omega _ { [ t , T ] } } ,$ strict stationarity and geometrical ergodicity of $\\{ S _ { t } \\} _ { t \\ge 0 }$ $T \\to \\infty$ andthe\"convergence speed of $\\widehat { p } _ { [ 0 , t ] } , \\widehat { p } _ { [ t , T ] } , \\widehat { \\omega } _ { [ 0 , t ] }$ $\\widehat { \\omega } _ { [ t , T ] }$ to oracle value satisfying ",
+    "bbox": [
+      334,
+      791,
+      664,
+      863
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} \\left[ E \\left\\{d _ {T V} ^ {2} \\left(\\hat {p} _ {[ 0, t ]}, p _ {[ 0, t ]} ^ {*}\\right) \\right\\} \\right] ^ {1 / 2} = O \\left((N T) ^ {- \\kappa_ {1}}\\right), \\left[ E \\left\\{d _ {T V} ^ {2} \\left(\\hat {p} _ {[ t, T ]}, p _ {[ t, T ]} ^ {*}\\right) \\right\\} \\right] ^ {1 / 2} = O \\left((N T) ^ {- \\kappa_ {2}}\\right), \\\\ \\left[ E \\bigl \\{d _ {T V} ^ {2} \\bigl (\\widehat {\\omega} _ {[ 0, t ]}, \\omega_ {[ 0, t ]} ^ {*} \\bigr) \\bigr \\} \\bigr \\} \\right] ^ {1 / 2} = O \\bigl ((N T) ^ {- \\kappa_ {3}} \\bigr), \\left[ E \\bigl \\{d _ {T V} ^ {2} \\bigl (\\widehat {\\omega} _ {[ t, T ]}, \\omega_ {[ t, T ]} ^ {*} \\bigr) \\bigr \\} \\bigr \\} \\right] ^ {1 / 2} = O \\bigl ((N T) ^ {- \\kappa_ {4}} \\bigr), \\\\ \\kappa_ {1}, \\kappa_ {2}, \\kappa_ {3}, \\kappa_ {4} \\in (0, 1 / 2) a n d \\kappa_ {1} + \\kappa_ {3} > \\frac {1}{2}, \\kappa_ {2} + \\kappa_ {4} > \\frac {1}{2}, \\\\ \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      358,
+      867,
+      643,
+      931
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": ", we have ",
+    "bbox": [
+      337,
+      937,
+      372,
+      951
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nP (\\hat {p} \\geq \\alpha | H _ {0}) = \\alpha + o (1)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      450,
+      957,
+      550,
+      974
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Simulation ",
+    "text_level": 1,
+    "bbox": [
+      791,
+      189,
+      874,
+      211
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A Robust Test for the Stationarity Assumption in Sequential Decision Making_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "A "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      684,
+      217,
+      854,
+      307
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Fig.A: Double Robustness. ",
+      "Fig.B:Applicablity toonlinestings. ",
+      "Fig.C: Superiority under highdimensional settings "
+    ],
+    "bbox": [
+      857,
+      228,
+      987,
+      296
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A Robust Test for the Stationarity Assumption in Sequential Decision Making_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      683,
+      315,
+      832,
+      411
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A Robust Test for the Stationarity Assumption in Sequential Decision Making_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      835,
+      314,
+      993,
+      410
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A Robust Test for the Stationarity Assumption in Sequential Decision Making_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "C "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      684,
+      421,
+      988,
+      574
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Application to Intern Health Study Data ",
+    "text_level": 1,
+    "bbox": [
+      687,
+      593,
+      982,
+      618
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Intern Health Study [2]: Wearable and survey data of 1565 medical interns in the U.S.collected for 26 weeks (fromJuly1,2018,toDec 31,2018). ",
+      "The goal is to improve the health-related outcome of medical interns through mobile-based push notification. ",
+      "Every week,each intern would be either randomly assigned to notification week $( A _ { t } = 1 )$ with 0.75 probability or non-notification week $( A _ { t } = 0 )$ ). ",
+      "Intern's previous week's average daily step count, sleep duration and survey mood score are considered as the state $S _ { t }$ ",
+      "We consider the next week daily average step count as the reward $R _ { t }$ ",
+      "The treatment effect of push notification decrease over time. "
+    ],
+    "bbox": [
+      681,
+      630,
+      982,
+      814
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A Robust Test for the Stationarity Assumption in Sequential Decision Making_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      668,
+      837,
+      782,
+      966
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A Robust Test for the Stationarity Assumption in Sequential Decision Making_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      783,
+      837,
+      887,
+      966
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      894,
+      821,
+      967,
+      839
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[1] V. Chernozhukov et al., “Double/debiased machine learning for treatment and structural parameters,TbeEconometricsJournal, vol.21,no.1,pp.C1-C68. ",
+    "bbox": [
+      895,
+      847,
+      1000,
+      903
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[2] T.NeCamp et al.,“Assessing real-timemoderation fordeveloping adaptive mobile health interventions for medical interns:Microrandomized trial,\"Journal of ",
+    "bbox": [
+      895,
+      904,
+      1000,
+      957
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Medical Internet Research, vol.22, no.3,2020. ",
+    "bbox": [
+      895,
+      958,
+      1000,
+      980
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "M ",
+    "bbox": [
+      32,
+      35,
+      105,
+      105
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "UNIVERSITYOF MICHIGAN ",
+    "bbox": [
+      35,
+      107,
+      103,
+      137
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      131,
+      29,
+      199,
+      92
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Michigan Statistics for Individualizing Healthcare Lab ",
+    "bbox": [
+      120,
+      93,
+      214,
+      115
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "MiSIL ",
+    "bbox": [
+      135,
+      119,
+      200,
+      148
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "A Robust Test for the Stationarity Assumption in Sequential Decision Making ",
+    "bbox": [
+      233,
+      14,
+      869,
+      103
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Jitao Wang[1]*, Chengchun Shi[2], Zhenke Wu[1] ",
+    "bbox": [
+      382,
+      108,
+      724,
+      133
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "[1] Universityof Michigan [2] London School of Economics and Political Science|*jitwang@umich.edu ",
+    "bbox": [
+      290,
+      142,
+      817,
+      163
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "LSE ",
+    "bbox": [
+      908,
+      37,
+      956,
+      94
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "THE LONDON SCHOOL ",
+    "bbox": [
+      896,
+      105,
+      972,
+      116
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "OF ECONOMICS AND ",
+    "bbox": [
+      896,
+      118,
+      972,
+      131
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "POLITICAL SCIENCE ",
+    "bbox": [
+      897,
+      133,
+      971,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "Data ",
+    "bbox": [
+      157,
+      931,
+      179,
+      944
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "I1 ",
+    "bbox": [
+      107,
+      958,
+      119,
+      975
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      219,
+      958,
+      231,
+      977
+    ],
+    "page_idx": 0
+  }
+]

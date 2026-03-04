@@ -1,0 +1,468 @@
+[
+  {
+    "type": "text",
+    "text": "Adam Block*，Dylan Foster，Akshay Krishnamurthy*，Max Simchowitz*，Cyril Zhang* ",
+    "bbox": [
+      24,
+      127,
+      740,
+      159
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "+MIT*Microsoft Research NYC ",
+    "bbox": [
+      25,
+      163,
+      226,
+      187
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Behavior cloning & feedback loops "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      29,
+      260,
+      299,
+      416
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "BC: fit $\\theta$ to a collection of demonstrations from expert policy $\\pi ^ { \\star }$ ,minimizing 1-step loss ",
+    "bbox": [
+      19,
+      438,
+      302,
+      489
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n(e. g.) \\ell_ {\\mathrm {B C}} (\\theta) = \\underset {\\text {e x p e r t ' s} \\left(s _ {t}, a _ {t}\\right)} {\\mathbb {E}} \\left[ \\| \\pi_ {\\theta} \\left(s _ {t}\\right) - \\pi^ {\\star} \\left(s _ {t}\\right) \\| ^ {2} \\right]\n$$",
+    "text_format": "latex",
+    "bbox": [
+      20,
+      495,
+      265,
+      532
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Usual view: BC reduces offline imitation learning to supervised learning ",
+    "bbox": [
+      19,
+      542,
+      274,
+      593
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "eBc（）≤ε",
+    "bbox": [
+      26,
+      615,
+      106,
+      646
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "train on1-step loss ",
+    "bbox": [
+      26,
+      648,
+      107,
+      664
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "JH（πθ）≥JH（π*）-C.ε",
+    "bbox": [
+      145,
+      615,
+      296,
+      647
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "evaluatemulti-steprollout rewards ",
+    "bbox": [
+      151,
+      649,
+      295,
+      664
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Q1: When BC works, how big is C in practice? ",
+      "Q2: When BC fails,must we improve the data? Or can we improve upon standard training? "
+    ],
+    "bbox": [
+      18,
+      714,
+      316,
+      805
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Special case: pretraining vs. generation in LLMs ",
+    "bbox": [
+      17,
+      848,
+      322,
+      874
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$s _ { t }$ :sequence of t tokens ",
+      "$a _ { t }$ :append a single token ",
+      "$\\pi _ { \\theta }$ :autoregressive language model "
+    ],
+    "bbox": [
+      29,
+      877,
+      252,
+      950
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Gradient Variance Amplification ",
+    "text_level": 1,
+    "bbox": [
+      364,
+      218,
+      613,
+      247
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A1: Long-horizon rollouts can be extremely sensitive to small SGD fluctuations. ",
+    "bbox": [
+      351,
+      283,
+      622,
+      332
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "GVA:an empirical pathology in BC with NNs ",
+    "bbox": [
+      348,
+      372,
+      626,
+      398
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      339,
+      414,
+      360,
+      442
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "small changes in 0 due to minibatch noise ",
+    "bbox": [
+      362,
+      417,
+      628,
+      442
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      351,
+      452,
+      371,
+      481
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "...causing smallchanges in 1-step $\\ell _ { \\mathrm { B C } } ( \\theta ) \\ldots$ ",
+    "bbox": [
+      373,
+      455,
+      640,
+      484
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      362,
+      489,
+      381,
+      519
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "..and chaotic long-rollout rewards $J _ { H } ( \\pi _ { \\theta } )$ ",
+    "bbox": [
+      384,
+      494,
+      643,
+      522
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Evidence: (across locomotion tasks&archs) ",
+    "bbox": [
+      345,
+      556,
+      627,
+      582
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "fractal reward landscape "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      353,
+      587,
+      494,
+      767
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "oscillations during training "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      495,
+      588,
+      630,
+      763
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "(in the paper:accompanying quantitative studies) ",
+    "bbox": [
+      377,
+      805,
+      615,
+      826
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theory: vignettes in toy models ",
+    "bbox": [
+      339,
+      849,
+      539,
+      874
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "- marginally stable linear dynamics,linear π,π* ",
+      "- \"CliffLQR\": halfspace reward $ G V A$ ",
+      "- SDE limit: EMA& LR schedules both work "
+    ],
+    "bbox": [
+      344,
+      878,
+      639,
+      949
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Algorithmic mitigations for GVA ",
+    "text_level": 1,
+    "bbox": [
+      691,
+      218,
+      941,
+      247
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A2:Variance reduction techniquesmitigate the oscillations;EMAishighly effective. ",
+    "bbox": [
+      673,
+      282,
+      965,
+      331
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      667,
+      360,
+      969,
+      563
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Exponential Moving Average ",
+    "bbox": [
+      677,
+      576,
+      827,
+      596
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$\\theta _ { t + 1 }  \\theta _ { t } - \\eta _ { t } \\widetilde { \\nabla } _ { \\theta } \\ell _ { \\mathrm { B C } } ( \\theta )$ (or Adam, etc.) ",
+      "$\\bar { \\theta } _ { t + 1 }  ( 1 - \\beta _ { t } ) \\bar { \\theta } _ { t } + \\beta _ { t } \\cdot \\theta _ { t }$ use $\\bar { \\theta } _ { t }$ for inference "
+    ],
+    "bbox": [
+      681,
+      601,
+      953,
+      660
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Bonus: GVA& EMA in language generation "
+    ],
+    "image_footnote": [
+      ""
+    ],
+    "bbox": [
+      671,
+      719,
+      975,
+      928
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1 ",
+    "bbox": [
+      22,
+      32,
+      86,
+      116
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Butterfly Effects of SGD Noise: Error Amplification in Behavior Cloning and Autoregression ",
+    "bbox": [
+      93,
+      35,
+      711,
+      116
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "H ",
+    "bbox": [
+      807,
+      15,
+      865,
+      63
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "□ □ □ ",
+    "bbox": [
+      873,
+      16,
+      984,
+      181
+    ],
+    "page_idx": 0
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "fig_id": "fig_1",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_1.jpg",
+    "caption": [],
+    "content_list_index": 2
+  },
+  {
+    "fig_id": "fig_2",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_2.jpg",
+    "caption": [],
+    "content_list_index": 3
+  },
+  {
+    "fig_id": "fig_3",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_3.jpg",
+    "caption": [],
+    "content_list_index": 4
+  },
+  {
+    "fig_id": "fig_4",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_4.jpg",
+    "caption": [],
+    "content_list_index": 5
+  },
+  {
+    "fig_id": "fig_5",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_5.jpg",
+    "caption": [],
+    "content_list_index": 6
+  },
+  {
+    "fig_id": "fig_6",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_6.jpg",
+    "caption": [
+      "Figure2:Pretraining cross-entropy loss on the held-out data over the training steps.With too-low temperature,low-resourcelanguages aresampled too litte,and theirlossesarerelatively high.With higher temperature,overfitting becomes more severe with increasing model size. "
+    ],
+    "content_list_index": 7
+  },
+  {
+    "fig_id": "fig_7",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_7.jpg",
+    "caption": [
+      "(a)All languages "
+    ],
+    "content_list_index": 10
+  },
+  {
+    "fig_id": "fig_8",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_8.jpg",
+    "caption": [
+      "(b)Higher-resource "
+    ],
+    "content_list_index": 11
+  },
+  {
+    "fig_id": "fig_9",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_9.jpg",
+    "caption": [
+      "(c)Lower-resource ",
+      "Figure4:Average TyDiQA GoldP performanceacross three model sizes.Overall,UNIMAXoutperforms both baselines at allmodel sizes considered.Breakdowns on higher-resource (top-5)and lower-resource (bottom-4) languages show UNIMAX outperforms $\\tau = 3 . 3 3$ onbothhigh-and lowresource,and onlyunderperforms $\\tau = 1$ onhigh-resource at large model scales. "
+    ],
+    "content_list_index": 12
+  },
+  {
+    "fig_id": "fig_10",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_10.jpg",
+    "caption": [
+      "（a）T=1"
+    ],
+    "content_list_index": 13
+  },
+  {
+    "fig_id": "fig_11",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_11.jpg",
+    "caption": [
+      "（b)T=3.33"
+    ],
+    "content_list_index": 14
+  },
+  {
+    "fig_id": "fig_12",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/images/fig_12.jpg",
+    "caption": [
+      "（c)UNIMAX",
+      "Figure3:Pretraining cross-entropy loss on the held-out data over1M trainingsteps.With the sequencelengthof512,thiscorresponds to1/2character budget.The overfittingbehavioremerges only after suficient number of training steps for $\\tau = 3 . 3 3$ "
+    ],
+    "content_list_index": 15
+  }
+]

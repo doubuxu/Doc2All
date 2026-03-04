@@ -1,0 +1,3488 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        50,
+                        51,
+                        746,
+                        140
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                47,
+                                460,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        47,
+                                        460,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "Langevin Autoencoders",
+                                    "score": 0.976
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                48,
+                                92,
+                                750,
+                                144
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        48,
+                                        92,
+                                        750,
+                                        144
+                                    ],
+                                    "type": "text",
+                                    "content": "for Learning Deep Latent Variable Models",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        52,
+                        206,
+                        171,
+                        231
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                52,
+                                202,
+                                175,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52,
+                                        202,
+                                        175,
+                                        236
+                                    ],
+                                    "type": "text",
+                                    "content": "Motivation",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        52,
+                        246,
+                        320,
+                        266
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                245,
+                                320,
+                                268
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        245,
+                                        320,
+                                        268
+                                    ],
+                                    "type": "text",
+                                    "content": "Learning deep latent variable models",
+                                    "score": 0.96
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        52,
+                        286,
+                        220,
+                        303
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                286,
+                                222,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        286,
+                                        222,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "Latentvariablemodels",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        207,
+                        304,
+                        412,
+                        350
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                207,
+                                304,
+                                412,
+                                350
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        207,
+                                        304,
+                                        412,
+                                        350
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "p (\\mathbf {x}; \\boldsymbol {\\theta}) = \\int p (\\mathbf {x} \\mid z; \\boldsymbol {\\theta}) p (z) d z",
+                                    "image_path": "3861566ee76fe0372f897c085c979b45811a7d99f899a44ea72040d06f6b4aaa.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "bbox": [
+                        52,
+                        355,
+                        287,
+                        373
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                353,
+                                289,
+                                375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        353,
+                                        289,
+                                        375
+                                    ],
+                                    "type": "text",
+                                    "content": "Gradient overmodel parameters",
+                                    "score": 0.969
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        72,
+                        374,
+                        550,
+                        429
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                374,
+                                550,
+                                429
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        374,
+                                        550,
+                                        429
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\nabla_ {\\boldsymbol {\\theta}} \\mathbb {E} _ {\\hat {p} _ {\\mathrm {d a t a} (\\mathbf {x})}} [ \\log p (\\boldsymbol {x}; \\boldsymbol {\\theta}) ] \\approx \\frac {1}{n} \\sum_ {i = 1} ^ {n} \\mathbb {E} _ {p \\left(\\boldsymbol {z} ^ {(i)} \\mid \\boldsymbol {x} ^ {(i)}; \\boldsymbol {\\theta}\\right)} \\left[ \\nabla_ {\\boldsymbol {\\theta}} \\log p \\left(\\boldsymbol {x} ^ {(i)}, \\boldsymbol {z} ^ {(i)}; \\boldsymbol {\\theta}\\right) \\right]",
+                                    "image_path": "64ddf34643261905c006502c1dc9cadaee3f81ebabca4509c9862e48f533bae8.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 15
+                },
+                {
+                    "bbox": [
+                        54,
+                        442,
+                        559,
+                        595
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 19,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                54,
+                                442,
+                                559,
+                                510
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 16,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        57,
+                                        441,
+                                        490,
+                                        462
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                57,
+                                                441,
+                                                490,
+                                                462
+                                            ],
+                                            "type": "text",
+                                            "content": "·To learna latent variablemodel via gradientascent,we need to",
+                                            "score": 0.962
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        74,
+                                        466,
+                                        561,
+                                        488
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                74,
+                                                467,
+                                                425,
+                                                488
+                                            ],
+                                            "type": "text",
+                                            "content": "approximate the expectationover the latentposterior",
+                                            "score": 0.977
+                                        },
+                                        {
+                                            "bbox": [
+                                                425,
+                                                466,
+                                                500,
+                                                488
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "p ( \\mathbf { z } \\mid \\mathbf { x } ; \\mathbf { \\boldsymbol { \\theta } } )",
+                                            "score": 0.9
+                                        },
+                                        {
+                                            "bbox": [
+                                                500,
+                                                467,
+                                                561,
+                                                488
+                                            ],
+                                            "type": "text",
+                                            "content": "which is",
+                                            "score": 0.966
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        76,
+                                        490,
+                                        222,
+                                        510
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                76,
+                                                490,
+                                                222,
+                                                510
+                                            ],
+                                            "type": "text",
+                                            "content": "intractableingeneral.",
+                                            "score": 0.997
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                54,
+                                512,
+                                550,
+                                552
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 17,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        511,
+                                        550,
+                                        532
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                59,
+                                                511,
+                                                550,
+                                                532
+                                            ],
+                                            "type": "text",
+                                            "content": "·Variational inference isadominantapproach ofapproximation (e.g.,VAE",
+                                            "score": 0.968
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        74,
+                                        533,
+                                        363,
+                                        554
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                74,
+                                                533,
+                                                363,
+                                                554
+                                            ],
+                                            "type": "text",
+                                            "content": "[1]),but theapproximationpower is limited.",
+                                            "score": 0.959
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                54,
+                                556,
+                                543,
+                                595
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 18,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        61,
+                                        553,
+                                        543,
+                                        577
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                61,
+                                                553,
+                                                543,
+                                                577
+                                            ],
+                                            "type": "text",
+                                            "content": "Markovchain MonteCarlo(MCMC)iscapableof approximatecomplex",
+                                            "score": 0.974
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        74,
+                                        577,
+                                        462,
+                                        597
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                74,
+                                                577,
+                                                462,
+                                                597
+                                            ],
+                                            "type": "text",
+                                            "content": "posteriors,but istoo slowdue todatapoint-wise iterations.",
+                                            "score": 0.977
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        52,
+                        612,
+                        177,
+                        638
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 20,
+                    "lines": [
+                        {
+                            "bbox": [
+                                54,
+                                607,
+                                181,
+                                643
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        607,
+                                        181,
+                                        643
+                                    ],
+                                    "type": "text",
+                                    "content": "Preliminary",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        52,
+                        649,
+                        195,
+                        669
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 21,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                648,
+                                197,
+                                670
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        648,
+                                        197,
+                                        670
+                                    ],
+                                    "type": "text",
+                                    "content": "Langevindynamics",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        54,
+                        691,
+                        404,
+                        712
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 22,
+                    "lines": [
+                        {
+                            "bbox": [
+                                59,
+                                691,
+                                404,
+                                714
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        691,
+                                        404,
+                                        714
+                                    ],
+                                    "type": "text",
+                                    "content": "·Langevindynamics[2]isa gradient-based MCMC.",
+                                    "score": 0.967
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        113,
+                        733,
+                        503,
+                        826
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                113,
+                                733,
+                                503,
+                                826
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        113,
+                                        733,
+                                        503,
+                                        826
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\begin{array}{l} z ^ {\\prime} \\sim q (z ^ {\\prime} \\mid z) = \\mathcal {N} (z ^ {\\prime}; z + \\eta \\nabla_ {z} \\log p (x, z; \\theta), 2 \\eta I) \\\\ z \\leftarrow z ^ {\\prime} \\text {w i t h p r o b a b i l i t y} \\min  \\left\\{1, \\frac {p (x , z ^ {\\prime} ; \\theta) q (z \\mid z ^ {\\prime})}{p (x , z ; \\theta) q (z ^ {\\prime} \\mid z)} \\right\\} \\\\ \\end{array}",
+                                    "image_path": "3a21933dbbde864dbe56c3cdd0e5ca9bcc26d43685e7f121694bf17963649dec.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23
+                },
+                {
+                    "bbox": [
+                        54,
+                        834,
+                        556,
+                        928
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 26,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                54,
+                                834,
+                                556,
+                                879
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 24,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        833,
+                                        556,
+                                        857
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                55,
+                                                833,
+                                                556,
+                                                857
+                                            ],
+                                            "type": "text",
+                                            "content": "·Byrepeating thisiterative update,thesamplesasymptoticallyapproach to",
+                                            "score": 0.977
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        67,
+                                        859,
+                                        259,
+                                        880
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                67,
+                                                859,
+                                                184,
+                                                880
+                                            ],
+                                            "type": "text",
+                                            "content": "thetrue posterior",
+                                            "score": 0.973
+                                        },
+                                        {
+                                            "bbox": [
+                                                184,
+                                                859,
+                                                259,
+                                                880
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "p ( \\mathbf { z } \\mid \\mathbf { x } ; \\pmb \\theta )",
+                                            "score": 0.9
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                54,
+                                883,
+                                522,
+                                928
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 25,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        879,
+                                        522,
+                                        904
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                55,
+                                                879,
+                                                522,
+                                                904
+                                            ],
+                                            "type": "text",
+                                            "content": "·MCMC iterationsare independentlyperformed foreach posterior per",
+                                            "score": 0.975
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        65,
+                                        901,
+                                        335,
+                                        931
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                65,
+                                                901,
+                                                134,
+                                                931
+                                            ],
+                                            "type": "text",
+                                            "content": "datapoint",
+                                            "score": 0.998
+                                        },
+                                        {
+                                            "bbox": [
+                                                134,
+                                                904,
+                                                233,
+                                                928
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "p ( z ^ { ( i ) } \\mid \\boldsymbol { x } ^ { ( i ) } ; \\boldsymbol { \\theta } )",
+                                            "score": 0.91
+                                        },
+                                        {
+                                            "bbox": [
+                                                235,
+                                                901,
+                                                255,
+                                                931
+                                            ],
+                                            "type": "text",
+                                            "content": "for",
+                                            "score": 0.999
+                                        },
+                                        {
+                                            "bbox": [
+                                                255,
+                                                905,
+                                                335,
+                                                926
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "i = 1 , . . . , n",
+                                            "score": 0.87
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        52,
+                        951,
+                        492,
+                        970
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 27,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                950,
+                                490,
+                                971
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        950,
+                                        490,
+                                        971
+                                    ],
+                                    "type": "text",
+                                    "content": "→How can we amortize the cost of datapoint-wise iterations?",
+                                    "score": 0.969
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        87,
+                        980,
+                        285,
+                        1112
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                87,
+                                980,
+                                285,
+                                1112
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        980,
+                                        285,
+                                        1112
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                980,
+                                                285,
+                                                1112
+                                            ],
+                                            "type": "image",
+                                            "image_path": "e822d2a235ceda40c96b4653a146bd22d7e13bd7997d8b3aa5de9262c1894f1a.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 28,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 28
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        339,
+                        981,
+                        531,
+                        1113
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                339,
+                                981,
+                                531,
+                                1113
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        339,
+                                        981,
+                                        531,
+                                        1113
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                339,
+                                                981,
+                                                531,
+                                                1113
+                                            ],
+                                            "type": "image",
+                                            "image_path": "275973c60cf63ec53657a39a475ae47982ad0d5fc1c47ec894801e0277234fbc.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 29,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 29
+                },
+                {
+                    "bbox": [
+                        87,
+                        1123,
+                        167,
+                        1137
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 30,
+                    "lines": [
+                        {
+                            "bbox": [
+                                83,
+                                1120,
+                                169,
+                                1139
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        83,
+                                        1120,
+                                        169,
+                                        1139
+                                    ],
+                                    "type": "text",
+                                    "content": "Posteriordensity",
+                                    "score": 0.994
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        1156,
+                        270,
+                        1170
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 31,
+                    "lines": [
+                        {
+                            "bbox": [
+                                85,
+                                1154,
+                                272,
+                                1171
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        85,
+                                        1154,
+                                        272,
+                                        1171
+                                    ],
+                                    "type": "text",
+                                    "content": "Gaussian posterior approximation by Vl",
+                                    "score": 0.966
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        315,
+                        1122,
+                        416,
+                        1137
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 32,
+                    "lines": [
+                        {
+                            "bbox": [
+                                317,
+                                1118,
+                                419,
+                                1139
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        317,
+                                        1118,
+                                        419,
+                                        1139
+                                    ],
+                                    "type": "text",
+                                    "content": "Posteriordensity",
+                                    "score": 0.978
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        315,
+                        1155,
+                        515,
+                        1170
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 33,
+                    "lines": [
+                        {
+                            "bbox": [
+                                317,
+                                1154,
+                                516,
+                                1171
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        317,
+                                        1154,
+                                        516,
+                                        1171
+                                    ],
+                                    "type": "text",
+                                    "content": "←Datapoint-wise MCMC over the latent z",
+                                    "score": 0.972
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        108,
+                        1185,
+                        264,
+                        1202
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 34,
+                    "lines": [
+                        {
+                            "bbox": [
+                                108,
+                                1184,
+                                266,
+                                1205
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        108,
+                                        1184,
+                                        266,
+                                        1205
+                                    ],
+                                    "type": "text",
+                                    "content": "(a)Variational inference",
+                                    "score": 0.963
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        358,
+                        1185,
+                        511,
+                        1202
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 35,
+                    "lines": [
+                        {
+                            "bbox": [
+                                360,
+                                1184,
+                                513,
+                                1205
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        360,
+                                        1184,
+                                        513,
+                                        1205
+                                    ],
+                                    "type": "text",
+                                    "content": "(b) Langevindynamics",
+                                    "score": 0.972
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        671,
+                        206,
+                        759,
+                        231
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 36,
+                    "lines": [
+                        {
+                            "bbox": [
+                                669,
+                                202,
+                                765,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        669,
+                                        202,
+                                        765,
+                                        236
+                                    ],
+                                    "type": "text",
+                                    "content": "Method",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        671,
+                        246,
+                        891,
+                        266
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 37,
+                    "lines": [
+                        {
+                            "bbox": [
+                                673,
+                                246,
+                                891,
+                                268
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        673,
+                                        246,
+                                        891,
+                                        268
+                                    ],
+                                    "type": "text",
+                                    "content": "Amortized Langevin dynamics",
+                                    "score": 0.975
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        671,
+                        291,
+                        968,
+                        483
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                671,
+                                291,
+                                968,
+                                483
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        671,
+                                        291,
+                                        968,
+                                        483
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                671,
+                                                291,
+                                                968,
+                                                483
+                                            ],
+                                            "type": "image",
+                                            "image_path": "2d3e51f2f1d0fb7a5c14d75b600e63d6fe027ecf961d217d858887a9fb0659e4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 38,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 38
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        983,
+                        347,
+                        1102,
+                        429
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                983,
+                                347,
+                                1102,
+                                429
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        983,
+                                        347,
+                                        1102,
+                                        429
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                983,
+                                                347,
+                                                1102,
+                                                429
+                                            ],
+                                            "type": "image",
+                                            "image_path": "e7f90204488f26116102d0f22bbd193c0a65f7716d3429da4a5b2b993aeb5e28.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 39,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 39
+                },
+                {
+                    "bbox": [
+                        671,
+                        512,
+                        1188,
+                        660
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 43,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                671,
+                                512,
+                                1156,
+                                574
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 40,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        675,
+                                        512,
+                                        1158,
+                                        532
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                675,
+                                                512,
+                                                1158,
+                                                532
+                                            ],
+                                            "type": "text",
+                                            "content": "·Inouramortized Langevin dynamics (ALD),we prepareanencoder that",
+                                            "score": 0.956
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        684,
+                                        533,
+                                        1143,
+                                        554
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                684,
+                                                533,
+                                                1143,
+                                                554
+                                            ],
+                                            "type": "text",
+                                            "content": "mapsthe observeddata into the latent variable,andrun MCMCon its",
+                                            "score": 0.949
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        686,
+                                        557,
+                                        806,
+                                        577
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                686,
+                                                557,
+                                                806,
+                                                577
+                                            ],
+                                            "type": "text",
+                                            "content": "parameterspace.",
+                                            "score": 0.997
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                671,
+                                577,
+                                1166,
+                                618
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 41,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        675,
+                                        574,
+                                        1166,
+                                        599
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                675,
+                                                574,
+                                                1166,
+                                                599
+                                            ],
+                                            "type": "text",
+                                            "content": "·Markovchain onthe latent space is implicitlyperformed by collectingthe",
+                                            "score": 0.959
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        686,
+                                        599,
+                                        837,
+                                        619
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                686,
+                                                599,
+                                                837,
+                                                619
+                                            ],
+                                            "type": "text",
+                                            "content": "output of the encoder.",
+                                            "score": 0.971
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                671,
+                                620,
+                                1188,
+                                660
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 42,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        675,
+                                        618,
+                                        1190,
+                                        641
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                675,
+                                                618,
+                                                1190,
+                                                641
+                                            ],
+                                            "type": "text",
+                                            "content": "·Our main theorem shows that theALDis validas MCMC if the encoder takes",
+                                            "score": 0.948
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        684,
+                                        639,
+                                        768,
+                                        663
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                684,
+                                                639,
+                                                768,
+                                                663
+                                            ],
+                                            "type": "text",
+                                            "content": "the form of:",
+                                            "score": 0.956
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        858,
+                        665,
+                        1002,
+                        689
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                858,
+                                665,
+                                1002,
+                                689
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        858,
+                                        665,
+                                        1002,
+                                        689
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "f _ {\\mathbf {z} | \\mathbf {x}} (x; \\boldsymbol {\\Phi}) = \\Phi g (x).",
+                                    "image_path": "07a207898c52c55a95ff75628bf4564339cec84b4e60257ebcc76fd611254dd4.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 44
+                },
+                {
+                    "bbox": [
+                        671,
+                        692,
+                        1181,
+                        733
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 45,
+                    "lines": [
+                        {
+                            "bbox": [
+                                675,
+                                692,
+                                1183,
+                                712
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        675,
+                                        692,
+                                        1183,
+                                        712
+                                    ],
+                                    "type": "text",
+                                    "content": "·Itcan beeasily implemented usinganeural netwhose parametersare fixed",
+                                    "score": 0.968
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                686,
+                                715,
+                                886,
+                                733
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        686,
+                                        715,
+                                        886,
+                                        733
+                                    ],
+                                    "type": "text",
+                                    "content": "exceptforthelastlinearlayer.",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        671,
+                        743,
+                        835,
+                        762
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 46,
+                    "lines": [
+                        {
+                            "bbox": [
+                                673,
+                                743,
+                                837,
+                                765
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        673,
+                                        743,
+                                        837,
+                                        765
+                                    ],
+                                    "type": "text",
+                                    "content": "Langevin Autoencoder",
+                                    "score": 0.976
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        671,
+                        773,
+                        1186,
+                        837
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 49,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                671,
+                                773,
+                                1171,
+                                814
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 47,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        675,
+                                        772,
+                                        1173,
+                                        793
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                675,
+                                                772,
+                                                1173,
+                                                793
+                                            ],
+                                            "type": "text",
+                                            "content": "·ALDcan be applied to the training of deep latent variable models (DLVMs)",
+                                            "score": 0.962
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        684,
+                                        794,
+                                        1156,
+                                        816
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                684,
+                                                794,
+                                                1156,
+                                                816
+                                            ],
+                                            "type": "text",
+                                            "content": "byslightlymodifying the learningalgorithmof traditional autoencoders.",
+                                            "score": 0.981
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                671,
+                                817,
+                                1186,
+                                837
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 48,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        673,
+                                        813,
+                                        1190,
+                                        838
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                673,
+                                                813,
+                                                1190,
+                                                838
+                                            ],
+                                            "type": "text",
+                                            "content": "·Wecallthis learning algorithm of DLVMs the Langevinautoencoder (LAE).",
+                                            "score": 0.961
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        703,
+                        857,
+                        934,
+                        877
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 50,
+                    "lines": [
+                        {
+                            "bbox": [
+                                707,
+                                854,
+                                936,
+                                879
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        707,
+                                        857,
+                                        783,
+                                        877
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\theta , \\Phi , \\psi ",
+                                    "score": 0.72
+                                },
+                                {
+                                    "bbox": [
+                                        783,
+                                        854,
+                                        936,
+                                        879
+                                    ],
+                                    "type": "text",
+                                    "content": "Initialize parameters",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        705,
+                        880,
+                        761,
+                        894
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 51,
+                    "lines": [
+                        {
+                            "bbox": [
+                                705,
+                                877,
+                                765,
+                                896
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        705,
+                                        877,
+                                        765,
+                                        896
+                                    ],
+                                    "type": "text",
+                                    "content": "repeat",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        731,
+                        895,
+                        1138,
+                        1037
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                731,
+                                895,
+                                1138,
+                                1037
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        731,
+                                        895,
+                                        1138,
+                                        1037
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\begin{array}{l} \\boldsymbol {x} ^ {(1)}, \\dots , \\boldsymbol {x} ^ {(n)} \\sim \\hat {p} (\\mathbf {x}) \\\\ \\mathbf {f o r} t = 0, \\dots , T - 1 \\mathbf {d o} \\\\ V _ {t} = - \\sum_ {i = 1} ^ {n} \\log p (\\boldsymbol {x} ^ {(i)}, \\boldsymbol {z} ^ {(i)} = \\boldsymbol {\\Phi} g (\\boldsymbol {x} ^ {(i)}; \\boldsymbol {\\psi}); \\boldsymbol {\\theta}) \\\\ \\boldsymbol {\\Phi} ^ {\\prime} \\sim q (\\boldsymbol {\\Phi} ^ {\\prime} \\mid \\boldsymbol {\\Phi}) := \\mathcal {N} (\\boldsymbol {\\Phi} ^ {\\prime}; \\boldsymbol {\\Phi} - \\eta \\nabla_ {\\boldsymbol {\\Phi}} V _ {t}, 2 \\eta \\boldsymbol {I}) \\\\ V _ {t} ^ {\\prime} = - \\sum_ {i = 1} ^ {n} \\log p (\\boldsymbol {x} ^ {(i)}, \\boldsymbol {z} ^ {(i)} = \\boldsymbol {\\Phi} ^ {\\prime} g (\\boldsymbol {x} ^ {(i)}; \\boldsymbol {\\psi}); \\boldsymbol {\\theta}) \\\\ \\Phi \\leftarrow \\Phi^ {\\prime} \\text {w i t h p r o b a b i l i t y m i n} \\left\\{1, \\frac {\\exp (- V (\\phi^ {\\prime})) q (\\phi | \\phi^ {\\prime})}{\\exp (- V (\\phi)) q (\\phi^ {\\prime} | \\phi)} \\right\\} \\\\ \\end{array}",
+                                    "image_path": "4eeb7d1f1627a19bd69f8c71a57b330dd22959380078acb3e890a677463e21d2.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 52
+                },
+                {
+                    "bbox": [
+                        731,
+                        1037,
+                        791,
+                        1052
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 53,
+                    "lines": [
+                        {
+                            "bbox": [
+                                729,
+                                1032,
+                                794,
+                                1057
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        729,
+                                        1032,
+                                        794,
+                                        1057
+                                    ],
+                                    "type": "text",
+                                    "content": "end for",
+                                    "score": 0.992
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        731,
+                        1052,
+                        1069,
+                        1076
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                731,
+                                1052,
+                                1069,
+                                1076
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        731,
+                                        1052,
+                                        1069,
+                                        1076
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "V _ {T} = - \\sum_ {i = 1} ^ {n} \\log p (\\boldsymbol {x} ^ {(i)}, \\boldsymbol {z} ^ {(i)} = \\Phi g (\\boldsymbol {x} ^ {(i)}; \\psi); \\boldsymbol {\\theta})",
+                                    "image_path": "f585b544475b717477c0da5b354bc51b4b00899ebda2b5f0b2dcc22ca1304474.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 54
+                },
+                {
+                    "bbox": [
+                        731,
+                        1076,
+                        903,
+                        1100
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                731,
+                                1076,
+                                903,
+                                1100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        731,
+                                        1076,
+                                        903,
+                                        1100
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\boldsymbol {\\theta} \\leftarrow \\boldsymbol {\\theta} - \\eta \\nabla_ {\\boldsymbol {\\theta}} \\frac {1}{T} \\sum_ {t = 1} ^ {T} V _ {t}",
+                                    "image_path": "b77cf43f451c63a5b7d1785f14e6ee90320677a5cd6a3bb3984a2cd354c9577f.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 55
+                },
+                {
+                    "bbox": [
+                        731,
+                        1100,
+                        912,
+                        1123
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                731,
+                                1100,
+                                912,
+                                1123
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        731,
+                                        1100,
+                                        912,
+                                        1123
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\boldsymbol {\\psi} \\leftarrow \\boldsymbol {\\psi} - \\eta \\nabla_ {\\boldsymbol {\\psi}} \\frac {1}{T} \\sum_ {t = 1} ^ {T} V _ {t}",
+                                    "image_path": "754ac9d2527dee11997cd19385c8e5e408cd5faf88f11558f6979d59c2ab83f4.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 56
+                },
+                {
+                    "bbox": [
+                        705,
+                        1123,
+                        942,
+                        1141
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 57,
+                    "lines": [
+                        {
+                            "bbox": [
+                                707,
+                                1120,
+                                944,
+                                1141
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        707,
+                                        1120,
+                                        944,
+                                        1141
+                                    ],
+                                    "type": "text",
+                                    "content": "until convergence of parameters",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        705,
+                        1141,
+                        819,
+                        1160
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 58,
+                    "lines": [
+                        {
+                            "bbox": [
+                                703,
+                                1135,
+                                819,
+                                1164
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        703,
+                                        1135,
+                                        765,
+                                        1164
+                                    ],
+                                    "type": "text",
+                                    "content": "return",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        765,
+                                        1140,
+                                        819,
+                                        1160
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\theta , \\Phi , \\psi",
+                                    "score": 0.62
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1298,
+                        206,
+                        1380,
+                        231
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 59,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1296,
+                                202,
+                                1384,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1296,
+                                        202,
+                                        1384,
+                                        236
+                                    ],
+                                    "type": "text",
+                                    "content": "Results",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1298,
+                        246,
+                        1392,
+                        266
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 60,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1300,
+                                246,
+                                1393,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1300,
+                                        246,
+                                        1393,
+                                        269
+                                    ],
+                                    "type": "text",
+                                    "content": "Toy example",
+                                    "score": 0.975
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1293,
+                        274,
+                        1449,
+                        431
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1293,
+                                274,
+                                1449,
+                                431
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1293,
+                                        274,
+                                        1449,
+                                        431
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1293,
+                                                274,
+                                                1449,
+                                                431
+                                            ],
+                                            "type": "image",
+                                            "image_path": "d2543efe90fce661b8cf49e251344679ab3f0744a51b296bac68ebdcf7c25516.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 61,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                1322,
+                                441,
+                                1420,
+                                460
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1322,
+                                        439,
+                                        1421,
+                                        462
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1322,
+                                                439,
+                                                1421,
+                                                462
+                                            ],
+                                            "type": "text",
+                                            "content": "Trueposterior",
+                                            "score": 0.998
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 62,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 61
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1474,
+                        274,
+                        1630,
+                        431
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1474,
+                                274,
+                                1630,
+                                431
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1474,
+                                        274,
+                                        1630,
+                                        431
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1474,
+                                                274,
+                                                1630,
+                                                431
+                                            ],
+                                            "type": "image",
+                                            "image_path": "1f47d25cabc11e0be1f2fdc71e81f8660c3f76ed2c982473542afebd0555f10e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 63,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                1503,
+                                441,
+                                1601,
+                                478
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1517,
+                                        440,
+                                        1591,
+                                        460
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1517,
+                                                440,
+                                                1591,
+                                                460
+                                            ],
+                                            "type": "text",
+                                            "content": "Variational",
+                                            "score": 0.995
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1503,
+                                        460,
+                                        1602,
+                                        477
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1503,
+                                                460,
+                                                1602,
+                                                477
+                                            ],
+                                            "type": "text",
+                                            "content": "approximation",
+                                            "score": 0.997
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 64,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 63
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1668,
+                        276,
+                        1793,
+                        431
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1668,
+                                276,
+                                1793,
+                                431
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1668,
+                                        276,
+                                        1793,
+                                        431
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1668,
+                                                276,
+                                                1793,
+                                                431
+                                            ],
+                                            "type": "image",
+                                            "image_path": "c4e35a347627e064638722724efe1c4a357fbd552de1e7b8b418004202bbc737.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 65,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                1714,
+                                441,
+                                1750,
+                                459
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1712,
+                                        436,
+                                        1755,
+                                        464
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1712,
+                                                436,
+                                                1755,
+                                                464
+                                            ],
+                                            "type": "text",
+                                            "content": "Ours",
+                                            "score": 0.988
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 66,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 65
+                },
+                {
+                    "bbox": [
+                        1298,
+                        496,
+                        1796,
+                        580
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 70,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1298,
+                                496,
+                                1763,
+                                537
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 67,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1300,
+                                        493,
+                                        1767,
+                                        517
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1300,
+                                                493,
+                                                1767,
+                                                517
+                                            ],
+                                            "type": "text",
+                                            "content": "·Weperformposterior inference forarandomly initialized DLVMusing",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1311,
+                                        517,
+                                        1563,
+                                        537
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1311,
+                                                517,
+                                                1563,
+                                                537
+                                            ],
+                                            "type": "text",
+                                            "content": "variational inference (Vl) and ourALD.",
+                                            "score": 0.961
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1298,
+                                539,
+                                1681,
+                                558
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 68,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1300,
+                                        537,
+                                        1683,
+                                        559
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1300,
+                                                537,
+                                                1683,
+                                                559
+                                            ],
+                                            "type": "text",
+                                            "content": "·Vlfails tocapture themultimodality of the true posterior.",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1298,
+                                562,
+                                1796,
+                                580
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 69,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1300,
+                                        558,
+                                        1798,
+                                        582
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1300,
+                                                558,
+                                                1798,
+                                                582
+                                            ],
+                                            "type": "text",
+                                            "content": "·OurALDcanapproximate complexmultimodalposteriorsin toy examples.",
+                                            "score": 0.975
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        1296,
+                        631,
+                        1813,
+                        730
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1298,
+                                599,
+                                1481,
+                                619
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1298,
+                                        599,
+                                        1483,
+                                        622
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1298,
+                                                599,
+                                                1483,
+                                                622
+                                            ],
+                                            "type": "text",
+                                            "content": "Imagedensity estimation",
+                                            "score": 0.985
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 71,
+                            "angle": 0,
+                            "type": "table_caption"
+                        },
+                        {
+                            "bbox": [
+                                1296,
+                                631,
+                                1813,
+                                730
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1296,
+                                        631,
+                                        1813,
+                                        730
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1296,
+                                                631,
+                                                1813,
+                                                730
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td></td><td>MNIST</td><td>SVHN</td><td>CIFAR-10</td><td>CelebA</td></tr><tr><td>VAE</td><td>1.189 ± 0.002</td><td>4.442 ± 0.003</td><td>4.820 ± 0.005</td><td>4.671 ± 0.001</td></tr><tr><td>VAE-flow</td><td>1.183 ± 0.001</td><td>4.454 ± 0.016</td><td>4.828 ± 0.005</td><td>4.667 ± 0.005</td></tr><tr><td>Hoffman (2017) [3]</td><td>1.189 ± 0.002</td><td>4.440 ± 0.007</td><td>4.831 ± 0.005</td><td>4.662 ± 0.011</td></tr><tr><td>LAE (ours)</td><td>1.177 ± 0.001</td><td>4.412 ± 0.002</td><td>4.773 ± 0.003</td><td>4.636 ± 0.003</td></tr></table>",
+                                            "image_path": "50d2a18dbc371bbf66ee119b9efc6c9abf13c57302c7410aa7a398ddbbbf55fb.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 72,
+                            "angle": 0,
+                            "type": "table_body"
+                        }
+                    ],
+                    "index": 72
+                },
+                {
+                    "bbox": [
+                        1442,
+                        735,
+                        1666,
+                        753
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 73,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1444,
+                                736,
+                                1666,
+                                753
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1444,
+                                        736,
+                                        1666,
+                                        753
+                                    ],
+                                    "type": "text",
+                                    "content": "Likelihood evaluationfortestdata",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1298,
+                        771,
+                        1798,
+                        812
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 74,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1298,
+                                768,
+                                1802,
+                                792
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1298,
+                                        768,
+                                        1802,
+                                        792
+                                    ],
+                                    "type": "text",
+                                    "content": "·Our LAE consistently outperforms Vl-based methods such as the VAEand",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1311,
+                                793,
+                                1567,
+                                813
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1311,
+                                        793,
+                                        1567,
+                                        813
+                                    ],
+                                    "type": "text",
+                                    "content": "otherexisting MCMC-based methods.",
+                                    "score": 0.971
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1298,
+                        822,
+                        1436,
+                        847
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 75,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1295,
+                                818,
+                                1442,
+                                853
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1295,
+                                        818,
+                                        1442,
+                                        853
+                                    ],
+                                    "type": "text",
+                                    "content": "Future works",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1296,
+                        864,
+                        1754,
+                        905
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 78,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1296,
+                                864,
+                                1703,
+                                883
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 76,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1296,
+                                        862,
+                                        1705,
+                                        883
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1296,
+                                                862,
+                                                1705,
+                                                883
+                                            ],
+                                            "type": "text",
+                                            "content": "·Howcan we remove the bias of finite-step MCMC samples?",
+                                            "score": 0.953
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1317,
+                                885,
+                                1754,
+                                905
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 77,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1319,
+                                        883,
+                                        1754,
+                                        905
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1319,
+                                                883,
+                                                1754,
+                                                905
+                                            ],
+                                            "type": "text",
+                                            "content": "·Recently proposed unbiased MCMC methods [4]may be useful.",
+                                            "score": 0.948
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1296,
+                        928,
+                        1776,
+                        970
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 79,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1296,
+                                926,
+                                1778,
+                                949
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1296,
+                                        926,
+                                        1778,
+                                        949
+                                    ],
+                                    "type": "text",
+                                    "content": "·Isitpossible to apply the ALD (and LAE)to the state-of-the-artDLVMs,",
+                                    "score": 0.945
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1308,
+                                949,
+                                1434,
+                                971
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1308,
+                                        949,
+                                        1434,
+                                        971
+                                    ],
+                                    "type": "text",
+                                    "content": "such as NVAE[5]?",
+                                    "score": 0.92
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1298,
+                        982,
+                        1375,
+                        998
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 80,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1298,
+                                980,
+                                1378,
+                                1002
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1298,
+                                        980,
+                                        1378,
+                                        1002
+                                    ],
+                                    "type": "text",
+                                    "content": "References",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1298,
+                        1005,
+                        1651,
+                        1202
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 86,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1298,
+                                1005,
+                                1642,
+                                1035
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 81,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1298,
+                                        1005,
+                                        1643,
+                                        1021
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1298,
+                                                1005,
+                                                1643,
+                                                1021
+                                            ],
+                                            "type": "text",
+                                            "content": "[1]Diederik PKingma and MaxWelling(2013).“Auto-encoding variational",
+                                            "score": 0.943
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1298,
+                                        1020,
+                                        1494,
+                                        1033
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1298,
+                                                1020,
+                                                1494,
+                                                1033
+                                            ],
+                                            "type": "text",
+                                            "content": "bayes.\"In:arXivpreprintarXiv:1312.6114.",
+                                            "score": 0.966
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1298,
+                                1037,
+                                1610,
+                                1066
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 82,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1298,
+                                        1036,
+                                        1614,
+                                        1053
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1298,
+                                                1036,
+                                                1614,
+                                                1053
+                                            ],
+                                            "type": "text",
+                                            "content": "[2]Radford MNeal (2011).“Mcmc using hamiltonian dynamics.\"In:",
+                                            "score": 0.941
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1298,
+                                1069,
+                                1651,
+                                1110
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 83,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1298,
+                                        1068,
+                                        1653,
+                                        1084
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1298,
+                                                1068,
+                                                1653,
+                                                1084
+                                            ],
+                                            "type": "text",
+                                            "content": "[3]MatthewD Hoffman (2017).“Learning deep latent gaussianmodelswith",
+                                            "score": 0.952
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1298,
+                                        1083,
+                                        1615,
+                                        1098
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1298,
+                                                1083,
+                                                1615,
+                                                1098
+                                            ],
+                                            "type": "text",
+                                            "content": "markovchainmontecarlo.In:International conferenceonmachine",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1298,
+                                1114,
+                                1649,
+                                1158
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 84,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1296,
+                                        1114,
+                                        1640,
+                                        1132
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1296,
+                                                1114,
+                                                1640,
+                                                1132
+                                            ],
+                                            "type": "text",
+                                            "content": "[4]PierreEJacob,JohnO'Leary,andYvesFAtchade(202O).“Unbiased",
+                                            "score": 0.929
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1298,
+                                        1128,
+                                        1651,
+                                        1144
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1298,
+                                                1128,
+                                                1651,
+                                                1144
+                                            ],
+                                            "type": "text",
+                                            "content": "markovchainmonte carlomethods withcouplings.\"In:Journal of the Royal",
+                                            "score": 0.963
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1298,
+                                1161,
+                                1632,
+                                1202
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 85,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1296,
+                                        1160,
+                                        1614,
+                                        1176
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1296,
+                                                1160,
+                                                1614,
+                                                1176
+                                            ],
+                                            "type": "text",
+                                            "content": "[5]Arash Vahdat andJan Kautz(202O).“Nvae:Adeep hierarchical",
+                                            "score": 0.933
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1296,
+                                        1173,
+                                        1634,
+                                        1191
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1296,
+                                                1173,
+                                                1634,
+                                                1191
+                                            ],
+                                            "type": "text",
+                                            "content": "variationalautoencoder.In:AdvancesinNeural Information Processing",
+                                            "score": 0.973
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        987,
+                        46,
+                        1235,
+                        65
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                990,
+                                43,
+                                1235,
+                                68
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        990,
+                                        43,
+                                        1235,
+                                        68
+                                    ],
+                                    "type": "text",
+                                    "content": "ShoheiTaniguchi,Yusuke lwasawal,",
+                                    "score": 0.956
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        990,
+                        68,
+                        1216,
+                        88
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                992,
+                                67,
+                                1216,
+                                88
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        992,
+                                        67,
+                                        1216,
+                                        88
+                                    ],
+                                    "type": "text",
+                                    "content": "WataruKumagail,YutakaMatsuo1",
+                                    "score": 0.972
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        990,
+                        97,
+                        1155,
+                        116
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                990,
+                                93,
+                                1155,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        990,
+                                        93,
+                                        1155,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "1The Universityof Tokyo",
+                                    "score": 0.958
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1397,
+                        32,
+                        1489,
+                        119
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1390,
+                                22,
+                                1494,
+                                130
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1390,
+                                        22,
+                                        1494,
+                                        130
+                                    ],
+                                    "type": "text",
+                                    "content": "?",
+                                    "score": 0.943
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1399,
+                        125,
+                        1487,
+                        146
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1397,
+                                123,
+                                1490,
+                                150
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1397,
+                                        123,
+                                        1490,
+                                        150
+                                    ],
+                                    "type": "text",
+                                    "content": "東京大学",
+                                    "score": 0.96
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1401,
+                        146,
+                        1487,
+                        153
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1401,
+                                144,
+                                1489,
+                                155
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1401,
+                                        144,
+                                        1489,
+                                        155
+                                    ],
+                                    "type": "text",
+                                    "content": "THEUNIVERSITYOFTOKYO",
+                                    "score": 0.948
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1556,
+                        34,
+                        1668,
+                        151
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1610,
+                                74,
+                                1671,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1610,
+                                        74,
+                                        1671,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "NEURA",
+                                    "score": 0.995
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1610,
+                                92,
+                                1673,
+                                115
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1610,
+                                        92,
+                                        1673,
+                                        115
+                                    ],
+                                    "type": "text",
+                                    "content": "PROCE",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1612,
+                        73,
+                        1823,
+                        93
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1608,
+                                73,
+                                1824,
+                                97
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1608,
+                                        73,
+                                        1824,
+                                        97
+                                    ],
+                                    "type": "text",
+                                    "content": "NEURALINFORMATION",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1612,
+                        94,
+                        1821,
+                        111
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1608,
+                                93,
+                                1823,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1608,
+                                        93,
+                                        1823,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "PROCESSING SYSTEMS",
+                                    "score": 0.971
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1750,
+                        1129,
+                        1856,
+                        1235
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 87,
+                    "lines": []
+                }
+            ],
+            "page_size": [
+                1866,
+                1244
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

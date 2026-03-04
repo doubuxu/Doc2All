@@ -1,0 +1,514 @@
+[
+  {
+    "type": "text",
+    "text": "Yuni Lai1 Bailin Pan² Kaihuang Chen² Yancheng Yuan² Kai Zhou 1 ",
+    "text_level": 1,
+    "bbox": [
+      309,
+      81,
+      671,
+      106
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Introduction ",
+    "text_level": 1,
+    "bbox": [
+      110,
+      139,
+      168,
+      158
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Deep Graph Learning (DGL) has emerged as a crucial technique across various domains. However， recent studies have exposed vulnerabilities in DGL models,such as susceptibility to graph injection attacks (GlAs). Existing research only provides sample-wise certificatesby verifying each node independently, leading to very limited certifying performance.In this paper,we present the first collective certificate against GlAs,which certifies a set of target nodes simultaneously. ",
+    "bbox": [
+      26,
+      176,
+      289,
+      373
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Randomized Smoothing ",
+    "text_level": 1,
+    "bbox": [
+      73,
+      421,
+      181,
+      441
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Forany node classifier $f ( \\cdot ) .$ ,its smoothed classifier $g ( \\cdot )$ is created by: ",
+    "bbox": [
+      30,
+      455,
+      278,
+      498
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1.Node-aware Bi-Smoothing (Y. Lai.et.al.S&P2024): $\\phi ( G ) = { \\bigl ( } \\phi _ { e } ( G ) , \\phi _ { n } ( G ) { \\bigr ) } ;$ ",
+    "bbox": [
+      31,
+      506,
+      272,
+      552
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$\\phi _ { e } ( G )$ :randomly delete edges. ",
+      "$\\phi _ { n } ( G )$ : randomly delete nodes. "
+    ],
+    "bbox": [
+      41,
+      553,
+      174,
+      589
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. Majority vote: $\\begin{array} { r l } & { g _ { v } ( G ) : = \\arg m a x _ { y \\in \\{ 1 , . . . , K \\} } p _ { v , y } ( G ) , } \\\\ & { \\quad p _ { v , y } ( G ) : = P \\big ( f _ { v } \\big ( \\phi ( G ) \\big ) = y \\big ) . } \\end{array}$ ",
+    "bbox": [
+      31,
+      600,
+      275,
+      652
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The goal of certified robustness is to verify: ",
+    "bbox": [
+      31,
+      656,
+      226,
+      677
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\ng _ {v} (G) \\stackrel {?} {=} g _ {v} \\left(G ^ {\\prime}\\right), \\forall G ^ {\\prime} \\in B _ {\\rho , \\tau} (G).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      83,
+      682,
+      234,
+      712
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Collective Certificate Problem ",
+    "text_level": 1,
+    "bbox": [
+      84,
+      750,
+      217,
+      769
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$B _ { \\rho , \\tau } ( G )$ : the attacker can inject $\\rho$ malicious nodes, with t malicious edges per node. ",
+    "bbox": [
+      26,
+      790,
+      283,
+      836
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "T : A set of target nodes. ",
+    "bbox": [
+      26,
+      846,
+      139,
+      865
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\min  _ {G ^ {\\prime} \\in B _ {\\rho , \\tau} (G)} | \\mathbb {T} | - \\sum_ {v \\in \\mathbb {T}} \\mathbb {I} \\{g _ {v} \\left(G ^ {\\prime}\\right) \\neq g _ {v} (G) \\},\n$$",
+    "text_format": "latex",
+    "bbox": [
+      40,
+      876,
+      261,
+      926
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "s.t. $| \\tilde { \\mathcal { V } } | \\leq \\rho , \\delta ( \\tilde { v } ) \\leq \\tau , \\forall \\tilde { v } \\in \\tilde { \\mathcal { V } } .$ ",
+    "bbox": [
+      79,
+      933,
+      247,
+      961
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1.Department of Computing, The Hong Kong Polytechnic University partment of Applied Mathematics, The Hong Kong Polytechnic University ",
+    "bbox": [
+      344,
+      118,
+      665,
+      163
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Collective Certified Robustness against Graph Injection Attacks_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Figure1:While the sample-wise certificate verifies target nodes one by one,our collective certificate verifies a set of target nodes simultaneously by linear programming. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      313,
+      188,
+      642,
+      424
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Collective Certified Robustness against Graph Injection Attacks_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Figure 2: Malicious message has probability to be interceptedin the Node-aware Bi-smoothing (2-layer GNNs). (Adapted fromY.Scholten.et.al.NeurIPS2022.) "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      330,
+      491,
+      465,
+      663
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Let $p ( E _ { v } )$ denotes the probability that the malicious messages is NOT intercepted, then we have that the :absolutechangeofprediction probability is bounded by $p ( E _ { v } )$ ： ",
+    "bbox": [
+      474,
+      507,
+      644,
+      616
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\left| p _ {v, y} (G) - p _ {v, y} \\left(G ^ {\\prime}\\right) \\right| \\leq p \\left(E _ {v}\\right).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      488,
+      620,
+      643,
+      648
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/Collective Certified Robustness against Graph Injection Attacks_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      561,
+      686,
+      593,
+      738
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Collective Certificatevia Optimization ",
+    "text_level": 1,
+    "bbox": [
+      380,
+      752,
+      547,
+      773
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$p ( E _ { v } )$ :the probability that the malicious messages is not intercepted. $c _ { v } : = p _ { v , y * } ( G ) \\mathfrak { - } m a x _ { y \\neq y * } p _ { v , y } ( G ) .$ ",
+    "bbox": [
+      322,
+      783,
+      635,
+      835
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\max  _ {G ^ {\\prime} \\in B _ {\\rho , \\tau} (G)} M = \\sum_ {v \\in \\mathbb {T}} \\mathbb {I} \\left\\{\\overline {{p \\left(E _ {v}\\right)}} \\geq c _ {v} / 2 \\right\\},\n$$",
+    "text_format": "latex",
+    "bbox": [
+      372,
+      841,
+      597,
+      897
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "$| \\tilde { \\mathcal { V } } | \\leq \\rho , \\delta ( \\tilde { v } ) \\leq \\tau , \\forall \\tilde { v } \\in \\tilde { \\mathcal { V } } ,$ ",
+    "bbox": [
+      415,
+      902,
+      595,
+      934
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The remaining |Tl - M*nodes are certified robust. ",
+    "bbox": [
+      328,
+      947,
+      556,
+      968
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sample-wise v.s.Collective Certificate ",
+    "text_level": 1,
+    "bbox": [
+      712,
+      156,
+      904,
+      178
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sample-wise certificates (Bojchevski et al.， 202O; Lai et al., 2023) essentially verify the prediction for a node one by one,assuming that the attacker can craft a different perturbed graph each time to attack every single node (Figure 1, top). ",
+    "bbox": [
+      656,
+      187,
+      961,
+      273
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "However，in reality，the attacker can only produce a single perturbed graph to simultaneously disrupt all predictions for a set of target nodes (Figure1,bottom). ",
+    "bbox": [
+      656,
+      284,
+      961,
+      349
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Collective Certified Robustness against Graph Injection Attacks_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      659,
+      373,
+      780,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Collective Certified Robustness against Graph Injection Attacks_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      791,
+      373,
+      956,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Collective Certified Robustness against Graph Injection Attacks_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      660,
+      555,
+      782,
+      728
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Collective Certified Robustness against Graph Injection Attacks_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Figure 3: Certified ratio comparison (GCN model). "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      792,
+      555,
+      961,
+      729
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Evaluation Results ",
+    "text_level": 1,
+    "bbox": [
+      766,
+      766,
+      849,
+      785
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "With the same smoothing parameter， both proposed colective certificates achieve a higher certifiableradius (Figure 3), outperforming the sample-wise approach significantly when the $\\rho$ is large. For example, in the Citeseer dataset, when $\\rho = 1 4 0 ,$ our Collective-LP1 and Collective-LP2 have the certified ratios of $7 3 . 0 \\%$ ， and $8 1 . 2 \\%$ ，while sample-wise can certify $0 . 0 \\%$ nodes. Since the sample-wise and collective certificate share the same smoothed model, they always have the same clean accuracy. ",
+    "bbox": [
+      670,
+      802,
+      975,
+      976
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      0,
+      9,
+      49,
+      72
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "THE HONG KONG",
+    "bbox": [
+      53,
+      18,
+      175,
+      40
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "POLYTECHNICUNIVERSITY ",
+    "bbox": [
+      53,
+      42,
+      239,
+      64
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Collective Certified Robustness Against Graph Injection Attacks ",
+    "bbox": [
+      254,
+      38,
+      743,
+      72
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": ":9 ",
+    "bbox": [
+      864,
+      10,
+      905,
+      81
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICML ",
+    "bbox": [
+      912,
+      12,
+      987,
+      52
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "International Conference ",
+    "bbox": [
+      912,
+      54,
+      989,
+      65
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "OnMachine Learning ",
+    "bbox": [
+      912,
+      66,
+      977,
+      79
+    ],
+    "page_idx": 0
+  }
+]

@@ -1,0 +1,4206 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        69,
+                        67,
+                        1754,
+                        129
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                61,
+                                1756,
+                                137
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        61,
+                                        1756,
+                                        137
+                                    ],
+                                    "type": "text",
+                                    "content": "On the convergence of mSGD and AdaGrad for stochastic optimization",
+                                    "score": 0.993
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        67,
+                        247,
+                        238,
+                        283
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                67,
+                                243,
+                                243,
+                                288
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        67,
+                                        243,
+                                        243,
+                                        288
+                                    ],
+                                    "type": "text",
+                                    "content": "Algorithms:",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        154,
+                        318,
+                        567,
+                        351
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                154,
+                                318,
+                                567,
+                                351
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        154,
+                                        318,
+                                        567,
+                                        351
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathbf {S G D}: \\theta_ {n + 1} = \\theta_ {n} - \\epsilon_ {n} \\nabla_ {\\theta_ {n}} g \\left(\\theta_ {n}, \\xi_ {n}\\right)",
+                                    "image_path": "00d151aa90cd1f923a35195aa64ff105003c2c074ac8fcef22de312f8a79c715.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                },
+                {
+                    "bbox": [
+                        136,
+                        376,
+                        748,
+                        406
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                136,
+                                376,
+                                748,
+                                406
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        136,
+                                        376,
+                                        748,
+                                        406
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathbf {m S G D}: v _ {n} = \\alpha v _ {n - 1} + \\epsilon_ {n} \\nabla_ {\\theta_ {n}} g \\left(\\theta_ {n}, \\xi_ {n}\\right), \\theta_ {n + 1} = \\theta_ {n} - v _ {n}",
+                                    "image_path": "87df7883ce6bc447aea96843441f6dd9beb52855e779891512d199bf76570a9c.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "bbox": [
+                        109,
+                        452,
+                        753,
+                        505
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                109,
+                                452,
+                                753,
+                                505
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        109,
+                                        452,
+                                        753,
+                                        505
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\text {A d a G r a d}: \\quad \\theta_ {n + 1} - \\theta_ {n} - \\frac {}{\\sqrt {\\sum_ {t = 1} ^ {n} \\left\\| \\nabla_ {\\theta_ {n}} g \\left(\\theta_ {n} , \\xi_ {n}\\right) \\right\\| ^ {2}}} \\nabla_ {\\theta_ {n}} g \\left(\\theta_ {n}, \\xi_ {n}\\right)",
+                                    "image_path": "f5ceef09105c4efd04d8cbaa644834d831ff44b77df4ff6ee04f7b5503091556.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        67,
+                        535,
+                        276,
+                        568
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                69,
+                                530,
+                                281,
+                                575
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        69,
+                                        530,
+                                        281,
+                                        575
+                                    ],
+                                    "type": "text",
+                                    "content": "Contributions:",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        77,
+                        593,
+                        801,
+                        827
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 12,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                77,
+                                593,
+                                801,
+                                661
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 9,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        593,
+                                        803,
+                                        620
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                593,
+                                                803,
+                                                620
+                                            ],
+                                            "type": "text",
+                                            "content": "·We prove that the iterates of mSGD are asymptotically convergent to a connected set of",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        99,
+                                        615,
+                                        801,
+                                        641
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                99,
+                                                615,
+                                                801,
+                                                641
+                                            ],
+                                            "type": "text",
+                                            "content": "stationary points for possibly non-convex loss function almost surely (i.e.,with probability",
+                                            "score": 0.963
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        102,
+                                        638,
+                                        709,
+                                        663
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                102,
+                                                638,
+                                                709,
+                                                663
+                                            ],
+                                            "type": "text",
+                                            "content": "one),which is more general than existing works on subsequence convergence.",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                666,
+                                801,
+                                754
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 10,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        664,
+                                        803,
+                                        691
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                664,
+                                                803,
+                                                691
+                                            ],
+                                            "type": "text",
+                                            "content": "·We quantify the convergence rate of mSGD for the loss functions.Through this conver-",
+                                            "score": 0.984
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        99,
+                                        688,
+                                        803,
+                                        711
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                99,
+                                                688,
+                                                803,
+                                                711
+                                            ],
+                                            "type": "text",
+                                            "content": "gence rate we can geta theoretical explanation of why mSGDcanbe seen as an acceleration",
+                                            "score": 0.973
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        99,
+                                        709,
+                                        803,
+                                        734
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                99,
+                                                709,
+                                                803,
+                                                734
+                                            ],
+                                            "type": "text",
+                                            "content": "of SGD.Moreover,we provide the convergence rate of mean-square gradients and connect",
+                                            "score": 0.972
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        99,
+                                        729,
+                                        400,
+                                        754
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                99,
+                                                729,
+                                                400,
+                                                754
+                                            ],
+                                            "type": "text",
+                                            "content": "it to the convergence of time averages.",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                757,
+                                801,
+                                827
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 11,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        757,
+                                        803,
+                                        784
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                757,
+                                                803,
+                                                784
+                                            ],
+                                            "type": "text",
+                                            "content": "·We prove the iterates of AdaGrad are asymptotically convergent to a connected set of sta-",
+                                            "score": 0.975
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        99,
+                                        779,
+                                        803,
+                                        807
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                99,
+                                                779,
+                                                803,
+                                                807
+                                            ],
+                                            "type": "text",
+                                            "content": "tionary points almost surely for possible non-convex loss functions. The convergence result",
+                                            "score": 0.988
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        99,
+                                        800,
+                                        654,
+                                        825
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                99,
+                                                800,
+                                                654,
+                                                825
+                                            ],
+                                            "type": "text",
+                                            "content": "for the AdaGrad extends the subsequence convergence in the literature.",
+                                            "score": 0.981
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        69,
+                        853,
+                        350,
+                        888
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                848,
+                                358,
+                                893
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72,
+                                        848,
+                                        358,
+                                        893
+                                    ],
+                                    "type": "text",
+                                    "content": "Main assumptions:",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        74,
+                        901,
+                        801,
+                        948
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                82,
+                                901,
+                                803,
+                                928
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        901,
+                                        313,
+                                        928
+                                    ],
+                                    "type": "text",
+                                    "content": "Assumption1 Noise sequence",
+                                    "score": 0.99
+                                },
+                                {
+                                    "bbox": [
+                                        315,
+                                        903,
+                                        350,
+                                        925
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\left\\{ \\xi _ { n } \\right\\}",
+                                    "score": 0.83
+                                },
+                                {
+                                    "bbox": [
+                                        350,
+                                        901,
+                                        686,
+                                        928
+                                    ],
+                                    "type": "text",
+                                    "content": "aremutually independentand independentof",
+                                    "score": 0.992
+                                },
+                                {
+                                    "bbox": [
+                                        686,
+                                        905,
+                                        704,
+                                        925
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\theta _ { 1 }",
+                                    "score": 0.66
+                                },
+                                {
+                                    "bbox": [
+                                        704,
+                                        901,
+                                        738,
+                                        928
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        738,
+                                        905,
+                                        758,
+                                        925
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\nu _ { 0 }",
+                                    "score": 0.72
+                                },
+                                {
+                                    "bbox": [
+                                        758,
+                                        901,
+                                        803,
+                                        928
+                                    ],
+                                    "type": "text",
+                                    "content": "such",
+                                    "score": 0.998
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                79,
+                                920,
+                                380,
+                                948
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        920,
+                                        116,
+                                        948
+                                    ],
+                                    "type": "text",
+                                    "content": "that",
+                                    "score": 0.998
+                                },
+                                {
+                                    "bbox": [
+                                        116,
+                                        923,
+                                        268,
+                                        948
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\bar { g ( x ) } = \\mathbb { E } _ { \\xi _ { n } } \\left( g ( x , \\xi _ { n } ) \\right)",
+                                    "score": 0.52
+                                },
+                                {
+                                    "bbox": [
+                                        268,
+                                        920,
+                                        325,
+                                        948
+                                    ],
+                                    "type": "text",
+                                    "content": "forany",
+                                    "score": 0.997
+                                },
+                                {
+                                    "bbox": [
+                                        328,
+                                        923,
+                                        380,
+                                        943
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\boldsymbol { x } \\in \\mathbb { R } ^ { N }",
+                                    "score": 0.85
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        77,
+                        991,
+                        736,
+                        1014
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                82,
+                                989,
+                                738,
+                                1018
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        989,
+                                        475,
+                                        1018
+                                    ],
+                                    "type": "text",
+                                    "content": "Assumption2(Lossfunction assumption) Lossfunction",
+                                    "score": 0.939
+                                },
+                                {
+                                    "bbox": [
+                                        475,
+                                        993,
+                                        507,
+                                        1014
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g ( \\theta )",
+                                    "score": 0.8
+                                },
+                                {
+                                    "bbox": [
+                                        510,
+                                        989,
+                                        738,
+                                        1018
+                                    ],
+                                    "type": "text",
+                                    "content": "satisfiesthefollowingconditions:",
+                                    "score": 0.97
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        77,
+                        1024,
+                        743,
+                        1198
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 20,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                79,
+                                1024,
+                                532,
+                                1047
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 16,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1022,
+                                        534,
+                                        1047
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1022,
+                                                104,
+                                                1047
+                                            ],
+                                            "type": "text",
+                                            "content": "1)",
+                                            "score": 0.706
+                                        },
+                                        {
+                                            "bbox": [
+                                                106,
+                                                1026,
+                                                139,
+                                                1047
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "g ( \\theta )",
+                                            "score": 0.52
+                                        },
+                                        {
+                                            "bbox": [
+                                                141,
+                                                1022,
+                                                534,
+                                                1047
+                                            ],
+                                            "type": "text",
+                                            "content": "isanon-negativeand continuouslydifferentiable function.",
+                                            "score": 0.983
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                79,
+                                1056,
+                                557,
+                                1104
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 17,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1054,
+                                        559,
+                                        1081
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1054,
+                                                308,
+                                                1081
+                                            ],
+                                            "type": "text",
+                                            "content": "2)The setof stationarypoints of",
+                                            "score": 0.944
+                                        },
+                                        {
+                                            "bbox": [
+                                                311,
+                                                1059,
+                                                378,
+                                                1077
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\| \\nabla _ { \\theta } g ( \\theta ) \\|",
+                                            "score": 0.87
+                                        },
+                                        {
+                                            "bbox": [
+                                                378,
+                                                1054,
+                                                559,
+                                                1081
+                                            ],
+                                            "type": "text",
+                                            "content": "is notanempty set,thatis",
+                                            "score": 0.958
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        328,
+                                        1082,
+                                        522,
+                                        1102
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                328,
+                                                1082,
+                                                522,
+                                                1102
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "J : = \\{ \\theta | \\| \\nabla _ { \\theta } g ( \\theta ) \\| = 0 \\} \\neq \\emptyset",
+                                            "score": 0.56
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                79,
+                                1114,
+                                743,
+                                1163
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 18,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1112,
+                                        741,
+                                        1137
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1112,
+                                                104,
+                                                1137
+                                            ],
+                                            "type": "text",
+                                            "content": "3",
+                                            "score": 0.992
+                                        },
+                                        {
+                                            "bbox": [
+                                                106,
+                                                1119,
+                                                159,
+                                                1137
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\nabla _ { \\boldsymbol { \\theta } } g ( \\boldsymbol { \\theta } )",
+                                            "score": 0.84
+                                        },
+                                        {
+                                            "bbox": [
+                                                161,
+                                                1112,
+                                                517,
+                                                1137
+                                            ],
+                                            "type": "text",
+                                            "content": "satisfiestheLipschitzcondition,i.e.,thereisascalar",
+                                            "score": 0.956
+                                        },
+                                        {
+                                            "bbox": [
+                                                519,
+                                                1120,
+                                                557,
+                                                1134
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "c > 0 ,",
+                                            "score": 0.79
+                                        },
+                                        {
+                                            "bbox": [
+                                                559,
+                                                1112,
+                                                676,
+                                                1137
+                                            ],
+                                            "type": "text",
+                                            "content": "such that for any",
+                                            "score": 0.958
+                                        },
+                                        {
+                                            "bbox": [
+                                                679,
+                                                1115,
+                                                741,
+                                                1137
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "x , y \\in \\mathbb { R } ^ { N }",
+                                            "score": 0.61
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        320,
+                                        1142,
+                                        527,
+                                        1163
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                320,
+                                                1142,
+                                                527,
+                                                1163
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\left\\| \\nabla _ { x } g ( x ) - \\nabla _ { y } g ( y ) \\right\\| \\leq c \\| x - y \\|",
+                                            "score": 0.6
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                1177,
+                                589,
+                                1198
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 19,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        1173,
+                                        594,
+                                        1203
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                79,
+                                                1173,
+                                                221,
+                                                1203
+                                            ],
+                                            "type": "text",
+                                            "content": "4) There is a scalar",
+                                            "score": 0.969
+                                        },
+                                        {
+                                            "bbox": [
+                                                221,
+                                                1183,
+                                                266,
+                                                1197
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "M > 0",
+                                            "score": 0.83
+                                        },
+                                        {
+                                            "bbox": [
+                                                266,
+                                                1173,
+                                                385,
+                                                1203
+                                            ],
+                                            "type": "text",
+                                            "content": "such that for any",
+                                            "score": 0.958
+                                        },
+                                        {
+                                            "bbox": [
+                                                385,
+                                                1182,
+                                                437,
+                                                1197
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\boldsymbol \\theta \\in \\mathbb { R } ^ { N }",
+                                            "score": 0.89
+                                        },
+                                        {
+                                            "bbox": [
+                                                437,
+                                                1173,
+                                                594,
+                                                1203
+                                            ],
+                                            "type": "text",
+                                            "content": "and positive integer n,",
+                                            "score": 0.994
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        251,
+                        1205,
+                        748,
+                        1236
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                251,
+                                1205,
+                                748,
+                                1236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        251,
+                                        1205,
+                                        748,
+                                        1236
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathbb {E} _ {\\xi_ {n}} \\left(\\left\\| \\nabla_ {\\theta} g (\\theta) - \\nabla_ {\\theta} g (\\theta , \\xi_ {n}) \\right\\| ^ {2}\\right) \\leq M (1 + g (\\theta)). \\tag {6}",
+                                    "image_path": "6b270d2e31f5296c157e4b6ad2d310fac789daa34da8413db3a6139234d58e7b.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "bbox": [
+                        77,
+                        1278,
+                        724,
+                        1323
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 22,
+                    "lines": [
+                        {
+                            "bbox": [
+                                82,
+                                1279,
+                                724,
+                                1301
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1279,
+                                        330,
+                                        1301
+                                    ],
+                                    "type": "text",
+                                    "content": "Assumption3 Momentumcoefficient",
+                                    "score": 0.99
+                                },
+                                {
+                                    "bbox": [
+                                        333,
+                                        1283,
+                                        395,
+                                        1301
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\alpha \\in [ 0 , 1 )",
+                                    "score": 0.8
+                                },
+                                {
+                                    "bbox": [
+                                        395,
+                                        1279,
+                                        724,
+                                        1301
+                                    ],
+                                    "type": "text",
+                                    "content": "and the sequence of step sizeεnispositive,mono-",
+                                    "score": 0.958
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                79,
+                                1293,
+                                559,
+                                1324
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        1293,
+                                        330,
+                                        1324
+                                    ],
+                                    "type": "text",
+                                    "content": "tonicallyeceasingtrouch",
+                                    "score": 0.909
+                                },
+                                {
+                                    "bbox": [
+                                        330,
+                                        1303,
+                                        425,
+                                        1323
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\textstyle \\sum _ { n = 1 } ^ { + \\infty } \\varepsilon _ { n } = + \\infty",
+                                    "score": 0.65
+                                },
+                                {
+                                    "bbox": [
+                                        425,
+                                        1293,
+                                        455,
+                                        1324
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 0.997
+                                },
+                                {
+                                    "bbox": [
+                                        455,
+                                        1301,
+                                        549,
+                                        1323
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\textstyle \\sum _ { n = 1 } ^ { + \\infty } \\varepsilon _ { n } ^ { 2 } < + \\infty",
+                                    "score": 0.75
+                                },
+                                {
+                                    "bbox": [
+                                        549,
+                                        1293,
+                                        559,
+                                        1324
+                                    ],
+                                    "type": "text",
+                                    "content": "P",
+                                    "score": 0.543
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        77,
+                        1397,
+                        689,
+                        1419
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 23,
+                    "lines": [
+                        {
+                            "bbox": [
+                                79,
+                                1394,
+                                694,
+                                1420
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        1394,
+                                        445,
+                                        1420
+                                    ],
+                                    "type": "text",
+                                    "content": "Assumption4(Lossfunction assumption) Loss function",
+                                    "score": 0.969
+                                },
+                                {
+                                    "bbox": [
+                                        447,
+                                        1401,
+                                        477,
+                                        1419
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g ( \\theta )",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        477,
+                                        1394,
+                                        694,
+                                        1420
+                                    ],
+                                    "type": "text",
+                                    "content": "satisfies the following conditions:",
+                                    "score": 0.947
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        79,
+                        1430,
+                        701,
+                        1502
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 24,
+                    "lines": [
+                        {
+                            "bbox": [
+                                79,
+                                1429,
+                                704,
+                                1452
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        1429,
+                                        704,
+                                        1452
+                                    ],
+                                    "type": "text",
+                                    "content": "1）g(0)isanon-negativeand continuouslydifferentiable function.Thesetofits stationary points",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                102,
+                                1447,
+                                699,
+                                1468
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        102,
+                                        1450,
+                                        248,
+                                        1468
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "J = \\{ \\theta | \\| \\nabla _ { \\theta } g ( \\theta ) \\| = 0 \\}",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        248,
+                                        1447,
+                                        641,
+                                        1468
+                                    ],
+                                    "type": "text",
+                                    "content": "isaboundedsetwhichhasonlyfiniteconnectedcomponents",
+                                    "score": 0.987
+                                },
+                                {
+                                    "bbox": [
+                                        644,
+                                        1452,
+                                        699,
+                                        1467
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "J _ { 1 } , . . . , J _ { n } .",
+                                    "score": 0.83
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                99,
+                                1464,
+                                704,
+                                1485
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        99,
+                                        1464,
+                                        226,
+                                        1485
+                                    ],
+                                    "type": "text",
+                                    "content": "Inaddition,treis",
+                                    "score": 0.865
+                                },
+                                {
+                                    "bbox": [
+                                        228,
+                                        1468,
+                                        271,
+                                        1482
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\varepsilon ^ { \\prime } > 0 ,",
+                                    "score": 0.8
+                                },
+                                {
+                                    "bbox": [
+                                        271,
+                                        1464,
+                                        383,
+                                        1485
+                                    ],
+                                    "type": "text",
+                                    "content": "such that forany",
+                                    "score": 0.95
+                                },
+                                {
+                                    "bbox": [
+                                        383,
+                                        1468,
+                                        480,
+                                        1485
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "i \\in \\{ 1 , 2 , \\ldots , n \\}",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        482,
+                                        1464,
+                                        512,
+                                        1485
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 0.996
+                                },
+                                {
+                                    "bbox": [
+                                        512,
+                                        1468,
+                                        614,
+                                        1485
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "0 < d ( \\theta , J _ { i } ) < \\varepsilon ^ { \\prime }",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        617,
+                                        1464,
+                                        704,
+                                        1485
+                                    ],
+                                    "type": "text",
+                                    "content": ",itholdsthat",
+                                    "score": 0.959
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                102,
+                                1482,
+                                452,
+                                1503
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        102,
+                                        1483,
+                                        201,
+                                        1503
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\left| g ( \\theta ) - g _ { i } \\right| \\neq 0 ,",
+                                    "score": 0.87
+                                },
+                                {
+                                    "bbox": [
+                                        201,
+                                        1482,
+                                        246,
+                                        1503
+                                    ],
+                                    "type": "text",
+                                    "content": "where",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        246,
+                                        1485,
+                                        365,
+                                        1502
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g _ { i } = \\{ g ( \\theta ) | \\theta \\in J _ { i } \\}",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        365,
+                                        1482,
+                                        452,
+                                        1503
+                                    ],
+                                    "type": "text",
+                                    "content": "isaconstant.",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        77,
+                        1510,
+                        335,
+                        1531
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 25,
+                    "lines": [
+                        {
+                            "bbox": [
+                                79,
+                                1510,
+                                335,
+                                1533
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        1510,
+                                        151,
+                                        1533
+                                    ],
+                                    "type": "text",
+                                    "content": "2）Forany",
+                                    "score": 0.96
+                                },
+                                {
+                                    "bbox": [
+                                        154,
+                                        1513,
+                                        251,
+                                        1531
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "i \\in \\{ 1 , 2 , \\ldots , n \\}",
+                                    "score": 0.74
+                                },
+                                {
+                                    "bbox": [
+                                        251,
+                                        1510,
+                                        335,
+                                        1533
+                                    ],
+                                    "type": "text",
+                                    "content": ",itholdsthat",
+                                    "score": 0.974
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        296,
+                        1538,
+                        487,
+                        1583
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                296,
+                                1538,
+                                487,
+                                1583
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        296,
+                                        1538,
+                                        487,
+                                        1583
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\liminf_{d(\\theta ,j_{i})\\to 0}\\frac{\\| \\nabla_{\\theta}g(\\theta)\\|^{2}}{g(\\theta) - g_{i}}\\geq s > 0.",
+                                    "image_path": "9f7b39959d58a96f9f7b83408c44281dcd15a4d289a344db4e3a33fae40b6db2.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 26
+                },
+                {
+                    "bbox": [
+                        880,
+                        222,
+                        1370,
+                        243
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 27,
+                    "lines": [
+                        {
+                            "bbox": [
+                                883,
+                                220,
+                                1373,
+                                245
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        883,
+                                        220,
+                                        1059,
+                                        245
+                                    ],
+                                    "type": "text",
+                                    "content": "Assumption5 Lossfunction",
+                                    "score": 0.96
+                                },
+                                {
+                                    "bbox": [
+                                        1059,
+                                        227,
+                                        1089,
+                                        243
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g ( \\theta )",
+                                    "score": 0.58
+                                },
+                                {
+                                    "bbox": [
+                                        1089,
+                                        220,
+                                        1373,
+                                        245
+                                    ],
+                                    "type": "text",
+                                    "content": "inequation5satisfies thefollowingconditions:",
+                                    "score": 0.974
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        880,
+                        252,
+                        1470,
+                        404
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 31,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                880,
+                                252,
+                                1470,
+                                321
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 28,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        883,
+                                        253,
+                                        1470,
+                                        273
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                883,
+                                                253,
+                                                1470,
+                                                273
+                                            ],
+                                            "type": "text",
+                                            "content": "1）g(0）isanon-negativeandcontinuously diffrentiable function.The setof itsstationary points",
+                                            "score": 0.969
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        905,
+                                        268,
+                                        1465,
+                                        290
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                905,
+                                                273,
+                                                1044,
+                                                288
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "J = \\{ \\pmb { \\theta } | \\| \\nabla _ { \\pmb { \\theta } } g ( \\pmb { \\theta } ) \\| = 0 \\}",
+                                            "score": 0.85
+                                        },
+                                        {
+                                            "bbox": [
+                                                1044,
+                                                268,
+                                                1413,
+                                                290
+                                            ],
+                                            "type": "text",
+                                            "content": "isaboundedsetwhichhas onlyfiniteconnectedcomponents",
+                                            "score": 0.984
+                                        },
+                                        {
+                                            "bbox": [
+                                                1413,
+                                                273,
+                                                1465,
+                                                288
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "J _ { 1 } , . . . , J _ { n } .",
+                                            "score": 0.66
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        903,
+                                        285,
+                                        1465,
+                                        306
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                903,
+                                                285,
+                                                1199,
+                                                306
+                                            ],
+                                            "type": "text",
+                                            "content": "Inaddition,thereisε1>0,suchthat foranyiand",
+                                            "score": 0.938
+                                        },
+                                        {
+                                            "bbox": [
+                                                1199,
+                                                288,
+                                                1296,
+                                                305
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "0 < d ( \\theta , J _ { i } ) < \\varepsilon _ { 1 }",
+                                            "score": 0.84
+                                        },
+                                        {
+                                            "bbox": [
+                                                1296,
+                                                285,
+                                                1375,
+                                                306
+                                            ],
+                                            "type": "text",
+                                            "content": ",itholdsthat",
+                                            "score": 0.991
+                                        },
+                                        {
+                                            "bbox": [
+                                                1375,
+                                                288,
+                                                1465,
+                                                306
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\left| g ( \\theta ) - g _ { i } \\right| \\neq 0 ,",
+                                            "score": 0.82
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        903,
+                                        301,
+                                        1139,
+                                        323
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                903,
+                                                301,
+                                                942,
+                                                323
+                                            ],
+                                            "type": "text",
+                                            "content": "where",
+                                            "score": 0.991
+                                        },
+                                        {
+                                            "bbox": [
+                                                942,
+                                                305,
+                                                1054,
+                                                321
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "g _ { i } = \\{ g ( \\theta ) | \\theta \\in J _ { i } \\}",
+                                            "score": 0.88
+                                        },
+                                        {
+                                            "bbox": [
+                                                1054,
+                                                301,
+                                                1139,
+                                                323
+                                            ],
+                                            "type": "text",
+                                            "content": "isaconstant.",
+                                            "score": 0.988
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                880,
+                                328,
+                                1350,
+                                371
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 29,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        883,
+                                        326,
+                                        1353,
+                                        349
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                883,
+                                                326,
+                                                982,
+                                                349
+                                            ],
+                                            "type": "text",
+                                            "content": "2)Thegradient",
+                                            "score": 0.963
+                                        },
+                                        {
+                                            "bbox": [
+                                                982,
+                                                331,
+                                                1030,
+                                                348
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\nabla _ { \\boldsymbol { \\theta } } g ( \\boldsymbol { \\theta } )",
+                                            "score": 0.84
+                                        },
+                                        {
+                                            "bbox": [
+                                                1030,
+                                                326,
+                                                1353,
+                                                349
+                                            ],
+                                            "type": "text",
+                                            "content": "satisfies theLipschitzcondition,i.e.foranyx,y∈RN",
+                                            "score": 0.92
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1092,
+                                        348,
+                                        1281,
+                                        373
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1092,
+                                                348,
+                                                1281,
+                                                373
+                                            ],
+                                            "type": "text",
+                                            "content": "Vxg(x）-Vyg（y）/≤cx-yll",
+                                            "score": 0.73
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                880,
+                                381,
+                                1380,
+                                404
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 30,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        883,
+                                        381,
+                                        1375,
+                                        406
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                883,
+                                                381,
+                                                1047,
+                                                406
+                                            ],
+                                            "type": "text",
+                                            "content": "3）There are two constants",
+                                            "score": 0.962
+                                        },
+                                        {
+                                            "bbox": [
+                                                1047,
+                                                389,
+                                                1092,
+                                                401
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "M ^ { \\prime } > 0",
+                                            "score": 0.68
+                                        },
+                                        {
+                                            "bbox": [
+                                                1092,
+                                                381,
+                                                1117,
+                                                406
+                                            ],
+                                            "type": "text",
+                                            "content": "and",
+                                            "score": 0.999
+                                        },
+                                        {
+                                            "bbox": [
+                                                1117,
+                                                389,
+                                                1151,
+                                                402
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "a > 0",
+                                            "score": 0.53
+                                        },
+                                        {
+                                            "bbox": [
+                                                1151,
+                                                381,
+                                                1258,
+                                                406
+                                            ],
+                                            "type": "text",
+                                            "content": "such that forany",
+                                            "score": 0.926
+                                        },
+                                        {
+                                            "bbox": [
+                                                1258,
+                                                386,
+                                                1375,
+                                                404
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\theta \\in \\mathbb { R } ^ { N } a n d n \\in \\mathbb { N } _ { + }",
+                                            "score": 0.64
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1047,
+                        406,
+                        1470,
+                        436
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1047,
+                                406,
+                                1470,
+                                436
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1047,
+                                        406,
+                                        1470,
+                                        436
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "E _ {\\xi_ {n}} \\left(\\left\\| \\nabla_ {\\theta} g (\\theta , \\xi_ {n}) \\right\\| ^ {2}\\right) \\leq M ^ {\\prime} \\left\\| \\nabla_ {\\theta} g (\\theta) \\right\\| ^ {2} + a. \\tag {11}",
+                                    "image_path": "d2d6e0055e74ed26d382085121948cde07c4b6b92ea7b3e8e438e0d17a1198f9.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 32
+                },
+                {
+                    "bbox": [
+                        868,
+                        472,
+                        1062,
+                        505
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 33,
+                    "lines": [
+                        {
+                            "bbox": [
+                                870,
+                                467,
+                                1067,
+                                510
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        870,
+                                        467,
+                                        1067,
+                                        510
+                                    ],
+                                    "type": "text",
+                                    "content": "Main results:",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        870,
+                        555,
+                        1597,
+                        618
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 34,
+                    "lines": [
+                        {
+                            "bbox": [
+                                873,
+                                555,
+                                1599,
+                                580
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        873,
+                                        555,
+                                        1487,
+                                        580
+                                    ],
+                                    "type": "text",
+                                    "content": "Theorem1 Consider themSGD in equation3.IfAssumptions1-3 hold,then for",
+                                    "score": 0.963
+                                },
+                                {
+                                    "bbox": [
+                                        1487,
+                                        557,
+                                        1562,
+                                        578
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\forall \\boldsymbol { \\theta } _ { 1 } \\in \\mathbb { R } ^ { N }",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        1564,
+                                        555,
+                                        1599,
+                                        580
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 0.999
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                875,
+                                573,
+                                1594,
+                                601
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        875,
+                                        578,
+                                        947,
+                                        598
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\forall \\nu _ { 0 } \\in \\mathbb { R } ^ { N }",
+                                    "score": 0.87
+                                },
+                                {
+                                    "bbox": [
+                                        947,
+                                        573,
+                                        1166,
+                                        601
+                                    ],
+                                    "type": "text",
+                                    "content": ",thereexistsaconnected set",
+                                    "score": 0.963
+                                },
+                                {
+                                    "bbox": [
+                                        1166,
+                                        581,
+                                        1216,
+                                        598
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "J ^ { * } \\subseteq J",
+                                    "score": 0.9
+                                },
+                                {
+                                    "bbox": [
+                                        1219,
+                                        573,
+                                        1378,
+                                        601
+                                    ],
+                                    "type": "text",
+                                    "content": "such that the iterate",
+                                    "score": 0.961
+                                },
+                                {
+                                    "bbox": [
+                                        1378,
+                                        581,
+                                        1395,
+                                        598
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\theta _ { n }",
+                                    "score": 0.86
+                                },
+                                {
+                                    "bbox": [
+                                        1395,
+                                        573,
+                                        1574,
+                                        601
+                                    ],
+                                    "type": "text",
+                                    "content": "isconvergent to the set",
+                                    "score": 0.946
+                                },
+                                {
+                                    "bbox": [
+                                        1574,
+                                        578,
+                                        1594,
+                                        596
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "J ^ { * }",
+                                    "score": 0.81
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                873,
+                                595,
+                                1012,
+                                621
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        873,
+                                        595,
+                                        1012,
+                                        621
+                                    ],
+                                    "type": "text",
+                                    "content": "almost surely,i.e.,",
+                                    "score": 0.95
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1132,
+                        618,
+                        1331,
+                        646
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1132,
+                                618,
+                                1331,
+                                646
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1132,
+                                        618,
+                                        1331,
+                                        646
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\lim  _ {n \\rightarrow \\infty} d \\left(\\theta_ {n}, J ^ {*}\\right) = 0, \\quad a. s.",
+                                    "image_path": "26832dc7e1e925aeac66268d8a5b31f418a1e62a1e858fc730b140f73090585f.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 35
+                },
+                {
+                    "bbox": [
+                        870,
+                        651,
+                        1505,
+                        676
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 36,
+                    "lines": [
+                        {
+                            "bbox": [
+                                873,
+                                649,
+                                1505,
+                                678
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        873,
+                                        649,
+                                        925,
+                                        678
+                                    ],
+                                    "type": "text",
+                                    "content": "where",
+                                    "score": 0.973
+                                },
+                                {
+                                    "bbox": [
+                                        925,
+                                        654,
+                                        1151,
+                                        676
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "d ( x , J ^ { * } ) = \\operatorname* { i n f } _ { y } \\{ \\| x - y \\| , y \\in J ^ { * } \\}",
+                                    "score": 0.89
+                                },
+                                {
+                                    "bbox": [
+                                        1151,
+                                        649,
+                                        1505,
+                                        678
+                                    ],
+                                    "type": "text",
+                                    "content": "denotes the distance between point xand set J*.",
+                                    "score": 0.954
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        873,
+                        785,
+                        1594,
+                        830
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 37,
+                    "lines": [
+                        {
+                            "bbox": [
+                                878,
+                                785,
+                                1594,
+                                812
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        878,
+                                        785,
+                                        1594,
+                                        812
+                                    ],
+                                    "type": "text",
+                                    "content": "Theorem2 Consider themSGDin equation3with thenoise followingauniform samplingdistri-",
+                                    "score": 0.983
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                878,
+                                805,
+                                1415,
+                                830
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        878,
+                                        805,
+                                        1137,
+                                        830
+                                    ],
+                                    "type": "text",
+                                    "content": "bution.IfAssumptions1-4hold,for",
+                                    "score": 0.986
+                                },
+                                {
+                                    "bbox": [
+                                        1139,
+                                        807,
+                                        1209,
+                                        829
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\forall \\nu _ { 0 } \\in \\mathbb { R } ^ { N }",
+                                    "score": 0.87
+                                },
+                                {
+                                    "bbox": [
+                                        1211,
+                                        805,
+                                        1241,
+                                        830
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 0.998
+                                },
+                                {
+                                    "bbox": [
+                                        1244,
+                                        807,
+                                        1316,
+                                        829
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\forall \\theta _ { 1 } \\in \\mathbb { R } ^ { N }",
+                                    "score": 0.89
+                                },
+                                {
+                                    "bbox": [
+                                        1316,
+                                        805,
+                                        1415,
+                                        830
+                                    ],
+                                    "type": "text",
+                                    "content": "itholdsthat",
+                                    "score": 0.994
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1084,
+                        838,
+                        1592,
+                        880
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1084,
+                                838,
+                                1592,
+                                880
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1084,
+                                        838,
+                                        1592,
+                                        880
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathbb {E} \\left(\\| \\nabla_ {\\theta_ {n}} g (\\theta_ {n}) \\| ^ {2}\\right) = O \\left(e ^ {- \\sum_ {i = 1} ^ {n} \\frac {s \\varepsilon_ {i}}{p (1 - \\alpha) ^ {2}}}\\right), \\tag {10}",
+                                    "image_path": "563470257e180564e29c768dfc52d5ea8b45cd6f8a54c7830e62f879abff6d86.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 38
+                },
+                {
+                    "bbox": [
+                        873,
+                        890,
+                        1448,
+                        938
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 39,
+                    "lines": [
+                        {
+                            "bbox": [
+                                928,
+                                883,
+                                1455,
+                                938
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        928,
+                                        890,
+                                        1089,
+                                        938
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "p = \\exp \\left\\{ \\sum _ { k = 1 } ^ { \\infty } M \\varepsilon _ { k } ^ { 2 } \\right\\}",
+                                    "score": 0.92
+                                },
+                                {
+                                    "bbox": [
+                                        1089,
+                                        883,
+                                        1455,
+                                        936
+                                    ],
+                                    "type": "text",
+                                    "content": "dief",
+                                    "score": 0.75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        873,
+                        951,
+                        1413,
+                        973
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 40,
+                    "lines": [
+                        {
+                            "bbox": [
+                                878,
+                                950,
+                                1415,
+                                976
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        878,
+                                        950,
+                                        1007,
+                                        976
+                                    ],
+                                    "type": "text",
+                                    "content": "In Theorem2,let",
+                                    "score": 0.967
+                                },
+                                {
+                                    "bbox": [
+                                        1007,
+                                        953,
+                                        1054,
+                                        971
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\alpha = 0",
+                                    "score": 0.86
+                                },
+                                {
+                                    "bbox": [
+                                        1054,
+                                        950,
+                                        1415,
+                                        976
+                                    ],
+                                    "type": "text",
+                                    "content": ",then we can obtain theconvergence rate of SGD,",
+                                    "score": 0.969
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1097,
+                        983,
+                        1350,
+                        1021
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1097,
+                                983,
+                                1350,
+                                1021
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1097,
+                                        983,
+                                        1350,
+                                        1021
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathbb {E} \\left(\\| \\nabla_ {\\theta_ {n}} g (\\theta_ {n}) \\| ^ {2}\\right) = O \\left(e ^ {- \\sum_ {i = 1} ^ {n} \\frac {s}{p} \\varepsilon_ {i}}\\right)",
+                                    "image_path": "71fb8c8f9e2911b6248b37a6ea37ea80fd4f34221a68d0b5b96bf4d429673d7a.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 41
+                },
+                {
+                    "bbox": [
+                        873,
+                        1117,
+                        1612,
+                        1182
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 42,
+                    "lines": [
+                        {
+                            "bbox": [
+                                878,
+                                1117,
+                                1612,
+                                1144
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        878,
+                                        1117,
+                                        1535,
+                                        1144
+                                    ],
+                                    "type": "text",
+                                    "content": "Theorem3 Consider the AdaGrad in equation5.If Assumptions1and 5 hold,then for",
+                                    "score": 0.969
+                                },
+                                {
+                                    "bbox": [
+                                        1535,
+                                        1117,
+                                        1612,
+                                        1140
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\forall \\theta _ { 1 } \\in \\mathbb { R } ^ { N }",
+                                    "score": 0.86
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                878,
+                                1140,
+                                1614,
+                                1163
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        878,
+                                        1140,
+                                        913,
+                                        1163
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        913,
+                                        1140,
+                                        967,
+                                        1162
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "S _ { 0 } = 0",
+                                    "score": 0.89
+                                },
+                                {
+                                    "bbox": [
+                                        970,
+                                        1140,
+                                        1333,
+                                        1163
+                                    ],
+                                    "type": "text",
+                                    "content": "thereexistsa connected component of the set",
+                                    "score": 0.963
+                                },
+                                {
+                                    "bbox": [
+                                        1333,
+                                        1142,
+                                        1388,
+                                        1162
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "J ^ { * } \\subseteq J ,",
+                                    "score": 0.87
+                                },
+                                {
+                                    "bbox": [
+                                        1390,
+                                        1140,
+                                        1572,
+                                        1163
+                                    ],
+                                    "type": "text",
+                                    "content": "suchthat the estimate",
+                                    "score": 0.959
+                                },
+                                {
+                                    "bbox": [
+                                        1572,
+                                        1142,
+                                        1592,
+                                        1162
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\theta _ { n }",
+                                    "score": 0.75
+                                },
+                                {
+                                    "bbox": [
+                                        1592,
+                                        1140,
+                                        1614,
+                                        1163
+                                    ],
+                                    "type": "text",
+                                    "content": "is",
+                                    "score": 0.992
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                878,
+                                1160,
+                                1194,
+                                1183
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        878,
+                                        1160,
+                                        1035,
+                                        1183
+                                    ],
+                                    "type": "text",
+                                    "content": "convergent to the set",
+                                    "score": 0.97
+                                },
+                                {
+                                    "bbox": [
+                                        1035,
+                                        1162,
+                                        1054,
+                                        1180
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "J ^ { * }",
+                                    "score": 0.7
+                                },
+                                {
+                                    "bbox": [
+                                        1054,
+                                        1160,
+                                        1194,
+                                        1183
+                                    ],
+                                    "type": "text",
+                                    "content": "almost surely,i.e.,",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1141,
+                        1188,
+                        1346,
+                        1221
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1141,
+                                1188,
+                                1346,
+                                1221
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1141,
+                                        1188,
+                                        1346,
+                                        1221
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\lim  _ {n \\rightarrow \\infty} d \\left(\\theta_ {n}, J ^ {*}\\right) = 0. \\quad a. s.",
+                                    "image_path": "2c72f1e790a1af636710fe751415a04d8f40892211a5fd7848c01f20079c6f6f.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 43
+                },
+                {
+                    "bbox": [
+                        1696,
+                        261,
+                        2154,
+                        295
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 44,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1694,
+                                255,
+                                2159,
+                                300
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1694,
+                                        255,
+                                        2159,
+                                        300
+                                    ],
+                                    "type": "text",
+                                    "content": "Proof outline for Theorems 1-2:",
+                                    "score": 0.99
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1696,
+                        319,
+                        2398,
+                        379
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 45,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1701,
+                                318,
+                                2400,
+                                344
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        318,
+                                        2167,
+                                        344
+                                    ],
+                                    "type": "text",
+                                    "content": "The proof is in light of the Lyapunov method.We aim to prove that",
+                                    "score": 0.96
+                                },
+                                {
+                                    "bbox": [
+                                        2167,
+                                        321,
+                                        2206,
+                                        341
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g ( \\theta _ { n } )",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        2209,
+                                        318,
+                                        2400,
+                                        344
+                                    ],
+                                    "type": "text",
+                                    "content": "is convergent a.s.,and then",
+                                    "score": 0.972
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1701,
+                                338,
+                                2400,
+                                364
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        338,
+                                        1763,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "toprove",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        1763,
+                                        339,
+                                        1890,
+                                        361
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\nabla _ { \\theta _ { n } g } ( \\theta _ { n } )  0 a . s",
+                                    "score": 0.9
+                                },
+                                {
+                                    "bbox": [
+                                        1890,
+                                        338,
+                                        2189,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "With these two results,we are able to get",
+                                    "score": 0.954
+                                },
+                                {
+                                    "bbox": [
+                                        2189,
+                                        341,
+                                        2274,
+                                        359
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\theta _ { n }  J ^ { * } \\thinspace a . s .",
+                                    "score": 0.81
+                                },
+                                {
+                                    "bbox": [
+                                        2274,
+                                        338,
+                                        2400,
+                                        364
+                                    ],
+                                    "type": "text",
+                                    "content": "Inthefollowing,",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1701,
+                                359,
+                                2281,
+                                381
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        359,
+                                        2281,
+                                        381
+                                    ],
+                                    "type": "text",
+                                    "content": "weprovide the proof outline to show how to obtain the provided results of mSGD.",
+                                    "score": 0.963
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1696,
+                        386,
+                        2398,
+                        429
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 46,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1701,
+                                387,
+                                2400,
+                                412
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        387,
+                                        2057,
+                                        412
+                                    ],
+                                    "type": "text",
+                                    "content": "Step1:We prove mSGD is a stable algorithm,i.e.,",
+                                    "score": 0.963
+                                },
+                                {
+                                    "bbox": [
+                                        2060,
+                                        387,
+                                        2236,
+                                        409
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathbb { E } ( g ( \\theta _ { n } ) ) < K < + \\infty , \\forall n",
+                                    "score": 0.87
+                                },
+                                {
+                                    "bbox": [
+                                        2236,
+                                        387,
+                                        2400,
+                                        412
+                                    ],
+                                    "type": "text",
+                                    "content": "inLemma1.The idea",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1699,
+                                406,
+                                2139,
+                                431
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1699,
+                                        406,
+                                        2139,
+                                        431
+                                    ],
+                                    "type": "text",
+                                    "content": "is to prove that a weighted sum of the loss function value,i.e.,",
+                                    "score": 0.973
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1903,
+                        434,
+                        2194,
+                        480
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1903,
+                                434,
+                                2194,
+                                480
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1903,
+                                        434,
+                                        2194,
+                                        480
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "U _ {n} := \\sum_ {t = 1} ^ {n} (1 / (2 - \\alpha)) ^ {n - t} \\mathbb {E} (1 + g (\\theta_ {t + 1}))",
+                                    "image_path": "56793ea4c694ab2ac7358f9e4031e33c530eb59411160edf22aab7783d73bbda.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 47
+                },
+                {
+                    "bbox": [
+                        1699,
+                        484,
+                        2087,
+                        507
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 48,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1701,
+                                484,
+                                2089,
+                                509
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        484,
+                                        2089,
+                                        509
+                                    ],
+                                    "type": "text",
+                                    "content": "is bounded through a recursion formula (a rough form)",
+                                    "score": 0.978
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1739,
+                        513,
+                        2356,
+                        586
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1739,
+                                513,
+                                2356,
+                                586
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1739,
+                                        513,
+                                        2356,
+                                        586
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "U _ {n} - U _ {n - 1} \\leq A \\alpha^ {n} + \\underbrace {B \\sum_ {t = 1} ^ {n - 1} \\left(1 / (2 - \\alpha)\\right) ^ {n - t} \\varepsilon_ {t} ^ {2} \\mathbb {E} \\left\\| \\nabla_ {\\theta_ {t}} g \\left(\\theta_ {t} , \\xi_ {t}\\right) \\right\\| ^ {2}} _ {I} (A, B a r e t w o c o n s t a n t s).",
+                                    "image_path": "4cc536ef30fe3a9786313ce637f3064e4c4466510265c76840fd6d7f9a3d4dd6.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 49
+                },
+                {
+                    "bbox": [
+                        1699,
+                        590,
+                        2072,
+                        613
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 50,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1704,
+                                588,
+                                2072,
+                                613
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1704,
+                                        588,
+                                        1948,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "Then we apply Assumption 24) to",
+                                    "score": 0.964
+                                },
+                                {
+                                    "bbox": [
+                                        1948,
+                                        593,
+                                        1958,
+                                        608
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "I",
+                                    "score": 0.56
+                                },
+                                {
+                                    "bbox": [
+                                        1960,
+                                        588,
+                                        2072,
+                                        613
+                                    ],
+                                    "type": "text",
+                                    "content": "and then obtain",
+                                    "score": 0.963
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1744,
+                        616,
+                        2333,
+                        693
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1744,
+                                616,
+                                2333,
+                                693
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1744,
+                                        616,
+                                        2333,
+                                        693
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "U _ {n} - U _ {n - 1} \\leq A \\alpha^ {n} + \\underbrace {B \\sum_ {t = 1} ^ {n - 1} \\left(1 / (2 - \\alpha)\\right) ^ {n - t} \\varepsilon_ {t} ^ {2} \\mathbb {E} \\left(1 + g (\\theta_ {t})\\right)} _ {R} (A, B a r e t w o c o n s t a n t s).",
+                                    "image_path": "813ff1611e1e359275db70517c02746f8faa18e2823927ac68906d39dc37218a.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 51
+                },
+                {
+                    "bbox": [
+                        1699,
+                        696,
+                        1928,
+                        717
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 52,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1704,
+                                694,
+                                1928,
+                                719
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1704,
+                                        694,
+                                        1783,
+                                        719
+                                    ],
+                                    "type": "text",
+                                    "content": "Combining",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        1786,
+                                        698,
+                                        1823,
+                                        717
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "U _ { n - 1 }",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        1823,
+                                        694,
+                                        1853,
+                                        719
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        1853,
+                                        698,
+                                        1868,
+                                        714
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "R",
+                                    "score": 0.66
+                                },
+                                {
+                                    "bbox": [
+                                        1868,
+                                        694,
+                                        1928,
+                                        719
+                                    ],
+                                    "type": "text",
+                                    "content": "leads to",
+                                    "score": 0.955
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1828,
+                        721,
+                        2251,
+                        767
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1828,
+                                721,
+                                2251,
+                                767
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1828,
+                                        721,
+                                        2251,
+                                        767
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "F _ {n} - F _ {n - 1} \\leq A \\alpha^ {n} + B ^ {\\prime} \\left(\\frac {1}{2 - \\alpha}\\right) ^ {n} (A, B ^ {\\prime} \\text {a r e t w o c o n s t a n t s}),",
+                                    "image_path": "504aed99717ed1bd4f6cc2eb0370673968511cd8b386d058b5d0245b302a86a5.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 53
+                },
+                {
+                    "bbox": [
+                        1699,
+                        770,
+                        1749,
+                        789
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 54,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1701,
+                                767,
+                                1754,
+                                794
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        767,
+                                        1754,
+                                        794
+                                    ],
+                                    "type": "text",
+                                    "content": "where",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1856,
+                        785,
+                        2239,
+                        835
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1856,
+                                785,
+                                2239,
+                                835
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1856,
+                                        785,
+                                        2239,
+                                        835
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "F _ {n} := \\sum_ {t = 1} ^ {n} \\left(\\frac {1}{2 - \\alpha}\\right) ^ {n - t} Z (t + 1) \\mathbb {E} \\left(e _ {t + 1} ^ {(n)} \\left(1 + g \\left(\\theta_ {t + 1}\\right)\\right)\\right)",
+                                    "image_path": "991b664f99ef3c0594efd8255f161b09165cee1e5e7ca7d5dce4c33b414892ee.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 55
+                },
+                {
+                    "bbox": [
+                        1699,
+                        837,
+                        1731,
+                        855
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 56,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1699,
+                                837,
+                                1734,
+                                857
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1699,
+                                        837,
+                                        1734,
+                                        857
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1781,
+                        855,
+                        2316,
+                        901
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1781,
+                                855,
+                                2316,
+                                901
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1781,
+                                        855,
+                                        2316,
+                                        901
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "Z (t) = \\prod_ {k = t} ^ {+ \\infty} \\left(1 + M _ {0} \\varepsilon_ {k} ^ {2}\\right) = \\left(1 + M _ {0} \\varepsilon_ {t} ^ {2}\\right) \\prod_ {k = t + 1} ^ {+ \\infty} \\left(1 + M _ {0} \\varepsilon_ {k} ^ {2}\\right) = \\left(1 + M _ {0} \\varepsilon_ {t} ^ {2}\\right) Z (t + 1).",
+                                    "image_path": "fd71f3e8b4d515ffc08c2017dbc9281fcb5b53046b38ffa1627788f16718b877.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 57
+                },
+                {
+                    "bbox": [
+                        1699,
+                        906,
+                        2311,
+                        933
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 58,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1701,
+                                903,
+                                2311,
+                                936
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        903,
+                                        1898,
+                                        936
+                                    ],
+                                    "type": "text",
+                                    "content": "Thus, we are able to obtain",
+                                    "score": 0.982
+                                },
+                                {
+                                    "bbox": [
+                                        1898,
+                                        906,
+                                        2311,
+                                        933
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\begin{array} { r } { E \\big ( g \\big ( \\theta _ { n } \\big ) \\big ) < F _ { n - 1 } \\leq A \\sum _ { t = 1 } ^ { + \\infty } \\alpha ^ { t } + B \\sum _ { t = 1 } ^ { + \\infty } \\big ( 1 / ( 2 - \\alpha ) \\big ) ^ { t } < + \\infty . } \\end{array}",
+                                    "score": 0.85
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1699,
+                        940,
+                        2398,
+                        986
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 59,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1699,
+                                936,
+                                2403,
+                                971
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1699,
+                                        936,
+                                        2000,
+                                        971
+                                    ],
+                                    "type": "text",
+                                    "content": "Step 2: From Lemma 1 and the condition",
+                                    "score": 0.961
+                                },
+                                {
+                                    "bbox": [
+                                        2002,
+                                        940,
+                                        2104,
+                                        966
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\textstyle \\sum _ { t = 1 } ^ { + \\infty } \\varepsilon _ { n } ^ { 2 } < + \\infty",
+                                    "score": 0.91
+                                },
+                                {
+                                    "bbox": [
+                                        2104,
+                                        936,
+                                        2291,
+                                        971
+                                    ],
+                                    "type": "text",
+                                    "content": ",we are able to prove that",
+                                    "score": 0.958
+                                },
+                                {
+                                    "bbox": [
+                                        2291,
+                                        941,
+                                        2366,
+                                        964
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\scriptstyle \\sum _ { t = 1 } ^ { n } \\| \\nu _ { t } \\| ^ { 2 }",
+                                    "score": 0.91
+                                },
+                                {
+                                    "bbox": [
+                                        2368,
+                                        936,
+                                        2403,
+                                        971
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1704,
+                                963,
+                                2303,
+                                988
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1704,
+                                        963,
+                                        1818,
+                                        988
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\Sigma \\varepsilon _ { t } \\| \\nabla _ { \\theta _ { t } } g ( \\theta _ { t } ) \\| ^ { 2 }",
+                                    "score": 0.91
+                                },
+                                {
+                                    "bbox": [
+                                        1818,
+                                        963,
+                                        2303,
+                                        988
+                                    ],
+                                    "type": "text",
+                                    "content": "are convergent a.s.respectively, as stated inLemma7and Lemma 8.",
+                                    "score": 0.969
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1699,
+                        993,
+                        1987,
+                        1016
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 60,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1704,
+                                993,
+                                1987,
+                                1018
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1704,
+                                        993,
+                                        1831,
+                                        1018
+                                    ],
+                                    "type": "text",
+                                    "content": "Step3:We divide",
+                                    "score": 0.971
+                                },
+                                {
+                                    "bbox": [
+                                        1833,
+                                        993,
+                                        1873,
+                                        1016
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g ( \\theta _ { n } )",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        1873,
+                                        993,
+                                        1987,
+                                        1018
+                                    ],
+                                    "type": "text",
+                                    "content": "into three terms",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1763,
+                        1021,
+                        2331,
+                        1067
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1763,
+                                1021,
+                                2331,
+                                1067
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1763,
+                                        1021,
+                                        2331,
+                                        1067
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "g \\left(\\theta_ {n}\\right) = \\sum_ {t = 1} ^ {n} A (n) \\| v _ {t} \\| ^ {2} + \\sum_ {t = 1} ^ {n} B _ {n} \\varepsilon_ {t} \\| \\nabla_ {\\theta_ {n}} g \\left(\\theta_ {n}\\right) \\| ^ {2} + \\sum_ {t = 1} ^ {n} C _ {n} ^ {T} \\left(\\nabla_ {\\theta_ {n}} g \\left(\\theta_ {n}, \\xi_ {n}\\right) - \\nabla_ {\\theta_ {n}} g \\left(\\theta_ {n}\\right)\\right).",
+                                    "image_path": "48c6920da67c8328ec2887af0597e1127ccb4b789ed805baeca17649642f5652.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 61
+                },
+                {
+                    "bbox": [
+                        1696,
+                        1072,
+                        2398,
+                        1137
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 62,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1699,
+                                1072,
+                                2400,
+                                1100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1699,
+                                        1072,
+                                        2097,
+                                        1100
+                                    ],
+                                    "type": "text",
+                                    "content": "From Lemma7and Lemma8,we are able to prove that",
+                                    "score": 0.968
+                                },
+                                {
+                                    "bbox": [
+                                        2099,
+                                        1072,
+                                        2378,
+                                        1097
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\begin{array} { r l } { \\quad } & { { } \\sum _ { t = 1 } ^ { n } A ( n ) \\| \\nu _ { t } \\| ^ { 2 } + \\sum _ { t = 1 } ^ { n } B _ { n } \\varepsilon _ { t } \\| \\nabla _ { \\theta _ { n } } g ( \\theta _ { n } ) \\| ^ { 2 } } \\end{array}",
+                                    "score": 0.89
+                                },
+                                {
+                                    "bbox": [
+                                        2381,
+                                        1072,
+                                        2400,
+                                        1100
+                                    ],
+                                    "type": "text",
+                                    "content": "is",
+                                    "score": 0.999
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1701,
+                                1092,
+                                2400,
+                                1117
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        1092,
+                                        2400,
+                                        1117
+                                    ],
+                                    "type": "text",
+                                    "content": "convergenta.s..Fromtheconvergence theorem formartingale-difference sum(Lemma5),weprove",
+                                    "score": 0.971
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1699,
+                                1110,
+                                2381,
+                                1139
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1699,
+                                        1110,
+                                        1734,
+                                        1139
+                                    ],
+                                    "type": "text",
+                                    "content": "that",
+                                    "score": 0.998
+                                },
+                                {
+                                    "bbox": [
+                                        1734,
+                                        1112,
+                                        1975,
+                                        1137
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\begin{array} { r l } { \\sum _ { t = 1 } ^ { n } C _ { n } ^ { T } ( \\nabla _ { \\theta _ { n } } g ( \\theta _ { n } , \\xi _ { n } ) - \\nabla _ { \\theta _ { n } } g ( \\theta _ { n } ) ) } & { { } } \\end{array}",
+                                    "score": 0.91
+                                },
+                                {
+                                    "bbox": [
+                                        1975,
+                                        1110,
+                                        2211,
+                                        1139
+                                    ],
+                                    "type": "text",
+                                    "content": "isconvergenta.s.Thenweprove",
+                                    "score": 0.982
+                                },
+                                {
+                                    "bbox": [
+                                        2211,
+                                        1114,
+                                        2251,
+                                        1135
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g ( \\theta _ { n } )",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        2251,
+                                        1110,
+                                        2381,
+                                        1139
+                                    ],
+                                    "type": "text",
+                                    "content": "is convergent a.s.",
+                                    "score": 0.926
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1699,
+                        1142,
+                        2271,
+                        1165
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 63,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1701,
+                                1139,
+                                2276,
+                                1168
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        1139,
+                                        2017,
+                                        1168
+                                    ],
+                                    "type": "text",
+                                    "content": "Step 4:By Lemma 9 and the convergence of",
+                                    "score": 0.96
+                                },
+                                {
+                                    "bbox": [
+                                        2017,
+                                        1142,
+                                        2057,
+                                        1165
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "g ( \\theta _ { n } )",
+                                    "score": 0.86
+                                },
+                                {
+                                    "bbox": [
+                                        2057,
+                                        1139,
+                                        2181,
+                                        1168
+                                    ],
+                                    "type": "text",
+                                    "content": "in Step 3,we get",
+                                    "score": 0.931
+                                },
+                                {
+                                    "bbox": [
+                                        2181,
+                                        1142,
+                                        2239,
+                                        1163
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\theta _ { n } \\to J ^ { * }",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        2241,
+                                        1139,
+                                        2276,
+                                        1168
+                                    ],
+                                    "type": "text",
+                                    "content": "a.s..",
+                                    "score": 0.977
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1696,
+                        1172,
+                        2398,
+                        1230
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 64,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1701,
+                                1172,
+                                2400,
+                                1197
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        1172,
+                                        2246,
+                                        1197
+                                    ],
+                                    "type": "text",
+                                    "content": "Step5:After the proof of the convergence of mSGD,we analyze the iterates of",
+                                    "score": 0.973
+                                },
+                                {
+                                    "bbox": [
+                                        2246,
+                                        1173,
+                                        2266,
+                                        1193
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "F _ { n }",
+                                    "score": 0.84
+                                },
+                                {
+                                    "bbox": [
+                                        2266,
+                                        1172,
+                                        2400,
+                                        1197
+                                    ],
+                                    "type": "text",
+                                    "content": ".Then under a new",
+                                    "score": 0.962
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1699,
+                                1190,
+                                2400,
+                                1216
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1699,
+                                        1192,
+                                        1788,
+                                        1216
+                                    ],
+                                    "type": "text",
+                                    "content": "assumption",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        1788,
+                                        1190,
+                                        2112,
+                                        1216
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\begin{array} { r } { \\operatorname* { l i m i n f } _ { d ( \\theta , J _ { i } ) \\to 0 } \\| \\nabla _ { \\theta } g ( \\theta ) \\| ^ { 2 } / \\big ( g ( \\theta ) - g _ { i } \\big ) \\geq s > 0 } \\end{array}",
+                                    "score": 0.87
+                                },
+                                {
+                                    "bbox": [
+                                        2112,
+                                        1192,
+                                        2400,
+                                        1216
+                                    ],
+                                    "type": "text",
+                                    "content": ",weareable toobtain the convergent rate",
+                                    "score": 0.96
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1701,
+                                1210,
+                                1778,
+                                1231
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1701,
+                                        1210,
+                                        1778,
+                                        1231
+                                    ],
+                                    "type": "text",
+                                    "content": "ofmSGD.",
+                                    "score": 0.975
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        1883,
+                        63,
+                        2107,
+                        87
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1885,
+                                59,
+                                2109,
+                                94
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1885,
+                                        59,
+                                        1997,
+                                        94
+                                    ],
+                                    "type": "text",
+                                    "content": "Ruinan Jin,",
+                                    "score": 0.997
+                                },
+                                {
+                                    "bbox": [
+                                        2042,
+                                        59,
+                                        2109,
+                                        92
+                                    ],
+                                    "type": "text",
+                                    "content": "UCAS",
+                                    "score": 0.998
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1885,
+                        101,
+                        2094,
+                        127
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1885,
+                                94,
+                                2097,
+                                135
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1885,
+                                        94,
+                                        1975,
+                                        135
+                                    ],
+                                    "type": "text",
+                                    "content": "Yu Xing,",
+                                    "score": 0.961
+                                },
+                                {
+                                    "bbox": [
+                                        2047,
+                                        99,
+                                        2097,
+                                        129
+                                    ],
+                                    "type": "text",
+                                    "content": "KTH",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1885,
+                        140,
+                        2276,
+                        167
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1885,
+                                137,
+                                2279,
+                                174
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1885,
+                                        137,
+                                        2017,
+                                        174
+                                    ],
+                                    "type": "text",
+                                    "content": "Xingkang He,",
+                                    "score": 0.996
+                                },
+                                {
+                                    "bbox": [
+                                        2047,
+                                        139,
+                                        2279,
+                                        170
+                                    ],
+                                    "type": "text",
+                                    "content": "University of Notre Dame",
+                                    "score": 0.989
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "page_size": [
+                2488,
+                1658
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

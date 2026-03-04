@@ -1,0 +1,3072 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        284,
+                        275,
+                        572,
+                        321
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                284,
+                                270,
+                                577,
+                                329
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        284,
+                                        270,
+                                        577,
+                                        329
+                                    ],
+                                    "type": "text",
+                                    "content": "Introduction",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        71,
+                        336,
+                        779,
+                        479
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                334,
+                                754,
+                                374
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        334,
+                                        754,
+                                        374
+                                    ],
+                                    "type": "text",
+                                    "content": "This work tackles the problem of geo-localization",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                369,
+                                779,
+                                414
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        369,
+                                        779,
+                                        414
+                                    ],
+                                    "type": "text",
+                                    "content": "with anew paradigm using a large vision-language",
+                                    "score": 0.987
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                407,
+                                735,
+                                444
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        407,
+                                        735,
+                                        444
+                                    ],
+                                    "type": "text",
+                                    "content": "model (LVLM) augmented with human inference",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                437,
+                                243,
+                                482
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        437,
+                                        243,
+                                        482
+                                    ],
+                                    "type": "text",
+                                    "content": "knowledge.",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        71,
+                        509,
+                        773,
+                        649
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                507,
+                                726,
+                                550
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        507,
+                                        726,
+                                        550
+                                    ],
+                                    "type": "text",
+                                    "content": "Challenge: The scarcity of data for training the",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                543,
+                                773,
+                                583
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        543,
+                                        773,
+                                        583
+                                    ],
+                                    "type": "text",
+                                    "content": "LVLM-existing street-view datasets often contain",
+                                    "score": 0.987
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                581,
+                                760,
+                                620
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        581,
+                                        760,
+                                        620
+                                    ],
+                                    "type": "text",
+                                    "content": "numerous low-quality images lacking visual clues,",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                611,
+                                541,
+                                656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        611,
+                                        541,
+                                        656
+                                    ],
+                                    "type": "text",
+                                    "content": "and lack any reasoning inference.",
+                                    "score": 0.971
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        71,
+                        683,
+                        773,
+                        925
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                77,
+                                683,
+                                693,
+                                717
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        683,
+                                        693,
+                                        717
+                                    ],
+                                    "type": "text",
+                                    "content": "Dataset:We devise a CLIP-based network to",
+                                    "score": 0.975
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                716,
+                                726,
+                                759
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        716,
+                                        726,
+                                        759
+                                    ],
+                                    "type": "text",
+                                    "content": "quantify the locatability of street-view images,",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                754,
+                                644,
+                                787
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        754,
+                                        644,
+                                        787
+                                    ],
+                                    "type": "text",
+                                    "content": "resulting in the creation of a new dataset",
+                                    "score": 0.965
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                787,
+                                638,
+                                824
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        787,
+                                        638,
+                                        824
+                                    ],
+                                    "type": "text",
+                                    "content": "comprising highly locatable street views.",
+                                    "score": 0.98
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                820,
+                                704,
+                                860
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        820,
+                                        704,
+                                        860
+                                    ],
+                                    "type": "text",
+                                    "content": "Additionally,we integrate external knowledge",
+                                    "score": 0.987
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                853,
+                                776,
+                                895
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        853,
+                                        776,
+                                        895
+                                    ],
+                                    "type": "text",
+                                    "content": "obtained from real geo-localization games, tapping",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                890,
+                                663,
+                                928
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        890,
+                                        663,
+                                        928
+                                    ],
+                                    "type": "text",
+                                    "content": "into valuable human inference capabilities.",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        71,
+                        958,
+                        760,
+                        1202
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                74,
+                                956,
+                                699,
+                                998
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        956,
+                                        699,
+                                        998
+                                    ],
+                                    "type": "text",
+                                    "content": "Model: GeoReasoner,which undergoes fine-",
+                                    "score": 0.988
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                994,
+                                760,
+                                1032
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        994,
+                                        760,
+                                        1032
+                                    ],
+                                    "type": "text",
+                                    "content": "tuning through dedicated reasoning and location-",
+                                    "score": 0.99
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                1029,
+                                762,
+                                1067
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        1029,
+                                        762,
+                                        1067
+                                    ],
+                                    "type": "text",
+                                    "content": "tuning stages,outperforms counterpart LVLMs by",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                1062,
+                                743,
+                                1100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        1064,
+                                        223,
+                                        1100
+                                    ],
+                                    "type": "text",
+                                    "content": "more than",
+                                    "score": 0.99
+                                },
+                                {
+                                    "bbox": [
+                                        223,
+                                        1064,
+                                        287,
+                                        1095
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "25 \\%",
+                                    "score": 0.86
+                                },
+                                {
+                                    "bbox": [
+                                        287,
+                                        1064,
+                                        572,
+                                        1100
+                                    ],
+                                    "type": "text",
+                                    "content": "at country-level and",
+                                    "score": 0.968
+                                },
+                                {
+                                    "bbox": [
+                                        572,
+                                        1062,
+                                        635,
+                                        1097
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "38 \\%",
+                                    "score": 0.83
+                                },
+                                {
+                                    "bbox": [
+                                        635,
+                                        1064,
+                                        743,
+                                        1100
+                                    ],
+                                    "type": "text",
+                                    "content": "at city-",
+                                    "score": 0.964
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                1097,
+                                668,
+                                1135
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        1097,
+                                        668,
+                                        1135
+                                    ],
+                                    "type": "text",
+                                    "content": "level geo-localization tasks,and surpasses",
+                                    "score": 0.993
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74,
+                                1129,
+                                737,
+                                1172
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74,
+                                        1129,
+                                        737,
+                                        1172
+                                    ],
+                                    "type": "text",
+                                    "content": "StreetCLIP in performance while requiring fewer",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                1165,
+                                337,
+                                1207
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        1165,
+                                        337,
+                                        1207
+                                    ],
+                                    "type": "text",
+                                    "content": "training resources.",
+                                    "score": 0.986
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        77,
+                        1248,
+                        439,
+                        1386
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                77,
+                                1216,
+                                367,
+                                1243
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        80,
+                                        1218,
+                                        312,
+                                        1245
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                1218,
+                                                312,
+                                                1245
+                                            ],
+                                            "type": "text",
+                                            "content": "Retrieval-based approaches",
+                                            "score": 0.991
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 16,
+                            "angle": 0,
+                            "type": "image_caption"
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                1248,
+                                439,
+                                1386
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        1248,
+                                        439,
+                                        1386
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                77,
+                                                1248,
+                                                439,
+                                                1386
+                                            ],
+                                            "type": "image",
+                                            "image_path": "bca7a93d596dcb17b5867358374e50de5b20f01f3332f6a50b77b9cc715c69b8.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 17,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 17
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        77,
+                        1422,
+                        436,
+                        1571
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                82,
+                                1394,
+                                339,
+                                1417
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        80,
+                                        1392,
+                                        339,
+                                        1420
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                1392,
+                                                339,
+                                                1420
+                                            ],
+                                            "type": "text",
+                                            "content": "Classification-based approaches",
+                                            "score": 0.986
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 18,
+                            "angle": 0,
+                            "type": "image_caption"
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                1422,
+                                436,
+                                1571
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        1422,
+                                        436,
+                                        1571
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                77,
+                                                1422,
+                                                436,
+                                                1571
+                                            ],
+                                            "type": "image",
+                                            "image_path": "d8f26d0f5610f1a1457bfee4932d91763d8b5801c4a67acf3d593d4e83248718.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 19,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 19
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        453,
+                        1218,
+                        715,
+                        1412
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                453,
+                                1218,
+                                715,
+                                1412
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        453,
+                                        1218,
+                                        715,
+                                        1412
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                453,
+                                                1218,
+                                                715,
+                                                1412
+                                            ],
+                                            "type": "image",
+                                            "image_path": "f8393686f3ffc090b0e0d9994889e2b15041026a39fc14d7f4126a3fb6cd433e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 20,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 20
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        453,
+                        1422,
+                        784,
+                        1593
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                453,
+                                1422,
+                                784,
+                                1593
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        453,
+                                        1422,
+                                        784,
+                                        1593
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                453,
+                                                1422,
+                                                784,
+                                                1593
+                                            ],
+                                            "type": "image",
+                                            "image_path": "9d0450f48390d62d2b1e09f4f7510654f810fce3711a94aa853e3c23610b96be.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 21,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "bbox": [
+                        1144,
+                        276,
+                        1464,
+                        323
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 22,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1147,
+                                271,
+                                1470,
+                                331
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1147,
+                                        271,
+                                        1470,
+                                        331
+                                    ],
+                                    "type": "text",
+                                    "content": "Data Curation",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        873,
+                        336,
+                        1713,
+                        406
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 23,
+                    "lines": [
+                        {
+                            "bbox": [
+                                876,
+                                333,
+                                1716,
+                                378
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        876,
+                                        333,
+                                        1716,
+                                        378
+                                    ],
+                                    "type": "text",
+                                    "content": "Street-View Images: A total of over 130k street-view images",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                876,
+                                371,
+                                1550,
+                                409
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        876,
+                                        371,
+                                        1550,
+                                        409
+                                    ],
+                                    "type": "text",
+                                    "content": "with geo-tags collected from Google Street View",
+                                    "score": 0.982
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        873,
+                        409,
+                        1741,
+                        509
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 24,
+                    "lines": [
+                        {
+                            "bbox": [
+                                876,
+                                404,
+                                1744,
+                                444
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        876,
+                                        404,
+                                        1744,
+                                        444
+                                    ],
+                                    "type": "text",
+                                    "content": "Textual Clues: A total of over 3K textual clues that encapsulate",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                873,
+                                441,
+                                1705,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        873,
+                                        441,
+                                        1705,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "rich geo-localization information from GeoGuessrand Tuxun",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                876,
+                                477,
+                                1058,
+                                512
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        876,
+                                        477,
+                                        1058,
+                                        512
+                                    ],
+                                    "type": "text",
+                                    "content": "communities",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        876,
+                        515,
+                        1746,
+                        785
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                876,
+                                515,
+                                1746,
+                                785
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        876,
+                                        515,
+                                        1746,
+                                        785
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                876,
+                                                515,
+                                                1746,
+                                                785
+                                            ],
+                                            "type": "image",
+                                            "image_path": "84207d0e0e17bf41c4456fe726fe8cd08185b3a0a38f74832914ebcdece48bb1.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 25,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 25
+                },
+                {
+                    "bbox": [
+                        1885,
+                        276,
+                        2623,
+                        329
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 26,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1882,
+                                263,
+                                2628,
+                                339
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1882,
+                                        263,
+                                        2628,
+                                        339
+                                    ],
+                                    "type": "text",
+                                    "content": "Geo-localization with Reasoning",
+                                    "score": 0.998
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1807,
+                        336,
+                        2694,
+                        510
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 27,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1813,
+                                333,
+                                2650,
+                                376
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1813,
+                                        333,
+                                        2650,
+                                        376
+                                    ],
+                                    "type": "text",
+                                    "content": "The architecture of GeoReasoner consists of three modules:",
+                                    "score": 0.997
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1815,
+                                371,
+                                2642,
+                                409
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1815,
+                                        371,
+                                        2642,
+                                        409
+                                    ],
+                                    "type": "text",
+                                    "content": "Vision Encoder,VL Adapterand Pre-trained LLM.The model",
+                                    "score": 0.961
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1813,
+                                404,
+                                2697,
+                                447
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1813,
+                                        404,
+                                        2697,
+                                        447
+                                    ],
+                                    "type": "text",
+                                    "content": "undergoes a two-fold supervised fine-tuning process: reasoning",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1813,
+                                441,
+                                2611,
+                                479
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1813,
+                                        441,
+                                        2611,
+                                        479
+                                    ],
+                                    "type": "text",
+                                    "content": "tuning and location tuning, to enable geo-localization with",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1813,
+                                475,
+                                1967,
+                                517
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1813,
+                                        475,
+                                        1967,
+                                        517
+                                    ],
+                                    "type": "text",
+                                    "content": "reasoning.",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1821,
+                        515,
+                        2689,
+                        789
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1821,
+                                515,
+                                2689,
+                                789
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1821,
+                                        515,
+                                        2689,
+                                        789
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1821,
+                                                515,
+                                                2689,
+                                                789
+                                            ],
+                                            "type": "image",
+                                            "image_path": "ad0e17f88bd051658fb6c779b8a06dee71d78b42849859f274ccbc72cac71e12.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 28,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 28
+                },
+                {
+                    "bbox": [
+                        1406,
+                        845,
+                        1699,
+                        898
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 29,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1406,
+                                840,
+                                1702,
+                                900
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1406,
+                                        840,
+                                        1702,
+                                        900
+                                    ],
+                                    "type": "text",
+                                    "content": "Experiments",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        873,
+                        993,
+                        1304,
+                        1211
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                873,
+                                915,
+                                1304,
+                                948
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        876,
+                                        913,
+                                        1307,
+                                        951
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                876,
+                                                913,
+                                                1307,
+                                                951
+                                            ],
+                                            "type": "text",
+                                            "content": "Locatability Quantization Method",
+                                            "score": 0.988
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 30,
+                            "angle": 0,
+                            "type": "image_caption"
+                        },
+                        {
+                            "bbox": [
+                                873,
+                                993,
+                                1304,
+                                1211
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        873,
+                                        993,
+                                        1304,
+                                        1211
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                873,
+                                                993,
+                                                1304,
+                                                1211
+                                            ],
+                                            "type": "image",
+                                            "image_path": "d510935cc0d8761fa06baf19d964adb43f7ed8fb0d2d37929e49ba32a7211db9.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 31,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 31
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        876,
+                        1263,
+                        1310,
+                        1427
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                876,
+                                1263,
+                                1310,
+                                1427
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        876,
+                                        1263,
+                                        1310,
+                                        1427
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                876,
+                                                1263,
+                                                1310,
+                                                1427
+                                            ],
+                                            "type": "image",
+                                            "image_path": "95eff00d2edd002c861f8bd9b5429c9af4a61c836f176bb3384383c6fa20afb6.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 32,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 32
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        876,
+                        1432,
+                        1310,
+                        1598
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                876,
+                                1432,
+                                1310,
+                                1598
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        876,
+                                        1432,
+                                        1310,
+                                        1598
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                876,
+                                                1432,
+                                                1310,
+                                                1598
+                                            ],
+                                            "type": "image",
+                                            "image_path": "707da2971ba3f9c4593c94da3e0051acba386b2e7649aa113347c469de0395c1.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 33,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 33
+                },
+                {
+                    "bbox": [
+                        1348,
+                        916,
+                        1525,
+                        943
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 34,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1351,
+                                915,
+                                1531,
+                                951
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1351,
+                                        915,
+                                        1531,
+                                        951
+                                    ],
+                                    "type": "text",
+                                    "content": "GeoReasoner",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1348,
+                        950,
+                        2244,
+                        999
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 35,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1351,
+                                950,
+                                2247,
+                                978
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1351,
+                                        950,
+                                        2247,
+                                        978
+                                    ],
+                                    "type": "text",
+                                    "content": "Comparison of Precision,RecallandF1scores in country-level and city-level geo-localization.",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1348,
+                                973,
+                                1965,
+                                1003
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1348,
+                                        973,
+                                        1965,
+                                        1003
+                                    ],
+                                    "type": "text",
+                                    "content": "*represents the model trained on high-locatability GSV images.",
+                                    "score": 0.967
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        1351,
+                        1006,
+                        2050,
+                        1160
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1351,
+                                1006,
+                                2050,
+                                1160
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1351,
+                                        1006,
+                                        2050,
+                                        1160
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1351,
+                                                1006,
+                                                2050,
+                                                1160
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=\"2\">Model</td><td colspan=\"4\">Country</td><td colspan=\"2\">City</td></tr><tr><td>Accuracy↑</td><td>Recall↑</td><td>F1↑</td><td>Accuracy↑</td><td>Recall↑</td><td>F1↑</td></tr><tr><td>StreetCLIP (Haas et al., 2023)</td><td>0.7943</td><td>1.00</td><td>0.8854</td><td>0.7457</td><td>1.00</td><td>0.8543</td></tr><tr><td>LLaVA (Liu et al., 2024)</td><td>0.4029</td><td>1.00</td><td>0.5744</td><td>0.2400</td><td>1.00</td><td>0.3871</td></tr><tr><td>Qwen-VL (Qwen-7B) (Bai et al., 2023a)</td><td>0.5829</td><td>0.95</td><td>0.7225</td><td>0.3743</td><td>0.89</td><td>0.5270</td></tr><tr><td>GPT-4V (Achiam et al., 2023)</td><td>0.8917</td><td>0.34</td><td>0.4923</td><td>0.5083</td><td>0.31</td><td>0.3851</td></tr><tr><td>ViT* (Dosovitskiy et al., 2021)</td><td>0.7100</td><td>1.00</td><td>0.8304</td><td>0.6762</td><td>1.00</td><td>0.8068</td></tr><tr><td>GeoReasoner*</td><td>0.8237</td><td>1.00</td><td>0.9033</td><td>0.7521</td><td>1.00</td><td>0.8585</td></tr></table>",
+                                            "image_path": "f72eff624779f088f3c76db1b56ef22d4b41fbef583031595785f94352d8ee13.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 36,
+                            "angle": 0,
+                            "type": "table_body"
+                        }
+                    ],
+                    "index": 36
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        1351,
+                        1200,
+                        2191,
+                        1341
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1351,
+                                1170,
+                                1691,
+                                1193
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1351,
+                                        1168,
+                                        1691,
+                                        1197
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1351,
+                                                1168,
+                                                1691,
+                                                1197
+                                            ],
+                                            "type": "text",
+                                            "content": "Results of theablationexperiments",
+                                            "score": 0.983
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 37,
+                            "angle": 0,
+                            "type": "table_caption"
+                        },
+                        {
+                            "bbox": [
+                                1351,
+                                1200,
+                                2191,
+                                1341
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1351,
+                                        1200,
+                                        2191,
+                                        1341
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1351,
+                                                1200,
+                                                2191,
+                                                1341
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=\"2\">Model</td><td colspan=\"2\">Training</td><td colspan=\"2\">Country</td><td colspan=\"4\">Performance</td></tr><tr><td>Reasoning</td><td>Location</td><td>Accuracy↑</td><td>Recall↑</td><td>F1↑</td><td>Accuracy↑</td><td>City Recall↑</td><td>F1↑</td></tr><tr><td>Qwen-VL (Qwen-7B)</td><td>-</td><td>-</td><td>0.5829</td><td>0.95</td><td>0.7225</td><td>0.3743</td><td>0.89</td><td>0.5270</td></tr><tr><td>GeoReasoner w/o location tuning</td><td>✓</td><td>×</td><td>0.6971</td><td>1.00</td><td>0.8215</td><td>0.4114</td><td>0.99</td><td>0.5813</td></tr><tr><td>GeoReasoner w/o reasoning tuning</td><td>×</td><td>✓</td><td>0.7803</td><td>1.00</td><td>0.8766</td><td>0.7029</td><td>1.00</td><td>0.8255</td></tr><tr><td>GeoReasoner</td><td>✓</td><td>✓</td><td>0.8237</td><td>1.00</td><td>0.9033</td><td>0.7521</td><td>1.00</td><td>0.8584</td></tr></table>",
+                                            "image_path": "60283c4043416f6d115df9bacbfe3ef5a057f9671e46ad4c4f65d11b2eefc829.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 38,
+                            "angle": 0,
+                            "type": "table_body"
+                        }
+                    ],
+                    "index": 38
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1359,
+                        1354,
+                        1440,
+                        1369
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1359,
+                                1354,
+                                1440,
+                                1369
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1359,
+                                        1354,
+                                        1440,
+                                        1369
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1359,
+                                                1354,
+                                                1440,
+                                                1369
+                                            ],
+                                            "type": "image",
+                                            "image_path": "573e99d22a5bb82cab2ddaedd0cae8a279a824d2ffb5ad675a7434081e49c1f4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 39,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 39
+                },
+                {
+                    "bbox": [
+                        1357,
+                        1374,
+                        2233,
+                        1389
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 40,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1354,
+                                1372,
+                                2230,
+                                1391
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1354,
+                                        1372,
+                                        2230,
+                                        1391
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1357,
+                        1394,
+                        1697,
+                        1596
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1357,
+                                1394,
+                                1697,
+                                1596
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1357,
+                                        1394,
+                                        1697,
+                                        1596
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1357,
+                                                1394,
+                                                1697,
+                                                1596
+                                            ],
+                                            "type": "image",
+                                            "image_path": "6b50888bc04c5a46fcfea96e2d9fc2e9a71856ec191f25def8ba2d66f9e19268.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 41,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 41
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1702,
+                        1422,
+                        1956,
+                        1497
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1702,
+                                1396,
+                                1956,
+                                1417
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1699,
+                                        1396,
+                                        1956,
+                                        1419
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1699,
+                                                1396,
+                                                1956,
+                                                1419
+                                            ],
+                                            "type": "text",
+                                            "content": "GroundTruth·country':China'·'city':'Lhasa'",
+                                            "score": 0.891
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 42,
+                            "angle": 0,
+                            "type": "image_caption"
+                        },
+                        {
+                            "bbox": [
+                                1702,
+                                1422,
+                                1956,
+                                1497
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1702,
+                                        1422,
+                                        1956,
+                                        1497
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1702,
+                                                1422,
+                                                1956,
+                                                1497
+                                            ],
+                                            "type": "image",
+                                            "image_path": "3a5823dbbe2735cf1f7068e47041e5f8d1b09ce78a403f8b99db5478d6d73af6.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 43,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 43
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        2161,
+                        1425,
+                        2236,
+                        1447
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                2161,
+                                1425,
+                                2236,
+                                1447
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2161,
+                                        1425,
+                                        2236,
+                                        1447
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2161,
+                                                1425,
+                                                2236,
+                                                1447
+                                            ],
+                                            "type": "image",
+                                            "image_path": "809eb442647ed4638638022b45394c0865bd2f1c29efb7fae8d08043e7a4e52d.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 44,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 44
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1710,
+                        1500,
+                        1766,
+                        1515
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1710,
+                                1500,
+                                1766,
+                                1515
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1710,
+                                        1500,
+                                        1766,
+                                        1515
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1710,
+                                                1500,
+                                                1766,
+                                                1515
+                                            ],
+                                            "type": "image",
+                                            "image_path": "2a7dc080825ff262675c976326f7de33f5e68b83e8b8cb7d77235957f8173b85.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 45,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 45
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1708,
+                        1518,
+                        1956,
+                        1593
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1708,
+                                1518,
+                                1956,
+                                1593
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1708,
+                                        1518,
+                                        1956,
+                                        1593
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1708,
+                                                1518,
+                                                1956,
+                                                1593
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8f35a70a9e884138b720f2044cac30f2521ca3d9630244854bcf01383c2730ca.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 46,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 46
+                },
+                {
+                    "bbox": [
+                        1984,
+                        1439,
+                        2227,
+                        1465
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 47,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1981,
+                                1440,
+                                2142,
+                                1455
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1981,
+                                        1440,
+                                        2142,
+                                        1455
+                                    ],
+                                    "type": "text",
+                                    "content": "·country':'China'·'city':'Lhasa'",
+                                    "score": 0.897
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1984,
+                                1454,
+                                2227,
+                                1467
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1984,
+                                        1454,
+                                        2227,
+                                        1467
+                                    ],
+                                    "type": "text",
+                                    "content": "reason':Themain square of Lhasa is themost famous squarein",
+                                    "score": 0.936
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1984,
+                        1465,
+                        2227,
+                        1490
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 48,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1984,
+                                1460,
+                                2139,
+                                1478
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1984,
+                                        1460,
+                                        2139,
+                                        1478
+                                    ],
+                                    "type": "text",
+                                    "content": "Lasanditioteo",
+                                    "score": 0.705
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        2158,
+                        1497,
+                        2236,
+                        1515
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                2158,
+                                1497,
+                                2236,
+                                1515
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2158,
+                                        1497,
+                                        2236,
+                                        1515
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2158,
+                                                1497,
+                                                2236,
+                                                1515
+                                            ],
+                                            "type": "image",
+                                            "image_path": "d8502da7bcd9a35dbb132479bc38c85d83e87f8e081eeeca9a8ceee6529f3218.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 49,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 49
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1981,
+                        1515,
+                        2230,
+                        1581
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1981,
+                                1515,
+                                2230,
+                                1581
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1981,
+                                        1515,
+                                        2230,
+                                        1581
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1981,
+                                                1515,
+                                                2230,
+                                                1581
+                                            ],
+                                            "type": "image",
+                                            "image_path": "c49f72683789fb0947d0a70b57d8d5eda6f1116fe4403bd65ce26fc3390eb510.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 50,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 50
+                },
+                {
+                    "bbox": [
+                        2343,
+                        842,
+                        2664,
+                        887
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 51,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2343,
+                                833,
+                                2670,
+                                896
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2343,
+                                        833,
+                                        2670,
+                                        896
+                                    ],
+                                    "type": "text",
+                                    "content": "Contributions",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2296,
+                        916,
+                        2700,
+                        1576
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 55,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                2296,
+                                916,
+                                2697,
+                                1115
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 52,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2302,
+                                        911,
+                                        2694,
+                                        955
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                911,
+                                                2694,
+                                                955
+                                            ],
+                                            "type": "text",
+                                            "content": "·We present a new paradigm",
+                                            "score": 0.998
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        950,
+                                        2614,
+                                        983
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                950,
+                                                2614,
+                                                983
+                                            ],
+                                            "type": "text",
+                                            "content": "that leveragesanLVLM",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        983,
+                                        2656,
+                                        1018
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                983,
+                                                2656,
+                                                1018
+                                            ],
+                                            "type": "text",
+                                            "content": "and external knowledge of",
+                                            "score": 0.968
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2305,
+                                        1016,
+                                        2570,
+                                        1047
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2305,
+                                                1016,
+                                                2570,
+                                                1047
+                                            ],
+                                            "type": "text",
+                                            "content": "human inference for",
+                                            "score": 0.973
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1046,
+                                        2705,
+                                        1085
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1046,
+                                                2705,
+                                                1085
+                                            ],
+                                            "type": "text",
+                                            "content": "geolocalization with reasoning",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1079,
+                                        2634,
+                                        1120
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1079,
+                                                2634,
+                                                1120
+                                            ],
+                                            "type": "text",
+                                            "content": "from street-view images.",
+                                            "score": 0.974
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2296,
+                                1147,
+                                2700,
+                                1347
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 53,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2305,
+                                        1144,
+                                        2703,
+                                        1183
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2305,
+                                                1144,
+                                                2703,
+                                                1183
+                                            ],
+                                            "type": "text",
+                                            "content": "·We introduce the concept of",
+                                            "score": 0.995
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1178,
+                                        2625,
+                                        1216
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1178,
+                                                2625,
+                                                1216
+                                            ],
+                                            "type": "text",
+                                            "content": "locatability and devise a",
+                                            "score": 0.974
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2305,
+                                        1213,
+                                        2606,
+                                        1246
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2305,
+                                                1213,
+                                                2606,
+                                                1246
+                                            ],
+                                            "type": "text",
+                                            "content": "CLIP-based network to",
+                                            "score": 0.985
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1246,
+                                        2603,
+                                        1283
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1246,
+                                                2603,
+                                                1283
+                                            ],
+                                            "type": "text",
+                                            "content": "quantify the degree of",
+                                            "score": 0.959
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1279,
+                                        2636,
+                                        1314
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1279,
+                                                2636,
+                                                1314
+                                            ],
+                                            "type": "text",
+                                            "content": "locatability in street-view",
+                                            "score": 0.983
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1311,
+                                        2415,
+                                        1354
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1311,
+                                                2415,
+                                                1354
+                                            ],
+                                            "type": "text",
+                                            "content": "images.",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2296,
+                                1379,
+                                2689,
+                                1576
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 54,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1376,
+                                        2678,
+                                        1419
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1376,
+                                                2678,
+                                                1419
+                                            ],
+                                            "type": "text",
+                                            "content": "·We propose GeoReasoner,",
+                                            "score": 0.993
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1410,
+                                        2650,
+                                        1449
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1410,
+                                                2650,
+                                                1449
+                                            ],
+                                            "type": "text",
+                                            "content": "an LVLM that outperforms",
+                                            "score": 0.958
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1445,
+                                        2628,
+                                        1482
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1445,
+                                                2628,
+                                                1482
+                                            ],
+                                            "type": "text",
+                                            "content": "existing geo-localization",
+                                            "score": 0.995
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1478,
+                                        2692,
+                                        1512
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1478,
+                                                2692,
+                                                1512
+                                            ],
+                                            "type": "text",
+                                            "content": "modelsand providesdetailed",
+                                            "score": 0.99
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1513,
+                                        2639,
+                                        1543
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1513,
+                                                2639,
+                                                1543
+                                            ],
+                                            "type": "text",
+                                            "content": "reasoningforthe inferred",
+                                            "score": 0.99
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2302,
+                                        1546,
+                                        2407,
+                                        1578
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2302,
+                                                1546,
+                                                2407,
+                                                1578
+                                            ],
+                                            "type": "text",
+                                            "content": "results.",
+                                            "score": 0.999
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        41,
+                        28,
+                        138,
+                        180
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                66,
+                                149,
+                                190
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        66,
+                                        149,
+                                        190
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        149,
+                        31,
+                        503,
+                        67
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                149,
+                                29,
+                                511,
+                                72
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        149,
+                                        29,
+                                        511,
+                                        72
+                                    ],
+                                    "type": "text",
+                                    "content": "香港科技大学(广州)",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        152,
+                        74,
+                        414,
+                        104
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                152,
+                                67,
+                                417,
+                                109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        152,
+                                        67,
+                                        417,
+                                        109
+                                    ],
+                                    "type": "text",
+                                    "content": "THE HONG KONG",
+                                    "score": 0.974
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        152,
+                        111,
+                        591,
+                        140
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                152,
+                                104,
+                                594,
+                                147
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        152,
+                                        104,
+                                        594,
+                                        147
+                                    ],
+                                    "type": "text",
+                                    "content": "UNIVERSITY OF SCIENCE AND",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        152,
+                        147,
+                        591,
+                        177
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                154,
+                                142,
+                                597,
+                                184
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        154,
+                                        142,
+                                        597,
+                                        184
+                                    ],
+                                    "type": "text",
+                                    "content": "TECHNOLOGY (GUANGZHOU)",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        632,
+                        21,
+                        2200,
+                        140
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                632,
+                                14,
+                                2208,
+                                81
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        632,
+                                        14,
+                                        2208,
+                                        81
+                                    ],
+                                    "type": "text",
+                                    "content": "GeoReasoner: Geo-localization with Reasoning in Street Views",
+                                    "score": 0.98
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                939,
+                                77,
+                                1898,
+                                142
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        939,
+                                        77,
+                                        1898,
+                                        142
+                                    ],
+                                    "type": "text",
+                                    "content": "using a Large Vision-Language Model",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1025,
+                        160,
+                        1810,
+                        208
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1025,
+                                154,
+                                1815,
+                                217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1025,
+                                        154,
+                                        1815,
+                                        217
+                                    ],
+                                    "type": "text",
+                                    "content": "Ling Li, Yu Ye, Bingchuan Jiang,Wei Zeng",
+                                    "score": 0.973
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2255,
+                        19,
+                        2412,
+                        177
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2258,
+                                14,
+                                2412,
+                                149
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2258,
+                                        14,
+                                        2412,
+                                        129
+                                    ],
+                                    "type": "text",
+                                    "content": ":3",
+                                    "score": 0.598
+                                },
+                                {
+                                    "bbox": [
+                                        2346,
+                                        96,
+                                        2363,
+                                        149
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2435,
+                        28,
+                        2711,
+                        112
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2429,
+                                26,
+                                2714,
+                                121
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2429,
+                                        26,
+                                        2714,
+                                        121
+                                    ],
+                                    "type": "text",
+                                    "content": "ICML",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2437,
+                        121,
+                        2711,
+                        145
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2437,
+                                117,
+                                2711,
+                                152
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2437,
+                                        117,
+                                        2711,
+                                        152
+                                    ],
+                                    "type": "text",
+                                    "content": "International Conference",
+                                    "score": 0.992
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2437,
+                        149,
+                        2672,
+                        174
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2437,
+                                142,
+                                2675,
+                                180
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2437,
+                                        142,
+                                        2675,
+                                        180
+                                    ],
+                                    "type": "text",
+                                    "content": "On Machine Learning",
+                                    "score": 0.975
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "page_size": [
+                2764,
+                1658
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

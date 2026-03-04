@@ -1,0 +1,700 @@
+[
+  {
+    "type": "text",
+    "text": "Input-gradient space particle inference for neural network ensembles ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      40,
+      498,
+      74
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Trung Trinh1,Markus Heinonen1,LuigiAcerbi2,Samuel Kaski1.3 ",
+    "bbox": [
+      19,
+      81,
+      211,
+      97
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1Aalto University,2Helsinki University，University of Manchester ",
+    "bbox": [
+      21,
+      98,
+      196,
+      112
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "{trung.trinh,markus.o.heinonen,samuel.kaski@aalto.fi,luigi.acerbi@helsinki.fi ",
+    "bbox": [
+      21,
+      113,
+      235,
+      128
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      20,
+      165,
+      64,
+      185
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "TL;DR:We learn an ensemble of neural networks that is diverse with respect to their input gradients. ",
+    "bbox": [
+      20,
+      201,
+      233,
+      236
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      19,
+      259,
+      190,
+      283
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Description: Train an ensemble $\\{ \\pmb { \\theta } _ { i } \\} _ { i = 1 } ^ { M }$ using Wasserstein gradient descent [2], which employsa kernelized repulsion term to diversify the particles to cover the Bayes posterior $p ( \\boldsymbol { \\theta } | \\mathcal { D } )$ ",
+    "bbox": [
+      19,
+      290,
+      238,
+      344
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      17,
+      353,
+      240,
+      437
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·The driving force directs the particles towards high density regions of the posterior. ",
+      "·The repulsion force pushes the particles away from each other to enforce diversity. "
+    ],
+    "bbox": [
+      19,
+      446,
+      223,
+      514
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Problem: It is unclear how to define the repulsion term for neural networks: ",
+    "bbox": [
+      19,
+      526,
+      224,
+      541
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·weight-spacerepulsion is ineffectivedue to overparameterization. ",
+      "·function-spacerepulsion often results in underfiting. "
+    ],
+    "bbox": [
+      20,
+      545,
+      201,
+      577
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      19,
+      601,
+      175,
+      624
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Givena base kernel K,we define the kernel in the input-gradient space fora minidatcoftraningsampfe $B = \\{ ( \\mathbf { x } _ { b } , y _ { b } ) \\} _ { b = 1 } ^ { B }$ asfolwvsn ",
+    "bbox": [
+      19,
+      647,
+      227,
+      683
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      26,
+      691,
+      219,
+      804
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We choose the RBF kernel ona unit sphere as the base kernel K: ",
+    "bbox": [
+      19,
+      830,
+      200,
+      845
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      19,
+      873,
+      240,
+      958
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      266,
+      164,
+      481,
+      188
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      267,
+      210,
+      478,
+      394
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      267,
+      421,
+      330,
+      436
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Each member is guaranteed to represent a diferent function; ",
+      "·The issues of weight-and function-space repulsion are avoided; ",
+      "·Each member is encouraged to learn different features,which can improve robustness. "
+    ],
+    "bbox": [
+      266,
+      439,
+      473,
+      513
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      512,
+      165,
+      615,
+      187
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      514,
+      210,
+      731,
+      311
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      514,
+      335,
+      731,
+      442
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Fora1D regression task(above) anda2D classification task(below),FoRDEs capture higher uncertainty than baselines in all regions outside of the training data. For the 2D classification task,we visualize the entropy of the predictive posteriors. ",
+    "bbox": [
+      511,
+      456,
+      725,
+      506
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      266,
+      541,
+      339,
+      564
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1. Input-gradient-space repulsion can perform better than weight- and function-space repulsion. ",
+      "2.Betercoruptionrobustnesscanbeachievedbyconfiguringtherepulsionkernelusingtheeigendecompositionoftetrainingdata "
+    ],
+    "bbox": [
+      267,
+      579,
+      719,
+      628
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      266,
+      669,
+      372,
+      691
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Table1:FoRDE-PCA achieves the best performance under corruptions while FoRDE-Identity outperforms baselines oncleandata.FoRDE-Tuned outperformsbaselines on both clean and corrupted data.Results of REsNET18/CIFAR-1OO averagedover5seeds.Each ensemble has 10 members.cA,cNLL and cECE areaccuracy,NLL,and ECE onCIFAR-100-C. ",
+    "bbox": [
+      264,
+      715,
+      487,
+      766
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>METHOD</td><td>NLL ↓</td><td>ACCURACY (%) ↑</td><td>ECE ↓</td><td>CA / CNLL / CECE</td></tr><tr><td>DEEP ENSEMBLES</td><td>0.70±0.00</td><td>81.8±0.2</td><td>0.041±0.003</td><td>54.3 / 1.99 / 0.05</td></tr><tr><td>WEIGHT-RDE</td><td>0.70±0.01</td><td>81.7±0.3</td><td>0.043±0.004</td><td>54.2 / 2.01 / 0.06</td></tr><tr><td>FUNCTION-RDE</td><td>0.76±0.02</td><td>80.1±0.4</td><td>0.042±0.005</td><td>51.9 / 2.08 / 0.07</td></tr><tr><td>FORDE-PCA (OURS)</td><td>0.71±0.00</td><td>81.4±0.2</td><td>0.039±0.002</td><td>56.1 / 1.90 / 0.05</td></tr><tr><td>FORDE-IDENTITY (OURS)</td><td>0.70±0.00</td><td>82.1±0.2</td><td>0.043±0.001</td><td>54.1 / 2.02 / 0.05</td></tr><tr><td>FORDE-TUNED (OURS)</td><td>0.70±0.00</td><td>82.1±0.2</td><td>0.044±0.002</td><td>55.3 / 1.94 / 0.05</td></tr></table>",
+    "bbox": [
+      277,
+      775,
+      473,
+      863
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Table2:FoRDE-PCA achieves the best performance under corruptions while FoRDE-Identity has the best NLL onclean data.FoRDE-Tuned outperformsmost baselines on both cleanand corrupted data.Results of REsNET18/CIFAR-1O averaged over5seeds.Each ensemblehas10 members.cA,cNLLand cECE are accuracy,NLL,andECE onCIFAR-10-C. ",
+    "bbox": [
+      510,
+      716,
+      733,
+      767
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/tables/table_2.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>METHOD</td><td>NLL ↓</td><td>ACCURACY (%) ↑</td><td>ECE ↓</td><td>CA / CNLL / CECE</td></tr><tr><td>DEEP ENSEMBLES</td><td>0.117±0.001</td><td>96.3±0.1</td><td>0.005±0.001</td><td>78.1 / 0.78 / 0.08</td></tr><tr><td>WEIGHT-RDE</td><td>0.117±0.002</td><td>96.2±0.1</td><td>0.005±0.001</td><td>78.0 / 0.78 / 0.08</td></tr><tr><td>FUNCTION-RDE</td><td>0.128±0.001</td><td>95.8±0.2</td><td>0.006±0.001</td><td>77.1 / 0.81 / 0.08</td></tr><tr><td>FEATURE-RDE</td><td>0.116±0.001</td><td>96.4±0.1</td><td>0.004±0.001</td><td>78.1 / 0.77 / 0.08</td></tr><tr><td>FORDE-PCA (OURS)</td><td>0.125±0.001</td><td>96.1±0.1</td><td>0.006±0.001</td><td>80.5 / 0.71 / 0.07</td></tr><tr><td>FORDE-IDENTITY (OURS)</td><td>0.113±0.002</td><td>96.3±0.1</td><td>0.005±0.001</td><td>78.0 / 0.80 / 0.08</td></tr><tr><td>FORDE-TUNED (OURS)</td><td>0.114±0.002</td><td>96.4±0.1</td><td>0.005±0.001</td><td>79.1 / 0.74 / 0.07</td></tr></table>",
+    "bbox": [
+      522,
+      776,
+      719,
+      869
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      262,
+      931,
+      295,
+      945
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      757,
+      165,
+      874,
+      188
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Each lengthscale is inversely proportional to the strength of the repulsion force in the corresponding input dimension. ",
+    "bbox": [
+      756,
+      206,
+      970,
+      240
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      785,
+      249,
+      972,
+      321
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Proposition: One should apply strong forces in high-variance dimensions ",
+    "bbox": [
+      761,
+      347,
+      966,
+      399
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "In high-variance data dimensions,distances between datapointsare large,which lead tomorein-between uncertainty→we canapply strongrepulsion force to push the input gradients faraway fromeach other. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      784,
+      402,
+      837,
+      474
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "In low-variance data dimension,data points lie close to eachother，leading to less in-between uncertainty→we need to use weakrepulsion force. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      883,
+      421,
+      941,
+      474
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·UsePCAtogetegenvasandeigenvectorsofterainigata $\\{ \\mathfrak { a } _ { d } , \\lambda _ { d } \\} _ { d = 1 } ^ { D }$ ",
+      "·Define the base kernel: "
+    ],
+    "bbox": [
+      757,
+      548,
+      984,
+      582
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\kappa_ {\\mathrm {P C A}} (\\mathbf {s}, \\mathbf {s} ^ {\\prime}; \\boldsymbol {\\Sigma} _ {\\alpha}) = \\exp \\left(- \\frac {1}{2 h} \\left(\\mathbf {U} ^ {\\top} \\mathbf {s} - \\mathbf {U} ^ {\\top} \\mathbf {s} ^ {\\prime}\\right) ^ {\\top} \\boldsymbol {\\Sigma} _ {\\alpha} ^ {- 1} \\left(\\mathbf {U} ^ {\\top} \\mathbf {s} - \\mathbf {U} ^ {\\top} \\mathbf {s} ^ {\\prime}\\right)\\right)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      761,
+      584,
+      984,
+      627
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "$\\mathbb { U } = \\lceil \\mathbb { u } _ { 1 } \\rceil \\mathbb { U } _ { 2 } , \\cdots \\mathbb { U } _ { D } \\rceil$ is a matrix containing the eigenvectors as columns. ",
+    "bbox": [
+      761,
+      633,
+      966,
+      649
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "${ \\boldsymbol { \\Sigma } } _ { \\alpha } ^ { - 1 } = ( 1 - \\alpha ) \\mathbf { I } + \\alpha { \\boldsymbol { \\Lambda } }$ whereAisadiagonal matrixcontaining theeigenvalues. ",
+    "bbox": [
+      761,
+      649,
+      980,
+      665
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      757,
+      680,
+      899,
+      703
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Input-gradient space particle inference for neural network ensembles_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      756,
+      713,
+      976,
+      853
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Blue lines show accuracies of FoRDEs,while dotted orange lines showaccuracies of Deep ensembles. ",
+      "·When moving from the identity lengthscale Ito the PCA lengthscalesA ",
+      "·FoRDEs exhibit small performance degradationson clean images of CIFAR-100; ",
+      "·while becomesmore robustagainst the natural corruptions of ClFAR-100-C. "
+    ],
+    "bbox": [
+      757,
+      878,
+      985,
+      951
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      522,
+      23,
+      575,
+      127
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "A? ",
+    "bbox": [
+      601,
+      37,
+      651,
+      101
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Aalto-yliopisto ",
+    "bbox": [
+      601,
+      108,
+      649,
+      124
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      667,
+      23,
+      714,
+      107
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "HELSINGINYLIOPISTO ",
+    "bbox": [
+      664,
+      112,
+      716,
+      124
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "MANCHESTER 1824 ",
+    "bbox": [
+      731,
+      52,
+      818,
+      94
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      729,
+      101,
+      821,
+      118
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      836,
+      34,
+      884,
+      111
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICLR ",
+    "bbox": [
+      893,
+      48,
+      974,
+      95
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "[1FDAges ",
+    "bbox": [
+      261,
+      947,
+      629,
+      962
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "C ",
+    "bbox": [
+      262,
+      963,
+      678,
+      978
+    ],
+    "page_idx": 0
+  }
+]

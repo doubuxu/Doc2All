@@ -26,6 +26,7 @@ def transform(content_list:json) -> json:
                 "figures" : []
             }
     title=False
+    metadata={}
     for index,element in enumerate(content_list):
         #遇到一个新的section标题，说明上一个section的内容已经扫完，可以加入sections
         if element["type"] == "text" and  element.get("text_level") == 1: 
@@ -82,7 +83,7 @@ def transform(content_list:json) -> json:
         "metadata" : metadata,
         "sections": sections
     }
-    print(content_plan)
+    #print(content_plan)
     return content_plan
 if __name__=="__main__" :
     content_list=[

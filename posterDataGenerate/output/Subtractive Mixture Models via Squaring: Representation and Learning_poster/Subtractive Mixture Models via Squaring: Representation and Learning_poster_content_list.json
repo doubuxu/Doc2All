@@ -1,0 +1,925 @@
+[
+  {
+    "type": "text",
+    "text": "Subtractive Mixture Models via Squaring: ",
+    "text_level": 1,
+    "bbox": [
+      15,
+      22,
+      542,
+      84
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Representation and Learning ",
+    "text_level": 1,
+    "bbox": [
+      16,
+      87,
+      390,
+      149
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Lorenzo Loconte ",
+    "bbox": [
+      412,
+      114,
+      463,
+      128
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "University of Edinburgh,UK ",
+    "bbox": [
+      412,
+      130,
+      489,
+      147
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "AleksanteriM.Sladek ",
+    "bbox": [
+      503,
+      114,
+      568,
+      128
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Aalto University,Fl ",
+    "bbox": [
+      503,
+      130,
+      555,
+      147
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Stefan Mengel ",
+    "bbox": [
+      580,
+      114,
+      626,
+      129
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "University of Artois,CNRS,CRIL,FR ",
+    "bbox": [
+      581,
+      130,
+      678,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      718,
+      12,
+      760,
+      95
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Aalto University "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      780,
+      21,
+      813,
+      70
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "UNIVERSITE D'ARTOIS "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      858,
+      20,
+      905,
+      69
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      ""
+    ],
+    "image_footnote": [],
+    "bbox": [
+      916,
+      25,
+      981,
+      62
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Mixture models ",
+    "text_level": 1,
+    "bbox": [
+      9,
+      191,
+      106,
+      218
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\np (\\mathbf {X}) = \\sum_ {i = 1} ^ {K} w _ {i} p _ {i} (\\mathbf {X}) \\quad \\text {s u b j e c t t o} \\quad w _ {i} \\geq 0 \\quad \\sum_ {i = 1} ^ {K} w _ {i} = 1\n$$",
+    "text_format": "latex",
+    "bbox": [
+      7,
+      227,
+      200,
+      283
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      16,
+      293,
+      132,
+      384
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "X components can only beadded together! ",
+    "bbox": [
+      142,
+      316,
+      231,
+      357
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Ground Truth "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      10,
+      405,
+      61,
+      502
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "w1N1+w2N2 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      67,
+      405,
+      118,
+      502
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "wiNi+...wKNK "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      125,
+      405,
+      176,
+      502
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "N1-w2N2 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      183,
+      405,
+      234,
+      502
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Fewer components with subtractions ",
+    "bbox": [
+      9,
+      526,
+      186,
+      550
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Questions? ",
+    "text_level": 1,
+    "bbox": [
+      9,
+      625,
+      63,
+      651
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "...Contributions! ",
+    "bbox": [
+      99,
+      625,
+      179,
+      649
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      181,
+      623,
+      237,
+      654
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1 How to learn subtractive mixture models? ",
+    "text_level": 1,
+    "bbox": [
+      13,
+      666,
+      229,
+      692
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\np (\\mathbf {X}) = \\sum_ {i = 1} ^ {K} w _ {i} p _ {i} (\\mathbf {X}) \\quad w _ {i} \\in \\mathbb {R}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      27,
+      699,
+      146,
+      754
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "How to ensure $p ( \\mathbf { X } )$ is non-negative? ",
+    "bbox": [
+      28,
+      756,
+      152,
+      775
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\Longrightarrow$ Impose ad-hoc constraints over the parameters ",
+    "bbox": [
+      29,
+      779,
+      200,
+      797
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\times$ challenging to derive in closed-form [1][2][3] ",
+    "bbox": [
+      44,
+      800,
+      198,
+      820
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2How much more expressive are they? ",
+    "text_level": 1,
+    "bbox": [
+      13,
+      843,
+      206,
+      870
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "with respect to traditional additive-only mixtures ",
+    "bbox": [
+      28,
+      871,
+      188,
+      889
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3What is their relationship with other models? ",
+    "text_level": 1,
+    "bbox": [
+      13,
+      913,
+      245,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "understanding why they are expressive... ",
+    "bbox": [
+      29,
+      942,
+      165,
+      959
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "... and why they support tractable inference ",
+    "bbox": [
+      28,
+      962,
+      172,
+      980
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "TL \"We learn exponentially more expressive mixture models DR with subtractions, by squaring deep tensorized mixtures\" ",
+    "text_level": 1,
+    "bbox": [
+      265,
+      201,
+      738,
+      279
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Learning deep subtractive mixtures by squaring layers of a deep circuit ",
+    "bbox": [
+      290,
+      353,
+      368,
+      463
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      390,
+      330,
+      713,
+      487
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Arno Solin ",
+    "bbox": [
+      759,
+      115,
+      791,
+      129
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Aalto University,Fl ",
+    "bbox": [
+      759,
+      131,
+      810,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Nicolas Gillis ",
+    "bbox": [
+      825,
+      115,
+      864,
+      128
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Université de Mons, BE ",
+    "bbox": [
+      826,
+      130,
+      889,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Antonio Vergari ",
+    "bbox": [
+      905,
+      115,
+      952,
+      129
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "University of Edinburgh, UK ",
+    "bbox": [
+      905,
+      131,
+      981,
+      147
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "Born machines [6] "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      764,
+      199,
+      829,
+      314
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      837,
+      204,
+      984,
+      332
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} p (\\mathbf {x}) \\propto \\kappa (\\mathbf {x}) ^ {\\top} \\mathbf {A} \\kappa (\\mathbf {x}) \\\\ \\text {P S D m o d e l s [ 7 ]} \\end{array} \\Rightarrow \\sum \\left(\\bigcirc\\right) ^ {2}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      763,
+      352,
+      924,
+      400
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "3 Understanding the expressiveness of other models in a unifying framework ",
+    "text_level": 1,
+    "bbox": [
+      765,
+      407,
+      973,
+      462
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1 Squaring mixtures... ",
+    "text_level": 1,
+    "bbox": [
+      287,
+      547,
+      409,
+      579
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\np (\\mathbf {X}) \\propto \\left(\\sum_ {i = 1} ^ {K} w _ {i} \\boldsymbol {p} _ {i} (\\mathbf {X})\\right) ^ {2} = \\sum_ {i = 1} ^ {K} \\sum_ {j = 1} ^ {K} w _ {i} w _ {j} \\boldsymbol {p} _ {i} (\\mathbf {X}) \\boldsymbol {p} _ {j} (\\mathbf {X})\n$$",
+    "text_format": "latex",
+    "bbox": [
+      284,
+      582,
+      484,
+      653
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Renormalization: ",
+    "bbox": [
+      285,
+      674,
+      343,
+      690
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nZ = \\sum_ {i = 1} ^ {K} \\sum_ {j = 1} ^ {K} w _ {i} w _ {j} \\int p _ {i} (\\mathrm {X}) p _ {j} (\\mathrm {X}) \\mathrm {d X}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      286,
+      698,
+      420,
+      755
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      424,
+      680,
+      490,
+      768
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Tractable marginalization is supported by exponential families [2] and splines components ",
+    "bbox": [
+      284,
+      771,
+      444,
+      811
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_15.jpg",
+    "image_caption": [
+      "... by squaring circuits "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      290,
+      835,
+      466,
+      926
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_16.jpg",
+    "image_caption": [
+      "Build deep mixtures with layers as \"Lego blocks\" "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      544,
+      549,
+      691,
+      639
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theorem.exponential separation [4][5] ",
+    "text_level": 1,
+    "bbox": [
+      555,
+      741,
+      687,
+      757
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2 Thereisesftisasas $\\mathcal { F }$ sverermiles X that catbe weights，but the smallest structured decomposable additive-only mixture of any depth computing any $F \\in { \\mathcal { F } }$ has size 22(|Xl). ",
+    "bbox": [
+      532,
+      760,
+      704,
+      818
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Deep additive-only mixtures ",
+    "bbox": [
+      534,
+      831,
+      627,
+      848
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_17.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      545,
+      859,
+      619,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_18.jpg",
+    "image_caption": [
+      "Squared subtractive mixture model "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      660,
+      907,
+      695,
+      947
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      763,
+      535,
+      774,
+      715
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_19.jpg",
+    "image_caption": [
+      "Power "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      807,
+      538,
+      956,
+      620
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_20.jpg",
+    "image_caption": [
+      "MiniBooNE BSDS300 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      807,
+      645,
+      956,
+      725
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      764,
+      760,
+      789,
+      864
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_21.jpg",
+    "image_caption": [
+      "LL Training data "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      807,
+      772,
+      873,
+      865
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Subtractive Mixture Models via Squaring: Representation and Learning_poster/visuals/images/fig_22.jpg",
+    "image_caption": [
+      "LL Testdata "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      891,
+      772,
+      955,
+      865
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      763,
+      889,
+      795,
+      904
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[1] B. Zhang and C. Zhang.“Finite mixture models with negative components*. In: MLDM.Springer.20O5, pp. 31-41. ",
+    "bbox": [
+      763,
+      906,
+      913,
+      916
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[2]G. RabusseauandF.Denis.Learingnegativemiuremodels bytensordecompositions.Inaivpreprintiv4.42242014) ",
+    "bbox": [
+      763,
+      916,
+      939,
+      925
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "] ",
+    "bbox": [
+      763,
+      925,
+      984,
+      935
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "4]J.MartensandVMedabalii.“Ontheexpresiveefiencyofsmprodutnetworksn:ivrepriniv:14.77(014) ",
+    "bbox": [
+      763,
+      935,
+      933,
+      944
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[5]A.de Colnet andS.Mengel.\"A CompilationofSuccinctnessResults for ArithmeticCircuits,In: KR.2021,pp.205-215. ",
+    "bbox": [
+      763,
+      945,
+      921,
+      955
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "6]se ",
+    "bbox": [
+      763,
+      956,
+      965,
+      965
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[7]ARuiadCepeseaiotieobbiels.N.tes942 ",
+    "bbox": [
+      763,
+      965,
+      948,
+      974
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      763,
+      975,
+      987,
+      985
+    ],
+    "page_idx": 0
+  }
+]

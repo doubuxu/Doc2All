@@ -1,0 +1,294 @@
+[
+  {
+    "type": "text",
+    "text": "InfinityGAN: Towards Infinite-Pixel Image Synthesis ",
+    "text_level": 1,
+    "bbox": [
+      27,
+      25,
+      632,
+      76
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Chieh Hubert Lin1Hsin-Ying Lee²Yen-Chi Cheng³Sergey Tulyakov2Ming-Hsuan Yang1.4.5 ",
+    "bbox": [
+      27,
+      81,
+      527,
+      106
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "lUC Merced²Snap Research3CMU4Google Research’5Yonsei University ",
+    "bbox": [
+      29,
+      108,
+      453,
+      132
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "TL;DR We tackle the problem of synthesizing images at arbitrarily sizes, up to infinitely large. ",
+    "bbox": [
+      30,
+      146,
+      496,
+      170
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Synthesizing infinite-pixel images from finite-sized training data. ",
+    "text_level": 1,
+    "bbox": [
+      24,
+      202,
+      299,
+      223
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A1024×2048 image composedof 242 patches,independently synthesizedby InfinityGAN with spatial fusion of two styles.Thegenerator is trainedon101x101patches (e.g.,marked intop-left)sampled from197×197realimages.Note that training and inference (of any size) are performed on a single GTX TITAN X GPU. ",
+    "bbox": [
+      23,
+      238,
+      393,
+      288
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      23,
+      300,
+      402,
+      667
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      18,
+      698,
+      409,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/tables/table_1.jpg",
+    "table_caption": [
+      "Without carefully taming the positional information in the generator, other frameworks cannot generalize to extended image sizes at testing. ",
+      "Weshowthat the two sets oflatent variables learn different and diverse appearances. "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td></td><td>COCO-GAN</td><td>SinGAN</td><td>StyleGAN+NCI</td><td>InfinityGAN (ours)</td></tr><tr><td rowspan=\"2\">Generated Full Image</td><td>128×128</td><td>128×128</td><td>128×128</td><td>197×197</td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td>1024×1024</td><td></td><td></td><td></td><td></td></tr></table>",
+    "bbox": [
+      426,
+      251,
+      752,
+      500
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      778,
+      256,
+      982,
+      502
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "InfinityGAN $^ +$ GAN-inversion (In&Out $\\textcircled{4}$ CVPR'22) $=$ Seamless and arbitrarily-length image outpainting / inbetweening "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      434,
+      565,
+      640,
+      729
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      661,
+      560,
+      980,
+      734
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "More samples from models trained at higherresolution settings. ",
+    "bbox": [
+      428,
+      770,
+      509,
+      853
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A 256x10240 image ",
+    "bbox": [
+      431,
+      887,
+      505,
+      929
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      519,
+      760,
+      718,
+      936
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      721,
+      760,
+      818,
+      935
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      821,
+      760,
+      920,
+      936
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/InfinityGAN: Towards Infinite-Pixel Image Synthesis_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      936,
+      755,
+      984,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "... OF A 7 LE LIGHT L E THEREB . '2005' ",
+    "bbox": [
+      644,
+      26,
+      709,
+      147
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Carnegie Mellon University ",
+    "bbox": [
+      718,
+      57,
+      772,
+      116
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "UNIVERS 1885 公",
+    "bbox": [
+      786,
+      28,
+      846,
+      143
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      856,
+      28,
+      920,
+      140
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "0 ",
+    "bbox": [
+      924,
+      28,
+      988,
+      147
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      0,
+      955,
+      1000,
+      1000
+    ],
+    "page_idx": 0
+  }
+]

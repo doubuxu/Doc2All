@@ -1,0 +1,916 @@
+[
+  {
+    "type": "text",
+    "text": "CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing ",
+    "text_level": 1,
+    "bbox": [
+      86,
+      16,
+      656,
+      90
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Fan Wu1,Linyi Li1,Zijian Huang1,Yevgeniy Vorobeychik², Ding Zhao³,Bo Li1 ",
+    "bbox": [
+      46,
+      102,
+      359,
+      120
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1Universityof Ilinois at Urbana-Champaign ²Washington Universityin St.Louis3Carnegie Mellon University ",
+    "bbox": [
+      48,
+      120,
+      448,
+      136
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Background & Motivation ",
+    "text_level": 1,
+    "bbox": [
+      49,
+      162,
+      194,
+      184
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Testing and improving the robustness of safety-critical applications before their massive deployment to real-world is of great importance. ",
+      "Robustness certification for a given learning algorithm is needed to end the repeated game between theattackersand defenders. "
+    ],
+    "bbox": [
+      49,
+      189,
+      310,
+      258
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Threat Model ",
+    "text_level": 1,
+    "bbox": [
+      49,
+      270,
+      127,
+      290
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Testing-time evasion attack on agent's observation ",
+    "bbox": [
+      49,
+      297,
+      256,
+      314
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Adversary can apply $\\ell _ { 2 }$ -bounded perturbations $B ^ { \\varepsilon } = \\{ \\delta \\in \\mathbb { R } ^ { n } \\| \\| \\delta \\| _ { 2 } \\leq \\varepsilon \\}$ to input state observations of the agent ",
+    "bbox": [
+      48,
+      322,
+      316,
+      357
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      47,
+      368,
+      324,
+      589
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Certification Goal ",
+    "text_level": 1,
+    "bbox": [
+      49,
+      607,
+      151,
+      628
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Provide test-time certification for the performance of the trained agent in the perturbed environment ",
+    "bbox": [
+      48,
+      638,
+      306,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.Providing criteria for robustness certification ",
+      "2.Proposing certification strategies corresponding to different certification criteria "
+    ],
+    "bbox": [
+      49,
+      680,
+      317,
+      729
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Certification Criteria ",
+    "text_level": 1,
+    "bbox": [
+      48,
+      744,
+      163,
+      763
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Criterion 1 (state-level): Per-state action stability ",
+    "bbox": [
+      49,
+      772,
+      248,
+      790
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Maximum Perturbation Magnitude $\\bar { \\varepsilon }$ ",
+    "bbox": [
+      49,
+      794,
+      184,
+      808
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\pi (s + \\delta) = \\pi (s), \\forall \\delta \\in \\mathcal {B} ^ {\\varepsilon}, \\text {w h e r e} \\mathcal {B} ^ {\\varepsilon} = \\left\\{\\delta \\in \\mathbb {R} ^ {n} \\mid \\| \\delta \\| _ {2} \\leq \\varepsilon \\right\\}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      70,
+      809,
+      282,
+      825
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "i.e., the policy produces the same action on state s with or without perturbation. ",
+    "bbox": [
+      48,
+      827,
+      315,
+      842
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Criterion 2 (trajectory-level): Cumulative reward lower bound ",
+    "bbox": [
+      49,
+      849,
+      298,
+      865
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "perturbed cumulative reward $J _ { \\varepsilon } ( \\pi )$ ",
+    "bbox": [
+      49,
+      870,
+      178,
+      886
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nJ _ {\\varepsilon} (\\pi) := \\sum_ {t = 0} ^ {\\infty} \\gamma^ {t} R \\left(s _ {t}, \\pi \\left(s _ {t} + \\delta_ {t}\\right)\\right)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      81,
+      891,
+      166,
+      921
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\text {w h e r e} s _ {t + 1} \\sim P \\left(s _ {t}, \\pi \\left(s _ {t} + \\delta_ {t}\\right)\\right), s _ {0} \\sim d _ {0}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      60,
+      923,
+      167,
+      935
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Lowerboundofperturbed cumulative reward $\\_$ : with perturbations at every step bounded by $B ^ { \\varepsilon }$ ,we have $\\underline { { J } } \\leq J _ { \\varepsilon } ( \\pi )$ ",
+    "bbox": [
+      188,
+      871,
+      316,
+      935
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "CROP Framework ",
+    "text_level": 1,
+    "bbox": [
+      373,
+      162,
+      485,
+      182
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Per-State Action Certification ",
+    "text_level": 1,
+    "bbox": [
+      371,
+      190,
+      539,
+      210
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "CROP-LoAct: Local randomized smoothing on states ",
+    "bbox": [
+      371,
+      217,
+      589,
+      234
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Action-value functional smoothing ",
+    "bbox": [
+      371,
+      237,
+      493,
+      252
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$Q ^ { \\pi } : S \\times A  [ V _ { \\operatorname* { m i n } } , V _ { \\operatorname* { m a x } } ]$ ，then",
+    "bbox": [
+      372,
+      253,
+      512,
+      270
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "smoothed value function: $\\widetilde { Q } ^ { \\pi } ( s , a ) : = \\mathbb { E } _ { \\Delta \\sim \\mathcal { N } ( 0 , \\sigma ^ { 2 } I _ { N } ) } Q ^ { \\pi } ( s + \\Delta , a ) \\quad \\forall s \\in \\mathcal { S } , a \\in \\mathcal { A }$ ",
+    "bbox": [
+      372,
+      271,
+      641,
+      288
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "smoothed policy: $\\begin{array} { r } { \\widetilde { \\pi } \\left( s _ { t } \\right) : = \\arg \\operatorname* { m a x } _ { a } \\widetilde { Q } ^ { \\pi } \\left( s _ { t } , a \\right) \\quad \\forall s _ { t } \\in \\mathcal { S } } \\end{array}$ ",
+    "bbox": [
+      372,
+      289,
+      565,
+      305
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Properties of the smoothed function ",
+    "bbox": [
+      372,
+      323,
+      500,
+      337
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "PrLipstetofthinutot ${ \\widetilde { Q } } ^ { \\pi }$ w.t. hestat ihpgut $L = \\frac { V _ { \\operatorname* { m a x } } - V _ { \\operatorname* { m i n } } } { \\sigma } \\sqrt { 2 / \\pi }$ ",
+      "$\\bar { \\varepsilon }$ $r _ { t } = \\frac { \\sigma } { 2 } \\left( \\Phi ^ { - 1 } \\left( \\frac { \\widetilde { Q } ^ { \\pi } \\left( s _ { t } , a _ { 1 } \\right) - V _ { \\operatorname* { m i n } } } { V _ { \\operatorname* { m a x } } - V _ { \\operatorname* { m i n } } } \\right) - \\Phi ^ { - 1 } \\left( \\frac { \\widetilde { Q } ^ { \\pi } \\left( s _ { t } , a _ { 2 } \\right) - V _ { \\operatorname* { m i n } } } { V _ { \\operatorname* { m a x } } - V _ { \\operatorname* { m i n } } } \\right) \\right)$ "
+    ],
+    "bbox": [
+      372,
+      333,
+      635,
+      395
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Cumulative Reward Certification ",
+    "text_level": 1,
+    "bbox": [
+      372,
+      404,
+      557,
+      424
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "CROP-GRe: Global smoothing on trajectories ",
+    "text_level": 1,
+    "bbox": [
+      371,
+      437,
+      557,
+      454
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Expectation bound via mean smoothing ",
+    "bbox": [
+      372,
+      459,
+      514,
+      474
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Mean smoothing: $\\widetilde { F } _ { \\pi } \\left( \\oplus _ { t = 0 } ^ { H - 1 } \\delta _ { t } \\right) : = \\mathbb { E } _ { \\Delta \\sim \\mathcal { N } ( 0 , \\sigma ^ { 2 } I _ { H \\times N } ) } F _ { \\pi } \\left( \\oplus _ { t = 0 } ^ { H - 1 } \\left( \\delta _ { t } + \\Delta _ { t } \\right) \\right)$ ",
+      "·Expectation lower bound: $\\mathbb { E } \\left[ J _ { \\varepsilon } \\left( \\pi ^ { \\prime } \\right) \\right] \\geq \\widetilde { F } _ { \\pi } \\left( \\oplus _ { t = 0 } ^ { H - 1 } \\mathbf { 0 } \\right) - L \\varepsilon \\sqrt { H }$ ,where $\\begin{array} { r } { L = \\frac { ( J _ { \\mathrm { m a x } } - J _ { \\mathrm { m i n } } ) } { \\sigma } \\sqrt { 2 / \\pi } } \\end{array}$ "
+    ],
+    "bbox": [
+      372,
+      475,
+      633,
+      525
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Percentile bound via percentile smoothing ",
+    "bbox": [
+      372,
+      530,
+      522,
+      545
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Percentile smoothing: ",
+    "bbox": [
+      372,
+      547,
+      461,
+      562
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\widetilde {F} _ {\\pi} ^ {p} \\left(\\oplus_ {t = 0} ^ {H - 1} \\delta_ {t}\\right) = \\sup  _ {y} \\left\\{y \\in \\mathbb {R} \\mid \\mathbb {P} \\left[ F _ {\\pi} \\left(\\oplus_ {t = 0} ^ {H - 1} \\left(\\delta_ {t} + \\Delta_ {t}\\right)\\right) \\leq y \\right] \\leq p \\right\\}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      395,
+      562,
+      617,
+      580
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Percentile lower bound: ",
+    "bbox": [
+      372,
+      583,
+      467,
+      596
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$p$ -th percentile of $J _ { \\varepsilon } \\left( \\pi ^ { \\prime } \\right) \\geq \\widetilde { F } _ { \\pi } ^ { p ^ { \\prime } } \\left( \\oplus _ { t = 0 } ^ { H - 1 } \\mathbf { 0 } \\right)$ ，where $p ^ { \\prime } : = \\Phi ( \\Phi ^ { - 1 } ( p ) - \\varepsilon \\sqrt { H } / \\sigma )$ ",
+    "bbox": [
+      372,
+      597,
+      646,
+      615
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "CROP-LoRe: Local smoothing $^ +$ adaptive search ",
+    "text_level": 1,
+    "bbox": [
+      373,
+      627,
+      573,
+      644
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sequence of certified radii $( r _ { t } ^ { 1 } , \\ldots , r _ { t } ^ { | \\mathcal { A } | - 1 } )$ ",
+    "bbox": [
+      372,
+      650,
+      522,
+      670
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      398,
+      670,
+      593,
+      767
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$r _ { t } ^ { k }$ ：when $\\varepsilon < r _ { t } ^ { k }$ ,thepossibleactionwileamong theset of top $k$ actions ",
+    "bbox": [
+      372,
+      768,
+      643,
+      786
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nr _ {t} ^ {k} = \\frac {\\sigma}{2} \\left(\\Phi^ {- 1} \\left(\\frac {\\tilde {Q} ^ {\\pi} \\left(s _ {t} , a _ {1}\\right) - V _ {\\min }}{V _ {\\max } - V _ {\\min }}\\right) - \\Phi^ {- 1} \\left(\\frac {\\tilde {Q} ^ {\\pi} \\left(s _ {t} , a _ {k + 1}\\right) - V _ {\\min }}{V _ {\\max } - V _ {\\min }}\\right)\\right), \\quad 1 \\leq k <   | \\mathcal {A} |\n$$",
+    "text_format": "latex",
+    "bbox": [
+      404,
+      786,
+      618,
+      815
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Adaptive search algorithm ",
+    "bbox": [
+      372,
+      821,
+      467,
+      835
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Base case: $\\varepsilon = 0$ ",
+    "bbox": [
+      372,
+      839,
+      449,
+      854
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\_$ : reward without perturbation ",
+    "bbox": [
+      384,
+      856,
+      486,
+      869
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Adaptive search: ",
+    "bbox": [
+      372,
+      873,
+      442,
+      886
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "alternating the two procedures: ",
+    "bbox": [
+      384,
+      889,
+      489,
+      903
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      504,
+      815,
+      646,
+      905
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.Trajectory exploration and expansion: obtain the lower bound $\\underline { { J } } _ { \\varepsilon }$ forε (DFS) ",
+      "2.Perturbation magnitude growth: obtain a new $\\varepsilon ^ { \\prime }$ (priority queue) ",
+      "·Outcome of the algorithm: $\\left\\{ \\left( \\varepsilon _ { i } , \\underline { { J } } _ { \\varepsilon _ { i } } \\right) \\right\\} _ { i = 1 } ^ { | C | }$ "
+    ],
+    "bbox": [
+      372,
+      905,
+      609,
+      951
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Experiments ",
+    "text_level": 1,
+    "bbox": [
+      701,
+      162,
+      781,
+      184
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Setup",
+    "text_level": 1,
+    "bbox": [
+      701,
+      199,
+      738,
+      220
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Four RLenvironments: Freeway,Pong,CartPole, Highway ",
+      "Nine DQN variants:StdTrain, GaussAug,AdvTrain,SA-MDP (PGD,CVX), RadialRL,CARRL,NoisyNet, GradDQN ",
+      "·Two certification criteria: per state-action, cumulative reward ",
+      "，Three certification algorithms:CROP-LoAct,CROP-GRe,CROP-LoRe"
+    ],
+    "bbox": [
+      701,
+      228,
+      960,
+      309
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Robustness Certification for Per-State Action ",
+    "text_level": 1,
+    "bbox": [
+      701,
+      322,
+      959,
+      342
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [
+      "Fig.Robustness certification for per-stateactionin terms ofcertifiedradiusratalltime steps. "
+    ],
+    "bbox": [
+      705,
+      350,
+      972,
+      465
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "GradDQN and RadialRL achieve the highest certified radius on Freeway. ",
+      "Periodic patterns can be observed in Pong. ",
+      "Certified results largely match empirical observations. "
+    ],
+    "bbox": [
+      702,
+      487,
+      957,
+      534
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Robustness Certification for Cumulative Reward ",
+    "text_level": 1,
+    "bbox": [
+      701,
+      547,
+      970,
+      567
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [
+      "Fig.RobustnesscertificationforcumulativerewardonFreewayincludingexpectationboundJE,percentileboundJp， and absolute lower boundJ. "
+    ],
+    "bbox": [
+      705,
+      575,
+      970,
+      747
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Under global smoothing,percentile bound is tighter than expectation bound. ",
+      "For CROP-LoRe,different RLalgorithms demonstrate different behavior in different regions of attack magnitudeε---GradDQN achieves higher lower bound under smaller ε,while RadialRL is the dominant one under larger ε. ",
+      "·The certification is relatively tight, compared with the empirical result. "
+    ],
+    "bbox": [
+      701,
+      778,
+      966,
+      859
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Moredetails,experimental results,and code canbe found inour paper,leaderboard, and repository! ",
+    "bbox": [
+      701,
+      861,
+      972,
+      887
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      755,
+      887,
+      775,
+      905
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Paper ",
+      "Leaderboard board ",
+      ""
+    ],
+    "image_footnote": [],
+    "bbox": [
+      791,
+      899,
+      851,
+      989
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      862,
+      898,
+      922,
+      988
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "Repository "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      933,
+      898,
+      992,
+      989
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "S ",
+    "bbox": [
+      21,
+      0,
+      76,
+      83
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "I ",
+    "bbox": [
+      738,
+      16,
+      760,
+      61
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "UNIVERSITY OF ",
+    "bbox": [
+      771,
+      17,
+      844,
+      29
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ILLINOIS ",
+    "bbox": [
+      771,
+      30,
+      844,
+      50
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "URBANA-CHAMPAIGN ",
+    "bbox": [
+      771,
+      51,
+      844,
+      59
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NIVEI RS U T ★ ★ 水 2 1853 ",
+    "bbox": [
+      856,
+      0,
+      910,
+      82
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Carnegie ",
+    "bbox": [
+      919,
+      4,
+      991,
+      29
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Mellon ",
+    "bbox": [
+      919,
+      29,
+      968,
+      50
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "University ",
+    "bbox": [
+      919,
+      51,
+      992,
+      74
+    ],
+    "page_idx": 0
+  }
+]

@@ -1,0 +1,1126 @@
+[
+  {
+    "type": "text",
+    "text": "Stochastic Centering: Single Model Ensembles ",
+    "text_level": 1,
+    "bbox": [
+      9,
+      156,
+      317,
+      188
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "NTKs for (Graph) Neural Networks are not shift invariant ",
+    "bbox": [
+      15,
+      230,
+      146,
+      273
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      155,
+      217,
+      204,
+      281
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The variability over shifts captures epistemic uncertainty! ",
+    "bbox": [
+      222,
+      222,
+      315,
+      287
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· Stochastic Centering creates a relativerepresentation foran input, x， in terms of a random anchor, c. ",
+      "·During training, the anchor is randomized, thus implicitlysampling different hypotheses. "
+    ],
+    "bbox": [
+      9,
+      314,
+      174,
+      453
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      191,
+      312,
+      299,
+      454
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· During testing, predictions are computed over multiple anchors. ",
+      "·Discrepancy across anchors choices captures epistemic uncertainty! "
+    ],
+    "bbox": [
+      6,
+      481,
+      310,
+      542
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "G △-UQ: Stochastic Centering for GNNs ",
+    "text_level": 1,
+    "bbox": [
+      35,
+      571,
+      291,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Node Feature ",
+    "text_level": 1,
+    "bbox": [
+      17,
+      618,
+      55,
+      631
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "READOUT/MLP ",
+    "text_level": 1,
+    "bbox": [
+      16,
+      638,
+      60,
+      652
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Int.MPNN ",
+    "text_level": 1,
+    "bbox": [
+      86,
+      617,
+      116,
+      630
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>READOUT/MLP</td><td>MLP</td></tr><tr><td>GNNk...l</td><td>[Gi - Gc||Gc]</td></tr><tr><td>(Ai, Xk+1 - Xc k+1 || Xc k+1)]</td><td>Gi | Gc</td></tr><tr><td>(Ai, Xk+1) (Ac, Xc k+1)</td><td>READOUT</td></tr><tr><td>GNN1...k</td><td>GNN1...l</td></tr><tr><td>(Ai, Xi)\n(Ac, Xc) ~ Dtrain</td><td>(Ai, Xi)\n(Ac, Xc) ~ Dtrain</td></tr></table>",
+    "bbox": [
+      73,
+      634,
+      202,
+      830
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Readout ",
+    "text_level": 1,
+    "bbox": [
+      161,
+      618,
+      185,
+      630
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Anchored Inference ",
+    "text_level": 1,
+    "bbox": [
+      216,
+      642,
+      308,
+      661
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Prediction: ",
+    "bbox": [
+      220,
+      667,
+      243,
+      681
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\mu (y \\mid \\mathcal {G} _ {i}) = \\frac {1}{K} \\sum_ {k = 1} ^ {K} f _ {\\theta} ([ \\mathcal {G} _ {i}, c _ {k} ])\n$$",
+    "text_format": "latex",
+    "bbox": [
+      220,
+      680,
+      302,
+      716
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Uncertainty: ",
+    "bbox": [
+      219,
+      721,
+      247,
+      733
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\boldsymbol {\\sigma} (y \\mid \\mathcal {G} _ {i}) = \\sqrt {\\frac {1}{K - 1} \\sum_ {k = 1} ^ {K} \\left(f _ {\\theta} \\left(\\left[ \\mathcal {G} _ {i} , c _ {k} \\right]\\right) - \\boldsymbol {\\mu}\\right) ^ {2}}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      220,
+      734,
+      313,
+      773
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Calibrated Prediction: ",
+    "bbox": [
+      218,
+      785,
+      270,
+      797
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\boldsymbol {\\mu} _ {c a l i b} = \\boldsymbol {\\mu} (1 - \\sigma)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      236,
+      802,
+      290,
+      819
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· Since graphs are variable sized and discrete,we introduce three anchoring strategies tailored for GNNs. ",
+      "· Induce varying levels of stochasticity, trading off hypothesis diversity and the semantic diversity of the anchoring distribution. "
+    ],
+    "bbox": [
+      5,
+      875,
+      309,
+      975
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We propose G △-UQ, a novel training paradigm for improving calibration with GNNs ",
+    "text_level": 1,
+    "bbox": [
+      372,
+      164,
+      627,
+      260
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√ ",
+    "bbox": [
+      401,
+      272,
+      410,
+      292
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Scalable and Lightweight ",
+    "bbox": [
+      448,
+      271,
+      558,
+      294
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√ ",
+    "bbox": [
+      401,
+      302,
+      410,
+      322
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Robust to Distribution Shifts ",
+    "bbox": [
+      441,
+      302,
+      564,
+      322
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√ ",
+    "bbox": [
+      401,
+      332,
+      410,
+      352
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Supports Pretrained Models ",
+    "bbox": [
+      441,
+      332,
+      564,
+      354
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√ ",
+    "bbox": [
+      401,
+      363,
+      410,
+      383
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Easy to Implement ",
+    "bbox": [
+      461,
+      363,
+      544,
+      384
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      349,
+      414,
+      360,
+      424
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      351,
+      431,
+      362,
+      440
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      364,
+      431,
+      395,
+      440
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      441,
+      395,
+      449
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      449,
+      433,
+      457
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      457,
+      431,
+      465
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      465,
+      431,
+      473
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      473,
+      427,
+      481
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "#Corres.to GDUQLayer！",
+    "bbox": [
+      366,
+      481,
+      411,
+      491
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      492,
+      459,
+      501
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      359,
+      511,
+      398,
+      520
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      521,
+      410,
+      529
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      529,
+      410,
+      537
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      538,
+      410,
+      546
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      546,
+      452,
+      555
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      555,
+      410,
+      564
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      564,
+      455,
+      573
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      366,
+      573,
+      465,
+      581
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      368,
+      582,
+      391,
+      591
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "G△-UQ is easy to implement, with only a few changes to standard GNNs ! ",
+    "text_level": 1,
+    "bbox": [
+      489,
+      420,
+      548,
+      590
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      565,
+      415,
+      583,
+      425
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      435,
+      589,
+      443
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      443,
+      621,
+      451
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      451,
+      623,
+      458
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      459,
+      644,
+      466
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      466,
+      631,
+      473
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      473,
+      618,
+      481
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      481,
+      629,
+      488
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      496,
+      590,
+      504
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      504,
+      599,
+      512
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      512,
+      635,
+      520
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      520,
+      608,
+      528
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      528,
+      644,
+      536
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      536,
+      618,
+      544
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      544,
+      625,
+      552
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      552,
+      631,
+      561
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "0 ",
+    "bbox": [
+      568,
+      561,
+      631,
+      568
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      568,
+      614,
+      576
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      568,
+      576,
+      619,
+      582
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Improved Node Classification Calibration ",
+    "text_level": 1,
+    "bbox": [
+      368,
+      620,
+      635,
+      651
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We evaluate G Δ-UQ with node feature anchoring on: ",
+    "bbox": [
+      344,
+      677,
+      459,
+      719
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· 4 Datasets ",
+      "·2 Distribution shifts ",
+      "·8 Post Hoc Calibration "
+    ],
+    "bbox": [
+      355,
+      735,
+      459,
+      829
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "G △-UQ matches or surpasses accuracy and calibration of the vanilla GNN on 8/8 datasets. ",
+    "bbox": [
+      354,
+      866,
+      456,
+      946
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      465,
+      674,
+      651,
+      982
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Better Graph Classification Calibration ",
+    "text_level": 1,
+    "bbox": [
+      705,
+      152,
+      957,
+      184
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "G △-UQ Improves Calibration of Pretrained GNNs "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      675,
+      221,
+      774,
+      451
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      783,
+      222,
+      876,
+      451
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "G△-UQ Estimates are Effective in Safety Critical Tasks "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      888,
+      221,
+      983,
+      450
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·G△-UQ achieves the best OOD detection AUROC on 5/6 datasets. ",
+      "· G △-UQ also performs well on the generalization gap prediction tasks. "
+    ],
+    "bbox": [
+      672,
+      496,
+      782,
+      634
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      793,
+      501,
+      986,
+      633
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "G△-UQ Improves Graph Classification Calibration with Different MPNNs "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      670,
+      682,
+      893,
+      815
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· G △-UQ is flexible to message passing layer. ",
+      "·Required level of stochasticity may vary fordataset/GNN. "
+    ],
+    "bbox": [
+      897,
+      680,
+      997,
+      815
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "Check out the G △-UQ Family! "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      671,
+      863,
+      729,
+      985
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      737,
+      864,
+      795,
+      983
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      803,
+      862,
+      849,
+      986
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "Try E△-UQ for link prediction calibration! "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      856,
+      867,
+      912,
+      985
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "G ",
+    "bbox": [
+      1,
+      7,
+      60,
+      129
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Accurate And Scalable Estimation Of Epistemic Uncertainty For Graph Neural Networks ",
+    "bbox": [
+      65,
+      3,
+      750,
+      108
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Puja Trivedi1, Mark Heimann2, Rushil Anirudh2, Danai Koutra1 Jayaraman J. Thiagarajan2 ",
+    "bbox": [
+      68,
+      108,
+      503,
+      133
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "UNIVERSITY OF MICHIGAN ",
+    "bbox": [
+      855,
+      5,
+      886,
+      70
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "茶 ",
+    "bbox": [
+      894,
+      15,
+      919,
+      71
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "GEMS LAB ",
+    "bbox": [
+      920,
+      36,
+      977,
+      54
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      857,
+      79,
+      879,
+      125
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Lawrence Livermore ",
+    "bbox": [
+      882,
+      82,
+      995,
+      103
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NationalLaboratory ",
+    "bbox": [
+      881,
+      104,
+      992,
+      127
+    ],
+    "page_idx": 0
+  }
+]

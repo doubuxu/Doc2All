@@ -1,0 +1,650 @@
+[
+  {
+    "type": "text",
+    "text": "Generate trajectories that “diffuse away\" from potential goals，and train a policy to reverse them ",
+    "text_level": 1,
+    "bbox": [
+      115,
+      144,
+      884,
+      171
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Denoising Diffusion Models "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      29,
+      232,
+      312,
+      324
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Goal-conditioned Reinforcement Learning "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      31,
+      370,
+      306,
+      547
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Goal Conditioned RL as Diffusion ",
+    "text_level": 1,
+    "bbox": [
+      91,
+      571,
+      251,
+      587
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Diffusion models: map any point from Gaussian data manifold Goal-conditioned RL: learn optimal path fromany state goal state ",
+    "bbox": [
+      22,
+      614,
+      320,
+      650
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      15,
+      667,
+      328,
+      794
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "diffusion model ",
+    "bbox": [
+      68,
+      808,
+      164,
+      828
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "target dataset score function forward process reverse process ",
+    "bbox": [
+      72,
+      834,
+      164,
+      925
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "GCRL (Merlin) ",
+    "bbox": [
+      180,
+      809,
+      273,
+      829
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "goal states policy $q ( s _ { t } | s _ { t + 1 } )$ $\\mathcal { P } ^ { \\pi } ( s _ { t + 1 } | s _ { t } )$ ",
+    "bbox": [
+      193,
+      834,
+      258,
+      925
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Actions that lead us away from the goal in place of Gaussian noise; Policythat reverses theseactions inplace of score function ",
+    "bbox": [
+      33,
+      950,
+      309,
+      985
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A Simple 2D Navigation Problem ",
+    "text_level": 1,
+    "bbox": [
+      419,
+      193,
+      581,
+      211
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Task: Navigate to goal X；States: $( x , y )$ ；Actions:unit length displacement in $( x , y )$ ",
+      "Forward process:Take randomactions starting from goal ",
+      "Reverseprocess:Train policy to reverse the forward trajectories "
+    ],
+    "bbox": [
+      339,
+      225,
+      658,
+      274
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      341,
+      280,
+      452,
+      405
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      460,
+      280,
+      556,
+      405
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      562,
+      280,
+      657,
+      405
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "(a)VisualizationoftrajectoriesstartingfromthegoalXgeneratedduringtheforwardprocess, ",
+      "(b)Predictedactions from Merlin policy,(c) Predictedactions from GCSL policy "
+    ],
+    "bbox": [
+      339,
+      412,
+      659,
+      442
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Backward view of difusion gives uscontrol over the goal distribution ",
+    "bbox": [
+      359,
+      457,
+      641,
+      474
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Effect of Time Conditioning ",
+    "text_level": 1,
+    "bbox": [
+      433,
+      495,
+      567,
+      513
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Analogous to the score functionindiffusion,theMerlin policy is conditioned onthe time ",
+      "This time indicates how“noisy\"current stateis,or how farwe arefrom the target goal state ",
+      "Policy takes optimalaction faraway from goal and becomesuncertainas itapproaches the goal;thisuncertaintyappearsfartherfromgoalastimehorizonincreases "
+    ],
+    "bbox": [
+      339,
+      528,
+      661,
+      590
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      343,
+      598,
+      419,
+      695
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      422,
+      598,
+      497,
+      695
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      498,
+      598,
+      574,
+      695
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      "(a) h=1 ",
+      "(b)h=5 ",
+      "(c) h=10 ",
+      "(d）h=20 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      575,
+      598,
+      652,
+      695
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The time conditioning affects policy uncertainty based on expected number of steps to reach the goal ",
+    "bbox": [
+      382,
+      739,
+      618,
+      773
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Optimization Objective ",
+    "text_level": 1,
+    "bbox": [
+      444,
+      807,
+      556,
+      826
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Givenanoffline dataset $\\mathcal { D }$ ,wecan view thetrajectoriesas forward diffsionchains generated by some unknown policy ",
+      "·Asper below Theorem,behavior cloningmaximizes the probabilityof reaching the goal states $\\theta ^ { * } = \\arg \\operatorname* { m a x } _ { \\theta } \\mathbb { E } _ { g \\sim p ( g ) , ( s , a ) \\sim D ( g ) } [ \\log \\pi _ { \\theta } ( a \\mid s , g ) ]$ "
+    ],
+    "bbox": [
+      339,
+      840,
+      662,
+      912
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theorem:Givenadataset $\\mathcal { D }$ andtarget goal distribution $p ( g )$ ,behavior cloning usinga goal-conditionedpolicymaximizesa lower boundonthe log-likelihood of thegoal states $L = \\mathbb { E } _ { g \\sim p ( g ) , s _ { T } \\sim q ( s _ { T } | g ) } [ \\log p _ { \\theta } ( s _ { T } ) ] .$ ",
+    "bbox": [
+      347,
+      927,
+      654,
+      974
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Constructing the Forward Process ",
+    "text_level": 1,
+    "bbox": [
+      748,
+      194,
+      911,
+      211
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Merlin:Usepre-collected offline trajectories,trainpolicy using behavior cloning ",
+      "Merlin-P:Learnreverse dynamicsmodel to simulate trajectories backward fromgoal ",
+      "Merlin-NP:Use proposed trajectory stitching method to construct backward trajectories "
+    ],
+    "bbox": [
+      669,
+      226,
+      979,
+      274
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      701,
+      293,
+      958,
+      454
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Experimental Results ",
+    "text_level": 1,
+    "bbox": [
+      778,
+      479,
+      880,
+      497
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      701,
+      507,
+      802,
+      645
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      804,
+      507,
+      853,
+      645
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      855,
+      507,
+      905,
+      645
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_15.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      906,
+      507,
+      958,
+      645
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_16.jpg",
+    "image_caption": [
+      "NormalizedReturns "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      672,
+      649,
+      826,
+      769
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_17.jpg",
+    "image_caption": [
+      "Log InferenceTime "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      828,
+      651,
+      985,
+      768
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Merlinoutperforms previousmethods,while being highly-eficient! ",
+    "bbox": [
+      694,
+      801,
+      964,
+      819
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Conclusions and future work ",
+    "text_level": 1,
+    "bbox": [
+      761,
+      842,
+      897,
+      858
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Merlinconstructstrajectoriesthat“diffuseaway\" fromgoalsandtrainsapolicy to reverse them ",
+      "Simple trainingdynamics indicatepotential for scalability,asproven bydenoisingdiffusionmodels ",
+      "Directions for future work include extending to online settingand partiallyobservableenvironments "
+    ],
+    "bbox": [
+      669,
+      880,
+      857,
+      970
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "paper ",
+    "bbox": [
+      883,
+      880,
+      903,
+      892
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_18.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      865,
+      899,
+      921,
+      975
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "code ",
+    "bbox": [
+      949,
+      880,
+      967,
+      891
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Learning to Reach Goals via Diffusion_poster/visuals/images/fig_19.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      930,
+      899,
+      985,
+      975
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "A ",
+    "bbox": [
+      68,
+      26,
+      119,
+      94
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Mila ",
+    "bbox": [
+      122,
+      38,
+      190,
+      82
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Learning to Reach Goals via Diffusion ",
+    "bbox": [
+      299,
+      34,
+      700,
+      68
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Vineet Jain Siamak Ravanbakhsh ",
+    "bbox": [
+      373,
+      83,
+      625,
+      108
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "国 山",
+    "bbox": [
+      800,
+      35,
+      833,
+      89
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "McGill ",
+    "bbox": [
+      839,
+      38,
+      959,
+      82
+    ],
+    "page_idx": 0
+  }
+]

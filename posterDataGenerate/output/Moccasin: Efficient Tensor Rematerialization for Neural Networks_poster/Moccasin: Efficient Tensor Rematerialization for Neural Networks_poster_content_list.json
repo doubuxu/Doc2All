@@ -1,0 +1,566 @@
+[
+  {
+    "type": "text",
+    "text": "1. Introduction ",
+    "text_level": 1,
+    "bbox": [
+      35,
+      172,
+      120,
+      191
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Thedeploymentandtrainingof neuralnetworks on edge computingdevicesposemanychallenges. ",
+      "·The lowmemory nature of edgedevices isoften one of thebiggest limitingfactorsencounteredinthedeploymentof largeneural networkmodels. ",
+      "·Tensorrematerializationorrecomputeisawaytoaddress high memoryrequirements forneuralnetworktrainingandinference ",
+      "·In this paperwe consider the problem of execution time minimizationof computegraphssubjecttoamemory budget. ",
+      "·Inparticular，wedevelopanewconstraintprogramming formulation calledMoccasinwith only O(n) integervariables, wherenisthenumberof nodesinthecompute graph(asopposed topriorwork formulationswith $O ( n ^ { 2 } )$ variables). "
+    ],
+    "bbox": [
+      34,
+      231,
+      234,
+      469
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. Motivation and problem statement ",
+    "text_level": 1,
+    "bbox": [
+      291,
+      169,
+      507,
+      191
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Moccasin: Efficient Tensor Rematerialization for Neural Networks_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      309,
+      217,
+      371,
+      378
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Moccasin: Efficient Tensor Rematerialization for Neural Networks_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      418,
+      229,
+      549,
+      370
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Moccasin: Efficient Tensor Rematerialization for Neural Networks_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      582,
+      235,
+      734,
+      350
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Considertheexample10-node computationgraphabove,and assume: ",
+    "bbox": [
+      292,
+      387,
+      494,
+      399
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.Output sizesare 50 for nodeson theleft,and1for the ones on the right ",
+      "2.Durationis1forallnodes. "
+    ],
+    "bbox": [
+      292,
+      406,
+      509,
+      436
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Considerexecution ofthe nodes in the order ",
+    "bbox": [
+      292,
+      443,
+      420,
+      455
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      368,
+      462,
+      435,
+      473
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Weneed to keep the output of node1in memory until we execute node8 (similarly for 2&7) ",
+    "bbox": [
+      291,
+      480,
+      504,
+      513
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Rematerialization:Discardoutputof node1after node2iscomputed and recomputeit later: ",
+    "bbox": [
+      526,
+      386,
+      738,
+      418
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Moccasin: Efficient Tensor Rematerialization for Neural Networks_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      602,
+      424,
+      680,
+      463
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Torecomputenode1:Weneed to recomputeOorhaveitavailablein memory-anotherdecisionthatneedstobemadebythealgorithm ",
+    "bbox": [
+      526,
+      480,
+      724,
+      512
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3. Prior work ",
+    "text_level": 1,
+    "bbox": [
+      793,
+      170,
+      868,
+      189
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theworkof[1]developsamixed integerlinear programming(MILP) formulation to solve this problem. ",
+    "bbox": [
+      794,
+      228,
+      952,
+      260
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Introduces Boolean matrices $R , S , F$ forrecompute, storage,memorydeallocation $ O ( n ^ { 2 } + n m )$ Boolean decision variables(n:#nodes,m:# edges) ",
+      "·Poorscalabilityto large computationgraphs We have developeda new optimization problem formulation keeping scalabilityinmind,which greatly simplifiestheproblem. "
+    ],
+    "bbox": [
+      794,
+      266,
+      962,
+      391
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Keyassumption:Don’t rematerializeany node more than C times. ",
+    "bbox": [
+      794,
+      398,
+      959,
+      427
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[1] Checkmate:BreakingtheMemoryWall with Optimal Tensor Rematerialization,ProceedingsofMachine Learningand Systems2(MLSys 2020).ParasJain,AjayJain,Aniruddha Nrusimha,AmirGholami,Pieter Abbeel,Josephonalez,urteter,lontoica ",
+    "bbox": [
+      794,
+      451,
+      961,
+      506
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "4. Solution ",
+    "text_level": 1,
+    "bbox": [
+      34,
+      529,
+      97,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Moccasin: Efficient Tensor Rematerialization for Neural Networks_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      72,
+      575,
+      320,
+      761
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Oursolution isanoptimizationproblemformulationwhere ",
+    "bbox": [
+      33,
+      782,
+      201,
+      794
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Themainbuildingblockistheconceptofoutputretentionintervalswhich simplifiestheproblemformulation greatly ",
+      "·Output retention intervalsareused to model how longthe outputofa nodeis retainedin memory ",
+      "·WedefineCretentionintervalsforeach nodewhereeach intervalrepresentsarematerialization(i.e.recompute)of thatnode ",
+      "·The starting $s _ { v } ^ { i }$ andend $e _ { v } ^ { i }$ timesoftheintervalsaremodeledasthedecisionvariablesoftheoptimizationproblem ",
+      "·We then define the precedence and memory constraints using these decision variables ",
+      "·Theresultingproblemcouldbeposedasaconstraintprogramming(CP)problem,whichwecoulduseanygeneric CP solverto solvenumerically "
+    ],
+    "bbox": [
+      34,
+      800,
+      372,
+      944
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "5. Formal specification ",
+    "text_level": 1,
+    "bbox": [
+      399,
+      529,
+      529,
+      550
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "minimize Mwua s,e,a Ui ",
+    "bbox": [
+      400,
+      585,
+      457,
+      610
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "subjectto s≤e,u,i ",
+    "bbox": [
+      401,
+      613,
+      470,
+      626
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      432,
+      628,
+      517,
+      643
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "vi:s≤t≤e ",
+    "bbox": [
+      433,
+      644,
+      517,
+      670
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\forall i \\in \\{ i : a _ { v } ^ { i } = 1 \\}$ ,j such that ",
+    "bbox": [
+      432,
+      672,
+      548,
+      686
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$a _ { u } ^ { j } = 1 , s _ { u } ^ { j } + 1 \\leq s _ { v } ^ { i } \\leq e _ { u } ^ { j }$ ",
+    "bbox": [
+      451,
+      688,
+      519,
+      702
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      432,
+      703,
+      531,
+      718
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      432,
+      719,
+      463,
+      732
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      433,
+      734,
+      513,
+      748
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "(1) ",
+      "(2) ",
+      "(3) ",
+      "(4) "
+    ],
+    "bbox": [
+      542,
+      587,
+      674,
+      658
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "(5) ",
+      "(6) ",
+      "（7)",
+      "（8）"
+    ],
+    "bbox": [
+      542,
+      688,
+      685,
+      747
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "6.Numerical results ",
+    "text_level": 1,
+    "bbox": [
+      710,
+      530,
+      825,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Moccasin: Efficient Tensor Rematerialization for Neural Networks_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Figure:Percentage of totalduration increase against solve time in seconds forour proposed method (Moccasin) and Checkmate[1] ona realworld graphwith n=442 nodes andm=1247 edges. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      728,
+      585,
+      877,
+      746
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Moccasin: Efficient Tensor Rematerialization for Neural Networks_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Graph</td><td rowspan=\"2\">(n,m)</td><td rowspan=\"2\">M</td><td colspan=\"3\">CHECKMATE MILP</td><td colspan=\"3\">CHECKMATE LP+Rounding</td><td colspan=\"3\">MOCCASIN</td></tr><tr><td>TDI %</td><td>Peak mem</td><td>Time (s)</td><td>TDI %</td><td>Peak mem</td><td>Time (s)</td><td>TDI %</td><td>Peak mem</td><td>Time (s)</td></tr><tr><td rowspan=\"2\">RL G2</td><td rowspan=\"2\">(250,944)</td><td>132,156</td><td>0.9</td><td>132,130</td><td>685.1</td><td>93.0</td><td>178,200</td><td>401.7</td><td>0.9</td><td>131,831</td><td>55.0</td></tr><tr><td>117,472</td><td>-</td><td>-</td><td>-</td><td>328.6</td><td>181,200</td><td>696.9</td><td>4.9</td><td>117,400</td><td>639.5</td></tr><tr><td rowspan=\"2\">RL G4</td><td rowspan=\"2\">(1000,5875)</td><td>547,757</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.7</td><td>547,660</td><td>3612.9</td></tr><tr><td>486,895</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>3.4</td><td>486,880</td><td>3611.8</td></tr><tr><td rowspan=\"2\">RW 1</td><td rowspan=\"2\">(358,947)</td><td>20,227,276</td><td>2.3</td><td>20,226,048</td><td>1340.0</td><td>-</td><td>-</td><td>-</td><td>2.3</td><td>20,226,048</td><td>123.5</td></tr><tr><td>17,979,801</td><td>4.5</td><td>17,977,344</td><td>1605.4</td><td>-</td><td>-</td><td>-</td><td>4.5</td><td>17,977,344</td><td>122.0</td></tr><tr><td rowspan=\"2\">RW 2</td><td rowspan=\"2\">(442,1247)</td><td>10,817,740</td><td>1.4</td><td>10,811,392</td><td>1856.7</td><td>-</td><td>-</td><td>-</td><td>1.4</td><td>10,813,440</td><td>1201.3</td></tr><tr><td>9,615,769</td><td>2.8</td><td>9,615,360</td><td>2242.9</td><td>-</td><td>-</td><td>-</td><td>2.8</td><td>9,613,312</td><td>303.9</td></tr><tr><td rowspan=\"2\">RW 3</td><td rowspan=\"2\">(574,1304)</td><td>10,539,417</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.8</td><td>10,539,008</td><td>1802.4</td></tr><tr><td>9,368,371</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1.6</td><td>9,367,552</td><td>1802.8</td></tr><tr><td rowspan=\"2\">CM 1</td><td rowspan=\"2\">(73,149)</td><td>11.3 GB</td><td>0.0</td><td>11.1 GB</td><td>6.3</td><td>0.0</td><td>11.4 GB</td><td>6.8</td><td>0.0</td><td>11.1 GB</td><td>3.1</td></tr><tr><td>10.0 GB</td><td>0.1</td><td>9.65 GB</td><td>5.6</td><td>0.1</td><td>10.8 GB</td><td>6.7</td><td>0.1</td><td>9.9 GB</td><td>3.1</td></tr><tr><td rowspan=\"2\">CM 2</td><td rowspan=\"2\">(353,751)</td><td>31.9 GB</td><td>0.1</td><td>31.6 GB</td><td>434.1</td><td>0.1</td><td>31.5 GB</td><td>505.2</td><td>0.2</td><td>31.9 GB</td><td>65.2</td></tr><tr><td>28.4 GB</td><td>0.3</td><td>28.3 GB</td><td>485.3</td><td>0.5</td><td>27.8 GB</td><td>1065.4</td><td>0.3</td><td>28.4 GB</td><td>69.3</td></tr></table>",
+    "bbox": [
+      501,
+      765,
+      844,
+      952
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Table:Performance ",
+    "bbox": [
+      863,
+      831,
+      913,
+      842
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "comparison across differentgraph families underdifferentmemory budgets. ",
+    "bbox": [
+      863,
+      844,
+      923,
+      886
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Qualcoww Al research ",
+    "bbox": [
+      46,
+      25,
+      194,
+      98
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "MOCCASIN: Efficient Tensor Rematerialization for Neural Networks ",
+    "bbox": [
+      255,
+      24,
+      736,
+      119
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "BurakBartan1/HaomingLi²/HarrisTeague1/ ChristopherLott1/Bistra Dilkina² ",
+    "bbox": [
+      817,
+      15,
+      967,
+      42
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1QualcommAl Research,2Universityof Southern California ",
+    "bbox": [
+      817,
+      59,
+      974,
+      82
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "bbartan@qti.qualcomm.com ",
+    "bbox": [
+      817,
+      102,
+      921,
+      115
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "QUALCOMM AI RESEARCH ISAN INITIATIVEOFQUALCOMM TECHNOLOGIES,INC",
+    "bbox": [
+      713,
+      978,
+      952,
+      988
+    ],
+    "page_idx": 0
+  }
+]

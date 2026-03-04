@@ -16,6 +16,12 @@ check提示词效果不好
 
 ![alt text](baseline2.svg)
 
+## 微调layout模型
+
+生成海报、网页和ppt的json->html数据对来微调大模型
+
+![alt text](dataGenerate2.drawio.svg)
+
 ## 创新方向
 
 * 通用文档的解析

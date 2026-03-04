@@ -1,0 +1,4366 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        461,
+                        58,
+                        1916,
+                        131
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                452,
+                                48,
+                                1928,
+                                134
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        452,
+                                        48,
+                                        1928,
+                                        134
+                                    ],
+                                    "type": "text",
+                                    "content": " Agnostic Learnability of Halfspaces via Logistic Loss",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        159,
+                        173,
+                        2214,
+                        213
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                159,
+                                166,
+                                2216,
+                                220
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        159,
+                                        166,
+                                        2216,
+                                        220
+                                    ],
+                                    "type": "text",
+                                    "content": "ZiweiJi(UIUC)KwangnAn(M)PranjalAwasthi(GoogleResearch)SatyenKale(GoogleResearch)StefaniKarp(GoogleResearch&CU)",
+                                    "score": 0.865
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        345,
+                        264,
+                        457,
+                        303
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                342,
+                                259,
+                                464,
+                                308
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        342,
+                                        259,
+                                        464,
+                                        308
+                                    ],
+                                    "type": "text",
+                                    "content": "Setting.",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        47,
+                        321,
+                        757,
+                        385
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                323,
+                                752,
+                                362
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        323,
+                                        542,
+                                        362
+                                    ],
+                                    "type": "text",
+                                    "content": "Binary classification: given by distribution",
+                                    "score": 0.97
+                                },
+                                {
+                                    "bbox": [
+                                        542,
+                                        326,
+                                        564,
+                                        353
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "P",
+                                    "score": 0.54
+                                },
+                                {
+                                    "bbox": [
+                                        564,
+                                        323,
+                                        597,
+                                        362
+                                    ],
+                                    "type": "text",
+                                    "content": "on",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        597,
+                                        323,
+                                        752,
+                                        358
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathbb { R } ^ { d } \\times \\{ - 1 , + 1 \\} ;",
+                                    "score": 0.59
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                50,
+                                357,
+                                392,
+                                389
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        357,
+                                        371,
+                                        389
+                                    ],
+                                    "type": "text",
+                                    "content": "we have i.i.d. samples from",
+                                    "score": 0.948
+                                },
+                                {
+                                    "bbox": [
+                                        371,
+                                        358,
+                                        392,
+                                        383
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "P",
+                                    "score": 0.73
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        47,
+                        389,
+                        390,
+                        419
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                382,
+                                383,
+                                422
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        382,
+                                        252,
+                                        422
+                                    ],
+                                    "type": "text",
+                                    "content": "Linear classifier:",
+                                    "score": 0.997
+                                },
+                                {
+                                    "bbox": [
+                                        254,
+                                        389,
+                                        383,
+                                        419
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "x \\mapsto \\langle x , w \\rangle",
+                                    "score": 0.93
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        47,
+                        419,
+                        630,
+                        451
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                414,
+                                635,
+                                452
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        414,
+                                        523,
+                                        452
+                                    ],
+                                    "type": "text",
+                                    "content": "Goal: compete with the optimal solution",
+                                    "score": 0.987
+                                },
+                                {
+                                    "bbox": [
+                                        526,
+                                        422,
+                                        542,
+                                        447
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\bar { u }",
+                                    "score": 0.72
+                                },
+                                {
+                                    "bbox": [
+                                        545,
+                                        414,
+                                        635,
+                                        452
+                                    ],
+                                    "type": "text",
+                                    "content": ",where",
+                                    "score": 0.96
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        119,
+                        469,
+                        683,
+                        510
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                119,
+                                469,
+                                683,
+                                510
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        119,
+                                        469,
+                                        683,
+                                        510
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathcal {R} _ {0 - 1} (\\bar {u}) := \\Pr_ {(x, y) \\sim P} \\left(\\operatorname {s i g n} \\left(\\langle \\bar {u}, x \\rangle\\right) \\neq y\\right) = \\mathrm {O P T} > 0.",
+                                    "image_path": "8b484b560b3bd85e42fb058f37d6f8b59e73f94025d38cf884d71c339414c4d5.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "bbox": [
+                        47,
+                        527,
+                        702,
+                        562
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                47,
+                                527,
+                                707,
+                                565
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        527,
+                                        378,
+                                        565
+                                    ],
+                                    "type": "text",
+                                    "content": "Logistic regression (LR): let",
+                                    "score": 0.992
+                                },
+                                {
+                                    "bbox": [
+                                        380,
+                                        528,
+                                        611,
+                                        564
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\ell _ { \\log } ( z ) : = \\ln ( 1 + e ^ { - z } ) ,",
+                                    "score": 0.9
+                                },
+                                {
+                                    "bbox": [
+                                        611,
+                                        527,
+                                        707,
+                                        565
+                                    ],
+                                    "type": "text",
+                                    "content": "andlet",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        204,
+                        582,
+                        595,
+                        624
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                204,
+                                582,
+                                595,
+                                624
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        204,
+                                        582,
+                                        595,
+                                        624
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathcal {R} _ {\\log} (w) := \\mathbb {E} _ {(x, y) \\sim P} \\left[ \\ell_ {\\log} (y \\langle w, x \\rangle) \\right]",
+                                    "image_path": "46085ce86dde473fae943730fada020357653078c097b3c90a9ce5223a8c48ca.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        47,
+                        641,
+                        588,
+                        676
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                638,
+                                580,
+                                676
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        638,
+                                        478,
+                                        676
+                                    ],
+                                    "type": "text",
+                                    "content": "denote the population logistic risk of",
+                                    "score": 0.996
+                                },
+                                {
+                                    "bbox": [
+                                        478,
+                                        648,
+                                        502,
+                                        670
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "w",
+                                    "score": 0.57
+                                },
+                                {
+                                    "bbox": [
+                                        502,
+                                        638,
+                                        559,
+                                        676
+                                    ],
+                                    "type": "text",
+                                    "content": "over",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        561,
+                                        644,
+                                        580,
+                                        670
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "P",
+                                    "score": 0.76
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        300,
+                        724,
+                        507,
+                        757
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                297,
+                                722,
+                                509,
+                                759
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        297,
+                                        722,
+                                        509,
+                                        759
+                                    ],
+                                    "type": "text",
+                                    "content": "Contributions.",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        47,
+                        784,
+                        647,
+                        818
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                783,
+                                650,
+                                818
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        783,
+                                        650,
+                                        818
+                                    ],
+                                    "type": "text",
+                                    "content": "Prior lower and upper bounds for LR do not match:",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        50,
+                        830,
+                        738,
+                        996
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 15,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                50,
+                                830,
+                                738,
+                                862
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 12,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52,
+                                        828,
+                                        738,
+                                        868
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52,
+                                                828,
+                                                738,
+                                                868
+                                            ],
+                                            "type": "text",
+                                            "content": "·General P: 1- OPT lower bound (Ben-David et al., 2012).",
+                                            "score": 0.969
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                50,
+                                863,
+                                633,
+                                927
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 13,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52,
+                                        858,
+                                        490,
+                                        899
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52,
+                                                858,
+                                                490,
+                                                899
+                                            ],
+                                            "type": "text",
+                                            "content": "·Isotropic log-concave distributions:",
+                                            "score": 0.985
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        78,
+                                        890,
+                                        635,
+                                        936
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                78,
+                                                892,
+                                                173,
+                                                929
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\widetilde \\Omega ( \\mathrm { O P T } )",
+                                            "score": 0.53
+                                        },
+                                        {
+                                            "bbox": [
+                                                173,
+                                                890,
+                                                635,
+                                                936
+                                            ],
+                                            "type": "text",
+                                            "content": "lowerbound (Diakonikolas et al.,2020).",
+                                            "score": 0.971
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                50,
+                                929,
+                                671,
+                                996
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 14,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        73,
+                                        924,
+                                        619,
+                                        964
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                73,
+                                                924,
+                                                619,
+                                                964
+                                            ],
+                                            "type": "text",
+                                            "content": "\"Well-behaved\" sub-exponential distributions:",
+                                            "score": 0.99
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        80,
+                                        954,
+                                        676,
+                                        1007
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                958,
+                                                192,
+                                                996
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\widetilde { O } ( { \\sqrt { \\mathrm { O P T } } } )",
+                                            "score": 0.74
+                                        },
+                                        {
+                                            "bbox": [
+                                                192,
+                                                954,
+                                                676,
+                                                1007
+                                            ],
+                                            "type": "text",
+                                            "content": "upper bound with SGD(Freietal,).",
+                                            "score": 0.924
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        47,
+                        1000,
+                        421,
+                        1028
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 16,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                996,
+                                426,
+                                1035
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        996,
+                                        426,
+                                        1035
+                                    ],
+                                    "type": "text",
+                                    "content": "On \"well-behaved\" conditions:",
+                                    "score": 0.972
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        50,
+                        1032,
+                        747,
+                        1096
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 19,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                50,
+                                1032,
+                                747,
+                                1060
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 17,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52,
+                                        1032,
+                                        750,
+                                        1064
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52,
+                                                1032,
+                                                750,
+                                                1064
+                                            ],
+                                            "type": "text",
+                                            "content": "· Standard concentration and anti-concentration conditions.",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                50,
+                                1064,
+                                726,
+                                1096
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 18,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52,
+                                        1059,
+                                        728,
+                                        1099
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52,
+                                                1059,
+                                                728,
+                                                1099
+                                            ],
+                                            "type": "text",
+                                            "content": "·Example: a mixture of log-concave dist. (e.g., Gaussian).",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        47,
+                        1108,
+                        478,
+                        1141
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 20,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                1106,
+                                480,
+                                1141
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        1106,
+                                        480,
+                                        1141
+                                    ],
+                                    "type": "text",
+                                    "content": "Our lower and upper bounds for LR:",
+                                    "score": 0.986
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        50,
+                        1155,
+                        728,
+                        1264
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 23,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                50,
+                                1155,
+                                728,
+                                1227
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 21,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52,
+                                        1151,
+                                        707,
+                                        1195
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52,
+                                                1151,
+                                                78,
+                                                1195
+                                            ],
+                                            "type": "text",
+                                            "content": "·",
+                                            "score": 0.854
+                                        },
+                                        {
+                                            "bbox": [
+                                                78,
+                                                1155,
+                                                192,
+                                                1190
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\Omega ( \\sqrt { \\mathrm { O P T } } )",
+                                            "score": 0.83
+                                        },
+                                        {
+                                            "bbox": [
+                                                192,
+                                                1151,
+                                                707,
+                                                1195
+                                            ],
+                                            "type": "text",
+                                            "content": "lower bound for well-behaved sub-exp dist.;",
+                                            "score": 0.993
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        73,
+                                        1188,
+                                        733,
+                                        1231
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                73,
+                                                1188,
+                                                192,
+                                                1231
+                                            ],
+                                            "type": "text",
+                                            "content": "matching",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                195,
+                                                1188,
+                                                307,
+                                                1225
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\widetilde { O } ( { \\sqrt { \\mathrm { O P T } } } )",
+                                            "score": 0.86
+                                        },
+                                        {
+                                            "bbox": [
+                                                309,
+                                                1188,
+                                                733,
+                                                1231
+                                            ],
+                                            "type": "text",
+                                            "content": "upper bound from (Frei et al.,2021).",
+                                            "score": 0.994
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                50,
+                                1229,
+                                659,
+                                1264
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 22,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        47,
+                                        1215,
+                                        666,
+                                        1274
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                47,
+                                                1215,
+                                                80,
+                                                1274
+                                            ],
+                                            "type": "text",
+                                            "content": "·",
+                                            "score": 0.956
+                                        },
+                                        {
+                                            "bbox": [
+                                                80,
+                                                1224,
+                                                173,
+                                                1261
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "{ \\widetilde { O } } ( { \\mathrm { O P T } } )",
+                                            "score": 0.56
+                                        },
+                                        {
+                                            "bbox": [
+                                                176,
+                                                1215,
+                                                666,
+                                                1274
+                                            ],
+                                            "type": "text",
+                                            "content": "upperbound with\"radialLipschitzness\"",
+                                            "score": 0.96
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        47,
+                        1273,
+                        361,
+                        1310
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 24,
+                    "lines": [
+                        {
+                            "bbox": [
+                                50,
+                                1273,
+                                364,
+                                1311
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        50,
+                                        1273,
+                                        364,
+                                        1311
+                                    ],
+                                    "type": "text",
+                                    "content": "Upper bounds beyond LR:",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        50,
+                        1325,
+                        757,
+                        1616
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 28,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                50,
+                                1325,
+                                757,
+                                1422
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 25,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        1321,
+                                        759,
+                                        1362
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                54,
+                                                1321,
+                                                759,
+                                                1362
+                                            ],
+                                            "type": "text",
+                                            "content": "·Diakonikolas et al. (2020) designed a nonconvex SGD that",
+                                            "score": 0.972
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        76,
+                                        1355,
+                                        645,
+                                        1397
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                76,
+                                                1355,
+                                                183,
+                                                1397
+                                            ],
+                                            "type": "text",
+                                            "content": "achieves",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                183,
+                                                1360,
+                                                321,
+                                                1392
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "O ( \\mathrm { O P T } ) + \\epsilon",
+                                            "score": 0.91
+                                        },
+                                        {
+                                            "bbox": [
+                                                321,
+                                                1355,
+                                                442,
+                                                1397
+                                            ],
+                                            "type": "text",
+                                            "content": "risk using",
+                                            "score": 0.992
+                                        },
+                                        {
+                                            "bbox": [
+                                                445,
+                                                1357,
+                                                538,
+                                                1392
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\widetilde { O } ( d / \\epsilon ^ { 4 } )",
+                                            "score": 0.93
+                                        },
+                                        {
+                                            "bbox": [
+                                                538,
+                                                1355,
+                                                645,
+                                                1397
+                                            ],
+                                            "type": "text",
+                                            "content": "samples.",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        76,
+                                        1389,
+                                        635,
+                                        1433
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                76,
+                                                1389,
+                                                635,
+                                                1433
+                                            ],
+                                            "type": "text",
+                                            "content": "They can also handle heavy-tailed distributions.",
+                                            "score": 0.974
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                50,
+                                1424,
+                                742,
+                                1517
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 26,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        54,
+                                        1421,
+                                        745,
+                                        1460
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                54,
+                                                1421,
+                                                466,
+                                                1460
+                                            ],
+                                            "type": "text",
+                                            "content": "· Other prior algorithms achieving",
+                                            "score": 0.991
+                                        },
+                                        {
+                                            "bbox": [
+                                                466,
+                                                1424,
+                                                602,
+                                                1456
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "O ( \\mathrm { O P T } ) + \\epsilon",
+                                            "score": 0.9
+                                        },
+                                        {
+                                            "bbox": [
+                                                604,
+                                                1421,
+                                                745,
+                                                1460
+                                            ],
+                                            "type": "text",
+                                            "content": "risk involve",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        76,
+                                        1453,
+                                        583,
+                                        1492
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                76,
+                                                1453,
+                                                583,
+                                                1492
+                                            ],
+                                            "type": "text",
+                                            "content": "solving multiple rounds of convex program",
+                                            "score": 0.997
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        78,
+                                        1485,
+                                        492,
+                                        1520
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                78,
+                                                1485,
+                                                492,
+                                                1520
+                                            ],
+                                            "type": "text",
+                                            "content": "(Awasthi et al.,2014; Daniely,2015).",
+                                            "score": 0.972
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                50,
+                                1518,
+                                757,
+                                1616
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 27,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52,
+                                        1513,
+                                        680,
+                                        1557
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52,
+                                                1513,
+                                                680,
+                                                1557
+                                            ],
+                                            "type": "text",
+                                            "content": "· We design a simple two-phase convex program that",
+                                            "score": 0.984
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        76,
+                                        1547,
+                                        759,
+                                        1589
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                76,
+                                                1549,
+                                                180,
+                                                1589
+                                            ],
+                                            "type": "text",
+                                            "content": "achieves",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                183,
+                                                1552,
+                                                435,
+                                                1584
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "{ \\cal O } ( \\mathrm { O P T } \\ln ( 1 / \\mathrm { O P T } ) ) + \\epsilon",
+                                            "score": 0.87
+                                        },
+                                        {
+                                            "bbox": [
+                                                435,
+                                                1549,
+                                                557,
+                                                1589
+                                            ],
+                                            "type": "text",
+                                            "content": "risk using",
+                                            "score": 0.994
+                                        },
+                                        {
+                                            "bbox": [
+                                                557,
+                                                1547,
+                                                650,
+                                                1584
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\widetilde { O } ( d / \\epsilon ^ { 2 } )",
+                                            "score": 0.91
+                                        },
+                                        {
+                                            "bbox": [
+                                                650,
+                                                1549,
+                                                759,
+                                                1589
+                                            ],
+                                            "type": "text",
+                                            "content": "samples,",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        78,
+                                        1581,
+                                        421,
+                                        1620
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                78,
+                                                1581,
+                                                421,
+                                                1620
+                                            ],
+                                            "type": "text",
+                                            "content": "without radial Lipschitzness.",
+                                            "score": 0.997
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1090,
+                        264,
+                        1285,
+                        299
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 29,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1088,
+                                262,
+                                1290,
+                                301
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1088,
+                                        262,
+                                        1290,
+                                        301
+                                    ],
+                                    "type": "text",
+                                    "content": " Lower bound.",
+                                    "score": 0.982
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        833,
+                        318,
+                        1502,
+                        383
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 30,
+                    "lines": [
+                        {
+                            "bbox": [
+                                833,
+                                314,
+                                1495,
+                                360
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        833,
+                                        314,
+                                        1371,
+                                        360
+                                    ],
+                                    "type": "text",
+                                    "content": "We construct a distribution Q with three parts",
+                                    "score": 0.994
+                                },
+                                {
+                                    "bbox": [
+                                        1371,
+                                        323,
+                                        1495,
+                                        353
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "Q _ { 1 } , Q _ { 2 } , Q _ { 4 }",
+                                    "score": 0.89
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                835,
+                                350,
+                                1285,
+                                390
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        350,
+                                        954,
+                                        390
+                                    ],
+                                    "type": "text",
+                                    "content": "(One part",
+                                    "score": 0.975
+                                },
+                                {
+                                    "bbox": [
+                                        954,
+                                        353,
+                                        988,
+                                        383
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "Q _ { 3 }",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        990,
+                                        350,
+                                        1285,
+                                        390
+                                    ],
+                                    "type": "text",
+                                    "content": "is omitted for simplicity.)",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        830,
+                        385,
+                        1542,
+                        629
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 34,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                833,
+                                385,
+                                1542,
+                                490
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 31,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        833,
+                                        382,
+                                        1545,
+                                        422
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                833,
+                                                385,
+                                                864,
+                                                421
+                                            ],
+                                            "type": "text",
+                                            "content": "1.",
+                                            "score": 0.999
+                                        },
+                                        {
+                                            "bbox": [
+                                                864,
+                                                389,
+                                                902,
+                                                421
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "Q _ { 1 }",
+                                            "score": 0.8
+                                        },
+                                        {
+                                            "bbox": [
+                                                902,
+                                                385,
+                                                1388,
+                                                421
+                                            ],
+                                            "type": "text",
+                                            "content": "consists of two squares with edge length",
+                                            "score": 0.974
+                                        },
+                                        {
+                                            "bbox": [
+                                                1388,
+                                                382,
+                                                1490,
+                                                422
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\sqrt { \\mathrm { O P T } / 2 }",
+                                            "score": 0.92
+                                        },
+                                        {
+                                            "bbox": [
+                                                1490,
+                                                385,
+                                                1545,
+                                                421
+                                            ],
+                                            "type": "text",
+                                            "content": "and",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        864,
+                                        419,
+                                        1547,
+                                        456
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                864,
+                                                422,
+                                                1169,
+                                                456
+                                            ],
+                                            "type": "text",
+                                            "content": "density 1;one has center",
+                                            "score": 0.945
+                                        },
+                                        {
+                                            "bbox": [
+                                                1169,
+                                                419,
+                                                1333,
+                                                456
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "( { \\sqrt { 2 } } / 2 , - { \\sqrt { 2 } } / 2 )",
+                                            "score": 0.9
+                                        },
+                                        {
+                                            "bbox": [
+                                                1333,
+                                                422,
+                                                1454,
+                                                456
+                                            ],
+                                            "type": "text",
+                                            "content": "and label",
+                                            "score": 0.956
+                                        },
+                                        {
+                                            "bbox": [
+                                                1454,
+                                                426,
+                                                1490,
+                                                452
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "^ { - 1 }",
+                                            "score": 0.63
+                                        },
+                                        {
+                                            "bbox": [
+                                                1490,
+                                                422,
+                                                1547,
+                                                456
+                                            ],
+                                            "type": "text",
+                                            "content": ",the",
+                                            "score": 0.838
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        864,
+                                        456,
+                                        1369,
+                                        493
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                864,
+                                                456,
+                                                1054,
+                                                493
+                                            ],
+                                            "type": "text",
+                                            "content": "other has center",
+                                            "score": 0.974
+                                        },
+                                        {
+                                            "bbox": [
+                                                1054,
+                                                456,
+                                                1219,
+                                                490
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "( - { \\sqrt { 2 } } / 2 , { \\sqrt { 2 } } / 2 )",
+                                            "score": 0.91
+                                        },
+                                        {
+                                            "bbox": [
+                                                1221,
+                                                456,
+                                                1335,
+                                                493
+                                            ],
+                                            "type": "text",
+                                            "content": "and label",
+                                            "score": 0.95
+                                        },
+                                        {
+                                            "bbox": [
+                                                1335,
+                                                461,
+                                                1369,
+                                                486
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "+ 1",
+                                            "score": 0.83
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                830,
+                                490,
+                                1542,
+                                555
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 32,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        828,
+                                        484,
+                                        1545,
+                                        527
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                828,
+                                                484,
+                                                864,
+                                                527
+                                            ],
+                                            "type": "text",
+                                            "content": "2.",
+                                            "score": 0.985
+                                        },
+                                        {
+                                            "bbox": [
+                                                864,
+                                                493,
+                                                902,
+                                                523
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "Q _ { 2 }",
+                                            "score": 0.78
+                                        },
+                                        {
+                                            "bbox": [
+                                                902,
+                                                484,
+                                                1109,
+                                                527
+                                            ],
+                                            "type": "text",
+                                            "content": "is supported on",
+                                            "score": 0.993
+                                        },
+                                        {
+                                            "bbox": [
+                                                1109,
+                                                491,
+                                                1316,
+                                                523
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "[ 0 , \\sqrt { \\mathrm { O P T } } ] \\times [ 0 , 1 ]",
+                                            "score": 0.92
+                                        },
+                                        {
+                                            "bbox": [
+                                                1319,
+                                                484,
+                                                1380,
+                                                527
+                                            ],
+                                            "type": "text",
+                                            "content": "and",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                1380,
+                                                488,
+                                                1545,
+                                                523
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "[ - \\sqrt { \\mathrm { O P T } } , 0 ] \\times",
+                                            "score": 0.89
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        864,
+                                        520,
+                                        1497,
+                                        559
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                864,
+                                                525,
+                                                942,
+                                                555
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "[ - 1 , 0 ]",
+                                            "score": 0.85
+                                        },
+                                        {
+                                            "bbox": [
+                                                942,
+                                                520,
+                                                1404,
+                                                559
+                                            ],
+                                            "type": "text",
+                                            "content": "with density1,andthe label is given by",
+                                            "score": 0.952
+                                        },
+                                        {
+                                            "bbox": [
+                                                1404,
+                                                525,
+                                                1497,
+                                                555
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathrm { s i g n } ( x _ { 1 } )",
+                                            "score": 0.8
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                830,
+                                555,
+                                1542,
+                                629
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 33,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        830,
+                                        552,
+                                        1542,
+                                        587
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                830,
+                                                552,
+                                                864,
+                                                587
+                                            ],
+                                            "type": "text",
+                                            "content": "3.",
+                                            "score": 0.958
+                                        },
+                                        {
+                                            "bbox": [
+                                                866,
+                                                557,
+                                                900,
+                                                586
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "Q _ { 4 }",
+                                            "score": 0.85
+                                        },
+                                        {
+                                            "bbox": [
+                                                902,
+                                                552,
+                                                1542,
+                                                587
+                                            ],
+                                            "type": "text",
+                                            "content": "is the uniform distribution over the unitball with density",
+                                            "score": 0.969
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        859,
+                                        582,
+                                        1278,
+                                        631
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                859,
+                                                582,
+                                                1076,
+                                                626
+                                            ],
+                                            "type": "text",
+                                            "content": "94 := 1-OPT-2VOPT",
+                                            "score": 0.924
+                                        },
+                                        {
+                                            "bbox": [
+                                                864,
+                                                584,
+                                                1069,
+                                                631
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\begin{array} { r } { q _ { 4 } : = \\frac { 1 - \\mathrm { O P T } - 2 \\sqrt { \\mathrm { O P T } } } { \\pi } } \\end{array}",
+                                            "score": 0.89
+                                        },
+                                        {
+                                            "bbox": [
+                                                1071,
+                                                591,
+                                                1235,
+                                                629
+                                            ],
+                                            "type": "text",
+                                            "content": "and label sign",
+                                            "score": 0.993
+                                        },
+                                        {
+                                            "bbox": [
+                                                1235,
+                                                596,
+                                                1278,
+                                                626
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\left( x _ { 1 } \\right)",
+                                            "score": 0.52
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        835,
+                        650,
+                        1183,
+                        953
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                835,
+                                650,
+                                1183,
+                                953
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        650,
+                                        1183,
+                                        953
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                835,
+                                                650,
+                                                1183,
+                                                953
+                                            ],
+                                            "type": "image",
+                                            "image_path": "a4285cb627cf7552456530db1d88d02f652c2ae0ee3d4e60b8aeb26d726eb65d.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 35,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 35
+                },
+                {
+                    "bbox": [
+                        1197,
+                        717,
+                        1540,
+                        852
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 36,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1197,
+                                715,
+                                1542,
+                                751
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1197,
+                                        715,
+                                        1542,
+                                        751
+                                    ],
+                                    "type": "text",
+                                    "content": "Theorem. Q is well-behaved",
+                                    "score": 0.986
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1200,
+                                747,
+                                1540,
+                                783
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1200,
+                                        747,
+                                        1540,
+                                        783
+                                    ],
+                                    "type": "text",
+                                    "content": "and sub-exponential,and the",
+                                    "score": 0.983
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1197,
+                                772,
+                                1535,
+                                821
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1197,
+                                        772,
+                                        1411,
+                                        821
+                                    ],
+                                    "type": "text",
+                                    "content": "global minimizer",
+                                    "score": 0.997
+                                },
+                                {
+                                    "bbox": [
+                                        1414,
+                                        783,
+                                        1445,
+                                        808
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\boldsymbol { w } ^ { * }",
+                                    "score": 0.84
+                                },
+                                {
+                                    "bbox": [
+                                        1447,
+                                        772,
+                                        1483,
+                                        821
+                                    ],
+                                    "type": "text",
+                                    "content": "of",
+                                    "score": 0.985
+                                },
+                                {
+                                    "bbox": [
+                                        1483,
+                                        781,
+                                        1535,
+                                        815
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathcal { R } _ { \\mathrm { l o g } }",
+                                    "score": 0.86
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1197,
+                                813,
+                                1492,
+                                850
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1197,
+                                        813,
+                                        1247,
+                                        850
+                                    ],
+                                    "type": "text",
+                                    "content": "has",
+                                    "score": 0.996
+                                },
+                                {
+                                    "bbox": [
+                                        1247,
+                                        813,
+                                        1492,
+                                        850
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathcal { R } _ { 0 - 1 } ( w ^ { * } ) = \\Omega ( \\sqrt { \\mathrm { O P T } } )",
+                                    "score": 0.86
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        838,
+                        985,
+                        978,
+                        1017
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 37,
+                    "lines": [
+                        {
+                            "bbox": [
+                                835,
+                                983,
+                                983,
+                                1018
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        983,
+                                        983,
+                                        1018
+                                    ],
+                                    "type": "text",
+                                    "content": "Proof ideas:",
+                                    "score": 0.971
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        838,
+                        1018,
+                        1540,
+                        1123
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 41,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                838,
+                                1018,
+                                1540,
+                                1050
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 38,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        1012,
+                                        1533,
+                                        1057
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                835,
+                                                1012,
+                                                1009,
+                                                1057
+                                            ],
+                                            "type": "text",
+                                            "content": "·To minimize",
+                                            "score": 0.965
+                                        },
+                                        {
+                                            "bbox": [
+                                                1011,
+                                                1018,
+                                                1061,
+                                                1052
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathcal { R } _ { \\mathrm { l o g } }",
+                                            "score": 0.67
+                                        },
+                                        {
+                                            "bbox": [
+                                                1061,
+                                                1012,
+                                                1095,
+                                                1057
+                                            ],
+                                            "type": "text",
+                                            "content": "on",
+                                            "score": 0.998
+                                        },
+                                        {
+                                            "bbox": [
+                                                1095,
+                                                1018,
+                                                1133,
+                                                1049
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "Q _ { 4 } ,",
+                                            "score": 0.68
+                                        },
+                                        {
+                                            "bbox": [
+                                                1135,
+                                                1012,
+                                                1476,
+                                                1057
+                                            ],
+                                            "type": "text",
+                                            "content": "we should go to infinity along",
+                                            "score": 0.981
+                                        },
+                                        {
+                                            "bbox": [
+                                                1476,
+                                                1017,
+                                                1533,
+                                                1049
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "( 1 , 0 )",
+                                            "score": 0.79
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                838,
+                                1052,
+                                1414,
+                                1087
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 39,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        1049,
+                                        1407,
+                                        1091
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                835,
+                                                1049,
+                                                864,
+                                                1091
+                                            ],
+                                            "type": "text",
+                                            "content": "·",
+                                            "score": 0.863
+                                        },
+                                        {
+                                            "bbox": [
+                                                864,
+                                                1055,
+                                                900,
+                                                1086
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "Q _ { 1 }",
+                                            "score": 0.81
+                                        },
+                                        {
+                                            "bbox": [
+                                                902,
+                                                1049,
+                                                973,
+                                                1091
+                                            ],
+                                            "type": "text",
+                                            "content": "keeps",
+                                            "score": 0.999
+                                        },
+                                        {
+                                            "bbox": [
+                                                976,
+                                                1057,
+                                                1007,
+                                                1082
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\boldsymbol { w } ^ { * }",
+                                            "score": 0.77
+                                        },
+                                        {
+                                            "bbox": [
+                                                1007,
+                                                1049,
+                                                1180,
+                                                1091
+                                            ],
+                                            "type": "text",
+                                            "content": "bounded with",
+                                            "score": 0.999
+                                        },
+                                        {
+                                            "bbox": [
+                                                1180,
+                                                1050,
+                                                1407,
+                                                1086
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\lVert \\boldsymbol { w } ^ { * } \\rVert = O ( 1 / \\sqrt { \\mathrm { O P T } } )",
+                                            "score": 0.91
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                838,
+                                1089,
+                                1369,
+                                1123
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 40,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        833,
+                                        1084,
+                                        1361,
+                                        1126
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                833,
+                                                1084,
+                                                864,
+                                                1126
+                                            ],
+                                            "type": "text",
+                                            "content": "·",
+                                            "score": 0.798
+                                        },
+                                        {
+                                            "bbox": [
+                                                864,
+                                                1091,
+                                                900,
+                                                1121
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "Q _ { 2 }",
+                                            "score": 0.79
+                                        },
+                                        {
+                                            "bbox": [
+                                                902,
+                                                1084,
+                                                973,
+                                                1126
+                                            ],
+                                            "type": "text",
+                                            "content": "drags",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                973,
+                                                1092,
+                                                1007,
+                                                1118
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\boldsymbol { w } ^ { * }",
+                                            "score": 0.84
+                                        },
+                                        {
+                                            "bbox": [
+                                                1007,
+                                                1084,
+                                                1250,
+                                                1126
+                                            ],
+                                            "type": "text",
+                                            "content": "above by an angle of",
+                                            "score": 0.956
+                                        },
+                                        {
+                                            "bbox": [
+                                                1250,
+                                                1087,
+                                                1361,
+                                                1121
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\Omega ( \\sqrt { \\mathrm { O P T } } )",
+                                            "score": 0.89
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        942,
+                        1170,
+                        1433,
+                        1210
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 42,
+                    "lines": [
+                        {
+                            "bbox": [
+                                938,
+                                1167,
+                                1438,
+                                1209
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        938,
+                                        1167,
+                                        1438,
+                                        1209
+                                    ],
+                                    "type": "text",
+                                    "content": "Upper bound: radial Lipschitzness.",
+                                    "score": 0.992
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        833,
+                        1225,
+                        1542,
+                        1288
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 43,
+                    "lines": [
+                        {
+                            "bbox": [
+                                835,
+                                1225,
+                                1542,
+                                1259
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        1225,
+                                        1542,
+                                        1259
+                                    ],
+                                    "type": "text",
+                                    "content": "To exclude Q and overcome the lower bound,we make the",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                835,
+                                1257,
+                                1178,
+                                1291
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        1257,
+                                        1178,
+                                        1291
+                                    ],
+                                    "type": "text",
+                                    "content": "following assumption for LR.",
+                                    "score": 0.991
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        833,
+                        1289,
+                        1542,
+                        1412
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 44,
+                    "lines": [
+                        {
+                            "bbox": [
+                                835,
+                                1288,
+                                1542,
+                                1321
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        1288,
+                                        1542,
+                                        1321
+                                    ],
+                                    "type": "text",
+                                    "content": "Radial Lipschitzness: There exists a measurable function",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                835,
+                                1318,
+                                1542,
+                                1353
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        1320,
+                                        1007,
+                                        1350
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\kappa : \\mathbb { R } _ { + }  \\mathbb { R } _ { + }",
+                                    "score": 0.9
+                                },
+                                {
+                                    "bbox": [
+                                        1007,
+                                        1318,
+                                        1542,
+                                        1353
+                                    ],
+                                    "type": "text",
+                                    "content": "such that for any two-dimensional subspace",
+                                    "score": 0.992
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                835,
+                                1348,
+                                1545,
+                                1385
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        1348,
+                                        954,
+                                        1385
+                                    ],
+                                    "type": "text",
+                                    "content": "V,letting",
+                                    "score": 0.99
+                                },
+                                {
+                                    "bbox": [
+                                        957,
+                                        1355,
+                                        990,
+                                        1384
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "p _ { V }",
+                                    "score": 0.8
+                                },
+                                {
+                                    "bbox": [
+                                        992,
+                                        1348,
+                                        1545,
+                                        1385
+                                    ],
+                                    "type": "text",
+                                    "content": "denote the density of the projection of feature",
+                                    "score": 0.961
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                835,
+                                1379,
+                                1128,
+                                1414
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        835,
+                                        1379,
+                                        1035,
+                                        1414
+                                    ],
+                                    "type": "text",
+                                    "content": "distribution onto",
+                                    "score": 0.998
+                                },
+                                {
+                                    "bbox": [
+                                        1038,
+                                        1384,
+                                        1059,
+                                        1411
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "V",
+                                    "score": 0.62
+                                },
+                                {
+                                    "bbox": [
+                                        1059,
+                                        1379,
+                                        1128,
+                                        1414
+                                    ],
+                                    "type": "text",
+                                    "content": ",then",
+                                    "score": 0.98
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        983,
+                        1434,
+                        1392,
+                        1471
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                983,
+                                1434,
+                                1392,
+                                1471
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        983,
+                                        1434,
+                                        1392,
+                                        1471
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "| p _ {V} (r, \\theta) - p _ {V} (r, \\theta^ {\\prime}) | \\leq \\kappa (r) | \\theta - \\theta^ {\\prime} |.",
+                                    "image_path": "40e77aa18ce3ca87e5f07f20fc8ce10181c29011b7c25592e54e0e766e608ab1.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 45
+                },
+                {
+                    "bbox": [
+                        838,
+                        1492,
+                        1516,
+                        1616
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 49,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                838,
+                                1492,
+                                1454,
+                                1554
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 46,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        838,
+                                        1488,
+                                        1459,
+                                        1529
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                838,
+                                                1488,
+                                                964,
+                                                1529
+                                            ],
+                                            "type": "text",
+                                            "content": "·Holds if",
+                                            "score": 0.983
+                                        },
+                                        {
+                                            "bbox": [
+                                                964,
+                                                1495,
+                                                997,
+                                                1524
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "p _ { V }",
+                                            "score": 0.84
+                                        },
+                                        {
+                                            "bbox": [
+                                                997,
+                                                1488,
+                                                1459,
+                                                1529
+                                            ],
+                                            "type": "text",
+                                            "content": " is Lipschitz, even non-log-concave ones",
+                                            "score": 0.989
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        864,
+                                        1522,
+                                        1164,
+                                        1557
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                864,
+                                                1522,
+                                                1164,
+                                                1557
+                                            ],
+                                            "type": "text",
+                                            "content": "(e.g., Gaussian mixtures).",
+                                            "score": 0.954
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                838,
+                                1556,
+                                1459,
+                                1586
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 47,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        838,
+                                        1549,
+                                        1464,
+                                        1591
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                838,
+                                                1549,
+                                                1464,
+                                                1591
+                                            ],
+                                            "type": "text",
+                                            "content": "·Does not hold for general log-concave distributions.",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                838,
+                                1586,
+                                1516,
+                                1616
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 48,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        838,
+                                        1582,
+                                        1521,
+                                        1620
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                838,
+                                                1582,
+                                                1071,
+                                                1620
+                                            ],
+                                            "type": "text",
+                                            "content": "· Does not hold for",
+                                            "score": 0.968
+                                        },
+                                        {
+                                            "bbox": [
+                                                1071,
+                                                1588,
+                                                1097,
+                                                1616
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "Q _ { \\ l }",
+                                            "score": 0.76
+                                        },
+                                        {
+                                            "bbox": [
+                                                1097,
+                                                1582,
+                                                1521,
+                                                1620
+                                            ],
+                                            "type": "text",
+                                            "content": ",non-Lipschitz near the vertical axis.",
+                                            "score": 0.993
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1740,
+                        264,
+                        2204,
+                        303
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 50,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1735,
+                                261,
+                                2209,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1735,
+                                        261,
+                                        2209,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": " Upper bound: logistic regression.",
+                                    "score": 0.99
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1619,
+                        319,
+                        2209,
+                        355
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 51,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1619,
+                                318,
+                                2211,
+                                355
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1619,
+                                        318,
+                                        2064,
+                                        355
+                                    ],
+                                    "type": "text",
+                                    "content": "Projected gradient descent (PGD): let",
+                                    "score": 0.986
+                                },
+                                {
+                                    "bbox": [
+                                        2066,
+                                        323,
+                                        2152,
+                                        351
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "w _ { 0 } : = 0 ,",
+                                    "score": 0.84
+                                },
+                                {
+                                    "bbox": [
+                                        2154,
+                                        318,
+                                        2211,
+                                        355
+                                    ],
+                                    "type": "text",
+                                    "content": "and",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1764,
+                        372,
+                        2178,
+                        431
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1764,
+                                372,
+                                2178,
+                                431
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1764,
+                                        372,
+                                        2178,
+                                        431
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "w _ {t + 1} := \\Pi_ {\\mathcal {B} (1 / \\sqrt {\\epsilon})} \\left[ w _ {t} - \\eta \\nabla \\widehat {\\mathcal {R}} _ {\\log} (w _ {t}) \\right].",
+                                    "image_path": "0cb05f261e10a936578c7a7726cbbda96daa7809414c07af567bf11aea32ab9d.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 52
+                },
+                {
+                    "bbox": [
+                        1621,
+                        458,
+                        2326,
+                        591
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 53,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1623,
+                                454,
+                                2328,
+                                496
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1623,
+                                        454,
+                                        2328,
+                                        496
+                                    ],
+                                    "type": "text",
+                                    "content": "Theorem. If the dist. is well-behaved, sub-exponential",
+                                    "score": 0.986
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1621,
+                                486,
+                                2330,
+                                535
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        486,
+                                        2150,
+                                        535
+                                    ],
+                                    "type": "text",
+                                    "content": "and radially-Lipschitz, with learning rate",
+                                    "score": 0.992
+                                },
+                                {
+                                    "bbox": [
+                                        2150,
+                                        490,
+                                        2235,
+                                        528
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\widetilde { \\Theta } ( 1 / \\dot { d } )",
+                                    "score": 0.9
+                                },
+                                {
+                                    "bbox": [
+                                        2235,
+                                        486,
+                                        2330,
+                                        535
+                                    ],
+                                    "type": "text",
+                                    "content": "，using",
+                                    "score": 0.938
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1628,
+                                523,
+                                2314,
+                                564
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1628,
+                                        527,
+                                        1859,
+                                        559
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathrm { p o l y } ( d , 1 / \\epsilon , \\ln ( 1 / \\delta ) )",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        1859,
+                                        523,
+                                        2257,
+                                        564
+                                    ],
+                                    "type": "text",
+                                    "content": " samples and iterations, with prob.",
+                                    "score": 0.989
+                                },
+                                {
+                                    "bbox": [
+                                        2257,
+                                        528,
+                                        2314,
+                                        557
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "1 - \\delta",
+                                    "score": 0.63
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1623,
+                                557,
+                                1883,
+                                592
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1623,
+                                        557,
+                                        1785,
+                                        592
+                                    ],
+                                    "type": "text",
+                                    "content": "PGD outputs",
+                                    "score": 0.976
+                                },
+                                {
+                                    "bbox": [
+                                        1785,
+                                        564,
+                                        1816,
+                                        587
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "w _ { t }",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        1819,
+                                        557,
+                                        1883,
+                                        592
+                                    ],
+                                    "type": "text",
+                                    "content": "with",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1830,
+                        611,
+                        2111,
+                        650
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1830,
+                                611,
+                                2111,
+                                650
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1830,
+                                        611,
+                                        2111,
+                                        650
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathcal {R} _ {0 - 1} (w _ {t}) = \\widetilde {O} (\\mathrm {O P T}) + \\epsilon .",
+                                    "image_path": "9be4158366ce92151e3d6b248ebcfb8b5105b529c7faeaab64773dba1c7e9a4d.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 54
+                },
+                {
+                    "bbox": [
+                        1619,
+                        668,
+                        2328,
+                        737
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 55,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1621,
+                                665,
+                                2330,
+                                705
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        665,
+                                        2204,
+                                        705
+                                    ],
+                                    "type": "text",
+                                    "content": "Proof ideas: under the given conditions, suppose",
+                                    "score": 0.989
+                                },
+                                {
+                                    "bbox": [
+                                        2204,
+                                        670,
+                                        2228,
+                                        697
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\hat { w }",
+                                    "score": 0.8
+                                },
+                                {
+                                    "bbox": [
+                                        2228,
+                                        665,
+                                        2330,
+                                        705
+                                    ],
+                                    "type": "text",
+                                    "content": "satisfies",
+                                    "score": 0.999
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1621,
+                                700,
+                                1992,
+                                737
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        700,
+                                        1926,
+                                        735
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathcal { R } _ { \\log } ( \\hat { w } ) \\leq \\mathcal { R } _ { \\log } ( \\Vert \\hat { w } \\Vert \\bar { u } ) + \\epsilon ^ { \\prime } ,",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        1926,
+                                        700,
+                                        1992,
+                                        737
+                                    ],
+                                    "type": "text",
+                                    "content": "then",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1723,
+                        756,
+                        2330,
+                        833
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1723,
+                                756,
+                                2330,
+                                833
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1723,
+                                        756,
+                                        2330,
+                                        833
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathcal {R} _ {0 - 1} (\\hat {w}) = \\widetilde {O} \\left(\\max  \\left\\{\\mathrm {O P T}, \\sqrt {\\frac {\\epsilon^ {\\prime}}{\\| \\hat {w} \\|}}, \\frac {C _ {\\kappa}}{\\| \\hat {w} \\| ^ {2}} \\right\\}\\right). \\tag {1}",
+                                    "image_path": "4da7fd6250404a42602936ed61508c00a4c88c3cf23d08be64a60143bc2047ac.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 56
+                },
+                {
+                    "bbox": [
+                        1621,
+                        852,
+                        2328,
+                        959
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 59,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1621,
+                                852,
+                                2130,
+                                885
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 57,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        847,
+                                        2135,
+                                        892
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1621,
+                                                847,
+                                                1650,
+                                                892
+                                            ],
+                                            "type": "text",
+                                            "content": "·",
+                                            "score": 0.858
+                                        },
+                                        {
+                                            "bbox": [
+                                                1650,
+                                                852,
+                                                1883,
+                                                885
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "C _ { \\kappa } = O ( \\mathrm { l n } ( 1 / \\mathrm { O P T } ) ^ { 2 } )",
+                                            "score": 0.94
+                                        },
+                                        {
+                                            "bbox": [
+                                                1885,
+                                                847,
+                                                2135,
+                                                892
+                                            ],
+                                            "type": "text",
+                                            "content": "for Lipschitz density.",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1621,
+                                885,
+                                2328,
+                                959
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 58,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        882,
+                                        2330,
+                                        922
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1621,
+                                                882,
+                                                1888,
+                                                922
+                                            ],
+                                            "type": "text",
+                                            "content": "·The globaloptimizer",
+                                            "score": 0.976
+                                        },
+                                        {
+                                            "bbox": [
+                                                1890,
+                                                890,
+                                                1921,
+                                                916
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\boldsymbol { w } ^ { * }",
+                                            "score": 0.86
+                                        },
+                                        {
+                                            "bbox": [
+                                                1923,
+                                                882,
+                                                1950,
+                                                922
+                                            ],
+                                            "type": "text",
+                                            "content": "of",
+                                            "score": 0.998
+                                        },
+                                        {
+                                            "bbox": [
+                                                1950,
+                                                889,
+                                                2000,
+                                                922
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathcal { R } _ { \\mathrm { l o g } }",
+                                            "score": 0.9
+                                        },
+                                        {
+                                            "bbox": [
+                                                2000,
+                                                882,
+                                                2095,
+                                                922
+                                            ],
+                                            "type": "text",
+                                            "content": "satisfies",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                2095,
+                                                882,
+                                                2323,
+                                                921
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\lVert \\boldsymbol { \\dot { w } } ^ { * } \\rVert = \\widetilde { \\Omega } ( 1 / \\sqrt { \\mathrm { O P T } } ) ;",
+                                            "score": 0.9
+                                        },
+                                        {
+                                            "bbox": [
+                                                2323,
+                                                882,
+                                                2330,
+                                                922
+                                            ],
+                                            "type": "text",
+                                            "content": "：",
+                                            "score": 0.65
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1645,
+                                        919,
+                                        2311,
+                                        961
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1645,
+                                                919,
+                                                1859,
+                                                961
+                                            ],
+                                            "type": "text",
+                                            "content": "PGD also ensures",
+                                            "score": 0.988
+                                        },
+                                        {
+                                            "bbox": [
+                                                1859,
+                                                931,
+                                                1890,
+                                                956
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "w _ { t }",
+                                            "score": 0.87
+                                        },
+                                        {
+                                            "bbox": [
+                                                1892,
+                                                919,
+                                                2007,
+                                                961
+                                            ],
+                                            "type": "text",
+                                            "content": "has small",
+                                            "score": 0.952
+                                        },
+                                        {
+                                            "bbox": [
+                                                2007,
+                                                927,
+                                                2033,
+                                                953
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\epsilon ^ { \\prime }",
+                                            "score": 0.85
+                                        },
+                                        {
+                                            "bbox": [
+                                                2033,
+                                                919,
+                                                2085,
+                                                961
+                                            ],
+                                            "type": "text",
+                                            "content": "and",
+                                            "score": 0.895
+                                        },
+                                        {
+                                            "bbox": [
+                                                2088,
+                                                921,
+                                                2311,
+                                                958
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\lVert \\boldsymbol { w } _ { t } \\rVert = \\widetilde { \\Omega } ( 1 / \\sqrt { \\mathrm { O P T } } )",
+                                            "score": 0.9
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1680,
+                        1005,
+                        2264,
+                        1044
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 60,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1676,
+                                1000,
+                                2269,
+                                1049
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1676,
+                                        1000,
+                                        2269,
+                                        1049
+                                    ],
+                                    "type": "text",
+                                    "content": "Upper bound: two-phase convex program.",
+                                    "score": 0.995
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1619,
+                        1064,
+                        2311,
+                        1131
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 61,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1623,
+                                1065,
+                                2311,
+                                1099
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1623,
+                                        1065,
+                                        2085,
+                                        1099
+                                    ],
+                                    "type": "text",
+                                    "content": "Motivation: (1) holds for the hinge loss",
+                                    "score": 0.98
+                                },
+                                {
+                                    "bbox": [
+                                        2088,
+                                        1067,
+                                        2311,
+                                        1099
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\ell _ { h } ( z ) : = \\operatorname* { m a x } \\{ - z , 0 \\}",
+                                    "score": 0.9
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1623,
+                                1099,
+                                1964,
+                                1131
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1623,
+                                        1099,
+                                        1964,
+                                        1131
+                                    ],
+                                    "type": "text",
+                                    "content": "without radial Lipschitzness!",
+                                    "score": 0.969
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1764,
+                        1150,
+                        2178,
+                        1227
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1764,
+                                1150,
+                                2178,
+                                1227
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1764,
+                                        1150,
+                                        2178,
+                                        1227
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\mathcal {R} _ {0 - 1} (\\hat {w}) = \\widetilde {O} \\left(\\max  \\left\\{\\mathrm {O P T}, \\sqrt {\\frac {\\epsilon^ {\\prime}}{\\| \\hat {w} \\|}} \\right\\}\\right).",
+                                    "image_path": "062a8c925956e2a3e035597eb342b6ef2c943233bdf0320cfe60c5fad89acdcf.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 62
+                },
+                {
+                    "bbox": [
+                        1619,
+                        1242,
+                        2328,
+                        1310
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 63,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1619,
+                                1241,
+                                2330,
+                                1281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1619,
+                                        1241,
+                                        2033,
+                                        1281
+                                    ],
+                                    "type": "text",
+                                    "content": "However, the global minimizer of",
+                                    "score": 0.981
+                                },
+                                {
+                                    "bbox": [
+                                        2033,
+                                        1247,
+                                        2069,
+                                        1276
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathcal { R } _ { h }",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        2069,
+                                        1241,
+                                        2264,
+                                        1281
+                                    ],
+                                    "type": "text",
+                                    "content": "is O;if we find",
+                                    "score": 0.955
+                                },
+                                {
+                                    "bbox": [
+                                        2264,
+                                        1246,
+                                        2288,
+                                        1273
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\hat { w }",
+                                    "score": 0.8
+                                },
+                                {
+                                    "bbox": [
+                                        2290,
+                                        1241,
+                                        2330,
+                                        1281
+                                    ],
+                                    "type": "text",
+                                    "content": "by",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1621,
+                                1276,
+                                2283,
+                                1310
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        1276,
+                                        1897,
+                                        1310
+                                    ],
+                                    "type": "text",
+                                    "content": "global minimization,as",
+                                    "score": 0.994
+                                },
+                                {
+                                    "bbox": [
+                                        1897,
+                                        1278,
+                                        1921,
+                                        1305
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\epsilon ^ { \\prime }",
+                                    "score": 0.82
+                                },
+                                {
+                                    "bbox": [
+                                        1923,
+                                        1276,
+                                        2052,
+                                        1310
+                                    ],
+                                    "type": "text",
+                                    "content": "gets small,",
+                                    "score": 0.96
+                                },
+                                {
+                                    "bbox": [
+                                        2054,
+                                        1278,
+                                        2102,
+                                        1308
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\| \\hat { w } \\|",
+                                    "score": 0.9
+                                },
+                                {
+                                    "bbox": [
+                                        2102,
+                                        1276,
+                                        2283,
+                                        1310
+                                    ],
+                                    "type": "text",
+                                    "content": "also gets small.",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1619,
+                        1315,
+                        2130,
+                        1347
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 64,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1621,
+                                1310,
+                                2135,
+                                1352
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        1310,
+                                        2135,
+                                        1352
+                                    ],
+                                    "type": "text",
+                                    "content": "Ideas: LR followed by restricted Perceptron:",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1621,
+                        1348,
+                        2176,
+                        1414
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 67,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1621,
+                                1348,
+                                2176,
+                                1382
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 65,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1619,
+                                        1340,
+                                        2169,
+                                        1389
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1619,
+                                                1340,
+                                                1807,
+                                                1389
+                                            ],
+                                            "type": "text",
+                                            "content": "·LR finds unit",
+                                            "score": 0.974
+                                        },
+                                        {
+                                            "bbox": [
+                                                1807,
+                                                1357,
+                                                1826,
+                                                1379
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "v",
+                                            "score": 0.67
+                                        },
+                                        {
+                                            "bbox": [
+                                                1826,
+                                                1340,
+                                                1907,
+                                                1389
+                                            ],
+                                            "type": "text",
+                                            "content": "that is",
+                                            "score": 0.955
+                                        },
+                                        {
+                                            "bbox": [
+                                                1907,
+                                                1345,
+                                                2021,
+                                                1382
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\widetilde { O } ( \\sqrt { \\mathrm { O P T } } )",
+                                            "score": 0.91
+                                        },
+                                        {
+                                            "bbox": [
+                                                2021,
+                                                1340,
+                                                2150,
+                                                1389
+                                            ],
+                                            "type": "text",
+                                            "content": "away from",
+                                            "score": 0.994
+                                        },
+                                        {
+                                            "bbox": [
+                                                2152,
+                                                1353,
+                                                2169,
+                                                1379
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\bar { u }",
+                                            "score": 0.56
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1621,
+                                1384,
+                                2169,
+                                1414
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 66,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        1379,
+                                        2159,
+                                        1419
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1621,
+                                                1379,
+                                                1830,
+                                                1419
+                                            ],
+                                            "type": "text",
+                                            "content": "· Then minimize",
+                                            "score": 0.988
+                                        },
+                                        {
+                                            "bbox": [
+                                                1830,
+                                                1384,
+                                                1866,
+                                                1412
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathcal { R } _ { h }",
+                                            "score": 0.89
+                                        },
+                                        {
+                                            "bbox": [
+                                                1866,
+                                                1379,
+                                                1926,
+                                                1419
+                                            ],
+                                            "type": "text",
+                                            "content": "over",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                1926,
+                                                1384,
+                                                2159,
+                                                1414
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathcal { D } : = \\{ w | \\langle w , v \\rangle \\geq 1 \\}",
+                                            "score": 0.91
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1652,
+                        1414,
+                        1885,
+                        1444
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1652,
+                                1414,
+                                1885,
+                                1444
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1652,
+                                        1414,
+                                        1885,
+                                        1444
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "- \\forall w \\in \\mathcal {D}, \\| w \\| \\geq 1.",
+                                    "image_path": "aec2ec7647a05694b952112013ac8248c557353b701d1fd1c8447bffc93e0c35.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 68
+                },
+                {
+                    "bbox": [
+                        1652,
+                        1444,
+                        2252,
+                        1492
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1652,
+                                1444,
+                                2252,
+                                1492
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1652,
+                                        1444,
+                                        2252,
+                                        1492
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "- \\| \\hat {w} \\| \\bar {u} \\text {m a y n o t i n} \\mathcal {D}, \\text {b u t} (1 + \\widetilde {\\mathcal {O}} (\\mathrm {O P T})) \\| \\hat {w} \\| \\bar {u} \\in \\mathcal {D}!",
+                                    "image_path": "8b885ce875b826325e320c6923255e17ecd494b8a2cb915c43fd8a3c1a72dd0e.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 69
+                },
+                {
+                    "bbox": [
+                        1621,
+                        1492,
+                        2097,
+                        1524
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 70,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1621,
+                                1481,
+                                2100,
+                                1529
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        1481,
+                                        2100,
+                                        1529
+                                    ],
+                                    "type": "text",
+                                    "content": "· Use SGD for better sample complexity.",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1621,
+                        1530,
+                        2323,
+                        1630
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 71,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1623,
+                                1525,
+                                2326,
+                                1567
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1623,
+                                        1525,
+                                        2326,
+                                        1567
+                                    ],
+                                    "type": "text",
+                                    "content": "Theorem. If the dist. is well-behaved and sub-exponential,",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1621,
+                                1556,
+                                2330,
+                                1609
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1621,
+                                        1556,
+                                        1707,
+                                        1609
+                                    ],
+                                    "type": "text",
+                                    "content": "using",
+                                    "score": 0.975
+                                },
+                                {
+                                    "bbox": [
+                                        1707,
+                                        1561,
+                                        1802,
+                                        1598
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\widetilde { O } ( d / \\epsilon ^ { 2 } )",
+                                    "score": 0.9
+                                },
+                                {
+                                    "bbox": [
+                                        1804,
+                                        1556,
+                                        2330,
+                                        1609
+                                    ],
+                                    "type": "text",
+                                    "content": " samples, SGD can achieve zero-one risk",
+                                    "score": 0.96
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1628,
+                                1599,
+                                1888,
+                                1630
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1628,
+                                        1599,
+                                        1888,
+                                        1630
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "O ( \\mathrm { O P T } \\ln ( 1 / \\mathrm { O P T } ) ) + \\epsilon",
+                                    "score": 0.86
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                2381,
+                1684
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

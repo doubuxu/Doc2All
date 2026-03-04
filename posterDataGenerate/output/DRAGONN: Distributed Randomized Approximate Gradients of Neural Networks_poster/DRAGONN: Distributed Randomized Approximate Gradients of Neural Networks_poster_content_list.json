@@ -1,0 +1,710 @@
+[
+  {
+    "type": "text",
+    "text": "DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks ",
+    "text_level": 1,
+    "bbox": [
+      12,
+      29,
+      758,
+      68
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Zhuang Wang*, Zhaozhuo Xu*, Xinyu Crystal Wu, Anshumali Shrivastava,and T.S. Eugene Ng ",
+    "bbox": [
+      12,
+      68,
+      601,
+      96
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "* equal contribution ",
+    "bbox": [
+      12,
+      107,
+      132,
+      133
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Introduction ",
+    "text_level": 1,
+    "bbox": [
+      33,
+      187,
+      154,
+      222
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Data-parallel Distributed Training (DDT) ",
+      "Training with multiple GPUs ",
+      ""
+    ],
+    "image_footnote": [],
+    "bbox": [
+      93,
+      313,
+      209,
+      467
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Communication bottleneck in DDT ",
+    "text_level": 1,
+    "bbox": [
+      34,
+      512,
+      203,
+      533
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Computation gets faster ",
+    "text_level": 1,
+    "bbox": [
+      40,
+      556,
+      111,
+      571
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Advanced DNN accelerators ",
+      "。P100->V100->A100 ",
+      "·Advanced DNN compilers ",
+      "·The single-GPU iteration time of ResNet50 has reduced by 22x "
+    ],
+    "bbox": [
+      43,
+      584,
+      136,
+      665
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      112,
+      672,
+      131,
+      707
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "Communicationbecomesthe performance bottleneck "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      171,
+      672,
+      191,
+      707
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Gradient Sparsification (GS) ",
+    "text_level": 1,
+    "bbox": [
+      34,
+      766,
+      169,
+      789
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Selecttop-k gradients for synchronization ",
+    "text_level": 1,
+    "bbox": [
+      40,
+      810,
+      159,
+      826
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Exact TopKGS ",
+      "·Approximate TopK GS,e.g.,DGC "
+    ],
+    "bbox": [
+      44,
+      838,
+      137,
+      866
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Save up to 99.9% the gradient exchange ",
+    "text_level": 1,
+    "bbox": [
+      40,
+      901,
+      156,
+      916
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Greatly reduce the communication time ",
+    "bbox": [
+      44,
+      929,
+      154,
+      941
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      233,
+      803,
+      246,
+      813
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      196,
+      817,
+      275,
+      832
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      228,
+      834,
+      273,
+      847
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      196,
+      849,
+      274,
+      864
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      228,
+      866,
+      270,
+      879
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      196,
+      882,
+      236,
+      897
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      213,
+      899,
+      234,
+      913
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_11.jpg",
+    "image_caption": [
+      "Limitations of previous GS "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      196,
+      917,
+      236,
+      933
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Method ",
+    "text_level": 1,
+    "bbox": [
+      351,
+      187,
+      430,
+      222
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "GS does not always help ",
+    "text_level": 1,
+    "bbox": [
+      355,
+      295,
+      441,
+      313
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Full synchronization is better than DGC forsmaller tensors ",
+    "bbox": [
+      359,
+      323,
+      461,
+      355
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      351,
+      368,
+      473,
+      511
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "GSbecomes the major bottleneck ",
+    "text_level": 1,
+    "bbox": [
+      518,
+      295,
+      638,
+      313
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": ". Compression time exceeds communication time ",
+    "bbox": [
+      523,
+      323,
+      619,
+      354
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_13.jpg",
+    "image_caption": [
+      "DRAGONN: a hashing-based compressor "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      515,
+      368,
+      637,
+      514
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Cheap encoding operations ",
+    "text_level": 1,
+    "bbox": [
+      356,
+      569,
+      445,
+      586
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      345,
+      595,
+      615,
+      720
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Deploying DRAGONN in Practice ",
+    "text_level": 1,
+    "bbox": [
+      350,
+      772,
+      522,
+      796
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Efficiency-awaretensor selectionforGS ",
+    "text_level": 1,
+    "bbox": [
+      356,
+      821,
+      484,
+      836
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Apply DRAGONN to tensors only when itbenefits the iteration time ",
+    "bbox": [
+      359,
+      850,
+      558,
+      866
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sparse decoding ",
+    "text_level": 1,
+    "bbox": [
+      356,
+      896,
+      412,
+      913
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Minimize the decoding overhead after communication ",
+    "bbox": [
+      359,
+      927,
+      523,
+      941
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Experiment ",
+    "text_level": 1,
+    "bbox": [
+      713,
+      188,
+      826,
+      229
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Evaluations ",
+    "bbox": [
+      714,
+      247,
+      777,
+      268
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Training throughput ",
+    "text_level": 1,
+    "bbox": [
+      720,
+      295,
+      783,
+      311
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_15.jpg",
+    "image_caption": [
+      "ResNet50 overImageNet "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      702,
+      337,
+      795,
+      451
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_16.jpg",
+    "image_caption": [
+      "XMLover Wiki10-31K "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      798,
+      338,
+      888,
+      451
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_17.jpg",
+    "image_caption": [
+      "ViT over ImageNet "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      891,
+      339,
+      982,
+      450
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Accuracy vs Iteration ",
+    "text_level": 1,
+    "bbox": [
+      720,
+      510,
+      788,
+      525
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_18.jpg",
+    "image_caption": [
+      "ResNet50 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      701,
+      558,
+      787,
+      667
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_19.jpg",
+    "image_caption": [
+      "XML "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      794,
+      560,
+      884,
+      667
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_20.jpg",
+    "image_caption": [
+      "ViT "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      887,
+      560,
+      982,
+      667
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Improvementbreakdown ",
+    "text_level": 1,
+    "bbox": [
+      720,
+      727,
+      800,
+      742
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_21.jpg",
+    "image_caption": [
+      "ResNet50 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      704,
+      779,
+      795,
+      881
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_22.jpg",
+    "image_caption": [
+      "XML "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      798,
+      779,
+      888,
+      880
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/DRAGONN: Distributed Randomized Approximate Gradients of Neural Networks_poster/visuals/images/fig_23.jpg",
+    "image_caption": [
+      "ViT "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      891,
+      779,
+      982,
+      880
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Acknowledgements ",
+    "text_level": 1,
+    "bbox": [
+      712,
+      940,
+      840,
+      968
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "NSF, ONR DURIP, ONR BRC and Ken Kennedy Institute BP fellowship ",
+    "bbox": [
+      712,
+      972,
+      927,
+      989
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "五",
+    "bbox": [
+      822,
+      31,
+      873,
+      137
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "RICE ? ",
+    "bbox": [
+      877,
+      46,
+      983,
+      116
+    ],
+    "page_idx": 0
+  }
+]

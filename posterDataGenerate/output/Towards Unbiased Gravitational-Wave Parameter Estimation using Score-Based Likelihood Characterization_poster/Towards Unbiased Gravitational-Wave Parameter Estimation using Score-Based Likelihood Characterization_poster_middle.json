@@ -1,0 +1,2805 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        22,
+                        16,
+                        883,
+                        94
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                17,
+                                8,
+                                888,
+                                60
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        17,
+                                        8,
+                                        888,
+                                        60
+                                    ],
+                                    "type": "text",
+                                    "content": "Towards Unbiased Gravitational-Wave Parameter",
+                                    "score": 0.989
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                17,
+                                50,
+                                422,
+                                94
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        17,
+                                        50,
+                                        422,
+                                        94
+                                    ],
+                                    "type": "text",
+                                    "content": "Estimation using SLIC",
+                                    "score": 0.986
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        23,
+                        96,
+                        883,
+                        148
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                25,
+                                125,
+                                74,
+                                146
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        25,
+                                        125,
+                                        74,
+                                        146
+                                    ],
+                                    "type": "text",
+                                    "content": "Hezav",
+                                    "score": 0.932
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        23,
+                        159,
+                        841,
+                        214
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": []
+                },
+                {
+                    "bbox": [
+                        44,
+                        257,
+                        223,
+                        278
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                253,
+                                224,
+                                280
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        253,
+                                        224,
+                                        280
+                                    ],
+                                    "type": "text",
+                                    "content": "Summary/Objectives",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        302,
+                        609,
+                        412
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                37,
+                                302,
+                                612,
+                                327
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        302,
+                                        612,
+                                        327
+                                    ],
+                                    "type": "text",
+                                    "content": "Gravitational wave (GW) parameter estimation demands critical assumptions of",
+                                    "score": 0.988
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                325,
+                                609,
+                                350
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        325,
+                                        609,
+                                        350
+                                    ],
+                                    "type": "text",
+                                    "content": "noise characteristics in detectors like LIGO,Virgo,and KAGRA.In this study，",
+                                    "score": 0.947
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                348,
+                                610,
+                                369
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        348,
+                                        610,
+                                        369
+                                    ],
+                                    "type": "text",
+                                    "content": "weutilizescore-based diffusion models to empirically learn the noise distribution",
+                                    "score": 0.968
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                369,
+                                612,
+                                393
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        369,
+                                        612,
+                                        393
+                                    ],
+                                    "type": "text",
+                                    "content": "straight fromdetectordata,anduse thisto buildanunbiasedmodel ofthe",
+                                    "score": 0.971
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                391,
+                                180,
+                                416
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        391,
+                                        180,
+                                        416
+                                    ],
+                                    "type": "text",
+                                    "content": "likelihood function.",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        44,
+                        450,
+                        148,
+                        469
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                448,
+                                151,
+                                471
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        448,
+                                        151,
+                                        471
+                                    ],
+                                    "type": "text",
+                                    "content": "Introduction",
+                                    "score": 0.99
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        494,
+                        609,
+                        695
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                36,
+                                493,
+                                612,
+                                520
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        493,
+                                        612,
+                                        520
+                                    ],
+                                    "type": "text",
+                                    "content": "Traditional GW parameter estimation assumes the instrumental noise tobe",
+                                    "score": 0.95
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                37,
+                                516,
+                                610,
+                                541
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        516,
+                                        610,
+                                        541
+                                    ],
+                                    "type": "text",
+                                    "content": "Gaussianandstationary (B.P.Abbottetal.,2020).However,real noiseoften",
+                                    "score": 0.958
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                37,
+                                541,
+                                610,
+                                562
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        541,
+                                        610,
+                                        562
+                                    ],
+                                    "type": "text",
+                                    "content": "deviates fromastationary Gaussiandue to instrument evolution,data contami-",
+                                    "score": 0.966
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                562,
+                                610,
+                                584
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        562,
+                                        610,
+                                        584
+                                    ],
+                                    "type": "text",
+                                    "content": "nation by transient non-Gaussian excursions and nonlinear evolution of narrow",
+                                    "score": 0.966
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                35,
+                                584,
+                                612,
+                                609
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        584,
+                                        612,
+                                        609
+                                    ],
+                                    "type": "text",
+                                    "content": "spectral features (B.P.Abbott etal.,2016a,b;Buikema etal.,2020).These",
+                                    "score": 0.947
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                35,
+                                605,
+                                612,
+                                630
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        605,
+                                        612,
+                                        630
+                                    ],
+                                    "type": "text",
+                                    "content": "contaminantscan only be managed by specific treatments,resultingincom-",
+                                    "score": 0.956
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                629,
+                                612,
+                                652
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        629,
+                                        612,
+                                        652
+                                    ],
+                                    "type": "text",
+                                    "content": "putational expenseandpotential biases.Thiswork presentsa new inference",
+                                    "score": 0.969
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                35,
+                                648,
+                                610,
+                                675
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        648,
+                                        610,
+                                        675
+                                    ],
+                                    "type": "text",
+                                    "content": "framework forGWparameterestimation,dismissingtheneedforstationary",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                37,
+                                673,
+                                246,
+                                696
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        673,
+                                        246,
+                                        696
+                                    ],
+                                    "type": "text",
+                                    "content": "Gaussian noise assumptions.",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        44,
+                        732,
+                        157,
+                        755
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                41,
+                                730,
+                                160,
+                                757
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        41,
+                                        730,
+                                        160,
+                                        757
+                                    ],
+                                    "type": "text",
+                                    "content": "Methodology",
+                                    "score": 0.993
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        779,
+                        609,
+                        909
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                37,
+                                779,
+                                612,
+                                804
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        779,
+                                        210,
+                                        804
+                                    ],
+                                    "type": "text",
+                                    "content": "Givena set of samples",
+                                    "score": 0.96
+                                },
+                                {
+                                    "bbox": [
+                                        210,
+                                        780,
+                                        248,
+                                        804
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\{ { \\bf { x } } _ { i } \\}",
+                                    "score": 0.92
+                                },
+                                {
+                                    "bbox": [
+                                        249,
+                                        779,
+                                        554,
+                                        804
+                                    ],
+                                    "type": "text",
+                                    "content": "fromtheunderlying distribution of noise",
+                                    "score": 0.989
+                                },
+                                {
+                                    "bbox": [
+                                        555,
+                                        780,
+                                        574,
+                                        802
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "Q",
+                                    "score": 0.7
+                                },
+                                {
+                                    "bbox": [
+                                        574,
+                                        779,
+                                        612,
+                                        804
+                                    ],
+                                    "type": "text",
+                                    "content": ",the",
+                                    "score": 0.951
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                37,
+                                802,
+                                612,
+                                825
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        802,
+                                        329,
+                                        825
+                                    ],
+                                    "type": "text",
+                                    "content": "objectiveisto inferthe score function",
+                                    "score": 0.969
+                                },
+                                {
+                                    "bbox": [
+                                        329,
+                                        802,
+                                        430,
+                                        825
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\nabla _ { \\mathbf { x } } \\log Q ( \\mathbf { x } )",
+                                    "score": 0.91
+                                },
+                                {
+                                    "bbox": [
+                                        431,
+                                        802,
+                                        612,
+                                        825
+                                    ],
+                                    "type": "text",
+                                    "content": "This score function is",
+                                    "score": 0.943
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                35,
+                                823,
+                                612,
+                                850
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        823,
+                                        612,
+                                        850
+                                    ],
+                                    "type": "text",
+                                    "content": "learned usinganeural network through the processof denoisingscorematching",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                845,
+                                612,
+                                870
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        845,
+                                        612,
+                                        870
+                                    ],
+                                    "type": "text",
+                                    "content": "(Hyvarinen,2005;Vincent,2011;Songetal.，2020).Oncelearned,itcanbe",
+                                    "score": 0.926
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                35,
+                                866,
+                                610,
+                                895
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        866,
+                                        610,
+                                        895
+                                    ],
+                                    "type": "text",
+                                    "content": "usedinadiffusion scheme to generate new samples of noiseas shown in Fig.",
+                                    "score": 0.952
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                35,
+                                891,
+                                58,
+                                913
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        891,
+                                        58,
+                                        913
+                                    ],
+                                    "type": "text",
+                                    "content": "1.",
+                                    "score": 0.971
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        911,
+                        608,
+                        956
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                36,
+                                911,
+                                609,
+                                938
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        911,
+                                        609,
+                                        938
+                                    ],
+                                    "type": "text",
+                                    "content": "Inthecontext of score-based likelihood characterization (Leginetal.,2023),",
+                                    "score": 0.971
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                934,
+                                379,
+                                959
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        934,
+                                        379,
+                                        959
+                                    ],
+                                    "type": "text",
+                                    "content": "the score of the likelihood can be expressed as",
+                                    "score": 0.979
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        142,
+                        986,
+                        502,
+                        1011
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                142,
+                                986,
+                                502,
+                                1011
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        142,
+                                        986,
+                                        502,
+                                        1011
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\nabla_ {\\theta} \\log p (\\mathbf {x} _ {O} \\mid \\theta) = - \\nabla_ {\\mathbf {x}} \\log Q (\\mathbf {x}) \\nabla_ {\\theta} M (\\theta),",
+                                    "image_path": "050940953d794aa5f8ecec9d0d1b0830123d760961348b1bdc0e3afcd0d30150.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "bbox": [
+                        36,
+                        1015,
+                        609,
+                        1106
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                37,
+                                1016,
+                                610,
+                                1041
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        1016,
+                                        84,
+                                        1041
+                                    ],
+                                    "type": "text",
+                                    "content": "where",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        85,
+                                        1018,
+                                        218,
+                                        1041
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "{ \\bf x } _ { O } = M ( \\theta ) + { \\bf x }",
+                                    "score": 0.92
+                                },
+                                {
+                                    "bbox": [
+                                        219,
+                                        1016,
+                                        499,
+                                        1041
+                                    ],
+                                    "type": "text",
+                                    "content": "representsanobserved GW signal and",
+                                    "score": 0.969
+                                },
+                                {
+                                    "bbox": [
+                                        499,
+                                        1018,
+                                        547,
+                                        1041
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "M ( \\theta )",
+                                    "score": 0.83
+                                },
+                                {
+                                    "bbox": [
+                                        547,
+                                        1016,
+                                        610,
+                                        1041
+                                    ],
+                                    "type": "text",
+                                    "content": "denotes",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                1038,
+                                610,
+                                1065
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        1038,
+                                        610,
+                                        1065
+                                    ],
+                                    "type": "text",
+                                    "content": "the physical modelacceptingtheparametersof interest,0,asinput.Throug-",
+                                    "score": 0.952
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                37,
+                                1063,
+                                610,
+                                1084
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        1063,
+                                        147,
+                                        1084
+                                    ],
+                                    "type": "text",
+                                    "content": "hout inference,",
+                                    "score": 0.976
+                                },
+                                {
+                                    "bbox": [
+                                        148,
+                                        1066,
+                                        162,
+                                        1082
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\pmb { \\times }",
+                                    "score": 0.68
+                                },
+                                {
+                                    "bbox": [
+                                        162,
+                                        1063,
+                                        610,
+                                        1084
+                                    ],
+                                    "type": "text",
+                                    "content": "areresidualsbetween theobservationand the model,and their",
+                                    "score": 0.975
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                1084,
+                                503,
+                                1107
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        1084,
+                                        503,
+                                        1107
+                                    ],
+                                    "type": "text",
+                                    "content": "statistics should follow the noise if the signal model isaccurate.",
+                                    "score": 0.973
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        100,
+                        1116,
+                        545,
+                        1406
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                100,
+                                1116,
+                                545,
+                                1406
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        100,
+                                        1116,
+                                        545,
+                                        1406
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                100,
+                                                1116,
+                                                545,
+                                                1406
+                                            ],
+                                            "type": "image",
+                                            "image_path": "2fcbc8be24cba6c960e102ac74b7ced9d7b5b7620142e5d8773003a44f79c2cd.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                1420,
+                                609,
+                                1517
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        1422,
+                                        612,
+                                        1443
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                37,
+                                                1422,
+                                                612,
+                                                1443
+                                            ],
+                                            "type": "text",
+                                            "content": "Figura1:One-sided noise power spectral density（PSD)of LIGO noise as estimated from1024",
+                                            "score": 0.946
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        36,
+                                        1442,
+                                        609,
+                                        1461
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                36,
+                                                1442,
+                                                609,
+                                                1461
+                                            ],
+                                            "type": "text",
+                                            "content": "samples of synthetic 4s-long segments of noise generated by our score-based model trained on",
+                                            "score": 0.953
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        36,
+                                        1458,
+                                        595,
+                                        1481
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                36,
+                                                1458,
+                                                595,
+                                                1481
+                                            ],
+                                            "type": "text",
+                                            "content": "11hofLIGO noise (SLIC,blue)，compared toamean Welch estimatemeasured empirically",
+                                            "score": 0.94
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        36,
+                                        1477,
+                                        556,
+                                        1499
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                36,
+                                                1477,
+                                                556,
+                                                1499
+                                            ],
+                                            "type": "text",
+                                            "content": "from1hofrealLIGO Hanfordnoiserecordedafter thedatausedin trainingand not",
+                                            "score": 0.971
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        37,
+                                        1497,
+                                        291,
+                                        1518
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                37,
+                                                1497,
+                                                291,
+                                                1518
+                                            ],
+                                            "type": "text",
+                                            "content": "overlappingwithit(Welch，dashed gray).",
+                                            "score": 0.952
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 16,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 15
+                },
+                {
+                    "bbox": [
+                        45,
+                        1560,
+                        88,
+                        1579
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 17,
+                    "lines": [
+                        {
+                            "bbox": [
+                                42,
+                                1558,
+                                90,
+                                1583
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42,
+                                        1558,
+                                        90,
+                                        1583
+                                    ],
+                                    "type": "text",
+                                    "content": "Data",
+                                    "score": 0.991
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        1606,
+                        609,
+                        1717
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 18,
+                    "lines": [
+                        {
+                            "bbox": [
+                                37,
+                                1606,
+                                610,
+                                1629
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        1606,
+                                        610,
+                                        1629
+                                    ],
+                                    "type": "text",
+                                    "content": "Wetrain the score-based network on 11 h of actual LIGO data around",
+                                    "score": 0.944
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                37,
+                                1627,
+                                610,
+                                1652
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        1627,
+                                        610,
+                                        1652
+                                    ],
+                                    "type": "text",
+                                    "content": "GW150914(GPS time 1126259462.423s)obtained fromthe Gravitational Wa-",
+                                    "score": 0.963
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                1651,
+                                610,
+                                1674
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        1651,
+                                        610,
+                                        1674
+                                    ],
+                                    "type": "text",
+                                    "content": "veOpenScience Center (R.Abbott etal.,2021;Abbot etal.,2023).We split",
+                                    "score": 0.96
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                1672,
+                                610,
+                                1697
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        1672,
+                                        610,
+                                        1697
+                                    ],
+                                    "type": "text",
+                                    "content": "thesedata into4ssegments for training,taking care todiscard theonesegment",
+                                    "score": 0.964
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                37,
+                                1695,
+                                232,
+                                1719
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        37,
+                                        1695,
+                                        232,
+                                        1719
+                                    ],
+                                    "type": "text",
+                                    "content": "containing the true signal.",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        665,
+                        257,
+                        728,
+                        276
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 19,
+                    "lines": [
+                        {
+                            "bbox": [
+                                662,
+                                255,
+                                730,
+                                278
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        662,
+                                        255,
+                                        730,
+                                        278
+                                    ],
+                                    "type": "text",
+                                    "content": "Results",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        657,
+                        302,
+                        1229,
+                        480
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 20,
+                    "lines": [
+                        {
+                            "bbox": [
+                                656,
+                                302,
+                                1230,
+                                327
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        656,
+                                        302,
+                                        1230,
+                                        327
+                                    ],
+                                    "type": "text",
+                                    "content": "Wecheck that the SLIC likelihood can infer source parameters without bias.",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                654,
+                                323,
+                                1232,
+                                350
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        654,
+                                        323,
+                                        1232,
+                                        350
+                                    ],
+                                    "type": "text",
+                                    "content": "To thisend,we inject simulated signals with known parameters into real LIGO",
+                                    "score": 0.967
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                656,
+                                348,
+                                1230,
+                                369
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        656,
+                                        348,
+                                        1230,
+                                        369
+                                    ],
+                                    "type": "text",
+                                    "content": "noisenot seen in training,and estimate the parametersusingboth our model",
+                                    "score": 0.962
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                656,
+                                369,
+                                1231,
+                                394
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        656,
+                                        369,
+                                        1231,
+                                        394
+                                    ],
+                                    "type": "text",
+                                    "content": "andastandard Gaussian likelihoodassumingaWelch PSDasin Fig.1.For",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                393,
+                                1230,
+                                416
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        393,
+                                        1230,
+                                        416
+                                    ],
+                                    "type": "text",
+                                    "content": "thisexample,we have chosena segment of real noisedatawithout significant",
+                                    "score": 0.955
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                654,
+                                412,
+                                1232,
+                                439
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        654,
+                                        412,
+                                        1232,
+                                        439
+                                    ],
+                                    "type": "text",
+                                    "content": "glitches，such that the Gaussian likelihoodalso recovers the true parameters.",
+                                    "score": 0.949
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                654,
+                                436,
+                                1231,
+                                461
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        654,
+                                        436,
+                                        1231,
+                                        461
+                                    ],
+                                    "type": "text",
+                                    "content": "Asshown,theSLICposterior iscapableof recoveringthe true injectedvalues",
+                                    "score": 0.962
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                654,
+                                457,
+                                810,
+                                484
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        654,
+                                        457,
+                                        810,
+                                        484
+                                    ],
+                                    "type": "text",
+                                    "content": "with high credibility.",
+                                    "score": 0.946
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        720,
+                        487,
+                        1166,
+                        934
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                720,
+                                487,
+                                1166,
+                                934
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        720,
+                                        487,
+                                        1166,
+                                        934
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                720,
+                                                487,
+                                                1166,
+                                                934
+                                            ],
+                                            "type": "image",
+                                            "image_path": "4f228a04f97ddf8e650d32d4191a50bd513d2e4b1e5dce00802eccad03808dd7.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 21,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                948,
+                                1210,
+                                1025
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        656,
+                                        947,
+                                        1211,
+                                        972
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                656,
+                                                947,
+                                                1211,
+                                                972
+                                            ],
+                                            "type": "text",
+                                            "content": "Figura2:Posteriordistribution of thefiverecovered parametersofa simulated signal using",
+                                            "score": 0.975
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        656,
+                                        966,
+                                        1179,
+                                        989
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                656,
+                                                966,
+                                                1150,
+                                                989
+                                            ],
+                                            "type": "text",
+                                            "content": "SLIC(orange)and the standard Gaussian likelihood (blue).Thecontoursare the",
+                                            "score": 0.968
+                                        },
+                                        {
+                                            "bbox": [
+                                                1150,
+                                                970,
+                                                1179,
+                                                988
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "10 \\%",
+                                            "score": 0.85
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        658,
+                                        984,
+                                        1191,
+                                        1006
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                658,
+                                                988,
+                                                706,
+                                                1006
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "3 9 . 3 5 \\%",
+                                            "score": 0.87
+                                        },
+                                        {
+                                            "bbox": [
+                                                706,
+                                                984,
+                                                734,
+                                                1006
+                                            ],
+                                            "type": "text",
+                                            "content": "and",
+                                            "score": 0.997
+                                        },
+                                        {
+                                            "bbox": [
+                                                734,
+                                                988,
+                                                764,
+                                                1004
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "90 \\%",
+                                            "score": 0.86
+                                        },
+                                        {
+                                            "bbox": [
+                                                764,
+                                                984,
+                                                1191,
+                                                1006
+                                            ],
+                                            "type": "text",
+                                            "content": "interval.Thetruevaluesaremarkedbytheblack lines.Theposterior",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        656,
+                                        1004,
+                                        1164,
+                                        1025
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                656,
+                                                1004,
+                                                1164,
+                                                1025
+                                            ],
+                                            "type": "text",
+                                            "content": "distribution using SLIC hasa smallervariance compared to the Gaussian likelihood.",
+                                            "score": 0.959
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 22,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "bbox": [
+                        665,
+                        1068,
+                        892,
+                        1088
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 23,
+                    "lines": [
+                        {
+                            "bbox": [
+                                662,
+                                1066,
+                                894,
+                                1090
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        662,
+                                        1066,
+                                        894,
+                                        1090
+                                    ],
+                                    "type": "text",
+                                    "content": "Discussion and conclusions",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        657,
+                        1115,
+                        1229,
+                        1157
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 24,
+                    "lines": [
+                        {
+                            "bbox": [
+                                657,
+                                1113,
+                                1230,
+                                1138
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1113,
+                                        1230,
+                                        1138
+                                    ],
+                                    "type": "text",
+                                    "content": "Weareworking onanumber of improvements beforeapplyingourframework",
+                                    "score": 0.98
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1136,
+                                1196,
+                                1159
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1136,
+                                        1196,
+                                        1159
+                                    ],
+                                    "type": "text",
+                                    "content": "toreal signals contaminated by instrumental glitches,such as GW170817.",
+                                    "score": 0.97
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        672,
+                        1161,
+                        1222,
+                        1345
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 29,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                672,
+                                1161,
+                                1215,
+                                1206
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 25,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        681,
+                                        1159,
+                                        1217,
+                                        1186
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                681,
+                                                1159,
+                                                1217,
+                                                1186
+                                            ],
+                                            "type": "text",
+                                            "content": "We plan to enhance the current model to generate larger data segments",
+                                            "score": 0.95
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        690,
+                                        1181,
+                                        1105,
+                                        1209
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                690,
+                                                1181,
+                                                1105,
+                                                1209
+                                            ],
+                                            "type": "text",
+                                            "content": "(from4to 128 seconds) to analyze binary neutron stars.",
+                                            "score": 0.953
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                672,
+                                1208,
+                                1222,
+                                1250
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 26,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        687,
+                                        1208,
+                                        1220,
+                                        1231
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                687,
+                                                1208,
+                                                1220,
+                                                1231
+                                            ],
+                                            "type": "text",
+                                            "content": "Instead of analyzingdata froma singledetector，we intendto coherently",
+                                            "score": 0.961
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        690,
+                                        1231,
+                                        1224,
+                                        1252
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                690,
+                                                1231,
+                                                1224,
+                                                1252
+                                            ],
+                                            "type": "text",
+                                            "content": "model data fromanetworkofdetectorsto improveparameterestimation",
+                                            "score": 0.984
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                672,
+                                1254,
+                                1215,
+                                1297
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 27,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        686,
+                                        1252,
+                                        1217,
+                                        1279
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                686,
+                                                1252,
+                                                1217,
+                                                1279
+                                            ],
+                                            "type": "text",
+                                            "content": "Weaim to improve thegeneralization of themodel by trainingon larger",
+                                            "score": 0.957
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        690,
+                                        1277,
+                                        1077,
+                                        1299
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                690,
+                                                1277,
+                                                1077,
+                                                1299
+                                            ],
+                                            "type": "text",
+                                            "content": "quantities of data spanningmonths of detectordata.",
+                                            "score": 0.967
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                672,
+                                1300,
+                                1187,
+                                1345
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 28,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        687,
+                                        1299,
+                                        1190,
+                                        1324
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                687,
+                                                1299,
+                                                1190,
+                                                1324
+                                            ],
+                                            "type": "text",
+                                            "content": "Weaimto boost inference efficiency by transitioningfrom MALAto",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        689,
+                                        1322,
+                                        928,
+                                        1349
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                689,
+                                                1322,
+                                                928,
+                                                1349
+                                            ],
+                                            "type": "text",
+                                            "content": "FLOWMC (Wong et al.,2023).",
+                                            "score": 0.969
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        665,
+                        1384,
+                        757,
+                        1404
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 30,
+                    "lines": [
+                        {
+                            "bbox": [
+                                662,
+                                1381,
+                                759,
+                                1408
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        662,
+                                        1381,
+                                        759,
+                                        1408
+                                    ],
+                                    "type": "text",
+                                    "content": "References",
+                                    "score": 0.989
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        657,
+                        1420,
+                        1229,
+                        1642
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 42,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                657,
+                                1420,
+                                1229,
+                                1447
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 31,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        654,
+                                        1418,
+                                        1230,
+                                        1436
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                654,
+                                                1418,
+                                                1230,
+                                                1436
+                                            ],
+                                            "type": "text",
+                                            "content": "AotReteete6etrer",
+                                            "score": 0.657
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        663,
+                                        1433,
+                                        820,
+                                        1445
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                663,
+                                                1433,
+                                                820,
+                                                1445
+                                            ],
+                                            "type": "text",
+                                            "content": "H1/1126216262/1126302662/simple/",
+                                            "score": 0.988
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1445,
+                                1229,
+                                1465
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 32,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1440,
+                                        1230,
+                                        1458
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                657,
+                                                1440,
+                                                1230,
+                                                1458
+                                            ],
+                                            "type": "text",
+                                            "content": "AbotBPesisededetiaia",
+                                            "score": 0.628
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        666,
+                                        1452,
+                                        880,
+                                        1467
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                666,
+                                                1452,
+                                                880,
+                                                1467
+                                            ],
+                                            "type": "text",
+                                            "content": "33（13）.134001.doi:10.1088/0264-9381/33/13/134001",
+                                            "score": 0.915
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1465,
+                                1229,
+                                1484
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 33,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        656,
+                                        1459,
+                                        1230,
+                                        1479
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                656,
+                                                1459,
+                                                1230,
+                                                1479
+                                            ],
+                                            "type": "text",
+                                            "content": "AbBPidee",
+                                            "score": 0.62
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        666,
+                                        1474,
+                                        1010,
+                                        1486
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                666,
+                                                1474,
+                                                1010,
+                                                1486
+                                            ],
+                                            "type": "text",
+                                            "content": "112004.（[Addendum:Phys.Rev.D97，059901（2018）]）doi:10.1103/PhysRevD.93.112004",
+                                            "score": 0.935
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1484,
+                                1229,
+                                1504
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 34,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        656,
+                                        1479,
+                                        1230,
+                                        1499
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                656,
+                                                1479,
+                                                1230,
+                                                1499
+                                            ],
+                                            "type": "text",
+                                            "content": "Abt,.ddtaiisnt5)",
+                                            "score": 0.574
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        666,
+                                        1493,
+                                        825,
+                                        1508
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                666,
+                                                1493,
+                                                825,
+                                                1508
+                                            ],
+                                            "type": "text",
+                                            "content": "055002.doi:10.1088/1361-6382/ab685e",
+                                            "score": 0.96
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1504,
+                                1229,
+                                1526
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 35,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1502,
+                                        1230,
+                                        1518
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                657,
+                                                1502,
+                                                1230,
+                                                1518
+                                            ],
+                                            "type": "text",
+                                            "content": "AbotRidedsfddedfae",
+                                            "score": 0.646
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        667,
+                                        1515,
+                                        776,
+                                        1527
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                667,
+                                                1515,
+                                                776,
+                                                1527
+                                            ],
+                                            "type": "text",
+                                            "content": "10.1016/i.softx.2021.100658",
+                                            "score": 0.942
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1526,
+                                1229,
+                                1543
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 36,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1524,
+                                        1230,
+                                        1540
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                657,
+                                                1524,
+                                                1230,
+                                                1540
+                                            ],
+                                            "type": "text",
+                                            "content": "BuikemaAtiidftdetedRD",
+                                            "score": 0.737
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        666,
+                                        1535,
+                                        788,
+                                        1547
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                666,
+                                                1535,
+                                                788,
+                                                1547
+                                            ],
+                                            "type": "text",
+                                            "content": "10.1103/PhysRevD.102.062003",
+                                            "score": 0.95
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1543,
+                                1142,
+                                1560
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 37,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        667,
+                                        1538,
+                                        787,
+                                        1549
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                667,
+                                                1538,
+                                                787,
+                                                1549
+                                            ],
+                                            "type": "text",
+                                            "content": "10.1103/PhysRevD.102.062003",
+                                            "score": 0.992
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        657,
+                                        1545,
+                                        1144,
+                                        1560
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                657,
+                                                1545,
+                                                1144,
+                                                1560
+                                            ],
+                                            "type": "text",
+                                            "content": "Hyvarinen，A.20o5dec).Estimationofnonormalizedstatisticalmodelsbyorematching.J.Mach.LearnRes.6695-709.",
+                                            "score": 0.85
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1560,
+                                1229,
+                                1577
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 38,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1556,
+                                        1230,
+                                        1570
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                657,
+                                                1556,
+                                                1230,
+                                                1570
+                                            ],
+                                            "type": "text",
+                                            "content": "LeginRdAH&eurL2eeGetal",
+                                            "score": 0.68
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        666,
+                                        1567,
+                                        1014,
+                                        1579
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                666,
+                                                1567,
+                                                1014,
+                                                1579
+                                            ],
+                                            "type": "text",
+                                            "content": "with non-Gaussian Noise.arXive-prints,arXiv:2302.03046.doi:10.48550/arXiv.2302.03046",
+                                            "score": 0.952
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1577,
+                                1229,
+                                1597
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 39,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1576,
+                                        1230,
+                                        1592
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                657,
+                                                1576,
+                                                1230,
+                                                1592
+                                            ],
+                                            "type": "text",
+                                            "content": "SongYSoeaDS&leBeBel",
+                                            "score": 0.667
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        665,
+                                        1585,
+                                        1004,
+                                        1602
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                665,
+                                                1585,
+                                                1004,
+                                                1602
+                                            ],
+                                            "type": "text",
+                                            "content": "DiferentialEquations.arXive-rintsrXiv:20113456.doi10.48550/arXiv01113456",
+                                            "score": 0.773
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1597,
+                                1229,
+                                1617
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 40,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1595,
+                                        1230,
+                                        1613
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                657,
+                                                1595,
+                                                1230,
+                                                1613
+                                            ],
+                                            "type": "text",
+                                            "content": "Vincent,P.21it7667e/",
+                                            "score": 0.679
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        666,
+                                        1608,
+                                        923,
+                                        1619
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                666,
+                                                1608,
+                                                923,
+                                                1619
+                                            ],
+                                            "type": "text",
+                                            "content": "doi.org/10.1162/NECD_a_00142doi:10.1162/NECO\\a\\00142",
+                                            "score": 0.909
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                657,
+                                1617,
+                                1229,
+                                1642
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 41,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        657,
+                                        1617,
+                                        1230,
+                                        1633
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                657,
+                                                1617,
+                                                1230,
+                                                1633
+                                            ],
+                                            "type": "text",
+                                            "content": "WongKW&bif",
+                                            "score": 0.731
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        667,
+                                        1629,
+                                        894,
+                                        1642
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                667,
+                                                1629,
+                                                894,
+                                                1642
+                                            ],
+                                            "type": "text",
+                                            "content": "OpenSourceSoftw.,8（83),5021.doi:10.21105/joss.05021",
+                                            "score": 0.938
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        919,
+                        46,
+                        1058,
+                        96
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                931,
+                                57,
+                                955,
+                                78
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        931,
+                                        57,
+                                        955,
+                                        78
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1090,
+                        42,
+                        1240,
+                        100
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1080,
+                                33,
+                                1251,
+                                110
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1080,
+                                        33,
+                                        1251,
+                                        110
+                                    ],
+                                    "type": "text",
+                                    "content": "Mila",
+                                    "score": 0.964
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1010,
+                        146,
+                        1138,
+                        167
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1009,
+                                144,
+                                1139,
+                                169
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1009,
+                                        144,
+                                        1139,
+                                        169
+                                    ],
+                                    "type": "text",
+                                    "content": "Ciela Institute",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        13,
+                        1756,
+                        787,
+                        1779
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 43,
+                    "lines": []
+                }
+            ],
+            "page_size": [
+                1262,
+                1787
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

@@ -1,0 +1,733 @@
+[
+  {
+    "type": "text",
+    "text": "Contributions ",
+    "text_level": 1,
+    "bbox": [
+      12,
+      154,
+      86,
+      176
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√Static collection ",
+    "bbox": [
+      7,
+      188,
+      92,
+      208
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "■Many pedestrian trajectory datasets were collected from fixed positions, limiting variability. ",
+      "√ Missing ego motion ",
+      "■Many existing robot datasets lack ego-motion information. ",
+      "√Vehicle-centric bias ",
+      "■Most autonomous datasets were collected from vehicles, exhibiting a gap from realistic robot-pedestrian interaction behavior. *+:Multi "
+    ],
+    "bbox": [
+      6,
+      212,
+      317,
+      404
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "*+: Multi - layered map ",
+    "bbox": [
+      273,
+      395,
+      345,
+      410
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Dataset</td><td>Platform</td><td>Task</td><td>Sync.</td><td>Map</td><td>E2E</td><td>Location</td></tr><tr><td>UCY</td><td>Fixed</td><td>Tracking, Prediction</td><td>-</td><td></td><td></td><td>Outdoor</td></tr><tr><td>ETH</td><td>Fixed</td><td>Tracking, Prediction</td><td>-</td><td></td><td></td><td>Outdoor</td></tr><tr><td>SDD</td><td>Fixed</td><td>Tracking, Prediction</td><td>-</td><td></td><td></td><td>Outdoor</td></tr><tr><td>CITR-DUT</td><td>Fixed</td><td>Tracking, Prediction</td><td>-</td><td></td><td></td><td>Outdoor</td></tr><tr><td>nuScenes</td><td>Vehicle</td><td>Detection, Tracking, Prediction</td><td>-</td><td>✓†</td><td></td><td>Outdoor</td></tr><tr><td>Waymo Open</td><td>Vehicle</td><td>Detection, Tracking, Prediction</td><td>✓</td><td>✓</td><td></td><td>Outdoor</td></tr><tr><td>Argoverse</td><td>Vehicle</td><td>Detection, Tracking, Prediction</td><td>✓</td><td>✓†</td><td>✓</td><td>Outdoor</td></tr><tr><td>JRDB</td><td>Robot</td><td>Detection, Tracking</td><td></td><td></td><td></td><td>Indoor &amp; Outdoor</td></tr><tr><td>STCrowd</td><td>Fixed</td><td>Detection, Tracking, Prediction</td><td>✓</td><td></td><td></td><td>Outdoor</td></tr><tr><td>SiT(Ours)</td><td>Robot</td><td>Detection, Tracking, Prediction</td><td>✓</td><td>✓†</td><td>✓</td><td>Indoor &amp; Outdoor</td></tr></table>",
+    "bbox": [
+      7,
+      418,
+      345,
+      648
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Overview ",
+    "text_level": 1,
+    "bbox": [
+      15,
+      667,
+      68,
+      689
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "√Real-world context ",
+      "■Collected data from dense areas like campuses and public roads ",
+      "√Comprehensive data ",
+      "■Sequential raw data from various sensors ",
+      "■60 scenes with 60K images and 12K point cloud frames at 10 Hz ",
+      "■2D and 3D bounding boxes for 6 classes ",
+      "√Unique features ",
+      "■Emphasis on Human-Robot Interactions (HRl) ",
+      "■ Precise multi-sensor synchronization ",
+      "■Multi-layered indoor& outdoor semantic maps from SLAM ",
+      "■ Cover tasks from 3D detection to motion forecasting (end-to-end) "
+    ],
+    "bbox": [
+      6,
+      707,
+      330,
+      972
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Robot Setup",
+    "text_level": 1,
+    "bbox": [
+      360,
+      155,
+      427,
+      179
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√Multi-sensors equipped on UGV ",
+    "bbox": [
+      353,
+      187,
+      516,
+      209
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "■ 1 x Husky UGV platform ",
+      "■ 2 x Velodyne VLP-16 ",
+      "■ 5× Basler a2A1920-51gc cameras ",
+      "■1× MTi-680G IMU& RTK ",
+      "■1 x VectorNav VN-100 IMU "
+    ],
+    "bbox": [
+      361,
+      213,
+      527,
+      329
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      536,
+      180,
+      713,
+      332
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Details of SiT Dataset ",
+    "text_level": 1,
+    "bbox": [
+      361,
+      340,
+      474,
+      362
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      353,
+      369,
+      717,
+      435
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      353,
+      435,
+      717,
+      684
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√Comparison with other datasets ",
+    "bbox": [
+      352,
+      686,
+      516,
+      707
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "SiT(Ours) "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      353,
+      710,
+      410,
+      818
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "SSD "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      413,
+      712,
+      466,
+      818
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      473,
+      712,
+      527,
+      818
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "SiT(Ours) "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      520,
+      708,
+      592,
+      818
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Waymo Open "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      595,
+      706,
+      649,
+      818
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "nuScenes "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      657,
+      706,
+      711,
+      818
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√Examples of human-robot interactions ",
+    "bbox": [
+      353,
+      841,
+      546,
+      862
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      "Approach "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      350,
+      865,
+      434,
+      970
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_11.jpg",
+    "image_caption": [
+      "Followed by Pedestrian "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      441,
+      865,
+      536,
+      972
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "Avoidance by Robot ",
+      "Avoidance by Pedestrians "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      546,
+      864,
+      719,
+      972
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Tasks and Benchmark ",
+    "text_level": 1,
+    "bbox": [
+      729,
+      155,
+      846,
+      177
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√Perception tasks ",
+    "bbox": [
+      724,
+      188,
+      812,
+      209
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "■3D Object Detection based on image or point clouds ",
+      "■ 3D Multi-Object Tracking ",
+      "■ Trajectory Prediction ",
+      "■ End-to-End 3D Detection to Motion Forecasting "
+    ],
+    "bbox": [
+      733,
+      213,
+      986,
+      307
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "√Benchmark ",
+    "bbox": [
+      724,
+      310,
+      792,
+      330
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "■ Plan to release benchmarks and pre-trained models. ",
+      "■ Challenges open on Eval.Al (Feb.2024) "
+    ],
+    "bbox": [
+      733,
+      335,
+      986,
+      381
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Samples of dataset ",
+    "text_level": 1,
+    "bbox": [
+      732,
+      407,
+      835,
+      430
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "√Real-world captures ",
+      "■ Candid shots from diverse urban environments ",
+      "√3D visualization ",
+      "■ Dynamic representations of objects and trajectories ",
+      "√Semantic maps ",
+      "■ 12 Color-coded layouts detailing regions "
+    ],
+    "bbox": [
+      724,
+      447,
+      985,
+      590
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_13.jpg",
+    "image_caption": [
+      ""
+    ],
+    "image_footnote": [],
+    "bbox": [
+      735,
+      598,
+      816,
+      690
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      819,
+      598,
+      906,
+      690
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_15.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      911,
+      598,
+      995,
+      690
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_16.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      723,
+      692,
+      816,
+      784
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_17.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      819,
+      692,
+      906,
+      784
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_18.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      911,
+      694,
+      995,
+      784
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_19.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      723,
+      786,
+      816,
+      878
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_20.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      819,
+      786,
+      906,
+      878
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_21.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      911,
+      788,
+      995,
+      878
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_22.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      723,
+      880,
+      816,
+      972
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_23.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      819,
+      880,
+      906,
+      972
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/SiT Dataset: Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots_poster/visuals/images/fig_24.jpg",
+    "image_caption": [
+      "RealWorld ",
+      "3DVisualization "
+    ],
+    "image_footnote": [
+      "Semantic Map "
+    ],
+    "bbox": [
+      911,
+      882,
+      995,
+      972
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "IVANE NIVERST 1939 ",
+    "bbox": [
+      10,
+      16,
+      73,
+      128
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "SPALAB ",
+    "bbox": [
+      80,
+      24,
+      211,
+      101
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "SIGNALPROCESSING&ARTIFICIAL-INTELLIGENCELABORATORY",
+    "bbox": [
+      79,
+      107,
+      209,
+      121
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "SiT Dataset : Socially Interactive Pedestrian Trajectory Dataset for Social Navigation Robots ",
+    "bbox": [
+      256,
+      16,
+      786,
+      90
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "JongwookBae Jungho Kim Junyong Yun ChangwonKang JeongseonChoi KimChanhyeok Junho Lee Jun Won Choi* ",
+    "bbox": [
+      228,
+      93,
+      777,
+      116
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Github ",
+    "bbox": [
+      809,
+      11,
+      832,
+      24
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      795,
+      24,
+      848,
+      120
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Homepage ",
+    "bbox": [
+      862,
+      11,
+      897,
+      24
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      853,
+      24,
+      906,
+      120
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NEURAL INFORMATION PROCESSING SYSTEMS ",
+    "bbox": [
+      910,
+      15,
+      994,
+      114
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "SPA Laboratory,epartmentof Artificiallntelligence,Hnyang Uiversity,eoul,epublicfrea ",
+    "bbox": [
+      332,
+      122,
+      673,
+      138
+    ],
+    "page_idx": 0
+  }
+]

@@ -1,0 +1,3801 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        66,
+                        35,
+                        3232,
+                        124
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                55,
+                                18,
+                                3228,
+                                136
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        55,
+                                        18,
+                                        3228,
+                                        136
+                                    ],
+                                    "type": "text",
+                                    "content": "Information Gain Propagation: a new way to Graph Active Learning with Soft Labels",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        62,
+                        153,
+                        1772,
+                        207
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                62,
+                                147,
+                                1780,
+                                213
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        62,
+                                        147,
+                                        1780,
+                                        213
+                                    ],
+                                    "type": "text",
+                                    "content": "Wentao Zhang1,2,Yexin Wang1,Zhenbang You1,Meng Cao²,Ping Huang²,Jiulong Shan²,Zhi Yang1,Bin Cuil",
+                                    "score": 0.934
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        66,
+                        211,
+                        755,
+                        259
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                58,
+                                201,
+                                763,
+                                269
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        58,
+                                        201,
+                                        763,
+                                        269
+                                    ],
+                                    "type": "text",
+                                    "content": "ICLR 2022·Peking University1,Apple Inc.2",
+                                    "score": 0.967
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        95,
+                        333,
+                        265,
+                        377
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                92,
+                                325,
+                                272,
+                                383
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        92,
+                                        325,
+                                        272,
+                                        383
+                                    ],
+                                    "type": "text",
+                                    "content": " Abstract",
+                                    "score": 0.948
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        73,
+                        410,
+                        910,
+                        1092
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                81,
+                                408,
+                                803,
+                                456
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        408,
+                                        803,
+                                        456
+                                    ],
+                                    "type": "text",
+                                    "content": "Graph Neural Networks (GNNs) have achieved great",
+                                    "score": 0.99
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                449,
+                                892,
+                                493
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        449,
+                                        892,
+                                        493
+                                    ],
+                                    "type": "text",
+                                    "content": "success in various tasks,but their performance highly relies",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                491,
+                                899,
+                                532
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        491,
+                                        899,
+                                        532
+                                    ],
+                                    "type": "text",
+                                    "content": "ona large number of labeled nodes,which typically requires",
+                                    "score": 0.976
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                530,
+                                903,
+                                572
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        530,
+                                        903,
+                                        572
+                                    ],
+                                    "type": "text",
+                                    "content": "considerable human effort. GNN-based Active Learning (AL)",
+                                    "score": 0.993
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                572,
+                                888,
+                                615
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        572,
+                                        888,
+                                        615
+                                    ],
+                                    "type": "text",
+                                    "content": "methods are proposed to improve the labeling efficiency by",
+                                    "score": 0.99
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                611,
+                                906,
+                                655
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        611,
+                                        906,
+                                        655
+                                    ],
+                                    "type": "text",
+                                    "content": "selecting the most valuable nodes to label.Existing methods",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                655,
+                                873,
+                                690
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        655,
+                                        873,
+                                        690
+                                    ],
+                                    "type": "text",
+                                    "content": "assumean oracle can correctly categorize all the selected",
+                                    "score": 0.963
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                692,
+                                877,
+                                733
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        692,
+                                        877,
+                                        733
+                                    ],
+                                    "type": "text",
+                                    "content": "nodes and thus just focus on the node selection. However,",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                729,
+                                855,
+                                775
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        729,
+                                        855,
+                                        775
+                                    ],
+                                    "type": "text",
+                                    "content": "such an exact labeling task is costly, especially when the",
+                                    "score": 0.975
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                773,
+                                818,
+                                812
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        773,
+                                        818,
+                                        812
+                                    ],
+                                    "type": "text",
+                                    "content": "categorization is out of the domain of individual expert",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                812,
+                                836,
+                                856
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        812,
+                                        836,
+                                        856
+                                    ],
+                                    "type": "text",
+                                    "content": "(oracle). The paper goes further, presenting a soft-label",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                852,
+                                910,
+                                893
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        852,
+                                        910,
+                                        893
+                                    ],
+                                    "type": "text",
+                                    "content": "approach to AL on GNNs. Our key innovations are: i) relaxed",
+                                    "score": 0.965
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                893,
+                                833,
+                                932
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        893,
+                                        833,
+                                        932
+                                    ],
+                                    "type": "text",
+                                    "content": "queries where a domain expert (oracle) only judges the",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                930,
+                                903,
+                                974
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        930,
+                                        903,
+                                        974
+                                    ],
+                                    "type": "text",
+                                    "content": "correctness of the predicted labels (a binary question) rather",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                970,
+                                895,
+                                1015
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        970,
+                                        895,
+                                        1015
+                                    ],
+                                    "type": "text",
+                                    "content": "than identifying the exact class (a multi-class question), and",
+                                    "score": 0.989
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1011,
+                                910,
+                                1055
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1011,
+                                        910,
+                                        1055
+                                    ],
+                                    "type": "text",
+                                    "content": " ii) new criteria of maximizing information gain propagation for",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                1053,
+                                763,
+                                1090
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        1053,
+                                        763,
+                                        1090
+                                    ],
+                                    "type": "text",
+                                    "content": "active learner with relaxed queries and soft labels.",
+                                    "score": 0.959
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        95,
+                        1162,
+                        305,
+                        1210
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                92,
+                                1156,
+                                313,
+                                1216
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        92,
+                                        1156,
+                                        313,
+                                        1216
+                                    ],
+                                    "type": "text",
+                                    "content": " Objectives",
+                                    "score": 0.963
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        77,
+                        1239,
+                        888,
+                        1320
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                84,
+                                1237,
+                                888,
+                                1283
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        1237,
+                                        888,
+                                        1283
+                                    ],
+                                    "type": "text",
+                                    "content": "Design a novel active learning paradigm for GNNs in which",
+                                    "score": 0.99
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                1283,
+                                475,
+                                1320
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        1283,
+                                        475,
+                                        1320
+                                    ],
+                                    "type": "text",
+                                    "content": "only soft labelsare required.",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        95,
+                        1413,
+                        361,
+                        1459
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                95,
+                                1407,
+                                364,
+                                1463
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        95,
+                                        1407,
+                                        364,
+                                        1463
+                                    ],
+                                    "type": "text",
+                                    "content": "Main Problem",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        73,
+                        1502,
+                        899,
+                        1981
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                81,
+                                1498,
+                                851,
+                                1546
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1498,
+                                        851,
+                                        1546
+                                    ],
+                                    "type": "text",
+                                    "content": "Previous AL methods assume the hard label (namely the",
+                                    "score": 0.989
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                1544,
+                                799,
+                                1579
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        1544,
+                                        799,
+                                        1579
+                                    ],
+                                    "type": "text",
+                                    "content": "exact label,However,when the active learners in the",
+                                    "score": 0.972
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1579,
+                                899,
+                                1627
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1579,
+                                        899,
+                                        1627
+                                    ],
+                                    "type": "text",
+                                    "content": "aforementioned methods ask questions like “which category",
+                                    "score": 0.992
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1621,
+                                880,
+                                1666
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1621,
+                                        880,
+                                        1666
+                                    ],
+                                    "type": "text",
+                                    "content": "does it exactly belong to?\". Such queries and assumptions",
+                                    "score": 0.994
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                84,
+                                1664,
+                                807,
+                                1706
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        1664,
+                                        807,
+                                        1706
+                                    ],
+                                    "type": "text",
+                                    "content": "exceed the capability of oracle in many labeling tasks",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1704,
+                                899,
+                                1745
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1704,
+                                        899,
+                                        1745
+                                    ],
+                                    "type": "text",
+                                    "content": "requiring domain knowledge. For example, the task in ogbn-",
+                                    "score": 0.973
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1745,
+                                844,
+                                1782
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1745,
+                                        844,
+                                        1782
+                                    ],
+                                    "type": "text",
+                                    "content": "papers1ooMis to leverage the citation graph to infer the",
+                                    "score": 0.976
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1780,
+                                866,
+                                1824
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1780,
+                                        866,
+                                        1824
+                                    ],
+                                    "type": "text",
+                                    "content": "labelsof the arXiv papers into 172 arXiv subject areas .In",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1822,
+                                833,
+                                1863
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1822,
+                                        833,
+                                        1863
+                                    ],
+                                    "type": "text",
+                                    "content": "this example,a specialist/expert in the subject areas of",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1863,
+                                862,
+                                1907
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1863,
+                                        862,
+                                        1907
+                                    ],
+                                    "type": "text",
+                                    "content": "machine learning is incapable of labeling query instances",
+                                    "score": 0.996
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                81,
+                                1903,
+                                895,
+                                1944
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        81,
+                                        1903,
+                                        895,
+                                        1944
+                                    ],
+                                    "type": "text",
+                                    "content": "with subject areas of finance (such as mathematical finance",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                77,
+                                1944,
+                                442,
+                                1985
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        1944,
+                                        442,
+                                        1985
+                                    ],
+                                    "type": "text",
+                                    "content": "or computational finance).",
+                                    "score": 0.99
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        995,
+                        333,
+                        1161,
+                        375
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                329,
+                                1168,
+                                379
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        329,
+                                        1168,
+                                        379
+                                    ],
+                                    "type": "text",
+                                    "content": "Methods",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        984,
+                        424,
+                        1813,
+                        787
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                424,
+                                1791,
+                                464
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        424,
+                                        1791,
+                                        464
+                                    ],
+                                    "type": "text",
+                                    "content": "This part presents IGP, the first graph-based AL framework",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                466,
+                                1721,
+                                505
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        466,
+                                        1721,
+                                        505
+                                    ],
+                                    "type": "text",
+                                    "content": "that considers the relaxed queries and soft labels.We",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                505,
+                                1795,
+                                549
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        505,
+                                        1795,
+                                        549
+                                    ],
+                                    "type": "text",
+                                    "content": "measure the information gain of selecting a single node. To",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                547,
+                                1813,
+                                588
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        547,
+                                        1813,
+                                        588
+                                    ],
+                                    "type": "text",
+                                    "content": "extend the information gain of a single node to the full graph,",
+                                    "score": 0.985
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                588,
+                                1691,
+                                628
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        588,
+                                        1691,
+                                        628
+                                    ],
+                                    "type": "text",
+                                    "content": "we firstly estimate the influence magnitude of graph",
+                                    "score": 0.985
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                623,
+                                1780,
+                                667
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        623,
+                                        1780,
+                                        667
+                                    ],
+                                    "type": "text",
+                                    "content": "propagation,and then combine it with the information gain",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                667,
+                                1647,
+                                706
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        667,
+                                        1647,
+                                        706
+                                    ],
+                                    "type": "text",
+                                    "content": "and introduce the new criterion: information gain",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                708,
+                                1765,
+                                748
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        708,
+                                        1765,
+                                        748
+                                    ],
+                                    "type": "text",
+                                    "content": "propagation. Last,we propose to select nodes which can",
+                                    "score": 0.973
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                746,
+                                1581,
+                                789
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        746,
+                                        1581,
+                                        789
+                                    ],
+                                    "type": "text",
+                                    "content": "maximize the information gain propagation.",
+                                    "score": 0.998
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        987,
+                        822,
+                        1242,
+                        856
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                822,
+                                1242,
+                                864
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        822,
+                                        1242,
+                                        864
+                                    ],
+                                    "type": "text",
+                                    "content": "Information Gain",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        984,
+                        862,
+                        1795,
+                        1140
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                864,
+                                1780,
+                                901
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        864,
+                                        1780,
+                                        901
+                                    ],
+                                    "type": "text",
+                                    "content": "Different from the previous annotation method, which asks",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                905,
+                                1795,
+                                943
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        905,
+                                        1795,
+                                        943
+                                    ],
+                                    "type": "text",
+                                    "content": "the oracle to directly provide annotated class l, the oracle in",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                945,
+                                1750,
+                                982
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        945,
+                                        1750,
+                                        982
+                                    ],
+                                    "type": "text",
+                                    "content": "IGP only needs to judge whether the model prediction is",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                984,
+                                1743,
+                                1024
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        984,
+                                        1743,
+                                        1024
+                                    ],
+                                    "type": "text",
+                                    "content": "correct. Rather than discard the incorrect prediction,we",
+                                    "score": 0.989
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                1024,
+                                1776,
+                                1063
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        1024,
+                                        1776,
+                                        1063
+                                    ],
+                                    "type": "text",
+                                    "content": "propose that both the correct and incorrect predictions will",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                1063,
+                                1747,
+                                1100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        1063,
+                                        1747,
+                                        1100
+                                    ],
+                                    "type": "text",
+                                    "content": "provide the information gain and thus enhance the label",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1106,
+                                1161,
+                                1146
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1106,
+                                        1161,
+                                        1146
+                                    ],
+                                    "type": "text",
+                                    "content": "supervision.",
+                                    "score": 0.998
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        987,
+                        1191,
+                        1455,
+                        1227
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                1189,
+                                1455,
+                                1235
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1189,
+                                        1455,
+                                        1235
+                                    ],
+                                    "type": "text",
+                                    "content": "Influence Magnitude Estimation",
+                                    "score": 0.989
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        984,
+                        1231,
+                        1802,
+                        1515
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                1229,
+                                1684,
+                                1272
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1229,
+                                        1684,
+                                        1272
+                                    ],
+                                    "type": "text",
+                                    "content": "Each newly annotated node will propagate its label",
+                                    "score": 0.992
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1272,
+                                1743,
+                                1312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1272,
+                                        1743,
+                                        1312
+                                    ],
+                                    "type": "text",
+                                    "content": " information to its k-hop neighbors in a k-layer GNN and",
+                                    "score": 0.969
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1312,
+                                1754,
+                                1351
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1312,
+                                        1754,
+                                        1351
+                                    ],
+                                    "type": "text",
+                                    "content": "correspondingly influences the label distribution of these",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                995,
+                                1353,
+                                1691,
+                                1386
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        995,
+                                        1353,
+                                        1691,
+                                        1386
+                                    ],
+                                    "type": "text",
+                                    "content": "nodes.Since the influence of anode on its different",
+                                    "score": 0.973
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1390,
+                                1802,
+                                1432
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1390,
+                                        1802,
+                                        1432
+                                    ],
+                                    "type": "text",
+                                    "content": "neighbors can be various,we measure it by calculating how",
+                                    "score": 0.989
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1432,
+                                1699,
+                                1471
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1432,
+                                        1699,
+                                        1471
+                                    ],
+                                    "type": "text",
+                                    "content": "much change in the input label of node Vi affects the",
+                                    "score": 0.962
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1475,
+                                1717,
+                                1515
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1475,
+                                        1334,
+                                        1515
+                                    ],
+                                    "type": "text",
+                                    "content": "propagated label of node",
+                                    "score": 0.977
+                                },
+                                {
+                                    "bbox": [
+                                        1338,
+                                        1478,
+                                        1367,
+                                        1513
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { v } _ { \\mathrm { j } }",
+                                    "score": 0.57
+                                },
+                                {
+                                    "bbox": [
+                                        1367,
+                                        1475,
+                                        1717,
+                                        1515
+                                    ],
+                                    "type": "text",
+                                    "content": "after k-steps propagation.",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        987,
+                        1565,
+                        1426,
+                        1602
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 16,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                1558,
+                                1426,
+                                1608
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1558,
+                                        1426,
+                                        1608
+                                    ],
+                                    "type": "text",
+                                    "content": "Information Gain Propagation",
+                                    "score": 0.993
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        984,
+                        1604,
+                        1791,
+                        1718
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 17,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                1602,
+                                1780,
+                                1645
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1602,
+                                        1780,
+                                        1645
+                                    ],
+                                    "type": "text",
+                                    "content": "Fora k-layer GNN, the supervision signal of one node can",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                1643,
+                                1765,
+                                1685
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        1643,
+                                        1765,
+                                        1685
+                                    ],
+                                    "type": "text",
+                                    "content": "be propagated to its k-hop neighborhood nodes and then",
+                                    "score": 0.969
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                1681,
+                                1680,
+                                1726
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        1681,
+                                        1680,
+                                        1726
+                                    ],
+                                    "type": "text",
+                                    "content": "influences the label distribution of these neighbors.",
+                                    "score": 0.991
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        984,
+                        1724,
+                        1802,
+                        1963
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 18,
+                    "lines": [
+                        {
+                            "bbox": [
+                                991,
+                                1724,
+                                1761,
+                                1762
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1724,
+                                        1761,
+                                        1762
+                                    ],
+                                    "type": "text",
+                                    "content": "Therefore,it is unsuitable to just consider the information",
+                                    "score": 0.983
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1762,
+                                1798,
+                                1805
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1762,
+                                        1798,
+                                        1805
+                                    ],
+                                    "type": "text",
+                                    "content": "gain of the node itself in the node selection process. So, we",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                987,
+                                1801,
+                                1747,
+                                1844
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        987,
+                                        1801,
+                                        1747,
+                                        1844
+                                    ],
+                                    "type": "text",
+                                    "content": "extend the information gain of a single node to its k-hop",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1847,
+                                1743,
+                                1884
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1847,
+                                        1743,
+                                        1884
+                                    ],
+                                    "type": "text",
+                                    "content": "neighbors in the graph.We firstly combine the influence",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1886,
+                                1791,
+                                1923
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1886,
+                                        1791,
+                                        1923
+                                    ],
+                                    "type": "text",
+                                    "content": "magnitude with the normalized soft label and then measure",
+                                    "score": 0.983
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                991,
+                                1923,
+                                1802,
+                                1965
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        991,
+                                        1923,
+                                        1802,
+                                        1965
+                                    ],
+                                    "type": "text",
+                                    "content": "the information gain propagation of all the influenced nodes.",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1861,
+                        424,
+                        2469,
+                        464
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 19,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1865,
+                                422,
+                                2473,
+                                472
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1865,
+                                        422,
+                                        2473,
+                                        472
+                                    ],
+                                    "type": "text",
+                                    "content": "Maximizing Information Gain Propagation",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1857,
+                        466,
+                        2690,
+                        628
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 20,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1865,
+                                466,
+                                2690,
+                                505
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1865,
+                                        466,
+                                        2690,
+                                        505
+                                    ],
+                                    "type": "text",
+                                    "content": "To maximize the uncertainty of all the influenced nodes in the",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                505,
+                                2572,
+                                547
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        505,
+                                        2572,
+                                        547
+                                    ],
+                                    "type": "text",
+                                    "content": "semi-supervised GNN training,we aim to select and",
+                                    "score": 0.995
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1865,
+                                547,
+                                2690,
+                                584
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1865,
+                                        549,
+                                        2112,
+                                        584
+                                    ],
+                                    "type": "text",
+                                    "content": "annotate a subset",
+                                    "score": 0.976
+                                },
+                                {
+                                    "bbox": [
+                                        2115,
+                                        547,
+                                        2148,
+                                        582
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { V } _ { \\parallel }",
+                                    "score": 0.62
+                                },
+                                {
+                                    "bbox": [
+                                        2148,
+                                        549,
+                                        2690,
+                                        584
+                                    ],
+                                    "type": "text",
+                                    "content": "from V so that the maximum information",
+                                    "score": 0.956
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1865,
+                                592,
+                                2336,
+                                626
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1865,
+                                        592,
+                                        2336,
+                                        626
+                                    ],
+                                    "type": "text",
+                                    "content": "gain propagation can beachieved.",
+                                    "score": 0.964
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1861,
+                        706,
+                        2115,
+                        744
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 21,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1865,
+                                704,
+                                2119,
+                                752
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1865,
+                                        704,
+                                        2119,
+                                        752
+                                    ],
+                                    "type": "text",
+                                    "content": "Working Pipeline",
+                                    "score": 0.99
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1857,
+                        748,
+                        2676,
+                        903
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 22,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1861,
+                                744,
+                                2676,
+                                787
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        744,
+                                        2676,
+                                        787
+                                    ],
+                                    "type": "text",
+                                    "content": "Node Selection.Without losing generality, consider a batch",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                787,
+                                2576,
+                                829
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        787,
+                                        2576,
+                                        829
+                                    ],
+                                    "type": "text",
+                                    "content": "setting where b nodes are selected in each iteration.",
+                                    "score": 0.98
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                827,
+                                2583,
+                                870
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        827,
+                                        2583,
+                                        870
+                                    ],
+                                    "type": "text",
+                                    "content": "Algorithm 1 provides a sketch of our greedy selection",
+                                    "score": 0.987
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                870,
+                                2119,
+                                905
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        870,
+                                        2119,
+                                        905
+                                    ],
+                                    "type": "text",
+                                    "content": "method for GNNs.",
+                                    "score": 0.986
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1854,
+                        986,
+                        2694,
+                        1225
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 23,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1865,
+                                988,
+                                2657,
+                                1028
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1865,
+                                        988,
+                                        2657,
+                                        1028
+                                    ],
+                                    "type": "text",
+                                    "content": "Node Labeling. After getting a batch of the selected node-",
+                                    "score": 0.96
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                1028,
+                                2642,
+                                1067
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        1030,
+                                        1913,
+                                        1067
+                                    ],
+                                    "type": "text",
+                                    "content": "set",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        1913,
+                                        1028,
+                                        1949,
+                                        1065
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "v _ { \\flat }",
+                                    "score": 0.81
+                                },
+                                {
+                                    "bbox": [
+                                        1953,
+                                        1030,
+                                        2642,
+                                        1067
+                                    ],
+                                    "type": "text",
+                                    "content": ",weacquire the label froman oracle.As introduced",
+                                    "score": 0.976
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                1071,
+                                2606,
+                                1111
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        1071,
+                                        2606,
+                                        1111
+                                    ],
+                                    "type": "text",
+                                    "content": "before,different from previous works which require the",
+                                    "score": 0.987
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1865,
+                                1113,
+                                2646,
+                                1150
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1865,
+                                        1113,
+                                        2646,
+                                        1150
+                                    ],
+                                    "type": "text",
+                                    "content": "oracle to annotate the hard label directly, the oracle in our",
+                                    "score": 0.98
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                1150,
+                                2694,
+                                1191
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        1150,
+                                        2694,
+                                        1191
+                                    ],
+                                    "type": "text",
+                                    "content": "framework only needs to judge the correctness of the pseudo",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                1189,
+                                1946,
+                                1227
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        1189,
+                                        1946,
+                                        1227
+                                    ],
+                                    "type": "text",
+                                    "content": "label.",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1857,
+                        1310,
+                        2646,
+                        1469
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 24,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1861,
+                                1303,
+                                2617,
+                                1355
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        1303,
+                                        2617,
+                                        1355
+                                    ],
+                                    "type": "text",
+                                    "content": "Model Training. Intuitively,a node with smaller entropy",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1865,
+                                1353,
+                                2646,
+                                1390
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1865,
+                                        1353,
+                                        2646,
+                                        1390
+                                    ],
+                                    "type": "text",
+                                    "content": "contains contributes more to the training process. In other",
+                                    "score": 0.977
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                1390,
+                                2565,
+                                1430
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        1390,
+                                        2565,
+                                        1430
+                                    ],
+                                    "type": "text",
+                                    "content": "words,a one-hot label contributes most,while other",
+                                    "score": 0.989
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1861,
+                                1428,
+                                2583,
+                                1473
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1861,
+                                        1428,
+                                        2583,
+                                        1473
+                                    ],
+                                    "type": "text",
+                                    "content": "normalized soft labels also provide weak supervision.",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1898,
+                        1517,
+                        2218,
+                        1544
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 25,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1898,
+                                1513,
+                                2222,
+                                1550
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1898,
+                                        1513,
+                                        2222,
+                                        1550
+                                    ],
+                                    "type": "text",
+                                    "content": "Algorithm 1: Working pipeline of IGP",
+                                    "score": 0.977
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1879,
+                        1546,
+                        2502,
+                        1911
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 42,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1898,
+                                1546,
+                                2281,
+                                1569
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 26,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1898,
+                                        1546,
+                                        2285,
+                                        1571
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1898,
+                                                1546,
+                                                2285,
+                                                1571
+                                            ],
+                                            "type": "text",
+                                            "content": "Input:Initial labeled setVo,query batch size b.",
+                                            "score": 0.954
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1898,
+                                1569,
+                                2089,
+                                1592
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 27,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1898,
+                                        1565,
+                                        2093,
+                                        1596
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1898,
+                                                1565,
+                                                2093,
+                                                1596
+                                            ],
+                                            "type": "text",
+                                            "content": "Output: Labeled set V",
+                                            "score": 0.967
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1594,
+                                2101,
+                                1614
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 28,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1879,
+                                        1589,
+                                        2104,
+                                        1619
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1879,
+                                                1589,
+                                                2104,
+                                                1619
+                                            ],
+                                            "type": "text",
+                                            "content": "1 Stage 1: Node Selection",
+                                            "score": 0.954
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1614,
+                                2042,
+                                1637
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 29,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1879,
+                                        1610,
+                                        2045,
+                                        1639
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1879,
+                                                1610,
+                                                2045,
+                                                1639
+                                            ],
+                                            "type": "text",
+                                            "content": "V=Vo,V=;",
+                                            "score": 0.752
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1637,
+                                2071,
+                                1656
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 30,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1879,
+                                        1633,
+                                        2075,
+                                        1660
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1879,
+                                                1633,
+                                                2075,
+                                                1660
+                                            ],
+                                            "type": "text",
+                                            "content": "3fort=1,2,...,bdo",
+                                            "score": 0.874
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1656,
+                                2502,
+                                1681
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 31,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1876,
+                                        1650,
+                                        2510,
+                                        1689
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1876,
+                                                1650,
+                                                2510,
+                                                1689
+                                            ],
+                                            "type": "text",
+                                            "content": "4Selectthe most valuable node: Ui =arg maxv∈Vtrain\\vF(VU{u});",
+                                            "score": 0.88
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1683,
+                                2388,
+                                1708
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 32,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1879,
+                                        1679,
+                                        2392,
+                                        1712
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1879,
+                                                1679,
+                                                2392,
+                                                1712
+                                            ],
+                                            "type": "text",
+                                            "content": "5V=VU{Ui},V=VU{Ui}，Vtrain=Vtrain{Ui}；",
+                                            "score": 0.839
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1708,
+                                2101,
+                                1730
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 33,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1876,
+                                        1701,
+                                        2104,
+                                        1735
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1876,
+                                                1701,
+                                                2104,
+                                                1735
+                                            ],
+                                            "type": "text",
+                                            "content": "Stage2:Node Labeling",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1730,
+                                2019,
+                                1751
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 34,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1876,
+                                        1726,
+                                        2023,
+                                        1755
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1876,
+                                                1726,
+                                                2023,
+                                                1755
+                                            ],
+                                            "type": "text",
+                                            "content": "7forUi∈Vdo",
+                                            "score": 0.797
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1751,
+                                2362,
+                                1774
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 35,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1879,
+                                        1747,
+                                        2366,
+                                        1780
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1879,
+                                                1747,
+                                                2366,
+                                                1780
+                                            ],
+                                            "type": "text",
+                                            "content": "8Judge the correctness of the predicted pseudo label yi",
+                                            "score": 0.949
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1774,
+                                2270,
+                                1797
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 36,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1879,
+                                        1770,
+                                        2274,
+                                        1799
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1879,
+                                                1770,
+                                                2274,
+                                                1799
+                                            ],
+                                            "type": "text",
+                                            "content": "ifyi is correct(agreed by the oracle) then",
+                                            "score": 0.939
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1797,
+                                2281,
+                                1824
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 37,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1868,
+                                        1788,
+                                        2285,
+                                        1830
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1868,
+                                                1788,
+                                                2285,
+                                                1830
+                                            ],
+                                            "type": "text",
+                                            "content": "1Labeling withgacording toEq.",
+                                            "score": 0.868
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1824,
+                                1964,
+                                1842
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 38,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1872,
+                                        1818,
+                                        1968,
+                                        1847
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1872,
+                                                1818,
+                                                1968,
+                                                1847
+                                            ],
+                                            "type": "text",
+                                            "content": "1else",
+                                            "score": 0.992
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1842,
+                                2281,
+                                1867
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 39,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1872,
+                                        1836,
+                                        2285,
+                                        1873
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1872,
+                                                1836,
+                                                2285,
+                                                1873
+                                            ],
+                                            "type": "text",
+                                            "content": "1Labeling U with gi'according to Eq.",
+                                            "score": 0.878
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1867,
+                                2281,
+                                1890
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 40,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1876,
+                                        1861,
+                                        2285,
+                                        1894
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1876,
+                                                1861,
+                                                2285,
+                                                1894
+                                            ],
+                                            "type": "text",
+                                            "content": "13V=V\\{Ui},Vtrain=VtrainU{Ui；",
+                                            "score": 0.836
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1879,
+                                1890,
+                                1979,
+                                1911
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 41,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1872,
+                                        1886,
+                                        1986,
+                                        1913
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1872,
+                                                1886,
+                                                1986,
+                                                1913
+                                            ],
+                                            "type": "text",
+                                            "content": "14Return V",
+                                            "score": 0.953
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        2764,
+                        333,
+                        2911,
+                        375
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 43,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2760,
+                                325,
+                                2915,
+                                381
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        325,
+                                        2915,
+                                        381
+                                    ],
+                                    "type": "text",
+                                    "content": "Results",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2760,
+                        427,
+                        2897,
+                        460
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 44,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2760,
+                                422,
+                                2904,
+                                466
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        422,
+                                        2904,
+                                        466
+                                    ],
+                                    "type": "text",
+                                    "content": "Datasets.",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2753,
+                        466,
+                        3571,
+                        628
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 45,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2760,
+                                462,
+                                3579,
+                                509
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        462,
+                                        3579,
+                                        509
+                                    ],
+                                    "type": "text",
+                                    "content": "We evaluate IGP in both inductive and transductive settings:",
+                                    "score": 0.99
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                507,
+                                3560,
+                                547
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        507,
+                                        3560,
+                                        547
+                                    ],
+                                    "type": "text",
+                                    "content": "three citation networks (i.e., Citeseer, Cora,and PubMed),",
+                                    "score": 0.958
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                549,
+                                3527,
+                                584
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        549,
+                                        3527,
+                                        584
+                                    ],
+                                    "type": "text",
+                                    "content": "one large social network (Reddit),and one OGB dataset",
+                                    "score": 0.968
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                586,
+                                2941,
+                                630
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        586,
+                                        2941,
+                                        630
+                                    ],
+                                    "type": "text",
+                                    "content": "(ogbn-arxiv).",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2757,
+                        667,
+                        3118,
+                        702
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 46,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2760,
+                                661,
+                                3125,
+                                708
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        661,
+                                        3125,
+                                        708
+                                    ],
+                                    "type": "text",
+                                    "content": "End-to-end Comparison.",
+                                    "score": 0.998
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2753,
+                        704,
+                        3553,
+                        986
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 47,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2757,
+                                702,
+                                3520,
+                                748
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2757,
+                                        702,
+                                        3520,
+                                        748
+                                    ],
+                                    "type": "text",
+                                    "content": "We choose the labeling budget as 20 labels per class to",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                744,
+                                3553,
+                                785
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        744,
+                                        3553,
+                                        785
+                                    ],
+                                    "type": "text",
+                                    "content": "show the end-to-end accuracy. Table 1 shows that GRAIN,",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                783,
+                                3512,
+                                827
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        783,
+                                        3512,
+                                        827
+                                    ],
+                                    "type": "text",
+                                    "content": "ALG,AGE,and ANRMAB outperform Random in all the",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                827,
+                                3450,
+                                864
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        827,
+                                        3450,
+                                        864
+                                    ],
+                                    "type": "text",
+                                    "content": "datasets,as theyare speciallydesigned for GNNs.",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                866,
+                                3516,
+                                905
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        866,
+                                        3516,
+                                        905
+                                    ],
+                                    "type": "text",
+                                    "content": "Remarkably, IGP improves the test accuracy of the best",
+                                    "score": 0.95
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                905,
+                                3505,
+                                945
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        905,
+                                        3103,
+                                        945
+                                    ],
+                                    "type": "text",
+                                    "content": "baseline,i.e., GRAIN,by",
+                                    "score": 0.956
+                                },
+                                {
+                                    "bbox": [
+                                        3103,
+                                        905,
+                                        3228,
+                                        943
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "1 . 6 { - } 2 . 2 \\%",
+                                    "score": 0.82
+                                },
+                                {
+                                    "bbox": [
+                                        3228,
+                                        905,
+                                        3505,
+                                        945
+                                    ],
+                                    "type": "text",
+                                    "content": "on the three citation",
+                                    "score": 0.983
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                947,
+                                3457,
+                                984
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        947,
+                                        2900,
+                                        984
+                                    ],
+                                    "type": "text",
+                                    "content": "networks,",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        2900,
+                                        947,
+                                        2974,
+                                        982
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "0 . 9 \\%",
+                                    "score": 0.84
+                                },
+                                {
+                                    "bbox": [
+                                        2974,
+                                        947,
+                                        3181,
+                                        984
+                                    ],
+                                    "type": "text",
+                                    "content": "on Reddit,and",
+                                    "score": 0.969
+                                },
+                                {
+                                    "bbox": [
+                                        3181,
+                                        947,
+                                        3258,
+                                        982
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "0 . 6 \\%",
+                                    "score": 0.86
+                                },
+                                {
+                                    "bbox": [
+                                        3258,
+                                        947,
+                                        3457,
+                                        984
+                                    ],
+                                    "type": "text",
+                                    "content": "on ogbn-arxiv.",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        2764,
+                        1024,
+                        3542,
+                        1279
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                2764,
+                                1024,
+                                3542,
+                                1279
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2764,
+                                        1024,
+                                        3542,
+                                        1279
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2764,
+                                                1024,
+                                                3542,
+                                                1279
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>Method</td><td>Cora</td><td>Citeseer</td><td>PubMed</td><td>Reddit</td><td>ogbn-arxiv</td></tr><tr><td>Random</td><td>65.2(±0.8)</td><td>57.5(±0.9)</td><td>67.4(±0.6)</td><td>68.3(±0.5)</td><td>56.6(±0.4)</td></tr><tr><td>AGE</td><td>69.8(±0.6)</td><td>62.3(±0.6)</td><td>70.5(±0.4)</td><td>70.1(±0.3)</td><td>59.5(±0.3)</td></tr><tr><td>ANRMAB</td><td>70.4(±0.5)</td><td>62.2(±0.6)</td><td>70.7(±0.3)</td><td>70.4(±0.3)</td><td>59.1(±0.2)</td></tr><tr><td>GPA</td><td>71.1(±0.4)</td><td>62.8(±0.4)</td><td>71.8(±0.5)</td><td>70.9(±0.2)</td><td>59.7(±0.3)</td></tr><tr><td>SEAL</td><td>71.6(±0.5)</td><td>63.1(±0.4)</td><td>72.4(±0.4)</td><td>71.2(±0.3)</td><td>60.1(±0.1)</td></tr><tr><td>ALG</td><td>72.2(±0.6)</td><td>63.7(±0.5)</td><td>73.2(±0.3)</td><td>71.5(±0.3)</td><td>60.5(±0.2)</td></tr><tr><td>GRAIN</td><td>74.5(±0.3)</td><td>64.3(±0.3)</td><td>74.8(±0.2)</td><td>72.1(±0.1)</td><td>60.8(±0.2)</td></tr><tr><td>IGP</td><td>78.1(±0.6)</td><td>66.2(±0.3)</td><td>77.3(±0.5)</td><td>75.4(±0.2)</td><td>62.1(±0.3)</td></tr></table>",
+                                            "image_path": "835d5d2cb64bd31d1e109c23f671beb025a8de321ab03873ccf1037018b0d180.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 48,
+                            "angle": 0,
+                            "type": "table_body"
+                        }
+                    ],
+                    "index": 48
+                },
+                {
+                    "bbox": [
+                        2764,
+                        1351,
+                        2978,
+                        1393
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 49,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2760,
+                                1345,
+                                2985,
+                                1399
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1345,
+                                        2985,
+                                        1399
+                                    ],
+                                    "type": "text",
+                                    "content": "Conclusion",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2749,
+                        1440,
+                        3586,
+                        1963
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 50,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2757,
+                                1434,
+                                3590,
+                                1488
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2757,
+                                        1434,
+                                        3590,
+                                        1488
+                                    ],
+                                    "type": "text",
+                                    "content": "This paper presents Informatioin Gain Propagation (IGP), the",
+                                    "score": 0.985
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1482,
+                                3531,
+                                1521
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1482,
+                                        3531,
+                                        1521
+                                    ],
+                                    "type": "text",
+                                    "content": "first GNN-based AL method which explicitly considers AL",
+                                    "score": 0.958
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2757,
+                                1521,
+                                3575,
+                                1565
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2757,
+                                        1521,
+                                        3575,
+                                        1565
+                                    ],
+                                    "type": "text",
+                                    "content": "with soft labels.Concretely, we provide a new way for active",
+                                    "score": 0.971
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1563,
+                                3545,
+                                1602
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1563,
+                                        3545,
+                                        1602
+                                    ],
+                                    "type": "text",
+                                    "content": "learners to exhaustively label nodeswitha limited budget,",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1606,
+                                3586,
+                                1641
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1606,
+                                        3586,
+                                        1641
+                                    ],
+                                    "type": "text",
+                                    "content": "usinga combination of domain experts and GNN model. IGP",
+                                    "score": 0.961
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1643,
+                                3494,
+                                1683
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1643,
+                                        3494,
+                                        1683
+                                    ],
+                                    "type": "text",
+                                    "content": "allows us to use relaxed queries where domain expert",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1685,
+                                3556,
+                                1724
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1685,
+                                        3556,
+                                        1724
+                                    ],
+                                    "type": "text",
+                                    "content": "(oracle) only judges the correctness of the predicted labels",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1724,
+                                3542,
+                                1764
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1724,
+                                        3542,
+                                        1764
+                                    ],
+                                    "type": "text",
+                                    "content": "rather than the exact categorization,and ii) new criteria of",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1764,
+                                3498,
+                                1801
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1764,
+                                        3498,
+                                        1801
+                                    ],
+                                    "type": "text",
+                                    "content": "maximizing information gain propagation for the active",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1803,
+                                3486,
+                                1842
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1803,
+                                        3486,
+                                        1842
+                                    ],
+                                    "type": "text",
+                                    "content": "learner with relaxed queriesand soft labels.Empirical",
+                                    "score": 0.971
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2757,
+                                1840,
+                                3479,
+                                1886
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2757,
+                                        1840,
+                                        3479,
+                                        1886
+                                    ],
+                                    "type": "text",
+                                    "content": "studies on real-world graphs show that our approach",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1882,
+                                3479,
+                                1927
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1882,
+                                        3479,
+                                        1927
+                                    ],
+                                    "type": "text",
+                                    "content": "outperforms competitive baselines by a large margin,",
+                                    "score": 0.996
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2760,
+                                1923,
+                                3402,
+                                1965
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2760,
+                                        1923,
+                                        3402,
+                                        1965
+                                    ],
+                                    "type": "text",
+                                    "content": "especially when the number of classes is large.",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        3523,
+                        68,
+                        3597,
+                        151
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                3520,
+                                70,
+                                3604,
+                                157
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        3520,
+                                        70,
+                                        3604,
+                                        157
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        3188,
+                        2017,
+                        3608,
+                        2043
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 51,
+                    "lines": [
+                        {
+                            "bbox": [
+                                3188,
+                                2014,
+                                3612,
+                                2046
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        3188,
+                                        2014,
+                                        3612,
+                                        2046
+                                    ],
+                                    "type": "text",
+                                    "content": "TM and @ 2022 Apple Inc.All rights reserved.",
+                                    "score": 0.952
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "page_size": [
+                3686,
+                2073
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

@@ -1,0 +1,525 @@
+[
+  {
+    "type": "text",
+    "text": "Contribution ",
+    "text_level": 1,
+    "bbox": [
+      13,
+      178,
+      85,
+      203
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We formulate the Neural Tangent Kernel (NTK) induced by infinitely ",
+    "bbox": [
+      13,
+      218,
+      314,
+      264
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Differentiable Decision Tree ",
+    "text_level": 1,
+    "bbox": [
+      13,
+      293,
+      167,
+      320
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "By employing a sigmoid-like function, we can relax the splitting into a continuous form,which allows the use of gradient descent. ",
+    "bbox": [
+      13,
+      335,
+      304,
+      381
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      39,
+      388,
+      271,
+      584
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Neural Tangent Kernel for Tree Ensembles ",
+    "text_level": 1,
+    "bbox": [
+      13,
+      614,
+      240,
+      641
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The NTK emerges in the context of functional gradient descent. ",
+    "bbox": [
+      13,
+      654,
+      297,
+      678
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Functional Gradient Descent ",
+    "text_level": 1,
+    "bbox": [
+      63,
+      688,
+      186,
+      708
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      60,
+      716,
+      259,
+      798
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "○It does not change during training when considering infinitely wide neural networks. ",
+      "○Then,functional behavior becomesanalytically tractable. "
+    ],
+    "bbox": [
+      29,
+      809,
+      307,
+      844
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "By handling the number of trees like the width of neural networks, we can apply NTK theory to differentiable tree ensembles. ",
+      "Proved in our previous work: Kanoh & Sugiyama (ICLR 2022) ",
+      "• In this work,we extend the NTK concept for axis-aligned trees. "
+    ],
+    "bbox": [
+      13,
+      866,
+      309,
+      973
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Axis-Aligned Constraint ",
+    "text_level": 1,
+    "bbox": [
+      346,
+      178,
+      475,
+      205
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "We consider two axis-aligned cases: AAA and AAl. ",
+      "${ \\pmb w } _ { m , n }$ is in one-hot representation,spliting isaxis-aligned. "
+    ],
+    "bbox": [
+      347,
+      218,
+      571,
+      259
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      349,
+      269,
+      393,
+      394
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      424,
+      268,
+      473,
+      394
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      492,
+      268,
+      539,
+      394
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      555,
+      308,
+      643,
+      394
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Closed-form NTK formula for Axis-Aligned Trees ",
+    "text_level": 1,
+    "bbox": [
+      347,
+      422,
+      605,
+      450
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "NTK for Infinite Ensembles of Axis-Aligned Trees ",
+    "text_level": 1,
+    "bbox": [
+      352,
+      468,
+      559,
+      489
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      347,
+      491,
+      644,
+      708
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "•Training behavior is now analytically tractable using our formula. ",
+    "bbox": [
+      347,
+      719,
+      634,
+      741
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Output dynamics for test data points.Each line color corresponds to each data point. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      396,
+      750,
+      581,
+      970
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Ensembles of Various Trees ",
+    "text_level": 1,
+    "bbox": [
+      682,
+      178,
+      831,
+      203
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The NTK induced by an ensemble of various tree architectures is equal to the sum of the NTKs induced by each architecture. ",
+    "bbox": [
+      683,
+      218,
+      968,
+      261
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Op is the proportion of the corresponding tree architecture within the ensemble. ",
+    "bbox": [
+      698,
+      263,
+      960,
+      280
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "NTK Property forMixed Trees ",
+    "text_level": 1,
+    "bbox": [
+      703,
+      288,
+      831,
+      308
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Mixed $( \\pmb { x } _ { i } , \\pmb { x } _ { j } ) = \\rho _ { 1 } \\Theta ^ { \\tt A }$ ",
+    "bbox": [
+      702,
+      310,
+      963,
+      337
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Insight on Oblivious Trees ",
+    "text_level": 1,
+    "bbox": [
+      682,
+      356,
+      822,
+      383
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Any non-oblivious trees can be transformed into oblivious trees that induce exactly the same limiting NTK. ",
+      "There is no need to consider combinations of complex trees,and it is sufficient to consider only combinations of oblivious trees. "
+    ],
+    "bbox": [
+      683,
+      397,
+      985,
+      476
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      678,
+      491,
+      994,
+      577
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Multiple Kernel Learning (MKL) as Architecture Search --- ",
+    "text_level": 1,
+    "bbox": [
+      682,
+      587,
+      987,
+      615
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "MKL enables tree architecture search based on convex optimization. ",
+    "bbox": [
+      683,
+      629,
+      984,
+      649
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "○Suitable features for AAA and AAl can be different. ",
+    "bbox": [
+      698,
+      651,
+      873,
+      667
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      "MKL weights obtained bythe tic-tac-toe endgame dataset "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      677,
+      691,
+      986,
+      783
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_11.jpg",
+    "image_caption": [
+      "Classification accuracy on tic-tac-toe endgame dataset ",
+      "Hardness ofthe sigmoidused inasplitting "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      695,
+      803,
+      870,
+      976
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neural Tangent Kernels for Axis-Aligned Tree Ensembles_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "Interactions for tic-tac-toe endgame "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      894,
+      814,
+      968,
+      949
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Neural Tangent Kernels for Axis-Aligned Tree Ensembles ",
+    "bbox": [
+      154,
+      18,
+      844,
+      78
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Ryuichi Kanoh1.2, Mahito Sugiyama1.2 ",
+    "bbox": [
+      381,
+      95,
+      615,
+      130
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1National Institute of Informatics,²The Graduate University For Advanced Studies,SOKENDAl ",
+    "bbox": [
+      292,
+      132,
+      706,
+      153
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": ":3 ",
+    "bbox": [
+      879,
+      86,
+      914,
+      152
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICML ",
+    "bbox": [
+      918,
+      91,
+      976,
+      125
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "International Conference On Machine Learning ",
+    "bbox": [
+      919,
+      127,
+      976,
+      153
+    ],
+    "page_idx": 0
+  }
+]

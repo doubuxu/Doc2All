@@ -1,0 +1,650 @@
+[
+  {
+    "type": "text",
+    "text": "A View From Somewhere: Human-Centric Face Representations ",
+    "text_level": 1,
+    "bbox": [
+      28,
+      43,
+      850,
+      87
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Jerone T. A.Andrews1,Przemys law Joniak², Alice Xiang3 ",
+    "bbox": [
+      32,
+      99,
+      326,
+      121
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1Sony Al,Tokyo2University of Tokyo,Tokyo3SonyAl,New York ",
+    "bbox": [
+      32,
+      122,
+      377,
+      144
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "jerone.andrews@sony.com ",
+    "bbox": [
+      36,
+      152,
+      127,
+      166
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sony Al ",
+    "text_level": 1,
+    "bbox": [
+      866,
+      163,
+      972,
+      206
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Motivation ",
+    "text_level": 1,
+    "bbox": [
+      30,
+      225,
+      92,
+      242
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dataset Bias ",
+    "text_level": 1,
+    "bbox": [
+      30,
+      258,
+      79,
+      271
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dataset bias can result in models that are discriminatory or depend on spurious correlations. Forinstance,a face image restorationmodel may“hallucinate\"featurescorrelatedwith oversampled subgroups,resulting in theerasure ofminority groups. ",
+    "bbox": [
+      29,
+      278,
+      309,
+      316
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Upsamplingvia latent space exploration of StyleGAN2 ",
+      "Downsample "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      34,
+      333,
+      166,
+      404
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Downsample ",
+      "Upsample "
+    ],
+    "image_footnote": [
+      "Originalimagesare takenfromthe ChicagoFaceDatabase (https://ww.chicagofaces.org) "
+    ],
+    "bbox": [
+      185,
+      335,
+      313,
+      405
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Priorto learning,human-centricimagedataset users shouldevaluate thediversityof thedata. ",
+    "bbox": [
+      29,
+      440,
+      317,
+      453
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Parity and Diversity ",
+    "text_level": 1,
+    "bbox": [
+      29,
+      468,
+      105,
+      482
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Thecanonical approach istocategorizepeople usingdemographic labels. However,evaluating diversity by examining counts across subgroupsfails to reflect thecontinuous nature of human phenotypicdiversity (e.g.,skin tone isoften reduced tolight vs.dark).Moreover,such approaches often denymulti-groupmembership (e.g.,erasingmulti-ethnic individuals). ",
+    "bbox": [
+      29,
+      487,
+      317,
+      539
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      33,
+      541,
+      300,
+      712
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Unknown Label Distributions ",
+    "text_level": 1,
+    "bbox": [
+      30,
+      728,
+      140,
+      742
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Mosthuman-centricimagedatasetsareweb-scraped,lackingground-truth informationabout theimage subjects.Therefore,researchers typically choose certainattributes they considerto berelevantfor humandiversityandusehumanannotatorstoinfer them.This isdifficult for ill-defined and highlychangeable social constructs suchas raceand gender.Observational labelsrisk not only encoding stereotypes,butreifyingandpropagating thembeyond“their culturalcontext\".Furthermore,discrepancies between observed and self-identifiedattributes can invalidatean image subject'sself-imageand identity. ",
+    "bbox": [
+      29,
+      748,
+      314,
+      838
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      31,
+      856,
+      306,
+      936
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Contributions ",
+    "text_level": 1,
+    "bbox": [
+      355,
+      225,
+      431,
+      242
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Motivatedby issues inherenttocategoricallabels,weaimtodevelopatoolthatcanevaluate thevisual diversityoffaces inunlabeled datasets.Wedosowithout everaskinganannotator toexplicitly categorizea person. ",
+    "bbox": [
+      354,
+      259,
+      637,
+      298
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Face Similarity (FAX) Dataset ",
+    "text_level": 1,
+    "bbox": [
+      354,
+      311,
+      463,
+      326
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Weintroduceanoveldataset,FAX,containing638,18oodd-one-outfacesimilarityjudgments over4,921faces (stimulus set).Judgments correspond to theodd-one-out (i.e.,least similar) faceina triplet,andareassociatedwiththeidentifieranddemographicattributesof the annotator who made the judgment. ",
+    "bbox": [
+      353,
+      332,
+      637,
+      383
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      355,
+      385,
+      641,
+      538
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Model of Conditional Decision-Making ",
+    "text_level": 1,
+    "bbox": [
+      354,
+      553,
+      500,
+      569
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Weintroduceamodel that learns topredicthuman judgments of face similarity conditioned on theannotatorwho generated the judgment.The conditionsare realized usingannotatormasks. ",
+    "bbox": [
+      354,
+      574,
+      642,
+      601
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      355,
+      603,
+      643,
+      760
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Afacecan exhibit certain characteristics toa greateror lesser extent than others,even within thesamesubpopulation.Therefore,weconstrainourmodelto learn face embeddingsthatare continuous,non-negative (human-interpretable),and sparse byminimizing: ",
+    "bbox": [
+      354,
+      778,
+      641,
+      818
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      370,
+      823,
+      623,
+      870
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "where ${ \\hat { p } } ( k \\mid a )$ isthepredictedprobabilitythat face ${ \\bf x } _ { k }$ is the odd-one-out accordingto annotator $^ { a }$ ",
+    "bbox": [
+      354,
+      878,
+      617,
+      903
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Results ",
+    "text_level": 1,
+    "bbox": [
+      679,
+      225,
+      720,
+      242
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Interpretability ",
+    "text_level": 1,
+    "bbox": [
+      679,
+      258,
+      739,
+      271
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "From learning on FAX,we note the materialization ofdistinct dimensions coinciding with commonlydefineddemographic subgroups,i.e.,Male,Female,Black,White,East Asian, SouthAsian,andElderly.Inaddition,separatedimensionssurfaceforfaceand hair morphology,i.e.,Wide Face,Long Face,Smiling Expression,Neutral Expression, Balding,Facial Hair,and Dyed Hair. ",
+    "bbox": [
+      679,
+      278,
+      959,
+      341
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dimension1/22 ",
+    "bbox": [
+      681,
+      347,
+      725,
+      359
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "South Asian "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      682,
+      359,
+      724,
+      387
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dimension 4/22 ",
+    "bbox": [
+      729,
+      348,
+      765,
+      360
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      729,
+      360,
+      773,
+      387
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Femal Femal ",
+    "bbox": [
+      732,
+      389,
+      746,
+      398
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dimension 5/22 ",
+    "bbox": [
+      777,
+      348,
+      813,
+      360
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      ""
+    ],
+    "image_footnote": [],
+    "bbox": [
+      755,
+      360,
+      774,
+      387
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_11.jpg",
+    "image_caption": [
+      "Smiling "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      777,
+      360,
+      823,
+      387
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dimension 10/22 ",
+    "bbox": [
+      825,
+      348,
+      865,
+      360
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "Wide Face "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      825,
+      360,
+      865,
+      387
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dimension 11/22 ",
+    "bbox": [
+      871,
+      348,
+      910,
+      360
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_13.jpg",
+    "image_caption": [
+      "Elderly "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      871,
+      360,
+      910,
+      387
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dimension 18/22 ",
+    "bbox": [
+      918,
+      348,
+      957,
+      360
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/images/fig_14.jpg",
+    "image_caption": [
+      "Balding "
+    ],
+    "image_footnote": [
+      "Original imagesare taken from FFHQ (https://github.com/NVlabs/ffhq-dataset） "
+    ],
+    "bbox": [
+      918,
+      360,
+      960,
+      387
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Moreover,wevalidate thatFAX dimensions can be used to directly collect continuous attribute valuesfornovel faces,sidesteppingthe limitsofcategorical definitions. ",
+    "bbox": [
+      679,
+      421,
+      966,
+      447
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/tables/table_1.jpg",
+    "table_caption": [
+      "Predicting Novel Similarity Judgments "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Model</td><td>Loss/Method</td><td>Acc.</td><td>r</td></tr><tr><td>FairFace</td><td>Cross-entropy</td><td>51.9</td><td>0.67</td></tr><tr><td>CelebA</td><td>Cross-entropy</td><td>48.9</td><td>0.56</td></tr><tr><td>FFHQ</td><td>Cross-entropy</td><td>51.8</td><td>0.68</td></tr><tr><td>CASIA-WebFace</td><td>ArcFace</td><td>46.1</td><td>0.40</td></tr><tr><td>FAX-C</td><td>Conditional</td><td>61.7</td><td>0.82</td></tr><tr><td>FAX-U</td><td>Unconditional</td><td>57.5</td><td>0.86</td></tr><tr><td>FAX-Triplet</td><td>Triplet margin with distance swap</td><td>52.8</td><td>0.64</td></tr></table>",
+    "bbox": [
+      680,
+      482,
+      821,
+      573
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "From56images，we generate(5)possible tripletswith 2-3 unique judgmentsper triplet(8o,3oo judgments). ",
+    "bbox": [
+      829,
+      486,
+      966,
+      505
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Wereportodd-one-outpredictive accuracy;and，Spearman's rbetween thestrictlyupper triangularmodel-and humangenerated similaritymatrices.Entry(i,j）inthehumangeneratedsimilaritymatrixcorrespondstothefractionof triplets containing(i,j)，where neitherwas judged as the odd-one-out. Entry(i,j)inamodel-generated similaritymatrixcorrespondsto themean ρ(k)over alltriplets containing(i,j). ",
+    "bbox": [
+      829,
+      506,
+      966,
+      571
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/tables/table_2.jpg",
+    "table_caption": [
+      "AnnotatorBias "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Annotator attribute</td><td>Groups</td><td># Masks</td><td>AUROC</td></tr><tr><td>Age group</td><td>30-39 / 40-49</td><td>393 / 121</td><td>0.59 ± 0.05</td></tr><tr><td>Gender identity</td><td>Male / Female</td><td>523 / 473</td><td>0.65 ± 0.05</td></tr><tr><td>Nationality</td><td>America / India</td><td>530 / 204</td><td>0.86 ± 0.03</td></tr><tr><td>Regional ancestry</td><td>Europe / Asia</td><td>407 / 243</td><td>0.86 ± 0.03</td></tr><tr><td>Subregional ancestry</td><td>West Europe / South Asia</td><td>173 / 107</td><td>0.88 ± 0.05</td></tr></table>",
+    "bbox": [
+      680,
+      613,
+      846,
+      681
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Using1o-fold crossvalidation，we train linearSVMs todiscriminate betweenannotatormasks from twodifferentannotator subgroups. ",
+    "bbox": [
+      858,
+      633,
+      966,
+      662
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/A View From Somewhere: Human-Centric Face Representations_poster/visuals/tables/table_3.jpg",
+    "table_caption": [
+      "Comparative Diversity Auditingand Binary Attribute Classification "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td colspan=\"9\">Comparative diversity auditing</td></tr><tr><td rowspan=\"3\">Data</td><td rowspan=\"3\">Attribute</td><td colspan=\"5\">Model (Disparity Δ / Spearman&#x27;s r)</td><td colspan=\"2\">Discriminating between binary-valued attributes</td></tr><tr><td rowspan=\"2\">FAX</td><td rowspan=\"2\">CelebA</td><td rowspan=\"2\">FairFace</td><td rowspan=\"2\">FFHQ</td><td colspan=\"3\">AUROC</td></tr><tr><td>Data Attribute</td><td>FAX CelebA FairFace</td><td>FFHQ</td></tr><tr><td>CC</td><td>&gt;70 y.o.*</td><td>0.22 / 0.96</td><td>0.06 / 0.99</td><td>0.06 / 0.95</td><td>0.08 / 0.99</td><td>CC &gt;70 y.o.*</td><td>0.800</td><td>0.936</td></tr><tr><td>CC</td><td>Male*</td><td>0.06 / 0.97</td><td>0.02 / 0.99</td><td>0.02 / 1.00</td><td>0.04 / 0.99</td><td>FFHQ</td><td>0.905</td><td>0.959</td></tr><tr><td>CC</td><td>Light skin</td><td>0.06 / 0.94</td><td>0.3 / 0.65</td><td>0.18 / 0.85</td><td>0.06 / 0.99</td><td>CFD Male*</td><td>0.991</td><td>0.997</td></tr><tr><td>CFD</td><td>Smiling</td><td>0.12 / 0.99</td><td>0.06 / 0.95</td><td>-</td><td>-</td><td>CC Male*</td><td>0.971</td><td>0.986</td></tr><tr><td>CFD</td><td>Male*</td><td>0.00 / 1.00</td><td>0.08 / 0.99</td><td>0.02 / 1.00</td><td>0.02 / 1.00</td><td>CA Male</td><td>0.990</td><td>0.994</td></tr><tr><td>CFD</td><td>East Asian*</td><td>0.06 / 1.00</td><td>-</td><td>0.02 / 0.98</td><td>0.02 / 1.00</td><td>COCO Male</td><td>0.893</td><td>0.926</td></tr><tr><td>CFD</td><td>Black*</td><td>0.10 / 0.98</td><td>-</td><td>0.14 / 0.97</td><td>0.00 / 1.00</td><td>MIAP Male</td><td>0.924</td><td>0.942</td></tr><tr><td>CFD</td><td>White*</td><td>0.04 / 1.00</td><td>0.02 / 0.99</td><td>0.04 / 0.97</td><td>0.04 / 0.99</td><td>FFHQ Male</td><td>0.933</td><td>0.959</td></tr><tr><td>CFD</td><td>Indian*</td><td>0.08 / 1.00</td><td>-</td><td>0.30 / 0.73</td><td>0.08 / 0.87</td><td>CA Smiling</td><td>0.895</td><td>0.982</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>CFD Smiling</td><td>0.969</td><td>0.992</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>CFD Neutral</td><td>0.731</td><td>-</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>CFD East Asian*</td><td>0.969</td><td>-</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>CFD Black*</td><td>0.992</td><td>-</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>CFD White*</td><td>0.972</td><td>0.889</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>CFD Indian*</td><td>0.960</td><td>-</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>CC Light skin</td><td>0.930</td><td>0.830</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>COCO Light skin</td><td>0.889</td><td>0.771</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>CA Balding</td><td>0.963</td><td>0.995</td></tr></table>",
+    "bbox": [
+      680,
+      722,
+      966,
+      968
+    ],
+    "page_idx": 0
+  }
+]

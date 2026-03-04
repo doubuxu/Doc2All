@@ -1,0 +1,3058 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        90,
+                        95,
+                        763,
+                        217
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                93,
+                                91,
+                                583,
+                                157
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        93,
+                                        91,
+                                        583,
+                                        157
+                                    ],
+                                    "type": "text",
+                                    "content": "Color Equivariant",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                91,
+                                159,
+                                765,
+                                219
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        91,
+                                        159,
+                                        765,
+                                        219
+                                    ],
+                                    "type": "text",
+                                    "content": "Convolutional Networks",
+                                    "score": 0.989
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        85,
+                        244,
+                        802,
+                        354
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                90,
+                                246,
+                                793,
+                                273
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        90,
+                                        246,
+                                        793,
+                                        273
+                                    ],
+                                    "type": "text",
+                                    "content": "Color is acrucial visual cue for object recognition,but CNNs fail to generalize if there is",
+                                    "score": 0.963
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                90,
+                                267,
+                                765,
+                                292
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        90,
+                                        267,
+                                        765,
+                                        292
+                                    ],
+                                    "type": "text",
+                                    "content": "dataimbalance between color variations.Color invariance addresses this issue by",
+                                    "score": 0.973
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                88,
+                                288,
+                                805,
+                                313
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        288,
+                                        805,
+                                        313
+                                    ],
+                                    "type": "text",
+                                    "content": "removing all color information.We introduce Color Equivariant Convolutions (CEConvs):",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                90,
+                                310,
+                                747,
+                                335
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        90,
+                                        310,
+                                        747,
+                                        335
+                                    ],
+                                    "type": "text",
+                                    "content": "a novel deep learning building block that sharesshape features across the color",
+                                    "score": 0.96
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                90,
+                                331,
+                                530,
+                                356
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        90,
+                                        331,
+                                        530,
+                                        356
+                                    ],
+                                    "type": "text",
+                                    "content": "spectrumwhileretaining important color information.",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        373,
+                        149,
+                        387
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                368,
+                                150,
+                                391
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        368,
+                                        150,
+                                        391
+                                    ],
+                                    "type": "text",
+                                    "content": "Authors",
+                                    "score": 0.997
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        389,
+                        637,
+                        406
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                90,
+                                387,
+                                639,
+                                406
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        90,
+                                        387,
+                                        639,
+                                        406
+                                    ],
+                                    "type": "text",
+                                    "content": "Attila Lengyel,Ombretta Straforello,obert-JanBruintjes,AexanderGielisse,JanvanGemert",
+                                    "score": 0.92
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        422,
+                        166,
+                        439
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                420,
+                                169,
+                                441
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        420,
+                                        169,
+                                        441
+                                    ],
+                                    "type": "text",
+                                    "content": "Affiliations",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        439,
+                        265,
+                        458
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                435,
+                                267,
+                                462
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        435,
+                                        267,
+                                        462
+                                    ],
+                                    "type": "text",
+                                    "content": "DelftUniversityofTechnology",
+                                    "score": 0.993
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1013,
+                        95,
+                        1455,
+                        377
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1013,
+                                95,
+                                1455,
+                                377
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1013,
+                                        95,
+                                        1455,
+                                        377
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1013,
+                                                95,
+                                                1455,
+                                                377
+                                            ],
+                                            "type": "image",
+                                            "image_path": "c55c98418fd3c06dd1eda68bdf63ec715943ae460c308b4839a8f07ec9587900.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 6,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                992,
+                                381,
+                                1466,
+                                458
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        995,
+                                        381,
+                                        1464,
+                                        404
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                995,
+                                                381,
+                                                1464,
+                                                404
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure1.Color isoften a discriminative feature inobject recognition.",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        995,
+                                        402,
+                                        1438,
+                                        420
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                995,
+                                                402,
+                                                1438,
+                                                420
+                                            ],
+                                            "type": "text",
+                                            "content": "However,intra-classcolorvariationscanconfuseaclassification",
+                                            "score": 0.986
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        995,
+                                        420,
+                                        1464,
+                                        437
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                995,
+                                                420,
+                                                1464,
+                                                437
+                                            ],
+                                            "type": "text",
+                                            "content": "model.Ontheother hand,removingcolormakes flowers lessdistinct",
+                                            "score": 0.973
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        995,
+                                        437,
+                                        1340,
+                                        458
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                995,
+                                                437,
+                                                1340,
+                                                458
+                                            ],
+                                            "type": "text",
+                                            "content": "from their background and thus harder to classify.",
+                                            "score": 0.965
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 7,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "bbox": [
+                        90,
+                        559,
+                        323,
+                        601
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                96,
+                                561,
+                                326,
+                                603
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96,
+                                        561,
+                                        326,
+                                        603
+                                    ],
+                                    "type": "text",
+                                    "content": "01）Preliminaries",
+                                    "score": 0.954
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        85,
+                        630,
+                        482,
+                        692
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                630,
+                                441,
+                                652
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        630,
+                                        441,
+                                        652
+                                    ],
+                                    "type": "text",
+                                    "content": "ACNN isequivarianttoa transformation Tif",
+                                    "score": 0.964
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                648,
+                                483,
+                                677
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        648,
+                                        483,
+                                        677
+                                    ],
+                                    "type": "text",
+                                    "content": "transforming theinput xby Tresults inanequally",
+                                    "score": 0.98
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                88,
+                                669,
+                                303,
+                                696
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        669,
+                                        303,
+                                        696
+                                    ],
+                                    "type": "text",
+                                    "content": "transformed featuremap:",
+                                    "score": 0.976
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        206,
+                        708,
+                        366,
+                        737
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                206,
+                                708,
+                                366,
+                                737
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        206,
+                                        708,
+                                        366,
+                                        737
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "f (T (x)) = T ^ {\\prime} (f (x))",
+                                    "image_path": "5d1892d42cad1e0091571e0766f60f91c7169671fbcac0fe6d23a98b9c0c22f7.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10
+                },
+                {
+                    "bbox": [
+                        85,
+                        752,
+                        482,
+                        796
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 11,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                750,
+                                483,
+                                777
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        750,
+                                        483,
+                                        777
+                                    ],
+                                    "type": "text",
+                                    "content": "Equivariance allows parameter sharing,resulting",
+                                    "score": 0.992
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                771,
+                                485,
+                                798
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        771,
+                                        485,
+                                        798
+                                    ],
+                                    "type": "text",
+                                    "content": " in better data efficiency and OoD generalization.",
+                                    "score": 0.973
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        812,
+                        485,
+                        858
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                91,
+                                814,
+                                474,
+                                835
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        91,
+                                        814,
+                                        474,
+                                        835
+                                    ],
+                                    "type": "text",
+                                    "content": "Transformation informationisstored inextra FM",
+                                    "score": 0.972
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                90,
+                                833,
+                                485,
+                                858
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        90,
+                                        833,
+                                        485,
+                                        858
+                                    ],
+                                    "type": "text",
+                                    "content": "dimension-invariance achieved by avg pooling.",
+                                    "score": 0.965
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        567,
+                        565,
+                        802,
+                        601
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                564,
+                                559,
+                                808,
+                                605
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        564,
+                                        559,
+                                        808,
+                                        605
+                                    ],
+                                    "type": "text",
+                                    "content": "C02 contributions",
+                                    "score": 0.955
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        559,
+                        628,
+                        903,
+                        829
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 17,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                559,
+                                628,
+                                892,
+                                688
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 14,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        561,
+                                        628,
+                                        894,
+                                        650
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                561,
+                                                628,
+                                                894,
+                                                650
+                                            ],
+                                            "type": "text",
+                                            "content": "1.We show that CNNs benefit from color",
+                                            "score": 0.959
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        586,
+                                        648,
+                                        892,
+                                        671
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                586,
+                                                648,
+                                                892,
+                                                671
+                                            ],
+                                            "type": "text",
+                                            "content": "information and at the same time are",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                559,
+                                696,
+                                891,
+                                758
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 15,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        561,
+                                        696,
+                                        839,
+                                        721
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                561,
+                                                696,
+                                                839,
+                                                721
+                                            ],
+                                            "type": "text",
+                                            "content": "2.We introduce Color Equivariant",
+                                            "score": 0.962
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        586,
+                                        717,
+                                        894,
+                                        742
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                586,
+                                                717,
+                                                894,
+                                                742
+                                            ],
+                                            "type": "text",
+                                            "content": "Convolutions (CEConvs),which allows",
+                                            "score": 0.974
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        586,
+                                        735,
+                                        845,
+                                        760
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                586,
+                                                735,
+                                                845,
+                                                760
+                                            ],
+                                            "type": "text",
+                                            "content": "feature sharingbetween colors.",
+                                            "score": 0.965
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                559,
+                                764,
+                                903,
+                                829
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 16,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        561,
+                                        764,
+                                        906,
+                                        787
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                561,
+                                                764,
+                                                906,
+                                                787
+                                            ],
+                                            "type": "text",
+                                            "content": "3.We demonstrate that CEConvs improve",
+                                            "score": 0.972
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        586,
+                                        785,
+                                        887,
+                                        806
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                586,
+                                                785,
+                                                887,
+                                                806
+                                            ],
+                                            "type": "text",
+                                            "content": "robustness to train-test color shifts in",
+                                            "score": 0.963
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        586,
+                                        804,
+                                        668,
+                                        831
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                586,
+                                                804,
+                                                668,
+                                                831
+                                            ],
+                                            "type": "text",
+                                            "content": "the input.",
+                                            "score": 0.982
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1023,
+                        565,
+                        1461,
+                        601
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 18,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1016,
+                                559,
+                                1469,
+                                603
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1016,
+                                        559,
+                                        1469,
+                                        603
+                                    ],
+                                    "type": "text",
+                                    "content": "03) Color Equivariant Convolutions",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1010,
+                        628,
+                        1446,
+                        725
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 22,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1010,
+                                628,
+                                1411,
+                                650
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 19,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1013,
+                                        628,
+                                        1415,
+                                        652
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1013,
+                                                628,
+                                                1415,
+                                                652
+                                            ],
+                                            "type": "text",
+                                            "content": "·CEConvs implement equivariance to hue shifts.",
+                                            "score": 0.967
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1012,
+                                655,
+                                1446,
+                                698
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 20,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1021,
+                                        655,
+                                        1447,
+                                        679
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1021,
+                                                655,
+                                                1447,
+                                                679
+                                            ],
+                                            "type": "text",
+                                            "content": "Hue shifts aremodeled as 3D rotations around [1,1]",
+                                            "score": 0.948
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1035,
+                                        677,
+                                        1447,
+                                        700
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1035,
+                                                677,
+                                                1447,
+                                                700
+                                            ],
+                                            "type": "text",
+                                            "content": "diagonal,parameterized asa3x3rotationmatrix H.",
+                                            "score": 0.968
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1012,
+                                704,
+                                1298,
+                                725
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 21,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1013,
+                                        700,
+                                        1299,
+                                        729
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1013,
+                                                700,
+                                                1299,
+                                                729
+                                            ],
+                                            "type": "text",
+                                            "content": "·CEConv input layer isdefined as:",
+                                            "score": 0.975
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1063,
+                        735,
+                        1394,
+                        800
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1063,
+                                735,
+                                1394,
+                                800
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1063,
+                                        735,
+                                        1394,
+                                        800
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\left[ f \\star \\psi^ {i} \\right] (x, k) = \\sum_ {y \\in \\mathbb {Z} ^ {2}} \\sum_ {c = 1} ^ {c ^ {l}} f _ {c} (y) \\cdot H _ {n} (k) \\psi_ {c} ^ {i} (y - x)",
+                                    "image_path": "3cd2d4ec09551d1a5115df39d4f9a2093d2d76840ea601517b6a1cbeda106da9.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 23
+                },
+                {
+                    "bbox": [
+                        1012,
+                        818,
+                        1464,
+                        870
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 26,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1012,
+                                818,
+                                1464,
+                                841
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 24,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1012,
+                                        818,
+                                        1467,
+                                        845
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1012,
+                                                818,
+                                                1467,
+                                                845
+                                            ],
+                                            "type": "text",
+                                            "content": "·Hidden layers: cyclic permutations in color dimension.",
+                                            "score": 0.968
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1012,
+                                847,
+                                1410,
+                                870
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 25,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1013,
+                                        847,
+                                        1411,
+                                        872
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1013,
+                                                847,
+                                                1411,
+                                                872
+                                            ],
+                                            "type": "text",
+                                            "content": "·Hybrid CECNNsuse CEConvs in part of network.",
+                                            "score": 0.971
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        101,
+                        955,
+                        581,
+                        988
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 27,
+                    "lines": [
+                        {
+                            "bbox": [
+                                96,
+                                949,
+                                587,
+                                992
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96,
+                                        949,
+                                        587,
+                                        992
+                                    ],
+                                    "type": "text",
+                                    "content": "04) When is color equivariance useful?",
+                                    "score": 0.99
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        1017,
+                        267,
+                        1040
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 28,
+                    "lines": [
+                        {
+                            "bbox": [
+                                90,
+                                1015,
+                                269,
+                                1044
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        90,
+                                        1015,
+                                        269,
+                                        1044
+                                    ],
+                                    "type": "text",
+                                    "content": "Synthetic toy settings:",
+                                    "score": 0.982
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        85,
+                        1044,
+                        1447,
+                        1117
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 31,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                85,
+                                1044,
+                                1447,
+                                1069
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 29,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        1042,
+                                        1449,
+                                        1071
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                1042,
+                                                1449,
+                                                1071
+                                            ],
+                                            "type": "text",
+                                            "content": "",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                85,
+                                1071,
+                                1433,
+                                1117
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 30,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        1073,
+                                        1435,
+                                        1098
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                1073,
+                                                914,
+                                                1098
+                                            ],
+                                            "type": "text",
+                                            "content": "2.Color variations:simulated by biased ColorMNisT,a10-class clasification problem where each class",
+                                            "score": 0.944
+                                        },
+                                        {
+                                            "bbox": [
+                                                915,
+                                                1077,
+                                                928,
+                                                1092
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "c",
+                                            "score": 0.57
+                                        },
+                                        {
+                                            "bbox": [
+                                                928,
+                                                1073,
+                                                1169,
+                                                1098
+                                            ],
+                                            "type": "text",
+                                            "content": "has its own characteristic hue",
+                                            "score": 0.97
+                                        },
+                                        {
+                                            "bbox": [
+                                                1170,
+                                                1075,
+                                                1189,
+                                                1096
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\theta _ { c }",
+                                            "score": 0.86
+                                        },
+                                        {
+                                            "bbox": [
+                                                1189,
+                                                1073,
+                                                1435,
+                                                1098
+                                            ],
+                                            "type": "text",
+                                            "content": "definedindegrees,distributed",
+                                            "score": 0.993
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        111,
+                                        1090,
+                                        864,
+                                        1121
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                111,
+                                                1090,
+                                                558,
+                                                1121
+                                            ],
+                                            "type": "text",
+                                            "content": "uniformlyonthe huecircle.Theexact colorofeach digit",
+                                            "score": 0.97
+                                        },
+                                        {
+                                            "bbox": [
+                                                558,
+                                                1096,
+                                                572,
+                                                1113
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "x",
+                                            "score": 0.57
+                                        },
+                                        {
+                                            "bbox": [
+                                                572,
+                                                1090,
+                                                768,
+                                                1121
+                                            ],
+                                            "type": "text",
+                                            "content": "issampledaccording to",
+                                            "score": 0.981
+                                        },
+                                        {
+                                            "bbox": [
+                                                769,
+                                                1094,
+                                                864,
+                                                1117
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\theta _ { x } \\sim N ( \\theta _ { c } , \\sigma )",
+                                            "score": 0.91
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        82,
+                        1136,
+                        626,
+                        1403
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                82,
+                                1136,
+                                626,
+                                1403
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1136,
+                                        626,
+                                        1403
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1136,
+                                                626,
+                                                1403
+                                            ],
+                                            "type": "image",
+                                            "image_path": "6cfa9c0a6135fb156b38bc9608c5739a220af85273e52423587a8b503f76f51f.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 32,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 32
+                },
+                {
+                    "bbox": [
+                        643,
+                        1152,
+                        1030,
+                        1252
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 33,
+                    "lines": [
+                        {
+                            "bbox": [
+                                646,
+                                1152,
+                                1030,
+                                1175
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        646,
+                                        1152,
+                                        1030,
+                                        1175
+                                    ],
+                                    "type": "text",
+                                    "content": "（LeftLong-tailedColorMNIST-CECNN（91.35±0.40%）performs",
+                                    "score": 0.944
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                646,
+                                1169,
+                                1030,
+                                1189
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        646,
+                                        1169,
+                                        830,
+                                        1189
+                                    ],
+                                    "type": "text",
+                                    "content": "significantly better than Z2CNN",
+                                    "score": 0.966
+                                },
+                                {
+                                    "bbox": [
+                                        830,
+                                        1171,
+                                        905,
+                                        1187
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "( 7 . 5 9 \\pm 0 . 6 1 \\% )",
+                                    "score": 0.71
+                                },
+                                {
+                                    "bbox": [
+                                        905,
+                                        1169,
+                                        1030,
+                                        1189
+                                    ],
+                                    "type": "text",
+                                    "content": ").Performancemostly",
+                                    "score": 0.95
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                646,
+                                1185,
+                                1032,
+                                1204
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        646,
+                                        1185,
+                                        1032,
+                                        1204
+                                    ],
+                                    "type": "text",
+                                    "content": "increases for classeswith few samples,indicating thatCEConvs",
+                                    "score": 0.94
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                646,
+                                1202,
+                                1030,
+                                1218
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        646,
+                                        1202,
+                                        1030,
+                                        1218
+                                    ],
+                                    "type": "text",
+                                    "content": "areindeedmoredataefficient.Z2cNN(grayscale）and CECNN",
+                                    "score": 0.945
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                648,
+                                1216,
+                                1030,
+                                1237
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        648,
+                                        1216,
+                                        1030,
+                                        1237
+                                    ],
+                                    "type": "text",
+                                    "content": "(coset pool) withanaverageaccuracy of 24.19±0.53%and29.43±",
+                                    "score": 0.959
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                648,
+                                1233,
+                                1001,
+                                1252
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        648,
+                                        1233,
+                                        1001,
+                                        1252
+                                    ],
+                                    "type": "text",
+                                    "content": "0.46%,respectively,areunable todiscriminatebetweencolors.",
+                                    "score": 0.948
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        643,
+                        1274,
+                        1030,
+                        1372
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 34,
+                    "lines": [
+                        {
+                            "bbox": [
+                                646,
+                                1274,
+                                1030,
+                                1293
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        646,
+                                        1274,
+                                        1030,
+                                        1293
+                                    ],
+                                    "type": "text",
+                                    "content": "Right>Biased ColorMNiST-Test accuraciesfordifferent standard",
+                                    "score": 0.955
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                646,
+                                1291,
+                                1030,
+                                1310
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        646,
+                                        1291,
+                                        1030,
+                                        1310
+                                    ],
+                                    "type": "text",
+                                    "content": "deviations (σ).CECNN outperforms Z2CNN across all σ.CECNN",
+                                    "score": 0.912
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                649,
+                                1308,
+                                1032,
+                                1326
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        649,
+                                        1308,
+                                        1032,
+                                        1326
+                                    ],
+                                    "type": "text",
+                                    "content": "(cosetpool)outperformsCECNNforgz48-above thisvaluecolor",
+                                    "score": 0.958
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                646,
+                                1322,
+                                1032,
+                                1341
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        646,
+                                        1322,
+                                        1032,
+                                        1341
+                                    ],
+                                    "type": "text",
+                                    "content": "isno longer informativeandactsasnoise.Z2cNN (grayscale)is",
+                                    "score": 0.951
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                646,
+                                1337,
+                                1030,
+                                1357
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        646,
+                                        1337,
+                                        1030,
+                                        1357
+                                    ],
+                                    "type": "text",
+                                    "content": "omittedas it performssignificantlyworse,ranging between 89.89%",
+                                    "score": 0.956
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                649,
+                                1353,
+                                794,
+                                1372
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        649,
+                                        1353,
+                                        688,
+                                        1370
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "( \\sigma = 0 )",
+                                    "score": 0.82
+                                },
+                                {
+                                    "bbox": [
+                                        688,
+                                        1353,
+                                        747,
+                                        1372
+                                    ],
+                                    "type": "text",
+                                    "content": "and79.94",
+                                    "score": 0.987
+                                },
+                                {
+                                    "bbox": [
+                                        749,
+                                        1353,
+                                        794,
+                                        1370
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "( \\sigma = 1 0 ^ { 6 } )",
+                                    "score": 0.84
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1044,
+                        1133,
+                        1447,
+                        1405
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1044,
+                                1133,
+                                1447,
+                                1405
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1044,
+                                        1133,
+                                        1447,
+                                        1405
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1044,
+                                                1133,
+                                                1447,
+                                                1405
+                                            ],
+                                            "type": "image",
+                                            "image_path": "480ea41a78fffefc17f276aa64a4df6de11208a310085d338e4c6e11f280236f.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 35,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 35
+                },
+                {
+                    "bbox": [
+                        101,
+                        1484,
+                        471,
+                        1515
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 36,
+                    "lines": [
+                        {
+                            "bbox": [
+                                94,
+                                1475,
+                                477,
+                                1519
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        1475,
+                                        477,
+                                        1519
+                                    ],
+                                    "type": "text",
+                                    "content": "05) Robustness to color shifts",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        90,
+                        1560,
+                        485,
+                        1824
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                90,
+                                1560,
+                                485,
+                                1824
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        90,
+                                        1560,
+                                        485,
+                                        1824
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                90,
+                                                1560,
+                                                485,
+                                                1824
+                                            ],
+                                            "type": "image",
+                                            "image_path": "6aa79437f6ce09098c532b9448030f03bb217cf1638a39defcac764411cbee2b.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 37,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 37
+                },
+                {
+                    "bbox": [
+                        497,
+                        1573,
+                        763,
+                        1730
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 38,
+                    "lines": [
+                        {
+                            "bbox": [
+                                500,
+                                1573,
+                                763,
+                                1592
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1573,
+                                        763,
+                                        1592
+                                    ],
+                                    "type": "text",
+                                    "content": "LeftTest accuracies under gradual test-",
+                                    "score": 0.97
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1589,
+                                763,
+                                1606
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1589,
+                                        763,
+                                        1606
+                                    ],
+                                    "type": "text",
+                                    "content": "time hue shift.Hue variations degrade the",
+                                    "score": 0.955
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                499,
+                                1604,
+                                765,
+                                1623
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        499,
+                                        1604,
+                                        765,
+                                        1623
+                                    ],
+                                    "type": "text",
+                                    "content": "performanceof CNNs (ResNet-18).Grayscale",
+                                    "score": 0.965
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1621,
+                                763,
+                                1639
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1621,
+                                        763,
+                                        1639
+                                    ],
+                                    "type": "text",
+                                    "content": "imagesandcolorjitterare invariantand thus",
+                                    "score": 0.98
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1637,
+                                763,
+                                1654
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1637,
+                                        763,
+                                        1654
+                                    ],
+                                    "type": "text",
+                                    "content": "robust,butalso fail to captureuseful color",
+                                    "score": 0.951
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1652,
+                                763,
+                                1670
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1652,
+                                        763,
+                                        1670
+                                    ],
+                                    "type": "text",
+                                    "content": "features.Ourcolorequivariant network (CE-",
+                                    "score": 0.957
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1666,
+                                763,
+                                1685
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1666,
+                                        763,
+                                        1685
+                                    ],
+                                    "type": "text",
+                                    "content": "ResNet-18-1) enables feature sharingacross",
+                                    "score": 0.962
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1683,
+                                763,
+                                1701
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1683,
+                                        763,
+                                        1701
+                                    ],
+                                    "type": "text",
+                                    "content": "colorsand generalizes to discrete hue shifts.",
+                                    "score": 0.968
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1699,
+                                763,
+                                1716
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1699,
+                                        763,
+                                        1716
+                                    ],
+                                    "type": "text",
+                                    "content": "Equivarianceiscomplementarytocolorjitter",
+                                    "score": 0.996
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1714,
+                                699,
+                                1730
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1714,
+                                        699,
+                                        1730
+                                    ],
+                                    "type": "text",
+                                    "content": "asthecombinationperformsbest.",
+                                    "score": 0.99
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        497,
+                        1739,
+                        761,
+                        1805
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 39,
+                    "lines": [
+                        {
+                            "bbox": [
+                                500,
+                                1741,
+                                763,
+                                1757
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1741,
+                                        763,
+                                        1757
+                                    ],
+                                    "type": "text",
+                                    "content": "Right>Neuron Feature visualizationsoffilters",
+                                    "score": 0.963
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1757,
+                                763,
+                                1772
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1757,
+                                        763,
+                                        1772
+                                    ],
+                                    "type": "text",
+                                    "content": "atdifferent depths in the network.Rows",
+                                    "score": 0.958
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                499,
+                                1772,
+                                765,
+                                1788
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        499,
+                                        1772,
+                                        765,
+                                        1788
+                                    ],
+                                    "type": "text",
+                                    "content": "representthe color dimension and encode",
+                                    "score": 0.967
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                500,
+                                1786,
+                                699,
+                                1805
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        500,
+                                        1786,
+                                        699,
+                                        1805
+                                    ],
+                                    "type": "text",
+                                    "content": "thesame shape in different colors.",
+                                    "score": 0.962
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        779,
+                        1550,
+                        931,
+                        1681
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                779,
+                                1550,
+                                931,
+                                1681
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        779,
+                                        1550,
+                                        931,
+                                        1681
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                779,
+                                                1550,
+                                                931,
+                                                1681
+                                            ],
+                                            "type": "image",
+                                            "image_path": "877acdf1b1be02cf91b2a6345b1a83e14c32e770915b23953e833ad1ed35e293.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 40,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 40
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        782,
+                        1691,
+                        931,
+                        1820
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                782,
+                                1691,
+                                931,
+                                1820
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        782,
+                                        1691,
+                                        931,
+                                        1820
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                782,
+                                                1691,
+                                                931,
+                                                1820
+                                            ],
+                                            "type": "image",
+                                            "image_path": "8867066c8ddef3dc936b190097eb18736dd58a83bc6b51da7f36be40a2f056e4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 41,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 41
+                },
+                {
+                    "bbox": [
+                        1027,
+                        1484,
+                        1237,
+                        1515
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 42,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1021,
+                                1478,
+                                1245,
+                                1519
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1021,
+                                        1478,
+                                        1245,
+                                        1519
+                                    ],
+                                    "type": "text",
+                                    "content": "06 conclusions",
+                                    "score": 0.963
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1015,
+                        1546,
+                        1450,
+                        1822
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 48,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1015,
+                                1546,
+                                1427,
+                                1606
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 43,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1020,
+                                        1544,
+                                        1408,
+                                        1569
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1020,
+                                                1544,
+                                                1408,
+                                                1569
+                                            ],
+                                            "type": "text",
+                                            "content": "·Color Equivariant convolutions enable feature",
+                                            "score": 0.972
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1037,
+                                        1565,
+                                        1430,
+                                        1592
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1037,
+                                                1565,
+                                                1430,
+                                                1592
+                                            ],
+                                            "type": "text",
+                                            "content": "sharing across colors and, unlike invariance,can",
+                                            "score": 0.978
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1038,
+                                        1585,
+                                        1247,
+                                        1610
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1038,
+                                                1585,
+                                                1247,
+                                                1610
+                                            ],
+                                            "type": "text",
+                                            "content": "still use color information.",
+                                            "score": 0.986
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1015,
+                                1614,
+                                1385,
+                                1656
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 44,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1021,
+                                        1612,
+                                        1387,
+                                        1637
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1021,
+                                                1612,
+                                                1387,
+                                                1637
+                                            ],
+                                            "type": "text",
+                                            "content": "·CECNNsoutperformregularCNNs inacolor",
+                                            "score": 0.978
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1038,
+                                        1633,
+                                        1282,
+                                        1660
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1038,
+                                                1633,
+                                                1282,
+                                                1660
+                                            ],
+                                            "type": "text",
+                                            "content": "imbalanced or biased setting.",
+                                            "score": 0.971
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1015,
+                                1662,
+                                1449,
+                                1724
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 45,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1027,
+                                        1660,
+                                        1452,
+                                        1685
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1027,
+                                                1660,
+                                                1452,
+                                                1685
+                                            ],
+                                            "type": "text",
+                                            "content": "CEConvs are computationally more expensive than",
+                                            "score": 0.977
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1040,
+                                        1683,
+                                        1441,
+                                        1706
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1040,
+                                                1683,
+                                                1441,
+                                                1706
+                                            ],
+                                            "type": "text",
+                                            "content": "regular convolutions.Hybrid CECNNs provide early",
+                                            "score": 0.962
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1038,
+                                        1701,
+                                        1435,
+                                        1726
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1038,
+                                                1701,
+                                                1435,
+                                                1726
+                                            ],
+                                            "type": "text",
+                                            "content": "equivariance with only limited compute increase.",
+                                            "score": 0.971
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1015,
+                                1730,
+                                1450,
+                                1774
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 46,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1020,
+                                        1728,
+                                        1453,
+                                        1755
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1020,
+                                                1728,
+                                                1453,
+                                                1755
+                                            ],
+                                            "type": "text",
+                                            "content": "· CEConvs are only approximately equivariant due to",
+                                            "score": 0.965
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1038,
+                                        1751,
+                                        1163,
+                                        1776
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1038,
+                                                1751,
+                                                1163,
+                                                1776
+                                            ],
+                                            "type": "text",
+                                            "content": "clipping errors.",
+                                            "score": 0.981
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1015,
+                                1778,
+                                1393,
+                                1822
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 47,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1016,
+                                        1776,
+                                        1380,
+                                        1801
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1016,
+                                                1776,
+                                                1380,
+                                                1801
+                                            ],
+                                            "type": "text",
+                                            "content": "·Future work: combine color and geometric",
+                                            "score": 0.982
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1038,
+                                        1799,
+                                        1394,
+                                        1822
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1038,
+                                                1799,
+                                                1394,
+                                                1822
+                                            ],
+                                            "type": "text",
+                                            "content": "transformationsinequivariantconvolutions.",
+                                            "score": 0.999
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        87,
+                        1925,
+                        214,
+                        1942
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 49,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                1923,
+                                217,
+                                1944
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        1923,
+                                        217,
+                                        1944
+                                    ],
+                                    "type": "text",
+                                    "content": "Related Literature",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        1961,
+                        926,
+                        1994
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 50,
+                    "lines": [
+                        {
+                            "bbox": [
+                                94,
+                                1963,
+                                928,
+                                1981
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        1963,
+                                        928,
+                                        1981
+                                    ],
+                                    "type": "text",
+                                    "content": "Groupequivartonolutioetworksacooedelinin3rdteatialofereceina6",
+                                    "score": 0.78
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                91,
+                                1977,
+                                855,
+                                1996
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        91,
+                                        1977,
+                                        855,
+                                        1996
+                                    ],
+                                    "type": "text",
+                                    "content": "Colorenoiniiclsdvutouokseerelisie1",
+                                    "score": 0.704
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1035,
+                        1944,
+                        1102,
+                        2014
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 51,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1065,
+                                1967,
+                                1105,
+                                1985
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1065,
+                                        1967,
+                                        1105,
+                                        1985
+                                    ],
+                                    "type": "text",
+                                    "content": "NEURA",
+                                    "score": 0.962
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1065,
+                                1977,
+                                1107,
+                                1998
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1065,
+                                        1977,
+                                        1107,
+                                        1998
+                                    ],
+                                    "type": "text",
+                                    "content": "PROCE",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1068,
+                        1967,
+                        1194,
+                        1994
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 52,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1066,
+                                1969,
+                                1197,
+                                1983
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1066,
+                                        1969,
+                                        1197,
+                                        1983
+                                    ],
+                                    "type": "text",
+                                    "content": "NEURALINFORMATION",
+                                    "score": 0.994
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1066,
+                                1981,
+                                1197,
+                                1996
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1066,
+                                        1981,
+                                        1197,
+                                        1996
+                                    ],
+                                    "type": "text",
+                                    "content": "PROCESSING SYSTEMS",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1247,
+                        1942,
+                        1284,
+                        1992
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 53,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1240,
+                                1934,
+                                1295,
+                                2000
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1240,
+                                        1934,
+                                        1295,
+                                        2000
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1247,
+                        1967,
+                        1446,
+                        2000
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 54,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1245,
+                                1961,
+                                1446,
+                                2004
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1245,
+                                        1961,
+                                        1396,
+                                        2004
+                                    ],
+                                    "type": "text",
+                                    "content": "TUDelft",
+                                    "score": 0.979
+                                },
+                                {
+                                    "bbox": [
+                                        1393,
+                                        1985,
+                                        1446,
+                                        2002
+                                    ],
+                                    "type": "text",
+                                    "content": "Technology",
+                                    "score": 0.996
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "page_size": [
+                1555,
+                2073
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

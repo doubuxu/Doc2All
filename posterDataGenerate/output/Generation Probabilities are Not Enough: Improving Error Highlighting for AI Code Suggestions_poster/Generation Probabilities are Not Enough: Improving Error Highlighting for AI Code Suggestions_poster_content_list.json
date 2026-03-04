@@ -1,0 +1,213 @@
+[
+  {
+    "type": "text",
+    "text": "Generation Probabilities are Not Enough: Improving Error Highlighting in Al Code Suggestions ",
+    "text_level": 1,
+    "bbox": [
+      13,
+      23,
+      459,
+      233
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Helena Vasconcelos,Gagan Bansal,Adam Fourney, ",
+    "bbox": [
+      15,
+      252,
+      316,
+      283
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Vera Liao, Jennifer Wortman Vaughan ",
+    "bbox": [
+      53,
+      286,
+      278,
+      315
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Generation Probabilities are Not Enough: Improving Error Highlighting for AI Code Suggestions_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      319,
+      249,
+      346,
+      318
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      350,
+      255,
+      392,
+      273
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Research ",
+    "bbox": [
+      357,
+      274,
+      454,
+      313
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Programmers increasingly use Al generated code (e.g., from CoPilot) in IDEs! ",
+    "bbox": [
+      13,
+      381,
+      466,
+      467
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "However,generated code may be erroneous! We need to help programmers double-check Al code and identify when and where it may be incorrect. ",
+    "bbox": [
+      13,
+      514,
+      458,
+      644
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We explore two options to highlight uncertain, potentially erroneous regions: ",
+    "bbox": [
+      13,
+      691,
+      439,
+      777
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Use generation probabilities or \"confidence scores\" to show where the model is uncertain ",
+      "Learn an edit model to show where programmersare most likely to make edits "
+    ],
+    "bbox": [
+      30,
+      781,
+      452,
+      957
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Mixed-methods, within-subjects study with 30 programmers showed that edit model leads to: ",
+    "bbox": [
+      503,
+      16,
+      948,
+      84
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "-Significantly faster task completion time ",
+    "bbox": [
+      524,
+      89,
+      847,
+      121
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Generation Probabilities are Not Enough: Improving Error Highlighting for AI Code Suggestions_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      602,
+      125,
+      809,
+      363
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "-Significantly more localized edits ",
+    "bbox": [
+      524,
+      374,
+      789,
+      406
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Generation Probabilities are Not Enough: Improving Error Highlighting for AI Code Suggestions_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      599,
+      410,
+      812,
+      649
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "-Stronger preference ",
+    "bbox": [
+      524,
+      659,
+      704,
+      691
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Generation Probabilities are Not Enough: Improving Error Highlighting for AI Code Suggestions_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      602,
+      694,
+      808,
+      935
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "compared to the generation probability and no-highlights ",
+    "bbox": [
+      504,
+      944,
+      924,
+      979
+    ],
+    "page_idx": 0
+  }
+]

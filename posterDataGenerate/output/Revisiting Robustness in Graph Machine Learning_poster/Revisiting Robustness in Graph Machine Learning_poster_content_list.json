@@ -1,0 +1,684 @@
+[
+  {
+    "type": "text",
+    "text": "Revisiting Robustness in Graph Machine Leaming ",
+    "text_level": 1,
+    "bbox": [
+      360,
+      15,
+      637,
+      108
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Lukas Gosch, Daniel Sturm,Simon Geisler, Stephan Gunnemann ",
+    "bbox": [
+      343,
+      121,
+      653,
+      142
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Graph Neural Networks (GNNs) suffer from over-robustness ",
+    "text_level": 1,
+    "bbox": [
+      33,
+      180,
+      283,
+      225
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "> Common threat models allow perturbations which change the node-level semantic content in graphs ",
+      "> GNNs are wrongly robust to these changes ",
+      "> Introduce semantic-aware notions of robustness ",
+      "> No robustness-accuracy tradeoffor inductively classifying a new node "
+    ],
+    "bbox": [
+      23,
+      236,
+      293,
+      379
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "On Adversarial Examples ",
+    "text_level": 1,
+    "bbox": [
+      78,
+      407,
+      235,
+      430
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Small perturbations( $\\ell _ { p }$ -norm) ",
+      "Change prediction of classifier $f$ ",
+      "■Unchanged semanticcontent (e.g,imagecategory) "
+    ],
+    "bbox": [
+      14,
+      440,
+      233,
+      497
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "“panda\" "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      38,
+      506,
+      101,
+      593
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Figure:Goodfellow et al. (2015) ",
+      ""
+    ],
+    "image_footnote": [],
+    "bbox": [
+      113,
+      506,
+      177,
+      592
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "“gibbon\" “gibbon\" ",
+    "bbox": [
+      214,
+      598,
+      236,
+      610
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "What constitutes a small,semantics-preserving perturbation to a graph? ",
+    "bbox": [
+      19,
+      648,
+      297,
+      667
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Commonly: Restrict number of inserted /deleted edges ( $\\langle \\ell _ { 0 } \\rangle$ -nomm) ",
+    "bbox": [
+      12,
+      690,
+      286,
+      711
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      12,
+      727,
+      140,
+      856
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      146,
+      766,
+      159,
+      784
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Majority of nodesare low-degree ",
+    "bbox": [
+      161,
+      766,
+      297,
+      785
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Largeeffect on neighborhood ",
+    "bbox": [
+      161,
+      790,
+      297,
+      808
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Do common threat models preserve semantic content? ",
+    "bbox": [
+      51,
+      877,
+      263,
+      895
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Use Random Graph Models ",
+    "text_level": 1,
+    "bbox": [
+      330,
+      195,
+      455,
+      212
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "■Exactly measure (node-level) semantic change ",
+    "bbox": [
+      331,
+      216,
+      460,
+      248
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "New Phenomenon ",
+    "text_level": 1,
+    "bbox": [
+      330,
+      279,
+      419,
+      295
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Over-robustness: Robustness beyond semantic change ",
+    "bbox": [
+      330,
+      299,
+      486,
+      337
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      494,
+      190,
+      701,
+      349
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Semantic-Aware Robustness ",
+    "text_level": 1,
+    "bbox": [
+      420,
+      371,
+      597,
+      392
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Idea: Use reference nodeclassifier $g$ to indicate semantic change. ",
+    "bbox": [
+      329,
+      412,
+      593,
+      431
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Adversarial Example ",
+    "text_level": 1,
+    "bbox": [
+      331,
+      453,
+      425,
+      470
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A perturbed graph ${ \\tilde { G } } \\in { \\mathcal { B } } ( G )$ is said to be adversarial for a node classfier $f$ ata target node $v$ w.r.t. $g$ if ",
+    "bbox": [
+      331,
+      472,
+      560,
+      508
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      568,
+      453,
+      693,
+      589
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$f ( G , y ) _ { v } = g ( G , y ) _ { v }$ (correct clean prediction) ",
+      "$g \\big ( \\tilde { G } , y \\big ) _ { v } = g ( G , y ) _ { v }$ (perurbationpeseesemanti ",
+      "i. $f \\left( { \\tilde { G } } , y \\right) _ { v } \\neq g ( G , y ) _ { v }$ (node dassiferchangesdit "
+    ],
+    "bbox": [
+      332,
+      513,
+      584,
+      579
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      324,
+      623,
+      444,
+      760
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Over-robust Example ",
+    "text_level": 1,
+    "bbox": [
+      450,
+      625,
+      548,
+      641
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A perturbed graph ${ \\tilde { G } } \\in { \\mathcal { B } } ( G )$ is said to be an over-robust exampleforanode classifier $f$ at a target node v w.r.t. $g$ iff ",
+    "bbox": [
+      449,
+      642,
+      691,
+      678
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$f ( G , y ) _ { v } = g ( G , y ) _ { v }$ (correct clean prediction) ",
+      "i $g \\big ( \\tilde { G } , y \\big ) _ { v } \\neq g ( G , y ) _ { v }$ (perturbation changessemantics) ",
+      "i. $\\begin{array} { r } { f \\bigl ( \\tilde { G } , y \\bigr ) _ { v } = g ( G , y ) _ { v } } \\end{array}$ (nodedlassiferstaysunchanged) "
+    ],
+    "bbox": [
+      451,
+      683,
+      695,
+      748
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theorem (informal) ",
+    "text_level": 1,
+    "bbox": [
+      340,
+      814,
+      437,
+      834
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "There is no semantic-aware robustness-accuracy tradeoff for non-i.i.d.graph data when classifying a newly added node to a graph. ",
+    "bbox": [
+      339,
+      843,
+      662,
+      880
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Experiments ",
+    "text_level": 1,
+    "bbox": [
+      804,
+      184,
+      884,
+      207
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Setup: Contextual stochastic block models (CSBM) ",
+    "bbox": [
+      714,
+      224,
+      923,
+      242
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "■Derived Bayes optimal clasifier as reference clasifier $g$ ",
+    "bbox": [
+      715,
+      245,
+      943,
+      263
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Table:Existence probability of graphs with changed semantics. ",
+    "bbox": [
+      715,
+      285,
+      969,
+      302
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Threat models</td><td colspan=\"8\">Importance of graph structure</td></tr><tr><td>High</td><td>·</td><td>·</td><td>Medium</td><td>·</td><td>·</td><td>Low</td><td>·</td></tr><tr><td>B2(·)</td><td>36%</td><td>31%</td><td>26%</td><td>20%</td><td>14%</td><td>6%</td><td>2%</td><td>1%</td></tr><tr><td>Bdeg(·)</td><td>76%</td><td>60%</td><td>55%</td><td>49%</td><td>40%</td><td>22%</td><td>9%</td><td>3%</td></tr><tr><td>Bdeg+2(·)</td><td>100%</td><td>100%</td><td>99%</td><td>93%</td><td>81%</td><td>52%</td><td>25%</td><td>9%</td></tr></table>",
+    "bbox": [
+      714,
+      319,
+      969,
+      405
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "High prevalence of graphs with changed semantics! ",
+    "bbox": [
+      714,
+      431,
+      937,
+      450
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "How much of the measured robustness is in fact over-robustness? "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      736,
+      527,
+      971,
+      689
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Significant amount of conventional robustness is overrobustness ",
+    "bbox": [
+      714,
+      708,
+      953,
+      742
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Take-Aways ",
+    "text_level": 1,
+    "bbox": [
+      715,
+      769,
+      772,
+      786
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Use strong attacks ",
+      "Reduce the amount of overrobustness measured ",
+      "■Be cautious in applying $\\ell _ { 0 }$ -norm restrictedadversaries ",
+      "■More research into semanticpreserving perturbations necessary "
+    ],
+    "bbox": [
+      716,
+      791,
+      873,
+      912
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Revisiting Robustness in Graph Machine Learning_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      891,
+      779,
+      983,
+      911
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      10,
+      27,
+      255,
+      49
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Department of Computer Science ",
+    "bbox": [
+      11,
+      52,
+      202,
+      73
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Technical University of Munich ",
+    "bbox": [
+      11,
+      74,
+      181,
+      96
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "TU ",
+    "bbox": [
+      731,
+      28,
+      813,
+      92
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "DAAD ",
+    "bbox": [
+      836,
+      29,
+      879,
+      92
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Zuse Schools ",
+    "bbox": [
+      882,
+      36,
+      975,
+      59
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Konrad ZuseSchoolsof Excellence ",
+    "bbox": [
+      882,
+      62,
+      975,
+      74
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "inArtificial Intelligence ",
+    "bbox": [
+      882,
+      74,
+      946,
+      86
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "福",
+    "bbox": [
+      12,
+      965,
+      38,
+      994
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      44,
+      969,
+      90,
+      991
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "https://www.cs.cit.tum.de/daml/revisiting-robustness/ ",
+    "bbox": [
+      370,
+      970,
+      626,
+      991
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "May Ist- May 5th,2023- Kigali,Rwanda ",
+    "bbox": [
+      795,
+      969,
+      990,
+      991
+    ],
+    "page_idx": 0
+  }
+]

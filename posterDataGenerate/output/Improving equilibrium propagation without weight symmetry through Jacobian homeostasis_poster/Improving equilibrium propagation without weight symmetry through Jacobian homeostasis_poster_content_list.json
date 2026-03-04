@@ -1,0 +1,821 @@
+[
+  {
+    "type": "text",
+    "text": "Improving Equilibrium Propagation Without Weight Symmetry Through Jacobian Homeostasis ",
+    "text_level": 1,
+    "bbox": [
+      27,
+      26,
+      506,
+      100
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Axel Laborieux1,Friedemann Zenke1,2 ",
+    "bbox": [
+      29,
+      109,
+      189,
+      125
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1Friedrich Miescher Institute for Biomedical Research,2Facultyof Natural Sciences,Universityof Basel ",
+    "bbox": [
+      29,
+      128,
+      402,
+      144
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Generalized Equilibrium Propagation [1] ",
+    "text_level": 1,
+    "bbox": [
+      29,
+      170,
+      265,
+      194
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Goal: Local gradients for Neurobiology and Neuromorphics ",
+    "bbox": [
+      41,
+      209,
+      272,
+      227
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      41,
+      244,
+      100,
+      384
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dynamics $: \\widehat { \\mathrm { d } \\ b { \\mathscr { t } } } = F ( \\pmb { \\theta } , \\pmb { u } , \\pmb { x } ) \\widehat { \\mathrm { ~  ~ \\xi ~ } + \\beta \\frac { \\mathrm { d } \\mathscr { L } } { \\mathrm { d } u } } ^ { \\dagger }$ ",
+    "bbox": [
+      116,
+      247,
+      286,
+      282
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Fixed-point (prediction): $0 = F ( \\pmb \\theta , \\pmb u _ { 0 } ^ { * } , \\pmb x )$ ",
+    "bbox": [
+      115,
+      300,
+      286,
+      319
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "EP error vector: ",
+    "bbox": [
+      116,
+      341,
+      176,
+      355
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} \\left. \\frac {\\mathrm {d} \\boldsymbol {u} ^ {*}}{\\mathrm {d} \\beta} \\right| _ {\\beta = 0} = - J _ {F} \\left(\\boldsymbol {u} _ {0} ^ {*}\\right) ^ {- 1} \\cdot \\frac {\\partial F}{\\partial \\beta} \\left(\\boldsymbol {u} _ {0} ^ {*}\\right) \\\\ = - \\underbrace {J _ {F} \\left(\\boldsymbol {u} _ {0} ^ {*}\\right) ^ {- \\top}} _ {\\text {f o r E B M s}} \\cdot \\underbrace {\\frac {\\mathrm {d} \\mathcal {L}}{\\mathrm {d} \\boldsymbol {u} _ {0} ^ {*}}} _ {\\text {b y D e f . 1}} ^ {\\top} = \\delta \\\\ \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      130,
+      365,
+      274,
+      460
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Non-symmetric "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      38,
+      421,
+      110,
+      527
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Entangled sources of bias: ",
+    "bbox": [
+      153,
+      491,
+      262,
+      507
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "- Finite differences X ",
+      "- Jacobian asymmetry X "
+    ],
+    "bbox": [
+      154,
+      509,
+      253,
+      543
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Our contributions: ",
+    "text_level": 1,
+    "bbox": [
+      34,
+      547,
+      112,
+      562
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Disentangle the two sources of bias in non-symmetric EP ",
+      "· Extend holomorphic EP [2] to non symmetric networks ",
+      "· New homeostatic loss promotes Jacobian symmetry "
+    ],
+    "bbox": [
+      41,
+      576,
+      269,
+      640
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Accurate computation of the EP error vector ",
+    "text_level": 1,
+    "bbox": [
+      29,
+      668,
+      289,
+      690
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "For complex-differentiable F: ",
+    "bbox": [
+      37,
+      706,
+      146,
+      722
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\left. \\frac {\\mathrm {d} \\boldsymbol {u} ^ {*}}{\\mathrm {d} \\beta} \\right| _ {\\beta = 0} = \\frac {1}{T | \\beta |} \\int_ {0} ^ {T} \\boldsymbol {u} _ {\\beta (t)} ^ {*} e ^ {- 2 \\mathrm {i} \\pi t / T} \\mathrm {d} t.\n$$",
+    "text_format": "latex",
+    "bbox": [
+      44,
+      738,
+      196,
+      779
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      202,
+      713,
+      295,
+      856
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      36,
+      815,
+      169,
+      963
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Derivative as integral√ Non vanishing perturbations ",
+    "bbox": [
+      185,
+      889,
+      311,
+      927
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Continuous-in-time estimation of the gradient ",
+    "text_level": 1,
+    "bbox": [
+      362,
+      170,
+      627,
+      192
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Presynaptic term ",
+    "bbox": [
+      368,
+      204,
+      434,
+      219
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "(Mean value theorem): ",
+    "bbox": [
+      369,
+      221,
+      454,
+      236
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {1}{t} \\int_ {0} ^ {t} \\frac {\\partial F}{\\partial \\boldsymbol {\\theta}} \\left(\\boldsymbol {u} _ {\\beta (\\tau)} ^ {*}\\right) d \\tau \\underset {t \\rightarrow \\infty} {\\longrightarrow} \\frac {\\partial F}{\\partial \\boldsymbol {\\theta}} \\left(\\boldsymbol {u} _ {0} ^ {*}\\right)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      365,
+      255,
+      486,
+      290
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Post synaptic error: ",
+    "bbox": [
+      505,
+      218,
+      580,
+      234
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      369,
+      309,
+      487,
+      433
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {1}{t | \\beta |} \\int_ {0} ^ {t} \\boldsymbol {u} _ {\\beta (\\tau)} ^ {*} e ^ {- 2 \\mathrm {i} \\pi \\tau / T} \\mathrm {d} \\tau \\underset {t \\rightarrow \\infty} {\\longrightarrow} \\frac {\\mathrm {d} \\boldsymbol {u} ^ {*}}{\\mathrm {d} \\beta}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      506,
+      254,
+      633,
+      288
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      505,
+      309,
+      623,
+      432
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The gradient estimate can be computed in continuous time without discrete forward/backward phases $\\circledcirc$ ",
+    "bbox": [
+      386,
+      458,
+      610,
+      494
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Isolated effect of Jacobian asymmetry ",
+    "text_level": 1,
+    "bbox": [
+      362,
+      525,
+      586,
+      549
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      369,
+      574,
+      494,
+      706
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      500,
+      569,
+      639,
+      699
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      369,
+      707,
+      494,
+      823
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "General transformation: ",
+    "bbox": [
+      504,
+      717,
+      595,
+      732
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\mathrm {d} _ {\\beta} \\boldsymbol {u} ^ {*} = J _ {F} \\left(\\boldsymbol {u} _ {0} ^ {*}\\right) ^ {- 1} J _ {F} \\left(\\boldsymbol {u} _ {0} ^ {*}\\right) ^ {\\top} \\boldsymbol {\\delta}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      507,
+      739,
+      626,
+      762
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "At first order: ",
+    "bbox": [
+      505,
+      784,
+      555,
+      798
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\mathrm {d} _ {\\beta} \\boldsymbol {u} ^ {*} = \\delta - 2 S ^ {- 1} A \\delta + o (S ^ {- 1} A \\delta)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      507,
+      810,
+      645,
+      830
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "New homeostatic loss: ",
+    "bbox": [
+      388,
+      842,
+      474,
+      857
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\mathcal {L} _ {\\text {h o m e o}} := \\underset {\\varepsilon \\sim \\mathcal {N} (0, I)} {\\mathbb {E}} \\underbrace {\\left[ \\| J _ {F} \\varepsilon \\| ^ {2} - \\varepsilon^ {\\top} J _ {F} ^ {2} \\varepsilon \\right]} _ {\\downarrow}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      403,
+      866,
+      587,
+      922
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Minimize sensitivity to perturbation ",
+    "bbox": [
+      448,
+      928,
+      525,
+      960
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Increase second-order reconstruction ",
+    "bbox": [
+      539,
+      929,
+      625,
+      959
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Benefits of the homeostatic loss on learning ",
+    "text_level": 1,
+    "bbox": [
+      694,
+      170,
+      951,
+      193
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      696,
+      207,
+      956,
+      508
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\"></td><td>CIFAR-10</td><td colspan=\"2\">ImageNet 32 × 32</td></tr><tr><td>Top-1 (%)</td><td>Top-1 (%)</td><td>Top-5 (%)</td></tr><tr><td>hEP w/o Lhomeo</td><td>60.4 ± 0.4</td><td>-</td><td>-</td></tr><tr><td>hEPN=2,|β|=1</td><td>81.4 ± 0.1</td><td>-</td><td>-</td></tr><tr><td>hEP (True dβu*)</td><td>84.3 ± 0.1</td><td>31.4 ± 0.1</td><td>55.2 ± 0.1</td></tr><tr><td>RBP</td><td>87.8 ± 0.3</td><td>-</td><td>-</td></tr><tr><td>RBP w/o Lhomeo</td><td>87.7 ± 0.2</td><td>-</td><td>-</td></tr><tr><td>Sym. hEPN=2,|β|=1</td><td>88.6 ± 0.2</td><td>36.5 ± 0.3</td><td>60.8 ± 0.4</td></tr></table>",
+    "bbox": [
+      710,
+      529,
+      936,
+      683
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Homeostatic loss is: ",
+    "bbox": [
+      720,
+      712,
+      803,
+      727
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "- More general than symmetrising weights ",
+      "- Reduces the gap with the energy-based case "
+    ],
+    "bbox": [
+      721,
+      730,
+      916,
+      767
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      694,
+      802,
+      764,
+      822
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "[1]Scellier，etal Generalizationof equilibriumpropagation to vector field dynamics.arXiv:1808.04873,2018. ",
+      "[2] Laborieuxand Zenke. Holomorphic equilibrium propagation computes exact gradients through finite size oscillations.NeurlPS 2022. "
+    ],
+    "bbox": [
+      700,
+      832,
+      932,
+      888
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Funding ",
+    "text_level": 1,
+    "bbox": [
+      695,
+      907,
+      744,
+      929
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      696,
+      940,
+      722,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      811,
+      915,
+      839,
+      943
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Horizon 2020 European Union Funding European Union Funding ",
+    "bbox": [
+      841,
+      918,
+      900,
+      937
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      841,
+      929,
+      900,
+      938
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "forResearch&Innovatior ",
+    "bbox": [
+      841,
+      938,
+      900,
+      944
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      697,
+      940,
+      722,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Swiss National ",
+    "bbox": [
+      721,
+      952,
+      781,
+      964
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Science Foundation ",
+    "bbox": [
+      721,
+      966,
+      800,
+      978
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      811,
+      960,
+      886,
+      980
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The Novartis Foundation ",
+    "bbox": [
+      887,
+      963,
+      920,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Improving equilibrium propagation without weight symmetry through Jacobian homeostasis_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      937,
+      917,
+      981,
+      982
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      536,
+      36,
+      587,
+      129
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "M ",
+    "bbox": [
+      617,
+      37,
+      645,
+      111
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "FMI ",
+    "bbox": [
+      651,
+      38,
+      698,
+      74
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Friedrich Miescher Institute forBiomedical Research ",
+    "bbox": [
+      651,
+      80,
+      756,
+      110
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      777,
+      40,
+      839,
+      115
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICLR ",
+    "bbox": [
+      851,
+      53,
+      958,
+      98
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "page_number",
+    "text": "Paper ",
+    "bbox": [
+      944,
+      898,
+      968,
+      913
+    ],
+    "page_idx": 0
+  }
+]

@@ -1,0 +1,417 @@
+[
+  {
+    "type": "text",
+    "text": "CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization ",
+    "text_level": 1,
+    "bbox": [
+      14,
+      22,
+      650,
+      96
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "EeshaKumar1*,Yiming Zhang²,Stefano Pini1,Simon Stent1, AnaSofia Rufino Ferreira2,SergeyZagoruyko1,ChristianS.Perone1* ",
+    "bbox": [
+      14,
+      106,
+      519,
+      133
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1Woven Planet UnitedKingdom Limited 2Woven Planet NorthAmerica,Inc. Contact:{firstname}.{lastname}@woven-planet.global ",
+    "bbox": [
+      15,
+      140,
+      453,
+      163
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "*Equalcontribution ",
+    "bbox": [
+      466,
+      141,
+      577,
+      152
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      703,
+      95,
+      919,
+      159
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Main ldeas and Motivation ",
+    "text_level": 1,
+    "bbox": [
+      26,
+      179,
+      320,
+      197
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Behavior Cloning (BC)algorithms for training selfdrivingvehiclesvia pure Empirical Risk Minimization (ERM) biases policy towards matching open-loop behavior ",
+      "·We debias the policy network by identifying important samples via a closed-loop evaluator ",
+      "·Training in three phases "
+    ],
+    "bbox": [
+      28,
+      203,
+      400,
+      307
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Open-loop identification phase ",
+      "·Error set construction and evaluation phase ",
+      "·Upsampling training phase "
+    ],
+    "bbox": [
+      49,
+      308,
+      376,
+      351
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Our Contributions ",
+    "text_level": 1,
+    "bbox": [
+      466,
+      172,
+      671,
+      189
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Motivate and propose a technique that leverages closed-loop evaluationmetricsacquired from policy rollouts ina simulator to debias the policy network and reduce the distributional differences between training (open-loop) and inference time (closed-loop); ",
+      "·Evaluate CW-ERMonachallenging urban driving dataset ina closed-loop fashion to show that our method,although simple to implement,yieldssignificant improvementsinclosed-loop performancewithout requiring complexand computationally expensive closed-loop trainingmethods; ",
+      "·Showan important connection of ourmethod toa familyof methods thataddresses covariate shiftthroughdensity ratio estimation. "
+    ],
+    "bbox": [
+      455,
+      195,
+      966,
+      366
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      36,
+      378,
+      959,
+      526
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      25,
+      540,
+      438,
+      636
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      453,
+      539,
+      618,
+      636
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      623,
+      539,
+      797,
+      636
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Collision Avoidance Examples "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      802,
+      539,
+      970,
+      636
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Methodology ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      640,
+      169,
+      659
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Stage 1(ldentification Policy) ",
+    "text_level": 1,
+    "bbox": [
+      16,
+      670,
+      248,
+      685
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Train policy network via BC in open-loop using ERM,get $\\hat { \\pi } _ { E R M }$ ",
+    "bbox": [
+      16,
+      685,
+      371,
+      718
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Stage 2 (Closed-Loop Simulation) ",
+    "text_level": 1,
+    "bbox": [
+      16,
+      732,
+      282,
+      747
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Perform rollouts using $\\hat { \\pi } _ { E R M }$ in closed-loop simulator ",
+      "·Collect closed-loop metricsand identify the error set "
+    ],
+    "bbox": [
+      16,
+      749,
+      386,
+      808
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nE _ {\\hat {\\pi} _ {E R M}} = \\left\\{\\left(s _ {i}. a _ {i}\\right) \\text {s . t .} C \\left(s _ {i}, a _ {i}\\right) > 0 \\right\\},\n$$",
+    "text_format": "latex",
+    "bbox": [
+      71,
+      811,
+      340,
+      829
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "where $C ( s _ { i } , a _ { i } )$ isa cost (e.g.collisions) incurred during the closed-loop rollouts. ",
+    "bbox": [
+      35,
+      833,
+      389,
+      863
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Stage3 (Final Policy) ",
+    "text_level": 1,
+    "bbox": [
+      16,
+      879,
+      185,
+      894
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Train newpolicywherescenesblonging toER $E _ { \\hat { \\pi } _ { E R M } }$ areunweighted bya factor $w ( \\cdot )$ ",
+    "bbox": [
+      16,
+      896,
+      392,
+      931
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\underset {\\pi \\in \\Pi} {\\arg \\min } \\mathbb {E} _ {s \\sim d _ {\\pi^ {*}, a} \\sim \\pi^ {*} (s)} [ w (E _ {\\hat {\\pi} _ {E R M}}, s) \\ell (s, a, \\pi) ]\n$$",
+    "text_format": "latex",
+    "bbox": [
+      16,
+      945,
+      395,
+      973
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Front collisions "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      450,
+      672,
+      669,
+      815
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Side collisions "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      721,
+      672,
+      936,
+      815
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      446,
+      855,
+      575,
+      871
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.Liu et al.(2021).Just Train Twice: Improving Group Robustness without TrainingGroupInformation.InternationalConferenceonMachineLearning. ",
+      "2.Vitellietal.(2022).Safetynet:Safeplanningforreal-world self-driving vehicles usingmachine-learnedpolicies.International ConferenceonRoboticsand Automation (ICRA). ",
+      "3.Scheel etal.(2022).Urbandriver:Learning todrive fromreal-world demonstrationsusingpolicy gradients.Conferenceon Robot Learning. "
+    ],
+    "bbox": [
+      431,
+      883,
+      854,
+      949
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "woven.mobi/ ",
+      "cw-erm "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      874,
+      874,
+      955,
+      927
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "0 ",
+    "bbox": [
+      662,
+      22,
+      746,
+      76
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "woven planet ",
+    "bbox": [
+      758,
+      22,
+      963,
+      81
+    ],
+    "page_idx": 0
+  }
+]

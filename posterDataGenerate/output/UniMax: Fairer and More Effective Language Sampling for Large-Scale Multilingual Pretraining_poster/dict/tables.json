@@ -1,0 +1,18 @@
+[
+  {
+    "table_id": "table_1",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/tables/table_1.jpg",
+    "caption": [],
+    "content_list_index": 9,
+    "table_body": "<table><tr><td></td><td>Temperature (τ)</td></tr><tr><td>mBERT (Devlin et al., 2019)</td><td>1.43</td></tr><tr><td>XLM (Conneau &amp; Lample, 2019)</td><td>2.00</td></tr><tr><td>XLM-R (Conneau et al., 2020)</td><td>3.33</td></tr><tr><td>mT5 (Xue et al., 2021)</td><td>3.33</td></tr><tr><td>XLM-E (Chi et al., 2022)</td><td>1.43</td></tr></table>"
+  },
+  {
+    "table_id": "table_2",
+    "path": "output/UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining_poster/visuals/tables/table_2.jpg",
+    "caption": [
+      "Table 3:Comparison to mT5.XNLI and PAWS-X show average per-language accuracy; the rest showaverage per-languageEM/F1.Weuse the translate-train setting except for TyDiQA,which uses“in-language\".Weomit results for theLarge configuration due to instabilities in training. "
+    ],
+    "content_list_index": 18,
+    "table_body": "<table><tr><td rowspan=\"2\">Model</td><td colspan=\"2\">XNLI</td><td colspan=\"2\">PAWS-X</td><td colspan=\"2\">XQuAD</td><td colspan=\"2\">MLQA</td><td colspan=\"2\">TyDi QA</td></tr><tr><td>mT5</td><td>umT5</td><td>mT5</td><td>umT5</td><td>mT5</td><td>umT5</td><td>mT5</td><td>umT5</td><td>mT5</td><td>umT5</td></tr><tr><td>Small</td><td>72.0</td><td>76.2</td><td>79.9</td><td>87.2</td><td>49.4 / 64.5</td><td>60.5 / 74.0</td><td>38.8 / 56.6</td><td>41.8 / 60.7</td><td>62.7 / 74.0</td><td>56.6 / 70.0</td></tr><tr><td>Base</td><td>79.8</td><td>80.8</td><td>89.3</td><td>90.4</td><td>59.7 / 75.3</td><td>67.3 / 79.8</td><td>48.5 / 67.6</td><td>51.6 / 70.5</td><td>68.4 / 79.7</td><td>68.4 / 81.0</td></tr><tr><td>XL</td><td>85.3</td><td>86.5</td><td>91.0</td><td>90.7</td><td>56.6 / 75.1</td><td>75.0 / 86.1</td><td>54.5 / 73.5</td><td>58.3 / 76.8</td><td>78.4 / 87.6</td><td>74.1 / 85.2</td></tr><tr><td>XXL</td><td>87.1</td><td>87.8</td><td>91.5</td><td>91.2</td><td>71.3 / 85.2</td><td>77.9 / 88.2</td><td>57.4 / 76.0</td><td>70.5 / 78.6</td><td>79.5 / 88.7</td><td>81.2 / 89.7</td></tr></table>"
+  }
+]

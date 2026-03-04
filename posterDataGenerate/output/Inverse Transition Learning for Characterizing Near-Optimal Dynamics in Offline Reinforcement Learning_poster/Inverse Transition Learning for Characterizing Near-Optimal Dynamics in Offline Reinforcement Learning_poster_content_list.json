@@ -1,0 +1,396 @@
+[
+  {
+    "type": "text",
+    "text": "Bayesian Inverse Transition Learning for Offline Settings ",
+    "text_level": 1,
+    "bbox": [
+      25,
+      110,
+      665,
+      170
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Leo Benac,Sonali Parbhoo,Finale Doshi-Velez ",
+    "bbox": [
+      24,
+      185,
+      516,
+      205
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Summary ",
+    "text_level": 1,
+    "bbox": [
+      24,
+      230,
+      132,
+      247
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Lcarninga modcl is hard under low-covcragc data ",
+      "Having a model help be more data efficient ",
+      "Inverse Transition Learning infers the dynamics using near-optimal demonstrations ",
+      "We createa set of constraints to estimate in a gradient-free way an empirical posterior distribution over the transition dynamics $T$ ,where each sample has near-optimal guarantees ",
+      "Show that planned policies are highly performant and exhibit lower variance across different batches of datas compared to MLE estimates ",
+      "Explain how quantifying theuncertainty of the dynamics help planning morc informativc policies than thc cxpcrt policy and thc onc obtaincd from MLE estimates "
+    ],
+    "bbox": [
+      24,
+      254,
+      472,
+      413
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "What is Inverse Transition Learning? Inverse Transition Learning ",
+    "text_level": 1,
+    "bbox": [
+      24,
+      426,
+      432,
+      467
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Inverse Transition Learning for Characterizing Near-Optimal Dynamics in Offline Reinforcement Learning_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      102,
+      487,
+      394,
+      549
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Infer thc dynamics T givcn ncar-optimal demonstrations $\\mathcal { D }$ ,thcrcward function $R$ and a near-optimal expert policy $\\pi _ { \\epsilon }$ where $\\mathcal { U } _ { \\epsilon }$ is assumed to only take actions that are $\\epsilon$ -close to thebest unkown action $a ^ { * }$ ",
+    "bbox": [
+      24,
+      553,
+      486,
+      592
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Why is it hard? ",
+    "text_level": 1,
+    "bbox": [
+      25,
+      601,
+      198,
+      618
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Number of parameters grows with the dimensions of state and action spaces ",
+      "Trade-off between a model that is expressive enough and one that is small enough to learn ",
+      "Lack of covcrage in oflinc invcrsc scttings "
+    ],
+    "bbox": [
+      24,
+      627,
+      460,
+      693
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Why do we care? ",
+    "text_level": 1,
+    "bbox": [
+      25,
+      708,
+      214,
+      725
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Data efficiency ",
+      "Simulation of ncw data ",
+      "·Off-Policy Evaluation ",
+      "$\\circledast$ Counterfactual Reasoning "
+    ],
+    "bbox": [
+      24,
+      735,
+      194,
+      789
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Baselines ",
+    "text_level": 1,
+    "bbox": [
+      25,
+      805,
+      126,
+      819
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$\\nu T ^ { M L E }$ Maximum Likelihood Estimate obtained from the expert demonstrations $\\mathcal { D }$ ",
+      "$P ( T ( s ^ { \\prime } | s , a ) | \\mathcal { D } ) = D i r ( N _ { s , a } + \\mathbf { 1 } | s , a )$ Probabilistic model over $\\mathrm { T }$ without making any optimality assumption.Where $\\mathbf { 1 }$ is avectorof $\\rceil$ 'sof dimension $| S |$ and $\\Lambda _ { s . a }$ is the number of transitions from state sand actionain thcbatchdata $\\mathcal { D }$ "
+    ],
+    "bbox": [
+      24,
+      828,
+      482,
+      904
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Constraints ",
+    "text_level": 1,
+    "bbox": [
+      25,
+      919,
+      152,
+      933
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Using the reward $R$ and near-optimal expert policy $\\pi _ { \\epsilon }$ we create a set of constraints with respect to the dynamics $T$ to impose the values of the actions of the expert to be superior to the ones of unseen actions. ",
+    "bbox": [
+      24,
+      938,
+      486,
+      975
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Method ",
+    "text_level": 1,
+    "bbox": [
+      513,
+      230,
+      600,
+      244
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Sample from $I ^ { \\prime } ( T | \\mathcal { D } )$ and only keep samples that satisfies the constraints. ",
+      "·Crcatc cmpirical postcrior $P ( T | \\mathcal { D } , \\pi _ { \\epsilon } )$ with acccptcd samplcs.This will be the estimate of the posterior on $T$ given that the demonstrations from the expert are near-optimal "
+    ],
+    "bbox": [
+      512,
+      253,
+      969,
+      317
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Metric ",
+    "text_level": 1,
+    "bbox": [
+      513,
+      327,
+      588,
+      342
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nQ _ {m c t r i c} ^ {*} (\\hat {\\pi}) = \\sum_ {s \\in S} \\left(Q ^ {*} (s, a ^ {*}) - \\sum_ {a \\in A} \\hat {\\pi} (a | s) Q ^ {*} (s, a)\\right)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      586,
+      347,
+      894,
+      377
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Results ",
+    "text_level": 1,
+    "bbox": [
+      513,
+      391,
+      595,
+      406
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·MLE ",
+    "bbox": [
+      513,
+      414,
+      563,
+      425
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\hat {T} = T ^ {M L E} \\underset {\\text {V a l u e I t e r a t i o n}} {\\longrightarrow} (\\pi^ {M L E}, Q ^ {M L E}) = (\\hat {\\pi}, \\widehat {Q}) \\underset {\\text {C o m p u t e R e s u l t s}} {\\longrightarrow}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      520,
+      429,
+      894,
+      449
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "· $P ( T | \\mathcal { D } , \\pi _ { \\epsilon } )$ and $P ( T | \\mathcal { D } )$ ",
+    "bbox": [
+      513,
+      464,
+      682,
+      478
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} \\{\\hat {T} ^ {(i)} \\} _ {i = 1} ^ {1 0 0 0} \\sim \\text {P o s t e r i o r} \\underset {\\text {V a l u e I t e r a t i o n}} {\\longrightarrow} \\{(\\hat {\\pi} ^ {(i)}, \\widehat {Q} ^ {(i)}) \\} _ {i = 1} ^ {1 0 0 0} \\\\ \\longrightarrow \\left\\{\\left(\\hat {\\pi}, \\widehat {Q}\\right) \\right\\} _ {\\text {C o m p u t e R e s u l t s}} \\\\ \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      522,
+      484,
+      825,
+      524
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/Inverse Transition Learning for Characterizing Near-Optimal Dynamics in Offline Reinforcement Learning_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      573,
+      553,
+      910,
+      791
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· $P ( T | \\mathcal { D } , \\pi _ { \\epsilon } )$ outerperforms both basclincs by bcing more accuratc and avoiding low value actions ",
+      "$P ( T | \\mathcal { D } , \\pi _ { \\epsilon } )$ exhibits significantly less variance over different datasets ",
+      "· $P ( T | \\mathcal { D } , \\pi _ { \\epsilon } )$ allows quantifying uncertainty on corresponding policies "
+    ],
+    "bbox": [
+      512,
+      796,
+      949,
+      850
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Acknowledgements ",
+    "text_level": 1,
+    "bbox": [
+      513,
+      865,
+      719,
+      881
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "This material is based upon work supported by the National Science Foundation under Grant No. IS-2oo7o76. Any opinions,findings,and conclusions orrecomnendations expressed in thismaterial are those ofthe author(s) and do not necessarily reflect the views of the National Science Foundation. ",
+    "bbox": [
+      511,
+      886,
+      973,
+      949
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      26,
+      44,
+      83,
+      88
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Harvard JohnA.Paulson School of Engineering and Applied Sciences ",
+    "bbox": [
+      112,
+      41,
+      353,
+      90
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "A D ",
+    "bbox": [
+      746,
+      18,
+      998,
+      105
+    ],
+    "page_idx": 0
+  }
+]

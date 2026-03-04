@@ -1,0 +1,1174 @@
+[
+  {
+    "type": "text",
+    "text": "Motivation ",
+    "text_level": 1,
+    "bbox": [
+      11,
+      177,
+      89,
+      199
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· Most RL methods assume an episodic setting where resets to the initial state are readily available at the end of each episode. ",
+      "· Autonomous learning of embodied agents involves continual interactions and existing methods often require costly external interventions such as human supervision, and scripted policies to simulate resets. ",
+      "· Recently, Autonomous RL (ARL) framework[1] formalized the non-episodic RL setting but previous works on ARL rely on demonstration data to guide the learning process. ",
+      "· However,a truly autonomous agent should be able to learn from scratch without external interventions and prior data. "
+    ],
+    "bbox": [
+      15,
+      214,
+      240,
+      557
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Contribution ",
+    "text_level": 1,
+    "bbox": [
+      9,
+      579,
+      101,
+      600
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "We propose a demonstration-free ARL algorithm via Implicit and Bidirectional Curriculum (IBC) that consists of a conditionally activated auxiliary agent and a bidirectional goal curriculum. ",
+      "· To the best of our knowledge, IBC is the first non-episodic RL that can consistently learn without manual resets and demonstrations by leveraging curriculum learning. ",
+      "· IBC achieves state-of-the-art performance against previous methods,including even the ones that leverage prior data. "
+    ],
+    "bbox": [
+      11,
+      615,
+      252,
+      882
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      7,
+      896,
+      64,
+      911
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[1] Sharma,Archit,etal.\"AutonomousReinforcement Learning:Formalismand Benchmarking.\"International Conferenceon LearningRepresentations.2021. ",
+    "bbox": [
+      7,
+      913,
+      249,
+      932
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[2]Kakade,ShamandJohnLangford.\"Approximatelyoptimalapproximatereinforcementlearning.\"Proceedings of theNineteenth InternationalConference on Machine Learning.2002. ",
+    "bbox": [
+      7,
+      933,
+      256,
+      950
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[3]Sharma,Archit,etal.\"Autonomousreinforcement learningviasubgoalcuricula.\"AdvancesinNeural InformationProcessingSystems34(2021):18474-18486. ",
+    "bbox": [
+      7,
+      951,
+      237,
+      968
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[4]Sharma,Archit,RehaanAhmadandChelsea Finn.\"AState-DistributionMatchingApproachtoNon-Episodic Reinforcement Learning.\" InternationalConferenceon Machine Learning.PMLR,2022. ",
+    "bbox": [
+      7,
+      969,
+      252,
+      986
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Overview ",
+    "text_level": 1,
+    "bbox": [
+      263,
+      178,
+      333,
+      199
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Implicit curriculum ",
+    "bbox": [
+      266,
+      211,
+      387,
+      229
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      267,
+      229,
+      443,
+      313
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Only forward episode remains at convergence ",
+    "bbox": [
+      274,
+      325,
+      437,
+      340
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      267,
+      345,
+      444,
+      410
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "agent of interest (forward agent) ",
+    "bbox": [
+      268,
+      423,
+      342,
+      448
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": ": conventional RL agent ",
+    "bbox": [
+      268,
+      451,
+      347,
+      463
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "auxiliary agent ",
+    "bbox": [
+      354,
+      423,
+      425,
+      447
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": ":returns to the initial state ",
+    "bbox": [
+      355,
+      448,
+      445,
+      462
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Bidirectional curriculum ",
+    "bbox": [
+      458,
+      211,
+      606,
+      229
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      460,
+      229,
+      633,
+      313
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Bidirectional curriculum generation towards ",
+    "bbox": [
+      475,
+      320,
+      630,
+      333
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\pmb { \\rho _ { 0 , t a r } } ( s )$ and $\\textbf { \\rho } _ { f a r } ( s )$ ",
+    "bbox": [
+      514,
+      334,
+      591,
+      349
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      458,
+      350,
+      647,
+      418
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      461,
+      425,
+      480,
+      448
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Forward episode ",
+    "bbox": [
+      482,
+      429,
+      542,
+      443
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "curriculum goal ",
+    "bbox": [
+      482,
+      444,
+      537,
+      457
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      553,
+      426,
+      570,
+      448
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Backward episode ",
+    "bbox": [
+      572,
+      429,
+      637,
+      443
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "curriculum goal ",
+    "bbox": [
+      572,
+      444,
+      627,
+      456
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Methods ",
+    "text_level": 1,
+    "bbox": [
+      263,
+      469,
+      327,
+      490
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Implicit curriculum via an auxiliary agent ",
+    "bbox": [
+      266,
+      504,
+      504,
+      525
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      267,
+      525,
+      481,
+      691
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      458,
+      688,
+      479,
+      698
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "${ \\pmb \\rho } _ { \\bf 0 } ( { \\pmb s } ) \\mathrm { : }$ initial state dist. ",
+      "${ \\pmb \\rho } ^ { * } ( s )$ :state dist.of $\\pi ^ { * }$ that achieves geval Ptar(s), $\\pmb { \\rho _ { 0 , t a r } } ( s ) :$ target goals foragents "
+    ],
+    "bbox": [
+      494,
+      528,
+      640,
+      572
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "${ \\big \\bullet } : s _ { g ^ { * } }$ , a few examples from $\\rho ^ { * } ( s )$ ",
+      "$\\bullet : \\pmb { g } _ { e v a l } ,$ goal given during evaluation "
+    ],
+    "bbox": [
+      492,
+      582,
+      627,
+      613
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Bidirectional goal curriculum optimization ",
+    "bbox": [
+      266,
+      705,
+      511,
+      725
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      271,
+      730,
+      413,
+      753
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      314,
+      754,
+      362,
+      767
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      437,
+      726,
+      489,
+      754
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      391,
+      756,
+      521,
+      775
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[Lipschitz assumption] ",
+    "bbox": [
+      421,
+      777,
+      499,
+      791
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      535,
+      730,
+      618,
+      753
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      531,
+      754,
+      597,
+      775
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "original targets $s _ { g ^ { * } } { \\sim } \\rho _ { t a r } ( s ) ,$ $s _ { 0 } ^ { * } \\sim \\rho _ { 0 , t a r } ( s )$ fortheagents ",
+    "bbox": [
+      563,
+      777,
+      647,
+      803
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Curriculum objective ",
+    "bbox": [
+      266,
+      795,
+      397,
+      814
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\mathop { m i n } _ { \\tau ^ { i } = \\left\\{ s _ { t } ^ { i } , \\forall t \\right\\} \\in B } \\sum _ { \\left( s _ { 0 } ^ { * } , s _ { g ^ { * } } \\right) ^ { i } } w \\left( \\left( s _ { 0 } ^ { * } , s _ { g ^ { * } } \\right) ^ { i } , \\tau ^ { i } \\right) .$ ",
+    "bbox": [
+      272,
+      815,
+      416,
+      863
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      420,
+      816,
+      606,
+      840
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      457,
+      840,
+      648,
+      873
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Environments ",
+    "text_level": 1,
+    "bbox": [
+      265,
+      884,
+      367,
+      906
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      280,
+      910,
+      335,
+      983
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      341,
+      910,
+      395,
+      983
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      401,
+      910,
+      454,
+      983
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      459,
+      910,
+      513,
+      983
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      520,
+      910,
+      573,
+      983
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      579,
+      910,
+      633,
+      983
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Experiments ",
+    "text_level": 1,
+    "bbox": [
+      658,
+      176,
+      751,
+      201
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· IBC vs. Baselines ",
+    "bbox": [
+      666,
+      209,
+      774,
+      227
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_15.jpg",
+    "image_caption": [
+      "（a)Fetch Pick&Place"
+    ],
+    "image_footnote": [],
+    "bbox": [
+      663,
+      229,
+      769,
+      332
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_16.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      771,
+      229,
+      874,
+      333
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_17.jpg",
+    "image_caption": [
+      "(c) Fetch Reach "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      874,
+      229,
+      977,
+      333
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "(b)Fetch Push ",
+    "bbox": [
+      800,
+      336,
+      840,
+      347
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_18.jpg",
+    "image_caption": [
+      "(d) Sawyer Door "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      664,
+      355,
+      771,
+      457
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_19.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      771,
+      355,
+      874,
+      457
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_20.jpg",
+    "image_caption": [
+      "(e) Tabletop Manipulation ",
+      "(f) Point-U-Maze "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      874,
+      355,
+      977,
+      457
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "IBC(ours) ",
+    "bbox": [
+      675,
+      475,
+      726,
+      491
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "VaPRL[3] VaPRL(w/odemo) ",
+    "bbox": [
+      751,
+      475,
+      858,
+      491
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "MEDAL[4] ",
+    "bbox": [
+      874,
+      475,
+      917,
+      491
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Oracle RL ",
+    "bbox": [
+      934,
+      475,
+      969,
+      491
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Ablation study ",
+    "text_level": 1,
+    "bbox": [
+      669,
+      501,
+      766,
+      522
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_21.jpg",
+    "image_caption": [
+      "(c) Tabletop Manipulation "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      665,
+      523,
+      769,
+      625
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "(a) Fetch Pick&Place ",
+    "bbox": [
+      682,
+      630,
+      755,
+      642
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "IBC(ours) ",
+    "bbox": [
+      686,
+      645,
+      729,
+      657
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "(b) Sawyer Door ",
+    "bbox": [
+      795,
+      630,
+      853,
+      643
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "IBC w/o Bidirectional ",
+    "bbox": [
+      751,
+      645,
+      821,
+      656
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "BC W/o Bidirectional&Auxiliary ",
+    "bbox": [
+      854,
+      645,
+      948,
+      657
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Curriculum progress ",
+    "bbox": [
+      665,
+      667,
+      793,
+      688
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_22.jpg",
+    "image_caption": [
+      "Implicit curriculum ",
+      "Bidirectional goal curriculum "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      665,
+      706,
+      782,
+      820
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_23.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      795,
+      707,
+      835,
+      764
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_24.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      841,
+      708,
+      906,
+      764
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_25.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      908,
+      708,
+      982,
+      764
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_26.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      792,
+      765,
+      979,
+      830
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Reward-free experiments ",
+    "bbox": [
+      664,
+      836,
+      821,
+      855
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_27.jpg",
+    "image_caption": [
+      "(a)Fetch Pick&Place "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      665,
+      857,
+      771,
+      957
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_28.jpg",
+    "image_caption": [
+      "(b) Fetch Push "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      771,
+      857,
+      874,
+      957
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum_poster/visuals/images/fig_29.jpg",
+    "image_caption": [
+      "(c)Point-U-Maze "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      874,
+      857,
+      979,
+      957
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      17,
+      13,
+      40,
+      45
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "GitHub ",
+    "bbox": [
+      42,
+      19,
+      86,
+      41
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      17,
+      53,
+      85,
+      150
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      91,
+      81,
+      139,
+      148
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICML ICMI ",
+    "bbox": [
+      146,
+      83,
+      230,
+      120
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "International Conference ",
+    "bbox": [
+      146,
+      123,
+      230,
+      133
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "On Machine Learning ",
+    "bbox": [
+      146,
+      134,
+      218,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum ",
+    "bbox": [
+      151,
+      19,
+      846,
+      96
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Jigang Kim1*, Daesol Cho1*，H. Jin Kim1 ",
+    "bbox": [
+      376,
+      103,
+      639,
+      129
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "*Equal contribution,1Seoul National University ",
+    "bbox": [
+      385,
+      135,
+      631,
+      157
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "VERI LUX TAS MEA ",
+    "bbox": [
+      889,
+      10,
+      948,
+      94
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "LARR ",
+    "bbox": [
+      870,
+      87,
+      983,
+      157
+    ],
+    "page_idx": 0
+  }
+]

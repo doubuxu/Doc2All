@@ -272,6 +272,72 @@ def flatten_run_mode_dir(output_path, pdf_file_name, run_mode="hybrid_auto"):
 import json
 from pathlib import Path
 
+def patch_equation_paths_from_middle(content_json_path: str, middle_json_path: str):
+    """
+    从 middle.json 中提取 equation 的 image_path，
+    按出现顺序补全 content_list.json 中的 equation img_path。
+
+    支持：
+    - middle 顶层是 list（你现在的结构）
+    - middle 顶层是 dict（兼容老版本）
+    - 重复公式
+    - 自动添加 images/ 前缀
+    """
+
+    import json
+    from pathlib import Path
+
+    content_json_path = Path(content_json_path)
+    middle_json_path = Path(middle_json_path)
+
+    # ===== 读取文件 =====
+    with open(content_json_path, "r", encoding="utf-8") as f:
+        content_list = json.load(f)
+
+    with open(middle_json_path, "r", encoding="utf-8") as f:
+        middle = json.load(f)
+
+    # ===== 兼容 middle 两种结构 =====
+    """
+    if isinstance(middle, list):
+        pages = middle
+    elif isinstance(middle, dict):
+        pages = middle.get("pdf_info", {}).get("pages", [])
+    else:
+        print("⚠ Unexpected middle.json structure")
+        pages = []
+    """
+    pages = middle["pdf_info"]
+    # ===== 收集 equation image_path =====
+    equation_image_paths = []
+
+    for page in pages:
+        layout_dets = page.get("layout_dets", [])
+        for det in layout_dets:
+            if det.get("type") == "equation":
+                image_path = det.get("image_path")
+                if image_path:
+                    equation_image_paths.append(image_path)
+
+    # ===== 按顺序回填 =====
+    eq_index = 0
+    total_middle_eq = len(equation_image_paths)
+
+    for item in content_list:
+        if item.get("type") == "equation":
+            if eq_index < total_middle_eq:
+                item["img_path"] = f"images/{equation_image_paths[eq_index]}"
+                eq_index += 1
+            else:
+                item["img_path"] = ""
+
+    # ===== 写回 =====
+    with open(content_json_path, "w", encoding="utf-8") as f:
+        json.dump(content_list, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ Patched {eq_index}/{total_middle_eq} equation paths.")
+    return content_list
+
 def fix_paths_in_content_list(json_path: str):
     json_path = Path(json_path)
 
@@ -312,9 +378,10 @@ def reorganize_path(doc_path_list,output_path):
     pdf_file_name=Path(pdf_files_path).name
     pdf_file_name = pdf_file_name[:-4]
     content_list_path = Path(output_path) / pdf_file_name / "hybrid_auto" / f"{pdf_file_name}_content_list.json"
-
-    with open(content_list_path,'r',encoding='utf-8') as f:
-        content_list = json.load(f)
+    middle_json_path = Path(output_path) / pdf_file_name / "hybrid_auto" / f"{pdf_file_name}_middle.json"
+    content_list = patch_equation_paths_from_middle(content_list_path, middle_json_path)
+    #with open(content_list_path,'r',encoding='utf-8') as f:
+    #    content_list = json.load(f)
     images_list=[]
     tables_list=[]
     equations_list=[]
@@ -437,6 +504,12 @@ def reorganize_path(doc_path_list,output_path):
     fix_visual_index_paths(images_dict_path)
     fix_visual_index_paths(tables_dict_path)
     fix_visual_index_paths(eq_dict_path)
+
+def mineru_process(pdf_files_path,output_dir):
+    doc_path_list=[pdf_files_path]
+    parse_doc(doc_path_list, output_dir, backend="hybrid-auto-engine")
+    reorganize_path(doc_path_list,output_dir)
+
 if __name__ == '__main__':
     # args
     #__dir__ = os.path.dirname(os.path.abspath(__file__))

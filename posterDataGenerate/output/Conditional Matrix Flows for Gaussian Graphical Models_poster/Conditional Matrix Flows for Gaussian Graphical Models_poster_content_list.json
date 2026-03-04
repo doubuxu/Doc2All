@@ -1,0 +1,797 @@
+[
+  {
+    "type": "text",
+    "text": "Conditional Matrix Flows for Gaussian Graphical Models ",
+    "text_level": 1,
+    "bbox": [
+      17,
+      18,
+      309,
+      95
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Marcello Massimo Negri,Fabricio Arend Torres,VolkerRoth Department of Computer Science,University of Basel,Switzerland marcellomassimo.negri@unibas.ch ",
+    "bbox": [
+      339,
+      21,
+      653,
+      90
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Gaussian Graphical Models: Graphical Lasso ",
+    "text_level": 1,
+    "bbox": [
+      27,
+      129,
+      314,
+      154
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Conditional Matrix Flows for Gaussian Graphical Models_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      37,
+      164,
+      309,
+      277
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "GGMs provides structural information: $\\Omega _ { i j } = 0$ implies conditional independenceoffeatures $i$ and $j$ givenall remaining features ",
+      "Maximum likelihood estimate of $\\Omega$ is not sparse and for $d > n$ is not unique penalized likelihood to encourage sparse $\\Omega$ $\\begin{array} { r } { \\operatorname * { a r g m a x } _ { \\Omega \\sim 0 } \\{ \\log \\operatorname* { d e t } \\Omega - \\operatorname { T r } ( \\frac { 1 } { n } S \\Omega ) - \\lambda \\| \\Omega \\| _ { 0 } \\} } \\end{array}$ "
+    ],
+    "bbox": [
+      26,
+      290,
+      318,
+      413
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Intractable because the objective is highly non-convex ",
+    "bbox": [
+      36,
+      421,
+      239,
+      439
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Graphical Lasso: use convex relaxation $\\| \\Omega \\| _ { 0 } \\longrightarrow \\| \\Omega \\| _ { 1 }$ ",
+    "bbox": [
+      26,
+      458,
+      257,
+      479
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Benefits ",
+    "text_level": 1,
+    "bbox": [
+      27,
+      502,
+      68,
+      518
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\clubsuit$ Solution path: frequentist approach provides solutions as a function of $\\lambda$ ",
+    "bbox": [
+      27,
+      521,
+      307,
+      538
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Limitations ",
+    "text_level": 1,
+    "bbox": [
+      27,
+      556,
+      78,
+      571
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$\\clubsuit$ Over-shrinking: $l _ { 1 }$ norm causes well-known over-shrinking of features ",
+      "$\\clubsuit$ No credibility interval "
+    ],
+    "bbox": [
+      27,
+      576,
+      297,
+      609
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Bayesian Graphical Lasso ",
+    "text_level": 1,
+    "bbox": [
+      90,
+      658,
+      257,
+      681
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Bayesian approach: $p ( \\Omega | S , \\lambda ) \\propto p ( S | \\Omega ) \\ p ( \\Omega | \\lambda )$ ",
+      "· Encourage sparsity with double exponential prior (DE) "
+    ],
+    "bbox": [
+      31,
+      691,
+      240,
+      739
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\np (S | \\Omega) \\propto \\mathcal {W} _ {d} (n, \\Omega^ {- 1})\n$$",
+    "text_format": "latex",
+    "bbox": [
+      44,
+      746,
+      131,
+      767
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "equation",
+    "text": "$$\np (\\Omega | \\lambda) \\propto \\mathcal {W} _ {d} (d + 1, \\lambda 1 _ {d}) \\prod_ {i <   j} \\mathrm {D E} (\\omega_ {i j} | \\lambda) I [ \\Omega \\succ 0 ]\n$$",
+    "text_format": "latex",
+    "bbox": [
+      44,
+      767,
+      235,
+      804
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "·Recovers the $l _ { 1 }$ norm penalized likelihood solution in the MAP limit ",
+    "bbox": [
+      33,
+      805,
+      287,
+      821
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Benefits ",
+    "text_level": 1,
+    "bbox": [
+      26,
+      840,
+      65,
+      855
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\clubsuit$ Credibility interval: canbe computed within Bayesian framework ",
+    "bbox": [
+      26,
+      859,
+      279,
+      875
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Limitations ",
+    "text_level": 1,
+    "bbox": [
+      24,
+      889,
+      76,
+      904
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$\\clubsuit$ Expensive posterior sampling:needs Gibbs sampler (also limits prior choice) ",
+      "$\\clubsuit$ Over-shrinking:prior cannotbe generalized to sub- $\\boldsymbol { l } _ { 1 }$ pseudo-norms ",
+      "$\\clubsuit$ Expensive solution path: independent Markov chains for each Avalue "
+    ],
+    "bbox": [
+      24,
+      908,
+      325,
+      959
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Conditional Matrix Flow for Gaussian Graphical Models ",
+    "text_level": 1,
+    "bbox": [
+      483,
+      126,
+      832,
+      151
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Goal:unify benefits offrequentist and Bayesian frameworks while overcoming limitations ",
+    "bbox": [
+      474,
+      161,
+      841,
+      179
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Wproposeaert flowacontinuum of sparse regressionmodels jointly forallregularization parameters $\\lambda$ andall $l _ { q }$ norms,icdingooesub $\\mathbf { \\cdot } l _ { 1 }$ pseudo-norms. ",
+    "bbox": [
+      351,
+      188,
+      963,
+      223
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "PROPOSEDAPPROACH",
+    "text_level": 1,
+    "bbox": [
+      569,
+      235,
+      670,
+      249
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "VARIATIONAL INFERENCE ",
+    "bbox": [
+      364,
+      273,
+      464,
+      288
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·PosteriorapproximationandeffcentsamplingviaNormalizngFlow: $\\mathrm { D } _ { \\mathrm { K L } } \\big ( \\hat { p } ( \\Omega | S , \\lambda ) | | p ( \\Omega | S , \\lambda ) \\big )$ ",
+      "· Free choice of prior $p ( \\Omega | \\lambda )$ and likelihood $p ( S | \\Omega ) $ model any Bayesian GGMs beyond Lasso "
+    ],
+    "bbox": [
+      485,
+      258,
+      866,
+      302
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "SUB- $\\boldsymbol { \\cdot } \\boldsymbol { l } _ { 1 }$ PSEUDO-NORMS ",
+    "bbox": [
+      364,
+      333,
+      459,
+      349
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Generalized Gaussian Distributions (GGD) as sparsity-inducing priors corresponding to $\\iota _ { q }$ (pseudo-) norms ",
+    "bbox": [
+      485,
+      323,
+      729,
+      362
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\operatorname {G G D} (x | \\lambda , q) = \\frac {q \\lambda^ {1 / q}}{2 \\Gamma (1 / q)} \\exp \\{- \\lambda | x | ^ {q} \\}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      738,
+      323,
+      881,
+      361
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "CONDITIONALFLOW",
+    "bbox": [
+      364,
+      390,
+      445,
+      404
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Condition the Normalizing Flow on $\\lambda$ and $q$ to obtain solution paths ",
+      "·Can select $\\lambda$ by maximizing marginal likelihood "
+    ],
+    "bbox": [
+      485,
+      377,
+      745,
+      420
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Conditional Matrix Flows for Gaussian Graphical Models_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "ARCHITECTURE "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      396,
+      455,
+      845,
+      614
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· Condition bijections on Xand $q$ and define flow on space of symmetric positive definite matrices by construction ",
+      "EfficientlogdeterinantofJacobanforCholesk-Product→dethL)=2d(i "
+    ],
+    "bbox": [
+      404,
+      619,
+      827,
+      668
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Combine benefits ",
+    "text_level": 1,
+    "bbox": [
+      355,
+      680,
+      435,
+      696
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$\\clubsuit$ Credibility intervals:sample-based credibility intervals forany $\\lambda$ and $q$ ",
+      "$\\clubsuit$ Solution paths:we recover Bayesian Graphical Lasso ( $T = 1$ )and Graphical Lasso solutionpaths $( T \\to 0 )$ bytrainingwithsimulatedannealing "
+    ],
+    "bbox": [
+      355,
+      699,
+      647,
+      751
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Overcome limitations ",
+    "text_level": 1,
+    "bbox": [
+      673,
+      681,
+      769,
+      696
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$\\clubsuit$ Cheap posterior sampling:no need for sequential Gibbs sampler ",
+      "$\\clubsuit$ No over-shrinking:GGD prior enables exploration of sub- $l _ { 1 }$ pseudo-norms ",
+      "$\\clubsuit$ Model selection:direct access to the marginal likelihood for selecting X "
+    ],
+    "bbox": [
+      672,
+      700,
+      961,
+      751
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Conditional Matrix Flows for Gaussian Graphical Models_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "Bayesian solution pathat $T = 1$ &model selection "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      359,
+      763,
+      496,
+      921
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Conditional Matrix Flows for Gaussian Graphical Models_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "Frequentist solution path at $T \\to 0$ "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      505,
+      763,
+      647,
+      921
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Conditional Matrix Flows for Gaussian Graphical Models_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "Solution path in sub-l1 regime "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      658,
+      763,
+      794,
+      921
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Conditional Matrix Flows for Gaussian Graphical Models_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Credibility intervals in sub $l _ { 1 }$ regime: no over-shrinking "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      808,
+      763,
+      949,
+      921
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Conditional Matrix Flows for Gaussian Graphical Models_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      903,
+      263,
+      965,
+      355
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      901,
+      385,
+      946,
+      400
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "N.Meinshausen and P. ",
+    "bbox": [
+      901,
+      407,
+      963,
+      419
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Buhlmann (2006). ",
+    "bbox": [
+      901,
+      420,
+      947,
+      430
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "“High-dimensional graphs ",
+    "bbox": [
+      901,
+      432,
+      966,
+      442
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "andvariable selection ",
+    "bbox": [
+      901,
+      443,
+      956,
+      453
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "with the Lasso\"In: ",
+    "bbox": [
+      901,
+      455,
+      947,
+      465
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      901,
+      467,
+      963,
+      477
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      901,
+      479,
+      926,
+      489
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "H.Wang (2012) ",
+    "bbox": [
+      901,
+      492,
+      942,
+      503
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "\"Bayesian Graphical ",
+    "bbox": [
+      901,
+      504,
+      953,
+      515
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Lasso Modelsand ",
+    "bbox": [
+      901,
+      516,
+      948,
+      527
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "EfficientPosterior ",
+    "bbox": [
+      901,
+      528,
+      947,
+      538
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Computation.\" In: ",
+    "bbox": [
+      901,
+      539,
+      947,
+      550
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      901,
+      551,
+      953,
+      562
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "G.Papamakarioset al ",
+    "bbox": [
+      901,
+      566,
+      958,
+      577
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "（2021)“Normalizing",
+    "bbox": [
+      901,
+      578,
+      952,
+      589
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Flowsfor Probabilistic ",
+    "bbox": [
+      901,
+      590,
+      956,
+      601
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Modelingand Inference\" ",
+    "bbox": [
+      901,
+      602,
+      963,
+      613
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      901,
+      615,
+      959,
+      625
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      901,
+      626,
+      957,
+      636
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      675,
+      16,
+      725,
+      90
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Universität Basel ",
+    "bbox": [
+      731,
+      37,
+      821,
+      93
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NEURALINFORMATION PROCESSINGSYSTEMS ",
+    "bbox": [
+      833,
+      8,
+      979,
+      104
+    ],
+    "page_idx": 0
+  }
+]

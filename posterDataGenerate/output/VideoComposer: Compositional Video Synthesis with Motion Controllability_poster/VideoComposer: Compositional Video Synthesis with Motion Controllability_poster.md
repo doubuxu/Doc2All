@@ -1,0 +1,1 @@
+![](visuals/images/fig_1.jpg)

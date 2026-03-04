@@ -1,0 +1,789 @@
+[
+  {
+    "type": "text",
+    "text": "Langevin Autoencoders for Learning Deep Latent Variable Models ",
+    "text_level": 1,
+    "bbox": [
+      26,
+      40,
+      399,
+      112
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Motivation ",
+    "text_level": 1,
+    "bbox": [
+      27,
+      165,
+      91,
+      185
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Learning deep latent variable models ",
+    "bbox": [
+      27,
+      197,
+      171,
+      213
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Latentvariablemodels ",
+    "bbox": [
+      27,
+      229,
+      117,
+      243
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\np (\\mathbf {x}; \\boldsymbol {\\theta}) = \\int p (\\mathbf {x} \\mid z; \\boldsymbol {\\theta}) p (z) d z\n$$",
+    "text_format": "latex",
+    "bbox": [
+      110,
+      244,
+      220,
+      281
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Gradient overmodel parameters ",
+    "bbox": [
+      27,
+      285,
+      153,
+      299
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\nabla_ {\\boldsymbol {\\theta}} \\mathbb {E} _ {\\hat {p} _ {\\mathrm {d a t a} (\\mathbf {x})}} [ \\log p (\\boldsymbol {x}; \\boldsymbol {\\theta}) ] \\approx \\frac {1}{n} \\sum_ {i = 1} ^ {n} \\mathbb {E} _ {p \\left(\\boldsymbol {z} ^ {(i)} \\mid \\boldsymbol {x} ^ {(i)}; \\boldsymbol {\\theta}\\right)} \\left[ \\nabla_ {\\boldsymbol {\\theta}} \\log p \\left(\\boldsymbol {x} ^ {(i)}, \\boldsymbol {z} ^ {(i)}; \\boldsymbol {\\theta}\\right) \\right]\n$$",
+    "text_format": "latex",
+    "bbox": [
+      38,
+      300,
+      294,
+      344
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·To learna latent variablemodel via gradientascent,we need to approximate the expectationover the latentposterior $p ( \\mathbf { z } \\mid \\mathbf { x } ; \\mathbf { \\boldsymbol { \\theta } } )$ which is intractableingeneral. ",
+      "·Variational inference isadominantapproach ofapproximation (e.g.,VAE [1]),but theapproximationpower is limited. ",
+      "Markovchain MonteCarlo(MCMC)iscapableof approximatecomplex posteriors,but istoo slowdue todatapoint-wise iterations. "
+    ],
+    "bbox": [
+      28,
+      355,
+      299,
+      478
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Preliminary ",
+    "text_level": 1,
+    "bbox": [
+      27,
+      491,
+      94,
+      512
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Langevindynamics ",
+    "bbox": [
+      27,
+      521,
+      104,
+      537
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Langevindynamics[2]isa gradient-based MCMC. ",
+    "bbox": [
+      28,
+      555,
+      216,
+      572
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} z ^ {\\prime} \\sim q (z ^ {\\prime} \\mid z) = \\mathcal {N} (z ^ {\\prime}; z + \\eta \\nabla_ {z} \\log p (x, z; \\theta), 2 \\eta I) \\\\ z \\leftarrow z ^ {\\prime} \\text {w i t h p r o b a b i l i t y} \\min  \\left\\{1, \\frac {p (x , z ^ {\\prime} ; \\theta) q (z \\mid z ^ {\\prime})}{p (x , z ; \\theta) q (z ^ {\\prime} \\mid z)} \\right\\} \\\\ \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      60,
+      589,
+      269,
+      663
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Byrepeating thisiterative update,thesamplesasymptoticallyapproach to thetrue posterior $p ( \\mathbf { z } \\mid \\mathbf { x } ; \\pmb \\theta )$ ",
+      "·MCMC iterationsare independentlyperformed foreach posterior per datapoint $p ( z ^ { ( i ) } \\mid \\boldsymbol { x } ^ { ( i ) } ; \\boldsymbol { \\theta } )$ for $i = 1 , . . . , n$ "
+    ],
+    "bbox": [
+      28,
+      670,
+      297,
+      745
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "→How can we amortize the cost of datapoint-wise iterations? ",
+    "bbox": [
+      27,
+      764,
+      263,
+      779
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Langevin Autoencoders for Learning Deep Latent Variable Models_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      46,
+      787,
+      152,
+      893
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Langevin Autoencoders for Learning Deep Latent Variable Models_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      181,
+      788,
+      284,
+      894
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Posteriordensity ",
+    "bbox": [
+      46,
+      902,
+      89,
+      913
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Gaussian posterior approximation by Vl ",
+    "bbox": [
+      46,
+      929,
+      144,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Posteriordensity ",
+    "bbox": [
+      168,
+      901,
+      222,
+      913
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "←Datapoint-wise MCMC over the latent z ",
+    "bbox": [
+      168,
+      928,
+      275,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "(a)Variational inference ",
+    "bbox": [
+      57,
+      952,
+      141,
+      966
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "(b) Langevindynamics ",
+    "bbox": [
+      191,
+      952,
+      273,
+      966
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Method ",
+    "text_level": 1,
+    "bbox": [
+      359,
+      165,
+      406,
+      185
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Amortized Langevin dynamics ",
+    "bbox": [
+      359,
+      197,
+      477,
+      213
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Langevin Autoencoders for Learning Deep Latent Variable Models_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      359,
+      233,
+      518,
+      388
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Langevin Autoencoders for Learning Deep Latent Variable Models_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      526,
+      278,
+      590,
+      344
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Inouramortized Langevin dynamics (ALD),we prepareanencoder that mapsthe observeddata into the latent variable,andrun MCMCon its parameterspace. ",
+      "·Markovchain onthe latent space is implicitlyperformed by collectingthe output of the encoder. ",
+      "·Our main theorem shows that theALDis validas MCMC if the encoder takes the form of: "
+    ],
+    "bbox": [
+      359,
+      411,
+      636,
+      530
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nf _ {\\mathbf {z} | \\mathbf {x}} (x; \\boldsymbol {\\Phi}) = \\Phi g (x).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      459,
+      534,
+      536,
+      553
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "·Itcan beeasily implemented usinganeural netwhose parametersare fixed exceptforthelastlinearlayer. ",
+    "bbox": [
+      359,
+      556,
+      632,
+      589
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Langevin Autoencoder ",
+    "bbox": [
+      359,
+      597,
+      447,
+      612
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·ALDcan be applied to the training of deep latent variable models (DLVMs) byslightlymodifying the learningalgorithmof traditional autoencoders. ",
+      "·Wecallthis learning algorithm of DLVMs the Langevinautoencoder (LAE). "
+    ],
+    "bbox": [
+      359,
+      621,
+      635,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\theta , \\Phi , \\psi $ Initialize parameters ",
+    "bbox": [
+      376,
+      688,
+      500,
+      704
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "repeat ",
+    "bbox": [
+      377,
+      707,
+      407,
+      718
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} \\boldsymbol {x} ^ {(1)}, \\dots , \\boldsymbol {x} ^ {(n)} \\sim \\hat {p} (\\mathbf {x}) \\\\ \\mathbf {f o r} t = 0, \\dots , T - 1 \\mathbf {d o} \\\\ V _ {t} = - \\sum_ {i = 1} ^ {n} \\log p (\\boldsymbol {x} ^ {(i)}, \\boldsymbol {z} ^ {(i)} = \\boldsymbol {\\Phi} g (\\boldsymbol {x} ^ {(i)}; \\boldsymbol {\\psi}); \\boldsymbol {\\theta}) \\\\ \\boldsymbol {\\Phi} ^ {\\prime} \\sim q (\\boldsymbol {\\Phi} ^ {\\prime} \\mid \\boldsymbol {\\Phi}) := \\mathcal {N} (\\boldsymbol {\\Phi} ^ {\\prime}; \\boldsymbol {\\Phi} - \\eta \\nabla_ {\\boldsymbol {\\Phi}} V _ {t}, 2 \\eta \\boldsymbol {I}) \\\\ V _ {t} ^ {\\prime} = - \\sum_ {i = 1} ^ {n} \\log p (\\boldsymbol {x} ^ {(i)}, \\boldsymbol {z} ^ {(i)} = \\boldsymbol {\\Phi} ^ {\\prime} g (\\boldsymbol {x} ^ {(i)}; \\boldsymbol {\\psi}); \\boldsymbol {\\theta}) \\\\ \\Phi \\leftarrow \\Phi^ {\\prime} \\text {w i t h p r o b a b i l i t y m i n} \\left\\{1, \\frac {\\exp (- V (\\phi^ {\\prime})) q (\\phi | \\phi^ {\\prime})}{\\exp (- V (\\phi)) q (\\phi^ {\\prime} | \\phi)} \\right\\} \\\\ \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      391,
+      719,
+      609,
+      833
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "end for ",
+    "bbox": [
+      391,
+      833,
+      423,
+      845
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nV _ {T} = - \\sum_ {i = 1} ^ {n} \\log p (\\boldsymbol {x} ^ {(i)}, \\boldsymbol {z} ^ {(i)} = \\Phi g (\\boldsymbol {x} ^ {(i)}; \\psi); \\boldsymbol {\\theta})\n$$",
+    "text_format": "latex",
+    "bbox": [
+      391,
+      845,
+      572,
+      864
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\boldsymbol {\\theta} \\leftarrow \\boldsymbol {\\theta} - \\eta \\nabla_ {\\boldsymbol {\\theta}} \\frac {1}{T} \\sum_ {t = 1} ^ {T} V _ {t}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      391,
+      864,
+      483,
+      884
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\boldsymbol {\\psi} \\leftarrow \\boldsymbol {\\psi} - \\eta \\nabla_ {\\boldsymbol {\\psi}} \\frac {1}{T} \\sum_ {t = 1} ^ {T} V _ {t}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      391,
+      884,
+      488,
+      902
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "until convergence of parameters ",
+    "bbox": [
+      377,
+      902,
+      504,
+      917
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "return $\\theta , \\Phi , \\psi$ ",
+    "bbox": [
+      377,
+      917,
+      438,
+      932
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Results ",
+    "text_level": 1,
+    "bbox": [
+      695,
+      165,
+      739,
+      185
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Toy example ",
+    "bbox": [
+      695,
+      197,
+      745,
+      213
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Langevin Autoencoders for Learning Deep Latent Variable Models_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "Trueposterior "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      692,
+      220,
+      776,
+      346
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Langevin Autoencoders for Learning Deep Latent Variable Models_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Variational approximation "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      789,
+      220,
+      873,
+      346
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Langevin Autoencoders for Learning Deep Latent Variable Models_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Ours "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      893,
+      221,
+      960,
+      346
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Weperformposterior inference forarandomly initialized DLVMusing variational inference (Vl) and ourALD. ",
+      "·Vlfails tocapture themultimodality of the true posterior. ",
+      "·OurALDcanapproximate complexmultimodalposteriorsin toy examples. "
+    ],
+    "bbox": [
+      695,
+      398,
+      962,
+      466
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Langevin Autoencoders for Learning Deep Latent Variable Models_poster/visuals/tables/table_1.jpg",
+    "table_caption": [
+      "Imagedensity estimation "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td></td><td>MNIST</td><td>SVHN</td><td>CIFAR-10</td><td>CelebA</td></tr><tr><td>VAE</td><td>1.189 ± 0.002</td><td>4.442 ± 0.003</td><td>4.820 ± 0.005</td><td>4.671 ± 0.001</td></tr><tr><td>VAE-flow</td><td>1.183 ± 0.001</td><td>4.454 ± 0.016</td><td>4.828 ± 0.005</td><td>4.667 ± 0.005</td></tr><tr><td>Hoffman (2017) [3]</td><td>1.189 ± 0.002</td><td>4.440 ± 0.007</td><td>4.831 ± 0.005</td><td>4.662 ± 0.011</td></tr><tr><td>LAE (ours)</td><td>1.177 ± 0.001</td><td>4.412 ± 0.002</td><td>4.773 ± 0.003</td><td>4.636 ± 0.003</td></tr></table>",
+    "bbox": [
+      694,
+      507,
+      971,
+      586
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Likelihood evaluationfortestdata ",
+    "text_level": 1,
+    "bbox": [
+      772,
+      590,
+      892,
+      605
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Our LAE consistently outperforms Vl-based methods such as the VAEand otherexisting MCMC-based methods. ",
+    "bbox": [
+      695,
+      619,
+      963,
+      652
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Future works ",
+    "text_level": 1,
+    "bbox": [
+      695,
+      660,
+      769,
+      680
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Howcan we remove the bias of finite-step MCMC samples? ",
+      "·Recently proposed unbiased MCMC methods [4]may be useful. "
+    ],
+    "bbox": [
+      694,
+      694,
+      939,
+      727
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Isitpossible to apply the ALD (and LAE)to the state-of-the-artDLVMs, such as NVAE[5]? ",
+    "bbox": [
+      694,
+      745,
+      951,
+      779
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      695,
+      789,
+      736,
+      802
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "[1]Diederik PKingma and MaxWelling(2013).“Auto-encoding variational bayes.\"In:arXivpreprintarXiv:1312.6114. ",
+      "[2]Radford MNeal (2011).“Mcmc using hamiltonian dynamics.\"In: ",
+      "[3]MatthewD Hoffman (2017).“Learning deep latent gaussianmodelswith markovchainmontecarlo.In:International conferenceonmachine ",
+      "[4]PierreEJacob,JohnO'Leary,andYvesFAtchade(202O).“Unbiased markovchainmonte carlomethods withcouplings.\"In:Journal of the Royal ",
+      "[5]Arash Vahdat andJan Kautz(202O).“Nvae:Adeep hierarchical variationalautoencoder.In:AdvancesinNeural Information Processing "
+    ],
+    "bbox": [
+      695,
+      807,
+      884,
+      966
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ShoheiTaniguchi,Yusuke lwasawal, ",
+    "bbox": [
+      528,
+      36,
+      661,
+      52
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "WataruKumagail,YutakaMatsuo1 ",
+    "bbox": [
+      530,
+      54,
+      651,
+      70
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1The Universityof Tokyo ",
+    "bbox": [
+      530,
+      77,
+      618,
+      93
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "? ",
+    "bbox": [
+      748,
+      25,
+      797,
+      95
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "東京大学",
+    "bbox": [
+      749,
+      100,
+      796,
+      117
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "THEUNIVERSITYOFTOKYO",
+    "bbox": [
+      750,
+      117,
+      796,
+      122
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NEURA PROCE ",
+    "bbox": [
+      833,
+      27,
+      893,
+      121
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NEURALINFORMATION ",
+    "bbox": [
+      863,
+      58,
+      976,
+      74
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "PROCESSING SYSTEMS ",
+    "bbox": [
+      863,
+      75,
+      975,
+      89
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      937,
+      907,
+      994,
+      992
+    ],
+    "page_idx": 0
+  }
+]

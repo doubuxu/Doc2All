@@ -1,0 +1,761 @@
+[
+  {
+    "type": "text",
+    "text": "ExtendingKernel PCA through Dualization: Sparsity,Robustnessand Fast Algorithms ",
+    "text_level": 1,
+    "bbox": [
+      272,
+      7,
+      759,
+      74
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Francesco Tonin,Alex Lambert,Panagiotis Patrinos, Johan Suykens ESAT,KU Leuven,Belgium ",
+    "bbox": [
+      314,
+      78,
+      715,
+      116
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Kernel PCA Problem ",
+    "text_level": 1,
+    "bbox": [
+      12,
+      122,
+      190,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Given: $n$ datapoints $( x _ { i } ) _ { i = 1 } ^ { n } \\in \\mathcal { X } ^ { n }$ ,feature map $\\phi \\colon { \\mathcal { X } }  { \\mathcal { H } }$ to a Hilbert space $\\mathcal { H }$ ",
+    "bbox": [
+      12,
+      151,
+      326,
+      183
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Goal: find $s$ directions in $\\mathcal { H }$ that maximize the variance under orthonormal conditions. The KPCA optimization problem is ",
+    "bbox": [
+      12,
+      183,
+      327,
+      216
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\sup  _ {W \\in \\mathcal {S} _ {\\mathcal {H}} ^ {s}} \\frac {1}{2} \\| \\Gamma W \\| _ {\\mathrm {F}} ^ {2}. \\tag {1}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      133,
+      226,
+      326,
+      262
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Wc usc thc following definitions. ",
+    "bbox": [
+      12,
+      273,
+      156,
+      289
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Thc Sticfcl manifold of orthonormal s-framcs in $\\mathcal { H }$ is ",
+    "bbox": [
+      27,
+      299,
+      270,
+      315
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\mathcal {S} _ {\\mathcal {H}} ^ {s} := \\{W \\in \\mathcal {H} ^ {s} \\mid \\mathcal {G} (W) = I _ {s} \\}.\n$$",
+    "text_format": "latex",
+    "bbox": [
+      112,
+      327,
+      250,
+      346
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· $\\mathcal { G } ( W ) \\in \\mathbb { R } ^ { s \\times s }$ is thc matrix such that $\\mathcal { G } ( W ) _ { i j } = \\langle w _ { i } , w _ { j } \\rangle$ ",
+      "· $\\Gamma \\colon \\mathcal { H } ^ { s }  \\mathbb { R } ^ { n \\times s }$ is thc lincar opcrator s.t.for all $( i , j ) \\in [ n \\times s ]$ and $W = ( w _ { 1 } , \\dots , w _ { s } ) \\in \\mathcal { H } ^ { s }$ $[ \\Gamma W ] _ { i j } = \\langle \\phi ( x _ { i } ) , w _ { j } \\rangle$ ",
+      "· $G$ is the Gram matrix $G = [ k ( x _ { i } , x _ { j } ) ] _ { i , j = 1 } ^ { n }$ ,where $k \\colon \\mathcal { X } \\times \\mathcal { X }  \\mathbb { R }$ the positive definite kernel function induced by $\\phi$ "
+    ],
+    "bbox": [
+      27,
+      362,
+      326,
+      463
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The usual way to solve (1) is through SVD of $G \\Rightarrow$ slow with larger $n$ ",
+    "bbox": [
+      12,
+      473,
+      322,
+      490
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Paper TL;DR ",
+    "bbox": [
+      136,
+      503,
+      199,
+      518
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We proposea duality framework to solve the KPCA problem faster,with extension to robust and sparse losses. ",
+    "bbox": [
+      12,
+      519,
+      324,
+      552
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Difference of convex functions ",
+    "text_level": 1,
+    "bbox": [
+      12,
+      572,
+      258,
+      594
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Key idea:Rewrite (1） as a difference of convex functions ",
+    "bbox": [
+      12,
+      600,
+      269,
+      616
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\inf  _ {W \\in \\mathcal {H} ^ {s}} g (W) - f (\\Gamma W), \\tag {2}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      118,
+      629,
+      326,
+      652
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "with $\\begin{array} { r } { f = \\frac { 1 } { 2 } \\left. \\cdot \\right. _ { \\mathrm { F } } ^ { 2 } } \\end{array}$ $g = \\iota _ { \\mathcal { S } _ { \\mathcal { T } } ^ { s } } ( \\cdot )$ ,and $\\iota _ { C } ( \\cdot )$ the indicator function for set $\\mathcal { C }$ ",
+    "bbox": [
+      12,
+      665,
+      319,
+      686
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Two key advantages: ",
+    "bbox": [
+      12,
+      689,
+      117,
+      706
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.Allows new gradient-based algorithm to solve KPCA efficiently without the SVD of $G$ ",
+      "2.It becomes possible to slightly modify the loss function $f$ to enforce specific properties such as robustness or sparsity. "
+    ],
+    "bbox": [
+      24,
+      715,
+      326,
+      790
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Proposition O.1 (Dual of diffcrcncc of convcx functions).Let $\\mathcal { U } , \\mathcal { K }$ be two Hilbert spaces, $g : \\mathcal { U } \\to \\bar { \\mathbb { R } }$ and $f \\colon \\mathcal { K }   { \\mathbb { R } }$ be two convex lower semi-continuous functions and $\\Gamma \\in { \\mathcal { L } } ( { \\mathcal { U } } , { \\mathcal { K } } )$ .The problem ",
+    "bbox": [
+      12,
+      799,
+      326,
+      849
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\inf  _ {W \\in \\mathcal {U}} g (W) - f (\\Gamma W)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      123,
+      860,
+      216,
+      883
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "admits the dual formulation ",
+    "bbox": [
+      12,
+      895,
+      136,
+      911
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\inf  _ {H \\in \\mathcal {K}} f ^ {\\star} (H) - g ^ {\\star} (\\Gamma^ {\\sharp} H),\n$$",
+    "text_format": "latex",
+    "bbox": [
+      117,
+      922,
+      221,
+      947
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "and strong duality holds. ",
+    "bbox": [
+      12,
+      958,
+      121,
+      974
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Faster KPCA with Gradient Descent ",
+    "text_level": 1,
+    "bbox": [
+      339,
+      122,
+      643,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Motivation for going from primal to dual:we show that $g ^ { \\star } ( \\Gamma ^ { \\sharp } H )$ is rclatcd to thc nuclcar norm of somc low dimcnsional matrix. ",
+    "bbox": [
+      339,
+      152,
+      655,
+      185
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Proposition 0.2. Let $g$ be the indicator function of the Stiefel manifold andTasin Problem1.Then forall $H \\in \\mathbb { R } ^ { n \\times s }$ ",
+    "bbox": [
+      339,
+      194,
+      655,
+      228
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\ng ^ {\\star} (\\Gamma^ {\\sharp} H) = \\operatorname {T r} \\sqrt {H ^ {\\top} G H} =: \\pi (H).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      423,
+      238,
+      571,
+      259
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "The computational complexity of computing the gradient of $\\pi$ ",
+    "bbox": [
+      340,
+      270,
+      617,
+      287
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· Computation of $H ^ { \\top } G H$ in $\\mathcal { O } ( s n ^ { 2 } )$ ",
+      "· SVD of $H ^ { \\top } G H$ in $\\mathcal { O } ( s ^ { 3 } )$ "
+    ],
+    "bbox": [
+      356,
+      295,
+      522,
+      341
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We solve our dual problem with L-BFGS and compare training time with full SVD, Lanczos mcthod, and Randomizcd SVD (RSVD). ",
+    "bbox": [
+      339,
+      349,
+      655,
+      382
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·KPCA Training Time for multiple KPCA problems with fixed $\\delta = 1 0 ^ { - 2 }$ accuracy. Spccdup factor w.r.t. RSVD. ",
+    "bbox": [
+      340,
+      387,
+      655,
+      420
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Extending Kernel PCA through Dualization: Sparsity, Robustness and Fast Algorithms_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Task</td><td rowspan=\"2\">n</td><td colspan=\"4\">Time (s)</td><td rowspan=\"2\">Speedup Factor</td></tr><tr><td>SVD</td><td>Lanczos</td><td>RSVD</td><td>Ours</td></tr><tr><td>Synth 1</td><td>7000</td><td>96.73</td><td>0.85</td><td>1.97</td><td>0.53</td><td>3.72</td></tr><tr><td>Protein</td><td>14895</td><td>868.64</td><td>3.46</td><td>6.70</td><td>1.07</td><td>6.25</td></tr><tr><td>RCV1</td><td>20242</td><td>-</td><td>6.04</td><td>12.50</td><td>2.12</td><td>5.90</td></tr><tr><td>CIFAR-10</td><td>60000</td><td>-</td><td>48.10</td><td>123.89</td><td>13.51</td><td>9.17</td></tr></table>",
+    "bbox": [
+      345,
+      421,
+      652,
+      540
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·Influence of the number of components s on training time:higher $s$ leads to longer training times. ",
+    "bbox": [
+      340,
+      549,
+      655,
+      582
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Extending Kernel PCA through Dualization: Sparsity, Robustness and Fast Algorithms_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      395,
+      583,
+      601,
+      740
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Beyond variance maximization ",
+    "text_level": 1,
+    "bbox": [
+      340,
+      759,
+      593,
+      783
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Typical los function: square loss $\\begin{array} { r } { f = \\frac { 1 } { 2 } \\left. \\cdot \\right. _ { \\mathrm { F } } ^ { 2 } } \\end{array}$ ",
+    "bbox": [
+      340,
+      790,
+      539,
+      810
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Problems: sensible to outliers, no sparsity. ",
+    "bbox": [
+      340,
+      809,
+      534,
+      824
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Key idea: usc a loss obtaincd with infimal convolution ",
+    "bbox": [
+      340,
+      824,
+      586,
+      839
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nf = \\frac {1}{2} \\| \\cdot \\| _ {\\mathrm {F}} ^ {2} \\square \\Psi ,\n$$",
+    "text_format": "latex",
+    "bbox": [
+      461,
+      848,
+      534,
+      878
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "where $\\Psi$ is a well-chosen function that enforces robustness or sparsity. Compatibility between the Fenchel-Legendre transform and the infimal convolution operator then allows to write the dual to Equation (2） as ",
+    "bbox": [
+      339,
+      888,
+      655,
+      936
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\inf  _ {H \\in \\mathbb {R} ^ {n \\times s}} \\frac {1}{2} \\| H \\| _ {\\mathrm {F}} ^ {2} + \\Psi^ {\\star} (H) - \\pi (H).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      422,
+      945,
+      573,
+      976
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "DC Optimization ",
+    "text_level": 1,
+    "bbox": [
+      669,
+      120,
+      813,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "As $f$ is aMoreau envelope,its gradient is always defined for all $Y \\in \\mathbb { R } ^ { n \\times s }$ ",
+    "bbox": [
+      669,
+      152,
+      984,
+      169
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\nabla \\left(\\frac {1}{2} \\| \\cdot \\| _ {\\mathrm {F}} ^ {2} \\square \\Psi\\right) (Y) = Y - \\operatorname {p r o x} _ {\\Psi} (Y).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      742,
+      179,
+      910,
+      215
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "According to Moreau decomposition, it holds that for all $Y \\in \\mathbb { R } ^ { n \\times s }$ ",
+    "bbox": [
+      669,
+      225,
+      967,
+      243
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nY - \\operatorname {p r o x} _ {\\Psi} (Y) = \\operatorname {p r o x} _ {\\Psi^ {*}} (Y).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      763,
+      254,
+      889,
+      273
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Algorithm 1 DCA for Moreau envelope objectives ",
+    "bbox": [
+      669,
+      283,
+      897,
+      299
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "input：Gram matrix $G$ ",
+    "bbox": [
+      670,
+      301,
+      785,
+      315
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "forepoch t from 0 to $T - 1$ do ",
+    "bbox": [
+      670,
+      317,
+      809,
+      331
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} \\text {/ / a l t e r n a t i n g g r a d i e n t s t e p s} \\\\ Y = \\nabla \\pi (H ^ {(t)}) \\\\ H ^ {(t + 1)} = \\operatorname {p r o x} _ {\\psi^ {\\star}} (Y) \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      682,
+      333,
+      810,
+      379
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "return H(T) $H ^ { ( T ) }$ ",
+    "bbox": [
+      670,
+      379,
+      729,
+      394
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Robustness and sparsity ",
+    "text_level": 1,
+    "bbox": [
+      669,
+      415,
+      869,
+      439
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Denoting $\\left\\| \\cdot \\right\\| _ { \\star }$ as the dual norm of $\\lVert \\cdot \\rVert$ and the balls of radius $t$ forthese norms as $B _ { t } ^ { \\star }$ and $B _ { t }$ ，we extend KPCA with Huber and $\\epsilon$ -insensitive objectives to promote robustness and sparsity, respectively. ",
+    "bbox": [
+      668,
+      444,
+      984,
+      494
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Extended Huber loss $H _ { \\kappa }$ ",
+    "bbox": [
+      670,
+      499,
+      798,
+      515
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\Psi := \\kappa \\| \\cdot \\|, \\qquad \\Psi^ {\\star} = \\iota_ {\\mathcal {B} _ {\\kappa} ^ {\\star}}, \\qquad \\operatorname {p r o x} _ {\\Psi^ {\\star}} (Y) = \\operatorname {P r o j} _ {\\mathcal {B} _ {\\kappa} ^ {\\star}} (Y).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      698,
+      527,
+      954,
+      547
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "·Effect of $\\kappa$ for the losses $H _ { \\kappa } ^ { 2 }$ $H _ { \\kappa } ^ { 1 }$ on contaminated Iris dataset. ",
+    "bbox": [
+      670,
+      558,
+      953,
+      575
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Extending Kernel PCA through Dualization: Sparsity, Robustness and Fast Algorithms_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      722,
+      576,
+      929,
+      743
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Extended e-insensitive loss $\\ell _ { \\epsilon }$ ",
+    "bbox": [
+      670,
+      742,
+      820,
+      757
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\Psi := \\iota_ {\\mathcal {B} _ {\\epsilon}}, \\qquad \\Psi^ {\\star} = \\epsilon \\| \\cdot \\| _ {\\star}, \\qquad \\operatorname {p r o x} _ {\\Psi^ {\\star}} (Y) = Y - \\operatorname {P r o j} _ {\\mathcal {B} _ {\\epsilon}} (Y).\n$$",
+    "text_format": "latex",
+    "bbox": [
+      693,
+      769,
+      959,
+      789
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "·Reconstruction error for the $\\ell _ { \\epsilon } ^ { \\infty }$ loss for multiple $\\epsilon$ and $s$ ",
+    "bbox": [
+      670,
+      799,
+      928,
+      815
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Extending Kernel PCA through Dualization: Sparsity, Robustness and Fast Algorithms_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      686,
+      817,
+      975,
+      976
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "KU LEUVEN ",
+    "bbox": [
+      22,
+      46,
+      122,
+      67
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      921,
+      9,
+      988,
+      99
+    ],
+    "page_idx": 0
+  }
+]

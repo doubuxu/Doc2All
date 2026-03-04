@@ -1,0 +1,9 @@
+[
+  {
+    "table_id": "table_1",
+    "path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/tables/table_1.jpg",
+    "caption": [],
+    "content_list_index": 49,
+    "table_body": "<table><tr><td rowspan=\"2\">Model</td><td colspan=\"2\">Context Length 5</td><td colspan=\"2\">Context Length 10</td></tr><tr><td>BC</td><td>RC</td><td>BC</td><td>RC</td></tr><tr><td colspan=\"5\">Uni[MASK] Models</td></tr><tr><td>Uni[MASK]-single-task</td><td>2.66 ± 0.03</td><td>2.64 ± 0.02</td><td>2.47 ± 0.04</td><td>2.41 ± 0.05</td></tr><tr><td>Uni[MASK]-multi-task (BC &amp; RC)</td><td>2.65 ± 0.01†</td><td>2.68 ± 0.01†</td><td>2.39 ± 0.03†</td><td>2.39 ± 0.03†</td></tr><tr><td>Uni[MASK]-multi-task + finetune</td><td>2.73 ± 0.01</td><td>2.74 ± 0.01</td><td>2.42 ± 0.04</td><td>2.42 ± 0.03</td></tr><tr><td>Uni[MASK]-random-mask</td><td>2.19 ± 0.09†</td><td>2.20 ± 0.09†</td><td>2.29 ± 0.07†</td><td>2.31 ± 0.06†</td></tr><tr><td>Uni[MASK]-finetune</td><td>2.67 ± 0.03</td><td>2.73 ± 0.01</td><td>2.55 ± 0.03</td><td>2.61 ± 0.03</td></tr><tr><td colspan=\"5\">Other architectures</td></tr><tr><td>Feedforward Neural Network</td><td>1.68 ± 0.07</td><td>1.53 ± 0.08</td><td>1.83 ± 0.06</td><td>1.88 ± 0.06</td></tr><tr><td>Decision Transformer [7]</td><td>1.13 ± 0.07</td><td>1.49 ± 0.04</td><td>1.58 ± 0.06</td><td>1.70 ± 0.07</td></tr><tr><td>Our Decision-GPT model</td><td>2.66 ± 0.01</td><td>2.32 ± 0.05</td><td>2.74 ± 0.01</td><td>2.73 ± 0.02</td></tr></table>"
+  }
+]

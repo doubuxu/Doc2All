@@ -1,0 +1,741 @@
+[
+  {
+    "type": "text",
+    "text": "NeuPL: Neural Population Learning ",
+    "text_level": 1,
+    "bbox": [
+      267,
+      70,
+      730,
+      111
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Siqi Liu, Luke Marris,Daniel Hennes,Josh Merel, Nicolas Heess,Thore Graepel ",
+    "bbox": [
+      265,
+      115,
+      733,
+      136
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Background ",
+    "text_level": 1,
+    "bbox": [
+      20,
+      181,
+      111,
+      204
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Transitive Skills "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      20,
+      233,
+      82,
+      312
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Strategic Cycles "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      88,
+      233,
+      171,
+      309
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "Game-of-Skills "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      183,
+      214,
+      270,
+      310
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The policy space of symmetric zero-sum Game-of-Skillsl1l iscomposed oftransitive skilldimensionsand intransitive strategiccycles[2]. ",
+    "bbox": [
+      20,
+      348,
+      262,
+      391
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Transitive ",
+    "bbox": [
+      20,
+      399,
+      60,
+      410
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Intransitive ",
+    "bbox": [
+      220,
+      399,
+      265,
+      410
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      18,
+      418,
+      90,
+      471
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      92,
+      419,
+      165,
+      471
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      181,
+      418,
+      202,
+      471
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      205,
+      419,
+      255,
+      471
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Solving intransitive strategy games ",
+    "text_level": 1,
+    "bbox": [
+      18,
+      487,
+      171,
+      502
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Game-theoretic population learningalgorithms (e.g.FP, PSRO[3l)offerconvergence guaranteestoan NE,where each policy best-responds toamixture over predecessors: ",
+    "bbox": [
+      17,
+      504,
+      246,
+      559
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Fictitious Play "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      38,
+      572,
+      122,
+      642
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "PSRO-NASH "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      145,
+      571,
+      231,
+      641
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "However,whencombined withmoderndeep RL techniquesl4，population learningcomesatsignificant costs,fortworeasons: ",
+    "bbox": [
+      17,
+      671,
+      245,
+      712
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Lack ofpositive transferacrosspolicies; ",
+      "Suboptimal \"good-\"responsespopulating thepolicy population; "
+    ],
+    "bbox": [
+      20,
+      716,
+      246,
+      757
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      20,
+      783,
+      108,
+      847
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      116,
+      765,
+      261,
+      864
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Canwe leverage the expressiveness of moderndeep NNs toenableasinglemodel toexplore,representand reason aboutdiverse strategieswhile retaining game theoretic guaranteesusingthesame infrastructureas\"self-play\"? ",
+    "bbox": [
+      17,
+      886,
+      258,
+      942
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Methods ",
+    "text_level": 1,
+    "bbox": [
+      295,
+      182,
+      360,
+      203
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Algorithm 1 Neural Population Learning (Ours) ",
+    "text_level": 1,
+    "bbox": [
+      300,
+      220,
+      560,
+      240
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1: IIe(-|s,σ) Conditional neural population net. ",
+      "Initial interaction graph. ",
+      "3:F:RNXN-→RNXN Meta-graph solver. ",
+      "4:while true do ",
+      "$\\Pi _ { \\theta } ^ { \\Sigma }  \\{ \\Pi _ { \\theta } ( \\cdot | s , \\sigma _ { i } ) \\} _ { i = 1 } ^ { N }$ Neural population. ",
+      "6: forgiEUNIQUE(∑）do ",
+      "7: $\\Pi _ { \\theta } ^ { \\sigma _ { i } } \\gets \\Pi _ { \\theta } ( \\cdot | s , \\sigma _ { i } )$ ",
+      "8: $\\Pi _ { \\theta } ^ { \\sigma _ { i } } \\gets \\mathbf { A B R } ( \\Pi _ { \\theta } ^ { \\sigma _ { i } } , \\sigma _ { i } , \\Pi _ { \\theta } ^ { \\Sigma } )$ Self-play. ",
+      "9:U←EVAL(I） (Optional) if $\\mathcal { F }$ adaptive. ",
+      "10:←F（u） (Optional)ifFadaptive. ",
+      "11:return Iθ,∑ "
+    ],
+    "bbox": [
+      305,
+      246,
+      571,
+      445
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      585,
+      224,
+      746,
+      444
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      761,
+      256,
+      815,
+      413
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      822,
+      255,
+      956,
+      415
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Experiments (RwS) ",
+    "text_level": 1,
+    "bbox": [
+      290,
+      489,
+      431,
+      513
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_15.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      313,
+      528,
+      365,
+      604
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_16.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      370,
+      528,
+      420,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_17.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      425,
+      528,
+      475,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_18.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      480,
+      528,
+      531,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_19.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      535,
+      528,
+      586,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_20.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      590,
+      528,
+      641,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_21.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      645,
+      528,
+      697,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_22.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      701,
+      528,
+      772,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_23.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      315,
+      608,
+      365,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_24.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      370,
+      608,
+      420,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_25.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      425,
+      608,
+      475,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_26.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      480,
+      608,
+      531,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_27.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      535,
+      608,
+      586,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_28.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      590,
+      608,
+      641,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_29.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      645,
+      608,
+      700,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_30.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      703,
+      608,
+      773,
+      672
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_31.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      810,
+      502,
+      928,
+      677
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Forward Transfer ",
+    "text_level": 1,
+    "bbox": [
+      293,
+      692,
+      423,
+      713
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_32.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      310,
+      726,
+      446,
+      844
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_33.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      452,
+      726,
+      516,
+      840
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_34.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      522,
+      726,
+      615,
+      840
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Improved Population Learning ",
+    "text_level": 1,
+    "bbox": [
+      641,
+      692,
+      866,
+      717
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/NeuPL: Neural Population Learning_poster/visuals/images/fig_35.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      651,
+      726,
+      947,
+      846
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      290,
+      865,
+      373,
+      885
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "[1]CzarneckiechaRaldmeLieSpngps\"danesinuraformatiroesingStes ",
+      "[2]Baldzividtddngerimteatieren1 ",
+      "tot ",
+      "[4]VinyalsOriltsteiaaftgntrmtgtur)4 "
+    ],
+    "bbox": [
+      298,
+      896,
+      958,
+      965
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "9 ",
+    "bbox": [
+      21,
+      18,
+      55,
+      59
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "UCL ",
+    "bbox": [
+      65,
+      21,
+      160,
+      58
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "DeepMind ",
+    "bbox": [
+      442,
+      21,
+      555,
+      55
+    ],
+    "page_idx": 0
+  }
+]

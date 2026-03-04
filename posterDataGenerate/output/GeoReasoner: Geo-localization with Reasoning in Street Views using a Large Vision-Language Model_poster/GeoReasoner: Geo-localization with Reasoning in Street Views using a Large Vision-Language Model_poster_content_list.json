@@ -1,0 +1,591 @@
+[
+  {
+    "type": "text",
+    "text": "Introduction ",
+    "text_level": 1,
+    "bbox": [
+      102,
+      165,
+      206,
+      193
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "This work tackles the problem of geo-localization with anew paradigm using a large vision-language model (LVLM) augmented with human inference knowledge. ",
+    "bbox": [
+      25,
+      202,
+      281,
+      288
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Challenge: The scarcity of data for training the LVLM-existing street-view datasets often contain numerous low-quality images lacking visual clues, and lack any reasoning inference. ",
+    "bbox": [
+      25,
+      306,
+      279,
+      391
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Dataset:We devise a CLIP-based network to quantify the locatability of street-view images, resulting in the creation of a new dataset comprising highly locatable street views. Additionally,we integrate external knowledge obtained from real geo-localization games, tapping into valuable human inference capabilities. ",
+    "bbox": [
+      25,
+      411,
+      279,
+      557
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Model: GeoReasoner,which undergoes finetuning through dedicated reasoning and locationtuning stages,outperforms counterpart LVLMs by more than $25 \\%$ at country-level and $38 \\%$ at citylevel geo-localization tasks,and surpasses StreetCLIP in performance while requiring fewer training resources. ",
+    "bbox": [
+      25,
+      577,
+      274,
+      724
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Retrieval-based approaches "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      27,
+      752,
+      158,
+      835
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Classification-based approaches "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      27,
+      857,
+      157,
+      947
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      163,
+      734,
+      258,
+      851
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      163,
+      857,
+      283,
+      960
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Data Curation ",
+    "text_level": 1,
+    "bbox": [
+      413,
+      166,
+      529,
+      194
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Street-View Images: A total of over 130k street-view images with geo-tags collected from Google Street View ",
+    "bbox": [
+      315,
+      202,
+      619,
+      244
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Textual Clues: A total of over 3K textual clues that encapsulate rich geo-localization information from GeoGuessrand Tuxun communities ",
+    "bbox": [
+      315,
+      246,
+      629,
+      306
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      316,
+      310,
+      631,
+      473
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Geo-localization with Reasoning ",
+    "text_level": 1,
+    "bbox": [
+      681,
+      166,
+      948,
+      198
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The architecture of GeoReasoner consists of three modules: Vision Encoder,VL Adapterand Pre-trained LLM.The model undergoes a two-fold supervised fine-tuning process: reasoning tuning and location tuning, to enable geo-localization with reasoning. ",
+    "bbox": [
+      653,
+      202,
+      974,
+      307
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      658,
+      310,
+      972,
+      475
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Experiments ",
+    "text_level": 1,
+    "bbox": [
+      508,
+      509,
+      614,
+      541
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Locatability Quantization Method "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      315,
+      598,
+      471,
+      730
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      316,
+      761,
+      473,
+      860
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      316,
+      863,
+      473,
+      963
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "GeoReasoner ",
+    "text_level": 1,
+    "bbox": [
+      487,
+      552,
+      551,
+      568
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Comparison of Precision,RecallandF1scores in country-level and city-level geo-localization. *represents the model trained on high-locatability GSV images. ",
+    "bbox": [
+      487,
+      572,
+      811,
+      602
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Model</td><td colspan=\"4\">Country</td><td colspan=\"2\">City</td></tr><tr><td>Accuracy↑</td><td>Recall↑</td><td>F1↑</td><td>Accuracy↑</td><td>Recall↑</td><td>F1↑</td></tr><tr><td>StreetCLIP (Haas et al., 2023)</td><td>0.7943</td><td>1.00</td><td>0.8854</td><td>0.7457</td><td>1.00</td><td>0.8543</td></tr><tr><td>LLaVA (Liu et al., 2024)</td><td>0.4029</td><td>1.00</td><td>0.5744</td><td>0.2400</td><td>1.00</td><td>0.3871</td></tr><tr><td>Qwen-VL (Qwen-7B) (Bai et al., 2023a)</td><td>0.5829</td><td>0.95</td><td>0.7225</td><td>0.3743</td><td>0.89</td><td>0.5270</td></tr><tr><td>GPT-4V (Achiam et al., 2023)</td><td>0.8917</td><td>0.34</td><td>0.4923</td><td>0.5083</td><td>0.31</td><td>0.3851</td></tr><tr><td>ViT* (Dosovitskiy et al., 2021)</td><td>0.7100</td><td>1.00</td><td>0.8304</td><td>0.6762</td><td>1.00</td><td>0.8068</td></tr><tr><td>GeoReasoner*</td><td>0.8237</td><td>1.00</td><td>0.9033</td><td>0.7521</td><td>1.00</td><td>0.8585</td></tr></table>",
+    "bbox": [
+      488,
+      606,
+      741,
+      699
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/tables/table_2.jpg",
+    "table_caption": [
+      "Results of theablationexperiments "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Model</td><td colspan=\"2\">Training</td><td colspan=\"2\">Country</td><td colspan=\"4\">Performance</td></tr><tr><td>Reasoning</td><td>Location</td><td>Accuracy↑</td><td>Recall↑</td><td>F1↑</td><td>Accuracy↑</td><td>City Recall↑</td><td>F1↑</td></tr><tr><td>Qwen-VL (Qwen-7B)</td><td>-</td><td>-</td><td>0.5829</td><td>0.95</td><td>0.7225</td><td>0.3743</td><td>0.89</td><td>0.5270</td></tr><tr><td>GeoReasoner w/o location tuning</td><td>✓</td><td>×</td><td>0.6971</td><td>1.00</td><td>0.8215</td><td>0.4114</td><td>0.99</td><td>0.5813</td></tr><tr><td>GeoReasoner w/o reasoning tuning</td><td>×</td><td>✓</td><td>0.7803</td><td>1.00</td><td>0.8766</td><td>0.7029</td><td>1.00</td><td>0.8255</td></tr><tr><td>GeoReasoner</td><td>✓</td><td>✓</td><td>0.8237</td><td>1.00</td><td>0.9033</td><td>0.7521</td><td>1.00</td><td>0.8584</td></tr></table>",
+    "bbox": [
+      488,
+      723,
+      792,
+      808
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      491,
+      816,
+      520,
+      825
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      490,
+      828,
+      807,
+      837
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      490,
+      840,
+      613,
+      962
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "GroundTruth·country':China'·'city':'Lhasa' "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      615,
+      857,
+      707,
+      902
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      781,
+      859,
+      808,
+      872
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      618,
+      904,
+      638,
+      913
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_15.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      617,
+      915,
+      707,
+      960
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·country':'China'·'city':'Lhasa' reason':Themain square of Lhasa is themost famous squarein ",
+    "bbox": [
+      717,
+      867,
+      805,
+      883
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Lasanditioteo ",
+    "bbox": [
+      717,
+      883,
+      805,
+      898
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_16.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      780,
+      902,
+      808,
+      913
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model_poster/visuals/images/fig_17.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      716,
+      913,
+      806,
+      953
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Contributions ",
+    "text_level": 1,
+    "bbox": [
+      847,
+      507,
+      963,
+      534
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·We present a new paradigm that leveragesanLVLM and external knowledge of human inference for geolocalization with reasoning from street-view images. ",
+      "·We introduce the concept of locatability and devise a CLIP-based network to quantify the degree of locatability in street-view images. ",
+      "·We propose GeoReasoner, an LVLM that outperforms existing geo-localization modelsand providesdetailed reasoningforthe inferred results. "
+    ],
+    "bbox": [
+      830,
+      552,
+      976,
+      950
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      14,
+      16,
+      49,
+      108
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "香港科技大学(广州)",
+    "bbox": [
+      53,
+      18,
+      181,
+      40
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "THE HONG KONG",
+    "bbox": [
+      54,
+      44,
+      149,
+      62
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "UNIVERSITY OF SCIENCE AND ",
+    "bbox": [
+      54,
+      66,
+      213,
+      84
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "TECHNOLOGY (GUANGZHOU) ",
+    "bbox": [
+      54,
+      88,
+      213,
+      106
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model ",
+    "bbox": [
+      228,
+      12,
+      795,
+      84
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Ling Li, Yu Ye, Bingchuan Jiang,Wei Zeng ",
+    "bbox": [
+      370,
+      96,
+      654,
+      125
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": ":3 ",
+    "bbox": [
+      815,
+      11,
+      872,
+      106
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICML ",
+    "bbox": [
+      880,
+      16,
+      980,
+      67
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "International Conference ",
+    "bbox": [
+      881,
+      72,
+      980,
+      87
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "On Machine Learning ",
+    "bbox": [
+      881,
+      89,
+      966,
+      104
+    ],
+    "page_idx": 0
+  }
+]

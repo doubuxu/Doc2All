@@ -1,0 +1,525 @@
+[
+  {
+    "type": "text",
+    "text": "Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval ",
+    "text_level": 1,
+    "bbox": [
+      164,
+      28,
+      833,
+      85
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Key ldea #1: Pointers Between Examples ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      211,
+      298,
+      250
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Encode the training set as linked lists of (key, value, pointer): ",
+    "bbox": [
+      12,
+      273,
+      273,
+      303
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "encode(\"by the president\") Joe ",
+    "bbox": [
+      13,
+      306,
+      190,
+      336
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "encode(\"by the president Joe\") ",
+    "bbox": [
+      33,
+      397,
+      217,
+      431
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "encode(\"...\") ",
+    "bbox": [
+      157,
+      497,
+      231,
+      520
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": ")）.. ",
+    "bbox": [
+      232,
+      497,
+      254,
+      518
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "This extends kNN-LM (Khandelwal et al.,'2020) by adding pointers between consecutive datastore entries. ",
+    "bbox": [
+      11,
+      539,
+      263,
+      597
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Key ldea #2: Clustering Similar Keys ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      625,
+      269,
+      665
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Cluster similar keys into automaton states: ",
+    "bbox": [
+      12,
+      689,
+      199,
+      715
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      33,
+      716,
+      279,
+      965
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "RetoMaton ",
+    "text_level": 1,
+    "bbox": [
+      395,
+      211,
+      511,
+      252
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Test context: ",
+    "bbox": [
+      346,
+      273,
+      427,
+      306
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Automaton "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      355,
+      377,
+      431,
+      580
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Nodes: clusters of training examples, encoded by the LM ",
+    "bbox": [
+      324,
+      592,
+      454,
+      635
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Edges: pointers between consecutive examples, shared in cluster ",
+    "bbox": [
+      324,
+      637,
+      453,
+      678
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Weights: $- \\| h _ { t } , \\ker \\| _ { 2 }$ ",
+    "bbox": [
+      324,
+      680,
+      411,
+      704
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>The</td><td>president</td><td>is</td><td>_</td></tr></table>",
+    "bbox": [
+      453,
+      273,
+      558,
+      310
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "Trained LM "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      507,
+      379,
+      554,
+      691
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      365,
+      710,
+      536,
+      899
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Pauto(w | ht, statest) α ",
+    "bbox": [
+      346,
+      928,
+      425,
+      952
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "£ ",
+    "bbox": [
+      436,
+      928,
+      454,
+      952
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "M ",
+    "bbox": [
+      468,
+      928,
+      494,
+      952
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "sEstatest (key,val)∈s,val=w ",
+    "bbox": [
+      427,
+      953,
+      500,
+      968
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "In-domain Datastore ",
+    "text_level": 1,
+    "bbox": [
+      634,
+      211,
+      777,
+      243
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "Figure: Experiments on WikITEXT-103,where the datastore is created from the same training set that the base LM was trained on. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      601,
+      257,
+      776,
+      573
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Domain Adaptation ",
+    "text_level": 1,
+    "bbox": [
+      824,
+      211,
+      961,
+      250
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Figure: Domain adaptation experiments: the model was trained on News Crawl,and thedatastore isconstructed from Law-MT. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      808,
+      260,
+      984,
+      575
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Improving Fine-Tuning ",
+      "Figure: When constructing REToMATON on top of a fine-tuned model,REooNreducesperplexityby17.5%. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      605,
+      683,
+      792,
+      930
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Neuro-Symbolic Language Modeling with Automaton-augmented Retrieval_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Sample ",
+      "Figure: A random sample of the automaton constructed from the training set of WIKITEXT-103 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      801,
+      683,
+      985,
+      932
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      8,
+      98,
+      38,
+      164
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Carnegie Mellon University ",
+    "bbox": [
+      44,
+      106,
+      142,
+      130
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Language Technologies Institute ",
+    "bbox": [
+      45,
+      133,
+      174,
+      157
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "aws ",
+    "bbox": [
+      185,
+      114,
+      220,
+      165
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Uri Alon, Frank F. Xu, Junxian He, Sudipta Sengupta, Dan Roth, Graham Neubig ",
+    "bbox": [
+      250,
+      100,
+      746,
+      141
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "https://github.com/neulab/retomaton https://github.com/neulab/knn-transformers ",
+    "bbox": [
+      239,
+      144,
+      757,
+      184
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      881,
+      74,
+      911,
+      140
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      922,
+      74,
+      951,
+      140
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      964,
+      74,
+      994,
+      140
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Fairseq ",
+    "bbox": [
+      881,
+      152,
+      907,
+      170
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "implement. ",
+    "bbox": [
+      878,
+      173,
+      913,
+      191
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Huggingface ",
+    "bbox": [
+      917,
+      153,
+      957,
+      172
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "implement. ",
+    "bbox": [
+      918,
+      173,
+      954,
+      191
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "page_number",
+    "text": "PDF ",
+    "bbox": [
+      968,
+      161,
+      987,
+      183
+    ],
+    "page_idx": 0
+  }
+]

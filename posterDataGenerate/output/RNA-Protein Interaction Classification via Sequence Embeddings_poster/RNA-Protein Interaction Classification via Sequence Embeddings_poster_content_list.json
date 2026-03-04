@@ -1,0 +1,526 @@
+[
+  {
+    "type": "text",
+    "text": "RNA-Protein Interaction Classification via Sequence Embeddings ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      25,
+      802,
+      95
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "universitatfreiburg ",
+    "bbox": [
+      745,
+      95,
+      977,
+      115
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "DominikaMatus1,2,FredericRunge',JrgK.H.Franke',LarsGerne',MichaelUhl',FrankHutter3,1,RolfBackofen' ",
+    "bbox": [
+      24,
+      140,
+      971,
+      157
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Univeritfdsoellteltsa ",
+    "bbox": [
+      26,
+      157,
+      955,
+      170
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "In a nutshell ",
+    "text_level": 1,
+    "bbox": [
+      158,
+      195,
+      289,
+      210
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "RNA and proteins form complexes through binding interactions,crucial foradvancesinbiologyor medicine,such as drug development. ",
+      "·Predicting RNA-protein interactions (RPls) computationallyischallengingdue todatascarcity anditsbias. ",
+      "We presentRNAlnterAct,the largest publiclyavailable dataset with biologically plausiblenegative interactions. ",
+      "The dataset includes sequence information and precomputed embeddings thatcapturemeaningful informationabout interactors'structureandfunction. ",
+      "·Ameticulous train/test split based on the RNA family enablesevaluationon trulyunseeninteractions. ",
+      "We introduce RPlembeddor,a transformer-based modelforbinary interactionclassificationand demonstrate its strong performance. "
+    ],
+    "bbox": [
+      32,
+      222,
+      406,
+      436
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "RPlembeddor ",
+    "text_level": 1,
+    "bbox": [
+      152,
+      475,
+      296,
+      490
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/RNA-Protein Interaction Classification via Sequence Embeddings_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      38,
+      502,
+      182,
+      670
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/RNA-Protein Interaction Classification via Sequence Embeddings_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      241,
+      505,
+      336,
+      642
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Protein embeddings:ESM $\\cdot 2 ^ { 3 }$ ",
+      "RNA embeddings:RNA-FM4 "
+    ],
+    "bbox": [
+      180,
+      647,
+      401,
+      671
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Ablation studies ",
+    "text_level": 1,
+    "bbox": [
+      139,
+      695,
+      308,
+      710
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/RNA-Protein Interaction Classification via Sequence Embeddings_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Model</td><td>Prec.</td><td>Rec.</td><td>F1</td><td>Acc.</td></tr><tr><td>RPlembeddor</td><td>0.563±0.019</td><td>0.659±0.071</td><td>0.605±0.019</td><td>0.678±0.009</td></tr><tr><td>One-Hot</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td></tr><tr><td>Random-Protein</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td></tr><tr><td>RNA-Random</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td><td>0.0±0.0</td></tr></table>",
+    "bbox": [
+      26,
+      726,
+      420,
+      813
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Both embeddings contribute to RPlembeddor's performance. ",
+    "text_level": 1,
+    "bbox": [
+      57,
+      825,
+      386,
+      848
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "ref_text",
+    "list_items": [
+      "10.1093/nar/gkab997. ",
+      "gradientboostingmachine.\"ScientificReports,8(1):9552,2018. ",
+      "model.\"Science，379（6637):1123-1130，2023.doi:10.1126/science.ade2574.Epub2023Mar16.",
+      "accurateRNA structureand functionpredictions.\"arXivpreprint arXiv:2204.0o3o0,2022. "
+    ],
+    "bbox": [
+      28,
+      867,
+      416,
+      938
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "RNAlnterAct ",
+    "text_level": 1,
+    "bbox": [
+      644,
+      195,
+      773,
+      210
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Compilation of the RNAlnterAct dataset in five steps: ",
+    "bbox": [
+      455,
+      222,
+      797,
+      235
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.Gathering positive RPls from theRNAlnter1database: ",
+      "2.Cross-linking large scale databases to obtain sequence information. ",
+      "3.Filtering. ",
+      "4.Annotating proteins with clan and RNA with RNA family information. ",
+      "5.Generating biologically relevant negative interactions. "
+    ],
+    "bbox": [
+      455,
+      237,
+      930,
+      306
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/RNA-Protein Interaction Classification via Sequence Embeddings_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "The final dataset contains 122,217 RPls with a 1:2 positive to negative ratio. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      457,
+      328,
+      960,
+      452
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "RNA family-based train/test split ",
+    "text_level": 1,
+    "bbox": [
+      540,
+      473,
+      877,
+      491
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Dataset split into TRinter (training) and TSfam (test) setsbased on RNA families. ",
+      "·Non-homologous data guarantees evaluations on truly unseen interactions. "
+    ],
+    "bbox": [
+      450,
+      502,
+      965,
+      541
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/RNA-Protein Interaction Classification via Sequence Embeddings_poster/visuals/tables/table_2.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Feature</td><td>TRinter</td><td>TSfam</td><td>RPI28252</td></tr><tr><td>Unique RNA Families</td><td>976</td><td>172</td><td>N/A</td></tr><tr><td>Unique Protein Clans</td><td>152</td><td>152</td><td>N/A</td></tr><tr><td>Positive Interactions</td><td>35,852</td><td>4,887</td><td>871</td></tr><tr><td>Negative Interactions</td><td>73,362</td><td>8,116</td><td>0</td></tr><tr><td>Total Interactions</td><td>109,214</td><td>13,003</td><td>871</td></tr></table>",
+    "bbox": [
+      540,
+      560,
+      877,
+      658
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Evaluation on TSfam and RPl2825 ",
+    "text_level": 1,
+    "bbox": [
+      538,
+      695,
+      884,
+      710
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/RNA-Protein Interaction Classification via Sequence Embeddings_poster/visuals/tables/table_3.jpg",
+    "table_caption": [],
+    "table_footnote": [
+      "*XRPI hasbeen trained on the RPl2825dataset. "
+    ],
+    "table_body": "<table><tr><td rowspan=\"2\">Model\\Test set</td><td colspan=\"4\">TSfam</td><td colspan=\"4\">RPI2825</td></tr><tr><td>Prec.</td><td>Rec.</td><td>F1</td><td>Acc.</td><td>Prec.</td><td>Rec.</td><td>F1</td><td>Acc.</td></tr><tr><td>RPlembeddor</td><td>0.550±0.010</td><td>0.627±0.017</td><td>0.586±0.013</td><td>0.667±0.009</td><td>1.0±0.0</td><td>0.667±0.085</td><td>0.8±0.049</td><td>0.667±0.085</td></tr><tr><td>IPMiner</td><td>0.357</td><td>0.375</td><td>0.366</td><td>0.512</td><td>1.0</td><td>0.107</td><td>0.193</td><td>0.107</td></tr><tr><td>XRPI</td><td>0.375</td><td>0.909</td><td>0.531</td><td>0.398</td><td>1.0*</td><td>0.982*</td><td>0.991*</td><td>0.982*</td></tr></table>",
+    "bbox": [
+      461,
+      726,
+      954,
+      813
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/RNA-Protein Interaction Classification via Sequence Embeddings_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      465,
+      825,
+      662,
+      935
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "RPlembeddor generalizesacross data distributions. ",
+      "·Competitors behave likerandom classifiers. "
+    ],
+    "bbox": [
+      668,
+      876,
+      950,
+      926
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "universitatfreiburg ",
+    "bbox": [
+      18,
+      968,
+      161,
+      980
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      181,
+      966,
+      203,
+      977
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      210,
+      968,
+      223,
+      977
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      228,
+      968,
+      241,
+      977
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      247,
+      968,
+      260,
+      977
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      266,
+      968,
+      279,
+      977
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      285,
+      968,
+      298,
+      977
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "TUBINGEN ",
+    "bbox": [
+      304,
+      968,
+      343,
+      977
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "AutoML.org ",
+    "bbox": [
+      364,
+      960,
+      426,
+      987
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      454,
+      966,
+      488,
+      981
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "Fundedby the European Union ",
+    "bbox": [
+      494,
+      966,
+      577,
+      980
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "Paper ",
+    "bbox": [
+      637,
+      961,
+      678,
+      972
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "https://openreview.net/forum?i d=04MgOkuPTo ",
+    "bbox": [
+      603,
+      972,
+      713,
+      985
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "尚 ",
+    "bbox": [
+      718,
+      956,
+      766,
+      990
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "Dataset ",
+    "bbox": [
+      830,
+      958,
+      883,
+      967
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "https://ml.informatik.uni-freiburg.de/ research-artifacts/RNAInterAct/RN AlnterAct.tar.gz ",
+    "bbox": [
+      792,
+      968,
+      921,
+      988
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      930,
+      958,
+      977,
+      988
+    ],
+    "page_idx": 0
+  }
+]

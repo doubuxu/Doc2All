@@ -1,0 +1,429 @@
+[
+  {
+    "type": "text",
+    "text": "hugogermain.com/neurhal ",
+    "bbox": [
+      16,
+      135,
+      163,
+      161
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Visual Correspondence Hallucination ",
+    "text_level": 1,
+    "bbox": [
+      292,
+      45,
+      694,
+      92
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Hugo Germain1 ",
+    "bbox": [
+      260,
+      119,
+      370,
+      151
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Vincent Lepetit1 ",
+    "bbox": [
+      409,
+      119,
+      527,
+      151
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Guillaume Bourmaud2 ",
+    "bbox": [
+      567,
+      119,
+      725,
+      149
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1. Low-overlap keypoint matching ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      208,
+      229,
+      238
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Keypoint matching is key for fundamental matrix& camera pose estimation ",
+      "In low-overlap scenarios however, finding correspondences is very challenging ",
+      "Existing methods will tend to find correspondences in non-covisible areas "
+    ],
+    "bbox": [
+      19,
+      254,
+      289,
+      466
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      34,
+      485,
+      162,
+      658
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "SuperPoint $^ +$ SuperGlue "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      163,
+      485,
+      291,
+      658
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Correct matches within image boundaries provide poor constraints ",
+    "bbox": [
+      19,
+      707,
+      291,
+      761
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      33,
+      778,
+      289,
+      949
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. Introducing NeurHal ",
+    "text_level": 1,
+    "bbox": [
+      329,
+      208,
+      470,
+      236
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      344,
+      261,
+      691,
+      524
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      709,
+      279,
+      734,
+      322
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We predict correspondence maps on extended field-of-views ",
+    "bbox": [
+      750,
+      277,
+      949,
+      328
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      709,
+      359,
+      734,
+      402
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Training is done on both covisible and non-covisible samples ",
+    "bbox": [
+      750,
+      355,
+      945,
+      411
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      709,
+      437,
+      734,
+      480
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We resort to a Transformer-based image processing backbone ",
+    "bbox": [
+      750,
+      434,
+      951,
+      490
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3. Application to absolute camera pose estimation ",
+    "text_level": 1,
+    "bbox": [
+      335,
+      587,
+      644,
+      615
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "We provide quantitative analysis of NeurHal's ability to hallucinate "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      344,
+      647,
+      368,
+      691
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "NeurHal on validation image pair (novel scene) "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      337,
+      723,
+      589,
+      913
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      "NeurHal achieves sota on absolute pose estimation for low-overlap image pairs "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      665,
+      647,
+      690,
+      691
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_11.jpg",
+    "image_caption": [
+      "More results in our paper ! "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      665,
+      712,
+      690,
+      755
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "Source "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      659,
+      785,
+      754,
+      910
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_13.jpg",
+    "image_caption": [
+      "Target "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      772,
+      787,
+      851,
+      889
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Visual Correspondence Hallucination_poster/visuals/images/fig_14.jpg",
+    "image_caption": [
+      "Predicted NRE Map "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      872,
+      780,
+      968,
+      910
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1 1 ",
+    "bbox": [
+      19,
+      28,
+      37,
+      49
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "2 2 ",
+    "bbox": [
+      20,
+      30,
+      82,
+      89
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ParisTech ",
+    "bbox": [
+      27,
+      106,
+      55,
+      118
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "page_number",
+    "text": "",
+    "bbox": [
+      72,
+      29,
+      81,
+      49
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "université deBORDEAUX ",
+    "bbox": [
+      91,
+      29,
+      196,
+      89
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Ff ",
+    "bbox": [
+      781,
+      53,
+      847,
+      148
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICLR ",
+    "bbox": [
+      859,
+      68,
+      971,
+      127
+    ],
+    "page_idx": 0
+  }
+]

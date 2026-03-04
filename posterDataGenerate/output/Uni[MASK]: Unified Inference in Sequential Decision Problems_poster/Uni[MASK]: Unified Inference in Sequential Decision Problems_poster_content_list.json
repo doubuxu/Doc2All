@@ -1,0 +1,842 @@
+[
+  {
+    "type": "text",
+    "text": "Background: BERT and Randomized Masking ",
+    "text_level": 1,
+    "bbox": [
+      87,
+      107,
+      338,
+      132
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      50,
+      139,
+      132,
+      195
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "In NLP,having the model predict masked input words has beena powerful idea for learning general-purpose representations of language. ",
+    "bbox": [
+      17,
+      211,
+      163,
+      256
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Can the same idea be useful in sequential decisionproblems? ",
+    "bbox": [
+      17,
+      269,
+      163,
+      299
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      170,
+      166,
+      269,
+      280
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Tokens are states,actions,and rewards. Training for predicting masked inputs amounts to training on different inference tasks (e.g.BC,future prediction, etc.). ",
+    "bbox": [
+      274,
+      148,
+      403,
+      215
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Ourquestion:by training on random mask prediction tasks,can we train a single multitask model for any task in a sequential decision problem? ",
+    "bbox": [
+      274,
+      235,
+      404,
+      302
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Inference Tasks as Masking Schemes ",
+    "text_level": 1,
+    "bbox": [
+      110,
+      358,
+      312,
+      383
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Key idea: any inference in sequential decision problems can be expresed as a sequence masking. ",
+    "bbox": [
+      68,
+      389,
+      350,
+      406
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The model receives a subset of observed tokens (state,action,reward),and has to predict some other subset. ",
+    "bbox": [
+      45,
+      406,
+      374,
+      423
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "Behavioral Cloning "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      26,
+      456,
+      110,
+      538
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "Reward-conditioned (offline-RL) "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      121,
+      457,
+      206,
+      538
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "Goal-conditioned "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      218,
+      456,
+      303,
+      537
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Waypoint-conditioned "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      316,
+      456,
+      402,
+      537
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Past inference "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      26,
+      560,
+      110,
+      641
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Future inference "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      121,
+      560,
+      205,
+      641
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "Forward Dynamics "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      218,
+      560,
+      304,
+      642
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      "Inverse Dynamics "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      316,
+      560,
+      402,
+      641
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Many possible training regimes... ",
+    "text_level": 1,
+    "bbox": [
+      120,
+      691,
+      302,
+      718
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Trainspecialized multi-task,or ",
+    "bbox": [
+      27,
+      781,
+      81,
+      816
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "any-task models with a singl unifiedarchitecture ",
+    "bbox": [
+      27,
+      823,
+      87,
+      876
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      110,
+      734,
+      169,
+      939
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      177,
+      734,
+      236,
+      939
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      244,
+      734,
+      370,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1. Can one train on all possible inference tasks and learn to do anything sensible? ",
+    "bbox": [
+      437,
+      118,
+      605,
+      157
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Traininga single model onall tasks(viarandom masking） not only works,but can do as well or betterthan specializedmodels! ",
+    "bbox": [
+      436,
+      170,
+      606,
+      231
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. Which training regime is best if you care about a single downstream inference task? ",
+    "bbox": [
+      622,
+      118,
+      786,
+      157
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "While pre-training on multiple maskings does well, fine-tuning this general model one can improve performance further. ",
+    "bbox": [
+      622,
+      170,
+      787,
+      232
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3. Which training regime is best if you care about $\\pmb { n }$ downstream inference tasks? ",
+    "bbox": [
+      807,
+      118,
+      972,
+      156
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Training onall possible tasks (with random masking) can sometimesenable to do better than trainingon then tasksofinterest. ",
+    "bbox": [
+      807,
+      170,
+      963,
+      232
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Results: a single set of model parameters for all tasks ",
+    "text_level": 1,
+    "bbox": [
+      561,
+      281,
+      848,
+      306
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Discrete Minigrid Environment ",
+    "text_level": 1,
+    "bbox": [
+      494,
+      314,
+      646,
+      337
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Behavioral Cloning Conditioned on s0= (1) ",
+    "bbox": [
+      442,
+      350,
+      486,
+      377
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      445,
+      385,
+      489,
+      456
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Goal-conditioned Conditioned on goal=(4,2) ",
+    "bbox": [
+      507,
+      350,
+      551,
+      380
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_15.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      507,
+      385,
+      550,
+      458
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Reward-conditioned Conditioned on R=3 (actualR=3) ",
+    "bbox": [
+      562,
+      350,
+      608,
+      379
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_16.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      562,
+      385,
+      608,
+      458
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Waypoint-conditioned ConditionedonS=(1,1) waypoints: 2) ",
+    "bbox": [
+      623,
+      350,
+      671,
+      377
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_17.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      623,
+      385,
+      667,
+      458
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Backwards inference Conditioned on s10=（4,4) ",
+    "bbox": [
+      683,
+      350,
+      728,
+      379
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_18.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      683,
+      385,
+      725,
+      458
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_19.jpg",
+    "image_caption": [
+      "Normalized validation loss (column-wise) "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      436,
+      497,
+      611,
+      738
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "①random masking pretraining netuning ",
+    "bbox": [
+      618,
+      513,
+      724,
+      542
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_20.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      665,
+      551,
+      674,
+      564
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "③Specialized models ",
+    "bbox": [
+      633,
+      571,
+      710,
+      587
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "② ",
+      "③Specialized models "
+    ],
+    "bbox": [
+      632,
+      628,
+      717,
+      699
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Continuous Control (Mujoco Maze2D) ",
+    "text_level": 1,
+    "bbox": [
+      812,
+      318,
+      910,
+      360
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/images/fig_21.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      811,
+      373,
+      911,
+      485
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Uni[MASK]: Unified Inference in Sequential Decision Problems_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Model</td><td colspan=\"2\">Context Length 5</td><td colspan=\"2\">Context Length 10</td></tr><tr><td>BC</td><td>RC</td><td>BC</td><td>RC</td></tr><tr><td colspan=\"5\">Uni[MASK] Models</td></tr><tr><td>Uni[MASK]-single-task</td><td>2.66 ± 0.03</td><td>2.64 ± 0.02</td><td>2.47 ± 0.04</td><td>2.41 ± 0.05</td></tr><tr><td>Uni[MASK]-multi-task (BC &amp; RC)</td><td>2.65 ± 0.01†</td><td>2.68 ± 0.01†</td><td>2.39 ± 0.03†</td><td>2.39 ± 0.03†</td></tr><tr><td>Uni[MASK]-multi-task + finetune</td><td>2.73 ± 0.01</td><td>2.74 ± 0.01</td><td>2.42 ± 0.04</td><td>2.42 ± 0.03</td></tr><tr><td>Uni[MASK]-random-mask</td><td>2.19 ± 0.09†</td><td>2.20 ± 0.09†</td><td>2.29 ± 0.07†</td><td>2.31 ± 0.06†</td></tr><tr><td>Uni[MASK]-finetune</td><td>2.67 ± 0.03</td><td>2.73 ± 0.01</td><td>2.55 ± 0.03</td><td>2.61 ± 0.03</td></tr><tr><td colspan=\"5\">Other architectures</td></tr><tr><td>Feedforward Neural Network</td><td>1.68 ± 0.07</td><td>1.53 ± 0.08</td><td>1.83 ± 0.06</td><td>1.88 ± 0.06</td></tr><tr><td>Decision Transformer [7]</td><td>1.13 ± 0.07</td><td>1.49 ± 0.04</td><td>1.58 ± 0.06</td><td>1.70 ± 0.07</td></tr><tr><td>Our Decision-GPT model</td><td>2.66 ± 0.01</td><td>2.32 ± 0.05</td><td>2.74 ± 0.01</td><td>2.73 ± 0.02</td></tr></table>",
+    "bbox": [
+      749,
+      497,
+      974,
+      647
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Pre-training and fine-tuning on single-tasks achieves the best perfomance among Uni[MASK] regimes. ",
+    "text_level": 1,
+    "bbox": [
+      751,
+      674,
+      973,
+      714
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Ourunidirectional single-task variant achieves best performance overall. ",
+    "bbox": [
+      779,
+      730,
+      944,
+      767
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A single Uni[MASK] model can be used for arbitrary inference tasks out-ofthe-box when trained on random masking. ",
+    "bbox": [
+      461,
+      746,
+      727,
+      786
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Limitations and Future Work ",
+    "text_level": 1,
+    "bbox": [
+      461,
+      820,
+      619,
+      842
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· Scale up to more complex environments ",
+      "· Systematically investigate how multi-task performance varies with larger context windows ",
+      "· Train models to roll out trajectories conditioned on other useful properties (e.g., style-matching). "
+    ],
+    "bbox": [
+      442,
+      854,
+      642,
+      957
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Conclusions: ",
+    "text_level": 1,
+    "bbox": [
+      791,
+      817,
+      863,
+      837
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The Uni [MAsk] framework enables models to: ",
+    "bbox": [
+      680,
+      844,
+      842,
+      861
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1. Naturally represent any inference task ",
+    "bbox": [
+      757,
+      871,
+      901,
+      889
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. Easily perform multi-task training with no architecture changes ",
+    "bbox": [
+      713,
+      897,
+      944,
+      915
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3. Train single models to do all tasks with random-mask pre-training, which perform similarly to specialized models and often surpass them after fine-tuning. ",
+    "bbox": [
+      682,
+      923,
+      975,
+      959
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Berkeley UNIVERSITYOFCALIFORNIA ",
+    "bbox": [
+      16,
+      20,
+      88,
+      65
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      115,
+      14,
+      139,
+      53
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Microsoft ",
+    "bbox": [
+      106,
+      54,
+      148,
+      70
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Uni [MASK]: Unified Inference in Sequential Decision Problems ",
+    "bbox": [
+      256,
+      14,
+      741,
+      50
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Micah Carroll1 Orr Paradise1 · Jessy Lin $^ \\mathrm { ~ 1 ~ . ~ }$ Raluca Georgescu2·MingfeiSun2David Bignell StephanieMilani3 KatjaHofmann2·MattewHausknecht2 Anca Dragan1·SamDevlin ",
+    "bbox": [
+      180,
+      51,
+      816,
+      70
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1UC Berkeley2Microsoft Research3Carnegie Mellon University ",
+    "bbox": [
+      402,
+      72,
+      595,
+      89
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "□ □ ",
+    "bbox": [
+      851,
+      10,
+      881,
+      62
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Full paper here ",
+    "bbox": [
+      832,
+      65,
+      892,
+      84
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Accepted as Oral ",
+    "bbox": [
+      910,
+      20,
+      965,
+      66
+    ],
+    "page_idx": 0
+  }
+]

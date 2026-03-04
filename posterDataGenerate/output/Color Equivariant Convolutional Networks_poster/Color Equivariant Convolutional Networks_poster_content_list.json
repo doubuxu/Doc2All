@@ -1,0 +1,483 @@
+[
+  {
+    "type": "text",
+    "text": "Color Equivariant Convolutional Networks ",
+    "text_level": 1,
+    "bbox": [
+      57,
+      45,
+      490,
+      104
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Color is acrucial visual cue for object recognition,but CNNs fail to generalize if there is dataimbalance between color variations.Color invariance addresses this issue by removing all color information.We introduce Color Equivariant Convolutions (CEConvs): a novel deep learning building block that sharesshape features across the color spectrumwhileretaining important color information. ",
+    "bbox": [
+      54,
+      117,
+      515,
+      170
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Authors ",
+    "text_level": 1,
+    "bbox": [
+      55,
+      179,
+      95,
+      186
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Attila Lengyel,Ombretta Straforello,obert-JanBruintjes,AexanderGielisse,JanvanGemert ",
+    "bbox": [
+      55,
+      187,
+      409,
+      195
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Affiliations ",
+    "text_level": 1,
+    "bbox": [
+      55,
+      203,
+      106,
+      211
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "DelftUniversityofTechnology ",
+    "bbox": [
+      55,
+      211,
+      170,
+      220
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Color Equivariant Convolutional Networks_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "Figure1.Color isoften a discriminative feature inobject recognition. However,intra-classcolorvariationscanconfuseaclassification model.Ontheother hand,removingcolormakes flowers lessdistinct from their background and thus harder to classify. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      651,
+      45,
+      935,
+      181
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "01）Preliminaries ",
+    "text_level": 1,
+    "bbox": [
+      57,
+      269,
+      207,
+      289
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "ACNN isequivarianttoa transformation Tif transforming theinput xby Tresults inanequally transformed featuremap: ",
+    "bbox": [
+      54,
+      303,
+      309,
+      333
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nf (T (x)) = T ^ {\\prime} (f (x))\n$$",
+    "text_format": "latex",
+    "bbox": [
+      132,
+      341,
+      235,
+      355
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Equivariance allows parameter sharing,resulting in better data efficiency and OoD generalization. ",
+    "bbox": [
+      54,
+      362,
+      309,
+      383
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Transformation informationisstored inextra FM dimension-invariance achieved by avg pooling. ",
+    "bbox": [
+      55,
+      391,
+      311,
+      413
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "C02 contributions ",
+    "text_level": 1,
+    "bbox": [
+      364,
+      272,
+      515,
+      289
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.We show that CNNs benefit from color information and at the same time are ",
+      "2.We introduce Color Equivariant Convolutions (CEConvs),which allows feature sharingbetween colors. ",
+      "3.We demonstrate that CEConvs improve robustness to train-test color shifts in the input. "
+    ],
+    "bbox": [
+      359,
+      302,
+      580,
+      399
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "03) Color Equivariant Convolutions ",
+    "text_level": 1,
+    "bbox": [
+      657,
+      272,
+      939,
+      289
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·CEConvs implement equivariance to hue shifts. ",
+      "Hue shifts aremodeled as 3D rotations around [1,1] diagonal,parameterized asa3x3rotationmatrix H. ",
+      "·CEConv input layer isdefined as: "
+    ],
+    "bbox": [
+      649,
+      302,
+      929,
+      349
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\left[ f \\star \\psi^ {i} \\right] (x, k) = \\sum_ {y \\in \\mathbb {Z} ^ {2}} \\sum_ {c = 1} ^ {c ^ {l}} f _ {c} (y) \\cdot H _ {n} (k) \\psi_ {c} ^ {i} (y - x)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      683,
+      354,
+      896,
+      385
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Hidden layers: cyclic permutations in color dimension. ",
+      "·Hybrid CECNNsuse CEConvs in part of network. "
+    ],
+    "bbox": [
+      650,
+      394,
+      941,
+      419
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "04) When is color equivariance useful? ",
+    "text_level": 1,
+    "bbox": [
+      64,
+      460,
+      373,
+      476
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Synthetic toy settings: ",
+    "text_level": 1,
+    "bbox": [
+      55,
+      490,
+      171,
+      501
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "2.Color variations:simulated by biased ColorMNisT,a10-class clasification problem where each class $c$ has its own characteristic hue $\\theta _ { c }$ definedindegrees,distributed uniformlyonthe huecircle.Theexact colorofeach digit $x$ issampledaccording to $\\theta _ { x } \\sim N ( \\theta _ { c } , \\sigma )$ "
+    ],
+    "bbox": [
+      54,
+      503,
+      930,
+      538
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Color Equivariant Convolutional Networks_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      52,
+      547,
+      402,
+      676
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "（LeftLong-tailedColorMNIST-CECNN（91.35±0.40%）performs significantly better than Z2CNN $( 7 . 5 9 \\pm 0 . 6 1 \\% )$ ).Performancemostly increases for classeswith few samples,indicating thatCEConvs areindeedmoredataefficient.Z2cNN(grayscale）and CECNN (coset pool) withanaverageaccuracy of 24.19±0.53%and29.43± 0.46%,respectively,areunable todiscriminatebetweencolors. ",
+    "bbox": [
+      413,
+      555,
+      662,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Right>Biased ColorMNiST-Test accuraciesfordifferent standard deviations (σ).CECNN outperforms Z2CNN across all σ.CECNN (cosetpool)outperformsCECNNforgz48-above thisvaluecolor isno longer informativeandactsasnoise.Z2cNN (grayscale)is omittedas it performssignificantlyworse,ranging between 89.89% $( \\sigma = 0 )$ and79.94 $( \\sigma = 1 0 ^ { 6 } )$ ",
+    "bbox": [
+      413,
+      614,
+      662,
+      661
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Color Equivariant Convolutional Networks_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      671,
+      546,
+      930,
+      677
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "05) Robustness to color shifts ",
+    "text_level": 1,
+    "bbox": [
+      64,
+      715,
+      302,
+      730
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Color Equivariant Convolutional Networks_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      57,
+      752,
+      311,
+      879
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "LeftTest accuracies under gradual testtime hue shift.Hue variations degrade the performanceof CNNs (ResNet-18).Grayscale imagesandcolorjitterare invariantand thus robust,butalso fail to captureuseful color features.Ourcolorequivariant network (CE-ResNet-18-1) enables feature sharingacross colorsand generalizes to discrete hue shifts. Equivarianceiscomplementarytocolorjitter asthecombinationperformsbest. ",
+    "bbox": [
+      319,
+      758,
+      490,
+      834
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Right>Neuron Feature visualizationsoffilters atdifferent depths in the network.Rows representthe color dimension and encode thesame shape in different colors. ",
+    "bbox": [
+      319,
+      838,
+      489,
+      870
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Color Equivariant Convolutional Networks_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      500,
+      747,
+      598,
+      810
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Color Equivariant Convolutional Networks_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      502,
+      815,
+      598,
+      877
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "06 conclusions ",
+    "text_level": 1,
+    "bbox": [
+      660,
+      715,
+      795,
+      730
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Color Equivariant convolutions enable feature sharing across colors and, unlike invariance,can still use color information. ",
+      "·CECNNsoutperformregularCNNs inacolor imbalanced or biased setting. ",
+      "CEConvs are computationally more expensive than regular convolutions.Hybrid CECNNs provide early equivariance with only limited compute increase. ",
+      "· CEConvs are only approximately equivariant due to clipping errors. ",
+      "·Future work: combine color and geometric transformationsinequivariantconvolutions. "
+    ],
+    "bbox": [
+      652,
+      745,
+      932,
+      878
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "Related Literature ",
+    "bbox": [
+      55,
+      928,
+      137,
+      936
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "Groupequivartonolutioetworksacooedelinin3rdteatialofereceina6 Colorenoiniiclsdvutouokseerelisie1 ",
+    "bbox": [
+      55,
+      945,
+      595,
+      961
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "NEURA PROCE ",
+    "bbox": [
+      665,
+      937,
+      708,
+      971
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "NEURALINFORMATION PROCESSING SYSTEMS ",
+    "bbox": [
+      686,
+      948,
+      767,
+      961
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "",
+    "bbox": [
+      801,
+      936,
+      825,
+      960
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "TUDelft Technology ",
+    "bbox": [
+      801,
+      948,
+      929,
+      964
+    ],
+    "page_idx": 0
+  }
+]

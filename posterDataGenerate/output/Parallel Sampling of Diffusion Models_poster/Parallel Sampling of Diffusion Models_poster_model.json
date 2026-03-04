@@ -1,0 +1,684 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.037,
+                0.054,
+                0.098,
+                0.23
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                129,
+                94,
+                343,
+                94,
+                343,
+                402,
+                129,
+                402
+            ]
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.114,
+                0.054,
+                0.53,
+                0.104
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                399,
+                94,
+                1855,
+                94,
+                1855,
+                182,
+                399,
+                182
+            ]
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.108,
+                0.557,
+                0.141
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                402,
+                189,
+                1949,
+                189,
+                1949,
+                246,
+                402,
+                246
+            ]
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.115,
+                0.149,
+                0.225,
+                0.172
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                402,
+                260,
+                787,
+                260,
+                787,
+                301,
+                402,
+                301
+            ]
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.031,
+                0.244,
+                0.1,
+                0.381
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.106,
+                0.244,
+                0.229,
+                0.382
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.193,
+                0.387,
+                0.227,
+                0.404
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                675,
+                677,
+                794,
+                677,
+                794,
+                707,
+                675,
+                707
+            ]
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.033,
+                0.425,
+                0.231,
+                0.451
+            ],
+            "angle": 0,
+            "content": "\\[\n\\mathrm {d} \\boldsymbol {x} _ {t} = [ f (t) \\boldsymbol {x} _ {t} - g ^ {2} (t) \\nabla_ {\\boldsymbol {x}} \\log q _ {t} (\\boldsymbol {x} _ {t}) ] \\mathrm {d} t + g (t) \\mathrm {d} \\bar {\\boldsymbol {w}} _ {t}\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.242,
+                0.43,
+                0.276,
+                0.459
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                847,
+                752,
+                966,
+                752,
+                966,
+                803,
+                847,
+                803
+            ]
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.18,
+                0.461,
+                0.228,
+                0.476
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                630,
+                806,
+                798,
+                806,
+                798,
+                833,
+                630,
+                833
+            ]
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.034,
+                0.498,
+                0.176,
+                0.539
+            ],
+            "angle": 0,
+            "content": "\\[\n\\frac {\\mathrm {d} \\boldsymbol {x} _ {t}}{\\mathrm {d} t} = f (t) \\boldsymbol {x} _ {t} - \\frac {1}{2} g ^ {2} (t) \\nabla_ {\\boldsymbol {x}} \\log q _ {t} (\\boldsymbol {x} _ {t})\n\\]"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.18,
+                0.539,
+                0.224,
+                0.554
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                630,
+                943,
+                784,
+                943,
+                784,
+                969,
+                630,
+                969
+            ]
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.236,
+                0.514,
+                0.28,
+                0.544
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                826,
+                899,
+                980,
+                899,
+                980,
+                952,
+                826,
+                952
+            ]
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.029,
+                0.591,
+                0.274,
+                0.868
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>DDPM [Ho 2020]</td><td>DDIM [Song 2021]</td><td>DPMSolver [Lu 2022]</td><td>ParaDiGMS [ours]</td></tr><tr><td>Sample Method</td><td>SDE (euler maruyama)</td><td>ODE (euler)</td><td>ODE (heun)</td><td>ODE (picard+ euler/heun)</td></tr><tr><td>Speed</td><td>Slow 1000 steps</td><td>Fast 50 steps</td><td>Fast 50 steps</td><td>Fast 1000 steps</td></tr><tr><td>Quality</td><td>Best</td><td>Good</td><td>Good</td><td>Best</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.132,
+                0.872,
+                0.173,
+                0.906
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                462,
+                1526,
+                605,
+                1526,
+                605,
+                1585,
+                462,
+                1585
+            ]
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.179,
+                0.873,
+                0.221,
+                0.906
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                626,
+                1527,
+                773,
+                1527,
+                773,
+                1585,
+                626,
+                1585
+            ]
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.225,
+                0.873,
+                0.272,
+                0.906
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                787,
+                1527,
+                952,
+                1527,
+                952,
+                1585,
+                787,
+                1585
+            ]
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.3,
+                0.188,
+                0.386,
+                0.212
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                1050,
+                329,
+                1351,
+                329,
+                1351,
+                371,
+                1050,
+                371
+            ]
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.369,
+                0.226,
+                0.59,
+                0.25
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                1291,
+                395,
+                2065,
+                395,
+                2065,
+                437,
+                1291,
+                437
+            ]
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.298,
+                0.261,
+                0.622,
+                0.425
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.309,
+                0.456,
+                0.62,
+                0.535
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.299,
+                0.555,
+                0.38,
+                0.579
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                1046,
+                971,
+                1330,
+                971,
+                1330,
+                1013,
+                1046,
+                1013
+            ]
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.307,
+                0.592,
+                0.544,
+                0.636
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                1074,
+                1036,
+                1904,
+                1036,
+                1904,
+                1113,
+                1074,
+                1113
+            ]
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.31,
+                0.641,
+                0.618,
+                0.722
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.307,
+                0.757,
+                0.366,
+                0.783
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                1074,
+                1324,
+                1281,
+                1324,
+                1281,
+                1370,
+                1074,
+                1370
+            ]
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.402,
+                0.75,
+                0.519,
+                0.794
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                1407,
+                1312,
+                1816,
+                1312,
+                1816,
+                1389,
+                1407,
+                1389
+            ]
+        },
+        {
+            "type": "equation",
+            "bbox": [
+                0.321,
+                0.808,
+                0.611,
+                0.944
+            ],
+            "angle": 0,
+            "content": "\\[\n\\begin{array}{l} \\text {I f} \\quad \\| \\boldsymbol {x} _ {t} ^ {K} - \\boldsymbol {x} _ {t} ^ {K - 1} \\| ^ {2} \\leq 4 \\epsilon^ {2} \\sigma_ {t} ^ {2} / T ^ {2} \\\\ \\text {T h e n} \\quad D _ {\\mathrm {T V}} \\left(\\mathcal {N} \\left(\\boldsymbol {x} _ {t} ^ {K}, \\sigma_ {t} ^ {2} \\boldsymbol {I}\\right) \\mid \\mid \\mathcal {N} \\left(\\boldsymbol {x} _ {t} ^ {\\star}, \\sigma_ {t} ^ {2} \\boldsymbol {I}\\right)\\right) \\leq \\sqrt {\\frac {1}{2} D _ {\\mathrm {K L}} \\left(\\mathcal {N} \\left(\\boldsymbol {x} _ {t} ^ {K} , \\sigma_ {t} ^ {2} \\boldsymbol {I}\\right) \\mid \\mid \\mathcal {N} \\left(\\boldsymbol {x} _ {t} ^ {\\star} , \\sigma_ {t} ^ {2} \\boldsymbol {I}\\right)\\right)} \\\\ \\text {W e} = \\sqrt {\\frac {\\left\\| \\boldsymbol {x} _ {t} ^ {K} - \\boldsymbol {x} _ {t} ^ {\\star} \\right\\| ^ {2}}{4 \\sigma_ {t} ^ {2}}} \\leq \\sqrt {\\frac {\\left\\| \\boldsymbol {x} _ {t} ^ {K} - \\boldsymbol {x} _ {t} ^ {K - 1} \\right\\| ^ {2}}{4 \\sigma_ {t} ^ {2}}} \\leq \\frac {\\epsilon}{T} \\\\ \\end{array}\n\\]"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.642,
+                0.07,
+                0.858,
+                0.131
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.648,
+                0.133,
+                0.717,
+                0.145
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                2268,
+                232,
+                2509,
+                232,
+                2509,
+                253,
+                2268,
+                253
+            ]
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.899,
+                0.047,
+                0.954,
+                0.155
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                3146,
+                82,
+                3339,
+                82,
+                3339,
+                271,
+                3146,
+                271
+            ]
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.642,
+                0.161,
+                0.857,
+                0.222
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.642,
+                0.231,
+                0.857,
+                0.306
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.639,
+                0.33,
+                0.974,
+                0.563
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.902,
+                0.569,
+                0.965,
+                0.595
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                3157,
+                995,
+                3377,
+                995,
+                3377,
+                1041,
+                3157,
+                1041
+            ]
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.629,
+                0.65,
+                0.669,
+                0.67
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                2201,
+                1137,
+                2341,
+                1137,
+                2341,
+                1172,
+                2201,
+                1172
+            ]
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.673,
+                0.598,
+                0.964,
+                0.703
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Franka Kitchen</td><td rowspan=\"2\">Model Evals</td><td rowspan=\"2\">Sequential Reward</td><td rowspan=\"2\">Time per Episode</td><td colspan=\"3\">ParaDiGMS</td><td rowspan=\"2\">Time per Episode</td><td rowspan=\"2\">Speedup</td></tr><tr><td>Model Evals</td><td>Parallel Iters</td><td>Reward</td></tr><tr><td>DDPM</td><td>100</td><td>0.85 ± 0.03</td><td>112s</td><td>390</td><td>25</td><td>0.84 ± 0.03</td><td>33.3s</td><td>3.4x</td></tr><tr><td>DDIM</td><td>15</td><td>0.80 ± 0.03</td><td>16.9s</td><td>47</td><td>7</td><td>0.80 ± 0.03</td><td>9.45s</td><td>1.8x</td></tr><tr><td>DPMSolver</td><td>15</td><td>0.79 ± 0.03</td><td>17.4s</td><td>41</td><td>6</td><td>0.80 ± 0.03</td><td>8.89s</td><td>2.0x</td></tr></table>"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.633,
+                0.759,
+                0.662,
+                0.804
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                2215,
+                1328,
+                2317,
+                1328,
+                2317,
+                1407,
+                2215,
+                1407
+            ]
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.673,
+                0.726,
+                0.964,
+                0.837
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">StableDiffusion-v2</td><td colspan=\"3\">Sequential</td><td colspan=\"4\">ParaDiGMS</td><td rowspan=\"2\">Speedup</td></tr><tr><td>Model Eval</td><td>CLIP Score</td><td>Time per Sample</td><td>Model Eval</td><td>Parallel Iters</td><td>CLIP Score</td><td>Time per Sample</td></tr><tr><td>DDPM</td><td>1000</td><td>32.1</td><td>50.0s</td><td>2040</td><td>44</td><td>32.1</td><td>16.2s</td><td>3.1x</td></tr><tr><td>DDIM</td><td>200</td><td>31.9</td><td>10.3s</td><td>425</td><td>16</td><td>31.9</td><td>5.8s</td><td>1.8x</td></tr><tr><td>DPMSolver</td><td>200</td><td>31.7</td><td>10.3s</td><td>411</td><td>16</td><td>31.7</td><td>5.8s</td><td>1.8x</td></tr></table>"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.636,
+                0.89,
+                0.663,
+                0.935
+            ],
+            "angle": 0,
+            "content": null,
+            "poly": [
+                2226,
+                1557,
+                2320,
+                1557,
+                2320,
+                1636,
+                2226,
+                1636
+            ]
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.673,
+                0.855,
+                0.964,
+                0.953
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">LSUN Church</td><td colspan=\"3\">Sequential</td><td colspan=\"4\">ParaDiGMS</td><td rowspan=\"2\">Speedup</td></tr><tr><td>Model Evals</td><td>FID Score</td><td>Time per Sample</td><td>Model Evals</td><td>Parallel Iters</td><td>FID Score</td><td>Time per Sample</td></tr><tr><td>DDPM</td><td>1000</td><td>12.8</td><td>24.0s</td><td>2556</td><td>42</td><td>12.9</td><td>8.2s</td><td>2.9x</td></tr><tr><td>DDIM</td><td>500</td><td>15.7</td><td>12.2s</td><td>1502</td><td>42</td><td>15.7</td><td>6.3s</td><td>1.9x</td></tr></table>"
+        }
+    ]
+]

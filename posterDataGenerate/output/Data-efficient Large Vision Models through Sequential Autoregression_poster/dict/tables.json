@@ -1,0 +1,16 @@
+[
+  {
+    "table_id": "table_1",
+    "path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/tables/table_1.jpg",
+    "caption": [],
+    "content_list_index": 22,
+    "table_body": "<table><tr><td>Model</td><td>KD</td><td>loss ↓</td><td>accuracy ↑</td><td>perplexity ↓</td></tr><tr><td colspan=\"5\">Image Segmentation (10% of SA-1B)</td></tr><tr><td>LLaMA-1B</td><td>-</td><td>4.50</td><td>20.18</td><td>90.04</td></tr><tr><td>LLaMA-300M</td><td>X</td><td>4.64</td><td>19.17</td><td>103.24</td></tr><tr><td>LLaMA-300M</td><td>✓</td><td>4.59</td><td>19.48</td><td>98.72</td></tr><tr><td colspan=\"5\">Pose Estimation (COCO-Pose)</td></tr><tr><td>LLaMA-1B</td><td>-</td><td>4.90</td><td>20.96</td><td>134.07</td></tr><tr><td>LLaMA-300M</td><td>X</td><td>4.97</td><td>20.46</td><td>144.08</td></tr><tr><td>LLaMA-300M</td><td>✓</td><td>4.91</td><td>20.80</td><td>135.91</td></tr></table>"
+  },
+  {
+    "table_id": "table_2",
+    "path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/tables/table_2.jpg",
+    "caption": [],
+    "content_list_index": 25,
+    "table_body": "<table><tr><td rowspan=\"2\">Model</td><td rowspan=\"2\">KD</td><td colspan=\"3\">Image Segmentation</td><td colspan=\"3\">Pose Estimation</td><td colspan=\"3\">Image Deraining</td></tr><tr><td>loss ↓</td><td>accuracy ↑</td><td>perplexity ↓</td><td>loss ↓</td><td>accuracy ↑</td><td>perplexity ↓</td><td>loss ↓</td><td>accuracy ↑</td><td>perplexity ↓</td></tr><tr><td>LLaMA-1B</td><td>-</td><td>4.55</td><td>19.72</td><td>94.75</td><td>4.86</td><td>20.77</td><td>129.95</td><td>5.53</td><td>12.20</td><td>245.33</td></tr><tr><td>LLaMA-300M</td><td>X</td><td>4.68</td><td>18.79</td><td>107.76</td><td>4.94</td><td>20.24</td><td>140.39</td><td>5.63</td><td>11.57</td><td>271.38</td></tr><tr><td>LLaMA-300M</td><td>✓</td><td>4.67</td><td>18.84</td><td>106.81</td><td>4.93</td><td>20.32</td><td>139.27</td><td>5.62</td><td>11.93</td><td>269.04</td></tr></table>"
+  }
+]

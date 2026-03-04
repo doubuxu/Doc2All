@@ -1,0 +1,777 @@
+[
+  {
+    "type": "text",
+    "text": "Introduction ",
+    "text_level": 1,
+    "bbox": [
+      96,
+      198,
+      182,
+      220
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The vision of Runtime One-shot imitation Learning ",
+    "text_level": 1,
+    "bbox": [
+      20,
+      232,
+      282,
+      251
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      21,
+      260,
+      82,
+      327
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      86,
+      260,
+      148,
+      329
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      153,
+      260,
+      215,
+      329
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      220,
+      260,
+      279,
+      329
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      21,
+      329,
+      82,
+      427
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      86,
+      329,
+      148,
+      428
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      153,
+      329,
+      215,
+      428
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      220,
+      329,
+      279,
+      428
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      20,
+      431,
+      263,
+      463
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Popular paradigm: Transformer +behavior cloning ",
+    "text_level": 1,
+    "bbox": [
+      20,
+      468,
+      282,
+      487
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      8,
+      498,
+      288,
+      667
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Our focus: Generlization Challenges of runtime OSIL ",
+    "text_level": 1,
+    "bbox": [
+      16,
+      682,
+      285,
+      701
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      0,
+      710,
+      182,
+      769
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_11.jpg",
+    "image_caption": [
+      "(a)Provided demonstration. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      0,
+      783,
+      181,
+      845
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "(b)Policy trained byatraditional OSIL method. ",
+      "(c)Policy trained by DDT. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      0,
+      860,
+      182,
+      922
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Unseen demonstrations in unseen envirnoments. ",
+      "->incorrect representation caused bytransformer. ",
+      "·Unforseen changes after demonstrationscollection. ",
+      "->limitation of behavior cloning. "
+    ],
+    "bbox": [
+      5,
+      935,
+      216,
+      1000
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      188,
+      714,
+      247,
+      797
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      253,
+      716,
+      294,
+      795
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_15.jpg",
+    "image_caption": [
+      "(A) Valet Parking Assist in Maze(VPAM) ",
+      "Trained byDDT "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      187,
+      820,
+      241,
+      902
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_16.jpg",
+    "image_caption": [
+      "Trained by traditional OSIL "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      241,
+      820,
+      297,
+      904
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Methodology ",
+    "text_level": 1,
+    "bbox": [
+      470,
+      198,
+      557,
+      224
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "KEY1: Inject the induective bias of \"how human make decisions in runtime OsiL”into the imitator policy network. ",
+    "bbox": [
+      313,
+      245,
+      491,
+      334
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_17.jpg",
+    "image_caption": [
+      "An example of3-stage OSIL of humans. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      305,
+      365,
+      503,
+      510
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_18.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      505,
+      232,
+      713,
+      567
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Stage 1: Identify relevant states within the trajectory based on the current state. ",
+      "·Stage 2: Analyze the expert's behavior patterns associated with these states. ",
+      "Stage 3: Trace the expert's demonstrations based on the relationship between the current state and the expert's behavior patterns in the demonstrations. "
+    ],
+    "bbox": [
+      314,
+      577,
+      681,
+      654
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "KEY2: Solve runtime one-shot imitation learning by context-based meta-RL,instead of supervised ling ",
+    "text_level": 1,
+    "bbox": [
+      312,
+      668,
+      678,
+      714
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_19.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      344,
+      726,
+      648,
+      875
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·The unforeseen changes willrandomly apprear in the simulators (M). ",
+      "·With meta-RL,the imitator policy will try to achieve allofthe targets the same to the demonstration guided by O-1 task rewards. ",
+      "·In the process,the imitator policy will suffer from the unforseen changes and have to handlethembeforeachievethe targets. "
+    ],
+    "bbox": [
+      322,
+      893,
+      704,
+      991
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Major Experiments ",
+    "text_level": 1,
+    "bbox": [
+      800,
+      198,
+      928,
+      222
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Q1: One-shot imitation ability in unseen situations ",
+    "text_level": 1,
+    "bbox": [
+      718,
+      232,
+      995,
+      251
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_20.jpg",
+    "image_caption": [
+      "Groupresultsavergedby8settings with3seeds(VPAMenv). "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      743,
+      257,
+      991,
+      461
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_21.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      719,
+      487,
+      802,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_22.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      805,
+      487,
+      851,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_23.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      852,
+      491,
+      997,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_24.jpg",
+    "image_caption": [
+      "buttonpre topdown "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      719,
+      549,
+      802,
+      587
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_25.jpg",
+    "image_caption": [
+      "button press topdown wall "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      754,
+      549,
+      802,
+      589
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_26.jpg",
+    "image_caption": [
+      "window open ",
+      "Table4:Performanceonunseen heterogeneousdemonstra tions. ",
+      "EnvironmentButton Press Door Close Reach ",
+      "Performance 0.78 1.00 0.75 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      804,
+      549,
+      851,
+      591
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Q2: Does DDT imitating via tracing the demos ",
+    "text_level": 1,
+    "bbox": [
+      723,
+      623,
+      978,
+      644
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_27.jpg",
+    "image_caption": [
+      "(a)Trajectory of DDT. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      730,
+      655,
+      796,
+      754
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_28.jpg",
+    "image_caption": [
+      "(b) Attention score. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      811,
+      651,
+      899,
+      755
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_29.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      912,
+      654,
+      988,
+      767
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Q3: The “Scaling Law” of DDT in the OSIL seting ",
+    "text_level": 1,
+    "bbox": [
+      723,
+      789,
+      996,
+      811
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration_poster/visuals/images/fig_30.jpg",
+    "image_caption": [
+      "scaling-uprate "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      722,
+      815,
+      906,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation fromaSingle Demonstration ",
+    "bbox": [
+      0,
+      0,
+      996,
+      80
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1902 N UNIY",
+    "bbox": [
+      0,
+      95,
+      41,
+      170
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "LAMDA ",
+    "bbox": [
+      46,
+      107,
+      136,
+      153
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Learning And Mining from DatA ",
+    "bbox": [
+      46,
+      153,
+      136,
+      170
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      153,
+      100,
+      170,
+      144
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "POLIXIR ",
+    "bbox": [
+      140,
+      146,
+      182,
+      155
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "南栖仙策",
+    "bbox": [
+      145,
+      156,
+      176,
+      167
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "科 技",
+    "bbox": [
+      184,
+      99,
+      236,
+      176
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Xiong-HuiChen*12JunyinYe*12Hang Zhao*32Yi-ChenLi12 Xu-HuiLiu12Haoran Shi²Yu-Yan Xu2 ",
+    "bbox": [
+      254,
+      103,
+      792,
+      125
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Zhihao Ye12 Si-Hang Yang12Yang Yu12 Anqi Huang42Kai XuZongzhang Zhang1 ",
+    "bbox": [
+      302,
+      125,
+      740,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      815,
+      86,
+      877,
+      178
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICML ",
+    "bbox": [
+      886,
+      91,
+      992,
+      141
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "International Conference ",
+    "bbox": [
+      886,
+      146,
+      995,
+      160
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "OnMachine Learning ",
+    "bbox": [
+      886,
+      161,
+      978,
+      177
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "https://osil-ddt.github.io/ ",
+    "bbox": [
+      891,
+      978,
+      991,
+      992
+    ],
+    "page_idx": 0
+  }
+]

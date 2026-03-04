@@ -1,0 +1,588 @@
+[
+  {
+    "type": "text",
+    "text": "Motivation ",
+    "text_level": 1,
+    "bbox": [
+      174,
+      136,
+      242,
+      154
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Matrices are ubiquitous -- can involve billions of elements making their storage and processing quite demanding in terms of computational resources and memory usage. Eg.: Vector databases, Kernel matrices,LLMweight matrices, etc. ",
+      "· Question: How to compress matrices via dimensionality reduction and quantization? ",
+      "·Several real-world matrices exhibit approximately low-rank structure due to inherent redundancy or patterns. "
+    ],
+    "bbox": [
+      14,
+      165,
+      404,
+      284
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\mathbf {A} = \\sum_ {i = 1} ^ {\\operatorname {r a n k} (\\mathbf {A})} \\sigma_ {i} \\mathbf {u} _ {i} \\mathbf {v} _ {i} ^ {\\top}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      42,
+      326,
+      181,
+      389
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      218,
+      280,
+      373,
+      437
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Leverage the approximate low-rank structure while quantizing matrices ",
+    "bbox": [
+      12,
+      444,
+      395,
+      463
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Our Algorithm: Low-Precision and Low Rank ",
+    "text_level": 1,
+    "bbox": [
+      571,
+      136,
+      833,
+      157
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      421,
+      171,
+      623,
+      330
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Algorithm 1: LPLR: Randomized Low-Precision Low-Rank factorization ",
+    "bbox": [
+      679,
+      174,
+      933,
+      189
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "m Input :Matrix A ∈Rnxd,sketch size $_ m$ ,Quantizers Q, $\\mathrm { \\Delta Q ^ { \\prime } }$ with dynamic ranges RQ, $\\mathrm { R } _ { \\mathrm { Q ^ { \\prime } } }$ and bit-budgetsB,B'respectively. ",
+    "bbox": [
+      625,
+      195,
+      970,
+      221
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Output:Factorization:LR where $\\mathbf { L } \\doteq \\mathbb { R } ^ { n \\times m }$ $\\mathbf { R } \\in \\mathbb { R } ^ { m \\times d }$ ",
+    "bbox": [
+      644,
+      221,
+      846,
+      234
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1 Sample a Gaussan sketching matrix $\\mathbf { S } \\in \\mathbb { R } ^ { d \\times m }$ with entries $S _ { i j } \\sim { \\mathcal { N } } \\left( 0 , { \\frac { 1 } { m } } \\right)$ ",
+      "2 Compute an approximate basis of column space of A by forming the sketch:AS. ",
+      "3 Quantize the approximate basis with $\\mathrm { Q }$ to get Q(AS). ",
+      "4 Find W* = arg minw $\\| \\mathbf { Q } ( \\mathbf { A S } ) \\mathbf { W } - \\mathbf { A } \\| _ { \\mathbf { F } } ^ { 2 } = \\mathbf { Q } ( \\mathbf { A S } ) ^ { \\dagger } \\mathbf { A }$ ",
+      "5Quantize $\\mathbf { W } ^ { * }$ using quantizer $\\mathrm { \\bf Q ^ { \\prime } }$ to get $\\mathbf { { Q } ^ { \\prime } } ( \\mathbf { { W } ^ { * } } )$ ",
+      "6 return Low-rank and low-precision approximation LR where $\\mathbf { L } = \\mathbf { Q } ( \\mathbf { A } \\mathbf { S } )$ $\\mathbf { R } = \\mathbf { Q } ^ { \\prime } ( \\mathbf { W } ^ { * } )$ "
+    ],
+    "bbox": [
+      638,
+      237,
+      955,
+      323
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· We factorize, $\\mathbf { A } \\approx \\mathbf { L R }$ , where the entries of $\\mathbf { L }$ and $\\mathbf { R }$ are quantized with B and $\\mathbf { B ^ { \\prime } }$ bits per entry respectively. ",
+      "· Compression ratio with respect to naive quantization (uniformly allocate ${ \\bf { B _ { n q } } }$ bits per entry) is mnB+mdB' $\\frac { m n \\mathrm { B } + m d \\mathrm { B } ^ { \\prime } } { n d \\mathrm { B } _ { \\mathrm { n q } } }$ ndBnq ",
+      "·By tuning sketch-size we can ensure compression ratio $\\leq 1$ for $\\mathtt { B } _ { \\mathtt { n q } } = 1$ ,while letting B and $\\mathsf { B } ^ { \\prime }$ to take values allowed by current hardware-primitives,e.g.,4-- bits,8--bits,etc. ",
+      "·Low-precision computations are faster: Computing Ax versus $\\mathbf { L } ( \\mathbf { R x } )$ "
+    ],
+    "bbox": [
+      424,
+      347,
+      970,
+      461
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Randomized Embeddings ",
+    "text_level": 1,
+    "bbox": [
+      44,
+      484,
+      195,
+      505
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      23,
+      514,
+      222,
+      609
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n(1 - \\epsilon) \\| \\mathbf {z} \\| _ {2} \\leq \\| \\mathbf {S z} \\| _ {2} \\leq (1 + \\epsilon) \\| \\mathbf {z} \\| _ {2} \\forall \\mathbf {z} \\in \\mathcal {V}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      17,
+      618,
+      224,
+      638
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Subspace embeddings: Norm of vectors in therange space is approximately preserved with high probability when $m \\gtrsim \\epsilon ^ { - 2 } \\mathrm { r a n k } ( \\mathbf { A } )$ ",
+      "Critical dimension, $_ m$ does_ not depend on original dimension,n. "
+    ],
+    "bbox": [
+      14,
+      656,
+      227,
+      749
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      9,
+      766,
+      121,
+      878
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      122,
+      766,
+      227,
+      878
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Random Embeddings (e.g.,Gaussian) also help in quantization by reducing the dynamic range. ",
+    "bbox": [
+      10,
+      897,
+      225,
+      931
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\| \\mathbf {S} \\mathbf {x} \\| _ {\\infty} \\leq O \\left(\\frac {\\| \\mathbf {x} \\| _ {2}}{\\sqrt {d}}\\right) o r, \\| \\mathbf {S} \\mathbf {x} \\| _ {\\infty} \\leq O \\left(\\sqrt {\\frac {\\log d}{d}} \\| \\mathbf {x} \\| _ {2}\\right)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      14,
+      944,
+      226,
+      978
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Data compression and Nearest Neighbors ",
+    "text_level": 1,
+    "bbox": [
+      293,
+      484,
+      539,
+      505
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Original "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      246,
+      512,
+      302,
+      592
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Naive "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      317,
+      512,
+      371,
+      592
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "DSVD "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      386,
+      512,
+      442,
+      592
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "LPLR "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      456,
+      512,
+      511,
+      592
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      "LSVD "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      531,
+      512,
+      587,
+      592
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Compressinga brain MRI. $\\mathrm { B } = 4$ $\\mathrm { B } ^ { \\prime } = 8$ $\\mathrm { B _ { n q } } = 1$ $m = 1 2 4$ ,n=1534 d= 1433 ",
+    "bbox": [
+      269,
+      623,
+      581,
+      638
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "DsVD: Computes the best rank-k approximation and quantize the factors independently. LsVD: Variant of LPLR that computes exact SVD instead of randomized SVD. ",
+    "bbox": [
+      264,
+      648,
+      561,
+      679
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "·For a given data matrix $\\mathbf { A } \\in \\mathbb { R } ^ { n \\times d }$ and a query $\\mathbf { x } \\in \\mathbb { R } ^ { d }$ ,retrieve ",
+    "bbox": [
+      263,
+      688,
+      500,
+      704
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\ni ^ {*} = \\operatorname {a r g m a x} _ {i \\in [ n ]} (\\mathbf {A x}) _ {i} \\approx \\operatorname {a r g m a x} _ {i \\in [ n ]} (\\mathbf {L R x}) _ {i}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      338,
+      715,
+      520,
+      732
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Applications: Semantic search over vector databases (music recommendation), In-context learning forLLMs,etc. ",
+    "bbox": [
+      263,
+      752,
+      578,
+      778
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/tables/table_1.jpg",
+    "table_caption": [
+      "Table 5: CIFAR1o0 embeddings generated by MobileNetV3 with an unquantized accuracy and F1 score $7 6 \\%$ :Results on LPLR andLPLR-SVDwith $\\mathrm { B } = \\mathrm { B } ^ { \\prime } = 8$ bits "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td colspan=\"5\">Frobenius Norm Error</td><td colspan=\"4\">Accuracy (%)</td><td colspan=\"4\">Weighted F1 Score (%)</td></tr><tr><td>Bnq</td><td>LPLR</td><td>LSVD</td><td>DSVD</td><td>NQ</td><td>LPLR</td><td>LSVD</td><td>DSVD</td><td>NQ</td><td>LPLR</td><td>LSVD</td><td>DSVD</td><td>NQ</td></tr><tr><td>1</td><td>1.04</td><td>1.08</td><td>1.09</td><td>6.75</td><td>79</td><td>82</td><td>82</td><td>1</td><td>79</td><td>82</td><td>82</td><td>0</td></tr><tr><td>2</td><td>1.08</td><td>1.1</td><td>1.12</td><td>2.18</td><td>80</td><td>80</td><td>80</td><td>1.7</td><td>80</td><td>80</td><td>80</td><td>1.3</td></tr><tr><td>4</td><td>1.11</td><td>1.12</td><td>1.14</td><td>1.17</td><td>79</td><td>78</td><td>77</td><td>75</td><td>79</td><td>78</td><td>78</td><td>75</td></tr></table>",
+    "bbox": [
+      261,
+      823,
+      578,
+      886
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/tables/table_2.jpg",
+    "table_caption": [
+      "Table 6:IMDB embeddings generated by BERT with an unquantized accuracy and F1 score $7 5 \\%$ and $7 4 \\%$ respectively:ResultsonLPLRandLPLR-SVDwith $\\mathrm { B } = \\bar { \\mathrm { B ^ { \\prime } } } = 8$ bits "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td colspan=\"5\">Frobenius Norm Error</td><td colspan=\"3\">Accuracy (%)</td><td colspan=\"5\">Weighted F1 Score (%)</td></tr><tr><td>Bnq</td><td>LPLR</td><td>LSVD</td><td>DSVD</td><td>NQ</td><td>LPLR</td><td>LSVD</td><td>DSVD</td><td>NQ</td><td>LPLR</td><td>LSVD</td><td>DSVD</td><td>NQ</td></tr><tr><td>1</td><td>0.313</td><td>0.241</td><td>0.229</td><td>6.63</td><td>73</td><td>74</td><td>75</td><td>50</td><td>74</td><td>74</td><td>75</td><td>33</td></tr><tr><td>2</td><td>0.235</td><td>0.178</td><td>0.161</td><td>1.016</td><td>74</td><td>74</td><td>74</td><td>50</td><td>74</td><td>74</td><td>74</td><td>50</td></tr><tr><td>4</td><td>0.148</td><td>0.122</td><td>0.098</td><td>0.417</td><td>75</td><td>74</td><td>75</td><td>73</td><td>74</td><td>74</td><td>75</td><td>73</td></tr></table>",
+    "bbox": [
+      261,
+      921,
+      577,
+      983
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Compression of Large Language Models ",
+    "text_level": 1,
+    "bbox": [
+      678,
+      484,
+      914,
+      505
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      607,
+      516,
+      849,
+      700
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/tables/table_3.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td colspan=\"4\">B = B&#x27; = 8 bits, Bnq = 4 bits</td></tr><tr><td>Metric</td><td>LPLR</td><td>LPLR-SVD</td><td>Naive Quant.</td></tr><tr><td>Mean</td><td>0.672</td><td>0.537</td><td>0.836</td></tr><tr><td>Std Dev</td><td>0.080</td><td>0.079</td><td>0.470</td></tr></table>",
+    "bbox": [
+      852,
+      542,
+      987,
+      597
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Compressing the weight matrices ofLlaMa.We consistently observe betterFrobeniusnormerror, except for specific layers. ",
+    "bbox": [
+      851,
+      616,
+      987,
+      675
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Approximation Error Guarantees ",
+    "text_level": 1,
+    "bbox": [
+      699,
+      722,
+      893,
+      742
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/tables/table_4.jpg",
+    "table_caption": [
+      "Table 1: Comparison with baselines (row-norm bound is constant, i.e., $\\| \\mathbf { a } ^ { ( i ) } \\| = \\mathsf { O } ( 1 ) )$ $k , m \\ll \\operatorname* { m i n } \\{ d , n \\}$ $\\boldsymbol { n } .$ no.ofrows, $d \\mathbf { \\cdot }$ ：no.of columns,m: sketch size,∈: error tolerance, $\\delta = k / ( m - k - 1 )$ .The expressions for bit-budget (per entry) ignores constant multiplicative factors inside the $\\log _ { 2 } ( \\cdot )$ .We assume $n \\geq d$ "
+    ],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Algorithms</td><td>Approximation error</td><td>Bit-budget (per entry)</td><td>Computation</td></tr><tr><td>Naïve uniform</td><td>ε</td><td>1/2 log2(nd/ε)</td><td>O(nd)</td></tr><tr><td>Direct-SVD</td><td>||Ak-A||2F+ε</td><td>1/2 log2(kσ12/ε√nd)</td><td>O(nd2)</td></tr><tr><td>LPLR (ours)</td><td>(1+δ)||Ak-A||2F+ε</td><td>1/2 log2(κ(Ak)κ/nm/√d√log(mn2/ε))</td><td>O(ndm)</td></tr></table>",
+    "bbox": [
+      621,
+      788,
+      971,
+      879
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "R.Saha，V.Srivastava，M. Pilanci，\"Matrix Compression via Randomized Low Rank and Low Precision Factorization\",37th Conference on Neural Information Processing Systems (NeurIPS),2023. ",
+    "bbox": [
+      607,
+      914,
+      929,
+      964
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Matrix Compression via Randomized Low Rank and Low Precision Factorization_poster/visuals/images/fig_12.jpg",
+    "image_caption": [
+      "Github "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      934,
+      898,
+      987,
+      965
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1 ",
+    "bbox": [
+      12,
+      3,
+      71,
+      118
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Matrix Compression via Randomized Low Rank and Low Precision Factorization ",
+    "bbox": [
+      162,
+      5,
+      815,
+      90
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NEURALINFORMATION PROCESSINGSYSTEMS ",
+    "bbox": [
+      859,
+      17,
+      988,
+      93
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Rajarshi Saha, Varun Srivastava,Mert Pilanci (Stanford University) ",
+    "bbox": [
+      263,
+      95,
+      731,
+      120
+    ],
+    "page_idx": 0
+  }
+]

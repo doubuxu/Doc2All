@@ -1,0 +1,3843 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        290,
+                        275,
+                        454,
+                        308
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                287,
+                                273,
+                                457,
+                                310
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        287,
+                                        273,
+                                        457,
+                                        310
+                                    ],
+                                    "type": "text",
+                                    "content": "Background",
+                                    "score": 0.991
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        39,
+                        327,
+                        689,
+                        358
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                329,
+                                690,
+                                358
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        329,
+                                        690,
+                                        358
+                                    ],
+                                    "type": "text",
+                                    "content": "Memorization and Overfitting in Deep Generative Models",
+                                    "score": 0.994
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        58,
+                        360,
+                        702,
+                        599
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 11,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                58,
+                                360,
+                                689,
+                                416
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 7,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        358,
+                                        690,
+                                        391
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                358,
+                                                690,
+                                                391
+                                            ],
+                                            "type": "text",
+                                            "content": "Deep generative modelsare known to memorize and reproduce",
+                                            "score": 0.967
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        80,
+                                        389,
+                                        263,
+                                        420
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                389,
+                                                263,
+                                                420
+                                            ],
+                                            "type": "text",
+                                            "content": "their trainingdata",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                58,
+                                420,
+                                640,
+                                478
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 8,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        80,
+                                        418,
+                                        642,
+                                        451
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                418,
+                                                642,
+                                                451
+                                            ],
+                                            "type": "text",
+                                            "content": "This behaviour reduces model utility and may have severe",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82,
+                                        451,
+                                        369,
+                                        480
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                451,
+                                                369,
+                                                480
+                                            ],
+                                            "type": "text",
+                                            "content": "privacyand legal implications",
+                                            "score": 0.99
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                58,
+                                480,
+                                702,
+                                541
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 9,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        478,
+                                        705,
+                                        514
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                79,
+                                                478,
+                                                705,
+                                                514
+                                            ],
+                                            "type": "text",
+                                            "content": "Contributingfactors[4]:datacomplexity，duplication of training",
+                                            "score": 0.984
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82,
+                                        512,
+                                        461,
+                                        543
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                512,
+                                                461,
+                                                543
+                                            ],
+                                            "type": "text",
+                                            "content": "points,and highly specific conditioning",
+                                            "score": 0.975
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                58,
+                                543,
+                                576,
+                                599
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 10,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        538,
+                                        579,
+                                        574
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                79,
+                                                538,
+                                                579,
+                                                574
+                                            ],
+                                            "type": "text",
+                                            "content": "There is as yet no systematic framework describing",
+                                            "score": 0.982
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82,
+                                        574,
+                                        310,
+                                        599
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                574,
+                                                310,
+                                                599
+                                            ],
+                                            "type": "text",
+                                            "content": "memorization in DGMs",
+                                            "score": 0.985
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        39,
+                        611,
+                        325,
+                        642
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                39,
+                                609,
+                                329,
+                                646
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        609,
+                                        329,
+                                        646
+                                    ],
+                                    "type": "text",
+                                    "content": "The Manifold Hypothesis",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        58,
+                        644,
+                        700,
+                        914
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 17,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                58,
+                                644,
+                                656,
+                                702
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 13,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        80,
+                                        642,
+                                        656,
+                                        675
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                642,
+                                                480,
+                                                675
+                                            ],
+                                            "type": "text",
+                                            "content": "High-dimensional data lies on a manifold",
+                                            "score": 0.983
+                                        },
+                                        {
+                                            "bbox": [
+                                                480,
+                                                646,
+                                                523,
+                                                671
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathcal { M } _ { * }",
+                                            "score": 0.89
+                                        },
+                                        {
+                                            "bbox": [
+                                                523,
+                                                642,
+                                                656,
+                                                675
+                                            ],
+                                            "type": "text",
+                                            "content": "with multiple",
+                                            "score": 0.989
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82,
+                                        675,
+                                        463,
+                                        704
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                675,
+                                                463,
+                                                704
+                                            ],
+                                            "type": "text",
+                                            "content": "components of varying dimensionalities",
+                                            "score": 0.98
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                58,
+                                704,
+                                700,
+                                764
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 14,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        702,
+                                        705,
+                                        737
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                79,
+                                                702,
+                                                526,
+                                                737
+                                            ],
+                                            "type": "text",
+                                            "content": "DGMsalso generate samples fromamanifold",
+                                            "score": 0.976
+                                        },
+                                        {
+                                            "bbox": [
+                                                527,
+                                                706,
+                                                567,
+                                                733
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathcal { M } _ { \\theta }",
+                                            "score": 0.9
+                                        },
+                                        {
+                                            "bbox": [
+                                                568,
+                                                702,
+                                                705,
+                                                737
+                                            ],
+                                            "type": "text",
+                                            "content": "with the goal",
+                                            "score": 0.957
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82,
+                                        735,
+                                        319,
+                                        764
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                735,
+                                                203,
+                                                764
+                                            ],
+                                            "type": "text",
+                                            "content": "ofmatching",
+                                            "score": 0.999
+                                        },
+                                        {
+                                            "bbox": [
+                                                205,
+                                                737,
+                                                246,
+                                                764
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathcal { M } _ { \\ell }",
+                                            "score": 0.87
+                                        },
+                                        {
+                                            "bbox": [
+                                                247,
+                                                735,
+                                                277,
+                                                764
+                                            ],
+                                            "type": "text",
+                                            "content": "to",
+                                            "score": 0.996
+                                        },
+                                        {
+                                            "bbox": [
+                                                278,
+                                                735,
+                                                319,
+                                                764
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathcal { M } _ { \\ast }",
+                                            "score": 0.83
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                58,
+                                767,
+                                643,
+                                854
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 15,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        762,
+                                        646,
+                                        798
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                77,
+                                                762,
+                                                391,
+                                                798
+                                            ],
+                                            "type": "text",
+                                            "content": "The local intrinsic dimension of",
+                                            "score": 0.975
+                                        },
+                                        {
+                                            "bbox": [
+                                                391,
+                                                769,
+                                                477,
+                                                796
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "x \\in \\mathcal { M } _ { * }",
+                                            "score": 0.91
+                                        },
+                                        {
+                                            "bbox": [
+                                                477,
+                                                762,
+                                                543,
+                                                798
+                                            ],
+                                            "type": "text",
+                                            "content": "(resp.",
+                                            "score": 0.967
+                                        },
+                                        {
+                                            "bbox": [
+                                                545,
+                                                769,
+                                                631,
+                                                796
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "x \\in \\mathcal { M } _ { \\theta }",
+                                            "score": 0.89
+                                        },
+                                        {
+                                            "bbox": [
+                                                631,
+                                                762,
+                                                646,
+                                                798
+                                            ],
+                                            "type": "text",
+                                            "content": "），,",
+                                            "score": 0.63
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        80,
+                                        793,
+                                        637,
+                                        827
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                793,
+                                                165,
+                                                827
+                                            ],
+                                            "type": "text",
+                                            "content": "denoted",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                165,
+                                                796,
+                                                244,
+                                                827
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathsf { L I D } _ { * } ( x )",
+                                            "score": 0.9
+                                        },
+                                        {
+                                            "bbox": [
+                                                244,
+                                                793,
+                                                310,
+                                                827
+                                            ],
+                                            "type": "text",
+                                            "content": "(resp.",
+                                            "score": 0.96
+                                        },
+                                        {
+                                            "bbox": [
+                                                312,
+                                                796,
+                                                397,
+                                                827
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\lfloor \\mathsf { I D } _ { \\theta } ( x ) )",
+                                            "score": 0.88
+                                        },
+                                        {
+                                            "bbox": [
+                                                397,
+                                                793,
+                                                637,
+                                                827
+                                            ],
+                                            "type": "text",
+                                            "content": ",is the dimension of the",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        83,
+                                        827,
+                                        409,
+                                        856
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                83,
+                                                827,
+                                                391,
+                                                856
+                                            ],
+                                            "type": "text",
+                                            "content": "manifold component containing",
+                                            "score": 0.988
+                                        },
+                                        {
+                                            "bbox": [
+                                                392,
+                                                833,
+                                                409,
+                                                852
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "x",
+                                            "score": 0.62
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                58,
+                                856,
+                                611,
+                                914
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 16,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        856,
+                                        614,
+                                        887
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                79,
+                                                856,
+                                                296,
+                                                887
+                                            ],
+                                            "type": "text",
+                                            "content": "Intuitively,the LIDof",
+                                            "score": 0.953
+                                        },
+                                        {
+                                            "bbox": [
+                                                296,
+                                                862,
+                                                313,
+                                                881
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathscr { X }",
+                                            "score": 0.72
+                                        },
+                                        {
+                                            "bbox": [
+                                                313,
+                                                856,
+                                                614,
+                                                887
+                                            ],
+                                            "type": "text",
+                                            "content": "captures the complexity of the",
+                                            "score": 0.969
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82,
+                                        887,
+                                        608,
+                                        916
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                887,
+                                                181,
+                                                916
+                                            ],
+                                            "type": "text",
+                                            "content": "datapoint",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                181,
+                                                893,
+                                                199,
+                                                912
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "x",
+                                            "score": 0.76
+                                        },
+                                        {
+                                            "bbox": [
+                                                200,
+                                                887,
+                                                608,
+                                                916
+                                            ],
+                                            "type": "text",
+                                            "content": "and constraints on the dataset's structure",
+                                            "score": 0.972
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        192,
+                        943,
+                        552,
+                        974
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 18,
+                    "lines": [
+                        {
+                            "bbox": [
+                                187,
+                                941,
+                                555,
+                                976
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        187,
+                                        941,
+                                        555,
+                                        976
+                                    ],
+                                    "type": "text",
+                                    "content": "Our Geometric Framework",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        39,
+                        995,
+                        252,
+                        1181
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                39,
+                                995,
+                                252,
+                                1181
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        39,
+                                        995,
+                                        252,
+                                        1181
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                39,
+                                                995,
+                                                252,
+                                                1181
+                                            ],
+                                            "type": "image",
+                                            "image_path": "c16d90fda7ea3e784087df4e8b4599f337c2e6eccec875a9ed18bd7df1981f53.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 19,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                51,
+                                1194,
+                                243,
+                                1243
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        49,
+                                        1191,
+                                        247,
+                                        1218
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                49,
+                                                1191,
+                                                247,
+                                                1218
+                                            ],
+                                            "type": "text",
+                                            "content": "（a)Exact memorization",
+                                            "score": 0.957
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        87,
+                                        1216,
+                                        209,
+                                        1245
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                1216,
+                                                209,
+                                                1245
+                                            ],
+                                            "type": "text",
+                                            "content": "（LIDθ（x）=0）",
+                                            "score": 0.804
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 20,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 19
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        266,
+                        1034,
+                        477,
+                        1179
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                266,
+                                1034,
+                                477,
+                                1179
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        266,
+                                        1034,
+                                        477,
+                                        1179
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                266,
+                                                1034,
+                                                477,
+                                                1179
+                                            ],
+                                            "type": "image",
+                                            "image_path": "13c4e8bba48122959f0571fac3340c0d19be4b91f893bd6eb9f0a4876fe7c73b.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 21,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                275,
+                                1194,
+                                469,
+                                1243
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        275,
+                                        1191,
+                                        473,
+                                        1220
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                275,
+                                                1191,
+                                                473,
+                                                1220
+                                            ],
+                                            "type": "text",
+                                            "content": "(b）Some Memorization",
+                                            "score": 0.949
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        315,
+                                        1216,
+                                        431,
+                                        1245
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                315,
+                                                1216,
+                                                431,
+                                                1245
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "( \\mathsf { L I D } _ { \\theta } ( x ) = 1 )",
+                                            "score": 0.67
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 22,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 21
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        492,
+                        1040,
+                        699,
+                        1179
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                492,
+                                1040,
+                                699,
+                                1179
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        492,
+                                        1040,
+                                        699,
+                                        1179
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                492,
+                                                1040,
+                                                699,
+                                                1179
+                                            ],
+                                            "type": "image",
+                                            "image_path": "9ff7d5e3ba09bafb26c61474cea15c222caa9f54fdb2bf0481715ed0a56b9eb6.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 23,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                513,
+                                1194,
+                                683,
+                                1243
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        513,
+                                        1194,
+                                        686,
+                                        1220
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                513,
+                                                1194,
+                                                686,
+                                                1220
+                                            ],
+                                            "type": "text",
+                                            "content": "(c） No memorization",
+                                            "score": 0.951
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        545,
+                                        1216,
+                                        653,
+                                        1243
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                545,
+                                                1216,
+                                                653,
+                                                1243
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\left( \\mathsf { L } | \\mathsf { D } _ { \\theta } ( { \\boldsymbol { \\chi } } ) = 2 \\right)",
+                                            "score": 0.76
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 24,
+                            "angle": 0,
+                            "type": "image_caption"
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                1250,
+                                677,
+                                1326
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        1250,
+                                        652,
+                                        1276
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                36,
+                                                1250,
+                                                652,
+                                                1276
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure 1:LID values for three red model manifolds with different degrees of",
+                                            "score": 0.962
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        38,
+                                        1274,
+                                        677,
+                                        1301
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                38,
+                                                1274,
+                                                677,
+                                                1301
+                                            ],
+                                            "type": "text",
+                                            "content": "memorization of the three leftmost datapoints,which are depicted as dark blue",
+                                            "score": 0.966
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        38,
+                                        1301,
+                                        362,
+                                        1324
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                38,
+                                                1301,
+                                                362,
+                                                1324
+                                            ],
+                                            "type": "text",
+                                            "content": "crosses.The true manifold is light blue.",
+                                            "score": 0.959
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 25,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 23
+                },
+                {
+                    "bbox": [
+                        36,
+                        1355,
+                        646,
+                        1384
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 26,
+                    "lines": [
+                        {
+                            "bbox": [
+                                35,
+                                1353,
+                                649,
+                                1388
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        1353,
+                                        206,
+                                        1388
+                                    ],
+                                    "type": "text",
+                                    "content": "Wepropose that",
+                                    "score": 0.995
+                                },
+                                {
+                                    "bbox": [
+                                        206,
+                                        1357,
+                                        293,
+                                        1382
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "x \\in \\mathcal { M } _ { * }",
+                                    "score": 0.92
+                                },
+                                {
+                                    "bbox": [
+                                        293,
+                                        1353,
+                                        483,
+                                        1388
+                                    ],
+                                    "type": "text",
+                                    "content": "is memorized when",
+                                    "score": 0.989
+                                },
+                                {
+                                    "bbox": [
+                                        483,
+                                        1355,
+                                        562,
+                                        1386
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { L } | \\mathsf { D } _ { \\theta } ( x )",
+                                    "score": 0.92
+                                },
+                                {
+                                    "bbox": [
+                                        562,
+                                        1353,
+                                        649,
+                                        1388
+                                    ],
+                                    "type": "text",
+                                    "content": "is small.",
+                                    "score": 0.934
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        58,
+                        1386,
+                        683,
+                        1475
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 27,
+                    "lines": [
+                        {
+                            "bbox": [
+                                77,
+                                1382,
+                                628,
+                                1422
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        1382,
+                                        628,
+                                        1422
+                                    ],
+                                    "type": "text",
+                                    "content": "Thisencompasss both exactcopying of training images",
+                                    "score": 0.972
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                1413,
+                                684,
+                                1449
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        1415,
+                                        215,
+                                        1444
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "( \\mathsf { L I D } _ { \\theta } ( x ) = 0 )",
+                                    "score": 0.88
+                                },
+                                {
+                                    "bbox": [
+                                        216,
+                                        1413,
+                                        684,
+                                        1449
+                                    ],
+                                    "type": "text",
+                                    "content": "and copying of styles or parts of an image as in",
+                                    "score": 0.943
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                1444,
+                                447,
+                                1478
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1444,
+                                        175,
+                                        1478
+                                    ],
+                                    "type": "text",
+                                    "content": "Figure2",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        175,
+                                        1446,
+                                        300,
+                                        1475
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\langle \\mathsf { L } | \\mathsf { D } _ { \\theta } ( x ) > 0 \\rangle",
+                                    "score": 0.91
+                                },
+                                {
+                                    "bbox": [
+                                        300,
+                                        1444,
+                                        447,
+                                        1478
+                                    ],
+                                    "type": "text",
+                                    "content": "but still small)",
+                                    "score": 0.957
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        38,
+                        1482,
+                        643,
+                        1513
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 28,
+                    "lines": [
+                        {
+                            "bbox": [
+                                36,
+                                1480,
+                                646,
+                                1517
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        1480,
+                                        646,
+                                        1517
+                                    ],
+                                    "type": "text",
+                                    "content": "From this definition,memorization can be split into two types:",
+                                    "score": 0.965
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        54,
+                        1515,
+                        703,
+                        1693
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 31,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                54,
+                                1515,
+                                703,
+                                1602
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 29,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        83,
+                                        1513,
+                                        705,
+                                        1546
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                83,
+                                                1513,
+                                                266,
+                                                1544
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathsf { L I D } _ { \\theta } ( x ) < \\mathsf { L I D } _ { * } ( x )",
+                                            "score": 0.91
+                                        },
+                                        {
+                                            "bbox": [
+                                                268,
+                                                1513,
+                                                705,
+                                                1546
+                                            ],
+                                            "type": "text",
+                                            "content": ":overfitting-driven memorization (OD-Mem),",
+                                            "score": 0.975
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        80,
+                                        1542,
+                                        640,
+                                        1575
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                80,
+                                                1542,
+                                                640,
+                                                1575
+                                            ],
+                                            "type": "text",
+                                            "content": "in which the model fails to generalize to the ground truth",
+                                            "score": 0.986
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82,
+                                        1569,
+                                        365,
+                                        1606
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1569,
+                                                365,
+                                                1606
+                                            ],
+                                            "type": "text",
+                                            "content": "manifold correctly (Figure1)",
+                                            "score": 0.984
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                54,
+                                1604,
+                                675,
+                                1693
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 30,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        76,
+                                        1604,
+                                        674,
+                                        1635
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                76,
+                                                1604,
+                                                266,
+                                                1635
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "\\mathsf { L I D } _ { \\theta } ( x ) = \\mathsf { L I D } _ { * } ( x )",
+                                            "score": 0.91
+                                        },
+                                        {
+                                            "bbox": [
+                                                266,
+                                                1604,
+                                                674,
+                                                1633
+                                            ],
+                                            "type": "text",
+                                            "content": ":data-driven memorization (DD-Mem),in",
+                                            "score": 0.963
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        83,
+                                        1633,
+                                        643,
+                                        1662
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                83,
+                                                1633,
+                                                643,
+                                                1662
+                                            ],
+                                            "type": "text",
+                                            "content": "which the ground truth data distribution has been learned",
+                                            "score": 0.957
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82,
+                                        1664,
+                                        674,
+                                        1693
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1664,
+                                                656,
+                                                1693
+                                            ],
+                                            "type": "text",
+                                            "content": "correctly，but itselfcontainsvery fewdegreesof freedomat",
+                                            "score": 0.97
+                                        },
+                                        {
+                                            "bbox": [
+                                                656,
+                                                1668,
+                                                674,
+                                                1687
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "x",
+                                            "score": 0.7
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        38,
+                        1716,
+                        706,
+                        1801
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                38,
+                                1716,
+                                706,
+                                1801
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        38,
+                                        1716,
+                                        706,
+                                        1801
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                38,
+                                                1716,
+                                                706,
+                                                1801
+                                            ],
+                                            "type": "image",
+                                            "image_path": "aae96cd6ff7e2d839b5c459d155429b54b645252fafed283a570e42a53ab9092.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 32,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                36,
+                                1805,
+                                686,
+                                1880
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        36,
+                                        1803,
+                                        689,
+                                        1832
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                36,
+                                                1803,
+                                                689,
+                                                1832
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure2:8images alongarelatively low-dimensional manifold learnedby Stable",
+                                            "score": 0.985
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        36,
+                                        1826,
+                                        677,
+                                        1857
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                36,
+                                                1826,
+                                                677,
+                                                1857
+                                            ],
+                                            "type": "text",
+                                            "content": "Diffusion v1.5.The first isa real image from LAlON (flagged as memorized by",
+                                            "score": 0.953
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        36,
+                                        1853,
+                                        473,
+                                        1882
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                36,
+                                                1853,
+                                                473,
+                                                1882
+                                            ],
+                                            "type": "text",
+                                            "content": "[2]),and the remainder were generatedby the model.",
+                                            "score": 0.936
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 33,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 32
+                },
+                {
+                    "bbox": [
+                        923,
+                        275,
+                        1257,
+                        308
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 34,
+                    "lines": [
+                        {
+                            "bbox": [
+                                920,
+                                273,
+                                1262,
+                                310
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        920,
+                                        273,
+                                        1262,
+                                        310
+                                    ],
+                                    "type": "text",
+                                    "content": "Explaining Memorization",
+                                    "score": 0.991
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        752,
+                        329,
+                        1423,
+                        385
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 35,
+                    "lines": [
+                        {
+                            "bbox": [
+                                753,
+                                327,
+                                1427,
+                                360
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        753,
+                                        327,
+                                        1427,
+                                        360
+                                    ],
+                                    "type": "text",
+                                    "content": "Thegeometric framework explains memorization-related phenomena",
+                                    "score": 0.989
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                752,
+                                356,
+                                922,
+                                389
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        752,
+                                        356,
+                                        922,
+                                        389
+                                    ],
+                                    "type": "text",
+                                    "content": "in the literature:",
+                                    "score": 0.967
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        752,
+                        398,
+                        1424,
+                        487
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 36,
+                    "lines": [
+                        {
+                            "bbox": [
+                                754,
+                                395,
+                                1427,
+                                433
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        395,
+                                        1427,
+                                        433
+                                    ],
+                                    "type": "text",
+                                    "content": "Duplicated Data It has been observed that memorization occurs",
+                                    "score": 0.976
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                754,
+                                429,
+                                1424,
+                                460
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        429,
+                                        1424,
+                                        460
+                                    ],
+                                    "type": "text",
+                                    "content": "when training pointsare duplicated. Here we identify that data dupli-",
+                                    "score": 0.965
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                754,
+                                458,
+                                1102,
+                                487
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        458,
+                                        1102,
+                                        487
+                                    ],
+                                    "type": "text",
+                                    "content": "cation isequivalent to an LIDof 0:",
+                                    "score": 0.925
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        752,
+                        497,
+                        1424,
+                        557
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 37,
+                    "lines": [
+                        {
+                            "bbox": [
+                                779,
+                                493,
+                                1429,
+                                532
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        779,
+                                        493,
+                                        1429,
+                                        532
+                                    ],
+                                    "type": "text",
+                                    "content": "Theorem(Informal).Withhigh probabilityandasuficiently large",
+                                    "score": 0.974
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                756,
+                                528,
+                                1391,
+                                559
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        756,
+                                        528,
+                                        1102,
+                                        559
+                                    ],
+                                    "type": "text",
+                                    "content": "dataset,duplicate samples occurat",
+                                    "score": 0.976
+                                },
+                                {
+                                    "bbox": [
+                                        1103,
+                                        532,
+                                        1130,
+                                        557
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "x _ { 0 }",
+                                    "score": 0.86
+                                },
+                                {
+                                    "bbox": [
+                                        1130,
+                                        528,
+                                        1262,
+                                        559
+                                    ],
+                                    "type": "text",
+                                    "content": "ifand only if",
+                                    "score": 0.942
+                                },
+                                {
+                                    "bbox": [
+                                        1262,
+                                        528,
+                                        1391,
+                                        559
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { L } | \\mathsf { D } _ { * } ( x _ { 0 } ) = 0",
+                                    "score": 0.91
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        752,
+                        568,
+                        1424,
+                        628
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 38,
+                    "lines": [
+                        {
+                            "bbox": [
+                                754,
+                                565,
+                                1429,
+                                599
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        565,
+                                        1429,
+                                        599
+                                    ],
+                                    "type": "text",
+                                    "content": "Complexity. [4] observes that simple images arememorized more",
+                                    "score": 0.959
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                754,
+                                597,
+                                1417,
+                                630
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        597,
+                                        1370,
+                                        630
+                                    ],
+                                    "type": "text",
+                                    "content": "often.This isneatlyexplainedbythefact that they have lower",
+                                    "score": 0.976
+                                },
+                                {
+                                    "bbox": [
+                                        1370,
+                                        599,
+                                        1417,
+                                        626
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { L } | \\mathsf { D } _ { * }",
+                                    "score": 0.86
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        752,
+                        638,
+                        1424,
+                        725
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 39,
+                    "lines": [
+                        {
+                            "bbox": [
+                                753,
+                                636,
+                                1426,
+                                671
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        753,
+                                        636,
+                                        1426,
+                                        671
+                                    ],
+                                    "type": "text",
+                                    "content": "Conditioning. Highly-specific conditioning inputs encourage the re-",
+                                    "score": 0.975
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                756,
+                                669,
+                                1426,
+                                698
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        756,
+                                        669,
+                                        1426,
+                                        698
+                                    ],
+                                    "type": "text",
+                                    "content": "production of memorized samples.We explain this by the fact that",
+                                    "score": 0.969
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                756,
+                                698,
+                                1169,
+                                727
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        756,
+                                        698,
+                                        1007,
+                                        727
+                                    ],
+                                    "type": "text",
+                                    "content": "conditioning ona prompt",
+                                    "score": 0.975
+                                },
+                                {
+                                    "bbox": [
+                                        1008,
+                                        704,
+                                        1023,
+                                        723
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "c",
+                                    "score": 0.65
+                                },
+                                {
+                                    "bbox": [
+                                        1023,
+                                        698,
+                                        1169,
+                                        727
+                                    ],
+                                    "type": "text",
+                                    "content": "decreases LID:",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        775,
+                        735,
+                        1111,
+                        769
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 40,
+                    "lines": [
+                        {
+                            "bbox": [
+                                775,
+                                733,
+                                1106,
+                                771
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        775,
+                                        733,
+                                        911,
+                                        771
+                                    ],
+                                    "type": "text",
+                                    "content": "Proposition.",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        913,
+                                        735,
+                                        1106,
+                                        769
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\begin{array} { r } { \\mathsf { I D } _ { \\theta } ( x | c ) \\le \\mathsf { L I D } _ { \\theta } ( x ) . } \\end{array}",
+                                    "score": 0.86
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        752,
+                        777,
+                        1424,
+                        895
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 41,
+                    "lines": [
+                        {
+                            "bbox": [
+                                756,
+                                775,
+                                1427,
+                                810
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        756,
+                                        775,
+                                        1427,
+                                        810
+                                    ],
+                                    "type": "text",
+                                    "content": "Classifier-Free Guidance (CFG).A large classfier-free guidance",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                754,
+                                806,
+                                1424,
+                                839
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        806,
+                                        1424,
+                                        839
+                                    ],
+                                    "type": "text",
+                                    "content": "vector in diffusion models correlates strongly with memorization [5].",
+                                    "score": 0.967
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                756,
+                                835,
+                                1424,
+                                866
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        756,
+                                        835,
+                                        1424,
+                                        866
+                                    ],
+                                    "type": "text",
+                                    "content": "This is explainable by observations in the literature that faster explo-",
+                                    "score": 0.966
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                754,
+                                866,
+                                1370,
+                                897
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        866,
+                                        1322,
+                                        897
+                                    ],
+                                    "type": "text",
+                                    "content": "sion of model norms during sampling corresponds to lower",
+                                    "score": 0.962
+                                },
+                                {
+                                    "bbox": [
+                                        1323,
+                                        866,
+                                        1370,
+                                        893
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { L } | \\mathsf { D } _ { \\theta }",
+                                    "score": 0.84
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        945,
+                        924,
+                        1235,
+                        955
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 42,
+                    "lines": [
+                        {
+                            "bbox": [
+                                942,
+                                922,
+                                1240,
+                                959
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        942,
+                                        922,
+                                        1240,
+                                        959
+                                    ],
+                                    "type": "text",
+                                    "content": "Empirical Verification",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        752,
+                        978,
+                        1332,
+                        1009
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 43,
+                    "lines": [
+                        {
+                            "bbox": [
+                                749,
+                                974,
+                                1335,
+                                1013
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        749,
+                                        974,
+                                        1124,
+                                        1013
+                                    ],
+                                    "type": "text",
+                                    "content": "We can test this framework using the",
+                                    "score": 0.98
+                                },
+                                {
+                                    "bbox": [
+                                        1124,
+                                        980,
+                                        1172,
+                                        1007
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { L I D } _ { \\vartheta }",
+                                    "score": 0.85
+                                },
+                                {
+                                    "bbox": [
+                                        1172,
+                                        974,
+                                        1335,
+                                        1013
+                                    ],
+                                    "type": "text",
+                                    "content": "estimator of [3]:",
+                                    "score": 0.976
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        752,
+                        1017,
+                        1424,
+                        1138
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 44,
+                    "lines": [
+                        {
+                            "bbox": [
+                                754,
+                                1017,
+                                1426,
+                                1048
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        1017,
+                                        1426,
+                                        1048
+                                    ],
+                                    "type": "text",
+                                    "content": "von Mises Distribution We train a diffusion model on a von Mises",
+                                    "score": 0.943
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                756,
+                                1046,
+                                1424,
+                                1080
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        756,
+                                        1046,
+                                        1424,
+                                        1080
+                                    ],
+                                    "type": "text",
+                                    "content": "distribution;in Figure 3b we depict model samples with their corre-",
+                                    "score": 0.987
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                754,
+                                1077,
+                                1426,
+                                1109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        1077,
+                                        1426,
+                                        1109
+                                    ],
+                                    "type": "text",
+                                    "content": "sponding LIDs,and a couple of samplesare clearly memorized with",
+                                    "score": 0.964
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                754,
+                                1106,
+                                1336,
+                                1138
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        1109,
+                                        757,
+                                        1138
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        757,
+                                        1106,
+                                        879,
+                                        1138
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { L } | \\mathsf { D } _ { \\theta } ( x ) = 0",
+                                    "score": 0.92
+                                },
+                                {
+                                    "bbox": [
+                                        879,
+                                        1109,
+                                        1216,
+                                        1138
+                                    ],
+                                    "type": "text",
+                                    "content": ",while the remaining samples have",
+                                    "score": 0.941
+                                },
+                                {
+                                    "bbox": [
+                                        1216,
+                                        1106,
+                                        1336,
+                                        1138
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { L } | \\mathsf { D } _ { \\theta } ( x ) = 1",
+                                    "score": 0.92
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        863,
+                        1156,
+                        1074,
+                        1328
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                863,
+                                1156,
+                                1074,
+                                1328
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        863,
+                                        1156,
+                                        1074,
+                                        1328
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                863,
+                                                1156,
+                                                1074,
+                                                1328
+                                            ],
+                                            "type": "image",
+                                            "image_path": "5bfd138ee534ed316562f94f7b9e3fe067131c3e30fa01c98833ab165ec171d9.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 45,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                853,
+                                1330,
+                                1070,
+                                1357
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        853,
+                                        1330,
+                                        1074,
+                                        1357
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                853,
+                                                1330,
+                                                1074,
+                                                1357
+                                            ],
+                                            "type": "text",
+                                            "content": "(a) Ground truth manifold.",
+                                            "score": 0.991
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 46,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 45
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1124,
+                        1154,
+                        1329,
+                        1328
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1124,
+                                1154,
+                                1329,
+                                1328
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1124,
+                                        1154,
+                                        1329,
+                                        1328
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1124,
+                                                1154,
+                                                1329,
+                                                1328
+                                            ],
+                                            "type": "image",
+                                            "image_path": "eed30cb211f82ec88341a51344e15854fcc6571544525128743a8648604316f5.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 47,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                1142,
+                                1330,
+                                1297,
+                                1357
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1139,
+                                        1330,
+                                        1300,
+                                        1359
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1139,
+                                                1330,
+                                                1300,
+                                                1359
+                                            ],
+                                            "type": "text",
+                                            "content": "(b) Model samples.",
+                                            "score": 0.929
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 48,
+                            "angle": 0,
+                            "type": "image_caption"
+                        },
+                        {
+                            "bbox": [
+                                837,
+                                1364,
+                                1339,
+                                1390
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        837,
+                                        1361,
+                                        1345,
+                                        1390
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                837,
+                                                1361,
+                                                1345,
+                                                1390
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure:Training a diffusion model onavon Mises distribution.",
+                                            "score": 0.966
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 49,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 47
+                },
+                {
+                    "bbox": [
+                        752,
+                        1415,
+                        1423,
+                        1475
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 50,
+                    "lines": [
+                        {
+                            "bbox": [
+                                752,
+                                1411,
+                                1427,
+                                1449
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        752,
+                                        1411,
+                                        1427,
+                                        1449
+                                    ],
+                                    "type": "text",
+                                    "content": "Stable Diffusion on LAlON,COCO,and Tuxemon We com-",
+                                    "score": 0.963
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                752,
+                                1444,
+                                1109,
+                                1478
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        752,
+                                        1444,
+                                        806,
+                                        1478
+                                    ],
+                                    "type": "text",
+                                    "content": "pute",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        807,
+                                        1446,
+                                        856,
+                                        1473
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\mathsf { L } | \\mathsf { D } _ { \\theta }",
+                                    "score": 0.87
+                                },
+                                {
+                                    "bbox": [
+                                        856,
+                                        1444,
+                                        1109,
+                                        1478
+                                    ],
+                                    "type": "text",
+                                    "content": "of Stable Diffusion [1] on",
+                                    "score": 0.967
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        775,
+                        1482,
+                        1385,
+                        1575
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 53,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                775,
+                                1482,
+                                1385,
+                                1540
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 51,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        798,
+                                        1482,
+                                        1379,
+                                        1513
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                798,
+                                                1482,
+                                                1328,
+                                                1513
+                                            ],
+                                            "type": "text",
+                                            "content": "Unmemorized images fromamixofLAlONAesthetics",
+                                            "score": 0.976
+                                        },
+                                        {
+                                            "bbox": [
+                                                1329,
+                                                1484,
+                                                1379,
+                                                1511
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "6 . 5 +",
+                                            "score": 0.81
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        800,
+                                        1511,
+                                        1015,
+                                        1542
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                800,
+                                                1511,
+                                                1015,
+                                                1542
+                                            ],
+                                            "type": "text",
+                                            "content": "COCO,and Tuxemon",
+                                            "score": 0.95
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                775,
+                                1544,
+                                1140,
+                                1575
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 52,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        778,
+                                        1536,
+                                        1144,
+                                        1577
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                778,
+                                                1536,
+                                                1144,
+                                                1577
+                                            ],
+                                            "type": "text",
+                                            "content": "·Memorized images from LAION [2]",
+                                            "score": 0.971
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        752,
+                        1581,
+                        1423,
+                        1641
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 54,
+                    "lines": [
+                        {
+                            "bbox": [
+                                753,
+                                1577,
+                                1426,
+                                1614
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        753,
+                                        1577,
+                                        1426,
+                                        1614
+                                    ],
+                                    "type": "text",
+                                    "content": "We find that low LIDs correspond better to memorized images than",
+                                    "score": 0.973
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                754,
+                                1610,
+                                1146,
+                                1645
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        754,
+                                        1610,
+                                        1146,
+                                        1645
+                                    ],
+                                    "type": "text",
+                                    "content": "PNG size,a proxy for image complexity.",
+                                    "score": 0.967
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        757,
+                        1664,
+                        977,
+                        1793
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                757,
+                                1664,
+                                977,
+                                1793
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        757,
+                                        1664,
+                                        977,
+                                        1793
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                757,
+                                                1664,
+                                                977,
+                                                1793
+                                            ],
+                                            "type": "image",
+                                            "image_path": "697352f7aef6020fbc753ff935ad5c75e67d17fb67fd4af1a3d18c9d19503097.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 55,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                763,
+                                1797,
+                                976,
+                                1820
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        759,
+                                        1793,
+                                        971,
+                                        1826
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                759,
+                                                1793,
+                                                883,
+                                                1826
+                                            ],
+                                            "type": "text",
+                                            "content": "(a) UnconditionalLID",
+                                            "score": 0.868
+                                        },
+                                        {
+                                            "bbox": [
+                                                883,
+                                                1803,
+                                                971,
+                                                1820
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "( \\mathsf { A U R O C } = \\overleftrightarrow { \\mathfrak { U } } , \\overleftrightarrow { \\mathfrak { U } } , \\overleftrightarrow { \\mathfrak { o } } )",
+                                            "score": 0.69
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 56,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 55
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        982,
+                        1664,
+                        1199,
+                        1793
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                982,
+                                1664,
+                                1199,
+                                1793
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        982,
+                                        1664,
+                                        1199,
+                                        1793
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                982,
+                                                1664,
+                                                1199,
+                                                1793
+                                            ],
+                                            "type": "image",
+                                            "image_path": "e5862f7e71e5247c70171f84c476276545fba4970ae39e177e4e61079a68db68.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 57,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                989,
+                                1797,
+                                1191,
+                                1820
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        986,
+                                        1793,
+                                        1197,
+                                        1826
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                986,
+                                                1793,
+                                                1197,
+                                                1826
+                                            ],
+                                            "type": "text",
+                                            "content": "（b)CndiaLIAURO99.2%），",
+                                            "score": 0.689
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 58,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 57
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1205,
+                        1664,
+                        1422,
+                        1791
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1205,
+                                1664,
+                                1422,
+                                1791
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1205,
+                                        1664,
+                                        1422,
+                                        1791
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1205,
+                                                1664,
+                                                1422,
+                                                1791
+                                            ],
+                                            "type": "image",
+                                            "image_path": "43c36aa002b23fbfdfa78ab7564c5b2e8985c9d11f14f586698b9f1e084c0878.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 59,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                1206,
+                                1797,
+                                1414,
+                                1820
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1206,
+                                        1795,
+                                        1413,
+                                        1826
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1206,
+                                                1795,
+                                                1325,
+                                                1826
+                                            ],
+                                            "type": "text",
+                                            "content": "(C） PNG compression",
+                                            "score": 0.874
+                                        },
+                                        {
+                                            "bbox": [
+                                                1326,
+                                                1803,
+                                                1413,
+                                                1820
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "( \\mathsf { A U R O C } = \\vec { \\imath } ( ) , \\vec { \\imath } ( \\breve { \\jmath } ) )",
+                                            "score": 0.55
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 60,
+                            "angle": 0,
+                            "type": "image_caption"
+                        },
+                        {
+                            "bbox": [
+                                752,
+                                1826,
+                                1363,
+                                1873
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        756,
+                                        1826,
+                                        1364,
+                                        1853
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                756,
+                                                1826,
+                                                1364,
+                                                1853
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure4:Density histograms for each memorizationmetric on the different",
+                                            "score": 0.966
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        754,
+                                        1851,
+                                        834,
+                                        1876
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                754,
+                                                1851,
+                                                834,
+                                                1876
+                                            ],
+                                            "type": "text",
+                                            "content": "datasets.",
+                                            "score": 0.999
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 61,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 59
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        21,
+                        111,
+                        285,
+                        203
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                10,
+                                99,
+                                303,
+                                213
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        10,
+                                        99,
+                                        303,
+                                        213
+                                    ],
+                                    "type": "text",
+                                    "content": "layer6",
+                                    "score": 0.999
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        354,
+                        26,
+                        1084,
+                        99
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                351,
+                                22,
+                                1090,
+                                74
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        351,
+                                        22,
+                                        1090,
+                                        74
+                                    ],
+                                    "type": "text",
+                                    "content": "A Geometric Framework for Understanding",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                416,
+                                62,
+                                1029,
+                                103
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        416,
+                                        62,
+                                        1029,
+                                        103
+                                    ],
+                                    "type": "text",
+                                    "content": "Memorization in Generative Models",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        326,
+                        116,
+                        1109,
+                        186
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                328,
+                                114,
+                                1115,
+                                153
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        328,
+                                        114,
+                                        1115,
+                                        153
+                                    ],
+                                    "type": "text",
+                                    "content": "Brendan Leigh Ross,Hamidreza Kamkari, Zhaoyan Liu,Tongzi Wu,",
+                                    "score": 0.969
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                398,
+                                153,
+                                1046,
+                                188
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        398,
+                                        153,
+                                        1046,
+                                        188
+                                    ],
+                                    "type": "text",
+                                    "content": "George Stein，Gabriel Loaiza-Ganem，Jesse C.Cresswell",
+                                    "score": 0.969
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        552,
+                        201,
+                        886,
+                        234
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                551,
+                                199,
+                                891,
+                                238
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        551,
+                                        199,
+                                        891,
+                                        238
+                                    ],
+                                    "type": "text",
+                                    "content": "Layer 6Al,Toronto,Canada",
+                                    "score": 0.948
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1172,
+                        45,
+                        1435,
+                        234
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1278,
+                                82,
+                                1300,
+                                95
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1278,
+                                        82,
+                                        1300,
+                                        95
+                                    ],
+                                    "type": "text",
+                                    "content": "Open",
+                                    "score": 0.983
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1278,
+                                93,
+                                1304,
+                                103
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1278,
+                                        93,
+                                        1304,
+                                        103
+                                    ],
+                                    "type": "text",
+                                    "content": "Review",
+                                    "score": 0.948
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1279,
+                                101,
+                                1294,
+                                109
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1279,
+                                        101,
+                                        1294,
+                                        109
+                                    ],
+                                    "type": "text",
+                                    "content": "net",
+                                    "score": 0.955
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1275,
+                                145,
+                                1438,
+                                205
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1275,
+                                        145,
+                                        1438,
+                                        205
+                                    ],
+                                    "type": "text",
+                                    "content": "ICML",
+                                    "score": 0.996
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1281,
+                                201,
+                                1435,
+                                217
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1281,
+                                        201,
+                                        1435,
+                                        217
+                                    ],
+                                    "type": "text",
+                                    "content": "International Conference",
+                                    "score": 0.978
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1281,
+                                213,
+                                1413,
+                                234
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1281,
+                                        213,
+                                        1413,
+                                        234
+                                    ],
+                                    "type": "text",
+                                    "content": "OnMachine Learning",
+                                    "score": 0.967
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        1925,
+                        653,
+                        1944
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 62,
+                    "lines": [
+                        {
+                            "bbox": [
+                                35,
+                                1925,
+                                653,
+                                1946
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        1925,
+                                        60,
+                                        1946
+                                    ],
+                                    "type": "text",
+                                    "content": "[]",
+                                    "score": 0.765
+                                },
+                                {
+                                    "bbox": [
+                                        85,
+                                        1925,
+                                        653,
+                                        1946
+                                    ],
+                                    "type": "text",
+                                    "content": "Rombach,atmenz,Esemer.gsoutiogestsisithtntusiodels22",
+                                    "score": 0.758
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        1946,
+                        530,
+                        1961
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 63,
+                    "lines": [
+                        {
+                            "bbox": [
+                                35,
+                                1946,
+                                532,
+                                1965
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        1946,
+                                        57,
+                                        1963
+                                    ],
+                                    "type": "text",
+                                    "content": "[2]",
+                                    "score": 0.975
+                                },
+                                {
+                                    "bbox": [
+                                        86,
+                                        1946,
+                                        532,
+                                        1965
+                                    ],
+                                    "type": "text",
+                                    "content": "Webster.Areproducible extractionoftraining imagesfromdiffusionmodels.arXiv 2305.08694.",
+                                    "score": 0.965
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        1965,
+                        932,
+                        1981
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 64,
+                    "lines": [
+                        {
+                            "bbox": [
+                                33,
+                                1963,
+                                932,
+                                1985
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        33,
+                                        1963,
+                                        932,
+                                        1985
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        1985,
+                        661,
+                        2002
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 65,
+                    "lines": [
+                        {
+                            "bbox": [
+                                35,
+                                1985,
+                                662,
+                                2006
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        35,
+                                        1985,
+                                        58,
+                                        2006
+                                    ],
+                                    "type": "text",
+                                    "content": "[4]",
+                                    "score": 0.833
+                                },
+                                {
+                                    "bbox": [
+                                        83,
+                                        1985,
+                                        662,
+                                        2004
+                                    ],
+                                    "type": "text",
+                                    "content": "Somepall，SinglaGoldblum,GeipingGdsteinUnderstandingandmitigatingcopingindifusionmodelsNerl2023",
+                                    "score": 0.829
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        36,
+                        2008,
+                        587,
+                        2025
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 66,
+                    "lines": [
+                        {
+                            "bbox": [
+                                32,
+                                2004,
+                                590,
+                                2027
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        32,
+                                        2004,
+                                        590,
+                                        2027
+                                    ],
+                                    "type": "text",
+                                    "content": "[5]Wen,Liu,Chen,Lyu“Detecting,explaining,andmitigatingmernorizationindifusionmodels”ICML2023.",
+                                    "score": 0.93
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "page_size": [
+                1466,
+                2073
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

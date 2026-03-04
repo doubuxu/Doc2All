@@ -1,0 +1,572 @@
+[
+  {
+    "type": "text",
+    "text": "ldentifying the Context Shift between Test Benchmarks and Production Data ",
+    "text_level": 1,
+    "bbox": [
+      102,
+      14,
+      897,
+      87
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Matt Groh, MIT Media Lab ",
+    "bbox": [
+      353,
+      95,
+      642,
+      121
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "bbox": [
+      655,
+      94,
+      700,
+      125
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Will your model work in production? ",
+    "text_level": 1,
+    "bbox": [
+      254,
+      143,
+      740,
+      168
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Identifying the Context Shift between Test Benchmarks and Production Data_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      15,
+      168,
+      400,
+      340
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Identifying the Context Shift between Test Benchmarks and Production Data_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      403,
+      171,
+      627,
+      344
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Identifying the Context Shift between Test Benchmarks and Production Data_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      628,
+      170,
+      989,
+      361
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Consider the Data Generating Process ",
+    "text_level": 1,
+    "bbox": [
+      245,
+      376,
+      752,
+      401
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Distribution Shift Perspective ",
+    "bbox": [
+      129,
+      408,
+      368,
+      425
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Covariate Shift: $P _ { t e s t } ( x ) \\neq P _ { t r a i n } ( x )$ and $P _ { t e s t } ( y | x ) = P _ { t r a i n } ( y | x )$ ",
+    "bbox": [
+      50,
+      437,
+      400,
+      450
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Prior Probability Shift: $P _ { t e s t } ( y ) \\neq P _ { t r a i n } ( y )$ and $P _ { t e s t } ( y | x ) = P _ { t r a i n } ( y | x )$ ",
+    "bbox": [
+      50,
+      466,
+      440,
+      479
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Concept Shift: $P _ { t e s t } ( x ) = P _ { t r a i n } ( x )$ and $P _ { t e s t } ( y | x ) \\neq P _ { t r a i n } ( y | x )$ ",
+    "bbox": [
+      50,
+      496,
+      392,
+      509
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Other Distribution Shift: $P _ { t e s t } ( x , y ) \\neq P _ { t r a i n } ( x , y )$ ",
+    "bbox": [
+      50,
+      525,
+      330,
+      538
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Context Shift Perspective ",
+    "text_level": 1,
+    "bbox": [
+      643,
+      409,
+      852,
+      425
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sample Selection Bias:when the data distribution is missing relevant examples or dimensions ",
+    "bbox": [
+      530,
+      437,
+      963,
+      459
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Non-stationarity:when the data distribution changes over time or environment ",
+    "bbox": [
+      530,
+      478,
+      963,
+      500
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Adversarial Perturbations:when thedistribution of data isaltered in a way that does not affect human task performance ",
+    "bbox": [
+      530,
+      519,
+      963,
+      542
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Contextual Dimensions in Human Centered ML Applications ",
+    "text_level": 1,
+    "bbox": [
+      104,
+      557,
+      890,
+      583
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "e ds ",
+    "bbox": [
+      11,
+      584,
+      994,
+      626
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Who is represented in the data Who is annotating the data? When and where is data collected? Howdo socialgograpical,mporal,sttic,incialndtheridosycrasiesinfeceta ",
+    "bbox": [
+      57,
+      629,
+      939,
+      664
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Data Generation Process Desiderata for Dynamic Benchmarks ",
+    "text_level": 1,
+    "bbox": [
+      88,
+      682,
+      907,
+      707
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.Prediction Task:What are the input features and output labels? ",
+      "2.Test Size:Whatis the minimum test size forreducing withindata sampling error toan acceptably small rate? ",
+      "3.GroundTruthAnnotationArbitration:Whohastheauthoritytoannotatethedata?Howshoulddisagreementberepresented? ",
+      "4.DataInclusionandExcusionCriteria:Whatare thepossbledatasources?Howisdatacurated?Whatarethequalityconstraints? ",
+      "e.g.Dynabench13 "
+    ],
+    "bbox": [
+      15,
+      711,
+      950,
+      772
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Case Study of Implicit Assumptions in Facial Expression Recognition ",
+    "text_level": 1,
+    "bbox": [
+      46,
+      798,
+      935,
+      823
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "ExamplePerformance EvaluationofFERfrom Mollahosseinietal2016 ",
+    "bbox": [
+      40,
+      831,
+      271,
+      840
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Identifying the Context Shift between Test Benchmarks and Production Data_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td></td><td>Proposed Architecture</td><td>AlexNet</td></tr><tr><td>MultiPie</td><td>94.7</td><td>94.8</td></tr><tr><td>MMI</td><td>77.9</td><td>56.0</td></tr><tr><td>DISFA</td><td>55.0</td><td>56.1</td></tr><tr><td>FERA</td><td>76.7</td><td>77.4</td></tr><tr><td>SFEW</td><td>47.7</td><td>48.6</td></tr><tr><td>CK+</td><td>93.2</td><td>92.2</td></tr><tr><td>FER2013</td><td>66.4</td><td>61.1</td></tr></table>",
+    "bbox": [
+      63,
+      844,
+      238,
+      919
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "HowShould Facial Expressionsbe Represented? ",
+    "bbox": [
+      268,
+      848,
+      427,
+      856
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Asthefollowing\"basic emotion categories:\" Neutral,Hainss,ds,a ",
+    "bbox": [
+      267,
+      859,
+      443,
+      879
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Disgust,Surprise?Oras theemotions on the rightfrom Cowen et al 2020?Or something else? ",
+    "bbox": [
+      267,
+      882,
+      462,
+      903
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Identifying the Context Shift between Test Benchmarks and Production Data_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "15 "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      468,
+      824,
+      650,
+      921
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Toomanydegreesoffreedom+toomanyassumptions Whatdata can serve as ground truth: ",
+    "bbox": [
+      651,
+      837,
+      833,
+      856
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "posedphotographswithobservers'labels, framesfromavideowith observers'labeled peak expressions,self reports,mappings of facial action units to categories?When ",
+    "bbox": [
+      651,
+      859,
+      825,
+      901
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "should we expect the model to generalize? What limitsshould beexpress? ",
+    "bbox": [
+      651,
+      903,
+      821,
+      924
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Identifying the Context Shift between Test Benchmarks and Production Data_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      835,
+      822,
+      991,
+      921
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "bbox": [
+      5,
+      933,
+      42,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1.paperswitodecom/sota/imageclsificaton-cifar-10ndpapeswcde.com/sotaimageclasifcatioonmeet 2.Recht,et al.Do ImageNet Clasifiers Generalize to ImageNet.2019 ",
+    "bbox": [
+      6,
+      943,
+      390,
+      958
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3.BuolamwiniandGebruGender Shades:Intersectional Acuracy Diparities in CommercialGenderClassification.2018 ",
+    "bbox": [
+      6,
+      961,
+      379,
+      970
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "4.Eykholt K,etal.Physicial-WorldAttackson Deep Learning isualClassfication2018 ",
+    "bbox": [
+      6,
+      972,
+      276,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "5.Groh etal.Evaluating Deep Neural Networks Trained on...2021 ",
+    "bbox": [
+      395,
+      933,
+      606,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "6.Daneshjou et al.Disparities in Dermatology Al..2022 ",
+    "bbox": [
+      395,
+      942,
+      573,
+      949
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "ZKosti etal.ContextBase EmotionRecognition,using. 2019 ",
+    "bbox": [
+      395,
+      951,
+      590,
+      958
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "8.Groh et al.Deepfake Detection by Crowds，Machines，and...2 ",
+    "bbox": [
+      395,
+      961,
+      600,
+      969
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "9.Obermeyer et al.Dissecting Racial Bias in an Algorithm...2019 ",
+    "bbox": [
+      395,
+      972,
+      600,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "10.Winkleretal.Association BetweenSurgical Skin Markings in Dermoscopic..2019 ",
+    "bbox": [
+      615,
+      933,
+      838,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "11Oakden-Rayner et al.Hidden Stratification Causes Clinically Meaninful..2020 ",
+    "bbox": [
+      615,
+      942,
+      830,
+      949
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "12.Piersonetal.AnAlgorithmic Approach to Reducing Unexpline ",
+    "bbox": [
+      615,
+      951,
+      788,
+      959
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "13.Kielaetal.Dynabench:RethinkingBenchmarkinginNLP.2021 ",
+    "bbox": [
+      615,
+      961,
+      788,
+      968
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "15.Cowen et al.Sixteen Facial Expressions Occur in Similar Contexts..2020 ",
+    "bbox": [
+      615,
+      972,
+      817,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Link to Preprint ",
+    "bbox": [
+      880,
+      946,
+      928,
+      953
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Identifying the Context Shift between Test Benchmarks and Production Data_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      931,
+      932,
+      981,
+      978
+    ],
+    "page_idx": 0
+  }
+]

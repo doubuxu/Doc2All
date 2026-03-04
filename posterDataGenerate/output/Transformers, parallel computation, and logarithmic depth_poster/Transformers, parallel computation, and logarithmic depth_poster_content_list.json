@@ -1,0 +1,774 @@
+[
+  {
+    "type": "text",
+    "text": "Motivation ",
+    "text_level": 1,
+    "bbox": [
+      18,
+      129,
+      72,
+      144
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Motivating question: How can transformers be understood as models of parallel computation (e.g. MPC)? ",
+    "bbox": [
+      14,
+      154,
+      263,
+      187
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1. Representational powers of depth? ",
+      "2.Multi-step reasoning capabilities? ",
+      "3.Comparisons with other models (state-space models, sub-quadratic attention transformers,GNNs)? "
+    ],
+    "bbox": [
+      17,
+      189,
+      238,
+      255
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Transformer Architecture ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      276,
+      138,
+      290
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Self-attention unit: ",
+    "bbox": [
+      17,
+      302,
+      105,
+      316
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nf (X) = \\operatorname {s o f t m a x} \\left(X Q K ^ {T} X ^ {T}\\right) X V\n$$",
+    "text_format": "latex",
+    "bbox": [
+      85,
+      320,
+      212,
+      339
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "for input $\\boldsymbol { X } \\in \\mathbb { R } ^ { N \\times d }$ and model parameters $Q , K$ $V \\in \\mathbb { R } ^ { d \\times m }$ ",
+    "bbox": [
+      29,
+      341,
+      201,
+      373
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Multi-headed attention: $\\boldsymbol { L } ( \\boldsymbol { X } ) = \\boldsymbol { X } + \\sum _ { h = 1 } ^ { H } f _ { h } ( \\boldsymbol { X } )$ ",
+      "Arbitrary element-wise encoding $( M L P + \\mu$ positional encoding): $\\varphi ( X ) = ( \\varphi ( x _ { 1 } , 1 ) , \\dots , \\varphi ( x _ { N } , N ) )$ ",
+      "Full transformer: $T ( X ) = ( \\varphi _ { D } \\circ L _ { D } \\circ \\cdots \\circ L _ { 1 } \\circ \\varphi _ { 0 } ) ( X )$ ",
+      "Key assumptions: $m , H , L \\ll N$ ; fixedprecision;arbitrary $\\varphi$ "
+    ],
+    "bbox": [
+      17,
+      375,
+      267,
+      461
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Massively Parallel Computation (MPC) ",
+    "text_level": 1,
+    "bbox": [
+      18,
+      480,
+      203,
+      497
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "TheoreticalmodelofMapReducebyKarloff,etal'10. ",
+    "bbox": [
+      15,
+      509,
+      230,
+      524
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$N$ -bit input divided among $q$ machines with local memory s. ",
+      "2.For round $r = 1 , \\dots R$ "
+    ],
+    "bbox": [
+      17,
+      527,
+      267,
+      555
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "2.1 Each machine performs some computation on its input state. ",
+      "2.2Each machine simultaneously sends and receives messages of size $\\leq s$ "
+    ],
+    "bbox": [
+      23,
+      557,
+      255,
+      595
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$( \\gamma , \\delta )$ -MPC protocols have local memory $s = O ( N ^ { \\delta } )$ and global memory $q s = O ( N ^ { 1 + \\gamma } )$ ",
+    "bbox": [
+      14,
+      598,
+      252,
+      632
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Conjecture (1-cycle vs 2-cycle; Ghaffari, et al '19) ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      637,
+      252,
+      655
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Any $( \\gamma , \\delta )$ -MPC protocol with $\\delta \\in ( 0 , 1 )$ that distinguishes one length- $N$ cycle from two length $\\cdot \\frac { N } { 2 }$ cycles uses $R = \\Omega ( \\log N )$ rounds. ",
+    "bbox": [
+      14,
+      665,
+      250,
+      715
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "k-Hop Induction Heads ",
+    "text_level": 1,
+    "bbox": [
+      19,
+      742,
+      129,
+      758
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Induction Heads:Toy task to complete bigram via previous occurrence:IH(baebcabebdea) $= 6$ ",
+    "bbox": [
+      14,
+      770,
+      262,
+      802
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Occurs naturally in trained transformers; useful primitive for mechanistic interpretability research [Anthropic blog post]. ",
+      "Two-step logical reasoning task with natural two-layer transformer construction [Bietti,et al '23]. ",
+      "Negative result from communication complexity: Single-layer transformers cannot solve IH. "
+    ],
+    "bbox": [
+      17,
+      804,
+      267,
+      903
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$k$ -Hop Induction Heads: Iterated variant of IH to capture $k$ -stepreasoning. ",
+    "bbox": [
+      14,
+      905,
+      258,
+      936
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "$\\mathrm { h o p } _ { k } ( \\dots \\cdot \\dots \\partial _ { k } a _ { k + 1 } \\dots \\cdot \\dots a _ { k - 1 } a _ { k } \\dots a _ { 1 } a _ { 2 } \\dots a _ { 1 } ) = a _ { k + 1 }$ ",
+    "bbox": [
+      14,
+      937,
+      206,
+      954
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "baebcabebdea. ",
+    "bbox": [
+      106,
+      957,
+      173,
+      971
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theory Result #1: Near-equivalence of Transformers & MPC ",
+    "text_level": 1,
+    "bbox": [
+      287,
+      129,
+      576,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theorem (Transformers simulate MPC) ",
+    "text_level": 1,
+    "bbox": [
+      287,
+      159,
+      472,
+      177
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Any R-round $( \\gamma , \\delta )$ -MPC protocol (with $\\delta > \\gamma ,$ )canbesimulatedbya transformerof depth $L = O ( R )$ and width $m = \\tilde { O } ( N ^ { 4 \\delta } )$ ",
+    "bbox": [
+      283,
+      187,
+      624,
+      222
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Implications: $O ( \\log ( N ) )$ -depth solutions to graph connectivity,min-spanning forest,cycle check,formula evaluation,etc. ",
+      "Proof Idea: Simulate each machine's computationsin ${ \\mathsf { M L P s } } \\varphi$ ;simulate communication with self-attention units ",
+      "Subsequent improvement:Width dependence improved to $m = { O } ( N ^ { \\delta + \\varepsilon } )$ for any fixed $\\varepsilon$ by $[ S F H + 2 4 ]$ "
+    ],
+    "bbox": [
+      283,
+      242,
+      481,
+      390
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      486,
+      227,
+      621,
+      398
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theorem (MPC simulates Transformers) ",
+    "text_level": 1,
+    "bbox": [
+      287,
+      405,
+      477,
+      422
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Any transformer of depth Land width m can be simulated byan $( 1 + \\delta , \\delta )$ -MPC protocol with $R = O ( L )$ rounds, $s = O ( m )$ local memory，and $q = O ( N ^ { 2 } )$ machines. ",
+    "bbox": [
+      282,
+      432,
+      619,
+      467
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Implications: Under 1-cycle vs 2-cycle conjecture, $L = \\Omega ( \\log N )$ depth is necessary to solve graph connectivity. ",
+      "Proof Idea: $O ( N )$ \"token machines”compute $Q / K / V$ embeddings; $O ( N ^ { 2 } )$ \"inner product machines\"computeall $Q / K$ inner products. ",
+      "Limitation: Not exactly bidirectional relationship between theorems due to $q = O ( N ^ { 2 } )$ machine requirement. "
+    ],
+    "bbox": [
+      283,
+      498,
+      500,
+      645
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      504,
+      472,
+      621,
+      664
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theory Result #2: Eficient Multi-Step Reasoning Representations ",
+    "text_level": 1,
+    "bbox": [
+      287,
+      683,
+      599,
+      700
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Construction: Transformers of depth $L = \\left\\lfloor \\log _ { 2 } k \\right\\rfloor + 2$ and width $m = O ( 1 )$ can solve $k .$ -IH. ",
+    "bbox": [
+      282,
+      710,
+      609,
+      741
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "First two layers solve induction heads for each input. ",
+      "Subsequent layers employ“pointer doubling\"to chain together solutions. "
+    ],
+    "bbox": [
+      284,
+      745,
+      587,
+      777
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Optimality:All transformers of width $m = { O } ( N ^ { 1 - \\varepsilon } )$ that solve $k$ -IH have depth $L = \\Omega ( \\log k )$ (conditional on 1-cycle vs 2-cycle conjecture). ",
+      "Reduction to MPC simulation of transformers. "
+    ],
+    "bbox": [
+      283,
+      779,
+      606,
+      827
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theory Result #3: Sub-optimality of Other Architectures ",
+    "text_level": 1,
+    "bbox": [
+      287,
+      845,
+      556,
+      863
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Graph Neural Networks: Solving graph connectivity requires $L \\sqrt { m } = \\tilde { \\Omega } ( N ^ { 1 / 4 } )$ [CONGEST reduction; Loukas ‘19]. ",
+    "bbox": [
+      282,
+      872,
+      606,
+      905
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "State-Space Models:RNN,LSTM,Mamba solutions to k-IH requires depth $L \\geq k$ or width $m = \\Omega ( N / k ^ { 6 } )$ [Pointer chasing reduction; Assadi,N '21]. ",
+    "bbox": [
+      282,
+      906,
+      599,
+      938
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sub-Quadratic Attention Transformers: Every kernel-based (e.g. Performer)or masking-based (e.g. Longformer) transformer variant that solves $k$ -IHhaseither depth $L \\geq k$ or near-quadratic attention computations [Pointer chasing]. ",
+    "bbox": [
+      282,
+      939,
+      621,
+      988
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Empirical Result #1: Log-depth k-Hop Induction Heads ",
+    "text_level": 1,
+    "bbox": [
+      643,
+      129,
+      906,
+      146
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Task:Multi-task $k .$ -IHfor $k = 0 , 1 , \\ldots , 1 6$ ;sequence length $N = 1 0 0$ ",
+      "Models: GPT-2 transformers with embed. dim. $m = 1 2 8$ ,depth $L = 2 , \\ldots , 6$ ",
+      "Result: Low error when $L \\leq \\lfloor \\log _ { 2 } k \\rfloor$ ,as predicted by theory. "
+    ],
+    "bbox": [
+      641,
+      164,
+      825,
+      280
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      831,
+      151,
+      972,
+      285
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Empirical Result #2: Interpretability of Learned Models ",
+    "text_level": 1,
+    "bbox": [
+      643,
+      305,
+      906,
+      322
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "16-IH attention matrices softmax $( X Q K ^ { \\tau } X ^ { \\tau } )$ ，with colored partial solutions ",
+    "text_level": 1,
+    "bbox": [
+      639,
+      335,
+      978,
+      353
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "Layer 2,1-IH "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      638,
+      375,
+      746,
+      515
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "Layer 4,2-IH "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      755,
+      375,
+      863,
+      515
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "Layer6,8-IH ",
+      "<Emp.attn.matrix,theoretical $j .$ -IHmap) "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      873,
+      375,
+      978,
+      515
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Key question: Do the trained transformers solve $k .$ -IHwith the same“pointer doubling\"approach of the theoretical construction? ",
+      "Yes.Close correspondence between self-attention matrices and partial solutions to $k$ -IH. ",
+      "At least one head in the lth attention layerimplements $2 ^ { \\ell - 2 } \\mathfrak { - } | \\mathsf { H }$ "
+    ],
+    "bbox": [
+      641,
+      551,
+      771,
+      744
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      785,
+      541,
+      978,
+      773
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Paper Links ",
+    "text_level": 1,
+    "bbox": [
+      644,
+      794,
+      712,
+      811
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Prior communication compl. $^ +$ attention paper. [SHT23],NeurIPS'23. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      651,
+      821,
+      732,
+      928
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "This paper. [SHT24]. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      768,
+      821,
+      849,
+      928
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Transformers, parallel computation, and logarithmic depth_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      "Subsequent application to graphalgorithms. [SFH+24]. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      885,
+      821,
+      966,
+      928
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "COLUMBIA UNIVERSITY ",
+    "bbox": [
+      21,
+      12,
+      59,
+      73
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NYU ",
+    "bbox": [
+      65,
+      8,
+      115,
+      76
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Transformers, Parallel Computation,and Logarithmic Depth ",
+    "bbox": [
+      317,
+      11,
+      798,
+      37
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Clayton Sanforda,Daniel Hsu²,Matus Telgarskyb ",
+    "bbox": [
+      516,
+      43,
+      798,
+      67
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "aColumbia University,bNew York University ",
+    "bbox": [
+      546,
+      75,
+      798,
+      99
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      856,
+      8,
+      891,
+      54
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICML ",
+    "bbox": [
+      896,
+      10,
+      957,
+      37
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "InternationalConference OnMachine Learning ",
+    "bbox": [
+      897,
+      37,
+      954,
+      54
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Spotlight Paper ",
+    "bbox": [
+      859,
+      61,
+      967,
+      84
+    ],
+    "page_idx": 0
+  }
+]

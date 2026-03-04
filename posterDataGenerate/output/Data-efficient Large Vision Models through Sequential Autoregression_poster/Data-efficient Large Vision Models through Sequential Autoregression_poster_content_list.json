@@ -1,0 +1,524 @@
+[
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_1.jpg",
+    "image_caption": [
+      "PyTorch code "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      24,
+      84,
+      118,
+      210
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Data-efficient Large Vision Models through Sequential Autoregression ",
+    "text_level": 1,
+    "bbox": [
+      151,
+      13,
+      796,
+      45
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Zhiwei Hao*1, Jianyuan Guo*2, Chengcheng Wang*3 ",
+    "bbox": [
+      234,
+      59,
+      568,
+      84
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Yehui Tang³, Han Wu², Han ${ \\mathsf { H } } { \\mathsf { u } } ^ { 1 }$ , Kai Han³, Chang Xu²",
+    "bbox": [
+      234,
+      85,
+      568,
+      109
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      697,
+      56,
+      749,
+      125
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "北京理工大学",
+    "bbox": [
+      759,
+      66,
+      906,
+      101
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "BEIJING INSTITUTE OF TECHNOLOGY ",
+    "bbox": [
+      761,
+      102,
+      905,
+      115
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "*Equal contribution ",
+    "bbox": [
+      345,
+      132,
+      458,
+      152
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1School of information and Electronics, Beijing Institute of Technology. ",
+    "bbox": [
+      201,
+      156,
+      601,
+      178
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2School of Computer Science, Faculty of Engineering, The University of Sydney. ",
+    "bbox": [
+      178,
+      182,
+      624,
+      205
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3Huawei Noah's Ark Lab. ",
+    "bbox": [
+      331,
+      210,
+      471,
+      229
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "THEUNIVERSITYOF SYDNEY "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      661,
+      154,
+      717,
+      232
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      855,
+      152,
+      906,
+      207
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "NO∧H'S ∧RK L∧B "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      920,
+      151,
+      966,
+      208
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Introduction ",
+    "text_level": 1,
+    "bbox": [
+      25,
+      249,
+      109,
+      268
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Training general-purpose large multimodal foundation modelson purely sequential data,similar to linguistic inputs,has heraldedanew frontier in visual perception. However,current endeavors are hamstrung byan over-reliance on colossal models，exemplifiedby the necessity foran extensive corpus of data，often comprising staggering 40oB tokens.Inthis work,wedelve intothedevelopmentofaneficient,autoregressionbased foundationmodel,innovatively architected tooperate ona limited dataset.Ourevaluations demonstrate how this model achieves proficiency in a spectrum of visual tasks spanning both high-level and low-level semantic understanding.Witha significant reduction in parameter footprint,andamarked decrease in training datarequirements，we pave the way for more sustainable and accessible advancements in the field of generalist visual models. ",
+    "bbox": [
+      23,
+      276,
+      483,
+      435
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      33,
+      450,
+      482,
+      669
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Part-1: Data-efficient Training: Data Augmentation Strategy ",
+    "text_level": 1,
+    "bbox": [
+      25,
+      685,
+      418,
+      708
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      13,
+      725,
+      155,
+      933
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_8.jpg",
+    "image_caption": [
+      "Multiple tasks.“-\" indicates collapsed results. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      167,
+      724,
+      479,
+      916
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Part-2: Low Power Consumption & Tiny Model: Knowledge Distillation ",
+    "text_level": 1,
+    "bbox": [
+      517,
+      248,
+      983,
+      271
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The introduction of KD proves beneficial in enhancing the single-task performance of LVMs. ",
+    "bbox": [
+      557,
+      277,
+      936,
+      293
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Model</td><td>KD</td><td>loss ↓</td><td>accuracy ↑</td><td>perplexity ↓</td></tr><tr><td colspan=\"5\">Image Segmentation (10% of SA-1B)</td></tr><tr><td>LLaMA-1B</td><td>-</td><td>4.50</td><td>20.18</td><td>90.04</td></tr><tr><td>LLaMA-300M</td><td>X</td><td>4.64</td><td>19.17</td><td>103.24</td></tr><tr><td>LLaMA-300M</td><td>✓</td><td>4.59</td><td>19.48</td><td>98.72</td></tr><tr><td colspan=\"5\">Pose Estimation (COCO-Pose)</td></tr><tr><td>LLaMA-1B</td><td>-</td><td>4.90</td><td>20.96</td><td>134.07</td></tr><tr><td>LLaMA-300M</td><td>X</td><td>4.97</td><td>20.46</td><td>144.08</td></tr><tr><td>LLaMA-300M</td><td>✓</td><td>4.91</td><td>20.80</td><td>135.91</td></tr></table>",
+    "bbox": [
+      531,
+      301,
+      722,
+      419
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      739,
+      297,
+      971,
+      428
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The introduction of KD proves beneficial in enhancing the multi-task performance of LVMs. ",
+    "bbox": [
+      558,
+      448,
+      931,
+      465
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/tables/table_2.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Model</td><td rowspan=\"2\">KD</td><td colspan=\"3\">Image Segmentation</td><td colspan=\"3\">Pose Estimation</td><td colspan=\"3\">Image Deraining</td></tr><tr><td>loss ↓</td><td>accuracy ↑</td><td>perplexity ↓</td><td>loss ↓</td><td>accuracy ↑</td><td>perplexity ↓</td><td>loss ↓</td><td>accuracy ↑</td><td>perplexity ↓</td></tr><tr><td>LLaMA-1B</td><td>-</td><td>4.55</td><td>19.72</td><td>94.75</td><td>4.86</td><td>20.77</td><td>129.95</td><td>5.53</td><td>12.20</td><td>245.33</td></tr><tr><td>LLaMA-300M</td><td>X</td><td>4.68</td><td>18.79</td><td>107.76</td><td>4.94</td><td>20.24</td><td>140.39</td><td>5.63</td><td>11.57</td><td>271.38</td></tr><tr><td>LLaMA-300M</td><td>✓</td><td>4.67</td><td>18.84</td><td>106.81</td><td>4.93</td><td>20.32</td><td>139.27</td><td>5.62</td><td>11.93</td><td>269.04</td></tr></table>",
+    "bbox": [
+      559,
+      475,
+      943,
+      542
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "LLaMA-300M w/o KD vs. w/ KD on LSP dataset. ",
+    "bbox": [
+      544,
+      561,
+      719,
+      574
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "LLaMA-300M w/o KD vs.w/ KD on OCHuman dataset. ",
+    "bbox": [
+      766,
+      562,
+      965,
+      574
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      526,
+      576,
+      974,
+      676
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Query Image,LLaMA-300Mw/oKD,LLaMA-300Mw/KD,GroundTruthon therain100Hde-rainingdataset. ",
+    "bbox": [
+      568,
+      681,
+      958,
+      694
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      526,
+      696,
+      975,
+      733
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Beyond Perception: Generation Ability ",
+    "text_level": 1,
+    "bbox": [
+      517,
+      757,
+      776,
+      780
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Next frame prediction:zoom in,zoom out,camera motion. ",
+    "bbox": [
+      552,
+      792,
+      763,
+      806
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Image completion. ",
+    "bbox": [
+      867,
+      792,
+      935,
+      806
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      526,
+      813,
+      810,
+      912
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      827,
+      812,
+      974,
+      910
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      526,
+      914,
+      810,
+      961
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Data-efficient Large Vision Models through Sequential Autoregression_poster/visuals/images/fig_15.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      827,
+      911,
+      974,
+      960
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      12,
+      15,
+      52,
+      68
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICML ",
+    "bbox": [
+      57,
+      17,
+      130,
+      47
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "InternationalConference ",
+    "bbox": [
+      59,
+      49,
+      130,
+      56
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "On Machine Learning ",
+    "bbox": [
+      59,
+      57,
+      130,
+      67
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "Dataset augmentation yielded the best overall performance. ",
+    "bbox": [
+      114,
+      956,
+      361,
+      972
+    ],
+    "page_idx": 0
+  }
+]

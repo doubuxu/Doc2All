@@ -1,0 +1,3273 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        89,
+                        286,
+                        301,
+                        318
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                281,
+                                306,
+                                323
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        281,
+                                        306,
+                                        323
+                                    ],
+                                    "type": "text",
+                                    "content": "1. Introduction",
+                                    "score": 0.985
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        384,
+                        584,
+                        779
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 11,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                87,
+                                384,
+                                512,
+                                436
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 6,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        382,
+                                        512,
+                                        407
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                84,
+                                                382,
+                                                512,
+                                                407
+                                            ],
+                                            "type": "text",
+                                            "content": "·Thedeploymentandtrainingof neuralnetworks on edge",
+                                            "score": 0.982
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        106,
+                                        416,
+                                        408,
+                                        439
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                416,
+                                                408,
+                                                439
+                                            ],
+                                            "type": "text",
+                                            "content": "computingdevicesposemanychallenges.",
+                                            "score": 0.999
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                446,
+                                582,
+                                528
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 7,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        446,
+                                        582,
+                                        469
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                446,
+                                                582,
+                                                469
+                                            ],
+                                            "type": "text",
+                                            "content": "·The lowmemory nature of edgedevices isoften one of thebiggest",
+                                            "score": 0.959
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        106,
+                                        479,
+                                        552,
+                                        500
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                479,
+                                                552,
+                                                500
+                                            ],
+                                            "type": "text",
+                                            "content": "limitingfactorsencounteredinthedeploymentof largeneural",
+                                            "score": 0.994
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        109,
+                                        509,
+                                        231,
+                                        530
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                109,
+                                                509,
+                                                231,
+                                                530
+                                            ],
+                                            "type": "text",
+                                            "content": "networkmodels.",
+                                            "score": 0.998
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                540,
+                                564,
+                                591
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 8,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        538,
+                                        552,
+                                        562
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                538,
+                                                552,
+                                                562
+                                            ],
+                                            "type": "text",
+                                            "content": "·Tensorrematerializationorrecomputeisawaytoaddress high",
+                                            "score": 0.994
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        106,
+                                        570,
+                                        564,
+                                        595
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                570,
+                                                564,
+                                                595
+                                            ],
+                                            "type": "text",
+                                            "content": "memoryrequirements forneuralnetworktrainingandinference",
+                                            "score": 0.99
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                603,
+                                547,
+                                654
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 9,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        601,
+                                        507,
+                                        625
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                601,
+                                                507,
+                                                625
+                                            ],
+                                            "type": "text",
+                                            "content": "·In this paperwe consider the problem of execution time",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        106,
+                                        633,
+                                        547,
+                                        656
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                633,
+                                                547,
+                                                656
+                                            ],
+                                            "type": "text",
+                                            "content": "minimizationof computegraphssubjecttoamemory budget.",
+                                            "score": 0.99
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                666,
+                                584,
+                                779
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 10,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        664,
+                                        510,
+                                        686
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                87,
+                                                664,
+                                                510,
+                                                686
+                                            ],
+                                            "type": "text",
+                                            "content": "·Inparticular，wedevelopanewconstraintprogramming",
+                                            "score": 0.984
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        106,
+                                        694,
+                                        547,
+                                        717
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                694,
+                                                547,
+                                                717
+                                            ],
+                                            "type": "text",
+                                            "content": "formulation calledMoccasinwith only O(n) integervariables,",
+                                            "score": 0.964
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        106,
+                                        727,
+                                        584,
+                                        749
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                727,
+                                                584,
+                                                749
+                                            ],
+                                            "type": "text",
+                                            "content": "wherenisthenumberof nodesinthecompute graph(asopposed",
+                                            "score": 0.976
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        106,
+                                        756,
+                                        460,
+                                        780
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                757,
+                                                333,
+                                                780
+                                            ],
+                                            "type": "text",
+                                            "content": "topriorwork formulationswith",
+                                            "score": 0.996
+                                        },
+                                        {
+                                            "bbox": [
+                                                333,
+                                                756,
+                                                380,
+                                                779
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "O ( n ^ { 2 } )",
+                                            "score": 0.83
+                                        },
+                                        {
+                                            "bbox": [
+                                                380,
+                                                757,
+                                                460,
+                                                780
+                                            ],
+                                            "type": "text",
+                                            "content": "variables).",
+                                            "score": 0.995
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        726,
+                        281,
+                        1263,
+                        318
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                726,
+                                278,
+                                1266,
+                                318
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        726,
+                                        278,
+                                        1266,
+                                        318
+                                    ],
+                                    "type": "text",
+                                    "content": "2. Motivation and problem statement",
+                                    "score": 0.986
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        771,
+                        361,
+                        925,
+                        628
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                771,
+                                361,
+                                925,
+                                628
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        771,
+                                        361,
+                                        925,
+                                        628
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                771,
+                                                361,
+                                                925,
+                                                628
+                                            ],
+                                            "type": "image",
+                                            "image_path": "976e918d82b534bef1664623d686116579124c88983dd4f0293975884b7080a4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 13,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1042,
+                        381,
+                        1368,
+                        615
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1042,
+                                381,
+                                1368,
+                                615
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1042,
+                                        381,
+                                        1368,
+                                        615
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1042,
+                                                381,
+                                                1368,
+                                                615
+                                            ],
+                                            "type": "image",
+                                            "image_path": "a7d6f6f6c98e977eac00357e8b8c4649b0a35446e02382b94932bb429b7a8162.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 14,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1450,
+                        391,
+                        1828,
+                        581
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1450,
+                                391,
+                                1828,
+                                581
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1450,
+                                        391,
+                                        1828,
+                                        581
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1450,
+                                                391,
+                                                1828,
+                                                581
+                                            ],
+                                            "type": "image",
+                                            "image_path": "65e51bcfdaf824b4046428c02fb3a63e076a97d289a03922ccf38cc5f36cc7d6.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 15
+                },
+                {
+                    "bbox": [
+                        728,
+                        643,
+                        1231,
+                        663
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 16,
+                    "lines": [
+                        {
+                            "bbox": [
+                                728,
+                                641,
+                                1234,
+                                664
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        728,
+                                        641,
+                                        1234,
+                                        664
+                                    ],
+                                    "type": "text",
+                                    "content": "Considertheexample10-node computationgraphabove,and assume:",
+                                    "score": 0.983
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        728,
+                        674,
+                        1268,
+                        724
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 19,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                728,
+                                674,
+                                1268,
+                                694
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 17,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        728,
+                                        673,
+                                        1268,
+                                        698
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                728,
+                                                673,
+                                                1268,
+                                                698
+                                            ],
+                                            "type": "text",
+                                            "content": "1.Output sizesare 50 for nodeson theleft,and1for the ones on the right",
+                                            "score": 0.938
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                728,
+                                706,
+                                942,
+                                724
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 18,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        728,
+                                        704,
+                                        942,
+                                        726
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                728,
+                                                704,
+                                                942,
+                                                726
+                                            ],
+                                            "type": "text",
+                                            "content": "2.Durationis1forallnodes.",
+                                            "score": 0.986
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        728,
+                        736,
+                        1047,
+                        756
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 20,
+                    "lines": [
+                        {
+                            "bbox": [
+                                728,
+                                734,
+                                1049,
+                                759
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        728,
+                                        734,
+                                        1049,
+                                        759
+                                    ],
+                                    "type": "text",
+                                    "content": "Considerexecution ofthe nodes in the order",
+                                    "score": 0.962
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        918,
+                        767,
+                        1084,
+                        785
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 21,
+                    "lines": []
+                },
+                {
+                    "bbox": [
+                        726,
+                        797,
+                        1256,
+                        852
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 22,
+                    "lines": [
+                        {
+                            "bbox": [
+                                728,
+                                797,
+                                1256,
+                                819
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        728,
+                                        797,
+                                        1256,
+                                        819
+                                    ],
+                                    "type": "text",
+                                    "content": "Weneed to keep the output of node1in memory until we execute node8",
+                                    "score": 0.952
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                728,
+                                827,
+                                860,
+                                852
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        728,
+                                        827,
+                                        860,
+                                        852
+                                    ],
+                                    "type": "text",
+                                    "content": "(similarly for 2&7)",
+                                    "score": 0.928
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1311,
+                        641,
+                        1838,
+                        694
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 23,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1313,
+                                641,
+                                1838,
+                                664
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1313,
+                                        641,
+                                        1838,
+                                        664
+                                    ],
+                                    "type": "text",
+                                    "content": "Rematerialization:Discardoutputof node1after node2iscomputed and",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1313,
+                                674,
+                                1450,
+                                696
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1313,
+                                        674,
+                                        1450,
+                                        696
+                                    ],
+                                    "type": "text",
+                                    "content": "recomputeit later:",
+                                    "score": 0.955
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1500,
+                        704,
+                        1694,
+                        769
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1500,
+                                704,
+                                1694,
+                                769
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1500,
+                                        704,
+                                        1694,
+                                        769
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1500,
+                                                704,
+                                                1694,
+                                                769
+                                            ],
+                                            "type": "image",
+                                            "image_path": "9806c2fd895b34bfd579f6609ad5e17e4ecc2ecb79bfd1131521cbaee274468c.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 24,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 24
+                },
+                {
+                    "bbox": [
+                        1311,
+                        797,
+                        1803,
+                        850
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 25,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1313,
+                                797,
+                                1806,
+                                819
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1313,
+                                        797,
+                                        1806,
+                                        819
+                                    ],
+                                    "type": "text",
+                                    "content": "Torecomputenode1:Weneed to recomputeOorhaveitavailablein",
+                                    "score": 0.982
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1313,
+                                829,
+                                1796,
+                                852
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1313,
+                                        829,
+                                        1796,
+                                        852
+                                    ],
+                                    "type": "text",
+                                    "content": "memory-anotherdecisionthatneedstobemadebythealgorithm",
+                                    "score": 0.989
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1975,
+                        283,
+                        2162,
+                        315
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 26,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1975,
+                                280,
+                                2167,
+                                318
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1975,
+                                        280,
+                                        2167,
+                                        318
+                                    ],
+                                    "type": "text",
+                                    "content": "3. Prior work",
+                                    "score": 0.953
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1977,
+                        379,
+                        2371,
+                        432
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 27,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1980,
+                                379,
+                                2318,
+                                402
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1980,
+                                        379,
+                                        2318,
+                                        402
+                                    ],
+                                    "type": "text",
+                                    "content": "Theworkof[1]developsamixed integerlinear",
+                                    "score": 0.991
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1977,
+                                411,
+                                2373,
+                                436
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1977,
+                                        411,
+                                        2373,
+                                        436
+                                    ],
+                                    "type": "text",
+                                    "content": "programming(MILP) formulation to solve this problem.",
+                                    "score": 0.968
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1977,
+                        442,
+                        2395,
+                        649
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 30,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1977,
+                                442,
+                                2395,
+                                525
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 28,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1980,
+                                        439,
+                                        2366,
+                                        465
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1980,
+                                                439,
+                                                2206,
+                                                465
+                                            ],
+                                            "type": "text",
+                                            "content": "·Introduces Boolean matrices",
+                                            "score": 0.992
+                                        },
+                                        {
+                                            "bbox": [
+                                                2206,
+                                                442,
+                                                2254,
+                                                462
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "R , S , F",
+                                            "score": 0.78
+                                        },
+                                        {
+                                            "bbox": [
+                                                2254,
+                                                439,
+                                                2366,
+                                                465
+                                            ],
+                                            "type": "text",
+                                            "content": "forrecompute,",
+                                            "score": 0.997
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2002,
+                                        470,
+                                        2398,
+                                        495
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2002,
+                                                472,
+                                                2216,
+                                                495
+                                            ],
+                                            "type": "text",
+                                            "content": "storage,memorydeallocation",
+                                            "score": 0.975
+                                        },
+                                        {
+                                            "bbox": [
+                                                2216,
+                                                470,
+                                                2328,
+                                                495
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": " O ( n ^ { 2 } + n m )",
+                                            "score": 0.89
+                                        },
+                                        {
+                                            "bbox": [
+                                                2328,
+                                                472,
+                                                2398,
+                                                495
+                                            ],
+                                            "type": "text",
+                                            "content": "Boolean",
+                                            "score": 0.998
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2002,
+                                        504,
+                                        2303,
+                                        527
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2002,
+                                                504,
+                                                2303,
+                                                527
+                                            ],
+                                            "type": "text",
+                                            "content": "decision variables(n:#nodes,m:# edges)",
+                                            "score": 0.972
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1977,
+                                535,
+                                2358,
+                                649
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 29,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1980,
+                                        533,
+                                        2316,
+                                        558
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1980,
+                                                533,
+                                                2316,
+                                                558
+                                            ],
+                                            "type": "text",
+                                            "content": "·Poorscalabilityto large computationgraphs",
+                                            "score": 0.977
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1980,
+                                        567,
+                                        2328,
+                                        590
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1980,
+                                                567,
+                                                2328,
+                                                590
+                                            ],
+                                            "type": "text",
+                                            "content": "We have developeda new optimization problem",
+                                            "score": 0.961
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1977,
+                                        596,
+                                        2361,
+                                        620
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1977,
+                                                596,
+                                                2361,
+                                                620
+                                            ],
+                                            "type": "text",
+                                            "content": "formulation keeping scalabilityinmind,which greatly",
+                                            "score": 0.977
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        1980,
+                                        630,
+                                        2147,
+                                        649
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1980,
+                                                630,
+                                                2147,
+                                                649
+                                            ],
+                                            "type": "text",
+                                            "content": "simplifiestheproblem.",
+                                            "score": 0.994
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1977,
+                        661,
+                        2388,
+                        709
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 31,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1980,
+                                659,
+                                2388,
+                                683
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1980,
+                                        659,
+                                        2388,
+                                        683
+                                    ],
+                                    "type": "text",
+                                    "content": "Keyassumption:Don’t rematerializeany node more than",
+                                    "score": 0.981
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1977,
+                                688,
+                                2045,
+                                714
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1977,
+                                        688,
+                                        2045,
+                                        714
+                                    ],
+                                    "type": "text",
+                                    "content": "C times.",
+                                    "score": 0.952
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1977,
+                        749,
+                        2393,
+                        840
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 32,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1980,
+                                751,
+                                2331,
+                                769
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1980,
+                                        751,
+                                        2331,
+                                        769
+                                    ],
+                                    "type": "text",
+                                    "content": "[1] Checkmate:BreakingtheMemoryWall with Optimal Tensor",
+                                    "score": 0.969
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1977,
+                                774,
+                                2393,
+                                794
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1977,
+                                        774,
+                                        2393,
+                                        794
+                                    ],
+                                    "type": "text",
+                                    "content": "Rematerialization,ProceedingsofMachine Learningand Systems2(MLSys",
+                                    "score": 0.984
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1980,
+                                799,
+                                2371,
+                                817
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1980,
+                                        799,
+                                        2371,
+                                        817
+                                    ],
+                                    "type": "text",
+                                    "content": "2020).ParasJain,AjayJain,Aniruddha Nrusimha,AmirGholami,Pieter",
+                                    "score": 0.963
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1977,
+                                822,
+                                2254,
+                                842
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1977,
+                                        822,
+                                        2254,
+                                        842
+                                    ],
+                                    "type": "text",
+                                    "content": "Abbeel,Josephonalez,urteter,lontoica",
+                                    "score": 0.802
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        878,
+                        243,
+                        910
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 33,
+                    "lines": [
+                        {
+                            "bbox": [
+                                87,
+                                872,
+                                246,
+                                916
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        87,
+                                        872,
+                                        246,
+                                        916
+                                    ],
+                                    "type": "text",
+                                    "content": "4. Solution",
+                                    "score": 0.968
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        181,
+                        955,
+                        798,
+                        1263
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                181,
+                                955,
+                                798,
+                                1263
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        181,
+                                        955,
+                                        798,
+                                        1263
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                181,
+                                                955,
+                                                798,
+                                                1263
+                                            ],
+                                            "type": "image",
+                                            "image_path": "fdbf964dd60c0c5c78b2b69377a2834617b76cdf88d199fa2706f7b253e7ee7c.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 34,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 34
+                },
+                {
+                    "bbox": [
+                        84,
+                        1298,
+                        502,
+                        1318
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 35,
+                    "lines": [
+                        {
+                            "bbox": [
+                                84,
+                                1296,
+                                505,
+                                1319
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        84,
+                                        1296,
+                                        505,
+                                        1319
+                                    ],
+                                    "type": "text",
+                                    "content": "Oursolution isanoptimizationproblemformulationwhere",
+                                    "score": 0.99
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        1328,
+                        928,
+                        1566
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 42,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                87,
+                                1328,
+                                928,
+                                1349
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 36,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1324,
+                                        930,
+                                        1354
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1324,
+                                                930,
+                                                1354
+                                            ],
+                                            "type": "text",
+                                            "content": "·Themainbuildingblockistheconceptofoutputretentionintervalswhich simplifiestheproblemformulation greatly",
+                                            "score": 0.99
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                1361,
+                                801,
+                                1381
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 37,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1356,
+                                        803,
+                                        1384
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1356,
+                                                803,
+                                                1384
+                                            ],
+                                            "type": "text",
+                                            "content": "·Output retention intervalsareused to model how longthe outputofa nodeis retainedin memory",
+                                            "score": 0.966
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                1391,
+                                923,
+                                1440
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 38,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1387,
+                                        925,
+                                        1414
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1387,
+                                                925,
+                                                1414
+                                            ],
+                                            "type": "text",
+                                            "content": "·WedefineCretentionintervalsforeach nodewhereeach intervalrepresentsarematerialization(i.e.recompute)of",
+                                            "score": 0.988
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        102,
+                                        1419,
+                                        181,
+                                        1444
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                102,
+                                                1419,
+                                                181,
+                                                1444
+                                            ],
+                                            "type": "text",
+                                            "content": "thatnode",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                1452,
+                                918,
+                                1475
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 39,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1447,
+                                        918,
+                                        1478
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1447,
+                                                191,
+                                                1478
+                                            ],
+                                            "type": "text",
+                                            "content": "·The starting",
+                                            "score": 0.926
+                                        },
+                                        {
+                                            "bbox": [
+                                                194,
+                                                1450,
+                                                211,
+                                                1473
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "s _ { v } ^ { i }",
+                                            "score": 0.68
+                                        },
+                                        {
+                                            "bbox": [
+                                                211,
+                                                1447,
+                                                273,
+                                                1478
+                                            ],
+                                            "type": "text",
+                                            "content": "andend",
+                                            "score": 0.999
+                                        },
+                                        {
+                                            "bbox": [
+                                                273,
+                                                1450,
+                                                293,
+                                                1473
+                                            ],
+                                            "type": "inline_equation",
+                                            "content": "e _ { v } ^ { i }",
+                                            "score": 0.82
+                                        },
+                                        {
+                                            "bbox": [
+                                                293,
+                                                1447,
+                                                918,
+                                                1478
+                                            ],
+                                            "type": "text",
+                                            "content": "timesoftheintervalsaremodeledasthedecisionvariablesoftheoptimizationproblem",
+                                            "score": 0.992
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                1485,
+                                721,
+                                1505
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 40,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1482,
+                                        721,
+                                        1508
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1482,
+                                                721,
+                                                1508
+                                            ],
+                                            "type": "text",
+                                            "content": "·We then define the precedence and memory constraints using these decision variables",
+                                            "score": 0.967
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                87,
+                                1517,
+                                928,
+                                1566
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 41,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82,
+                                        1512,
+                                        930,
+                                        1538
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82,
+                                                1512,
+                                                930,
+                                                1538
+                                            ],
+                                            "type": "text",
+                                            "content": "·Theresultingproblemcouldbeposedasaconstraintprogramming(CP)problem,whichwecoulduseanygeneric CP",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        104,
+                                        1546,
+                                        298,
+                                        1570
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                104,
+                                                1546,
+                                                298,
+                                                1570
+                                            ],
+                                            "type": "text",
+                                            "content": "solverto solvenumerically",
+                                            "score": 0.982
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        995,
+                        878,
+                        1318,
+                        913
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 43,
+                    "lines": [
+                        {
+                            "bbox": [
+                                992,
+                                870,
+                                1326,
+                                916
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        992,
+                                        870,
+                                        1326,
+                                        916
+                                    ],
+                                    "type": "text",
+                                    "content": "5. Formal specification",
+                                    "score": 0.982
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        997,
+                        971,
+                        1139,
+                        1013
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 44,
+                    "lines": [
+                        {
+                            "bbox": [
+                                997,
+                                971,
+                                1146,
+                                1003
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        997,
+                                        973,
+                                        1069,
+                                        998
+                                    ],
+                                    "type": "text",
+                                    "content": "minimize",
+                                    "score": 0.999
+                                },
+                                {
+                                    "bbox": [
+                                        1079,
+                                        971,
+                                        1146,
+                                        1003
+                                    ],
+                                    "type": "text",
+                                    "content": "Mwua",
+                                    "score": 0.699
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1017,
+                                993,
+                                1107,
+                                1016
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1017,
+                                        993,
+                                        1052,
+                                        1006
+                                    ],
+                                    "type": "text",
+                                    "content": "s,e,a",
+                                    "score": 0.805
+                                },
+                                {
+                                    "bbox": [
+                                        1082,
+                                        996,
+                                        1107,
+                                        1016
+                                    ],
+                                    "type": "text",
+                                    "content": "Ui",
+                                    "score": 0.636
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1000,
+                        1018,
+                        1171,
+                        1039
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 45,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1000,
+                                1014,
+                                1176,
+                                1042
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1000,
+                                        1014,
+                                        1176,
+                                        1042
+                                    ],
+                                    "type": "text",
+                                    "content": "subjectto s≤e,u,i",
+                                    "score": 0.835
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1077,
+                        1042,
+                        1288,
+                        1067
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 46,
+                    "lines": []
+                },
+                {
+                    "bbox": [
+                        1079,
+                        1069,
+                        1288,
+                        1112
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 47,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1102,
+                                1066,
+                                1139,
+                                1100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1102,
+                                        1066,
+                                        1139,
+                                        1100
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1077,
+                                1092,
+                                1159,
+                                1117
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1077,
+                                        1092,
+                                        1159,
+                                        1117
+                                    ],
+                                    "type": "text",
+                                    "content": "vi:s≤t≤e",
+                                    "score": 0.709
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1077,
+                        1115,
+                        1365,
+                        1139
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 48,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1164,
+                                1115,
+                                1368,
+                                1139
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1164,
+                                        1117,
+                                        1276,
+                                        1139
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\forall i \\in \\{ i : a _ { v } ^ { i } = 1 \\}",
+                                    "score": 0.7
+                                },
+                                {
+                                    "bbox": [
+                                        1276,
+                                        1115,
+                                        1368,
+                                        1139
+                                    ],
+                                    "type": "text",
+                                    "content": ",j such that",
+                                    "score": 0.875
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1124,
+                        1142,
+                        1293,
+                        1165
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 49,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1127,
+                                1142,
+                                1296,
+                                1163
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1127,
+                                        1142,
+                                        1296,
+                                        1163
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "a _ { u } ^ { j } = 1 , s _ { u } ^ { j } + 1 \\leq s _ { v } ^ { i } \\leq e _ { u } ^ { j }",
+                                    "score": 0.54
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1077,
+                        1167,
+                        1323,
+                        1192
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 50,
+                    "lines": []
+                },
+                {
+                    "bbox": [
+                        1077,
+                        1193,
+                        1154,
+                        1215
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 51,
+                    "lines": []
+                },
+                {
+                    "bbox": [
+                        1079,
+                        1218,
+                        1278,
+                        1241
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 52,
+                    "lines": []
+                },
+                {
+                    "bbox": [
+                        1350,
+                        974,
+                        1679,
+                        1092
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 57,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1350,
+                                974,
+                                1624,
+                                998
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 53,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1346,
+                                        973,
+                                        1375,
+                                        999
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1346,
+                                                973,
+                                                1375,
+                                                999
+                                            ],
+                                            "type": "text",
+                                            "content": "(1)",
+                                            "score": 0.864
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1350,
+                                1019,
+                                1666,
+                                1039
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 54,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1348,
+                                        1018,
+                                        1375,
+                                        1041
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1348,
+                                                1018,
+                                                1375,
+                                                1041
+                                            ],
+                                            "type": "text",
+                                            "content": "(2)",
+                                            "score": 0.69
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1350,
+                                1046,
+                                1679,
+                                1064
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 55,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1348,
+                                        1042,
+                                        1375,
+                                        1067
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1348,
+                                                1042,
+                                                1375,
+                                                1067
+                                            ],
+                                            "type": "text",
+                                            "content": "(3)",
+                                            "score": 0.699
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1350,
+                                1072,
+                                1629,
+                                1092
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 56,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1348,
+                                        1071,
+                                        1375,
+                                        1095
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1348,
+                                                1071,
+                                                1375,
+                                                1095
+                                            ],
+                                            "type": "text",
+                                            "content": "(4)",
+                                            "score": 0.749
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1350,
+                        1142,
+                        1706,
+                        1240
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 62,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1350,
+                                1142,
+                                1592,
+                                1163
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 58,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1348,
+                                        1142,
+                                        1375,
+                                        1165
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1348,
+                                                1142,
+                                                1375,
+                                                1165
+                                            ],
+                                            "type": "text",
+                                            "content": "(5)",
+                                            "score": 0.747
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1350,
+                                1167,
+                                1654,
+                                1190
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 59,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1348,
+                                        1167,
+                                        1375,
+                                        1190
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1348,
+                                                1167,
+                                                1375,
+                                                1190
+                                            ],
+                                            "type": "text",
+                                            "content": "(6)",
+                                            "score": 0.832
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1350,
+                                1193,
+                                1706,
+                                1215
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 60,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1348,
+                                        1193,
+                                        1373,
+                                        1215
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1348,
+                                                1193,
+                                                1373,
+                                                1215
+                                            ],
+                                            "type": "text",
+                                            "content": "（7)",
+                                            "score": 0.755
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                1350,
+                                1218,
+                                1557,
+                                1240
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 61,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1348,
+                                        1216,
+                                        1375,
+                                        1241
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1348,
+                                                1216,
+                                                1375,
+                                                1241
+                                            ],
+                                            "type": "text",
+                                            "content": "（8）",
+                                            "score": 0.72
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        1768,
+                        880,
+                        2055,
+                        910
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 63,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1768,
+                                877,
+                                2057,
+                                913
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1768,
+                                        877,
+                                        2057,
+                                        913
+                                    ],
+                                    "type": "text",
+                                    "content": "6.Numerical results",
+                                    "score": 0.988
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1813,
+                        971,
+                        2184,
+                        1238
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1813,
+                                971,
+                                2184,
+                                1238
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1813,
+                                        971,
+                                        2184,
+                                        1238
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1813,
+                                                971,
+                                                2184,
+                                                1238
+                                            ],
+                                            "type": "image",
+                                            "image_path": "46a1113868b40a11e9d572d455f57d6ece8af00625641f85a3dc4b73365a9b9f.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 64,
+                            "angle": 0,
+                            "type": "image_body"
+                        },
+                        {
+                            "bbox": [
+                                2219,
+                                1006,
+                                2378,
+                                1190
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1006,
+                                        2361,
+                                        1026
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1006,
+                                                2361,
+                                                1026
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure:Percentage of",
+                                            "score": 0.971
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1022,
+                                        2368,
+                                        1042
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1022,
+                                                2368,
+                                                1042
+                                            ],
+                                            "type": "text",
+                                            "content": "totalduration increase",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1042,
+                                        2356,
+                                        1059
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1042,
+                                                2356,
+                                                1059
+                                            ],
+                                            "type": "text",
+                                            "content": "against solve time in",
+                                            "score": 0.957
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1061,
+                                        2323,
+                                        1079
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1061,
+                                                2323,
+                                                1079
+                                            ],
+                                            "type": "text",
+                                            "content": "seconds forour",
+                                            "score": 0.981
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1079,
+                                        2338,
+                                        1097
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1079,
+                                                2338,
+                                                1097
+                                            ],
+                                            "type": "text",
+                                            "content": "proposed method",
+                                            "score": 0.975
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1099,
+                                        2323,
+                                        1117
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1099,
+                                                2323,
+                                                1117
+                                            ],
+                                            "type": "text",
+                                            "content": "(Moccasin) and",
+                                            "score": 0.912
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1115,
+                                        2378,
+                                        1135
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1115,
+                                                2378,
+                                                1135
+                                            ],
+                                            "type": "text",
+                                            "content": "Checkmate[1] ona real-",
+                                            "score": 0.957
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1134,
+                                        2378,
+                                        1153
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1134,
+                                                2378,
+                                                1153
+                                            ],
+                                            "type": "text",
+                                            "content": "world graphwith n=442",
+                                            "score": 0.977
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1153,
+                                        2348,
+                                        1172
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1153,
+                                                2348,
+                                                1172
+                                            ],
+                                            "type": "text",
+                                            "content": "nodes andm=1247",
+                                            "score": 0.97
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        2221,
+                                        1170,
+                                        2269,
+                                        1192
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                2221,
+                                                1170,
+                                                2269,
+                                                1192
+                                            ],
+                                            "type": "text",
+                                            "content": "edges.",
+                                            "score": 0.988
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 65,
+                            "angle": 0,
+                            "type": "image_caption"
+                        }
+                    ],
+                    "index": 64
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        1248,
+                        1270,
+                        2102,
+                        1580
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1248,
+                                1270,
+                                2102,
+                                1580
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1248,
+                                        1270,
+                                        2102,
+                                        1580
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1248,
+                                                1270,
+                                                2102,
+                                                1580
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td rowspan=\"2\">Graph</td><td rowspan=\"2\">(n,m)</td><td rowspan=\"2\">M</td><td colspan=\"3\">CHECKMATE MILP</td><td colspan=\"3\">CHECKMATE LP+Rounding</td><td colspan=\"3\">MOCCASIN</td></tr><tr><td>TDI %</td><td>Peak mem</td><td>Time (s)</td><td>TDI %</td><td>Peak mem</td><td>Time (s)</td><td>TDI %</td><td>Peak mem</td><td>Time (s)</td></tr><tr><td rowspan=\"2\">RL G2</td><td rowspan=\"2\">(250,944)</td><td>132,156</td><td>0.9</td><td>132,130</td><td>685.1</td><td>93.0</td><td>178,200</td><td>401.7</td><td>0.9</td><td>131,831</td><td>55.0</td></tr><tr><td>117,472</td><td>-</td><td>-</td><td>-</td><td>328.6</td><td>181,200</td><td>696.9</td><td>4.9</td><td>117,400</td><td>639.5</td></tr><tr><td rowspan=\"2\">RL G4</td><td rowspan=\"2\">(1000,5875)</td><td>547,757</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.7</td><td>547,660</td><td>3612.9</td></tr><tr><td>486,895</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>3.4</td><td>486,880</td><td>3611.8</td></tr><tr><td rowspan=\"2\">RW 1</td><td rowspan=\"2\">(358,947)</td><td>20,227,276</td><td>2.3</td><td>20,226,048</td><td>1340.0</td><td>-</td><td>-</td><td>-</td><td>2.3</td><td>20,226,048</td><td>123.5</td></tr><tr><td>17,979,801</td><td>4.5</td><td>17,977,344</td><td>1605.4</td><td>-</td><td>-</td><td>-</td><td>4.5</td><td>17,977,344</td><td>122.0</td></tr><tr><td rowspan=\"2\">RW 2</td><td rowspan=\"2\">(442,1247)</td><td>10,817,740</td><td>1.4</td><td>10,811,392</td><td>1856.7</td><td>-</td><td>-</td><td>-</td><td>1.4</td><td>10,813,440</td><td>1201.3</td></tr><tr><td>9,615,769</td><td>2.8</td><td>9,615,360</td><td>2242.9</td><td>-</td><td>-</td><td>-</td><td>2.8</td><td>9,613,312</td><td>303.9</td></tr><tr><td rowspan=\"2\">RW 3</td><td rowspan=\"2\">(574,1304)</td><td>10,539,417</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>0.8</td><td>10,539,008</td><td>1802.4</td></tr><tr><td>9,368,371</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1.6</td><td>9,367,552</td><td>1802.8</td></tr><tr><td rowspan=\"2\">CM 1</td><td rowspan=\"2\">(73,149)</td><td>11.3 GB</td><td>0.0</td><td>11.1 GB</td><td>6.3</td><td>0.0</td><td>11.4 GB</td><td>6.8</td><td>0.0</td><td>11.1 GB</td><td>3.1</td></tr><tr><td>10.0 GB</td><td>0.1</td><td>9.65 GB</td><td>5.6</td><td>0.1</td><td>10.8 GB</td><td>6.7</td><td>0.1</td><td>9.9 GB</td><td>3.1</td></tr><tr><td rowspan=\"2\">CM 2</td><td rowspan=\"2\">(353,751)</td><td>31.9 GB</td><td>0.1</td><td>31.6 GB</td><td>434.1</td><td>0.1</td><td>31.5 GB</td><td>505.2</td><td>0.2</td><td>31.9 GB</td><td>65.2</td></tr><tr><td>28.4 GB</td><td>0.3</td><td>28.3 GB</td><td>485.3</td><td>0.5</td><td>27.8 GB</td><td>1065.4</td><td>0.3</td><td>28.4 GB</td><td>69.3</td></tr></table>",
+                                            "image_path": "f6c80662f64a9f990639c88484882bbae6bc4c81430ac3a01bd98f458d7703cd.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 66,
+                            "angle": 0,
+                            "type": "table_body"
+                        }
+                    ],
+                    "index": 66
+                },
+                {
+                    "bbox": [
+                        2149,
+                        1379,
+                        2274,
+                        1397
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 67,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2149,
+                                1377,
+                                2276,
+                                1399
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2149,
+                                        1377,
+                                        2276,
+                                        1399
+                                    ],
+                                    "type": "text",
+                                    "content": "Table:Performance",
+                                    "score": 0.992
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2149,
+                        1401,
+                        2298,
+                        1470
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 68,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2149,
+                                1399,
+                                2271,
+                                1417
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2149,
+                                        1399,
+                                        2271,
+                                        1417
+                                    ],
+                                    "type": "text",
+                                    "content": "comparison across",
+                                    "score": 0.979
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2152,
+                                1414,
+                                2301,
+                                1435
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2152,
+                                        1414,
+                                        2301,
+                                        1435
+                                    ],
+                                    "type": "text",
+                                    "content": "differentgraph families",
+                                    "score": 0.992
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2149,
+                                1434,
+                                2303,
+                                1454
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2149,
+                                        1434,
+                                        2303,
+                                        1454
+                                    ],
+                                    "type": "text",
+                                    "content": "underdifferentmemory",
+                                    "score": 0.994
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2149,
+                                1450,
+                                2209,
+                                1473
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2149,
+                                        1450,
+                                        2209,
+                                        1473
+                                    ],
+                                    "type": "text",
+                                    "content": "budgets.",
+                                    "score": 0.992
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        116,
+                        43,
+                        485,
+                        164
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                111,
+                                36,
+                                487,
+                                124
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        111,
+                                        36,
+                                        487,
+                                        124
+                                    ],
+                                    "type": "text",
+                                    "content": "Qualcoww",
+                                    "score": 0.828
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                116,
+                                119,
+                                378,
+                                165
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        116,
+                                        119,
+                                        378,
+                                        165
+                                    ],
+                                    "type": "text",
+                                    "content": "Al research",
+                                    "score": 0.981
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        636,
+                        41,
+                        1833,
+                        198
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                796,
+                                33,
+                                1679,
+                                117
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        796,
+                                        33,
+                                        1679,
+                                        117
+                                    ],
+                                    "type": "text",
+                                    "content": "MOCCASIN: Efficient Tensor",
+                                    "score": 0.985
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                631,
+                                126,
+                                1841,
+                                207
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        631,
+                                        126,
+                                        1841,
+                                        207
+                                    ],
+                                    "type": "text",
+                                    "content": "Rematerialization for Neural Networks",
+                                    "score": 0.994
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2035,
+                        26,
+                        2408,
+                        71
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2082,
+                                23,
+                                2408,
+                                48
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2082,
+                                        23,
+                                        2408,
+                                        48
+                                    ],
+                                    "type": "text",
+                                    "content": "BurakBartan1/HaomingLi²/HarrisTeague1/",
+                                    "score": 0.966
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2082,
+                                49,
+                                2321,
+                                72
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2082,
+                                        49,
+                                        2321,
+                                        72
+                                    ],
+                                    "type": "text",
+                                    "content": "ChristopherLott1/Bistra Dilkina²",
+                                    "score": 0.97
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2035,
+                        99,
+                        2425,
+                        137
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2040,
+                                96,
+                                2428,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2040,
+                                        111,
+                                        2055,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        2079,
+                                        96,
+                                        2428,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "1QualcommAl Research,2Universityof Southern",
+                                    "score": 0.954
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                2082,
+                                116,
+                                2157,
+                                140
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2082,
+                                        116,
+                                        2157,
+                                        140
+                                    ],
+                                    "type": "text",
+                                    "content": "California",
+                                    "score": 0.994
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        2035,
+                        170,
+                        2293,
+                        192
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2037,
+                                167,
+                                2296,
+                                193
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2037,
+                                        172,
+                                        2062,
+                                        189
+                                    ],
+                                    "type": "text",
+                                    "content": "",
+                                    "score": 0.0
+                                },
+                                {
+                                    "bbox": [
+                                        2077,
+                                        167,
+                                        2296,
+                                        193
+                                    ],
+                                    "type": "text",
+                                    "content": "bbartan@qti.qualcomm.com",
+                                    "score": 0.984
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        1776,
+                        1623,
+                        2371,
+                        1639
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "index": 69,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1776,
+                                1623,
+                                2371,
+                                1639
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1776,
+                                        1623,
+                                        2371,
+                                        1639
+                                    ],
+                                    "type": "text",
+                                    "content": "QUALCOMM AI RESEARCH ISAN INITIATIVEOFQUALCOMM TECHNOLOGIES,INC",
+                                    "score": 0.955
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "page_size": [
+                2488,
+                1658
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "2.7.5"
+}

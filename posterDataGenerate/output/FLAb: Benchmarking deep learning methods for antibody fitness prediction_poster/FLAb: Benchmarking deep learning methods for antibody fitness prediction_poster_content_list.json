@@ -1,0 +1,555 @@
+[
+  {
+    "type": "text",
+    "text": "FLAb: Benchmarking deep learning methods for antibody fitness prediction ",
+    "text_level": 1,
+    "bbox": [
+      28,
+      20,
+      462,
+      95
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Michael Chungyoun, Jeffrey Ruffolo, Jeffrey Gray ",
+    "bbox": [
+      526,
+      42,
+      640,
+      77
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      702,
+      22,
+      847,
+      90
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      864,
+      25,
+      960,
+      91
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1 Background ",
+    "text_level": 1,
+    "bbox": [
+      38,
+      117,
+      169,
+      133
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Antibody therapeutics must have a particular set of fitness properties ",
+    "bbox": [
+      36,
+      137,
+      438,
+      170
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "a)Expressionb)Thermostabilityc)Immunogenicityd)Bindingaffnitye)Aggregationf)Polyreactivity ",
+    "bbox": [
+      23,
+      181,
+      485,
+      192
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      35,
+      196,
+      84,
+      245
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      104,
+      196,
+      170,
+      243
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      175,
+      197,
+      265,
+      242
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      270,
+      197,
+      338,
+      243
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      351,
+      206,
+      403,
+      235
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      433,
+      196,
+      487,
+      243
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sixclasses of biophysical data relevant toantibodydevelopmentare (a) expression,(b) thermostability,(c)immunogenicity,(d) bindingaffinity,(e) aggregation,and (f)polyreactivity ",
+    "bbox": [
+      38,
+      255,
+      444,
+      291
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Do deep learning methods capture properties of therapeuticantibodies? ",
+    "text_level": 1,
+    "bbox": [
+      38,
+      315,
+      443,
+      347
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We seek toanswer thisquestion by: ",
+    "bbox": [
+      39,
+      352,
+      238,
+      363
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "1.Creatingacollection of datasets of antibody therapeuticdata ",
+      "2.BenchmarkrepresentativeAImodellikelihoodsforfitnessprediction "
+    ],
+    "bbox": [
+      39,
+      363,
+      438,
+      382
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2 Dataset curation ",
+    "text_level": 1,
+    "bbox": [
+      36,
+      415,
+      211,
+      430
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We curated publicly available antibody fitness ",
+    "bbox": [
+      35,
+      435,
+      444,
+      465
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"22\"></td><td colspan=\"6\">Number of datapoints</td></tr><tr><td>Antibody</td><td>Exp. (μg/mL)</td><td>Tm(°C)</td><td>Imm. (% ADA)</td><td>Binding (nM)</td><td>Agg. (Wv shift)</td></tr><tr><td>GSK CA1</td><td>34</td><td>34</td><td>-</td><td>29</td><td>-</td></tr><tr><td>GSK CA2</td><td>25</td><td>22</td><td>-</td><td>22</td><td>-</td></tr><tr><td>GSK CA3</td><td>11</td><td>8</td><td>-</td><td>11</td><td>-</td></tr><tr><td>GSK CA4</td><td>24</td><td>24</td><td>-</td><td>19</td><td>-</td></tr><tr><td>Hie C143</td><td>-</td><td>2</td><td>-</td><td>16</td><td>-</td></tr><tr><td>Hie mAb114</td><td>-</td><td>7</td><td>-</td><td>20</td><td>-</td></tr><tr><td>Hie mAb114 UCA</td><td>-</td><td>2</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Hie MEDI8852</td><td>-</td><td>2</td><td>-</td><td>15</td><td>-</td></tr><tr><td>Hie MEDI8852 UCA</td><td>-</td><td>6</td><td>-</td><td>20</td><td>-</td></tr><tr><td>Hie REGN10987</td><td>-</td><td>8</td><td>-</td><td>13</td><td>-</td></tr><tr><td>Hie S309</td><td>-</td><td>10</td><td>-</td><td>19</td><td>-</td></tr><tr><td>Koenig G6</td><td>4275</td><td>-</td><td>-</td><td>4275</td><td>-</td></tr><tr><td>Prihoda imm</td><td>-</td><td>-</td><td>217</td><td>-</td><td>-</td></tr><tr><td>Rosace Adalimumab</td><td>-</td><td>14</td><td>-</td><td>14</td><td>14</td></tr><tr><td>Rosace CD3022</td><td>-</td><td>6</td><td>-</td><td>6</td><td>6</td></tr><tr><td>Rosace Golimumab</td><td>-</td><td>5</td><td>-</td><td>5</td><td>5</td></tr><tr><td>Shane. Trast. multi</td><td>-</td><td>-</td><td>-</td><td>24</td><td>-</td></tr><tr><td>Shane. Trast. zero</td><td>-</td><td>-</td><td>-</td><td>422</td><td>-</td></tr><tr><td>Warszawski D44</td><td>-</td><td>-</td><td>-</td><td>2049</td><td>-</td></tr><tr><td>Wittrup CST</td><td>274</td><td>137</td><td>-</td><td>-</td><td>822</td></tr></table>",
+    "bbox": [
+      31,
+      476,
+      479,
+      670
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Thisdatabase includes mutational landscapes of17distinct antibody families andatotal of13,384associated fitnessmetrics.Each sequence ismapped toat leastone fitness labelpertainingto the6fitness properties ",
+    "bbox": [
+      35,
+      680,
+      476,
+      715
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3 Methods ",
+    "text_level": 1,
+    "bbox": [
+      31,
+      761,
+      132,
+      775
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Pipeline for benchmarking protein language models ",
+    "bbox": [
+      30,
+      781,
+      420,
+      812
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      23,
+      827,
+      476,
+      910
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Foreach protein languagemodel,we separatelyinput theantibody heavyand light sequences to return two perplexity scores,and we tabulate the average perplexity between the two sequences.Wecalculate Spearman's (p),Pearson’s(r) and Kendall tau's (t) correlationcoeficients between perplexityand fitness. ",
+    "bbox": [
+      25,
+      935,
+      477,
+      982
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "4 Results ",
+    "text_level": 1,
+    "bbox": [
+      524,
+      117,
+      614,
+      132
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A heat map of model-dataset correlations ",
+    "bbox": [
+      524,
+      137,
+      896,
+      153
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      563,
+      157,
+      949,
+      285
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Summaryof Pearson'scorrelations.Models generallyperform bestwith thermostabilityand bindingafinitydatasets,butmost strugglewithaggregation propensityand polyreactivity. ",
+    "bbox": [
+      522,
+      291,
+      962,
+      326
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Intrinsic biophysical propertiesare more accurately predicted than extrinsic ",
+    "text_level": 1,
+    "bbox": [
+      522,
+      331,
+      981,
+      362
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      563,
+      367,
+      963,
+      456
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Intrinsic propertiesare impacted by inherent propertiesof theantibody. Extrinsicpropertiesresultfrom target biologyandmechanisms of action. ",
+    "bbox": [
+      524,
+      460,
+      924,
+      481
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Modelsare moreaccurateat distinguishing intra-family versus inter-family antibody sets ",
+    "bbox": [
+      521,
+      488,
+      921,
+      520
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      554,
+      523,
+      964,
+      606
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Intra-familyantibodiesare mutants originating from same wild type. Inter-familyantibodies havedifferent wild type origins. ",
+    "bbox": [
+      524,
+      610,
+      900,
+      632
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Parameter size influences performance over architectureand dataset composition ",
+    "bbox": [
+      521,
+      635,
+      914,
+      665
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      595,
+      665,
+      724,
+      745
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      798,
+      666,
+      910,
+      747
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Polyreactivityand thermostabilityperformancecorrelationsimprovewith parametersizeforProGen2(151M,764M,2.7B,6.4Bparameters) ",
+    "bbox": [
+      526,
+      750,
+      929,
+      773
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Some models favor evolutionary signal rather than physical fitness ",
+    "bbox": [
+      521,
+      780,
+      926,
+      810
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_15.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      594,
+      815,
+      723,
+      882
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/FLAb: Benchmarking deep learning methods for antibody fitness prediction_poster/visuals/images/fig_16.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      779,
+      813,
+      912,
+      881
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Thelanguagemodel (left)incorrectlyassigns higherconfidence towildtype antibody.Physics-based model(right)correctlyassigns higherstability to the mutants ",
+    "bbox": [
+      538,
+      883,
+      961,
+      917
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "5 Conclusion ",
+    "text_level": 1,
+    "bbox": [
+      524,
+      926,
+      646,
+      940
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "FLAbisa living benchmark where we willcontinuously add models evaluated and availableantibodydata ",
+    "bbox": [
+      521,
+      951,
+      968,
+      975
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Nomodel was top performingacrossall sixfitness classes ",
+    "bbox": [
+      522,
+      981,
+      843,
+      992
+    ],
+    "page_idx": 0
+  }
+]

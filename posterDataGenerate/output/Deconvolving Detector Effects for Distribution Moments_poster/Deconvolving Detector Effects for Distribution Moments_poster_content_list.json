@@ -1,0 +1,445 @@
+[
+  {
+    "type": "text",
+    "text": "Abstract ",
+    "text_level": 1,
+    "bbox": [
+      139,
+      165,
+      197,
+      184
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Deconvolving detector distortions - critical step to compare cross section measurements with theoretical predictions ",
+      "· Most approaches require binning ",
+      "·Theoretical predictions often at the level of moments. ",
+      "New approach to directly unfold distribution moments as a function of other observables without discretizing data ",
+      "·Moment Unfolding uses amodified GAN architecture ",
+      "Demonstrate the performance of this approach using jet substructure measurements in collider physics. "
+    ],
+    "bbox": [
+      28,
+      196,
+      309,
+      384
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      129,
+      405,
+      207,
+      425
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Unfolding (deconvolution): correcting detector distortions in experimental data - necessary for accurately comparing data between experiments and with theoretical predictions. ",
+      "· Typically, entire spectra unfolded -moments computed afterward. ",
+      "·Current approaches discretize support-then unfold histogram. ",
+      "· This binning procedure introduces discretization artifacts. ",
+      "Unfold without binning-generic solution to unfolding entire spectra-may compromise precision for small set of moments. ",
+      "Dedicated machine learning-based unfolding method to directly unfold the observable moments. ",
+      "GAN learns reweighting function inspired by the Boltzman equation- parameters identified with observable moments ",
+      "Noniterative in contrast to methods like Omnifold (Andreassen et al,Phys.Rev.Lett.124,182001-2020) "
+    ],
+    "bbox": [
+      20,
+      458,
+      314,
+      722
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      142,
+      732,
+      194,
+      750
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Neural Networks ",
+    "text_level": 1,
+    "bbox": [
+      113,
+      793,
+      223,
+      812
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Generator: $g ( x ) = e ^ { \\lambda _ { 1 } x + \\cdots + \\lambda _ { n } x ^ { n } }$ reweights generation to truth. $n$ trainable parameters $\\lambda _ { i }$ learn $n$ moments ",
+    "bbox": [
+      27,
+      825,
+      308,
+      860
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Discriminator: $d : \\mathbb { R }  [ 0 , 1 ]$ distinguishes reweighted simulation from data ",
+    "bbox": [
+      27,
+      862,
+      308,
+      895
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Maxwell-Boltzmann distribution maximizes entropy while holding mean energy constant ",
+      "· Moment unfolding maximises BCE loss holding moments constant "
+    ],
+    "bbox": [
+      21,
+      922,
+      315,
+      977
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Data sets ",
+    "text_level": 1,
+    "bbox": [
+      452,
+      167,
+      514,
+      185
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "$\\textcircled { > }$ Simulation (Xs) : detector level simulation ",
+      "Generation $( X _ { G } ) :$ particle level simulation ",
+      "$\\textcircled { \\circ }$ Data(XD) : detector level data ",
+      "·Truth (Xr) : particle level data "
+    ],
+    "bbox": [
+      342,
+      197,
+      535,
+      275
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deconvolving Detector Effects for Distribution Moments_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      657,
+      157,
+      804,
+      299
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deconvolving Detector Effects for Distribution Moments_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      ""
+    ],
+    "image_footnote": [],
+    "bbox": [
+      806,
+      158,
+      949,
+      299
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deconvolving Detector Effects for Distribution Moments_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      343,
+      317,
+      630,
+      502
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      372,
+      533,
+      593,
+      554
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Loss Function ",
+    "text_level": 1,
+    "bbox": [
+      438,
+      595,
+      528,
+      613
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nL [ g, d ] = - \\frac {1}{N} \\sum_ {x _ {\\mathrm {D}}} \\left[ \\log (d (x _ {\\mathrm {D}})) + \\sum_ {(x _ {\\mathrm {G}}, x _ {\\mathrm {S}})} g (x _ {\\mathrm {G}}) \\log (1 - d (x _ {\\mathrm {S}})) \\right]\n$$",
+    "text_format": "latex",
+    "bbox": [
+      347,
+      629,
+      618,
+      673
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "· All neural networks implemented using the KERAs high-level API with TENsoRFLOw2 backend,optimized with ADAM. ",
+      "Discriminator $d$ parametrized with three hidden layers,50 nodes per layer. Intermediate layers ReLU, last layer sigmoid. "
+    ],
+    "bbox": [
+      336,
+      703,
+      629,
+      776
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      415,
+      785,
+      551,
+      806
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Gaussian distributions ",
+    "text_level": 1,
+    "bbox": [
+      411,
+      846,
+      555,
+      865
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·XT~N(0.5,1) ",
+      "·XG~N(0,1) ",
+      "detector effets $Z \\sim { \\mathcal { N } } ( 0 , 5 )$ "
+    ],
+    "bbox": [
+      342,
+      877,
+      473,
+      936
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Jet width ",
+    "text_level": 1,
+    "bbox": [
+      771,
+      370,
+      835,
+      387
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\nw = \\frac {1}{p _ {T , j e t}} \\sum_ {i \\in \\text {j e t}} p _ {T, i} \\Delta R _ {i}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      753,
+      401,
+      852,
+      442
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "${ } ^ { \\circ } p _ { T , i } =$ transverse momentum ",
+      "$\\Delta R _ { i } =$ angular distance from jet axis ",
+      "·Example focusses on jet width. Method can be applied to other jet observables like charge, mass, etc. "
+    ],
+    "bbox": [
+      663,
+      462,
+      943,
+      534
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deconvolving Detector Effects for Distribution Moments_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      657,
+      557,
+      801,
+      695
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Deconvolving Detector Effects for Distribution Moments_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      804,
+      555,
+      947,
+      695
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "•First two moments of the reweighted generation match truth well ",
+      "·Full distributions not statistically identical ",
+      "This is because higher moments are relevant and are not the same between truth and generation. "
+    ],
+    "bbox": [
+      656,
+      712,
+      949,
+      786
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "",
+    "text_level": 1,
+    "bbox": [
+      722,
+      795,
+      883,
+      813
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Proposed Moment Unfolding as a novel, flexible,unbinned, and non-iterative reweighting-based deconvolution method ",
+      "Showed promising results when applied to both Gaussian datasets as well as detector data from the LHC ",
+      "Future work-whether this method could be used to unfold infinitely many moments,i.e.entire probability density ",
+      "·Important questions about partition function normalization, stability, and overlapping support "
+    ],
+    "bbox": [
+      656,
+      848,
+      949,
+      996
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Deconvolving Detector Effects for Distribution Moments ",
+    "bbox": [
+      124,
+      38,
+      872,
+      77
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Krish Desai, Benjamin Nachman, Jesse Thaler ",
+    "bbox": [
+      135,
+      87,
+      426,
+      112
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "UC Berkeley, LBNL,MIT ",
+    "bbox": [
+      484,
+      87,
+      648,
+      112
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "krish.desai@berkeley.edu ",
+    "bbox": [
+      705,
+      88,
+      859,
+      112
+    ],
+    "page_idx": 0
+  }
+]

@@ -1,0 +1,806 @@
+[
+  {
+    "type": "text",
+    "text": "Motivations ",
+    "text_level": 1,
+    "bbox": [
+      115,
+      143,
+      189,
+      167
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Autonomous driving systems require an understanding of map elements on the road,including lanes,pedestriancrossing,and traffic signs,to navigatearound the world. ",
+    "bbox": [
+      15,
+      184,
+      284,
+      216
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      24,
+      233,
+      198,
+      335
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      182,
+      235,
+      199,
+      255
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "nvolvesa complex pipeline ",
+    "bbox": [
+      193,
+      238,
+      275,
+      255
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      182,
+      267,
+      199,
+      287
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Costlyand laborintensive ",
+    "bbox": [
+      200,
+      267,
+      270,
+      286
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_4.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      182,
+      299,
+      199,
+      320
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Needstimelyupdate ",
+    "bbox": [
+      200,
+      301,
+      256,
+      320
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "In contrast, we focus on using onboard sensors, including LiDARs and cameras,to estimate map elements on-the-fly. ",
+    "bbox": [
+      18,
+      346,
+      268,
+      377
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_5.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      19,
+      398,
+      176,
+      495
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      182,
+      400,
+      196,
+      421
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Simpleand end-to-end pipeline ",
+    "bbox": [
+      193,
+      401,
+      286,
+      417
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      182,
+      435,
+      196,
+      457
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Cheap and automatic ",
+    "bbox": [
+      193,
+      437,
+      258,
+      453
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      182,
+      473,
+      196,
+      494
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Perceives dynamic environment ",
+    "bbox": [
+      193,
+      474,
+      288,
+      494
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Contributions ",
+    "text_level": 1,
+    "bbox": [
+      111,
+      524,
+      196,
+      549
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·VectorMapNet is an end-to-end mapping approach. ",
+      "·We utilize polyline to accommodate the heterogeneous nature of map elements. ",
+      "·Our method achieves promising performance in online semantic HD map learning tasks. "
+    ],
+    "bbox": [
+      19,
+      567,
+      257,
+      630
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Problem Formulation ",
+    "text_level": 1,
+    "bbox": [
+      88,
+      649,
+      218,
+      673
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Similar to HDMapNet,our task is to generate vectorized map elements using data from onboard sensors of autonomous vehicle,such as RGB cameras and/or LiDARs.These map elements include: ",
+    "bbox": [
+      19,
+      687,
+      278,
+      716
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Lane dividers:boundaries dividing lanes on the road,usually straight lines. ",
+      "Road boundaries:boundaries of roads separating roadsand sidewalks,typicallyiregularly-shaped curves of arbitrary lengths. ",
+      "·Pedestrian crossings: regions with white markings indicating legal pedestrian crossing points, typically representedaspolygons. ",
+      "·Centerlines:line segments that commonly used for driving direction,vehicle positioning,and navigation. "
+    ],
+    "bbox": [
+      20,
+      723,
+      285,
+      846
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Why use polyline to represent maps? ",
+    "text_level": 1,
+    "bbox": [
+      40,
+      861,
+      266,
+      889
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Using polylines to represent map elements has three main advantages: ",
+    "bbox": [
+      20,
+      903,
+      207,
+      919
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Polylines are a flexible primitive thatcan represent complex geometric elements in HD maps. ",
+      "·Theorder of polyline vertices isa natural way to encode thedirection of map elements. ",
+      "·The polyline representation has been widely used bydownstream tasks,such as motion forecasting. "
+    ],
+    "bbox": [
+      19,
+      925,
+      288,
+      970
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "VectorMapNet ",
+    "text_level": 1,
+    "bbox": [
+      441,
+      143,
+      532,
+      172
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "VectorMapNetendtndodel,iesignedtoepresentamapithparseetofpolylinesthusforulatingthetasareet detection problem.In our approach,we divide the task into three distinct components ",
+    "bbox": [
+      307,
+      188,
+      670,
+      219
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      313,
+      227,
+      663,
+      515
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "(1)ABEVFeature Extractor(AvariantofIPM)thatliftsvarioussensormodalityinputs intoacanonicalfeaturespace(BEVspace). ",
+      "(2)AmapelementdetectorDER-likeTransformerdecoder)thatlocateandclasifiesallmaelementsbypredictingelementeypontsAi and their class labels $l _ { i }$ ",
+      "(3)APolylineGenerator(VanilaTransformerdecoder)thatproducesasequenceoforderedpolylineverticeswhichdescribesthelocal geometry of each detected map element $A _ { i } , l _ { i }$ "
+    ],
+    "bbox": [
+      301,
+      545,
+      668,
+      637
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_10.jpg",
+    "image_caption": [
+      "Three diferent keypoint representations are proposed here. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      301,
+      657,
+      502,
+      706
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "VectorMapNet for Motion Forecasting ",
+    "text_level": 1,
+    "bbox": [
+      307,
+      762,
+      487,
+      787
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Toevaluate thecapacity of ourmethod and to investigate itsusefulness in downstream tasks,we put our predicted HD map to the test within a motion forecasting task. ",
+    "bbox": [
+      296,
+      806,
+      497,
+      852
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Motion Forecasting heavilyrelies on precise map information for accurate prediction of future motion. ",
+    "bbox": [
+      296,
+      859,
+      476,
+      889
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Model Inputs</td><td>minADE ↓</td><td>minFDE↓</td><td>MR@2m↓</td></tr><tr><td>Traj.</td><td>0.909</td><td>1.577</td><td>19.6</td></tr><tr><td>Traj. + G.T. Map</td><td>0.779</td><td>1.390</td><td>18.0</td></tr><tr><td>Traj. + Pred. Map</td><td>0.826</td><td>1.477</td><td>18.2</td></tr></table>",
+    "bbox": [
+      316,
+      900,
+      480,
+      984
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Quantitative Results ",
+    "text_level": 1,
+    "bbox": [
+      529,
+      644,
+      654,
+      669
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We report the average precision that uses Chamfer distance and Fréchet Distance as the threshold. ",
+    "bbox": [
+      506,
+      686,
+      675,
+      714
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "□ Results on nuScenes ",
+    "bbox": [
+      507,
+      725,
+      569,
+      739
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/tables/table_2.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Methods</td><td>\\( {\\mathrm{{AP}}}_{ped} \\)</td><td>\\( {\\mathrm{{AP}}}_{\\text{divider }} \\)</td><td>\\( {\\mathrm{{AP}}}_{\\text{boundary }} \\)</td><td>mAP</td></tr><tr><td>STSU (Can et al., 2021)</td><td>7.0</td><td>11.6</td><td>16.5</td><td>11.7</td></tr><tr><td>HMapNet (Camera) (Li et al., 2021)</td><td>14.4</td><td>21.7</td><td>33.0</td><td>23.0</td></tr><tr><td>HMapNet (LiDAR) (Li et al., 2021)</td><td>10.4</td><td>24.1</td><td>37.9</td><td>24.1</td></tr><tr><td>HMapNet (Fusion) (Li et al., 2021)</td><td>16.3</td><td>29.6</td><td>46.7</td><td>31.0</td></tr><tr><td>VectorMapNet (Camera)</td><td>36.1</td><td>47.3</td><td>39.3</td><td>40.9</td></tr><tr><td>VectorMapNet (Camera) + fine-tune</td><td>42.5</td><td>51.4</td><td>44.1</td><td>46.0</td></tr><tr><td>VectorMapNet (LiDAR)</td><td>25.7</td><td>37.6</td><td>38.6</td><td>34.0</td></tr><tr><td>VectorMapNet (Fusion)</td><td>37.6</td><td>50.5</td><td>47.5</td><td>45.2</td></tr><tr><td>VectorMapNet (Fusion) + fine-tune</td><td>48.2</td><td>60.1</td><td>53.0</td><td>53.7</td></tr></table>",
+    "bbox": [
+      508,
+      740,
+      679,
+      876
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "□ Results on Argoverse2 ",
+    "bbox": [
+      507,
+      882,
+      574,
+      898
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Qualitative Results ",
+    "text_level": 1,
+    "bbox": [
+      778,
+      143,
+      894,
+      167
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      689,
+      189,
+      786,
+      499
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      789,
+      202,
+      984,
+      520
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Using polylines as primitives has brought us two benefits compared with baselines: ",
+    "bbox": [
+      691,
+      534,
+      906,
+      549
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Polylines efectively encode the detailed mapgeometries,e.g.,the corners of boundaries (red elipses). ",
+      "：Polyline representations prevent Model from generatingambiguous results,as it consistently encodes direction information.Incontrast, Rasterized methodsareprone to falsely generating loopycurves (blue ellipses ). "
+    ],
+    "bbox": [
+      694,
+      557,
+      974,
+      625
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      695,
+      638,
+      831,
+      742
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      695,
+      742,
+      829,
+      798
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A benefit of of posing map learning asa detection problem: ",
+    "bbox": [
+      694,
+      807,
+      806,
+      837
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "The model can identify pedestrian crossingsat intersections that are missed in theannotations of the HD map provided by the dataset. ",
+    "bbox": [
+      694,
+      843,
+      827,
+      888
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Centerline Generation ",
+    "text_level": 1,
+    "bbox": [
+      845,
+      646,
+      979,
+      670
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "To demonstrate the flexibility of polyline,we expand VectorMapNetto predict centerlines. ",
+    "bbox": [
+      836,
+      693,
+      975,
+      722
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/images/fig_15.jpg",
+    "image_caption": [
+      ""
+    ],
+    "image_footnote": [],
+    "bbox": [
+      837,
+      753,
+      984,
+      921
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/VectorMapNet: End-to-end Vectorized HD Map Learning_poster/visuals/tables/table_3.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Keypoint Representation</td><td rowspan=\"2\">#dim</td><td colspan=\"4\">Fréchet Distance</td><td colspan=\"4\">Chamfer Distance</td></tr><tr><td>APped</td><td>APdivider</td><td>APboundary</td><td>mAP</td><td>APped</td><td>APdivider</td><td>APboundary</td><td>mAP</td></tr><tr><td>HMapNet (Camera) (Li et al., 2021)</td><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td><td>13.1</td><td>5.7</td><td>37.6</td><td>18.8</td></tr><tr><td>VectorMapNet (Camera)</td><td>2</td><td>43.2</td><td>45.5</td><td>52.0</td><td>46.9</td><td>38.3</td><td>36.1</td><td>39.2</td><td>37.9</td></tr><tr><td>VectorMapNet (Camera)</td><td>3</td><td>41.7</td><td>42.3</td><td>49.9</td><td>44.6</td><td>36.5</td><td>35.0</td><td>36.2</td><td>35.8</td></tr></table>",
+    "bbox": [
+      508,
+      910,
+      750,
+      982
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Reference ",
+    "text_level": 1,
+    "bbox": [
+      759,
+      933,
+      789,
+      947
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "HDMapNet:An Online HD Map Constructionand Evaluation Framework,Li etal.,ICRA2022 Structured bird's-eye-viewtraffic sceneunderstanding from onboard images,Can etal.,ICCV2021 ",
+    "bbox": [
+      759,
+      952,
+      986,
+      979
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      27,
+      27,
+      59,
+      94
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "小",
+    "bbox": [
+      66,
+      27,
+      104,
+      77
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "MARS Lab ",
+    "bbox": [
+      64,
+      78,
+      108,
+      94
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      113,
+      27,
+      140,
+      93
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      145,
+      27,
+      199,
+      92
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "VectorMapNet: End-to-end Vectorized HD Map Learning ",
+    "bbox": [
+      211,
+      26,
+      784,
+      75
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Yicheng Liu, Tianyuan Yuan, Yue Wang, Yilun Wang,Hang Zhao ",
+    "bbox": [
+      321,
+      76,
+      676,
+      107
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      796,
+      23,
+      843,
+      115
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ICML ",
+    "bbox": [
+      850,
+      27,
+      932,
+      77
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "International Conference ",
+    "bbox": [
+      851,
+      83,
+      933,
+      97
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "On Machine Learning ",
+    "bbox": [
+      851,
+      99,
+      920,
+      115
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      937,
+      24,
+      982,
+      115
+    ],
+    "page_idx": 0
+  }
+]

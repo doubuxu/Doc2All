@@ -1,0 +1,802 @@
+[
+  {
+    "type": "text",
+    "text": "Why ",
+    "text_level": 1,
+    "bbox": [
+      20,
+      130,
+      68,
+      161
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Knowledge-Grounded Reinforcement Learning? ",
+    "text_level": 1,
+    "bbox": [
+      20,
+      163,
+      243,
+      224
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "What learning capabilities do humans possess, yet RL agents still missing? [1,2] ",
+      "Knowledge-Acquirable: Develop unique policies by observing. ",
+      "· Compositional: Combine policies from multiple sources to form a knowledge set. "
+    ],
+    "bbox": [
+      17,
+      252,
+      246,
+      459
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Policy</td><td></td><td></td></tr><tr><td>Observed from</td><td>Amy</td><td>Jack</td></tr><tr><td>Solved for</td><td></td><td></td></tr></table>",
+    "bbox": [
+      15,
+      473,
+      122,
+      567
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/tables/table_2.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Policy</td><td></td><td></td><td>if ... \nelse ...</td></tr><tr><td>Observed \nfrom</td><td>Amy</td><td>Jack</td><td>Myself</td></tr><tr><td>Solved \nfor</td><td></td><td></td><td></td></tr></table>",
+    "bbox": [
+      130,
+      473,
+      229,
+      565
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Incremental: Arbitrarily remove outdated policies or add new ones, no need to relearn how to navigate the entire knowledge set from scratch. ",
+      "· Sample-Efficient: Require fewer interactions. ",
+      "Generalizable: Be able to apply previously learned policies to unseen tasks. ",
+      "KGRL: An RL paradigm aiming to learn with external policies and achieve the five properties above. "
+    ],
+    "bbox": [
+      17,
+      579,
+      246,
+      927
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Method: ",
+    "text_level": 1,
+    "bbox": [
+      281,
+      130,
+      358,
+      157
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Knowledge-Inclusive ",
+    "text_level": 1,
+    "bbox": [
+      281,
+      162,
+      471,
+      192
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Attention Network (KIAN) ",
+    "text_level": 1,
+    "bbox": [
+      281,
+      195,
+      514,
+      224
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "KIAN: An actor that separates knowledge representations from their selection mechanism. ",
+    "bbox": [
+      276,
+      237,
+      500,
+      307
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Model Architecture: ",
+    "text_level": 1,
+    "bbox": [
+      282,
+      349,
+      394,
+      368
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "·Inner Actor ",
+      "· Knowledge Keys ",
+      "·Query "
+    ],
+    "bbox": [
+      282,
+      372,
+      389,
+      434
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      401,
+      314,
+      517,
+      469
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Naive policy fusion leads to challenges: ",
+    "bbox": [
+      276,
+      480,
+      510,
+      502
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\pi (\\cdot | \\mathbf {s} _ {t}) = \\hat {w} _ {i n} \\pi_ {i n} (\\cdot | \\mathbf {s} _ {t}) + \\Sigma_ {j = 1} ^ {n} \\hat {w} _ {g _ {j}} \\pi_ {g _ {j}} (\\cdot | \\mathbf {s} _ {t})\n$$",
+    "text_format": "latex",
+    "bbox": [
+      312,
+      506,
+      498,
+      530
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "○ Discrete vs Continuous action space ",
+      "○ Entropy Imbalance in maximum "
+    ],
+    "bbox": [
+      286,
+      544,
+      506,
+      596
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "entropy KGRL ",
+    "bbox": [
+      299,
+      607,
+      379,
+      628
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "P1: always inner actor ",
+    "text_level": 1,
+    "bbox": [
+      280,
+      634,
+      393,
+      652
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_2.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      283,
+      659,
+      399,
+      693
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "P2: distant means ",
+    "bbox": [
+      417,
+      614,
+      509,
+      630
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_3.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      404,
+      632,
+      520,
+      705
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Discrete Action Policy ",
+    "text_level": 1,
+    "bbox": [
+      329,
+      729,
+      477,
+      751
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\begin{array}{l} \\pi (\\cdot | \\mathbf {s} _ {t}) = \\boxed {\\hat {w} _ {t, i n}} \\pi_ {i n} (\\cdot | \\mathbf {s} _ {t}) + \\Sigma_ {j = 1} ^ {n} \\boxed {\\hat {w} _ {t, g _ {j}}} \\operatorname {s o f t m a x} \\left(\\beta_ {t, g _ {j}} \\pi_ {g _ {j}} (\\cdot | \\mathbf {s} _ {t})\\right) \\\\ w _ {t, g _ {j}} = \\Phi (\\mathbf {s} _ {t}) \\cdot \\mathbf {k} _ {g _ {j}} / \\beta_ {t, g _ {j}} \\quad \\beta_ {t, g _ {j}} = \\| \\Phi (\\mathbf {s} _ {t}) \\| _ {2} \\| \\mathbf {k} _ {g _ {j}} \\| _ {2} \\\\ \\end{array}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      276,
+      752,
+      521,
+      804
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Continuous Action Prediction ",
+    "text_level": 1,
+    "bbox": [
+      306,
+      811,
+      502,
+      831
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\pi_ {i n} (\\cdot | \\mathbf {s} _ {t}) = \\mathcal {N} \\left(\\boldsymbol {\\mu} _ {t, i n}, \\boldsymbol {\\sigma} _ {t, i n} ^ {2}\\right), \\pi_ {g _ {j}} (\\cdot | \\mathbf {s} _ {t}) = \\mathcal {N} \\left(\\boldsymbol {\\mu} _ {t, g _ {j}}, \\boldsymbol {\\sigma} _ {t, g _ {j}} ^ {2}\\right)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      273,
+      833,
+      515,
+      857
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "equation",
+    "text": "$$\ne \\sim \\text {g u m b e l} _ {\\text {s o f t m a x}} \\left(\\left[ \\hat {w} _ {t, i n}, \\hat {w} _ {t, g _ {1}}, \\dots , \\hat {w} _ {t, g _ {n}} \\right] ^ {\\top}\\right) \\quad \\mathbf {a} _ {t} \\sim \\pi_ {e} (\\cdot | \\mathbf {s} _ {t})\n$$",
+    "text_format": "latex",
+    "bbox": [
+      278,
+      860,
+      515,
+      879
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "Continuous Probability Distribution ",
+    "text_level": 1,
+    "bbox": [
+      282,
+      881,
+      518,
+      901
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\pi (\\mathbf {a} _ {t} | \\mathbf {s} _ {t}) = \\hat {w} _ {i n} \\pi_ {i n} (\\boxed {\\mathbf {a} _ {t, i n}} \\mathbf {s} _ {t}) + \\Sigma_ {j = 1} ^ {n} \\hat {w} _ {g _ {j}} \\pi_ {g _ {j}} (\\boldsymbol {\\mu} _ {t, g _ {j}} | \\mathbf {s} _ {t})\n$$",
+    "text_format": "latex",
+    "bbox": [
+      299,
+      904,
+      502,
+      932
+    ],
+    "page_idx": 0,
+    "img_path": ""
+  },
+  {
+    "type": "text",
+    "text": "How well are the KGRL properties satisfied? ",
+    "text_level": 1,
+    "bbox": [
+      542,
+      146,
+      753,
+      209
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Environments: ",
+    "bbox": [
+      546,
+      238,
+      629,
+      255
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "○ Discrete decision making (MiniGrid) ",
+      "o Continuous control (OpenAl-Robotics) "
+    ],
+    "bbox": [
+      557,
+      257,
+      752,
+      291
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "Dynamic-Obstacles "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      573,
+      294,
+      620,
+      362
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "KeyCorridor "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      625,
+      294,
+      684,
+      362
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "OpenAl-Robotics "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      691,
+      294,
+      747,
+      362
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "RL algorithms: proximal policy optimization (PPO) and soft actor critic (SAC) ",
+      "· Main Results: "
+    ],
+    "bbox": [
+      547,
+      373,
+      766,
+      429
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Sample Efficiency & Compositional ",
+    "text_level": 1,
+    "bbox": [
+      556,
+      432,
+      731,
+      449
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      539,
+      457,
+      774,
+      627
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Generalizability ",
+    "text_level": 1,
+    "bbox": [
+      553,
+      631,
+      634,
+      649
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Zero-shot transfer policies from simple to more complex tasks ",
+    "bbox": [
+      553,
+      653,
+      753,
+      687
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/tables/table_3.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td rowspan=\"2\">Train in Test in</td><td colspan=\"3\">Empty-Random-5x5</td><td colspan=\"2\">DoorKey-5x5</td><td colspan=\"2\">Push</td><td colspan=\"2\">Slide</td><td colspan=\"2\">Pick-and-Place</td></tr><tr><td>6x6</td><td>8x8</td><td>16x16</td><td>8x8</td><td>16x16</td><td>5x</td><td>10x</td><td>5x</td><td>10x</td><td>5x</td><td>10x</td></tr><tr><td>RL</td><td>0.88</td><td>0.71</td><td>0.45</td><td>0.29</td><td>0.08</td><td>0.87</td><td>0.52</td><td>0.45</td><td>0.17</td><td>0.34</td><td>0.27</td></tr><tr><td>RL+BC</td><td>0.87</td><td>0.60</td><td>0.24</td><td>0.40</td><td>0.09</td><td>0.89</td><td>0.60</td><td>0.44</td><td>0.16</td><td>0.34</td><td>0.30</td></tr><tr><td>KoGuN [3]</td><td>0.94</td><td>0.83</td><td>0.53</td><td>0.77</td><td>0.35</td><td>0.63</td><td>0.43</td><td>0.55</td><td>0.18</td><td>0.32</td><td>0.24</td></tr><tr><td>A2T [4]</td><td>0.92</td><td>0.78</td><td>0.51</td><td>0.53</td><td>0.11</td><td>0.03</td><td>0.05</td><td>0.00</td><td>0.01</td><td>0.01</td><td>0.06</td></tr><tr><td>KIAN (ours)</td><td>0.96</td><td>0.91</td><td>0.93</td><td>0.76</td><td>0.42</td><td>0.93</td><td>0.70</td><td>0.42</td><td>0.15</td><td>0.92</td><td>0.72</td></tr></table>",
+    "bbox": [
+      542,
+      690,
+      768,
+      760
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Compositional & Incremental ",
+    "text_level": 1,
+    "bbox": [
+      553,
+      767,
+      700,
+      784
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "· Combine previously learned knowledge keys and inner policies to learn a new task ",
+    "bbox": [
+      553,
+      790,
+      769,
+      826
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "KIAN(for reference) Cont.RL Cont.KoGuN Cont.A2T Cont.KIAN ",
+    "bbox": [
+      542,
+      833,
+      771,
+      846
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      572,
+      849,
+      656,
+      943
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_9.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      661,
+      852,
+      751,
+      941
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "How entropy imbalance affects? ",
+    "text_level": 1,
+    "bbox": [
+      795,
+      148,
+      962,
+      206
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Addressing entropy imbalance is important! ",
+    "bbox": [
+      789,
+      240,
+      954,
+      288
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_10.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      787,
+      293,
+      982,
+      403
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_11.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      798,
+      462,
+      875,
+      573
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_12.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      895,
+      461,
+      971,
+      571
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_13.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      798,
+      598,
+      876,
+      709
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_14.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      901,
+      595,
+      970,
+      619
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "output/Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning_poster/visuals/images/fig_15.jpg",
+    "image_caption": [
+      "UCSB NLP GROUP "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      901,
+      625,
+      970,
+      699
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      859,
+      744,
+      916,
+      760
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "[1]A.Bandura.Social Learning Theory.Prentice-Hall series insociallearning theory.PrenticeHall,1977.ISBN 9780138167516. ",
+      "[2] Leslie Pack Kaelbling.The foundation of efficient robot learning.Science,369(6506):915-916,2020. ",
+      "[3]Peng Zhang,Jianye Hao,Weixun Wang,Hongyao Tang,Yi Ma,Yihai Duan,andYan Zheng.Kogun:Acceleratingdeep reinforcementlearningviaintegratinghumansuboptimal knowledge.In InternationalJointConferenceon Artificial Intelligence,2020. ",
+      "[4] Janarthanan Rajendran,Aravind Lakshminarayanan,Mitesh M.Khapra,PrasannaP,andBalaramanRavindran.Attend, adaptandtransfer:Attentivedeeparchitectureforadaptive transfer frommultiple sourcesin thesame domain.In International ConferenceonLearningRepresentations,2017. "
+    ],
+    "bbox": [
+      796,
+      765,
+      979,
+      943
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Flexible Attention-Based Multi-Policy Fusion for Efcient Deep Reinforcement Learning ",
+    "bbox": [
+      60,
+      12,
+      932,
+      47
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "",
+    "bbox": [
+      0,
+      46,
+      49,
+      77
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NEURALINFORMATION ",
+    "bbox": [
+      25,
+      71,
+      125,
+      84
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "PROCESSING SYSTEMS ",
+    "bbox": [
+      25,
+      85,
+      124,
+      98
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Zih-Yun Chiu*, Yi-Lin Tuan*, William Yang Wang, Michael C. Yip ",
+    "bbox": [
+      317,
+      51,
+      729,
+      77
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "University of California San Diego， University of California Santa Barbara ",
+    "bbox": [
+      283,
+      81,
+      764,
+      106
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "OFDIEG",
+    "bbox": [
+      885,
+      48,
+      940,
+      126
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "O ",
+    "bbox": [
+      941,
+      51,
+      992,
+      126
+    ],
+    "page_idx": 0
+  }
+]
