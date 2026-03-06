@@ -104,8 +104,8 @@ def process_batch_ppts(input_folder, base_output_path):
                 for shape in slide.shapes:
                     shape_type_code = int(shape.shape_type)
                     
-                    # 过滤逻辑 (3=Chart, 6=Group)
-                    if shape_type_code in [3, 6]: continue
+                    # 过滤逻辑：只跳过图表(3)，不再跳过组合(6)
+                    if shape_type_code in [3]: continue
                     # 过滤非表格的 Graphic Frame (14)
                     if shape_type_code == 14 and not shape.has_table: continue
 
@@ -116,8 +116,20 @@ def process_batch_ppts(input_folder, base_output_path):
 
                     element = {"bbox": {"left": l_px, "top": t_px, "width": w_px, "height": h_px}}
 
+                    # --- 新增：处理 SmartArt (24) 和 组合形状 (6) ---
+                    if shape_type_code == 24 or shape_type_code == 6:
+                        tag = "smartart" if shape_type_code == 24 else "group"
+                        element["type"] = tag
+                        save_name = f"{tag}_{img_idx}.png"
+                        # 从大图中根据组合/SmartArt的总边界进行裁剪
+                        crop_and_save(big_img, (l_px, t_px, l_px + w_px, t_px + h_px), os.path.join(images_dir, save_name))
+                        element["id"] = f"{tag}_{img_idx}"
+                        element["path"] = f"images/{save_name}"
+                        img_idx += 1
+                        layout_data["elements"].append(element)
+
                     # 表格
-                    if shape.has_table:
+                    elif shape.has_table:
                         element["type"] = "table"
                         save_name = f"table_{table_idx}.png"
                         crop_and_save(big_img, (l_px, t_px, l_px + w_px, t_px + h_px), os.path.join(tables_dir, save_name))
