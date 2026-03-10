@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "title": "FLAb: Benchmarking deep learning methods for antibody fitness prediction",
+    "authors": [
+      "Michael Chungyoun",
+      "Jeffrey Ruffolo",
+      "Jeffrey Gray"
+    ],
+    "organizations": [
+      "Neural Information Processing Systems",
+      "Johns Hopkins University"
+    ],
+    "github": "github.com/graylab/FLAb",
+    "figures": [
+      {
+        "fig_id": "fig_1",
+        "description": "NeurIPS and Johns Hopkins University logos",
+        "figure_width": 338,
+        "figure_height": 237
+      },
+      {
+        "fig_id": "fig_2",
+        "description": "Project QR Code",
+        "figure_width": 224,
+        "figure_height": 231
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "1 Background",
+      "content": [
+        "Antibody therapeuticsmust have a particular set offitness properties",
+        "Six classes of biophysical data relevant to antibody development are (a) expression, (b) thermostability, (c) immunogenicity, (d) binding affinity, (e) aggregation, and (f) polyreactivity",
+        "Dodeep learning methodscapture properties of therapeutic antibodies?",
+        "1. Creating a collection of datasets of antibody therapeutic data",
+        "2. Benchmark representative AI model likelihoods for fitness prediction"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Expression icon",
+          "figure_width": 113,
+          "figure_height": 169,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Thermostability icon",
+          "figure_width": 155,
+          "figure_height": 165,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Immunogenicity icon",
+          "figure_width": 208,
+          "figure_height": 157,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Binding affinity icon",
+          "figure_width": 159,
+          "figure_height": 161,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Aggregation icon",
+          "figure_width": 121,
+          "figure_height": 101,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "Polyreactivity icon",
+          "figure_width": 126,
+          "figure_height": 165,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "2 Dataset curation",
+      "content": [
+        "We curated publicly availableantibody fitness datasets",
+        "This database includes mutational landscapes of 17 distinct antibody families and a total of 13,384 associated fitness metrics. Each sequence is mapped to at least one fitness label pertaining to the 6 fitness properties."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Summary table of antibody fitness datasets and number of datapoints",
+          "table_width": 1045,
+          "table_height": 678,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "3 Methods",
+      "content": [
+        "Pipelinefor benchmarking protein language models",
+        "For each protein language model, we separately input the antibodyheavyandlight sequencesto return twoperplexity scores, and we tabulate the average perplexity between the two sequences. We calculate Spearman's (ρ), Pearson's (r) and Kendall tau's (τ) correlation coefficients betweenperplexityandfitness."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_9",
+          "description": "Workflow diagram showing antibody sequence input to language model and fitness metric correlation",
+          "figure_width": 1056,
+          "figure_height": 289,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "4 Results",
+      "content": [
+        "Aheat mapof model-dataset correlations",
+        "Summary of Pearson's correlations. Models generally perform best with thermostability and binding affinity datasets, but most struggle with aggregation propensity and polyreactivity.",
+        "Intrinsicbiophysical properties are more accurately predicted thanextrinsic",
+        "Models are more accurate at distinguishingintra-familyversusinter-familyantibody sets",
+        "Parameter sizeinfluences performance over architecture and dataset composition",
+        "Some models favorevolutionary signalrather thanphysical fitness"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_10",
+          "description": "Heatmap showing Pearson correlations across various models and datasets",
+          "figure_width": 900,
+          "figure_height": 445,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_11",
+          "description": "Boxplots comparing Pearson correlations for Aggregation (Extrinsic) and Thermostability (Intrinsic)",
+          "figure_width": 931,
+          "figure_height": 311,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_12",
+          "description": "Boxplots comparing model performance on intra-family vs inter-family thermostability datasets",
+          "figure_width": 956,
+          "figure_height": 290,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_13",
+          "description": "Boxplot of Thermostability correlation vs ProGen2 model size",
+          "figure_width": 301,
+          "figure_height": 280,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_14",
+          "description": "Boxplot of Polyreactivity correlation vs ProGen2 model size",
+          "figure_width": 261,
+          "figure_height": 284,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_15",
+          "description": "Scatter plot of Perplexity vs Temperature for ProGen2-XL",
+          "figure_width": 301,
+          "figure_height": 237,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_16",
+          "description": "Scatter plot of Rosetta Total Energy vs Temperature",
+          "figure_width": 309,
+          "figure_height": 237,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "5 Conclusion",
+      "content": [
+        "FLAb is a living benchmark where we will continuously add models evaluated and available antibody data",
+        "No model was top performing across all six fitness classes"
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

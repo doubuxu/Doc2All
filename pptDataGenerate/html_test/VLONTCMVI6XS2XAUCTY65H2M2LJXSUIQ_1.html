@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Replicated Slide</title>
+    <style>
+        /* Scoped Styles for PPT Slide */
+        .ppt-slide {
+            width: 1280px;
+            height: 720px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ppt-slide #ppt-canvas {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+        }
+
+        /* Sidebar Decoration */
+        .ppt-slide .sidebar-decoration {
+            width: 130px;
+            height: 100%;
+            background-color: #4d4d4d;
+            flex-shrink: 0;
+        }
+
+        /* Main Content Area */
+        .ppt-slide .content-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            position: relative;
+        }
+
+        /* Header Section */
+        .ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .ppt-slide .ppt-title {
+            font-size: 72px;
+            font-weight: 900;
+            color: #333333;
+            margin: 0;
+            text-align: right;
+            line-height: 1.1;
+            text-shadow: 3px 3px 0px #888;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .ppt-slide .ppt-authors {
+            display: none; /* No authors visible in source */
+        }
+
+        .ppt-slide .header-logos {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        /* Decorative Rectangles under Title */
+        .ppt-slide .title-deco-row {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .ppt-slide .deco-rect-long {
+            width: 350px;
+            height: 35px;
+            background-color: #7b7b7b;
+        }
+
+        .ppt-slide .deco-rect-small {
+            width: 45px;
+            height: 35px;
+            background-color: #7b7b7b;
+        }
+
+        /* Main Layout */
+        .ppt-slide main {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .ppt-slide .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Section Blocks */
+        .ppt-slide .layout-block {
+            margin-top: 20px;
+        }
+
+        .ppt-slide .section-header {
+            display: none; /* No explicit section headers in source */
+        }
+
+        .ppt-slide .text-block {
+            font-size: 38px;
+            font-weight: bold;
+            font-style: italic;
+            color: #000000;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            font-family: 'Times New Roman', serif;
+            max-width: 850px;
+        }
+
+        /* Figure Container */
+        .ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .ppt-slide .figure-container img {
+            object-fit: contain;
+        }
+
+        /* Footer Info */
+        .ppt-slide .footer-info {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .ppt-slide .case-text {
+            font-size: 18px;
+            text-align: left;
+            line-height: 1.2;
+        }
+
+        .ppt-slide .page-number {
+            font-size: 22px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="ppt-slide">
+    <div id="ppt-canvas">
+        <!-- Left Sidebar Decoration -->
+        <div class="sidebar-decoration"></div>
+
+        <!-- Main Content Area -->
+        <div class="content-area">
+            <header>
+                <h1 class="ppt-title">Meeting the CWA<br>Challenge</h1>
+                <p class="ppt-authors"></p>
+                <div class="header-logos">
+                    <div class="title-deco-row">
+                        <div class="deco-rect-long"></div>
+                        <div class="deco-rect-small"></div>
+                        <div class="deco-rect-small"></div>
+                        <div class="deco-rect-small"></div>
+                        <div class="deco-rect-small"></div>
+                        <div class="deco-rect-small"></div>
+                        <div class="deco-rect-small"></div>
+                        <div class="deco-rect-small"></div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="column">
+                    <section class="layout-block" data-section-id="section_1">
+                        <p class="text-block">
+                            The Clean Water Act (CWA) established a comprehensive Federal/State scheme for controlling the introduction of pollutants into the Nation's water.
+                        </p>
+
+                        <div class="figure-container">
+                            <img src="./slide_1_image_1.png" 
+                                 style="width: 500px; height: 480px;" 
+                                 data-semantic="Illustration of a fisherman catching a large green fish jumping out of water against a pink circular sun background.">
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- Footer Information -->
+            <div class="footer-info">
+                <div class="case-text">
+                    Case S-5_L-R<br>eactor
+                </div>
+                <div class="page-number">2</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

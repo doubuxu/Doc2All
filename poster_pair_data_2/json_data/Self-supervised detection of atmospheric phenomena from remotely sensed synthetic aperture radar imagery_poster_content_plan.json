@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "title": "Self-supervised detection of atmospheric phenomena from remotely sensed synthetic aperture radar imagery",
+    "authors": [
+      "Yannik Glaser",
+      "Peter Sadowski",
+      "Justin Stopa"
+    ],
+    "organizations": [],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "logo_uh",
+        "description": "University of Hawaii Logo",
+        "figure_width": 80,
+        "figure_height": 80
+      },
+      {
+        "fig_id": "logo_soest",
+        "description": "SOEST Logo",
+        "figure_width": 120,
+        "figure_height": 60
+      },
+      {
+        "fig_id": "logo_nips",
+        "description": "Neural Information Processing Systems Logo",
+        "figure_width": 150,
+        "figure_height": 60
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Sentinel-1 ocean surface data and atmospheric stability",
+      "content": [
+        "Examples of the 20 km by 20 km WV images at 5m resolution are shown to the right.",
+        "Mesoscale convective cells, wind streaks, and negligible atmospheric variability are atmospheric phenomena representing a spectrum of stability regimes along the oceanic surface layer, corresponding to unstable, near stable, and stable conditions respectively."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Mesoscale convective cells (MC) SAR image sample",
+          "figure_width": 80,
+          "figure_height": 80,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Mixed WS / MC SAR image sample",
+          "figure_width": 80,
+          "figure_height": 80,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Wind streaks (WS) SAR image sample",
+          "figure_width": 80,
+          "figure_height": 80,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Biological surface slick (OT) SAR image sample",
+          "figure_width": 80,
+          "figure_height": 80,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Negligible atmospheric variability (NV) SAR image sample",
+          "figure_width": 80,
+          "figure_height": 80,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_1",
+          "description": "Sentinel-1 WV image acquisition process diagram",
+          "figure_width": 277,
+          "figure_height": 296,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Key insights:",
+      "content": [
+        "We use deep learning to classify atmospheric phenomena in a hand-labeled dataset of synthetic aperture radar WaVe images.",
+        "We attempt to use contrastive learning on a dataset of 3 million unlabeled images to pretrain a model before finetuning on labeled data.",
+        "We show that the default setup of the SwAV contrastive learning framework does not outperform standard transfer learning from ImageNet weights."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Dataset",
+      "content": [
+        "Unlabeled dataset.This dataset consists of three years (2017, 2018, 2019) of Copernicus S-1 A and B observations and contains 2,943,550 images, of which 90% are used for training and 10% for validation.",
+        "Labeled dataset.The labeled data is multi-label, allowing for multiple positive classes per WV image, and sampled randomly across the globe. Images were labeled by at least one expert and four classes of interest are used: (1) MC, (2) WS, (3) NV, and (4) other (OT). In total, we have 2,300 samples which are stratified and split into 60% training data, 20% validation data, and 20% held-out test data for final model evaluation."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "Contrastive self-supervised pretraining",
+      "content": [
+        "Swapping Assignments between multiple Views (SwAV)[1], the contrastive framework used in this work, is based on a clustering objective, where representations are assigned to clusters and the network has to learn to predict cluster assignments."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "SwAV contrastive learning architecture diagram showing CNN and MLP heads with attract/repel logic",
+          "figure_width": 200,
+          "figure_height": 225,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Contrastive model evaluation",
+      "content": [
+        "We used three common evaluation scenarios from the literature to compare contrastive weights to ImageNet weights:",
+        "k-nearest neighbors (kNN) evaluation of feature vectors",
+        "Linear evaluation of feature vectors",
+        "End-to-end finetuning of the entire ResNet50 network"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Results",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Table showing Micro AUROCs for kNN, Linear Evaluation, and Finetuning comparing Contrastive vs ImageNet weights",
+          "table_width": 350,
+          "table_height": 80,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_2",
+          "description": "Table showing Micro AUROCs for finetuned models on individual classes MC, WS, NV, OT",
+          "table_width": 350,
+          "table_height": 80,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "Discussion and future direction",
+      "content": [
+        "This work presents an initial exploration of self-supervised contrastive learning for satellite data. Our initial results do not support the use of contrastive learning for this application, with improvements over transfer learning from natural image features being marginal or not present at all, while requiring significant computation to train.",
+        "However, these results are preliminary, and more extensive evaluation and hyperparameter tuning may close the observed performance gap.",
+        "Our results, both with contrastive and ImageNet transfer learning, do show strong performance improvements over previous models for this task. This has immediate consequences for ocean surface layer estimation, where providing a highly reliable model can help with automated analysis and downstream remote sensing applications."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_8",
+      "title": "References",
+      "content": [
+        "[1] Mathilde Caron, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. Emerging properties in self-supervised vision transformers, 2021.[2] Chen Wang, Pierre Tandeo, Alexis Mouche, Justin E Stopa, Victor Gressani, Nicolas Longépé, Douglas Vandemark, Ralph C Foster, and Bertrand Chapron. Classification of the global sentinel-1 SAR vignettes for ocean surface process studies. Remote Sensing of Environment, 234:111457, 2019"
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

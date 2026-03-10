@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agnostic Learnability of Halfspaces via Logistic Loss Poster</title>
+    <style>
+        :root {
+            --purple-theme: #7030a0;
+            --red-theme: #c00000;
+            --blue-theme: #0070c0;
+            --brown-theme: #833c0c;
+            --orange-theme: #ed7d31;
+            --green-theme: #70ad47;
+            --bg-light: #fdfdfd;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Times New Roman', serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px double #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .poster-title {
+            font-size: 42px;
+            color: var(--purple-theme);
+            margin: 0 0 15px 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: 500;
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 5px 20px;
+            background: #f9f9f9;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .layout-block {
+            border: 2px solid #333;
+            padding: 15px;
+            border-radius: 4px;
+            background-color: var(--bg-light);
+        }
+
+        .section-header {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        /* Section Specific Colors */
+        [data-section-id="section_1"] { border-color: var(--purple-theme); }
+        [data-section-id="section_1"] .section-header { color: var(--purple-theme); }
+        
+        [data-section-id="section_2"] { border-color: var(--red-theme); }
+        [data-section-id="section_2"] .section-header { color: var(--red-theme); }
+
+        [data-section-id="section_3"] { border-color: var(--blue-theme); }
+        [data-section-id="section_3"] .section-header { color: var(--blue-theme); }
+
+        [data-section-id="section_4"] { border-color: var(--brown-theme); }
+        [data-section-id="section_4"] .section-header { color: var(--brown-theme); }
+
+        [data-section-id="section_5"] { border-color: var(--orange-theme); }
+        [data-section-id="section_5"] .section-header { color: var(--orange-theme); }
+
+        [data-section-id="section_6"] { border-color: var(--green-theme); }
+        [data-section-id="section_6"] .section-header { color: var(--green-theme); }
+
+        .text-block {
+            font-size: 15px;
+            line-height: 1.4;
+            margin: 8px 0;
+        }
+
+        ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .list-item {
+            font-size: 14px;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .highlight-box {
+            background-color: #fff4f4;
+            border: 1px solid #ffcccc;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .math-block {
+            text-align: center;
+            font-family: "Cambria Math", serif;
+            margin: 10px 0;
+        }
+
+        .sub-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">Agnostic Learnability of Halfspaces via Logistic Loss</h1>
+        <p class="poster-authors">Ziwei Ji (UIUC), Kwangjun Ahn (MIT), Pranjal Awasthi (Google Research), Satyen Kale (Google Research), Stefani Karp (Google Research & CMU)</p>
+        <div class="header-logos">
+            <div>University of Illinois Urbana-Champaign</div>
+            <div>Massachusetts Institute of Technology</div>
+            <div>Google Research</div>
+            <div>Carnegie Mellon University</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column" style="flex: 0.85;">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Setting.</h2>
+                <p class="text-block"><strong>Binary classification:</strong> given by distribution P on R<sup>d</sup> &times; {-1, +1}; we have i.i.d. samples from P.</p>
+                <p class="text-block"><strong>Linear classifier:</strong> x &mapsto; &langle;x, w&rangle;.</p>
+                <p class="text-block"><strong>Goal:</strong> compete with the optimal solution u&#772;, where</p>
+                <div class="math-block">R<sub>0-1</sub>(u&#772;) := Pr<sub>(x,y)~P</sub> (sign(&langle;u&#772;, x&rangle;) &ne; y) = OPT > 0.</div>
+                <p class="text-block"><strong>Logistic regression (LR):</strong> let &ell;<sub>log</sub>(z) := ln(1 + e<sup>-z</sup>), and let</p>
+                <div class="math-block">R<sub>log</sub>(w) := E<sub>(x,y)~P</sub> [&ell;<sub>log</sub>(y&langle;w, x&rangle;)]</div>
+                <p class="text-block">denote the population logistic risk of w over P.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Contributions.</h2>
+                <span class="sub-title">Prior lower and upper bounds for LR do not match:</span>
+                <ul>
+                    <li class="list-item">General P: 1 - OPT lower bound (Ben-David et al., 2012).</li>
+                    <li class="list-item">Isotropic log-concave distributions: &Omega;(OPT) lower bound (Diakonikolas et al., 2020).</li>
+                    <li class="list-item">"Well-behaved" sub-exponential distributions: O(&radic;OPT) upper bound with SGD (Frei et al., 2021).</li>
+                </ul>
+                <span class="sub-title">On "well-behaved" conditions:</span>
+                <ul>
+                    <li class="list-item">Standard concentration and anti-concentration conditions.</li>
+                    <li class="list-item">Example: a mixture of log-concave dist. (e.g., Gaussian).</li>
+                </ul>
+                <span class="sub-title">Our lower and upper bounds for LR:</span>
+                <ul>
+                    <li class="list-item">&Omega;(&radic;OPT) lower bound for well-behaved sub-exp dist.; matching O(&radic;OPT) upper bound from (Frei et al., 2021).</li>
+                    <li class="list-item">O(OPT) upper bound with "radial Lipschitzness."</li>
+                </ul>
+                <span class="sub-title">Upper bounds beyond LR:</span>
+                <ul>
+                    <li class="list-item">Diakonikolas et al. (2020) designed a nonconvex SGD that achieves O(OPT) + &epsilon; risk using O(d/&epsilon;<sup>4</sup>) samples.</li>
+                    <li class="list-item">Other prior algorithms achieving O(OPT) + &epsilon; risk involve solving multiple rounds of convex program.</li>
+                    <li class="list-item">We design a simple two-phase convex program that achieves O(OPT ln(1/OPT)) + &epsilon; risk using O(d/&epsilon;<sup>2</sup>) samples, <strong>without</strong> radial Lipschitzness.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column" style="flex: 1.1;">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Lower bound.</h2>
+                <p class="text-block">We construct a distribution Q with three parts Q<sub>1</sub>, Q<sub>2</sub>, Q<sub>4</sub>.</p>
+                <ul>
+                    <li class="list-item">1. Q<sub>1</sub> consists of two squares with edge length &radic;OPT/2 and density 1; one has center (&radic;2/2, -&radic;2/2) and label -1, the other has center (-&radic;2/2, &radic;2/2) and label +1.</li>
+                    <li class="list-item">2. Q<sub>2</sub> is supported on [0, &radic;OPT] &times; [0, 1] and [-&radic;OPT, 0] &times; [-1, 0] with density 1, and the label is given by sign(x<sub>1</sub>).</li>
+                    <li class="list-item">3. Q<sub>4</sub> is the uniform distribution over the unit ball with density q<sub>4</sub> and label sign(x<sub>1</sub>).</li>
+                </ul>
+                
+                <div class="row-container">
+                    <div class="figure-container">
+                        <img src="./fig_1.png" style="width: 250px; height: 218px;" data-semantic="Geometric construction of distribution Q showing regions Q1, Q2 and the unit ball for the lower bound proof.">
+                    </div>
+                    <div class="highlight-box" style="border-color: var(--blue-theme); flex: 1;">
+                        <p class="text-block"><strong>Theorem.</strong> Q is well-behaved and sub-exponential, and the global minimizer w* of R<sub>log</sub> has R<sub>0-1</sub>(w*) = &Omega;(&radic;OPT).</p>
+                    </div>
+                </div>
+
+                <span class="sub-title">Proof ideas:</span>
+                <ul>
+                    <li class="list-item">To minimize R<sub>log</sub> on Q<sub>4</sub>, we should go to infinity along (1, 0).</li>
+                    <li class="list-item">Q<sub>1</sub> keeps w* bounded with ||w*|| = O(1/&radic;OPT).</li>
+                    <li class="list-item">Q<sub>2</sub> drags w* above by an angle of &Omega;(&radic;OPT).</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Upper bound: radial Lipschitzness.</h2>
+                <p class="text-block">To exclude Q and overcome the lower bound, we make the following assumption for LR.</p>
+                <p class="text-block"><strong>Radial Lipschitzness:</strong> There exists a measurable function &kappa; : R<sub>+</sub> &rarr; R<sub>+</sub> such that for any two-dimensional subspace V, letting p<sub>V</sub> denote the density of the projection of feature distribution onto V, then</p>
+                <div class="math-block">|p<sub>V</sub>(r, &theta;) - p<sub>V</sub>(r, &theta;')| &le; &kappa;(r)|&theta; - &theta;'|.</div>
+                <ul>
+                    <li class="list-item">Holds if p<sub>V</sub> is Lipschitz, even non-log-concave ones (e.g., Gaussian mixtures).</li>
+                    <li class="list-item">Does not hold for general log-concave distributions.</li>
+                    <li class="list-item">Does not hold for Q, non-Lipschitz near the vertical axis.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column" style="flex: 1.05;">
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Upper bound: logistic regression.</h2>
+                <p class="text-block"><strong>Projected gradient descent (PGD):</strong> let w<sub>0</sub> := 0, and</p>
+                <div class="math-block">w<sub>t+1</sub> := &Pi;<sub>B(1/&radic;&epsilon;)</sub> [w<sub>t</sub> - &eta;&nabla;R&#770;<sub>log</sub>(w<sub>t</sub>)].</div>
+                
+                <div class="highlight-box" style="border-color: var(--orange-theme); background-color: #fff9f4;">
+                    <p class="text-block"><strong>Theorem.</strong> If the dist. is well-behaved, sub-exponential and radially-Lipschitz, with learning rate O&#771;(1/d), using poly(d, 1/&epsilon;, ln(1/&delta;)) samples and iterations, with prob. 1 - &delta;, PGD outputs w<sub>t</sub> with</p>
+                    <div class="math-block">R<sub>0-1</sub>(w<sub>t</sub>) = O&#771;(OPT) + &epsilon;.</div>
+                </div>
+
+                <p class="text-block"><span class="sub-title">Proof ideas:</span> under the given conditions, suppose w&#770; satisfies R<sub>log</sub>(w&#770;) &le; R<sub>log</sub>(||w&#772;||u&#772;) + &epsilon;', then</p>
+                <div class="math-block">R<sub>0-1</sub>(w&#770;) = O&#771; ( max { OPT, &radic;(&epsilon;' / ||w&#772;||) &middot; (C<sub>&kappa;</sub> / ||w&#772;||<sup>2</sup>) } ).</div>
+                <ul>
+                    <li class="list-item">C<sub>&kappa;</sub> = O(ln(1/OPT)<sup>2</sup>) for Lipschitz density.</li>
+                    <li class="list-item">The global optimizer w* of R<sub>log</sub> satisfies ||w*|| = &Omega;(1/&radic;OPT); PGD also ensures w<sub>t</sub> has small &epsilon;' and ||w<sub>t</sub>|| = &Omega;(1/&radic;OPT).</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Upper bound: two-phase convex program.</h2>
+                <div class="highlight-box" style="border-color: var(--green-theme); background-color: #f7fff0; border-style: dashed;">
+                    <p class="text-block"><strong>Motivation:</strong> (1) holds for the hinge loss &ell;<sub>h</sub>(z) := max{-z, 0} <strong>without</strong> radial Lipschitzness!</p>
+                </div>
+                <div class="math-block">R<sub>0-1</sub>(w&#770;) = O&#771; ( max { OPT, &radic;(&epsilon;' / ||w&#772;||) } ).</div>
+                <p class="text-block">However, the global minimizer of R<sub>h</sub> is 0; if we find w&#770; by global minimization, as &epsilon;' gets small, ||w&#770;|| also gets small.</p>
+                
+                <span class="sub-title">Ideas: LR followed by restricted Perceptron:</span>
+                <ul>
+                    <li class="list-item">LR finds unit v that is O&#771;(&radic;OPT) away from u&#772;.</li>
+                    <li class="list-item">Then minimize R<sub>h</sub> over D := {w | &langle;w, v&rangle; &ge; 1}.
+                        <ul>
+                            <li class="list-item">&forall;w &in; D, ||w|| &ge; 1.</li>
+                            <li class="list-item">||w&#772;||u&#772; may not in D, but (1 + O&#771;(OPT))||w&#772;||u&#772; &in; D!</li>
+                        </ul>
+                    </li>
+                    <li class="list-item">Use SGD for better sample complexity.</li>
+                </ul>
+
+                <div class="highlight-box" style="border-color: var(--green-theme); background-color: #f7fff0;">
+                    <p class="text-block"><strong>Theorem.</strong> If the dist. is well-behaved and sub-exponential, using O&#771;(d/&epsilon;<sup>2</sup>) samples, SGD can achieve zero-one risk O(OPT ln(1/OPT)) + &epsilon;.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

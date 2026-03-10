@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "title": "On the convergence of mSGD and AdaGrad for stochastic optimization",
+    "authors": [
+      "Ruinan Jin",
+      "Yu Xing",
+      "Xingkang He"
+    ],
+    "organizations": [
+      "UCASKTHUniversity of Notre Dame"
+    ],
+    "github": "github.com/optimization-research",
+    "figures": [
+      {
+        "fig_id": "logo_placeholder",
+        "description": "机构校徽图标",
+        "figure_width": 60,
+        "figure_height": 60
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Algorithms:",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_algorithms",
+          "description": "SGD, mSGD, and AdaGrad update rules mathematical formulas",
+          "figure_width": 450,
+          "figure_height": 180,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Contributions:",
+      "content": [
+        "We prove that the iterates of mSGD are asymptotically convergent to a connected set of stationary points for possibly non-convex loss function almost surely.",
+        "We quantify the convergence rate of mSGD for the loss functions. Through this convergence rate we can get a theoretical explanation of why mSGD can be seen as an acceleration of SGD.",
+        "We prove the iterates of AdaGrad are asymptotically convergent to a connected set of stationary points almost surely for possible non-convex loss functions."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Main assumptions:",
+      "content": [
+        "Assumption 1Noise sequence {ξn} are mutually independent and independent of θ1 and v0, such that g(x) = Eξn(g(x, ξn)) for any x ∈ ℝN.",
+        "Assumption 2 (Loss function assumption)Loss function g(θ) satisfies the following conditions: 1) g(θ) is non-negative and continuously differentiable. 2) The set of stationary points is not empty. 3) ∇g(θ) satisfies Lipschitz condition. 4) There is a scalar M > 0 for any θ and positive integer n.",
+        "Assumption 3Momentum coefficient α ∈ (0,1) and the sequence of step size εn is positive, monotonically decreasing to zero.",
+        "Assumption 4 (Loss function assumption)Loss function g(θ) satisfies the following conditions: 1) g(θ) is non-negative and continuously differentiable. 2) For any i ∈ {1,2,...,n}, it holds that..."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_assumption_2_math",
+          "description": "Assumption 2 mathematical inequality",
+          "figure_width": 400,
+          "figure_height": 60,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "",
+      "content": [
+        "Assumption 5Loss function g(θ) in equation 5 satisfies the following conditions: 1) g(θ) is non-negative and continuously differentiable. 2) The gradient ∇g(θ) satisfies the Lipschitz condition. 3) There are two constants M' > 0 and a > 0."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_assumption_5_math",
+          "description": "Assumption 5 mathematical conditions and equation 11",
+          "figure_width": 450,
+          "figure_height": 80,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Main results:",
+      "content": [
+        "Theorem 1Consider the mSGD in equation 3. If Assumptions 1-3 hold, then for ∀θ1 ∈ ℝN and ∀v0 ∈ ℝN, there exists a connected set J* ⊆ J such that the iterate θn is convergent to the set J* almost surely.",
+        "Theorem 2Consider the mSGD in equation 3 with the noise following a uniform sampling distribution. If Assumptions 1-4 hold, for ∀v0 ∈ ℝN and ∀θ1 ∈ ℝN, it holds that:",
+        "Theorem 3Consider the AdaGrad in equation 5. If Assumptions 1 and 5 hold, then for ∀θ1 ∈ ℝN and S0 = 0, there exists a connected component of the set J* ⊆ J, such that the estimate θn is convergent to the set J* almost surely."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_theorem_1_math",
+          "description": "Theorem 1 convergence limit formula",
+          "figure_width": 300,
+          "figure_height": 40,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_theorem_2_math",
+          "description": "Theorem 2 convergence rate formula and equation 10",
+          "figure_width": 450,
+          "figure_height": 100,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_theorem_3_math",
+          "description": "Theorem 3 convergence limit formula",
+          "figure_width": 300,
+          "figure_height": 40,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Proof outline for Theorems 1-2:",
+      "content": [
+        "The proof is in light of the Lyapunov method. We aim to prove that g(θn) is convergent a.s., and then to prove ∇g(θn) → 0 a.s. With these two results, we are able to get θn → J* a.s.",
+        "Step 1:We prove mSGD is a stable algorithm, i.e., E(g(θn)) < +∞, ∀n, in Lemma 1. The idea is to prove that a weighted sum of the loss function value, i.e.,",
+        "is bounded through a recursion formula (a rough form).",
+        "Step 2:From Lemma 1 and Lemma 8, we are able to prove that ΣA(n)||vn||² < +∞, we are able to prove that Σ||vn||² and Σ||∇g(θn)||² are convergent a.s. respectively, as stated in Lemma 7 and Lemma 8.",
+        "Step 3:We divide g(θn) into three terms:",
+        "Step 4:By Lemma 9 and the convergence of g(θn) in martingale-difference sum (Lemma 5), we prove that ΣCn(∇g(θn, ξn) - ∇g(θn)) is convergent a.s. Then we prove g(θn) is convergent a.s.",
+        "Step 5:After the proof of the convergence of mSGD, we analyze the iterates of Fn. Then under a new assumption lim inf ||∇g(θ)||²/ (g(θ) - gi) ≥ s > 0, we are able to obtain the convergent rate of mSGD."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_proof_step1",
+          "description": "Proof Step 1 Lyapunov function definition",
+          "figure_width": 450,
+          "figure_height": 60,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_proof_step3",
+          "description": "Proof Step 3 decomposition of the loss function",
+          "figure_width": 450,
+          "figure_height": 80,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

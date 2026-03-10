@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "Collective Certified Robustness Against Graph Injection Attacks",
+    "authors": [
+      "Yuni Lai 1",
+      "Bailin Pan 2",
+      "Kaihuang Chen 2",
+      "Yancheng Yuan 2",
+      "Kai Zhou 1"
+    ],
+    "organizations": [],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "poly_logo",
+        "description": "香港理工大学校徽",
+        "figure_width": 250,
+        "figure_height": 60
+      },
+      {
+        "fig_id": "icml_logo",
+        "description": "ICML 会议 Logo",
+        "figure_width": 150,
+        "figure_height": 60
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Introduction",
+      "content": [
+        "Deep Graph Learning (DGL) has emerged as a crucial technique across various domains. However, recent studies have exposed vulnerabilities in DGL models, such as susceptibility to graph injection attacks (GIAs). Existing research only provides sample-wise certificates by verifying each node independently, leading to very limited certifying performance. In this paper, we present the first collective certificate against GIAs, which certifies a set of target nodes simultaneously."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Randomized Smoothing",
+      "content": [
+        "For any node classifier f(·), its smoothed classifier g(·) is created by:",
+        "1. Node-aware Bi-Smoothing (Y. Lai. et. al. S&P2024): φ(G) = (φe(G), φn(G))",
+        "2. Majority vote: gv(G) := arg max P(fv(φ(G)) = y)",
+        "The goal of certified robustness is to verify: gv(G) = gv(G'), ∀ G' ∈ Bρ,τ(G)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Collective Certificate Problem",
+      "content": [
+        "Bρ,τ(G): the attacker can inject ρ malicious nodes, with τ malicious edges per node.",
+        "T: A set of target nodes.",
+        "min |T| - Σ I{gv(G') ≠ gv(G)}",
+        "s.t. |Ṽ| ≤ ρ, δ(ṽ) ≤ τ, ∀ ṽ ∈ Ṽ"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "向下指示箭头",
+          "figure_width": 112,
+          "figure_height": 109,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "样本级与集体认证框架对比图，展示了线性规划和认证鲁棒性的流程",
+          "figure_width": 580,
+          "figure_height": 250,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "恶意消息在图神经网络中被拦截的概率示意图",
+          "figure_width": 230,
+          "figure_height": 180,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "向下指示箭头",
+          "figure_width": 112,
+          "figure_height": 109,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Collective Certificate via Optimization",
+      "content": [
+        "p(Ev): the probability that the malicious messages is not intercepted.",
+        "cv := pv,y*(G) - max pv,y(G).",
+        "max Σ I{p(Ev) ≥ cv/2}",
+        "s.t. |Ṽ| ≤ ρ, δ(ṽ) ≤ τ, ∀ ṽ ∈ Ṽ",
+        "The remaining |T| - M* nodes are certified robust."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "Sample-wise v.s. Collective Certificate",
+      "content": [
+        "Sample-wise certificates essentially verify the prediction for a node one by one, assuming that the attacker can craft a different perturbed graph each time to attack every single node (Figure 1, top).",
+        "However, in reality, the attacker can only produce a single perturbed graph to simultaneously disrupt all predictions for a set of target nodes (Figure 1, bottom)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_8",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "Cora-ML数据集下认证比例随rho变化的折线图",
+          "figure_width": 210,
+          "figure_height": 180,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Citeseer数据集下认证比例随rho变化的折线图及图例",
+          "figure_width": 280,
+          "figure_height": 180,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Cora-ML数据集下认证比例与干净准确率的散点对比图",
+          "figure_width": 210,
+          "figure_height": 180,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Citeseer数据集下认证比例与干净准确率的散点对比图及图例",
+          "figure_width": 290,
+          "figure_height": 180,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_9",
+      "title": "Evaluation Results",
+      "content": [
+        "With the same smoothing parameter, both proposed collective certificates achieve a higher certifiable radius (Figure 3), outperforming the sample-wise approach significantly when the ρ is large. For example, in the Citeseer dataset, when ρ = 140, our Collective-LP1 and Collective-LP2 have the certified ratios of 73.0%, and 81.2%, while sample-wise can certify 0.0% nodes."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

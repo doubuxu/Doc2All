@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GeoReasoner Academic Poster</title>
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --bg-gray: #f0f0f0;
+            --card-bg: #ffffff;
+            --border-radius: 15px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 2400px;
+            height: 1100px;
+            background-color: var(--bg-gray);
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card-bg);
+            padding: 20px 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-center {
+            text-align: center;
+            flex: 1;
+        }
+
+        .poster-title {
+            color: var(--primary-blue);
+            font-size: 48px;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 32px;
+            color: #333;
+            margin: 0;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .col-1 { flex: 0.8; }
+        .col-2 { flex: 1.4; }
+        .col-3 { flex: 0.8; }
+
+        .layout-block {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border: 2px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .section-header {
+            font-size: 36px;
+            color: #000;
+            margin: 0;
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        .text-block {
+            font-size: 22px;
+            line-height: 1.4;
+            margin: 0;
+            color: #333;
+        }
+
+        .list-item {
+            font-size: 22px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .sub-section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: var(--primary-blue);
+        }
+
+        img {
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-left">
+            <img src="./logo_hkust.png" style="width: 300px; height: 100px;" data-semantic="香港科技大学（广州）校徽">
+        </div>
+        <div class="header-center">
+            <h1 class="poster-title">GeoReasoner: Geo-localization with Reasoning in Street Views using a Large Vision-Language Model</h1>
+            <p class="poster-authors">Ling Li, Yu Ye, Bingchuan Jiang, Wei Zeng</p>
+        </div>
+        <div class="header-logos">
+            <div>The Hong Kong University of Science and Technology (Guangzhou)</div>
+            <div>github.com/GeoReasoner</div>
+            <img src="./logo_icml.png" style="width: 150px; height: 80px;" data-semantic="ICML 会议 Logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1: Introduction & Methods Comparison -->
+        <div class="column col-1">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Introduction</h2>
+                <p class="text-block">This work tackles the problem of geo-localization with a <b>new paradigm</b> using a large vision-language model (LVLM) augmented with human inference knowledge.</p>
+                <p class="text-block"><b>Challenge:</b> The scarcity of data for training the LVLM - existing street-view datasets often contain numerous low-quality images lacking visual clues, and lack any reasoning inference.</p>
+                <p class="text-block"><b>Dataset:</b> We devise a CLIP-based network to quantify the <b>locatability</b> of street-view images, resulting in the creation of a new dataset comprising highly locatable street views.</p>
+                <p class="text-block"><b>Model: GeoReasoner</b>, which undergoes fine-tuning through dedicated reasoning and location-tuning stages, outperforms counterpart LVLMs by more than 25% at country-level and 38% at city-level geo-localization tasks.</p>
+                
+                <div class="figure-container">
+                    <div class="row-container">
+                        <img src="./fig_1.jpg" style="width: 458px; height: 175px;" data-semantic="基于检索的地理定位方法流程图">
+                        <img src="./fig_3.jpg" style="width: 332px; height: 246px;" data-semantic="基于LVLM的地理定位训练阶段流程图">
+                    </div>
+                    <div class="row-container">
+                        <img src="./fig_2.jpg" style="width: 454px; height: 188px;" data-semantic="基于分类的地理定位方法流程图">
+                        <img src="./fig_4.jpg" style="width: 419px; height: 216px;" data-semantic="基于LVLM的地理定位推理阶段流程图">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 2: Data Curation & Experiments -->
+        <div class="column col-2">
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Data Curation</h2>
+                <p class="text-block"><b>Street-View Images:</b> A total of over 130k street-view images with geo-tags collected from Google Street View.</p>
+                <p class="text-block"><b>Textual Clues:</b> A total of over 3K textual clues that encapsulate rich geo-localization information from GeoGuessr and Tuxun communities.</p>
+                <div class="figure-container">
+                    <img src="./fig_5.jpg" style="width: 1102px; height: 342px;" data-semantic="可定位性量化网络架构图，展示了如何通过CLIP模型预测图像的可定位性指标">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Experiments</h2>
+                <div class="sub-section-title">Locatability Quantization Method</div>
+                <div class="row-container">
+                    <img src="./fig_7.jpg" style="width: 545px; height: 276px;" data-semantic="不同可定位性阈值下的国家和城市定位准确率对比柱状图">
+                    <div class="figure-container">
+                        <img src="./fig_8.jpg" style="width: 550px; height: 208px;" data-semantic="高可定位性街道图像示例">
+                        <img src="./fig_9.jpg" style="width: 550px; height: 210px;" data-semantic="低可定位性街道图像示例">
+                    </div>
+                </div>
+
+                <div class="sub-section-title">GeoReasoner Performance</div>
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 885px; height: 195px;" data-semantic="GeoReasoner 与其他主流模型在国家和城市级别的定位精度对比表">
+                </div>
+
+                <div class="sub-section-title">Results of the ablation experiments</div>
+                <div class="figure-container">
+                    <img src="./table_2.png" style="width: 1063px; height: 178px;" data-semantic="消融实验结果表，展示了推理微调和位置微调对模型性能的影响">
+                </div>
+
+                <div class="sub-section-title">Qualitative Results</div>
+                <div class="row-container">
+                    <img src="./fig_11.jpg" style="width: 431px; height: 256px;" data-semantic="定性分析输入图像，展示了拉萨大昭寺广场的街景">
+                    <div class="figure-container" style="flex: 1;">
+                        <div class="row-container">
+                            <img src="./fig_12.jpg" style="width: 322px; height: 95px;" data-semantic="LLaVA 模型的推理结果">
+                            <img src="./fig_15.jpg" style="width: 314px; height: 95px;" data-semantic="GPT-4V 模型的推理结果">
+                        </div>
+                        <div class="row-container">
+                            <img src="./fig_17.jpg" style="width: 315px; height: 84px;" data-semantic="GeoReasoner 模型的推理结果，准确识别出拉萨并给出详细理由">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 3: Architecture & Contributions -->
+        <div class="column col-3">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Geo-localization with Reasoning</h2>
+                <p class="text-block">The architecture of <b>GeoReasoner</b> consists of three modules: Vision Encoder, VL Adapter and Pre-trained LLM. The model undergoes a two-fold supervised fine-tuning process: reasoning tuning and location tuning.</p>
+                <div class="figure-container">
+                    <img src="./fig_6.jpg" style="width: 1099px; height: 347px;" data-semantic="GeoReasoner 的两阶段微调架构图，包括推理微调阶段和位置微调阶段">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Contributions</h2>
+                <ul>
+                    <li class="list-item">We present a new paradigm that leverages an LVLM and external knowledge of human inference for geolocation with reasoning from street-view images.</li>
+                    <li class="list-item">We introduce the concept of locatability and devise a CLIP-based network to quantify the degree of locatability in street-view images.</li>
+                    <li class="list-item">We propose GeoReasoner, an LVLM that outperforms existing geo-localization models and provides detailed reasoning for the inferred results.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

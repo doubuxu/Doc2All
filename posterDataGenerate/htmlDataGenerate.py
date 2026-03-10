@@ -205,7 +205,7 @@ def singele_poster_process(poster_path,poster_name,sub_image_path)->str:
     <h1 class="poster-title">标题内容</h1>
     <p class="poster-authors">作者 A, 作者 B</p>
     <div class="header-logos">
-        <img src="./logo.png" style="width:100px; height:50px;" data-semantic="大学校徽 Logo">
+        <img src="./fig_1.png" style="width:100px; height:50px;" data-semantic="大学校徽 Logo">
     </div>
 </header>
 <main>
@@ -247,7 +247,7 @@ def singele_poster_process(poster_path,poster_name,sub_image_path)->str:
 - **容器**：必须包裹在 `<div class="figure-container">` 或 `<div class="row-container">` 中。
 - **图片标签**：必须使用 `<img>` 标签。
 - **关键属性**：
-  - `src`：必须指向子图文件名（如 `./table_1.png` 或 `./fig_1.jpg`）。
+  - `src`：必须指向子图文件名,后缀为jpg（如 `./table_1.jpg` 或 `./fig_1.jpg`）。
   - `style`：必须内联显式指定宽高，格式为 `style="width: 100px; height: 50px;"`（脚本通过正则提取数字）。
   - **`data-semantic`**：必须添加此属性，用一句话描述图表的具体内容（如：“消融实验数据对比表”）。
 - **判定逻辑**：如果文件名包含 "table"，脚本会自动归类为 tables，否则归类为 figures。
@@ -256,7 +256,7 @@ def singele_poster_process(poster_path,poster_name,sub_image_path)->str:
 - **全局容器**：根容器为 `div#poster-canvas`，宽高需与原图一致。
 - **多栏布局**：使用 `main` 标签作为主体，内部划分若干 `.column`。
 - **位置对齐**：严格参考 MinerU 的 bbox 坐标，通过 flex/grid 确保元素顺序与物理位置对齐。
-
+- **字体信息**：根据图片中的语义信息和尺寸信息识别不同文本的字体和间距等信息，务必做到布局与图中所示相同。
 ### 禁令
 - 严禁修改类名（Class Name），必须与上述协议完全一致。
 - 严禁在 `layout-block` 内部使用不规范的嵌套（如在 `p` 标签外直接裸露文字）。
@@ -269,7 +269,7 @@ def singele_poster_process(poster_path,poster_name,sub_image_path)->str:
     <div class="header-logos">
         <div>XX 大学</div>
         <div>github.com/project</div>
-        <img src="./logo.png" style="width: 100px; height: 100px;" data-semantic="校徽">
+        <img src="./fig_1.jpg" style="width: 100px; height: 100px;" data-semantic="校徽">
     </div>
 </header>
 <main>
@@ -339,11 +339,11 @@ def poster_html_generate_batch(poster_path,sub_image_path,save_path):
         save_json(html_data,html_file)
 
 if __name__ == "__main__":
-    img_path="./[Re] Graph Edit Networks_poster.jpg"
+    img_path="../webData/imgs/AdaMML_ Adaptive Multi-Modal Learning for Efficient Video Recognition.png"
     poster_name=Path(img_path).stem
     print(poster_name)
-    sub_image_path=f'./output'
+    sub_image_path=f'../webData/mineru_output'
     html_code=singele_poster_process(img_path,poster_name,sub_image_path)
     print(html_code)
-    html_path=f'./{poster_name}3.html'
+    html_path=f'./{poster_name}.html'
     save_html(html_path,html_code)

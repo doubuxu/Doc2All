@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "title": "Fine-Tuning Language Models with Just Forward Passes",
+    "authors": [
+      "Sadhika Malladi*",
+      "Tianyu Gao*",
+      "Eshaan Nichani",
+      "Alex Damian",
+      "Jason D. Lee",
+      "Danqi Chen",
+      "Sanjeev Arora. Princeton University"
+    ],
+    "organizations": [
+      "Princeton University"
+    ],
+    "github": "github.com/princeton-nlp/MeZO",
+    "figures": [
+      {
+        "fig_id": "princeton_logo",
+        "description": "Princeton University Logo",
+        "figure_width": 60,
+        "figure_height": 60
+      },
+      {
+        "fig_id": "nlp_logo",
+        "description": "NLP Group Logo",
+        "figure_width": 80,
+        "figure_height": 40
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "OPT-13B performance on classification, multiple-choice, and generation tasks comparing Zero-shot, ICL, MeZO and FT.",
+          "figure_width": 997,
+          "figure_height": 283,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "Memory consumption of different-sized OPT models showing MeZO uses significantly less memory than FT.",
+          "figure_width": 527,
+          "figure_height": 282,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "MeZO Algorithm",
+      "content": [
+        "Classical results: ZO slows down bynumber of parameters d.",
+        "Our case:fine-tuninga pre-trained model with aprompt, so fine-tuning looks like pre-training!",
+        "Then:effective rank of Hessian ris small, convergence rates depend on r instead of d (descent lemma)."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "MeZO Algorithm pseudocode showing the use of random seeds to minimize memory overhead.",
+          "table_width": 923,
+          "table_height": 663,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Experiments",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_2",
+          "description": "Main results table for OPT-13B across classification, multiple-choice, and generation tasks.",
+          "table_width": 1116,
+          "table_height": 296,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_3",
+          "description": "Performance of MeZO on OPT 30B and 66B models.",
+          "table_width": 890,
+          "table_height": 246,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_4",
+          "description": "MeZO performance on non-differentiable objectives like Accuracy/F1.",
+          "table_width": 837,
+          "table_height": 213,
+          "table_caption": []
+        }
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "RoBERTa-large results across various tasks comparing MeZO with Zero-shot, ICL, and FT.",
+          "figure_width": 1205,
+          "figure_height": 381,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

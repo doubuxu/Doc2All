@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CW-ERM Academic Poster</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+        }
+        #poster-canvas {
+            width: 1200px;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .poster-title {
+            font-size: 42px;
+            margin: 0;
+            color: #000;
+            line-height: 1.2;
+            max-width: 80%;
+        }
+        .poster-authors {
+            font-size: 18px;
+            color: #555;
+            margin: 15px 0 5px 0;
+        }
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        .header-logos img {
+            margin-left: auto;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .layout-row {
+            display: flex;
+            gap: 40px;
+        }
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .layout-block {
+            display: flex;
+            flex-direction: column;
+        }
+        .section-header {
+            font-size: 28px;
+            color: #000;
+            border-bottom: 1px solid #ccc;
+            margin: 0 0 15px 0;
+            padding-bottom: 5px;
+        }
+        .text-block {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0 0 10px 0;
+            text-align: justify;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .list-item {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 0;
+            width: 100%;
+        }
+        .row-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 10px;
+            width: 100%;
+        }
+        .figure-container img, .row-container img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .references-text {
+            font-size: 12px;
+            color: #444;
+            line-height: 1.3;
+        }
+        .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <h1 class="poster-title">CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization</h1>
+            <p class="poster-authors">Eesha Kumar, Yiming Zhang, Stefano Pini, Simon Stent, Ana Sofia Rufino Ferreira, Sergey Zagoruyko, Christian S. Perone</p>
+            <div class="header-logos">
+                <div>Woven Planet United Kingdom Limited, Woven Planet North America, Inc.</div>
+                <div>github.com/woven-planet/cw-erm</div>
+                <img src="./fig_1.png" style="width: 504px; height: 223px;" data-semantic="Neural Information Processing Systems (NeurIPS) Logo">
+            </div>
+        </header>
+
+        <main>
+            <!-- Top Row: Motivation and Contributions -->
+            <div class="layout-row">
+                <div class="column">
+                    <section class="layout-block" data-section-id="section_1">
+                        <h2 class="section-header">Main Ideas and Motivation</h2>
+                        <ul>
+                            <li class="list-item">Behavior Cloning (BC) algorithms for training self-driving vehicles via pure Empirical Risk Minimization (ERM) biases policy towards matching open-loop behavior.</li>
+                            <li class="list-item">We debias the policy network by identifying important samples via a closed-loop evaluator.</li>
+                            <li class="list-item">Training in three phases:
+                                <ul>
+                                    <li class="list-item">Open-loop identification phase</li>
+                                    <li class="list-item">Error set construction and evaluation phase</li>
+                                    <li class="list-item">Upsampling training phase</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="column">
+                    <section class="layout-block" data-section-id="section_2">
+                        <h2 class="section-header">Our Contributions</h2>
+                        <ul>
+                            <li class="list-item">Motivate and propose a technique that leverages closed-loop evaluation metrics acquired from policy rollouts in a simulator to debias the policy network and reduce distributional differences.</li>
+                            <li class="list-item">Evaluate CW-ERM on a challenging urban driving dataset in a closed-loop fashion to show significant improvements without requiring complex training methods.</li>
+                            <li class="list-item">Show an important connection of our method to a family of methods that addresses covariate shift through density ratio estimation.</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Wide Pipeline Diagram -->
+            <div class="figure-container">
+                <img src="./fig_2.png" style="width: 2153px; height: 518px;" data-semantic="CW-ERM training pipeline showing traditional open-loop ERM vs Closed-loop Weighted ERM phases">
+            </div>
+
+            <!-- Bar Charts Row -->
+            <div class="row-container">
+                <img src="./fig_3.png" style="width: 963px; height: 336px;" data-semantic="Front Collisions comparison bar chart">
+                <img src="./fig_4.png" style="width: 387px; height: 340px;" data-semantic="Side Collisions comparison bar chart">
+                <img src="./fig_5.png" style="width: 405px; height: 340px;" data-semantic="Rear Collisions comparison bar chart">
+                <img src="./fig_6.png" style="width: 392px; height: 340px;" data-semantic="Distance to reference trajectory comparison bar chart">
+            </div>
+
+            <!-- Bottom Row: Methodology and Examples -->
+            <div class="layout-row">
+                <div class="column">
+                    <section class="layout-block" data-section-id="section_3">
+                        <h2 class="section-header">Methodology</h2>
+                        <p class="text-block"><strong>Stage 1 (Identification Policy):</strong> Train policy network via BC in open-loop using ERM.</p>
+                        <p class="text-block"><strong>Stage 2 (Closed-Loop Simulation):</strong> Perform rollouts in closed-loop simulator. Collect metrics and identify the error set E.</p>
+                        <p class="text-block"><strong>Stage 3 (Final Policy):</strong> Train new policy where scenes belonging to the error set are upweighted by a factor w.</p>
+                    </section>
+                </div>
+                <div class="column">
+                    <h2 class="section-header">Collision Avoidance Examples</h2>
+                    <div class="row-container">
+                        <div class="figure-container">
+                            <img src="./fig_7.png" style="width: 510px; height: 501px;" data-semantic="Front collision avoidance visualization comparing Baseline and CW-ERM">
+                            <p class="text-block" style="text-align: center; font-style: italic;">Front collisions</p>
+                        </div>
+                        <div class="figure-container">
+                            <img src="./fig_8.png" style="width: 500px; height: 501px;" data-semantic="Side collision avoidance visualization comparing Baseline and CW-ERM">
+                            <p class="text-block" style="text-align: center; font-style: italic;">Side collisions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Row: References and QR -->
+            <div class="footer-row">
+                <section class="layout-block" data-section-id="section_4" style="flex: 3;">
+                    <h2 class="section-header">References</h2>
+                    <div class="references-text">
+                        1. Liu et al. (2021). Just Train Twice: Improving Group Robustness without Training Group Information. ICML.<br>
+                        2. Vitelli et al. (2022). Safetynet: Safe planning for real-world self-driving vehicles using machine-learned policies. ICRA.<br>
+                        3. Scheel et al. (2022). Urban driver: Learning to drive from real-world demonstrations using policy gradients. CoRL.
+                    </div>
+                </section>
+                <div class="qr-section" style="flex: 1;">
+                    <img src="./fig_9.png" style="width: 189px; height: 186px;" data-semantic="QR code linking to project website">
+                    <div>woven.mobi/cw-erm</div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

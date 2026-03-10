@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VideoComposer Poster Layout</title>
+    <style>
+        :root {
+            --primary-red: #b30000;
+            --bg-gray: #f0f0f0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+            font-family: "Times New Roman", serif;
+        }
+
+        #poster-canvas {
+            width: 3499px;
+            height: 1727px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        header {
+            width: 100%;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            border-bottom: 4px solid black;
+            box-sizing: border-box;
+        }
+
+        .poster-title {
+            font-size: 72px;
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .poster-authors {
+            font-size: 48px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 36px;
+            width: 100%;
+        }
+
+        .header-logos div {
+            margin: 0 20px;
+        }
+
+        /* Absolute positioned logos for the top corners */
+        .logo-left {
+            position: absolute;
+            left: 40px;
+            top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-right {
+            position: absolute;
+            right: 40px;
+            top: 20px;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            padding: 30px;
+            gap: 30px;
+            box-sizing: border-box;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .column-1 { flex: 0 0 850px; }
+        .column-2 { flex: 0 0 1400px; }
+        .column-3 { flex: 1; }
+
+        .layout-block {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .section-header {
+            background-color: var(--primary-red);
+            color: white;
+            font-size: 42px;
+            padding: 10px 20px;
+            margin: 0 0 15px 0;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: underline;
+        }
+
+        .text-block {
+            font-size: 34px;
+            line-height: 1.4;
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 40px;
+            margin: 10px 0;
+        }
+
+        .list-item {
+            font-size: 34px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            gap: 15px;
+        }
+
+        .sub-section-title {
+            color: var(--primary-red);
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .sub-section-title::before {
+            content: "•";
+            margin-right: 10px;
+        }
+
+        img {
+            object-fit: contain;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="logo-left">
+            <img src="./logo_alibaba.png" style="width: 280px; height: 120px;" data-semantic="Alibaba Group Logo">
+            <img src="./logo_ant.png" style="width: 200px; height: 120px;" data-semantic="Ant Group Logo">
+        </div>
+        <div class="logo-right">
+            <img src="./logo_neurips.png" style="width: 450px; height: 150px;" data-semantic="NeurIPS Conference Logo">
+        </div>
+        
+        <h1 class="poster-title">VideoComposer: Compositional Video Synthesis with Motion Controllability</h1>
+        <p class="poster-authors">Xiang Wang¹*, Hangjie Yuan¹*, Shiwei Zhang¹*, Dayou Chen¹*, Jiuniu Wang¹, Yingya Zhang¹, Yujun Shen², Deli Zhao¹, Jingren Zhou¹</p>
+        <div class="header-logos">
+            <div>¹ Alibaba Group, China</div>
+            <div>² Ant Group, China</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1: Introduction -->
+        <div class="column column-1">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Introduce</h2>
+                <div class="figure-container">
+                    <img src="./fig_intro_grid.png" style="width: 800px; height: 950px;" data-semantic="多模态输入示例图，展示了文本、草图、图像、深度图和运动向量的组合生成效果">
+                </div>
+                <ul>
+                    <li class="list-item">For the first time, we leverage motion vectors as a temporal condition, providing an efficient, compact, and robust solution for highly controllable video synthesis;</li>
+                    <li class="list-item">VideoComposer allows users to flexibly compose a video with textual conditions, spatial conditions, and more importantly temporal conditions.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 2: Framework & Results -->
+        <div class="column column-2">
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Framework of VideoComposer</h2>
+                <div class="figure-container">
+                    <img src="./fig_framework.png" style="width: 1350px; height: 750px;" data-semantic="VideoComposer模型架构图，包含视频潜扩散模型、STC编码器和条件融合模块">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Experimental Results</h2>
+                <div class="sub-section-title">Compositional image-to-video generation</div>
+                <div class="figure-container">
+                    <img src="./fig_results_img2vid.png" style="width: 1350px; height: 500px;" data-semantic="图像转视频生成结果展示，包括老虎、戴帽子的女人、向日葵等案例">
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 3: Specific Tasks -->
+        <div class="column column-3">
+            <section class="layout-block" data-section-id="section_4">
+                <div class="sub-section-title">Compositional video inpainting</div>
+                <div class="figure-container">
+                    <img src="./fig_inpainting.png" style="width: 1000px; height: 300px;" data-semantic="视频修复结果，展示了天鹅在河流中游泳的补全效果">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <div class="sub-section-title">Compositional sketch-to-video generation</div>
+                <div class="figure-container">
+                    <img src="./fig_sketch2vid.png" style="width: 1000px; height: 300px;" data-semantic="草图转视频生成结果，展示了鸽子在石头上的动态效果">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <div class="sub-section-title">Versatile motion control using hand-crafted motions</div>
+                <div class="figure-container">
+                    <img src="./fig_motion_control.png" style="width: 1000px; height: 400px;" data-semantic="手工运动控制结果，展示了方块移动和老虎行走的轨迹控制">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <div class="sub-section-title">Motion transfer</div>
+                <div class="figure-container">
+                    <img src="./fig_motion_transfer.png" style="width: 1000px; height: 350px;" data-semantic="运动迁移结果，将源视频的摄像机移动轨迹迁移到向日葵图像上">
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

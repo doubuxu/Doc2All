@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "title": "Neural Tangent Kernels for Axis-Aligned Tree Ensembles",
+    "authors": [
+      "Ryuichi Kanoh",
+      "Mahito Sugiyama"
+    ],
+    "organizations": [
+      "National Institute of Informatics, The Graduate University for Advanced Studies, SOKENDAI"
+    ],
+    "github": "github.com/kanoh-ryuichi/ntk-tree",
+    "figures": [
+      {
+        "fig_id": "logo",
+        "description": "ICML Conference Logo",
+        "figure_width": 180,
+        "figure_height": 80
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Contribution",
+      "content": [
+        "We formulate theNeural Tangent Kernel(NTK) induced by infinitely manyaxis-aligned differentiable tree ensembles."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Differentiable Decision Tree",
+      "content": [
+        "By employing a sigmoid-like function, we can relax the splitting into a continuous form, which allows the use of gradient descent."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Differentiable decision tree architecture diagram showing input, inner node, leaves, and output formula",
+          "figure_width": 812,
+          "figure_height": 344,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Neural Tangent Kernel for Tree Ensembles",
+      "content": [
+        "The NTK emerges in the context of functional gradient descent.",
+        "It does not change during training when considering infinitely wide neural networks.",
+        "Then, functional behavior becomes analytically tractable.",
+        "By handling thenumber of treeslike thewidth of neural networks, we can apply NTK theory to differentiable tree ensembles.",
+        "In this work, we extend the NTK concept foraxis-aligned trees."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Functional gradient descent formula highlighting the Neural Tangent Kernel component",
+          "figure_width": 696,
+          "figure_height": 144,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Axis-Aligned Constraint",
+      "content": [
+        "We consider two axis-aligned cases:AAAandAAI."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "AAA (Always Axis-Aligned) constraint visualization",
+          "figure_width": 155,
+          "figure_height": 219,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "AAI (Aligned at Initialization) constraint visualization",
+          "figure_width": 171,
+          "figure_height": 221,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Oblique (Typical differentiable tree) visualization",
+          "figure_width": 165,
+          "figure_height": 221,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Legend for initial and trained model lines",
+          "figure_width": 308,
+          "figure_height": 150,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Closed-form NTK formula for Axis-Aligned Trees",
+      "content": [
+        "Training behavior is nowanalytically tractableusing our formula."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "Detailed closed-form NTK formula for axis-aligned trees including contributions from internal nodes and leaves",
+          "figure_width": 1039,
+          "figure_height": 380,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "Comparison of model output dynamics between analytical formula and finite ensembles (M=16, M=1024) for AAA and AAI",
+          "figure_width": 648,
+          "figure_height": 385,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Ensembles of Various Trees",
+      "content": [
+        "The NTK induced by an ensemble of various tree architectures is equal to the sum of the NTKs induced by each architecture."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_9",
+          "description": "NTK property formula for mixed tree ensembles",
+          "figure_width": 1105,
+          "figure_height": 150,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "Insight on Oblivious Trees",
+      "content": [
+        "Any non-oblivious trees can be transformed into oblivious trees that induce exactly the same limiting NTK."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_10",
+          "description": "Diagram showing the equivalence transformation between non-oblivious and oblivious tree structures",
+          "figure_width": 1081,
+          "figure_height": 161,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_8",
+      "title": "Multiple Kernel Learning (MKL) as Architecture Search",
+      "content": [
+        "MKL enables tree architecture search based on convex optimization."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_11",
+          "description": "Bar chart showing MKL weights for different feature combinations in the tic-tac-toe dataset",
+          "figure_width": 611,
+          "figure_height": 303,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_12",
+          "description": "Grid visualization of feature interactions for the tic-tac-toe endgame task",
+          "figure_width": 259,
+          "figure_height": 236,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

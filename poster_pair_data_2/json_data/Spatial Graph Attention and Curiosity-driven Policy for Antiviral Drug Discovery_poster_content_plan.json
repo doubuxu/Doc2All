@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "title": "Spatial Graph Attention and Curiosity-driven Policy for Antiviral Drug Discovery",
+    "authors": [
+      "Yulun Wu",
+      "Mikaela Cashman",
+      "Nicholas Choma",
+      "Erica T. Prates",
+      "Verónica Melesse Vergara",
+      "Andrew Chen",
+      "Manesh Shah",
+      "Austin Clyde",
+      "Thomas S. Brettin",
+      "Wibe A. de Jong",
+      "Neeraj Kumar",
+      "Martha S. Head",
+      "Rick L. Stevens",
+      "Peter Nugent",
+      "Daniel A. Jacobson",
+      "James B. Brown"
+    ],
+    "organizations": [
+      "University of California, Berkeley",
+      "Lawrence Berkeley National Laboratory"
+    ],
+    "github": "github.com/berkeleylab/dgapn",
+    "figures": [
+      {
+        "fig_id": "logo_iclr",
+        "description": "ICLR Conference Logo",
+        "figure_width": 180,
+        "figure_height": 80
+      },
+      {
+        "fig_id": "qr_code",
+        "description": "Project QR Code",
+        "figure_width": 100,
+        "figure_height": 100
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Overview",
+      "content": [
+        "The framework is examined on the task of generating molecules that are designed to bind, noncovalently, to functional sites of a SARS-CoV-2 protein.",
+        "Our proposed method:",
+        "uses state-of-the-art policy gradient reinforcement learning framework",
+        "defines fragment-interchanging-based action space that is chemically reasonable",
+        "embeds both atom and bond attributes as well as spatial structures by leveraging self-attention",
+        "incorporates an efficient surrogate approach that proposes curiosity bonus to enhance exploration",
+        "is parallelized in various fashions to fit specific needs"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Distilled Graph Attention Policy Network",
+      "content": [
+        "The generating process is framed as a Markov decision problem. In a single step, the CReM environment proposes candidates that are reasonable evolutions for the current molecular state; the current state and candidates are encoded into hidden graph representations by a shared Spatial Graph Attention (sGAT) network, then encoded into vector representations by two separate networks; a retrieval system attention mechanism is applied to predict the selection probability of each candidate."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Overview of DGAPN during a single step of the generating process showing sGAT encoder and reward mechanisms",
+          "figure_width": 750,
+          "figure_height": 309,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Reward from Protein-Ligand Structural Information",
+      "content": [
+        "The main reward of a generated ligand is its binding affinity estimate against the catalytic site of SARS-CoV-2 protein NSP15, predicted by molecular docking."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Visualization of protein target binding site and AutoDock-GPU scoring function components",
+          "figure_width": 690,
+          "figure_height": 398,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Experiments: Single-objective optimization",
+      "content": [
+        "The negative docking score is used as the main reward and assign it to the final state as the single objective."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Table 1: Primary objective and summary metrics in evaluations comparing DGAPN with REINVENT, JTVAE, GCPN, MolDQN, and MARS",
+          "table_width": 750,
+          "table_height": 200,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_2",
+          "description": "Table 2: Dock scores and other metrics under different training and evaluation settings",
+          "table_width": 380,
+          "table_height": 116,
+          "table_caption": []
+        }
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Figure 3: Loss in supervised learning with and without spatial convolution over epochs",
+          "figure_width": 350,
+          "figure_height": 267,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Experiments: Constrained optimization",
+      "content": [
+        "In lead optimization problems in drug discovery and material science, it can be useful to require the generated molecule to maintain a certain level of similarity to its starting molecule."
+      ],
+      "tables": [
+        {
+          "table_id": "table_3",
+          "description": "Table 3: Objective improvements and molecule similarities under different constraining coefficients delta",
+          "table_width": 750,
+          "table_height": 159,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Multi-objective optimization",
+      "content": [
+        "The docking reward is weighted with a formula including QED and SA."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "Figure 4: Scatter plot of QED Score vs Dock Reward for different weights",
+          "figure_width": 230,
+          "figure_height": 167,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Figure 4: Scatter plot of SA Score vs Dock Reward for different weights",
+          "figure_width": 230,
+          "figure_height": 174,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Figure 4: Visualized top 3 molecules generated under each weight setting",
+          "figure_width": 230,
+          "figure_height": 148,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "Conclusions",
+      "content": [
+        "Our framework advances the state-of-the-art algorithms in the optimization of molecules with antiviral potential while maintaining reasonable synthetic accessibility. A valuable extension of our work would be to focus on lead-optimization — the refinement of molecular fragments already known to bind the protein of interest through position-constrained modification."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_8",
+      "title": "References",
+      "content": [
+        "Burda, Yuri, et al. \"Exploration by random network distillation.\" arXiv:1810.12894 (2018).Schulman, John, et al. \"Proximal policy optimization algorithms.\" arXiv:1707.06347 (2017).Bickerton, G. Richard, et al. \"Quantifying the chemical beauty of drugs.\" Nature chemistry 4.2 (2012)."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

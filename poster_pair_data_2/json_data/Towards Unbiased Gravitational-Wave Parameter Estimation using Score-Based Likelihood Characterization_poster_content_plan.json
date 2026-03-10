@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "title": "Towards Unbiased Gravitational-Wave Parameter Estimation using SLIC",
+    "authors": [
+      "Ronan Legin",
+      "Maximiliano Isi",
+      "Kaze Wong",
+      "Alexandre Adam",
+      "Laurence Perreault-Levasseur",
+      "Yashar Hezaveh"
+    ],
+    "organizations": [
+      "Center for Computational Astrophysics, Flatiron Institute, Mila - Quebec Artificial Intelligence Institute, Institute, Ciela - Montreal Institute for Astrophysical Data Analysis and Machine Learning"
+    ],
+    "github": "github.com/ronanlegin/slic",
+    "figures": []
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Summary/Objectives",
+      "content": [
+        "Gravitational wave (GW) parameter estimation demands critical assumptions of noise characteristics in detectors like LIGO, Virgo, and KAGRA. In this study, we utilize score-based diffusion models to empirically learn the noise distribution straight from detector data, and use this to build an unbiased model of the likelihood function."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Introduction",
+      "content": [
+        "Traditional GW parameter estimation assumes the instrumental noise to be Gaussian and stationary (B. P. Abbott et al., 2020). However, real noise often deviates from a stationary Gaussian due to instrument evolution, data contamination by transient non-Gaussian excursions and nonlinear evolution of narrow spectral features (B. P. Abbott et al., 2016a,b; Buikema et al., 2020). These contaminants can only be managed by specific treatments, resulting in computational expense and potential biases. This work presents a new inference framework for GW parameter estimation, dismissing the need for stationary Gaussian noise assumptions."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Methodology",
+      "content": [
+        "Given a set of samples {x_i} from the underlying distribution of noise Q, the objective is to infer the score function ∇_x log Q(x). This score function is learned using a neural network through the process of denoising score matching (Hyvärinen, 2005; Vincent, 2011; Song et al., 2020). Once learned, it can be used in a diffusion scheme to generate new samples of noise as shown in Fig. 1.",
+        "In the context of score-based likelihood characterization (Legin et al., 2023), the score of the likelihood can be expressed as:",
+        "where x_O = M(θ) + x represents an observed GW signal and M(θ) denotes the physical model, accepting the parameters of interest, θ, as input. Throughout inference, x are residuals between the observation and the model, and their statistics should follow the noise if the signal model is accurate."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "One-sided noise power spectral density (PSD) of LIGO noise comparing SLIC and Welch estimates.",
+          "figure_width": 550,
+          "figure_height": 358,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Data",
+      "content": [
+        "We train the score-based network on 11 h of actual LIGO data around GW150914 (GPS time 1126259462.423 s) obtained from the Gravitational Wave Open Science Center (R. Abbott et al., 2021; Abbot et al., 2023). We split these data into 4 s segments for training, taking care to discard the one segment containing the true signal."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "Results",
+      "content": [
+        "We check that the SLIC likelihood can infer source parameters without bias. To this end, we inject simulated signals with known parameters into real LIGO noise not seen in training, and estimate the parameters using both our model and a standard Gaussian likelihood assuming a Welch PSD as in Fig. 1. For this example, we have chosen a segment of real noise data without significant glitches, such that the Gaussian likelihood also recovers the true parameters. As shown, the SLIC posterior is capable of recovering the true injected values with high credibility."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Posterior distribution of five recovered parameters comparing SLIC and standard Gaussian likelihood.",
+          "figure_width": 550,
+          "figure_height": 551,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Discussion and conclusions",
+      "content": [
+        "We are working on a number of improvements before applying our framework to real signals contaminated by instrumental glitches, such as GW170817.",
+        "We plan to enhance the current model to generate larger segments (from 4 to 128 seconds) to analyze binary neutron stars.",
+        "Instead of analyzing data from a single detector, we intend to coherently model data from a network of detectors to improve parameter estimation.",
+        "We aim to improve the generalization of the model by training on larger quantities of data spanning months of detector data.",
+        "We aim to boost inference efficiency by transitioning from MALA to FLOWMC (Wong et al., 2023)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "References",
+      "content": [
+        "Abbott, R., et al. (2023). Gravitational wave open science center (1126216262-1126302662). Retrieved from https://gwosc.org/archive/links/01/Abbott, B. P., et al. (2016a). Characterization of transient noise in Advanced LIGO relevant to gravitational wave signal GW150914. Class. Quant. Grav., 33(13), 134001.Abbott, B. P., et al. (2016b). Sensitivity of the Advanced LIGO detectors at the beginning of gravitational wave astronomy. Phys. Rev. D, 93(11), 112004.Abbott, B. P., et al. (2020). A guide to LIGO-Virgo detector noise and extraction of transient gravitational-wave signals. Class. Quant. Grav., 37(5), 055002.Buikema, A., et al. (2020). Sensitivity and performance of the Advanced LIGO detectors in the third observing run. Phys. Rev. D, 102(6), 062003.Hyvärinen, A. (2005, dec). Estimation of non-normalized statistical models by score matching. J. Mach. Learn. Res., 6, 695–709.Legin, R., Adam, A., Hezaveh, Y., & Perreault Levasseur, L. (2023, February). Beyond Gaussian Noise: A Generalized Approach to Likelihood Analysis with non-Gaussian Noise. arXiv e-prints, arXiv:2302.03046.Song, Y., Sohl-Dickstein, J., Kingma, D. P., Kumar, A., Ermon, S., & Poole, B. (2020, November). Score-Based Generative Modeling through Stochastic Differential Equations. arXiv e-prints, arXiv:2011.13456.Wong, K. W. K., Gabrié, M., & Foreman-Mackey, D. (2023). flowMC: Normalizing flow enhanced sampling package for probabilistic inference in JAX. J. Open Source Softw., 8(83), 5021."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "title": "Input-gradient space particle inference for neural network ensembles",
+    "authors": [
+      "Trung Trinh",
+      "Markus Heinonen",
+      "Luigi Acerbi",
+      "Samuel Kaski"
+    ],
+    "organizations": [
+      "Aalto University, Helsinki University, University of Manchester"
+    ],
+    "github": "github.com/trungtrinh/forde",
+    "figures": [
+      {
+        "fig_id": "aalto_logo",
+        "description": "Aalto University Logo",
+        "figure_width": 80,
+        "figure_height": 80
+      },
+      {
+        "fig_id": "helsinki_logo",
+        "description": "Helsinki University Logo",
+        "figure_width": 80,
+        "figure_height": 80
+      },
+      {
+        "fig_id": "manchester_logo",
+        "description": "University of Manchester Logo",
+        "figure_width": 150,
+        "figure_height": 60
+      },
+      {
+        "fig_id": "iclr_logo",
+        "description": "ICLR Conference Logo",
+        "figure_width": 120,
+        "figure_height": 60
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Overview",
+      "content": [],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Repulsive deep ensembles (RDEs) [1]",
+      "content": [
+        "Description:Train an ensemble using Wasserstein gradient descent, which employs a kernelized repulsion term to diversify the particles.",
+        "Thedriving forcedirects particles towards high density regions.",
+        "Therepulsion forcepushes particles away to enforce diversity.",
+        "Problem:Weight-space or function-space repulsion often results in underfitting or is ineffective."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Particle update rule formula showing driving and repulsion forces",
+          "figure_width": 780,
+          "figure_height": 147,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Defining the input-gradient kernel",
+      "content": [
+        "Given a base kernel, we define the kernel in the input-gradient space for a minibatch:",
+        "We choose the RBF kernel on a unit sphere:"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Input-gradient kernel definition formula",
+          "figure_width": 676,
+          "figure_height": 197,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "RBF kernel and gradient normalization formulas",
+          "figure_width": 773,
+          "figure_height": 149,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "First-order repulsive deep ensembles (FoRDEs)",
+      "content": [
+        "Possible advantages:",
+        "Each member is guaranteed to represent a different function.",
+        "Issues of weight- and function-space repulsion are avoided.",
+        "Encourages learning different features for robustness."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "FoRDE model architecture and training flow diagram",
+          "figure_width": 739,
+          "figure_height": 321,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Main takeaways",
+      "content": [
+        "1. Input-gradient-space repulsion can perform better than weight- and function-space.",
+        "2. Better corruption robustness can be achieved by configuring the repulsion kernel."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Benchmark comparison",
+      "content": [
+        "Table 1: FoRDE-PCA achieves the best performance under corruptions on CIFAR-100."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Benchmark results on CIFAR-100 dataset",
+          "table_width": 686,
+          "table_height": 154,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "Illustrative experiments",
+      "content": [
+        "FoRDEs capture higher uncertainty than baselines in regions outside of the training data."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "1D regression task uncertainty comparison plots",
+          "figure_width": 760,
+          "figure_height": 177,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "2D classification task entropy comparison plots",
+          "figure_width": 760,
+          "figure_height": 187,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_8",
+      "title": "Benchmark comparison (cont.)",
+      "content": [
+        "Table 2: Results on CIFAR-10 dataset."
+      ],
+      "tables": [
+        {
+          "table_id": "table_2",
+          "description": "Benchmark results on CIFAR-10 dataset",
+          "table_width": 690,
+          "table_height": 163,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_9",
+      "title": "",
+      "content": [
+        "[1] F. D'Angelo and V. Fortuin, \"Repulsive deep ensembles are Bayesian,\" NeurIPS 2021.[2] C. Liu et al., \"Understanding and Accelerating Particle-Based Variational Inference,\" ICML 2019."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_10",
+      "title": "Tuning the lengthscales Σ",
+      "content": [
+        "Each lengthscale is inversely proportional to the strength of the repulsion force.",
+        "Proposition:Apply strong forces in high-variance dimensions and weak forces in low-variance dimensions."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "Lengthscale derivative formula for repulsion force",
+          "figure_width": 654,
+          "figure_height": 126,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "High-variance dimension diagram showing strong repulsion",
+          "figure_width": 186,
+          "figure_height": 126,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_9",
+          "description": "Low-variance dimension diagram showing weak repulsion",
+          "figure_width": 202,
+          "figure_height": 93,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_11",
+      "title": "Lengthscale tuning experiments",
+      "content": [
+        "Blue lines show accuracies of FoRDEs, dotted orange show Deep Ensembles.",
+        "FoRDEs exhibit small performance degradations on clean images but become more robust against natural corruptions."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_10",
+          "description": "Accuracy vs Alpha plots for ResNet18 on CIFAR-100",
+          "figure_width": 770,
+          "figure_height": 245,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Clipping Poster</title>
+    <style>
+        :root {
+            --primary-blue: #1a365d;
+            --secondary-blue: #e2e8f0;
+            --text-dark: #2d3748;
+            --bg-gray: #f7fafc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #53565a;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            height: 848px;
+            background-color: var(--bg-gray);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid var(--primary-blue);
+        }
+
+        .header-center {
+            flex: 1;
+            text-align: center;
+        }
+
+        .poster-title {
+            font-size: 28px;
+            color: var(--primary-blue);
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .poster-authors {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .layout-block {
+            background: white;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            background-color: var(--primary-blue);
+            color: white;
+            margin: -12px -12px 10px -12px;
+            padding: 8px 12px;
+            font-size: 16px;
+            text-transform: uppercase;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .text-block {
+            font-size: 11px;
+            line-height: 1.4;
+            margin: 5px 0;
+            color: var(--text-dark);
+        }
+
+        .list-item {
+            font-size: 11px;
+            margin-bottom: 4px;
+            padding-left: 5px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .references-text {
+            font-size: 9px;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .highlight-box {
+            background-color: #edf2f7;
+            border: 1px solid #a0aec0;
+            padding: 8px;
+            margin: 5px 0;
+            font-family: monospace;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-logos">
+            <img src="./neurips_logo.png" style="width: 120px; height: 80px;" data-semantic="Neural Information Processing Systems Logo">
+        </div>
+        <div class="header-center">
+            <h1 class="poster-title">AUTOMATIC CLIPPING: DIFFERENTIALLY PRIVATE DEEP LEARNING MADE EASIER AND STRONGER</h1>
+            <p class="poster-authors">Zhiqi Bu, Yu-Xiang Wang, Sheng Zha, George Karypis</p>
+            <div class="header-logos" style="justify-content: center;">
+                <div>Amazon</div>
+                <div>github.com/amazon-science/dp-optimizer</div>
+            </div>
+        </div>
+        <div class="header-logos">
+            <img src="./amazon_logo.png" style="width: 120px; height: 40px;" data-semantic="Amazon Corporate Logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">ABSTRACT</h2>
+                <p class="text-block">Per-example gradient clipping is a key algorithmic step that enables practical differential privacy (DP) training for deep learning models. The choice of clipping threshold R is shown to be vital for achieving high accuracy under DP but difficult to tune.</p>
+                <div class="figure-container">
+                    <img src="./fig_1.jpg" style="width: 406px; height: 160px;" data-semantic="Ablation study of clipping threshold and learning rate heatmaps">
+                </div>
+                <p class="text-block">We propose an easy-to-use replacement, called Automatic Clipping, that eliminates the need to tune R for any DP optimizers.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">DIFFERENTIAL PRIVACY IN DEEP LEARNING</h2>
+                <p class="text-block">Differential privacy (DP) is a formal definition of privacy that has been shown to prevent the privacy risks in deep learning.</p>
+                <p class="text-block">Definition 1. A randomized algorithm M is (ε, δ)-DP if for any neighboring datasets S, S'...</p>
+                <div class="highlight-box">
+                    DP Optimizer({gi}) = Optimizer(Σ gi · Clip(||gi||; R) + σR · N(0, I))
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">PER-SAMPLE GRADIENT CLIPPING</h2>
+                <p class="text-block">Abadi's clipping is the most widely applied clipping function, which requires a hyperparameter - the clipping threshold R.</p>
+                <div class="figure-container">
+                    <img src="./fig_2.jpg" style="width: 381px; height: 222px;" data-semantic="Gradient norms before and after different clipping at R=1">
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">CONTRIBUTIONS</h2>
+                <ul>
+                    <li class="list-item">We propose a new per-sample gradient clipping function that does not require the clipping threshold R.</li>
+                    <li class="list-item">We give a convergence analysis of automatic DP-SGD in the non-convex setting.</li>
+                    <li class="list-item">We demonstrate on extensive language and vision tasks that automatic clipping outperforms or matches state-of-the-art.</li>
+                    <li class="list-item">We demonstrate minimal changes to adopt our automatic clipping in existing codebases.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">R-INDEPENDENCE OF AUTOMATIC CLIPPING</h2>
+                <p class="text-block">We show that using automatic clipping, it suffices to tune learning rate and weight decay in DP training as in the regular training.</p>
+                <p class="text-block">Theorem 1. Non-adaptive R-dependent automatic DP-SGD is equivalent to R-independent automatic DP optimizers.</p>
+                <p class="text-block">Theorem 2. Adaptive R-dependent automatic DP optimizers (including AdaGrad, Adam, etc.) are equivalent to R-independent automatic DP optimizers.</p>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column" style="flex: 1.2;">
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">CONVERGENCE ANALYSIS OF AUTOMATIC DP-SGD</h2>
+                <p class="text-block">We analyze the convergence on non-convex loss with standard assumptions in SGD literature.</p>
+                <div class="highlight-box">
+                    Theorem 3. Under Assumption 3-5, running automatic DP-SGD for T iterations...
+                </div>
+                <p class="text-block">Leveraging Theorem 4, our analysis provides guidelines to DP training that match empirical observation.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">AUTOMATIC CLIPPING IS EASY TO CODE</h2>
+                <p class="text-block">Switching from Abadi's clipping to automatic clipping changes only one line of code.</p>
+                <div class="highlight-box">
+                    per_sample_clip_factor = self.max_grad_norm / (per_sample_norms + 0.01)
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_8">
+                <h2 class="section-header">EMPIRICAL RESULTS</h2>
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 400px; height: 137px;" data-semantic="Average test accuracy and 95% confidence interval over 5 runs">
+                    <img src="./table_2.png" style="width: 400px; height: 66px;" data-semantic="Test accuracy on language tasks with RoBERTa-large parameters">
+                    <img src="./table_3.png" style="width: 400px; height: 220px;" data-semantic="Test performance on E2E dataset with GPT2">
+                </div>
+                <div class="references-text">
+                    References: [1] Abadi et al. Deep learning with differential privacy. CCS 2016.
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

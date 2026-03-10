@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Poster - MeZO</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue-bg: #f0f7ff;
+            --header-blue: #1a73e8;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        #poster-canvas {
+            width: 100%;
+            max-width: 2400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 4px solid var(--primary-blue);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 64px;
+            color: var(--primary-blue);
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+
+        .poster-authors {
+            font-size: 28px;
+            color: #333;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .top-right-refs {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            font-size: 12px;
+            text-align: left;
+        }
+
+        main {
+            display: flex;
+            gap: 40px;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .layout-block {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .section-header {
+            background-color: var(--header-blue);
+            color: white;
+            padding: 10px 20px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 8px 8px 0 0;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .text-block {
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .highlight-box {
+            background-color: var(--light-blue-bg);
+            border: 2px solid var(--primary-blue);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .list-item {
+            font-size: 20px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .references-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        .footer-guidelines {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .guideline-box {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .use-mezo { border: 3px solid #28a745; }
+        .dont-use-mezo { border: 3px solid #dc3545; }
+        
+        .use-mezo h2 { color: #28a745; background: none; margin: 0; text-align: left; }
+        .dont-use-mezo h2 { color: #dc3545; background: none; margin: 0; text-align: left; }
+
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">Fine-Tuning Language Models with Just Forward Passes</h1>
+        <p class="poster-authors">Sadhika Malladi*, Tianyu Gao*, Eshaan Nichani, Alex Damian, Jason D. Lee, Danqi Chen, Sanjeev Arora. Princeton University</p>
+        <div class="header-logos">
+            <div>Princeton University</div>
+            <div>github.com/princeton-nlp/MeZO</div>
+            <img src="./princeton_logo.png" style="width: 60px; height: 60px;" data-semantic="Princeton University Logo">
+            <img src="./nlp_logo.png" style="width: 80px; height: 40px;" data-semantic="NLP Group Logo">
+        </div>
+        <div class="top-right-refs">
+            <div class="references-text">
+                [1] J.C. Spall. Multivariate stochastic approximation... (1992).<br>
+                [2] Hu et al. LoRA: Low-rank adaptation... (ICLR '22).<br>
+                [3] Li & Liang. Prefix Tuning: Optimizing Continuous Prompts... (ACL '21).
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <div class="highlight-box">
+                    <p class="text-block">
+                        Fine-tuning LLMs with <b>backpropagation</b> requires a prohibitively <b>large amount of memory</b>.<br>
+                        We propose <b>MeZO</b>, a memory-efficient zeroth-order optimizer.<br>
+                        Costs the <b>same memory as inference without sacrificing much performance</b>.<br>
+                        With one A100, MeZO can tune a <b>30B</b> model while Adam can only tune a <b>2.7B</b> model.
+                    </p>
+                </div>
+                <div class="row-container">
+                    <div class="figure-container">
+                        <img src="./fig_1.jpg" style="width: 997px; height: 283px;" data-semantic="OPT-13B performance on classification, multiple-choice, and generation tasks comparing Zero-shot, ICL, MeZO and FT.">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./fig_2.jpg" style="width: 527px; height: 282px;" data-semantic="Memory consumption of different-sized OPT models showing MeZO uses significantly less memory than FT.">
+                    </div>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">MeZO Algorithm</h2>
+                <div class="row-container">
+                    <div style="flex: 1;">
+                        <p class="text-block">Classic zeroth-order (ZO) gradient estimate with <b>two forward passes</b>: SPSA [1]</p>
+                        <p class="text-block" style="font-family: serif; font-style: italic; text-align: center;">
+                            ∇L(θ; B) ≈ (L(θ + εz; B) - L(θ - εz; B)) / (2ε) * z
+                        </p>
+                        <p class="text-block"><b>Memory-efficient ZO-SGD (MeZO):</b> resample z so SGD with SPSA uses <b>no extra memory besides inference cost</b>.</p>
+                        <p class="text-block">(by first <b>sampling a random seed</b> and later <b>restoring the random seed</b> to make sure the sampled z is consistent)</p>
+                    </div>
+                    <div style="flex: 1.5;">
+                        <div class="figure-container">
+                            <img src="./table_1.png" style="width: 923px; height: 663px;" data-semantic="MeZO Algorithm pseudocode showing the use of random seeds to minimize memory overhead.">
+                        </div>
+                    </div>
+                </div>
+                <h2 class="section-header" style="margin-top: 20px; background-color: transparent; color: var(--primary-blue); border: 2px solid var(--primary-blue);">Why does it work?</h2>
+                <p class="text-block">Classical results: ZO slows down by <b>number of parameters d</b>.</p>
+                <p class="text-block">Our case: <b>fine-tuning</b> a pre-trained model with a <b>prompt</b>, so fine-tuning looks like pre-training!</p>
+                <p class="text-block">Then: <b>effective rank of Hessian r</b> is small, convergence rates depend on r instead of d (descent lemma).</p>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Experiments</h2>
+                <div class="highlight-box">
+                    <p class="text-block">Our examples cover <b>medium-sized masked LMs</b> (RoBERTa-large) and <b>large autoregressive LMs</b> (OPT-13B, 30B, 66B).</p>
+                    <p class="text-block">Both <b>full-parameter</b> and <b>parameter-efficient</b> fine-tuning (e.g., LoRA, prefix-tuning).</p>
+                    <p class="text-block">We experiment on <b>classification, multiple-choice, and generation</b> tasks.</p>
+                </div>
+
+                <div class="figure-container">
+                    <img src="./fig_3.jpg" style="width: 1205px; height: 381px;" data-semantic="RoBERTa-large results across various tasks comparing MeZO with Zero-shot, ICL, and FT.">
+                </div>
+
+                <div class="row-container">
+                    <div style="flex: 2;">
+                        <ul>
+                            <li class="list-item">1. On RoBERTa-large, MeZO outperforms <b>zero-shot and linear probing</b>.</li>
+                            <li class="list-item">2. MeZO is compatible with both full-parameter and <b>parameter-efficient fine-tuning (PEFT)</b>, such as LoRA [2], prefix-tuning [3].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="figure-container">
+                    <img src="./table_2.png" style="width: 1116px; height: 296px;" data-semantic="Main results table for OPT-13B across classification, multiple-choice, and generation tasks.">
+                </div>
+
+                <div class="row-container">
+                    <div style="flex: 1;">
+                        <div class="figure-container">
+                            <img src="./table_3.png" style="width: 890px; height: 246px;" data-semantic="Performance of MeZO on OPT 30B and 66B models.">
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <ul>
+                            <li class="list-item">3. On OPT-13B, MeZO achieves <b>on par performance with Adam</b> on 7/11 tasks, while <b>saving up to 12x memory</b>.</li>
+                            <li class="list-item">4. MeZO also beats memory-equivalent methods like <b>in-context learning</b> and linear probing.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row-container" style="margin-top: 10px;">
+                    <div style="flex: 1;">
+                        <p class="text-block">5. MeZO can <b>scale up to 66B</b> models.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <div class="figure-container">
+                            <img src="./table_4.png" style="width: 837px; height: 213px;" data-semantic="MeZO performance on non-differentiable objectives like Accuracy/F1.">
+                        </div>
+                        <p class="text-block">6. MeZO works with <b>non-differentiable</b> objectives.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="footer-guidelines">
+                <div class="guideline-box use-mezo">
+                    <h2 class="section-header">When should you use MeZO</h2>
+                    <ul>
+                        <li class="list-item">efficient, <b>fuzzy gradient estimate</b> (e.g., data selection)</li>
+                        <li class="list-item">optimize <b>non-differentiable objectives</b> (e.g., with a reward model)</li>
+                        <li class="list-item">study <b>huge models</b> but don't have many GPUs</li>
+                    </ul>
+                </div>
+                <div class="guideline-box dont-use-mezo">
+                    <h2 class="section-header">When shouldn't you use MeZO</h2>
+                    <ul>
+                        <li class="list-item">Does fine-tuning a model do X?</li>
+                        <li class="list-item">I have a new task without obvious prompts</li>
+                        <li class="list-item">I only want to study small models</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

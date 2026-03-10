@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "title": "PatchRot: A Self-Supervised Technique for Training Vision Transformers",
+    "authors": [
+      "Sachin Chhabra",
+      "Prabal Bijoy Dutta",
+      "Hemanth Venkateswara",
+      "Baoxin Li"
+    ],
+    "organizations": [
+      "Arizona State University"
+    ],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "asu_logo",
+        "description": "Arizona State University Logo",
+        "figure_width": 150,
+        "figure_height": 150
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Problem Statement",
+      "content": [
+        "Vision transformers require a huge amount of labeled data to outperform convolutional neural networks.",
+        "The features learned by such a network are highly transferable and can be used for similar tasks. However, labeling a dataset is generally expensive and time-consuming.",
+        "Self-supervised learning can alleviate this problem by learning rich features without the need for manual annotation of labeling the dataset.",
+        "Existing self-supervised techniques were designed to train ConvNets. However, in recent years, Vision Transformers (ViT) have surpassed ConvNets.",
+        "Existing self-supervised techniques can be applied to ViTs. However, ViTs process images differently than ConvNets."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "PatchRot",
+      "content": [
+        "ViT splits the image into a series of input patches.",
+        "We randomly rotate each patch by 0°, 90°, 180° or 270°.",
+        "In addition to rotating patches, we create 4 more versions of the image by rotating image by 0°, 90°, 180° or 270°.",
+        "For every input we use 5 versions of image as input. (Note: we do not rotate image and patches together).",
+        "We introduce new classification heads to the ViT.",
+        "We use the original head for classifying the image and the new heads are used to classify the rotation angle of the patches.",
+        "To ensure network does not use shortcuts to classify the angles, we use a buffer B for each patch i.e. extract patch P from a P+B region.",
+        "Buffer reduces the image size. The self-supervised training is performed at smaller size and then adjusted to the original size by linear interpolation while adapting to downstream task."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "PatchRot model architecture diagram showing patch rotation and classification heads",
+          "figure_width": 769,
+          "figure_height": 456,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Results",
+      "content": [
+        "Classification accuracies for (a) CIFAR-10, (b) CIFAR-100, (c) FashionMNIST and (d) Tiny-ImageNet datasets for Supervised, RotNet and PatchRot. Solid lines denote Top-1 accuracy and the dashed lines denote Top-5 accuracy on the Y-axis."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Accuracy comparison on CIFAR-10 and CIFAR-100 datasets",
+          "figure_width": 861,
+          "figure_height": 400,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Accuracy comparison on FashionMNIST and Tiny-ImageNet datasets",
+          "figure_width": 858,
+          "figure_height": 347,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Application to Transfer Learning",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "Transfer learning results from CIFAR100 to CIFAR10 and vice versa",
+          "figure_width": 805,
+          "figure_height": 378,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Ablation Study",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Ablation study results comparing different initialization methods across encoder blocks",
+          "table_width": 817,
+          "table_height": 200,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Pre-training Epochs vs Final Accuracy",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "Graph showing the relationship between pre-training epochs and final model accuracy",
+          "figure_width": 780,
+          "figure_height": 342,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "Attention Maps",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_6",
+          "description": "Attention maps showing model focus on primary objects in images",
+          "figure_width": 406,
+          "figure_height": 161,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Failure cases of attention maps where the model focuses on background elements",
+          "figure_width": 320,
+          "figure_height": 161,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_8",
+      "title": "Conclusions",
+      "content": [
+        "PatchRot trains the network to predict the rotation angle of the patches as well as of the image.",
+        "Our approach outperforms rotation prediction and supervised learning by a fair margin showcasing the superiority of the features learned.",
+        "PatchRot learns to attend to the object of the image with no supervised training."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

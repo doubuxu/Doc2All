@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "title": "Extending Kernel PCA through Dualization: Sparsity, Robustness and Fast Algorithms",
+    "authors": [
+      "Francesco Tonin",
+      "Alex Lambert",
+      "Panagiotis Patrinos",
+      "Johan Suykens"
+    ],
+    "organizations": [],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "logo",
+        "description": "KU Leuven University Logo",
+        "figure_width": 300,
+        "figure_height": 120
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Kernel PCA Problem",
+      "content": [
+        "Given:n datapoints (xi) in X, feature map φ: X → H to a Hilbert space H.",
+        "Goal:find s directions in H that maximize the variance under orthonormal conditions. The KPCA optimization problem is",
+        "We use the following definitions:",
+        "The Stiefel manifold of orthonormal s-frames in H.",
+        "G(W) is the matrix such that G(W)ij = (wi, wj).",
+        "Γ: H^s → R^{n×s} is the linear operator s.t. for all (i, j).",
+        "G is the Gram matrix G = [k(xi, xj)], where k is the positive definite kernel function.",
+        "The usual way to solve (1) is through SVD of G, which is slow with larger n."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Difference of convex functions",
+      "content": [
+        "Key idea:Rewrite (1) as a difference of convex functions",
+        "Two key advantages:",
+        "Allows new gradient-based algorithm to solve KPCA efficiently without the SVD of G.",
+        "It becomes possible to slightly modify the loss function f to enforce specific properties such as robustness or sparsity.",
+        "Proposition 0.1(Dual of difference of convex functions). Let U, K be two Hilbert spaces, g: U → R and f: K → R be two convex lower semi-continuous functions and Γ ∈ L(U, K)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Faster KPCA with Gradient Descent",
+      "content": [
+        "Motivation for going from primal to dual:we show that g*(Γ^T H) is related to the nuclear norm of some low dimensional matrix.",
+        "Proposition 0.2.Let g be the indicator function of the Stiefel manifold and Γ as in Problem 1. Then for all H ∈ R^{n×s}:",
+        "The computational complexity of computing the gradient of π:",
+        "Computation of H^T G H in O(sn²).",
+        "SVD of H^T G H in O(s³).",
+        "KPCA Training Timefor multiple KPCA problems with fixed δ = 10⁻² accuracy. Speedup factor w.r.t. RSVD.",
+        "•Influence of the number of components son training time: higher s leads to longer training times."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Table comparing KPCA training time across SVD, Lanczos, RSVD, and our proposed method for different datasets.",
+          "table_width": 1073,
+          "table_height": 313,
+          "table_caption": []
+        }
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Line chart showing training time vs number of components s for LBFGS and RSVD methods.",
+          "figure_width": 721,
+          "figure_height": 413,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Beyond variance maximization",
+      "content": [
+        "Typical loss function: square loss f = 1/2 ||·||²_F.",
+        "Problems:sensible to outliers, no sparsity.",
+        "Key idea:use a loss obtained with infimal convolution",
+        "where Ψ is a well-chosen function that enforces robustness or sparsity."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "DC Optimization",
+      "content": [
+        "As f is a Moreau envelope, its gradient is always defined for all Y ∈ R^{n×s}."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Robustness and sparsity",
+      "content": [
+        "Denoting ||·||_* as the dual norm of ||·|| and the balls of radius t for these norms as B*_t and B_t, we extend KPCA with Huber and ε-insensitive objectives.",
+        "Extended Huber loss H_κ:",
+        "• Effect of κ for the losses on contaminated Iris dataset.",
+        "Extended ε-insensitive loss l_ε:",
+        "• Reconstruction error for the l_∞ loss for multiple ε and s."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Plot showing the effect of kappa on Mean Squared Error (MSE) for different Huber losses.",
+          "figure_width": 724,
+          "figure_height": 438,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Heatmaps and line plots showing reconstruction error ratio and sparsity percentage for various epsilon and s values.",
+          "figure_width": 1012,
+          "figure_height": 418,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

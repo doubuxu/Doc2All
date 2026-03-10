@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "Data-efficient Large Vision Models through Sequential Autoregression",
+    "authors": [
+      "Zhiwei Hao*1",
+      "Jianyuan Guo*2",
+      "Chengcheng Wang*3",
+      "Yehui Tang3",
+      "Han Wu2",
+      "Han Hu1",
+      "Kai Han3",
+      "Chang Xu2"
+    ],
+    "organizations": [
+      "1School of information and Electronics, Beijing Institute of Technology.",
+      "2School of Computer Science, Faculty of Engineering, The University of Sydney.",
+      "3Huawei Noah's Ark Lab."
+    ],
+    "github": "github.com/huawei-noah/Efficient-LVM",
+    "figures": []
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Introduction",
+      "content": [
+        "Training general-purpose large multimodal foundation models on purely sequential data, similar to linguistic inputs, has heralded a new frontier in visual perception. However, current endeavors are hamstrung by an over-reliance on colossal models, exemplified by the necessity for an extensive corpus of data, often comprising staggering 400B tokens. In this work, we delve into the development of an efficient, autoregression-based foundation model, innovatively architected to operate on a limited dataset."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_6",
+          "description": "Overview of the proposed autoregressive model training, inference, and data augmentation/distillation strategies",
+          "figure_width": 1571,
+          "figure_height": 572,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Part-1: Data-efficient Training: Data Augmentation Strategy",
+      "content": [
+        "Dataset augmentation yielded the best overall performance."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "Validation loss and perplexity curves for single task image segmentation and pose estimation",
+          "figure_width": 498,
+          "figure_height": 544,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "Visual comparison of task prompts and test cases across different data training models",
+          "figure_width": 1092,
+          "figure_height": 501,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_9",
+          "description": "Dataset configuration table showing loss, accuracy, and perplexity for different balancing strategies",
+          "figure_width": 812,
+          "figure_height": 343,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Part-2: Low Power Consumption & Tiny Model: Knowledge Distillation",
+      "content": [
+        "The introduction of KD proves beneficial in enhancing the single-task performance of LVMs.",
+        "The introduction of KD proves beneficial in enhancing the multi-task performance of LVMs."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Knowledge distillation results for LLaMA-1B and LLaMA-300M on segmentation and pose estimation",
+          "table_width": 669,
+          "table_height": 307,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_2",
+          "description": "Multi-task performance table comparing LLaMA-1B and LLaMA-300M with KD across segmentation, pose, and deraining",
+          "table_width": 1343,
+          "table_height": 175,
+          "table_caption": []
+        }
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_10",
+          "description": "Visual comparison of segmentation and pose estimation results with and without KD",
+          "figure_width": 1567,
+          "figure_height": 261,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_11",
+          "description": "Visual results on LSP and OCHuman datasets comparing models with and without KD",
+          "figure_width": 1571,
+          "figure_height": 96,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_12",
+          "description": "Image deraining results on the rain100H dataset",
+          "figure_width": 993,
+          "figure_height": 259,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Beyond Perception: Generation Ability",
+      "content": [
+        "Next frame prediction: zoom in, zoom out, camera motion.",
+        "Image completion."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_13",
+          "description": "Next frame prediction sequences for horse jumping and basketball",
+          "figure_width": 513,
+          "figure_height": 256,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_14",
+          "description": "Image completion examples for various objects like nautilus, dogs, and buildings",
+          "figure_width": 993,
+          "figure_height": 123,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_15",
+          "description": "Zoom-in generation sequence of a sunflower",
+          "figure_width": 513,
+          "figure_height": 128,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

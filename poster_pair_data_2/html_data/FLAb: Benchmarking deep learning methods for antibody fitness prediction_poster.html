@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>FLAb Poster Layout</title>
+    <style>
+        :root {
+            --primary-blue: #e8f0fe;
+            --header-bg: #d0e1f9;
+            --text-main: #333;
+            --accent-blue: #4a90e2;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: var(--primary-blue);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .header-content {
+            flex: 2;
+        }
+
+        .poster-title {
+            font-size: 42px;
+            margin: 0 0 15px 0;
+            color: #000;
+            line-height: 1.2;
+        }
+
+        .poster-authors {
+            font-size: 20px;
+            color: #444;
+            margin: 0;
+        }
+
+        .header-logos {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        main {
+            display: flex;
+            gap: 30px;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .layout-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-header {
+            background-color: var(--header-bg);
+            color: var(--accent-blue);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .text-block {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .list-item {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .references-text {
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .highlight-blue { color: var(--accent-blue); font-weight: bold; }
+        .highlight-green { color: #4caf50; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-content">
+            <h1 class="poster-title">FLAb: Benchmarking deep learning methods for antibody fitness prediction</h1>
+            <p class="poster-authors">Michael Chungyoun, Jeffrey Ruffolo, Jeffrey Gray</p>
+        </div>
+        <div class="header-logos">
+            <div>Neural Information Processing Systems</div>
+            <div>Johns Hopkins University</div>
+            <div>github.com/graylab/FLAb</div>
+            <div class="row-container" style="justify-content: flex-end;">
+                <img src="./fig_1.png" style="width: 338px; height: 237px;" data-semantic="NeurIPS and Johns Hopkins University logos">
+                <img src="./fig_2.png" style="width: 224px; height: 231px;" data-semantic="Project QR Code">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">1 Background</h2>
+                <p class="text-block"><span class="highlight-blue">Antibody therapeutics</span> must have a particular set of <span class="highlight-blue">fitness properties</span></p>
+                <div class="row-container">
+                    <img src="./fig_3.png" style="width: 113px; height: 169px;" data-semantic="Expression icon">
+                    <img src="./fig_4.png" style="width: 155px; height: 165px;" data-semantic="Thermostability icon">
+                    <img src="./fig_5.png" style="width: 208px; height: 157px;" data-semantic="Immunogenicity icon">
+                    <img src="./fig_6.png" style="width: 159px; height: 161px;" data-semantic="Binding affinity icon">
+                    <img src="./fig_7.png" style="width: 121px; height: 101px;" data-semantic="Aggregation icon">
+                    <img src="./fig_8.png" style="width: 126px; height: 165px;" data-semantic="Polyreactivity icon">
+                </div>
+                <p class="text-block">Six classes of biophysical data relevant to antibody development are (a) expression, (b) thermostability, (c) immunogenicity, (d) binding affinity, (e) aggregation, and (f) polyreactivity</p>
+                <p class="text-block">Do <span class="highlight-blue">deep learning methods</span> capture properties of therapeutic antibodies?</p>
+                <ul>
+                    <li class="list-item">1. Creating a collection of datasets of antibody therapeutic data</li>
+                    <li class="list-item">2. Benchmark representative AI model likelihoods for fitness prediction</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">2 Dataset curation</h2>
+                <p class="text-block">We curated publicly available <span class="highlight-blue">antibody fitness datasets</span></p>
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 1045px; height: 678px;" data-semantic="Summary table of antibody fitness datasets and number of datapoints">
+                </div>
+                <p class="text-block">This database includes mutational landscapes of 17 distinct antibody families and a total of 13,384 associated fitness metrics. Each sequence is mapped to at least one fitness label pertaining to the 6 fitness properties.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">3 Methods</h2>
+                <p class="text-block"><span class="highlight-blue">Pipeline</span> for benchmarking protein language models</p>
+                <div class="figure-container">
+                    <img src="./fig_9.png" style="width: 1056px; height: 289px;" data-semantic="Workflow diagram showing antibody sequence input to language model and fitness metric correlation">
+                </div>
+                <p class="text-block">For each protein language model, we separately input the antibody <span class="highlight-green">heavy</span> and <span class="highlight-green">light sequences</span> to return two <span class="highlight-blue">perplexity scores</span>, and we tabulate the average perplexity between the two sequences. We calculate Spearman's (ρ), Pearson's (r) and Kendall tau's (τ) correlation coefficients between <span class="highlight-green">perplexity</span> and <span class="highlight-green">fitness</span>.</p>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">4 Results</h2>
+                <p class="text-block">A <span class="highlight-blue">heat map</span> of model-dataset correlations</p>
+                <div class="figure-container">
+                    <img src="./fig_10.png" style="width: 900px; height: 445px;" data-semantic="Heatmap showing Pearson correlations across various models and datasets">
+                </div>
+                <p class="text-block">Summary of Pearson's correlations. Models generally perform best with thermostability and binding affinity datasets, but most struggle with aggregation propensity and polyreactivity.</p>
+                
+                <p class="text-block"><span class="highlight-blue">Intrinsic</span> biophysical properties are more accurately predicted than <span class="highlight-blue">extrinsic</span></p>
+                <div class="figure-container">
+                    <img src="./fig_11.png" style="width: 931px; height: 311px;" data-semantic="Boxplots comparing Pearson correlations for Aggregation (Extrinsic) and Thermostability (Intrinsic)">
+                </div>
+                
+                <p class="text-block">Models are more accurate at distinguishing <span class="highlight-blue">intra-family</span> versus <span class="highlight-blue">inter-family</span> antibody sets</p>
+                <div class="figure-container">
+                    <img src="./fig_12.png" style="width: 956px; height: 290px;" data-semantic="Boxplots comparing model performance on intra-family vs inter-family thermostability datasets">
+                </div>
+
+                <p class="text-block"><span class="highlight-blue">Parameter size</span> influences performance over architecture and dataset composition</p>
+                <div class="row-container">
+                    <img src="./fig_13.png" style="width: 301px; height: 280px;" data-semantic="Boxplot of Thermostability correlation vs ProGen2 model size">
+                    <img src="./fig_14.png" style="width: 261px; height: 284px;" data-semantic="Boxplot of Polyreactivity correlation vs ProGen2 model size">
+                </div>
+
+                <p class="text-block">Some models favor <span class="highlight-blue">evolutionary signal</span> rather than <span class="highlight-blue">physical fitness</span></p>
+                <div class="row-container">
+                    <img src="./fig_15.png" style="width: 301px; height: 237px;" data-semantic="Scatter plot of Perplexity vs Temperature for ProGen2-XL">
+                    <img src="./fig_16.png" style="width: 309px; height: 237px;" data-semantic="Scatter plot of Rosetta Total Energy vs Temperature">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">5 Conclusion</h2>
+                <p class="text-block">FLAb is a living benchmark where we will continuously add models evaluated and available antibody data</p>
+                <p class="text-block">No model was top performing across all six fitness classes</p>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

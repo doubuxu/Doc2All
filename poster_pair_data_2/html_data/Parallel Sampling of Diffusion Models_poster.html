@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parallel Sampling of Diffusion Models Poster</title>
+    <style>
+        :root {
+            --primary-bg: #ffffff;
+            --section-gap: 20px;
+            --column-gap: 30px;
+            --stanford-red: #8c1515;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 2400px;
+            height: 1200px;
+            background-color: var(--primary-bg);
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--stanford-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header-left {
+            flex: 0 0 200px;
+        }
+
+        .header-center {
+            flex: 1;
+            text-align: center;
+        }
+
+        .header-right {
+            flex: 0 0 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .poster-title {
+            font-size: 72px;
+            margin: 0;
+            color: #333;
+        }
+
+        .poster-authors {
+            font-size: 36px;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .header-logos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+            color: #666;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: var(--column-gap);
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: var(--section-gap);
+        }
+
+        .column-left { flex: 0 0 650px; }
+        .column-mid { flex: 1; }
+        .column-right { flex: 0 0 850px; }
+
+        .layout-block {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .section-header {
+            font-size: 32px;
+            color: var(--stanford-red);
+            border-bottom: 2px solid #ddd;
+            margin: 0 0 10px 0;
+            padding-bottom: 5px;
+        }
+
+        .text-block {
+            font-size: 22px;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .figure-container, .row-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .row-container {
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .math-highlight {
+            background-color: #fff0e6;
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid #ffd8b1;
+        }
+
+        .speedup-tag {
+            color: #d93025;
+            font-weight: bold;
+            font-size: 36px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-left">
+            <img src="./logo.png" style="width: 160px; height: 200px;" data-semantic="Stanford University Logo">
+        </div>
+        <div class="header-center">
+            <h1 class="poster-title">Parallel Sampling of Diffusion Models</h1>
+            <p class="poster-authors">Andy Shih, Suneel Belkhale, Stefano Ermon, Dorsa Sadigh, Nima Anari</p>
+            <div class="header-logos">
+                <div>andyshih@cs.stanford.edu</div>
+            </div>
+        </div>
+        <div class="header-right">
+            <img src="./qr.png" style="width: 120px; height: 120px;" data-semantic="Project QR Code">
+        </div>
+    </header>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column column-left">
+            <section class="layout-block" data-section-id="section_1">
+                <div class="row-container">
+                    <img src="./fig_1.png" style="width: 241px; height: 239px;" data-semantic="Initial noise distribution visualization">
+                    <img src="./fig_2.png" style="width: 431px; height: 242px;" data-semantic="Reverse stochastic process flow visualization">
+                </div>
+                <p class="text-block">Reverse stochastic process [Song 2021]</p>
+                <p class="text-block">dx<sub>t</sub> = [f(t)x<sub>t</sub> - g<sup>2</sup>(t)∇<sub>x</sub> log q<sub>t</sub>(x<sub>t</sub>)]dt + g(t)dw̄<sub>t</sub></p>
+                <p class="text-block">can reverse the SDE [Anderson 1982]</p>
+                <p class="text-block">dx<sub>t</sub>/dt = f(t)x<sub>t</sub> - 1/2 g<sup>2</sup>(t)∇<sub>x</sub> log q<sub>t</sub>(x<sub>t</sub>)</p>
+                <p class="text-block">can also write as ODE [Maoutsa 2020]</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 857px; height: 485px;" data-semantic="Comparison table of DDPM, DDIM, DPMSolver and ParaDiGMS">
+                </div>
+            </section>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="column column-mid">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Picard Iterations</h2>
+                <p class="text-block">Solve discretized ODE by iterating until convergence</p>
+                <div class="figure-container">
+                    <img src="./fig_3.png" style="width: 1134px; height: 286px;" data-semantic="Continuous and discrete Picard iteration equations">
+                </div>
+                <div class="figure-container">
+                    <img src="./fig_4.png" style="width: 1089px; height: 139px;" data-semantic="Iteration convergence visualization plots">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Practical Issues</h2>
+                <p class="text-block"><strong>out of memory?</strong> Batching: process k timesteps at a time with sliding window</p>
+                <div class="figure-container">
+                    <img src="./fig_5.png" style="width: 1077px; height: 142px;" data-semantic="Sliding window batching mechanism visualization">
+                </div>
+                <p class="text-block"><strong>approximate?</strong> No measurable degradation on standard benchmarks</p>
+                <p class="text-block">We can bound total variation distance based on iteration error.</p>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column column-right">
+            <section class="layout-block" data-section-id="section_5">
+                <div class="figure-container">
+                    <img src="./fig_6.png" style="width: 755px; height: 107px;" data-semantic="Parallel Sampling (ParaDDPM) timeline visualization">
+                    <img src="./fig_7.png" style="width: 753px; height: 107px;" data-semantic="Sequential Sampling (DDPM) timeline visualization">
+                    <img src="./fig_8.png" style="width: 753px; height: 131px;" data-semantic="Sampling trajectory comparison plot">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <div class="figure-container">
+                    <img src="./fig_9.png" style="width: 1172px; height: 408px;" data-semantic="Hardware efficiency and net speedup plots on NVIDIA A100">
+                </div>
+                <div class="speedup-tag">3x speedup!</div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">Experimental Results</h2>
+                <div class="figure-container">
+                    <img src="./table_2.png" style="width: 1019px; height: 184px;" data-semantic="Robotics (Franka Kitchen) performance table">
+                    <img src="./table_3.png" style="width: 1019px; height: 194px;" data-semantic="Latent Image (StableDiffusion-v2) performance table">
+                    <img src="./table_4.png" style="width: 1019px; height: 171px;" data-semantic="Pixel Image (LSUN Church) performance table">
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

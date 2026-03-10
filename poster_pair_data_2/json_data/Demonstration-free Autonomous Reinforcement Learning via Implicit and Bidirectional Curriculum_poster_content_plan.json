@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "title": "Demonstration-free Autonomous Reinforcement Learning via Implicit and Bidirectional Curriculum",
+    "authors": [
+      "Jigang Kim1*",
+      "Daesol Cho1*",
+      "H. Jin Kim1"
+    ],
+    "organizations": [],
+    "github": "github.com/jigangk/ibc",
+    "figures": [
+      {
+        "fig_id": "logo_github",
+        "description": "GitHub Logo",
+        "figure_width": 80,
+        "figure_height": 80
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Motivation",
+      "content": [
+        "Most RL methods assume an episodic setting whereresets to the initial stateare readily available at the end of each episode.",
+        "Autonomous learning of embodied agents involves continual interactions and existing methods oftenrequire costly external interventionssuch as human supervision, and scripted policies to simulate resets.",
+        "Recently, Autonomous RL (ARL) framework formalized the non-episodic RL setting but previous works on ARLrely on demonstration datato guide the learning process.",
+        "However, a truly autonomous agent should be able to learn from scratchwithout external interventions and prior data."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Contribution",
+      "content": [
+        "We propose a demonstration-free ARL algorithm viaImplicit and Bidirectional Curriculum (IBC)that consists of a conditionally activatedauxiliary agentand abidirectional goal curriculum.",
+        "To the best of our knowledge, IBC is the first non-episodic RL that can consistently learn without manual resets and demonstrations by leveraging curriculum learning.",
+        "IBC achievesstate-of-the-art performanceagainst previous methods, including even the ones that leverage prior data."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "References",
+      "content": [
+        "[1] Sharma, Archit, et al. \"Autonomous Reinforcement Learning: Formalism and Benchmarking.\" ICLR 2021.[2] Kakade, Sham, and John Langford. \"Approximately optimal approximate reinforcement learning.\" ICML 2002.[3] Sharma, Archit, et al. \"Autonomous reinforcement learning via subgoal curricula.\" NeurIPS 2021.[4] Sharma, Archit, et al. \"A State-Distribution Matching Approach to Non-Episodic Reinforcement Learning.\" ICML 2022."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Overview",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "隐式课程学习示意图",
+          "figure_width": 400,
+          "figure_height": 135,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "收敛时的隐式课程状态",
+          "figure_width": 400,
+          "figure_height": 104,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "双向课程学习示意图",
+          "figure_width": 400,
+          "figure_height": 137,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "双向课程生成方向示意图",
+          "figure_width": 400,
+          "figure_height": 102,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "前向目标图标",
+          "figure_width": 30,
+          "figure_height": 25,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "后向目标图标",
+          "figure_width": 30,
+          "figure_height": 25,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Methods",
+      "content": [
+        "Implicit curriculum via an auxiliary agent",
+        "Bidirectional goal curriculum optimization",
+        "Curriculum objective"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "辅助代理隐式课程机制图",
+          "figure_width": 500,
+          "figure_height": 274,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "优化方向箭头",
+          "figure_width": 100,
+          "figure_height": 38,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Environments",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_9",
+          "description": "Fetch Pick&Place 环境",
+          "figure_width": 130,
+          "figure_height": 120,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_10",
+          "description": "Fetch Push 环境",
+          "figure_width": 130,
+          "figure_height": 120,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_11",
+          "description": "Fetch Reach 环境",
+          "figure_width": 130,
+          "figure_height": 120,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_12",
+          "description": "Sawyer Door 环境",
+          "figure_width": 130,
+          "figure_height": 120,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_13",
+          "description": "Tabletop Manipulation 环境",
+          "figure_width": 130,
+          "figure_height": 120,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_14",
+          "description": "Point-U-Maze 环境",
+          "figure_width": 130,
+          "figure_height": 120,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Experiments",
+      "content": [
+        "IBC vs. Baselines",
+        "Ablation study",
+        "Curriculum progress",
+        "Reward-free experiments"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_15",
+          "description": "基准对比图1",
+          "figure_width": 240,
+          "figure_height": 165,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_16",
+          "description": "基准对比图2",
+          "figure_width": 240,
+          "figure_height": 165,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_17",
+          "description": "基准对比图3",
+          "figure_width": 240,
+          "figure_height": 165,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_18",
+          "description": "基准对比图4",
+          "figure_width": 240,
+          "figure_height": 165,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_19",
+          "description": "基准对比图5",
+          "figure_width": 240,
+          "figure_height": 165,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_20",
+          "description": "基准对比图6",
+          "figure_width": 240,
+          "figure_height": 165,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_22",
+          "description": "消融实验结果图",
+          "figure_width": 300,
+          "figure_height": 200,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_23",
+          "description": "初始课程状态",
+          "figure_width": 120,
+          "figure_height": 120,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_24",
+          "description": "课程演进图1",
+          "figure_width": 180,
+          "figure_height": 110,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_25",
+          "description": "课程演进图2",
+          "figure_width": 180,
+          "figure_height": 110,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_26",
+          "description": "课程进度曲线",
+          "figure_width": 500,
+          "figure_height": 120,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_27",
+          "description": "无奖励实验图1",
+          "figure_width": 220,
+          "figure_height": 150,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_28",
+          "description": "无奖励实验图2",
+          "figure_width": 220,
+          "figure_height": 150,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_29",
+          "description": "无奖励实验图3",
+          "figure_width": 220,
+          "figure_height": 150,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

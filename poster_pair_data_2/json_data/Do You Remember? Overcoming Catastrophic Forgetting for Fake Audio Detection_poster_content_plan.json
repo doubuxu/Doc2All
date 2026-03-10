@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "title": "Do You Remember? Overcoming Catastrophic Forgetting for Fake Audio Detection",
+    "authors": [
+      "Xiaohui Zhang",
+      "Jiangyan Yi",
+      "Jianhua Tao",
+      "Chenglong Wang",
+      "Chuyuan Zhang"
+    ],
+    "organizations": [
+      "Do You Remember? Overcoming Catastrophic Forgetting for Fake Audio DetectionXiaohui Zhang, Jiangyan Yi, Jianhua Tao, Chenglong Wang, Chuyuan ZhangInstitute of Automation, Chinese Academy of Sciences, Beijing Jiaotong University, Tsinghua University"
+    ],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "logo_casia",
+        "description": "CASIA Logo",
+        "figure_width": 120,
+        "figure_height": 120
+      },
+      {
+        "fig_id": "logo_bjtu",
+        "description": "Beijing Jiaotong University Logo",
+        "figure_width": 120,
+        "figure_height": 120
+      },
+      {
+        "fig_id": "logo_tsinghua",
+        "description": "Tsinghua University Logo",
+        "figure_width": 120,
+        "figure_height": 120
+      },
+      {
+        "fig_id": "logo_icml",
+        "description": "ICML Conference Logo",
+        "figure_width": 300,
+        "figure_height": 120
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Introduction",
+      "content": [
+        "Current fake audio detection algorithms have achieved promising performances on most datasets. However, their performance may be significantly degraded when dealing with audio of a different dataset. The orthogonal weight modification to overcome catastrophic forgetting does not consider the similarity of genuine audio across different datasets."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "The feature distribution of bona-fide and spoof audio showing t-SNE clusters.",
+          "figure_width": 532,
+          "figure_height": 448,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Contribution",
+      "content": [
+        "We propose a regularized adaptive weight modification (RAWM) algorithm to overcome catastrophic forgetting. Our method can modify weight's direction according to the number of genuine and fake audio.",
+        "Although our method is inspired by the feature distribution similarity in fake audio detection, it can also be used in other related tasks.",
+        "[1] Ma, Haoxin, et al. \"Continual learning for fake audio detection.\" arXiv preprint arXiv:2104.07286 (2021)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Proposed Method",
+      "content": [
+        "On most fake audio detection datasets, under the same acoustic conditions, feature distributions of genuine audio are relatively more concentrated than the fake.",
+        "We introduce a square matrix Q as a projector that is orthogonal to the P proposed by the OWM algorithm. The modified direction R of weights, introduced in our paper, can be written as:",
+        "where m is a constant; Pnormand Qnormare identity matrices normalized by P and Q, respectively.",
+        "There are also a few datasets where genuine audio is collected from quite different acoustic conditions compared with others. As for these utterances, we use the teacher-student framework as a regularization term.",
+        "Considering a continual learning situation, the BP process of regularized adaptive weight modification can be written as:"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Schematic of SGD, OWM, and RAWM modification directions on a loss surface.",
+          "figure_width": 1183,
+          "figure_height": 333,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Experimental Results",
+      "content": [
+        "We compared our method with several wide-used continual learning methods for fake audio detection. Among the results of our experiments, our method achieves the best learning and overcoming forgetting."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Table 1: The EER(%) of our method compared with various methods for fake audio detection across four scenarios (a, b, c, d).",
+          "table_width": 1272,
+          "table_height": 274,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_2",
+          "description": "Table 2: The Acc(%) of our method compared with various methods for image recognition across 10 experiences.",
+          "table_width": 1262,
+          "table_height": 361,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "Conclusion",
+      "content": [
+        "As illustrated in experimental results, our method shows promising performance on fake audio detection, emotion recognition, and image recognition, even training on a few samples.",
+        "We have yet to study how to make the model learn the weight direction gradually in the process of training on new datasets without any constraint, and exploring generalization to related tasks will form the focus of our future studies."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Poster - Revisiting Robustness in Graph Machine Learning</title>
+    <style>
+        :root {
+            --tum-blue: #0065BD;
+            --light-blue: #E8F1F8;
+            --dark-grey: #333;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #poster-canvas {
+            width: 1200px;
+            height: 848px; /* Standard A0 aspect ratio */
+            background-color: white;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header-left {
+            flex: 1;
+            font-size: 14px;
+            color: var(--tum-blue);
+        }
+        .header-center {
+            flex: 2;
+            text-align: center;
+        }
+        .poster-title {
+            font-size: 32px;
+            margin: 0;
+            color: var(--dark-grey);
+        }
+        .poster-authors {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #666;
+        }
+        .header-logos {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px;
+            font-size: 12px;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+        }
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .layout-block {
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .blue-box {
+            background-color: var(--tum-blue);
+            color: white;
+        }
+        .section-header {
+            font-size: 18px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            color: var(--tum-blue);
+        }
+        .blue-box .section-header {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+        .text-block {
+            font-size: 13px;
+            line-height: 1.4;
+            margin: 5px 0;
+        }
+        .list-item {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .row-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .highlight-box {
+            background-color: #ddd;
+            padding: 5px 10px;
+            font-style: italic;
+            text-align: center;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        footer {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--tum-blue);
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <div class="header-left">
+                <div>Data Analytics and Machine Learning Group</div>
+                <div>Department of Computer Science</div>
+                <div>Technical University of Munich</div>
+            </div>
+            <div class="header-center">
+                <h1 class="poster-title">Revisiting Robustness in Graph Machine Learning</h1>
+                <p class="poster-authors">Lukas Gosch, Daniel Sturm, Simon Geisler, Stephan Günnemann</p>
+            </div>
+            <div class="header-logos">
+                <img src="./logo_tum.png" style="width: 60px; height: 30px;" data-semantic="TUM Logo">
+                <img src="./logo_daad.png" style="width: 40px; height: 40px;" data-semantic="DAAD Logo">
+                <div>
+                    <strong>Zuse Schools</strong><br>
+                    Konrad Zuse Schools of Excellence in AI
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Column 1 -->
+            <div class="column">
+                <section class="layout-block blue-box" data-section-id="section_1">
+                    <h2 class="section-header">Graph Neural Networks (GNNs) suffer from over-robustness</h2>
+                    <ul>
+                        <li class="list-item">Common threat models allow perturbations which change the node-level semantic content in graphs</li>
+                        <li class="list-item">GNNs are <strong>wrongly robust</strong> to these changes</li>
+                        <li class="list-item">Introduce semantic-aware notions of robustness</li>
+                        <li class="list-item">No robustness-accuracy tradeoff for inductively classifying a new node</li>
+                    </ul>
+                </section>
+
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">On Adversarial Examples</h2>
+                    <ul>
+                        <li class="list-item">Small perturbations (l_p-norm)</li>
+                        <li class="list-item">Change prediction of classifier f</li>
+                        <li class="list-item">Unchanged semantic content (e.g., image category)</li>
+                    </ul>
+                    <div class="row-container">
+                        <div class="figure-container">
+                            <img src="./fig_1.jpg" style="width: 100px; height: 100px;" data-semantic="Panda image for adversarial example">
+                            <p class="text-block" style="font-size: 10px;">"panda"</p>
+                        </div>
+                        <div style="font-size: 20px;">+ ε =</div>
+                        <div class="figure-container">
+                            <img src="./fig_2.jpg" style="width: 100px; height: 100px;" data-semantic="Noise perturbation image">
+                            <p class="text-block" style="font-size: 10px;">"gibbon"</p>
+                        </div>
+                    </div>
+                    <p class="text-block" style="text-align: center; font-size: 10px; color: var(--tum-blue);">Figure: Goodfellow et al. (2015)</p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_3">
+                    <div class="highlight-box">What constitutes a small, semantics-preserving perturbation to a graph?</div>
+                    <p class="text-block">Commonly: <strong>Restrict</strong> number of inserted / deleted edges (l_0-norm)</p>
+                    <div class="row-container">
+                        <img src="./fig_3.jpg" style="width: 220px; height: 150px;" data-semantic="Cora dataset node degree distribution histogram">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="./fig_4.jpg" style="width: 30px; height: 30px;" data-semantic="Warning icon">
+                            <p class="text-block" style="font-size: 11px;">Majority of nodes are low-degree → <strong>Large effect</strong> on neighborhood</p>
+                        </div>
+                    </div>
+                    <div class="highlight-box">Do common threat models preserve semantic content?</div>
+                </section>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_4">
+                    <p class="text-block"><strong>Use Random Graph Models</strong></p>
+                    <ul>
+                        <li class="list-item">Exactly measure (node-level) semantic change</li>
+                    </ul>
+                    <p class="text-block" style="color: var(--tum-blue);"><strong>New Phenomenon</strong></p>
+                    <p class="text-block"><strong>Over-robustness:</strong> Robustness beyond semantic change</p>
+                    <div class="figure-container">
+                        <img src="./fig_5.jpg" style="width: 350px; height: 190px;" data-semantic="Average structure perturbations until GNN prediction changes chart">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_5">
+                    <h2 class="section-header">Semantic-Aware Robustness</h2>
+                    <p class="text-block"><strong>Idea:</strong> Use reference node classifier g to indicate semantic change.</p>
+                    
+                    <div class="row-container" style="justify-content: flex-start;">
+                        <div style="flex: 1;">
+                            <p class="text-block" style="color: var(--tum-blue);"><strong>Adversarial Example</strong></p>
+                            <p class="text-block" style="font-size: 11px;">A perturbed graph is adversarial if prediction changes but semantics stay same.</p>
+                        </div>
+                        <img src="./fig_6.jpg" style="width: 150px; height: 120px;" data-semantic="Geometric interpretation of adversarial examples">
+                    </div>
+
+                    <div class="row-container" style="justify-content: flex-start;">
+                        <img src="./fig_7.jpg" style="width: 150px; height: 120px;" data-semantic="Geometric interpretation of over-robust examples">
+                        <div style="flex: 1;">
+                            <p class="text-block" style="color: var(--tum-blue);"><strong>Over-robust Example</strong></p>
+                            <p class="text-block" style="font-size: 11px;">A perturbed graph is over-robust if prediction stays same but semantics change.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="layout-block blue-box" data-section-id="section_6">
+                    <h2 class="section-header">Theorem (informal)</h2>
+                    <p class="text-block">There is no semantic-aware robustness-accuracy tradeoff for non-i.i.d. graph data when classifying a newly added node to a graph.</p>
+                </section>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_7">
+                    <h2 class="section-header">Experiments</h2>
+                    <p class="text-block"><strong>Setup:</strong> Contextual stochastic block models (CSBM)</p>
+                    <p class="text-block" style="color: var(--tum-blue);">Table: Existence probability of graphs with changed semantics.</p>
+                    <div class="figure-container">
+                        <img src="./table_1.png" style="width: 360px; height: 85px;" data-semantic="Existence probability of graphs with changed semantics table">
+                    </div>
+                    <p class="text-block">→ <strong>High prevalence</strong> of graphs with changed semantics!</p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_8">
+                    <div class="highlight-box">How much of the measured robustness is in fact over-robustness?</div>
+                    <div class="figure-container">
+                        <img src="./fig_8.jpg" style="width: 360px; height: 180px;" data-semantic="Over-robustness percentage vs importance of graph structure chart">
+                    </div>
+                    <p class="text-block">→ <strong>Significant amount</strong> of conventional robustness is <strong>over-robustness</strong></p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_9">
+                    <h2 class="section-header">Take-Aways</h2>
+                    <div class="row-container" style="align-items: flex-start;">
+                        <ul>
+                            <li class="list-item">Use strong attacks → Reduce the amount of over-robustness measured</li>
+                            <li class="list-item">Be cautious in applying l_0-norm restricted adversaries</li>
+                            <li class="list-item"><strong>More research</strong> into semantic-preserving perturbations <strong>necessary</strong></li>
+                        </ul>
+                        <div class="figure-container">
+                            <img src="./fig_9.jpg" style="width: 80px; height: 80px;" data-semantic="QR code for project link">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="header-logos">
+                <img src="./logo_iclr.png" style="width: 80px; height: 20px;" data-semantic="ICLR Logo">
+            </div>
+            <div>https://www.cs.cit.tum.de/daml/revisiting-robustness/</div>
+            <div>May 1st - May 5th, 2023 - Kigali, Rwanda</div>
+        </footer>
+    </div>
+</body>
+</html>

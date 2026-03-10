@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neural Tangent Kernels for Axis-Aligned Tree Ensembles Poster</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+        #poster-canvas {
+            width: 2400px;
+            height: 1200px;
+            background-color: white;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        header {
+            background-color: #1a3a8a;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        .poster-title {
+            font-size: 72px;
+            margin: 0 0 20px 0;
+            font-weight: bold;
+        }
+        .poster-authors {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 24px;
+        }
+        .header-logos img {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        main {
+            display: flex;
+            flex: 1;
+            padding: 30px;
+            gap: 40px;
+        }
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .layout-block {
+            border-top: 2px dashed #1a3a8a;
+            padding-top: 15px;
+            margin-bottom: 20px;
+        }
+        .section-header {
+            color: #1a3a8a;
+            font-size: 32px;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        .section-header::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: #1a3a8a;
+            margin-left: 15px;
+            opacity: 0.3;
+        }
+        .text-block {
+            font-size: 22px;
+            line-height: 1.4;
+            margin: 10px 0;
+            color: #333;
+        }
+        .list-item {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .figure-container {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .row-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #b8860b;
+            font-weight: bold;
+        }
+        .formula-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <h1 class="poster-title">Neural Tangent Kernels for Axis-Aligned Tree Ensembles</h1>
+            <p class="poster-authors">Ryuichi Kanoh, Mahito Sugiyama</p>
+            <div class="header-logos">
+                <div>National Institute of Informatics, The Graduate University for Advanced Studies, SOKENDAI</div>
+                <div>github.com/kanoh-ryuichi/ntk-tree</div>
+                <img src="./logo.png" style="width: 180px; height: 80px;" data-semantic="ICML Conference Logo">
+            </div>
+        </header>
+
+        <main>
+            <!-- Column 1 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Contribution</h2>
+                    <ul>
+                        <li class="list-item">We formulate the <span class="highlight">Neural Tangent Kernel</span> (NTK) induced by infinitely many <span class="highlight">axis-aligned differentiable tree ensembles</span>.</li>
+                    </ul>
+                </section>
+
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Differentiable Decision Tree</h2>
+                    <p class="text-block">By employing a sigmoid-like function, we can relax the splitting into a continuous form, which allows the use of gradient descent.</p>
+                    <div class="figure-container">
+                        <img src="./fig_1.png" style="width: 812px; height: 344px;" data-semantic="Differentiable decision tree architecture diagram showing input, inner node, leaves, and output formula">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Neural Tangent Kernel for Tree Ensembles</h2>
+                    <p class="text-block">The NTK emerges in the context of functional gradient descent.</p>
+                    <div class="figure-container">
+                        <img src="./fig_2.png" style="width: 696px; height: 144px;" data-semantic="Functional gradient descent formula highlighting the Neural Tangent Kernel component">
+                    </div>
+                    <ul>
+                        <li class="list-item">It does not change during training when considering infinitely wide neural networks.</li>
+                        <li class="list-item">Then, functional behavior becomes analytically tractable.</li>
+                        <li class="list-item">By handling the <span class="highlight">number of trees</span> like the <span class="highlight">width of neural networks</span>, we can apply NTK theory to differentiable tree ensembles.</li>
+                        <li class="list-item">In this work, we extend the NTK concept for <span class="highlight">axis-aligned trees</span>.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_4">
+                    <h2 class="section-header">Axis-Aligned Constraint</h2>
+                    <p class="text-block">We consider two axis-aligned cases: <span class="highlight">AAA</span> and <span class="highlight">AAI</span>.</p>
+                    <div class="row-container">
+                        <img src="./fig_3.png" style="width: 155px; height: 219px;" data-semantic="AAA (Always Axis-Aligned) constraint visualization">
+                        <img src="./fig_4.png" style="width: 171px; height: 221px;" data-semantic="AAI (Aligned at Initialization) constraint visualization">
+                        <img src="./fig_5.png" style="width: 165px; height: 221px;" data-semantic="Oblique (Typical differentiable tree) visualization">
+                        <img src="./fig_6.png" style="width: 308px; height: 150px;" data-semantic="Legend for initial and trained model lines">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_5">
+                    <h2 class="section-header">Closed-form NTK formula for Axis-Aligned Trees</h2>
+                    <div class="figure-container formula-box">
+                        <img src="./fig_7.png" style="width: 1039px; height: 380px;" data-semantic="Detailed closed-form NTK formula for axis-aligned trees including contributions from internal nodes and leaves">
+                    </div>
+                    <p class="text-block">Training behavior is now <span class="highlight">analytically tractable</span> using our formula.</p>
+                    <div class="figure-container">
+                        <img src="./fig_8.png" style="width: 648px; height: 385px;" data-semantic="Comparison of model output dynamics between analytical formula and finite ensembles (M=16, M=1024) for AAA and AAI">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_6">
+                    <h2 class="section-header">Ensembles of Various Trees</h2>
+                    <p class="text-block">The NTK induced by an ensemble of various tree architectures is equal to the sum of the NTKs induced by each architecture.</p>
+                    <div class="figure-container">
+                        <img src="./fig_9.png" style="width: 1105px; height: 150px;" data-semantic="NTK property formula for mixed tree ensembles">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_7">
+                    <h2 class="section-header">Insight on Oblivious Trees</h2>
+                    <p class="text-block">Any non-oblivious trees can be transformed into oblivious trees that induce exactly the same limiting NTK.</p>
+                    <div class="figure-container">
+                        <img src="./fig_10.png" style="width: 1081px; height: 161px;" data-semantic="Diagram showing the equivalence transformation between non-oblivious and oblivious tree structures">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_8">
+                    <h2 class="section-header">Multiple Kernel Learning (MKL) as Architecture Search</h2>
+                    <p class="text-block">MKL enables tree architecture search based on convex optimization.</p>
+                    <div class="figure-container">
+                        <p class="text-block" style="font-size: 18px; font-style: italic;">MKL weights obtained by the tic-tac-toe endgame dataset</p>
+                        <img src="./fig_11.png" style="width: 611px; height: 303px;" data-semantic="Bar chart showing MKL weights for different feature combinations in the tic-tac-toe dataset">
+                    </div>
+                    <div class="row-container">
+                        <div class="figure-container">
+                            <p class="text-block" style="font-size: 18px; font-style: italic;">Interactions for tic-tac-toe endgame</p>
+                            <img src="./fig_12.png" style="width: 259px; height: 236px;" data-semantic="Grid visualization of feature interactions for the tic-tac-toe endgame task">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

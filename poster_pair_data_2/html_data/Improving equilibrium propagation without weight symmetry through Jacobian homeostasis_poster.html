@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Poster - Improving Equilibrium Propagation</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --bg-color: #ffffff;
+            --text-color: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            height: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-color);
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 32px;
+            margin: 0;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #444;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .layout-block {
+            background: #fff;
+            padding: 5px;
+        }
+
+        .section-header {
+            font-size: 20px;
+            color: #000;
+            border-bottom: 1px solid #ccc;
+            margin: 0 0 10px 0;
+            padding-bottom: 3px;
+        }
+
+        .text-block {
+            font-size: 13px;
+            line-height: 1.4;
+            margin: 5px 0;
+        }
+
+        .list-item {
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .figure-container, .row-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+            gap: 5px;
+        }
+
+        .row-container {
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .references-text {
+            font-size: 10px;
+            color: #555;
+            line-height: 1.2;
+        }
+
+        .highlight-box {
+            background-color: #e9ecef;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        img {
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <h1 class="poster-title">Improving Equilibrium Propagation Without Weight Symmetry Through Jacobian Homeostasis</h1>
+            <p class="poster-authors">Axel Laborieux, Friedemann Zenke</p>
+            <div class="header-logos">
+                <div>Friedrich Miescher Institute for Biomedical Research</div>
+                <div>Faculty of Natural Sciences, University of Basel</div>
+                <div>ICLR 2023</div>
+                <img src="./logo_fmi.png" style="width: 80px; height: 40px;" data-semantic="FMI Logo">
+            </div>
+        </header>
+
+        <main>
+            <!-- Column 1 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Generalized Equilibrium Propagation [1]</h2>
+                    <p class="text-block">Goal: Local gradients for Neurobiology and Neuromorphics.</p>
+                    <div class="figure-container">
+                        <img src="./fig_1.jpg" style="width: 207px; height: 327px;" data-semantic="Neural network architecture diagram showing weight symmetry notation between layers">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Non-symmetric</h2>
+                    <div class="figure-container">
+                        <img src="./fig_2.jpg" style="width: 252px; height: 248px;" data-semantic="Weight matrix visualization showing non-symmetric block structure">
+                    </div>
+                    <div class="highlight-box">
+                        <p class="text-block">Entangled sources of bias:</p>
+                        <ul>
+                            <li class="list-item">Finite differences ❌</li>
+                            <li class="list-item">Jacobian asymmetry ❌</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Our contributions:</h2>
+                    <ul>
+                        <li class="list-item">Disentangle the two sources of bias in non-symmetric EP</li>
+                        <li class="list-item">Extend holomorphic EP [2] to non symmetric networks</li>
+                        <li class="list-item">New homeostatic loss promotes Jacobian symmetry</li>
+                    </ul>
+                </section>
+
+                <section class="layout-block" data-section-id="section_4">
+                    <h2 class="section-header">Accurate computation of the EP error vector</h2>
+                    <div class="row-container">
+                        <img src="./fig_3.jpg" style="width: 325px; height: 333px;" data-semantic="Complex plane representation of the teaching signal phase">
+                        <img src="./fig_4.jpg" style="width: 465px; height: 346px;" data-semantic="Graph showing cosine similarity of error vectors for different EP methods">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_5">
+                    <h2 class="section-header">Continuous-in-time estimation of the gradient</h2>
+                    <div class="row-container">
+                        <img src="./fig_5.jpg" style="width: 413px; height: 289px;" data-semantic="Membrane potential oscillation over time showing raw and averaged signals">
+                        <img src="./fig_6.jpg" style="width: 412px; height: 287px;" data-semantic="Online first mode estimation of membrane potential compared to true gradient">
+                    </div>
+                    <div class="highlight-box">
+                        <p class="text-block">The gradient estimate can be computed in continuous time without discrete forward/backward phases ✅</p>
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_6">
+                    <h2 class="section-header">Isolated effect of Jacobian asymmetry</h2>
+                    <div class="figure-container">
+                        <img src="./fig_7.jpg" style="width: 437px; height: 308px;" data-semantic="Density distribution of Jacobian symmetry for L2 layer showing decreasing symmetry">
+                        <img src="./fig_8.jpg" style="width: 486px; height: 304px;" data-semantic="Network diagram illustrating Jacobian asymmetry effects across layers">
+                        <img src="./fig_9.jpg" style="width: 437px; height: 271px;" data-semantic="Density distribution of Jacobian symmetry for L1 layer">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_7">
+                    <h2 class="section-header">New homeostatic loss:</h2>
+                    <p class="text-block">L_homeo := E[||Jf ε||^2 - ε^T Jf^2 ε]</p>
+                    <div class="row-container">
+                        <div class="text-block" style="color: teal;">Minimize sensitivity to perturbation</div>
+                        <div class="text-block" style="color: purple;">Increase second-order reconstruction</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_8">
+                    <h2 class="section-header">Benefits of the homeostatic loss on learning</h2>
+                    <div class="figure-container">
+                        <img src="./fig_10.jpg" style="width: 910px; height: 703px;" data-semantic="Validation error curves for Fashion MNIST and CIFAR-10 comparing models with and without homeostatic loss">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_9">
+                    <div class="figure-container">
+                        <img src="./table_1.png" style="width: 791px; height: 359px;" data-semantic="Comparison table of Top-1 and Top-5 accuracy on CIFAR-10 and ImageNet datasets">
+                    </div>
+                    <div class="highlight-box">
+                        <p class="text-block">Homeostatic loss is:</p>
+                        <ul>
+                            <li class="list-item">More general than symmetrising weights ✅</li>
+                            <li class="list-item">Reduces the gap with the energy-based case ✅</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_10">
+                    <h2 class="section-header">References</h2>
+                    <div class="references-text">
+                        [1] Scellier, et al. Generalization of equilibrium propagation to vector field dynamics. arXiv:1808.04873, 2018.<br>
+                        [2] Laborieux and Zenke. Holomorphic equilibrium propagation computes exact gradients through finite size oscillations. NeurIPS 2022.
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_11">
+                    <h2 class="section-header">Funding</h2>
+                    <div class="row-container">
+                        <img src="./fig_11.jpg" style="width: 91px; height: 91px;" data-semantic="Swiss National Science Foundation logo">
+                        <img src="./fig_12.jpg" style="width: 98px; height: 66px;" data-semantic="European Union Horizon 2020 research and innovation logo">
+                        <div class="figure-container">
+                            <p class="text-block">Paper</p>
+                            <img src="./fig_13.jpg" style="width: 154px; height: 151px;" data-semantic="QR code linking to the full research paper">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

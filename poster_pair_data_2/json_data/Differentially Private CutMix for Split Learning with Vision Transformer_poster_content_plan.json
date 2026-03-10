@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "title": "Differentially Private CutMix for Split Learning with Vision Transformer",
+    "authors": [
+      "Seungeun Oh",
+      "Jihong Park",
+      "Sihun Baek",
+      "Hyelin Nam",
+      "Praneeth Vepakomma",
+      "Ramesh Raskar",
+      "Medhi Bennis",
+      "and Seong-Lyun Kim"
+    ],
+    "organizations": [
+      "Yonsei University",
+      "Deakin University",
+      "MIT",
+      "Neural Information Processing Systems"
+    ],
+    "github": "github.com/yonsei-ml/DP-CutMixSL",
+    "figures": [
+      {
+        "fig_id": "logo_yonsei",
+        "description": "Yonsei University Logo",
+        "figure_width": 60,
+        "figure_height": 60
+      },
+      {
+        "fig_id": "logo_mit",
+        "description": "MIT Logo",
+        "figure_width": 80,
+        "figure_height": 40
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Motivation",
+      "content": [
+        "Recently, vision transformer (ViT) outpace CNN in CV field [1]. Split learning (SL) [2] with model partitioning is suitable for its large memory size and computing cost.",
+        "Objective:to design privacy-preserving distributed ML considering differences between ViT and CNN.",
+        "1. ViT often omits pooling: Efficientregularization on smashed data, but privacy leak.",
+        "2. ViT learns global spatial information:Robust to large noise partially appliedto the image (i.e. CutMix [3]).",
+        "3. ViT runs at patch-level: Possibilities of apatch-scale regularizer.",
+        "→ Integrating the above yields apatch-levelrandomizedCutMixofhidden representations(patch CutMix).",
+        "To this end, we propose DP-CutMixSL, which combines patch CutMix with the differentially private (DP) SL framework."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Input raw image of a cat with grid lines",
+          "figure_width": 160,
+          "figure_height": 158,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "Smashed data representation of ViT",
+          "figure_width": 160,
+          "figure_height": 158,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Smashed data representation of CNN",
+          "figure_width": 100,
+          "figure_height": 98,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Proposed: DP-CutMixSL",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "DP-CutMixSL system architecture showing Clients, Mixer, and Server workflow",
+          "figure_width": 540,
+          "figure_height": 247,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "DP-CutMixSL's Operation:",
+      "content": [
+        "1. Gaussian noise mechanism: Each device first injects random Gaussian noise into smashed data.",
+        "2. Random Cutout: Each device punches randomly selected patches of smashed data, yielding Cutout smashed data.",
+        "3. Random Mixup: These Cutout smashed data are uploaded to and put together by the server, resulting in DP-CutMix smashed data that continue FP."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "Differential Privacy Analysis",
+      "content": [
+        "Theorem 1.The RDP bounds [4] are given as:",
+        "ε_o(α) = α/2 * (Δ²Dx/σx² + Dy/σy²)ε_Mix(α) = ... (complex RDP formula)ε_CutMix(α) = ... (combined RDP formula)",
+        "1.Large privacy leakage in ViT:Without pooling, smashed data size Dx is large.",
+        "2. Cutout & Mixingamplify DP:Mixup is the best for privacy, but accuracy. CutMix is a good compromise.",
+        "3.Hide in the crowd:Many clients inherently preserve privacy."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "Numerical Evalution",
+      "content": [
+        "1. CutMix SL achieveshighest accuracy(Top)",
+        "2.Privacy-Accuracy trade-off, in terms of:- Mixup vs. Cutout (Left)- Mixing Group Size vs. Accuracy (Right)",
+        "- Mixup vs. Cutout (Left)",
+        "- Mixing Group Size vs. Accuracy (Right)"
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Performance comparison table showing CutMixSL achieving highest accuracy across ViT and CNN models",
+          "table_width": 540,
+          "table_height": 162,
+          "table_caption": []
+        }
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "Accuracy vs Noise Variance and Mixing Group Size charts",
+          "figure_width": 540,
+          "figure_height": 172,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

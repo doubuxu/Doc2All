@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deep Demonstration Tracing Poster</title>
+    <style>
+        :root {
+            --primary-red: #b30000;
+            --bg-gray: #f0f0f0;
+            --border-color: #ccc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-gray);
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        header {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+            background: rgba(255,255,255,0.9);
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        main {
+            display: flex;
+            padding: 15px;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .layout-block {
+            border: 2px solid var(--primary-red);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            background-color: var(--primary-red);
+            color: white;
+            margin: 0;
+            padding: 8px 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .text-block {
+            padding: 10px 15px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.4;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .figure-container, .row-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .list-item {
+            font-size: 13px;
+            margin-bottom: 5px;
+            padding-right: 10px;
+        }
+
+        ul {
+            margin: 5px 0 10px 20px;
+            padding: 0;
+        }
+
+        .highlight-box {
+            background-color: #fff9c4;
+            padding: 5px;
+            border: 1px dashed orange;
+            margin: 5px 15px;
+            font-size: 13px;
+        }
+
+        .qr-container {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            text-align: center;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <h1 class="poster-title">Deep Demonstration Tracing: Learning Generalizable Imitator Policy for Runtime Imitation from a Single Demonstration</h1>
+            <p class="poster-authors">Xiong-Hui Chen, Junyin Ye, Hang Zhao, Yi-Chen Li, Xu-Hui Liu, Haoran Shi, Yu-Yan Xu, Zhihao Ye, Si-Hang Yang, Yang Yu, Anqi Huang, Kai Xu, Zongzhang Zhang</p>
+            <div class="header-logos">
+                <div>Nanjing University, LAMDA, POLIXIR, National University of Defense Technology</div>
+                <div>github.com/osil-ddt</div>
+                <img src="./logo_icml.png" style="width: 80px; height: 40px;" data-semantic="ICML Conference Logo">
+            </div>
+        </header>
+
+        <main>
+            <!-- Column 1: Introduction -->
+            <div class="column" style="flex: 0.85;">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Introduction</h2>
+                    <p class="text-block">The vision of Runtime One-shot imitation Learning</p>
+                    <div class="row-container">
+                        <img src="./fig_1.jpg" style="width: 106px; height: 78px;" data-semantic="Human demonstration step 1">
+                        <img src="./fig_2.jpg" style="width: 108px; height: 81px;" data-semantic="Human demonstration step 2">
+                        <img src="./fig_3.jpg" style="width: 108px; height: 81px;" data-semantic="Human demonstration step 3">
+                        <img src="./fig_4.jpg" style="width: 103px; height: 81px;" data-semantic="Human demonstration step 4">
+                    </div>
+                    <div class="row-container">
+                        <img src="./fig_5.jpg" style="width: 106px; height: 114px;" data-semantic="Robot execution step 1">
+                        <img src="./fig_6.jpg" style="width: 108px; height: 115px;" data-semantic="Robot execution step 2">
+                        <img src="./fig_7.jpg" style="width: 108px; height: 115px;" data-semantic="Robot execution step 3">
+                        <img src="./fig_8.jpg" style="width: 103px; height: 115px;" data-semantic="Robot execution step 4">
+                    </div>
+                    <div class="highlight-box" style="text-align: center; color: orange;">Achieve any tasks directly "prompted" by corresponding demonstration.</div>
+
+                    <p class="text-block">Popular paradigm: Transformer + behavior cloning</p>
+                    <div class="figure-container">
+                        <img src="./fig_9.jpg" style="width: 350px; height: 140px;" data-semantic="Transformer Network architecture for behavior cloning">
+                    </div>
+
+                    <p class="text-block">Our focus: Generalization Challenges of runtime OSIL</p>
+                    <div class="figure-container">
+                        <img src="./fig_10.jpg" style="width: 319px; height: 69px;" data-semantic="Provided demonstration sequence">
+                        <img src="./fig_11.jpg" style="width: 317px; height: 72px;" data-semantic="Policy failure case: dropped object">
+                        <img src="./fig_12.jpg" style="width: 319px; height: 72px;" data-semantic="Policy success case: re-picked object">
+                    </div>
+                    <div class="row-container">
+                        <img src="./fig_13.jpg" style="width: 102px; height: 97px;" data-semantic="Maze navigation task A">
+                        <img src="./fig_14.jpg" style="width: 71px; height: 92px;" data-semantic="Maze legend">
+                        <img src="./fig_15.jpg" style="width: 94px; height: 95px;" data-semantic="Maze navigation task B">
+                        <img src="./fig_16.jpg" style="width: 98px; height: 98px;" data-semantic="Maze navigation task C">
+                    </div>
+                    <ul>
+                        <li class="list-item">Unseen demonstrations in unseen environments.</li>
+                        <li class="list-item">Unforeseen changes after demonstrations collection.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Column 2: Methodology -->
+            <div class="column" style="flex: 1.1;">
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Methodology</h2>
+                    <div class="highlight-box">
+                        KEY1: Inject the inductive bias of "how human make decisions in runtime OSIL" into the imitator policy network.
+                    </div>
+                    <div class="row-container">
+                        <img src="./fig_17.jpg" style="width: 347px; height: 169px;" data-semantic="Conceptual diagram of 3-stage OSIL in humans">
+                        <img src="./fig_18.jpg" style="width: 364px; height: 390px;" data-semantic="Detailed neural network architecture of DDT">
+                    </div>
+                    <p class="text-block">An example of 3-stage OSIL of humans.</p>
+                    <ul>
+                        <li class="list-item">Stage 1: <b>Identify</b> relevant states within the trajectory based on the current state.</li>
+                        <li class="list-item">Stage 2: <b>Analyze</b> the expert's behavior patterns associated with these states.</li>
+                        <li class="list-item">Stage 3: <b>Trace</b> the expert's demonstrations based on the relationship between the current state and the expert's behavior patterns.</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        KEY2: Solve runtime one-shot imitation learning by context-based meta-RL, instead of supervised learning.
+                    </div>
+                    <div class="figure-container">
+                        <img src="./fig_19.jpg" style="width: 532px; height: 172px;" data-semantic="Meta-RL training framework for one-shot imitator">
+                    </div>
+                    <ul>
+                        <li class="list-item">The unforeseen changes will randomly appear in the simulators (M).</li>
+                        <li class="list-item">With meta-RL, the imitator policy will try to achieve all of the targets the same to the demonstration guided by 0-1 task rewards.</li>
+                        <li class="list-item">In the process, the imitator policy will suffer from the unforeseen changes and have to handle them before achieve the targets.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Column 3: Experiments -->
+            <div class="column" style="flex: 1.05;">
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Major Experiments</h2>
+                    <p class="text-block">Q1: One-shot imitation ability in unseen situations</p>
+                    <div class="figure-container">
+                        <img src="./fig_20.jpg" style="width: 434px; height: 238px;" data-semantic="Success rate comparison across different methods and test scenarios">
+                    </div>
+                    <div class="row-container">
+                        <img src="./fig_21.jpg" style="width: 145px; height: 71px;" data-semantic="Task: door open and faucet close">
+                        <img src="./fig_22.jpg" style="width: 80px; height: 71px;" data-semantic="Task: button press wall">
+                        <div class="figure-container">
+                            <img src="./table_4.png" style="width: 150px; height: 50px;" data-semantic="Performance table on unseen heterogeneous demonstrations">
+                        </div>
+                    </div>
+                    <div class="row-container">
+                        <img src="./fig_23.jpg" style="width: 253px; height: 66px;" data-semantic="Task sequence: button, door, reach">
+                        <img src="./fig_24.jpg" style="width: 145px; height: 44px;" data-semantic="Task: button press topdown">
+                        <img src="./fig_25.jpg" style="width: 83px; height: 46px;" data-semantic="Task: button press topdown wall">
+                        <img src="./fig_26.jpg" style="width: 82px; height: 49px;" data-semantic="Task: window open">
+                    </div>
+
+                    <p class="text-block">Q2: Does DDT imitating via tracing the demos</p>
+                    <div class="row-container">
+                        <img src="./fig_27.jpg" style="width: 115px; height: 115px;" data-semantic="Maze trajectory of DDT">
+                        <img src="./fig_28.jpg" style="width: 154px; height: 121px;" data-semantic="Attention score heatmap between agent and expert">
+                        <img src="./fig_29.jpg" style="width: 133px; height: 132px;" data-semantic="Robot agent stacking blocks">
+                    </div>
+
+                    <p class="text-block">Q3: The "Scaling Law" of DDT in the OSIL setting</p>
+                    <div class="figure-container">
+                        <img src="./fig_30.jpg" style="width: 322px; height: 192px;" data-semantic="Scaling law plot showing success rate vs model parameters and demos">
+                    </div>
+                    
+                    <div style="padding: 10px; text-align: right;">
+                        <a href="https://osil-ddt.github.io/" style="color: blue; font-size: 12px;">https://osil-ddt.github.io/</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

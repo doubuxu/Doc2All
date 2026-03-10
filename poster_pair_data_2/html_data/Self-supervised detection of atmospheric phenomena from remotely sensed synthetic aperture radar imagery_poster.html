@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Poster - Self-supervised detection of atmospheric phenomena</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-logos {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .header-logos .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .poster-title {
+            font-size: 36px;
+            margin: 10px 0;
+            text-align: center;
+            color: #000;
+            max-width: 900px;
+        }
+
+        .poster-authors {
+            font-size: 22px;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .author-affiliations {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .column-1 { flex: 0.28; }
+        .column-2 { flex: 0.42; }
+        .column-3 { flex: 0.30; }
+
+        .layout-block {
+            margin-bottom: 25px;
+        }
+
+        .section-header {
+            font-size: 24px;
+            color: #000;
+            border-bottom: none;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .text-block {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .list-item {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .row-container {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .image-strip {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .image-strip-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 10px;
+            color: #666;
+        }
+
+        .references-text {
+            font-size: 10px;
+            line-height: 1.3;
+            color: #444;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .highlight-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        img {
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-logos">
+            <div class="logo-group">
+                <img src="./logo_uh.png" style="width: 80px; height: 80px;" data-semantic="University of Hawaii Logo">
+                <img src="./logo_soest.png" style="width: 120px; height: 60px;" data-semantic="SOEST Logo">
+            </div>
+            <div class="logo-group">
+                <img src="./logo_nips.png" style="width: 150px; height: 60px;" data-semantic="Neural Information Processing Systems Logo">
+            </div>
+        </div>
+        <h1 class="poster-title">Self-supervised detection of atmospheric phenomena from remotely sensed synthetic aperture radar imagery</h1>
+        <p class="poster-authors">Yannik Glaser, Peter Sadowski, Justin Stopa</p>
+        <div class="author-affiliations">
+            <div>Information and Computer Sciences, University of Hawai'i at Mānoa</div>
+            <div>Department of Ocean and Resources Engineering, University of Hawaii at Manoa</div>
+            <div>github.com/yannikglaser/sar-self-supervised</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column column-1">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Sentinel-1 ocean surface data and atmospheric stability</h2>
+                <div class="row-container">
+                    <div style="flex: 1;">
+                        <p class="text-block">
+                            The European Space Agency provides unprecedented monitoring of Earth's oceans through a network of Synthetic Aperture Radar (SAR) satellites called Sentinel-1. Imagery from these satellites captures a variety of atmosphere and ocean surface phenomena including waves, atmospheric turbulence, ocean fronts, and marine biology.
+                        </p>
+                        <p class="text-block">
+                            The Sentinel-1 (S-1) satellites are equipped with a C-band synthetic aperture radar instrument to perform continuous high-resolution day-and-night imaging unaffected by cloud cover. One of the four acquisition modes of the SAR sensor, primarily for measuring ocean waves across the global open ocean, is the 'Wave' mode (WV).
+                        </p>
+                    </div>
+                    <div class="image-strip">
+                        <div class="image-strip-item">
+                            <img src="./fig_2.jpg" style="width: 80px; height: 80px;" data-semantic="Mesoscale convective cells (MC) SAR image sample">
+                            <span>MC</span>
+                        </div>
+                        <div class="image-strip-item">
+                            <img src="./fig_3.jpg" style="width: 80px; height: 80px;" data-semantic="Mixed WS / MC SAR image sample">
+                            <span>WS/MC</span>
+                        </div>
+                        <div class="image-strip-item">
+                            <img src="./fig_4.jpg" style="width: 80px; height: 80px;" data-semantic="Wind streaks (WS) SAR image sample">
+                            <span>WS</span>
+                        </div>
+                        <div class="image-strip-item">
+                            <img src="./fig_5.jpg" style="width: 80px; height: 80px;" data-semantic="Biological surface slick (OT) SAR image sample">
+                            <span>OT</span>
+                        </div>
+                        <div class="image-strip-item">
+                            <img src="./fig_6.jpg" style="width: 80px; height: 80px;" data-semantic="Negligible atmospheric variability (NV) SAR image sample">
+                            <span>NV</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-block">
+                    Examples of the 20 km by 20 km WV images at 5m resolution are shown to the right.
+                </p>
+                <div class="figure-container">
+                    <img src="./fig_1.jpg" style="width: 277px; height: 296px;" data-semantic="Sentinel-1 WV image acquisition process diagram">
+                    <p class="text-block" style="font-size: 10px; text-align: center;">Sentinel-1 WV image acquisition process</p>
+                </div>
+                <p class="text-block">
+                    Mesoscale convective cells, wind streaks, and negligible atmospheric variability are atmospheric phenomena representing a spectrum of stability regimes along the oceanic surface layer, corresponding to unstable, near stable, and stable conditions respectively.
+                </p>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column column-2">
+            <section class="layout-block highlight-box" data-section-id="section_2">
+                <h2 class="section-header">Key insights:</h2>
+                <ul>
+                    <li class="list-item">We use deep learning to classify atmospheric phenomena in a hand-labeled dataset of synthetic aperture radar WaVe images.</li>
+                    <li class="list-item">We attempt to use contrastive learning on a dataset of 3 million unlabeled images to pretrain a model before finetuning on labeled data.</li>
+                    <li class="list-item">We show that the default setup of the SwAV contrastive learning framework does not outperform standard transfer learning from ImageNet weights.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Dataset</h2>
+                <p class="text-block">
+                    <strong>Unlabeled dataset.</strong> This dataset consists of three years (2017, 2018, 2019) of Copernicus S-1 A and B observations and contains 2,943,550 images, of which 90% are used for training and 10% for validation.
+                </p>
+                <p class="text-block">
+                    <strong>Labeled dataset.</strong> The labeled data is multi-label, allowing for multiple positive classes per WV image, and sampled randomly across the globe. Images were labeled by at least one expert and four classes of interest are used: (1) MC, (2) WS, (3) NV, and (4) other (OT). In total, we have 2,300 samples which are stratified and split into 60% training data, 20% validation data, and 20% held-out test data for final model evaluation.
+                </p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Contrastive self-supervised pretraining</h2>
+                <div class="row-container">
+                    <div style="flex: 1;">
+                        <p class="text-block">
+                            Contrastive self-supervised representation learning has demonstrated impressive representation learning capabilities on large amounts of unlabeled data.
+                        </p>
+                        <p class="text-block">
+                            Most modern contrastive learning methods are based on objectives that group representations of multiple views (obtained by applying different augmentations) of the same sample closely together while representations of other examples in the dataset are pushed away.
+                        </p>
+                    </div>
+                    <div class="figure-container" style="margin-top: 0;">
+                        <img src="./fig_7.jpg" style="width: 200px; height: 225px;" data-semantic="SwAV contrastive learning architecture diagram showing CNN and MLP heads with attract/repel logic">
+                        <p class="text-block" style="font-size: 10px; text-align: center;">Example of the basic contrastive setup</p>
+                    </div>
+                </div>
+                <p class="text-block">
+                    Swapping Assignments between multiple Views (SwAV)[1], the contrastive framework used in this work, is based on a clustering objective, where representations are assigned to clusters and the network has to learn to predict cluster assignments.
+                </p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Contrastive model evaluation</h2>
+                <p class="text-block">
+                    We used three common evaluation scenarios from the literature to compare contrastive weights to ImageNet weights:
+                </p>
+                <ul>
+                    <li class="list-item">k-nearest neighbors (kNN) evaluation of feature vectors</li>
+                    <li class="list-item">Linear evaluation of feature vectors</li>
+                    <li class="list-item">End-to-end finetuning of the entire ResNet50 network</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column column-3">
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Results</h2>
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 350px; height: 80px;" data-semantic="Table showing Micro AUROCs for kNN, Linear Evaluation, and Finetuning comparing Contrastive vs ImageNet weights">
+                    <p class="text-block" style="font-size: 10px; text-align: center;">Micro AUROCs for different evaluation strategies</p>
+                </div>
+                <div class="figure-container">
+                    <img src="./table_2.png" style="width: 350px; height: 80px;" data-semantic="Table showing Micro AUROCs for finetuned models on individual classes MC, WS, NV, OT">
+                    <p class="text-block" style="font-size: 10px; text-align: center;">Micro AUROCs for finetuned models on individual classes</p>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">Discussion and future direction</h2>
+                <p class="text-block">
+                    This work presents an initial exploration of self-supervised contrastive learning for satellite data. Our initial results do not support the use of contrastive learning for this application, with improvements over transfer learning from natural image features being marginal or not present at all, while requiring significant computation to train.
+                </p>
+                <p class="text-block">
+                    However, these results are preliminary, and more extensive evaluation and hyperparameter tuning may close the observed performance gap.
+                </p>
+                <p class="text-block">
+                    Our results, both with contrastive and ImageNet transfer learning, do show strong performance improvements over previous models for this task. This has immediate consequences for ocean surface layer estimation, where providing a highly reliable model can help with automated analysis and downstream remote sensing applications.
+                </p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_8">
+                <h2 class="section-header">References</h2>
+                <div class="references-text">
+                    [1] Mathilde Caron, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, and Armand Joulin. Emerging properties in self-supervised vision transformers, 2021.<br>
+                    [2] Chen Wang, Pierre Tandeo, Alexis Mouche, Justin E Stopa, Victor Gressani, Nicolas Longépé, Douglas Vandemark, Ralph C Foster, and Bertrand Chapron. Classification of the global sentinel-1 SAR vignettes for ocean surface process studies. Remote Sensing of Environment, 234:111457, 2019
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

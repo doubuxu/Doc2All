@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "title": "MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images",
+    "authors": [
+      "Xurui Li1",
+      "*",
+      "Ziming Huang1",
+      "*",
+      "Feng Xue3",
+      "Yu Zhou1",
+      "2"
+    ],
+    "organizations": [
+      "1Huazhong University of Science and Technology,2Artificial Intelligence Research Institute, Wuhan JingCe Electronic Group Co.,LTD,3University of Trento"
+    ],
+    "github": "github.com/hustvl/MuSc",
+    "figures": [
+      {
+        "fig_id": "logo",
+        "description": "University and Conference Logos",
+        "figure_width": 150,
+        "figure_height": 150
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Motivation",
+      "content": [
+        "Arich amountof normal information implicit in unlabeled test images can be exploited for anomaly detection.",
+        "Adiscriminative characteristic: the normal image patches could find a relatively large number of similar patches in other unlabeled images, while the abnormal ones only have a few similar patches."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "MVTec AD dataset normal vs abnormal pixel distribution pie chart",
+          "figure_width": 200,
+          "figure_height": 128,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "VisA dataset normal vs abnormal pixel distribution pie chart",
+          "figure_width": 200,
+          "figure_height": 123,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Visual comparison of normal and abnormal patches across different objects",
+          "figure_width": 312,
+          "figure_height": 332,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Contributions",
+      "content": [
+        "Thefirst methodthatonly uses the unlabeled test imagesfor industrial anomaly detection.",
+        "We reveal the potential capability of normal and abnormal patches contained in unlabeled images.",
+        "21.1% PRO gainsand21.9% seg-AP gainson MVTec AD and19.4% seg-AP gainson VisA."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Experiments",
+      "content": [
+        "Comparison with 0-shot methods",
+        "Comparison with 4-shot methods"
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Zero-shot performance comparison table on MVTec and VisA datasets",
+          "table_width": 767,
+          "table_height": 280,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_2",
+          "description": "Few-shot performance comparison table on MVTec and VisA datasets",
+          "table_width": 767,
+          "table_height": 277,
+          "table_caption": []
+        }
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_9",
+          "description": "Qualitative visualization of anomaly segmentation results compared to other methods",
+          "figure_width": 928,
+          "figure_height": 888,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Framework",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "Overall architecture of MuSc showing feature extraction, LNAMD, and Mutual Scoring Mechanism",
+          "figure_width": 1575,
+          "figure_height": 748,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Mutual Scoring Mechanism",
+      "content": [
+        "Image Ijassigns a score to each aggregated patch token of image Ii",
+        "Interval Average (minimum 30%)",
+        "Mean: r and l"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_8",
+          "description": "Histograms of anomaly scores showing separation between normal and abnormal patches",
+          "figure_width": 763,
+          "figure_height": 291,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "RsCIN",
+      "content": [
+        "Image-level feature Fiextracted by ViT. Similarity matrix Wi,j= Fi· Fj",
+        "Multi-window Mask Mk(i,j)",
+        "Re-Scoring D(i,i) = Σ Mk⊙ W(i,j)",
+        "Universal module for other AD methods"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "LNAMD",
+      "content": [
+        "Neighborhood range: 1x1, 3x3, 5x5",
+        "Aggregate function: Adaptive average pooling",
+        "Multi-degree aggregation: To segment abnormal regions of varying sizes."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "LNAMD visualization 1x1",
+          "figure_width": 157,
+          "figure_height": 154,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "LNAMD visualization 3x3",
+          "figure_width": 152,
+          "figure_height": 154,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "LNAMD visualization 5x5",
+          "figure_width": 158,
+          "figure_height": 154,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_8",
+      "title": "References",
+      "content": [
+        "[1] Jeong J, Zou Y, Kim T, et al. Winclip: Zero-/few-shot anomaly classification and segmentation[C]//CVPR 2023.[2] Chen X, Han Y, Zhang J. A zero-/few-shot anomaly classification and segmentation method for cvpr 2023 challenge.[3] Li A, Qiu C, Kloft M, et al. Zero-shot anomaly detection via batch normalization[J]. Advances in Neural Information Processing Systems, 2024.[4] Roth K, Pemula L, Zepeda J, et al. Towards total recall in industrial anomaly detection[C]//CVPR 2022."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_9",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

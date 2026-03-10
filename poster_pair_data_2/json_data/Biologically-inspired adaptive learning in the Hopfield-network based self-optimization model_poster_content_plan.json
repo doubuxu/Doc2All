@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "title": "Biologically-inspired adaptive learning in the Hopfield-network based self-optimization model",
+    "authors": [
+      "Aisha Belhadi"
+    ],
+    "organizations": [],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "logo_nips",
+        "description": "Neural Information Processing Systems Logo",
+        "figure_width": 200,
+        "figure_height": 80
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Biological learning is different from machine learning in key ways",
+      "content": [
+        "Whatbiological mechanismscould helpenhanceML?"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Self-optimization (SO) model",
+      "content": [
+        "The SO model is a Hopfield network with:",
+        "updating of weights based on a Hebbian learning rule",
+        "periodic resets of network states",
+        "Able tocombine optimizationand memorystabilization?"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Example: learning rate as a function of energy",
+      "content": [
+        "1. Weight update rule (α: learning rate; s_i, s_j: states of nodes i and j)",
+        "w_ij(t + 1) = w_ij(t) + dw_ij(t),    dw_ij = α s_i s_j",
+        "2. Learning rate α as a function of energy E:",
+        "α = { a / (ΔE + ε_0) if γ ≠ 1; α_0 if γ = 1 }"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "",
+      "content": [
+        "SO model results for map-coloring problem. From left to right, E=5, E=8, E=12, E=20 (only the two middle results are valid maps)."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Map coloring result E=5",
+          "figure_width": 109,
+          "figure_height": 119,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "Map coloring result E=8",
+          "figure_width": 108,
+          "figure_height": 117,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Map coloring result E=12",
+          "figure_width": 107,
+          "figure_height": 117,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Map coloring result E=20",
+          "figure_width": 107,
+          "figure_height": 117,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "",
+      "content": [
+        "Implementing mechanisms used byliving systemstoadaptto their environment may helpsolve trade-offsinherent to machine learning."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Translating adaptive biological mechanisms into a Hopfield network",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "Diagram of biological mechanisms like Metaplasticity, Homeostasis, and Modularity mapped to network functions",
+          "figure_width": 550,
+          "figure_height": 440,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "",
+      "content": [
+        "Energy distributions at the end of learning for 1000 runs. A slight difference can be observed between γ=1 (learning rate α constant) and γ=0.1 (variable learning rate), but not obviously significant."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_6",
+          "description": "Energy distribution histogram for gamma=1",
+          "figure_width": 224,
+          "figure_height": 152,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Energy distribution histogram for gamma=0.1",
+          "figure_width": 225,
+          "figure_height": 150,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_8",
+      "title": "What next?",
+      "content": [
+        "Test further implementations of variable learning rate: as function of weights, trigonometric function",
+        "Test \"forgetting\": weight decay, inhibition",
+        "Applications in continuous learning, creativity, robotics",
+        "Modeling biological systems"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_9",
+      "title": "References",
+      "content": [
+        "W. C. Abraham. Metaplasticity: Tuning synapses and networks for plasticity. Nat Rev Neurosci, 9(5):387–387, 2008-05H. Kitano. Biological robustness. Nat Rev Genet, 5(11):826–837, 2004-11R. A. Watson, C. L. Buckley, and R. Mills. Optimization in \"self-modeling\" complex adaptive systems. Complexity, 16(5):17–26, 2011"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_10",
+      "title": "Acknowledgments",
+      "content": [
+        "I would like to sincerely thank Natalya Weber (OIST) for her work on the implementation example and for producing the figures in this poster."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

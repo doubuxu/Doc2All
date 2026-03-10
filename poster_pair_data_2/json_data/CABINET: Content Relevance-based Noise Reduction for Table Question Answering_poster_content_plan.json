@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "title": "CABINET:ContentRelevanceBasedNoiseReduction for Table Question Answering",
+    "authors": [
+      "Sohan Patnaik",
+      "Heril Changwal",
+      "Milan Aggarwal",
+      "Sumit Bhatia",
+      "Yaman Kumar",
+      "Balaji Krishnamurthy"
+    ],
+    "organizations": [
+      "Media and Data Science Research Lab, Adobe, India"
+    ],
+    "github": "github.com/adobe-research/CABINET",
+    "figures": []
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "LLMs have been used for Table Understanding",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "LLM table understanding tasks: QA, Fact Verification, and Dialogue examples",
+          "figure_width": 600,
+          "figure_height": 352,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Large Tabular Data degrades LLM Performance",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Bar charts showing accuracy drop as number of table cells increases across WikiTQ, FeTaQA, and WikiSQL",
+          "figure_width": 600,
+          "figure_height": 158,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Hard Decomposition can cause Information Loss",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Comparison between DATER decomposer and CABINET showing how relevance scoring prevents information loss",
+          "figure_width": 600,
+          "figure_height": 258,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Our Approach: CABINET assigns Relevance Score to Tabular Data Tokens through Two Modules - 1) Unsupervised Relevance Scorer and 2) Weakly Supervised Relevant Cell Highlighter",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "CABINET model architecture showing URS and Cell Highlighter modules processing flattened tables",
+          "figure_width": 1000,
+          "figure_height": 320,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "CABINET (despite having less #params) outperforms several SoTA Methods",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Performance comparison table showing CABINET outperforming OmniTab, TAPEX, and DATER on WikiTQ, FeTaQA, and WikiSQL",
+          "table_width": 1000,
+          "table_height": 182,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "CABINET is more Robust to Noise and Table Perturbations",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "Performance drop on WikiTQ under noise",
+          "figure_width": 280,
+          "figure_height": 130,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Performance drop on FeTaQA under noise",
+          "figure_width": 280,
+          "figure_height": 130,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Performance drop on WikiSQL under noise",
+          "figure_width": 280,
+          "figure_height": 130,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "CABINET is more Performant while Handling Irrelevant Data in Large Tables",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_8",
+          "description": "Accuracy vs table size on WikiTQ comparing OmniTab and CABINET",
+          "figure_width": 300,
+          "figure_height": 133,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_9",
+          "description": "S-BLEU vs table size on FeTaQA comparing OmniTab and CABINET",
+          "figure_width": 300,
+          "figure_height": 133,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_10",
+          "description": "Accuracy vs table size on WikiSQL comparing ReasTAP and CABINET",
+          "figure_width": 300,
+          "figure_height": 133,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_8",
+      "title": "Clustering URS Output Representations is Helpful",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_11",
+          "description": "t-SNE visualization showing clear separation between relevant and non-relevant tokens in URS output",
+          "figure_width": 500,
+          "figure_height": 358,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_9",
+      "title": "Ablation Study",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_2",
+          "description": "Ablation study table showing the impact of different loss components (Clu, Sep, Sparse) on performance",
+          "table_width": 508,
+          "table_height": 181,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_10",
+      "title": "Using Both Modules gives Best Performance",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_3",
+          "description": "Table showing the impact of balancing unsupervised and cell highlighter modules using lambda weights",
+          "table_width": 519,
+          "table_height": 196,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    }
+  ]
+}

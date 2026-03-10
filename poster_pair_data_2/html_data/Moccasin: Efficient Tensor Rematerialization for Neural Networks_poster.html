@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MOCCASIN Poster Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #poster-canvas {
+            width: 2400px;
+            height: 1600px;
+            margin: 0 auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 200px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-center {
+            flex: 2;
+            text-align: center;
+        }
+
+        .poster-title {
+            font-size: 72px;
+            margin: 0;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .header-logos {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 24px;
+            gap: 10px;
+        }
+
+        .poster-authors {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 40px;
+        }
+
+        /* Specific width for middle column to accommodate large table */
+        .column:nth-child(2) {
+            flex: 1.5;
+        }
+
+        .layout-block {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            color: #0055aa;
+            font-size: 42px;
+            border-bottom: 4px solid #0055aa;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .text-block {
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        .list-item {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            width: 100%;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .references-text {
+            font-size: 18px;
+            color: #666;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .footer-bar {
+            background-color: #003366;
+            height: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 40px;
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-left">
+            <img src="./logo.png" style="width: 350px; height: 120px;" data-semantic="Qualcomm AI Research Logo">
+        </div>
+        <div class="header-center">
+            <h1 class="poster-title">MOCCASIN: Efficient Tensor Rematerialization for Neural Networks</h1>
+        </div>
+        <div class="header-logos">
+            <p class="poster-authors">Burak Bartan, Haoming Li, Harris Teague, Christopher Lott, Bistra Dilkina</p>
+            <div>Qualcomm AI Research, University of Southern California</div>
+            <div>bbartan@qti.qualcomm.com</div>
+            <div>github.com/qualcomm/moccasin</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">1. Introduction</h2>
+                <ul>
+                    <li class="list-item">The deployment and training of neural networks on edge computing devices pose many challenges.</li>
+                    <li class="list-item">The low memory nature of edge devices is often one of the biggest limiting factors encountered in the deployment of large neural network models.</li>
+                    <li class="list-item">Tensor rematerialization or recompute is a way to address high memory requirements for neural network training and inference.</li>
+                    <li class="list-item">In this paper we consider the problem of execution time minimization of compute graphs subject to a memory budget.</li>
+                    <li class="list-item">In particular, we develop a new constraint programming formulation called Moccasin with only O(n) integer variables, where n is the number of nodes in the compute graph.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">4. Solution</h2>
+                <div class="figure-container">
+                    <img src="./fig_5.jpg" style="width: 868px; height: 433px;" data-semantic="Solution stage and node interval diagram showing output retention intervals">
+                </div>
+                <p class="text-block">Our solution is an optimization problem formulation where:</p>
+                <ul>
+                    <li class="list-item">The main building block is the concept of output retention intervals which simplifies the problem formulation greatly.</li>
+                    <li class="list-item">Output retention intervals are used to model how long the output of a node is retained in memory.</li>
+                    <li class="list-item">We define C retention intervals for each node where each interval represents a rematerialization (i.e. recompute) of that node.</li>
+                    <li class="list-item">The starting and end times of the intervals are modeled as the decision variables of the optimization problem.</li>
+                    <li class="list-item">We then define the precedence and memory constraints using these decision variables.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">2. Motivation and problem statement</h2>
+                <div class="row-container">
+                    <img src="./fig_1.jpg" style="width: 217px; height: 376px;" data-semantic="10-node computation graph example">
+                    <img src="./fig_2.jpg" style="width: 459px; height: 330px;" data-semantic="Memory usage comparison plot: no rematerialization vs rematerialization">
+                    <img src="./fig_3.jpg" style="width: 532px; height: 268px;" data-semantic="Formal definition of memory-constrained computation graph sequencing problem">
+                </div>
+                <p class="text-block">Consider the example 10-node computation graph above, and assume:</p>
+                <ul>
+                    <li class="list-item">Output sizes are 50 for nodes on the left, and 1 for the ones on the right.</li>
+                    <li class="list-item">Duration is 1 for all nodes.</li>
+                </ul>
+                <div class="figure-container">
+                    <img src="./fig_4.jpg" style="width: 273px; height: 91px;" data-semantic="Sequence diagram showing discard and recompute operations for node 1">
+                </div>
+                <p class="text-block">Rematerialization: Discard output of node 1 after node 2 is computed and recompute it later.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">5. Formal specification</h2>
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 1201px; height: 436px;" data-semantic="Performance comparison table across different graph families and memory budgets">
+                </div>
+                <p class="text-block">The table shows performance comparison across different graph families (RL, RW, CM) under different memory budgets, comparing Checkmate MILP, Checkmate LP+Rounding, and our MOCCASIN method.</p>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">3. Prior work</h2>
+                <p class="text-block">The work of [1] develops a mixed integer linear programming (MILP) formulation to solve this problem.</p>
+                <ul>
+                    <li class="list-item">Introduces Boolean matrices R, S, F for recompute, storage, memory deallocation.</li>
+                    <li class="list-item">Poor scalability to large computation graphs.</li>
+                </ul>
+                <p class="text-block">Key assumption: Don't rematerialize any node more than C times.</p>
+                <div class="references-text">
+                    [1] Checkmate: Breaking the Memory Wall with Optimal Tensor Rematerialization, Proceedings of Machine Learning and Systems 2 (MLSys 2020). Paras Jain, Ajay Jain, Aniruddha Nrusimha, Amir Gholami, Pieter Abbeel, Joseph Gonzalez, Kurt Keutzer, Ion Stoica
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">6. Numerical results</h2>
+                <div class="figure-container">
+                    <img src="./fig_6.jpg" style="width: 521px; height: 376px;" data-semantic="Graph showing total duration increase vs solve time for Checkmate and Moccasin">
+                </div>
+                <p class="text-block">Figure: Percentage of total duration increase against solve time in seconds for our proposed method (Moccasin) and Checkmate [1] on a real-world graph with n=442 nodes and m=1247 edges.</p>
+            </section>
+        </div>
+    </main>
+
+    <div class="footer-bar">
+        QUALCOMM AI RESEARCH IS AN INITIATIVE OF QUALCOMM TECHNOLOGIES, INC.
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "title": "A Theoretical Analysis of the Test Error of Finite-Rank Kernel Ridge Regression",
+    "authors": [
+      "Tin Sum Cheng",
+      "Aurelien Lucchi",
+      "Ivan Dokmanić",
+      "Anastasios Kratsios",
+      "David Belius"
+    ],
+    "organizations": [
+      "University of Basel",
+      "{tinsum.cheng, aurelien.lucchi, ivan.dokmanic}@unibas.ch, kratsioa@mcmaster.ca, david.belius@cantab.ch"
+    ],
+    "github": "github.com/tinsumcheng/finite-rank-krr",
+    "figures": [
+      {
+        "fig_id": "logo",
+        "description": "University of Basel Logo and QR Code",
+        "figure_width": 80,
+        "figure_height": 80
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Contribution",
+      "content": [
+        "1. Precise non-asymptotic upper and lower bounds for test error;",
+        "2. with ridge λ decoupled from sample size N;",
+        "3. including inconsistent case (target function outside RKHS) for under-parametrized kernel ridge regression."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Kernel Ridge Regression",
+      "content": [
+        "A (finite) rank-M kernel K is a map K: X x X -> R defined for any x, x' in X by K(x, x') = sum_{k=1}^M lambda_k psi_k(x) psi_k(x').",
+        "Fix a ridge lambda > 0, the regressor f_z,lambda of the finite-rank kernel K is the (unique) minimizer of the empirical risk functional."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Test Error",
+      "content": [
+        "Note that {psi_k}_{k=1}^M are orthonormal functions. Write target function f* = sum_{k=1}^M gamma_k psi_k + f_perp.",
+        "The finite-rank KRR test error is decomposed into Bias-Variance: R_z,lambda = bias + variance.",
+        "Where bias measures the error when there is no noise in the label, and variance is defined to be the difference between test error and bias."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "References",
+      "content": [
+        "[1] Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar. Foundations of machine learning. MIT press (2018).",
+        "[2] Arash Amini, Richard Baumgartner, and Dai Feng. Target alignment in truncated kernel ridge regression. NeurIPS (2022).",
+        "[3] Francis Bach. Learning theory from first principles. https://www.di.ens.fr/~fbach/ltfp_book.pdf (2023)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "Comparison",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Comparison table of assumptions and results between this paper and previous works like Mohri, Amini, and Bach",
+          "table_width": 557,
+          "table_height": 1564,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Main Result",
+      "content": [
+        "Under mild conditions on the kernel K, for N sufficiently large, there exist constants C1, C2 independent of N and lambda such that with high probability, we have bounds on the test error R_z,lambda."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "Experiment",
+      "content": [
+        "Our bounds are sharp and capture the decay of the test error in N. The figure below shows the simulation on two different kernels.",
+        "We also compare our upper bound with Bach [3]:"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Test Error on tNTK dataset showing decay with sample size N",
+          "figure_width": 486,
+          "figure_height": 606,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_1",
+          "description": "Test Error on LK dataset showing decay with sample size N",
+          "figure_width": 464,
+          "figure_height": 539,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Varying Sample Size on LK dataset comparing Bach's bound and our bound",
+          "figure_width": 451,
+          "figure_height": 604,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Varying Ridge on LK dataset comparing Bach's bound and our bound",
+          "figure_width": 465,
+          "figure_height": 564,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

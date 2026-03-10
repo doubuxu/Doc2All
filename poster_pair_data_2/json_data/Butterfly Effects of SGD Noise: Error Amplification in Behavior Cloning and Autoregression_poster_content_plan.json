@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "title": "Butterfly Effects of SGD Noise:Error Amplification in Behavior Cloning and Autoregression",
+    "authors": [
+      "Adam Block",
+      "Dylan Foster",
+      "Akshay Krishnamurthy",
+      "Max Simchowitz",
+      "Cyril Zhang"
+    ],
+    "organizations": [
+      "MIT",
+      "Microsoft Research NYC"
+    ],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "mit_logo",
+        "description": "MIT校徽",
+        "figure_width": 60,
+        "figure_height": 60
+      },
+      {
+        "fig_id": "ms_logo",
+        "description": "微软校徽",
+        "figure_width": 60,
+        "figure_height": 60
+      },
+      {
+        "fig_id": "qr_code",
+        "description": "项目GitHub二维码",
+        "figure_width": 80,
+        "figure_height": 80
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Behavior cloning &feedback loops",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "行为克隆反馈循环示意图，展示状态、策略与动作的交互",
+          "figure_width": 945,
+          "figure_height": 364,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "",
+      "content": [
+        "BC:fit θ to a collection of demonstrations from expert policy π*, minimizing 1-step loss",
+        "Usual view:BC reduces offline imitation learning to supervised learning"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Special case: pretraining vs. generation in LLMs",
+      "content": [
+        "st: sequence of t tokens",
+        "at: append a single token",
+        "πθ: autoregressive language model"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "GradientVarianceAmplification",
+      "content": [],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "GVA: an empirical pathology in BC with NNs",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "蝴蝶图标，象征蝴蝶效应",
+          "figure_width": 73,
+          "figure_height": 66,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "云朵图标，象征微小扰动",
+          "figure_width": 71,
+          "figure_height": 68,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "龙卷风图标，象征混沌结果",
+          "figure_width": 66,
+          "figure_height": 69,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Evidence: (across locomotion tasks & archs)",
+      "content": [
+        "(in the paper: accompanying quantitative studies)"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "分形奖励景观图，展示参数微调对奖励的剧烈影响",
+          "figure_width": 494,
+          "figure_height": 421,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "训练过程中的震荡曲线图",
+          "figure_width": 473,
+          "figure_height": 409,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "Theory: vignettes in toy models",
+      "content": [
+        "- marginally stable linear dynamics, linear π, π*",
+        "- \"CliffLQR\": halfspace reward → GVA",
+        "- SDE limit: EMA & LR schedules both work"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_8",
+      "title": "Algorithmic mitigations for GVA",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "不同架构和正则化方法下的训练步数与奖励对比图，突出EMA的效果",
+          "figure_width": 1058,
+          "figure_height": 472,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_9",
+      "title": "Exponential Moving Average",
+      "content": [],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_10",
+      "title": "Bonus: GVA & EMA in language generation",
+      "content": [
+        "EMA improves & stabilizes LM iterates before learning rate cooldown"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_8",
+          "description": "TinyStories语言模型在12层Transformer下的验证损失曲线，对比LM loss与EMA LM loss",
+          "figure_width": 1066,
+          "figure_height": 488,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

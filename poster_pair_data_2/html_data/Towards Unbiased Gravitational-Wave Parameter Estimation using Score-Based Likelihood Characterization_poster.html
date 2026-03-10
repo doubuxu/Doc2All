@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster: Towards Unbiased Gravitational-Wave Parameter Estimation using SLIC</title>
+    <style>
+        :root {
+            --primary-bg: #fdf6e3;
+            --header-bg: #f9e6d2;
+            --accent-color: #e67e22;
+            --text-color: #2c3e50;
+            --section-header-bg: #f4d0b5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            background-color: var(--primary-bg);
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 30px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 42px;
+            margin: 0;
+            color: #8e44ad;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 80%;
+        }
+
+        .poster-authors {
+            font-size: 22px;
+            margin: 15px 0 10px 0;
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        .header-logos {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 18px;
+            color: #d35400;
+            font-weight: 500;
+        }
+
+        .logo-strip {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        main {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .layout-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .section-header {
+            background-color: var(--section-header-bg);
+            padding: 8px 15px;
+            margin: 0;
+            font-size: 24px;
+            color: #a04000;
+            border-radius: 4px;
+            text-transform: capitalize;
+        }
+
+        .text-block {
+            font-size: 17px;
+            line-height: 1.5;
+            margin: 0;
+            text-align: justify;
+            color: var(--text-color);
+        }
+
+        .list-item {
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .figure-caption {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            text-align: justify;
+            padding: 0 10px;
+        }
+
+        .references-text {
+            font-size: 11px;
+            line-height: 1.3;
+            color: #555;
+            text-align: left;
+        }
+
+        .math-block {
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 22px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        footer {
+            border-top: 2px solid var(--section-header-bg);
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            color: #c0392b;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">Towards Unbiased Gravitational-Wave Parameter Estimation using SLIC</h1>
+        <p class="poster-authors">Ronan Legin, Maximiliano Isi, Kaze Wong, Alexandre Adam, Laurence Perreault-Levasseur, Yashar Hezaveh</p>
+        <div class="header-logos">
+            <div>Center for Computational Astrophysics, Flatiron Institute, Mila - Quebec Artificial Intelligence Institute, Institute, Ciela - Montreal Institute for Astrophysical Data Analysis and Machine Learning</div>
+            <div>github.com/ronanlegin/slic</div>
+        </div>
+        <div class="logo-strip">
+            <img src="./logo_flatiron.png" style="width: 120px; height: 60px;" data-semantic="Flatiron Institute Logo">
+            <img src="./logo_mila.png" style="width: 80px; height: 60px;" data-semantic="Mila Logo">
+            <img src="./logo_ciela.png" style="width: 140px; height: 50px;" data-semantic="Ciela Institute Logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Summary/Objectives</h2>
+                <p class="text-block">
+                    Gravitational wave (GW) parameter estimation demands critical assumptions of noise characteristics in detectors like LIGO, Virgo, and KAGRA. In this study, we utilize score-based diffusion models to empirically learn the noise distribution straight from detector data, and use this to build an unbiased model of the likelihood function.
+                </p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Introduction</h2>
+                <p class="text-block">
+                    Traditional GW parameter estimation assumes the instrumental noise to be Gaussian and stationary (B. P. Abbott et al., 2020). However, real noise often deviates from a stationary Gaussian due to instrument evolution, data contamination by transient non-Gaussian excursions and nonlinear evolution of narrow spectral features (B. P. Abbott et al., 2016a,b; Buikema et al., 2020). These contaminants can only be managed by specific treatments, resulting in computational expense and potential biases. This work presents a new inference framework for GW parameter estimation, dismissing the need for stationary Gaussian noise assumptions.
+                </p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Methodology</h2>
+                <p class="text-block">
+                    Given a set of samples {x_i} from the underlying distribution of noise Q, the objective is to infer the score function ∇_x log Q(x). This score function is learned using a neural network through the process of denoising score matching (Hyvärinen, 2005; Vincent, 2011; Song et al., 2020). Once learned, it can be used in a diffusion scheme to generate new samples of noise as shown in Fig. 1.
+                </p>
+                <p class="text-block">
+                    In the context of score-based likelihood characterization (Legin et al., 2023), the score of the likelihood can be expressed as:
+                </p>
+                <div class="math-block">
+                    ∇_θ log p(x_O | θ) = -∇_x log Q(x) ∇_θ M(θ),
+                </div>
+                <p class="text-block">
+                    where x_O = M(θ) + x represents an observed GW signal and M(θ) denotes the physical model, accepting the parameters of interest, θ, as input. Throughout inference, x are residuals between the observation and the model, and their statistics should follow the noise if the signal model is accurate.
+                </p>
+                <div class="figure-container">
+                    <img src="./fig_1.jpg" style="width: 550px; height: 358px;" data-semantic="One-sided noise power spectral density (PSD) of LIGO noise comparing SLIC and Welch estimates.">
+                    <p class="figure-caption">Figura 1: One-sided noise power spectral density (PSD) of LIGO noise as estimated from 1024 samples of synthetic 4s-long segments of noise generated by our score-based model trained on 11 h of LIGO noise (SLIC, blue), compared to a mean Welch estimate measured empirically from 1 h of real LIGO Hanford noise recorded after the data used in training and not overlapping with it (Welch, dashed gray).</p>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Data</h2>
+                <p class="text-block">
+                    We train the score-based network on 11 h of actual LIGO data around GW150914 (GPS time 1126259462.423 s) obtained from the Gravitational Wave Open Science Center (R. Abbott et al., 2021; Abbot et al., 2023). We split these data into 4 s segments for training, taking care to discard the one segment containing the true signal.
+                </p>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Results</h2>
+                <p class="text-block">
+                    We check that the SLIC likelihood can infer source parameters without bias. To this end, we inject simulated signals with known parameters into real LIGO noise not seen in training, and estimate the parameters using both our model and a standard Gaussian likelihood assuming a Welch PSD as in Fig. 1. For this example, we have chosen a segment of real noise data without significant glitches, such that the Gaussian likelihood also recovers the true parameters. As shown, the SLIC posterior is capable of recovering the true injected values with high credibility.
+                </p>
+                <div class="figure-container">
+                    <img src="./fig_2.jpg" style="width: 550px; height: 551px;" data-semantic="Posterior distribution of five recovered parameters comparing SLIC and standard Gaussian likelihood.">
+                    <p class="figure-caption">Figura 2: Posterior distribution of the five recovered parameters of a simulated signal using SLIC (orange) and the standard Gaussian likelihood (blue). The contours are the 10%, 39.35% and 90% interval. The true values are marked by the black lines. The posterior distribution using SLIC has a smaller variance compared to the Gaussian likelihood.</p>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Discussion and conclusions</h2>
+                <p class="text-block">We are working on a number of improvements before applying our framework to real signals contaminated by instrumental glitches, such as GW170817.</p>
+                <ul>
+                    <li class="list-item">We plan to enhance the current model to generate larger segments (from 4 to 128 seconds) to analyze binary neutron stars.</li>
+                    <li class="list-item">Instead of analyzing data from a single detector, we intend to coherently model data from a network of detectors to improve parameter estimation.</li>
+                    <li class="list-item">We aim to improve the generalization of the model by training on larger quantities of data spanning months of detector data.</li>
+                    <li class="list-item">We aim to boost inference efficiency by transitioning from MALA to FLOWMC (Wong et al., 2023).</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">References</h2>
+                <div class="references-text">
+                    Abbott, R., et al. (2023). Gravitational wave open science center (1126216262-1126302662). Retrieved from https://gwosc.org/archive/links/01/<br>
+                    Abbott, B. P., et al. (2016a). Characterization of transient noise in Advanced LIGO relevant to gravitational wave signal GW150914. Class. Quant. Grav., 33(13), 134001.<br>
+                    Abbott, B. P., et al. (2016b). Sensitivity of the Advanced LIGO detectors at the beginning of gravitational wave astronomy. Phys. Rev. D, 93(11), 112004.<br>
+                    Abbott, B. P., et al. (2020). A guide to LIGO-Virgo detector noise and extraction of transient gravitational-wave signals. Class. Quant. Grav., 37(5), 055002.<br>
+                    Buikema, A., et al. (2020). Sensitivity and performance of the Advanced LIGO detectors in the third observing run. Phys. Rev. D, 102(6), 062003.<br>
+                    Hyvärinen, A. (2005, dec). Estimation of non-normalized statistical models by score matching. J. Mach. Learn. Res., 6, 695–709.<br>
+                    Legin, R., Adam, A., Hezaveh, Y., & Perreault Levasseur, L. (2023, February). Beyond Gaussian Noise: A Generalized Approach to Likelihood Analysis with non-Gaussian Noise. arXiv e-prints, arXiv:2302.03046.<br>
+                    Song, Y., Sohl-Dickstein, J., Kingma, D. P., Kumar, A., Ermon, S., & Poole, B. (2020, November). Score-Based Generative Modeling through Stochastic Differential Equations. arXiv e-prints, arXiv:2011.13456.<br>
+                    Wong, K. W. K., Gabrié, M., & Foreman-Mackey, D. (2023). flowMC: Normalizing flow enhanced sampling package for probabilistic inference in JAX. J. Open Source Softw., 8(83), 5021.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div>ronan.legin@umontreal.ca</div>
+        <div>misi@flatironinstitute.org</div>
+        <div>kwong@flatironinstitute.org</div>
+    </footer>
+</div>
+
+</body>
+</html>

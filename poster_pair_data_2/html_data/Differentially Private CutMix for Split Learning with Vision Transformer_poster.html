@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Differentially Private CutMix Poster</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+        }
+        #poster-canvas {
+            width: 1800px;
+            height: 1200px;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        header {
+            border-bottom: 4px solid #003366;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .poster-title {
+            font-size: 54px;
+            margin: 0;
+            color: #000;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        .poster-authors {
+            font-size: 24px;
+            margin: 15px 0;
+            color: #333;
+            font-weight: 600;
+        }
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+        .header-logos img {
+            height: 60px;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            gap: 40px;
+        }
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .layout-block {
+            background: #fff;
+        }
+        .section-header {
+            background-color: #f8f8f8;
+            border-left: 8px solid #003366;
+            padding: 10px 15px;
+            font-size: 28px;
+            color: #003366;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+        }
+        .text-block {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 10px 0;
+            color: #222;
+        }
+        .list-item {
+            font-size: 18px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .figure-container {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .row-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            margin: 15px 0;
+            gap: 10px;
+        }
+        .references-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: auto;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+        .blue-text {
+            color: #337ab7;
+        }
+        .algorithm-box {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <h1 class="poster-title">Differentially Private CutMix for Split Learning with Vision Transformer</h1>
+            <p class="poster-authors">Seungeun Oh, Jihong Park, Sihun Baek, Hyelin Nam, Praneeth Vepakomma, Ramesh Raskar, Medhi Bennis, and Seong-Lyun Kim</p>
+            <div class="header-logos">
+                <div>Yonsei University</div>
+                <div>Deakin University</div>
+                <div>MIT</div>
+                <div>Neural Information Processing Systems</div>
+                <div>github.com/yonsei-ml/DP-CutMixSL</div>
+                <img src="./logo_yonsei.png" style="width: 60px; height: 60px;" data-semantic="Yonsei University Logo">
+                <img src="./logo_mit.png" style="width: 80px; height: 40px;" data-semantic="MIT Logo">
+            </div>
+        </header>
+
+        <main>
+            <!-- Column 1 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Motivation</h2>
+                    <div class="row-container">
+                        <div class="figure-container">
+                            <img src="./fig_1.png" style="width: 160px; height: 158px;" data-semantic="Input raw image of a cat with grid lines">
+                            <p class="text-block" style="font-size: 14px;">(a) Input raw image.</p>
+                        </div>
+                        <div class="figure-container">
+                            <img src="./fig_2.png" style="width: 160px; height: 158px;" data-semantic="Smashed data representation of ViT">
+                            <p class="text-block" style="font-size: 14px;">(b) Smashed data of ViT.</p>
+                        </div>
+                        <div class="figure-container">
+                            <img src="./fig_3.png" style="width: 100px; height: 98px;" data-semantic="Smashed data representation of CNN">
+                            <p class="text-block" style="font-size: 14px;">(c) Smashed data of CNN.</p>
+                        </div>
+                    </div>
+                    <ul>
+                        <li class="list-item">Recently, vision transformer (ViT) outpace CNN in CV field [1]. Split learning (SL) [2] with model partitioning is suitable for its large memory size and computing cost.</li>
+                        <li class="list-item"><b>Objective:</b> to design privacy-preserving distributed ML considering differences between ViT and CNN.</li>
+                    </ul>
+                    <p class="text-block">1. ViT often omits pooling: Efficient <span class="highlight">regularization on smashed data</span>, but privacy leak.</p>
+                    <p class="text-block">2. ViT learns global spatial information: <span style="color: #aaa;">Robust to large noise partially applied</span> to the image (i.e. CutMix [3]).</p>
+                    <p class="text-block">3. ViT runs at patch-level: Possibilities of a <span class="blue-text">patch-scale regularizer</span>.</p>
+                    <p class="text-block">→ Integrating the above yields a <span class="blue-text">patch-level</span> randomized <span class="highlight">CutMix</span> of <span class="highlight">hidden representations</span> (patch CutMix).</p>
+                    <ul>
+                        <li class="list-item">To this end, we propose DP-CutMixSL, which combines patch CutMix with the differentially private (DP) SL framework.</li>
+                    </ul>
+                </section>
+
+                <div class="references-text">
+                    [1] A. Dosovitskiy, et al. An image is worth 16x16 words: Transformers for image recognition at scale. arXiv:2010.11929<br>
+                    [2] P. Vepakomma, et al. Split learning for health: Distributed deep learning without sharing raw patient data. arXiv:1812.00564<br>
+                    [3] S. Yun, et al. Cutmix: Regularization strategy to train strong classifiers with localizable features. IEEE/CVF ICCV 2019<br>
+                    [4] I. Mironov. Rényi differential privacy. IEEE CSF 2017
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Proposed: DP-CutMixSL</h2>
+                    <div class="figure-container">
+                        <img src="./fig_4.png" style="width: 540px; height: 247px;" data-semantic="DP-CutMixSL system architecture showing Clients, Mixer, and Server workflow">
+                    </div>
+                    <div class="algorithm-box">
+                        <p class="text-block"><b>Algorithm 1</b> DP-CutMixSL</p>
+                        <p class="text-block" style="font-size: 12px;">
+                            <b>requirements:</b> w = [w_c,i, w_s] (w_c,i: lower model segment, w_s: upper model segment)<br>
+                            while w not converged do<br>
+                            &nbsp;&nbsp;/* Runs on mixer */<br>
+                            &nbsp;&nbsp;samples {a1, ..., an} ~ Dir(alpha)<br>
+                            &nbsp;&nbsp;generates pseudo random sequences Mi for all i<br>
+                            &nbsp;&nbsp;/* Runs on client i */<br>
+                            &nbsp;&nbsp;generates smashed data si by passing input xi through w_c,i<br>
+                            &nbsp;&nbsp;produces s'_i by masking si via Mi<br>
+                            &nbsp;&nbsp;uploads s'_i to the server<br>
+                            &nbsp;&nbsp;/* Runs on server */<br>
+                            &nbsp;&nbsp;produces s'_v via aggregation for all i<br>
+                            &nbsp;&nbsp;updates w_s via backprop<br>
+                            end while
+                        </p>
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">DP-CutMixSL's Operation:</h2>
+                    <ul>
+                        <li class="list-item">1. Gaussian noise mechanism: Each device first injects random Gaussian noise into smashed data.</li>
+                        <li class="list-item">2. Random Cutout: Each device punches randomly selected patches of smashed data, yielding Cutout smashed data.</li>
+                        <li class="list-item">3. Random Mixup: These Cutout smashed data are uploaded to and put together by the server, resulting in DP-CutMix smashed data that continue FP.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_4">
+                    <h2 class="section-header">Differential Privacy Analysis</h2>
+                    <p class="text-block"><b>Theorem 1.</b> The RDP bounds [4] are given as:</p>
+                    <p class="text-block" style="text-align: center; font-style: italic;">
+                        ε_o(α) = α/2 * (Δ²Dx/σx² + Dy/σy²)<br>
+                        ε_Mix(α) = ... (complex RDP formula)<br>
+                        ε_CutMix(α) = ... (combined RDP formula)
+                    </p>
+                    <ul>
+                        <li class="list-item">1. <span class="blue-text">Large privacy leakage in ViT:</span> Without pooling, smashed data size Dx is large.</li>
+                        <li class="list-item">2. Cutout & Mixing <span class="blue-text">amplify DP:</span> Mixup is the best for privacy, but accuracy. CutMix is a good compromise.</li>
+                        <li class="list-item">3. <span class="blue-text">Hide in the crowd:</span> Many clients inherently preserve privacy.</li>
+                    </ul>
+                </section>
+
+                <section class="layout-block" data-section-id="section_5">
+                    <h2 class="section-header">Numerical Evalution</h2>
+                    <div class="figure-container">
+                        <img src="./table_1.png" style="width: 540px; height: 162px;" data-semantic="Performance comparison table showing CutMixSL achieving highest accuracy across ViT and CNN models">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./fig_5.png" style="width: 540px; height: 172px;" data-semantic="Accuracy vs Noise Variance and Mixing Group Size charts">
+                    </div>
+                    <ul>
+                        <li class="list-item">1. CutMix SL achieves <span class="blue-text">highest accuracy</span> (Top)</li>
+                        <li class="list-item">2. <span class="blue-text">Privacy-Accuracy trade-off</span>, in terms of:
+                            <ul>
+                                <li class="list-item">- Mixup vs. Cutout (Left)</li>
+                                <li class="list-item">- Mixing Group Size vs. Accuracy (Right)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CROP Poster Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        #poster-canvas {
+            width: 2400px;
+            height: 1350px;
+            background-color: white;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 4px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 64px;
+            margin: 0;
+            color: #000;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 32px;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 24px;
+            width: 100%;
+        }
+
+        .header-logos div {
+            color: #555;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: 40px;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .layout-block {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            font-size: 38px;
+            color: #000;
+            border-bottom: 2px solid #333;
+            margin: 0 0 15px 0;
+            padding-bottom: 5px;
+        }
+
+        .text-block {
+            font-size: 24px;
+            line-height: 1.4;
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+
+        .list-item {
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .qr-section {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .qr-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        img {
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">CROP: Certifying Robust Policies for Reinforcement Learning through Functional Smoothing</h1>
+        <p class="poster-authors">Fan Wu, Linyi Li, Zijian Huang, Yevgeniy Vorobeychik, Ding Zhao, Bo Li</p>
+        <div class="header-logos">
+            <div>University of Illinois at Urbana-Champaign</div>
+            <div>Washington University in St. Louis</div>
+            <div>Carnegie Mellon University</div>
+            <div>github.com/lucas-fan/CROP</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Background & Motivation</h2>
+                <ul>
+                    <li class="list-item">Testing and improving the robustness of safety-critical applications before their massive deployment to real-world is of great importance.</li>
+                    <li class="list-item">Robustness certification for a given learning algorithm is needed to end the repeated game between the attackers and defenders.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Threat Model</h2>
+                <p class="text-block">Testing-time evasion attack on agent's observation. Adversary can apply l2-bounded perturbations.</p>
+                <div class="figure-container">
+                    <img src="./fig_1.jpg" style="width: 700px; height: 362px;" data-semantic="Reinforcement learning threat model showing adversary perturbing state observations during testing phase.">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Certification Goal</h2>
+                <p class="text-block">Provide test-time certification for the performance of the trained agent in the perturbed environment.</p>
+                <ul>
+                    <li class="list-item">1. Providing criteria for robustness certification.</li>
+                    <li class="list-item">2. Proposing certification strategies corresponding to different certification criteria.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Certification Criteria</h2>
+                <p class="text-block"><strong>Criterion 1 (state-level):</strong> Per-state action stability. Maximum Perturbation Magnitude ε.</p>
+                <p class="text-block"><strong>Criterion 2 (trajectory-level):</strong> Cumulative reward lower bound. Lower bound of perturbed cumulative reward J.</p>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">CROP Framework</h2>
+                <p class="text-block"><strong>Per-State Action Certification (CROP-LoAct):</strong> Local randomized smoothing on states. Action-value functional smoothing.</p>
+                <ul>
+                    <li class="list-item">Lipschitz continuity of Q w.r.t. the state input.</li>
+                    <li class="list-item">Lower bound of ε calculation based on smoothed policy.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Cumulative Reward Certification</h2>
+                <p class="text-block"><strong>CROP-GRe:</strong> Global smoothing on trajectories.</p>
+                <ul>
+                    <li class="list-item">Expectation bound via mean smoothing.</li>
+                    <li class="list-item">Percentile bound via percentile smoothing.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">CROP-LoRe: Local smoothing + adaptive search</h2>
+                <p class="text-block">Sequence of certified radii for actions and adaptive search algorithm.</p>
+                <div class="row-container">
+                    <img src="./fig_2.jpg" style="width: 350px; height: 114px;" data-semantic="Sequence of certified radii for different actions represented as a bar chart and state transitions.">
+                    <img src="./fig_3.jpg" style="width: 300px; height: 124px;" data-semantic="Adaptive search algorithm visualization showing a tree structure for finding the minimum reward bound.">
+                </div>
+                <p class="text-block">1. Trajectory exploration and expansion: obtain the lower bound for ε (DFS).</p>
+                <p class="text-block">2. Perturbation magnitude growth: obtain a new ε (priority queue).</p>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_8">
+                <h2 class="section-header">Experiments</h2>
+                <p class="text-block"><strong>Setup:</strong> Four RL environments: Freeway, Pong, CartPole, Highway. Nine DQN variants including StdTrain, AdvTrain, etc.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_9">
+                <h2 class="section-header">Robustness Certification for Per-State Action</h2>
+                <div class="figure-container">
+                    <img src="./fig_4.jpg" style="width: 700px; height: 196px;" data-semantic="Robustness certification results for per-state action across Freeway and Pong environments over time steps.">
+                </div>
+                <ul>
+                    <li class="list-item">GradDQN and RadialRL achieve the highest certified radius on Freeway.</li>
+                    <li class="list-item">Periodic patterns can be observed in Pong.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_10">
+                <h2 class="section-header">Robustness Certification for Cumulative Reward</h2>
+                <div class="figure-container">
+                    <img src="./fig_5.jpg" style="width: 700px; height: 294px;" data-semantic="Robustness certification results for cumulative reward showing global and local bounds against attack magnitude.">
+                </div>
+                <ul>
+                    <li class="list-item">Under global smoothing, percentile bound is tighter than expectation bound.</li>
+                    <li class="list-item">The certification is relatively tight compared with the empirical result.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_11">
+                <div class="qr-section">
+                    <img src="./fig_6.jpg" style="width: 70px; height: 42px;" data-semantic="Directional arrow pointing to the QR codes.">
+                    <div class="qr-item">
+                        <img src="./fig_7.jpg" style="width: 120px; height: 116px;" data-semantic="QR code for the research paper.">
+                        <span>Paper</span>
+                    </div>
+                    <div class="qr-item">
+                        <img src="./fig_8.jpg" style="width: 120px; height: 116px;" data-semantic="QR code for the leaderboard.">
+                        <span>Leaderboard</span>
+                    </div>
+                    <div class="qr-item">
+                        <img src="./fig_9.jpg" style="width: 120px; height: 120px;" data-semantic="QR code for the code repository.">
+                        <span>Repository</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

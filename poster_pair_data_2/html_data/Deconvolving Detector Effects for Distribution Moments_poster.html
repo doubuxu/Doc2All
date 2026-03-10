@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poster Layout - Deconvolving Detector Effects</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #poster-canvas {
+            width: 2800px; /* Based on figure widths and 3-column layout */
+            margin: 0 auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 8px solid #1a4a7c;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+
+        .poster-title {
+            font-size: 84px;
+            color: #1a4a7c;
+            margin: 0 0 20px 0;
+        }
+
+        .poster-authors {
+            font-size: 48px;
+            margin: 0 0 20px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            font-size: 42px;
+            color: #555;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .layout-block {
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+
+        /* Section Specific Colors */
+        [data-section-id="section_1"] { background-color: #e0f7fa; } /* Abstract - Light Blue */
+        [data-section-id="section_4"] { background-color: #e8eaf6; } /* Data sets - Light Purple */
+        [data-section-id="section_3"] { background-color: #fce4ec; } /* Neural Networks - Pink */
+        [data-section-id="section_6"] { background-color: #fffde7; } /* Loss Function - Yellow */
+        [data-section-id="section_7"] { background-color: #fff3e0; } /* Gaussian Case Study - Orange */
+        [data-section-id="section_9"] { background-color: #e8f5e9; } /* Jet width - Green */
+
+        .section-header {
+            font-size: 42px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        /* Override header colors for specific sections */
+        [data-section-id="section_1"] .section-header { color: #00796b; }
+        [data-section-id="section_4"] .section-header { color: #3f51b5; }
+        [data-section-id="section_3"] .section-header { color: #c2185b; }
+        [data-section-id="section_7"] .section-header { color: #e65100; }
+
+        .text-block {
+            font-size: 32px;
+            line-height: 1.4;
+            margin: 15px 0;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 40px;
+        }
+
+        .list-item {
+            font-size: 32px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            list-style-type: disc;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .formula {
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+            text-align: center;
+            font-size: 40px;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        .references-text {
+            font-size: 24px;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">Deconvolving Detector Effects for Distribution Moments</h1>
+        <p class="poster-authors">Krish Desai, Benjamin Nachman, Jesse Thaler</p>
+        <div class="header-logos">
+            <div>UC Berkeley, LBNL, MIT</div>
+            <div>krish.desai@berkeley.edu</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Abstract</h2>
+                <ul>
+                    <li class="list-item">Deconvolving detector distortions – critical step to <b>compare cross section measurements</b> with <b>theoretical predictions</b></li>
+                    <li class="list-item">Most approaches require binning</li>
+                    <li class="list-item">Theoretical predictions often at the level of moments.</li>
+                    <li class="list-item">New approach to <b>directly unfold distribution moments</b> as a function of other observables <b>without discretizing</b> data</li>
+                    <li class="list-item"><b>Moment Unfolding</b> uses a <b>modified GAN</b> architecture</li>
+                    <li class="list-item"><b>Demonstrate the performance</b> of this approach using jet substructure measurements in collider physics.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Background</h2>
+                <ul>
+                    <li class="list-item"><b>Unfolding (deconvolution):</b> correcting detector distortions in experimental data – necessary for accurately comparing data between experiments and with theoretical predictions.</li>
+                    <li class="list-item">Typically, entire spectra unfolded – moments computed afterward.</li>
+                    <li class="list-item"><b>Current approaches</b> discretize support—then unfold histogram.</li>
+                    <li class="list-item">This binning procedure introduces <b>discretization artifacts.</b></li>
+                    <li class="list-item">Unfold without binning – generic solution to unfolding entire spectra – may compromise precision for small set of moments.</li>
+                    <li class="list-item">Dedicated machine learning-based unfolding method to directly unfold the observable moments.</li>
+                    <li class="list-item">GAN learns reweighting function inspired by the Boltzman equation – parameters identified with observable moments.</li>
+                    <li class="list-item">Noniterative in contrast to methods like <b>Omnifold</b> (<i>Andreassen et al, Phys. Rev. Lett. 124, 182001 – 2020</i>)</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Neural Networks</h2>
+                <p class="text-block"><b>Generator:</b> g(x) = e<sup>λ₁x + ... + λₙxⁿ</sup> <b>reweights</b> generation to truth. n trainable parameters λ, learn n moments</p>
+                <p class="text-block"><b>Discriminator:</b> d : ℝ → [0, 1] distinguishes <b>reweighted simulation</b> from <b>data</b></p>
+                <ul>
+                    <li class="list-item">Maxwell–Boltzmann distribution maximizes entropy while holding mean energy constant</li>
+                    <li class="list-item">Moment unfolding maximises BCE loss holding moments constant</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Data sets</h2>
+                <ul>
+                    <li class="list-item">Simulation (X<sub>S</sub>) : detector level simulation</li>
+                    <li class="list-item">Generation (X<sub>G</sub>) : particle level simulation</li>
+                    <li class="list-item">Data (X<sub>D</sub>) : detector level data</li>
+                    <li class="list-item">Truth (X<sub>T</sub>) : particle level data</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Machine Learning Implementation</h2>
+                <div class="figure-container">
+                    <img src="./fig_3.png" style="width: 1005px; height: 485px;" data-semantic="Flowchart showing the relationship between Particle Level (Generation, Truth) and Detector Level (Data, Simulation) with reweighting functions g and d.">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Loss Function</h2>
+                <div class="formula">
+                    L[g, d] = -1/N Σ [log(d(x<sub>D</sub>)) + Σ g(x<sub>G</sub>) log(1 - d(x<sub>S</sub>))]
+                </div>
+                <ul>
+                    <li class="list-item">All neural networks implemented using the Keras high-level API with Tensorflow2 backend, optimized with Adam.</li>
+                    <li class="list-item">Discriminator d parametrized with three hidden layers, 50 nodes per layer. Intermediate layers → ReLU, last layer → sigmoid.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">Gaussian Case Study</h2>
+                <p class="text-block"><b>Gaussian distributions</b></p>
+                <ul>
+                    <li class="list-item">X<sub>T</sub> ~ N(0.5, 1)</li>
+                    <li class="list-item">X<sub>G</sub> ~ N(0, 1)</li>
+                    <li class="list-item">detector effects Z ~ N(0, 5)</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_8">
+                <h2 class="section-header">Jet Substructure</h2>
+                <div class="row-container">
+                    <img src="./fig_1.png" style="width: 515px; height: 373px;" data-semantic="Histogram of trials vs x comparing truth, gen, and weighted gen distributions.">
+                    <img src="./fig_2.png" style="width: 501px; height: 370px;" data-semantic="Loss curve as a function of the mean x, showing the minimum at the true value.">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_9">
+                <h2 class="section-header">Jet width</h2>
+                <div class="formula">
+                    w = (1 / p<sub>T,jet</sub>) Σ p<sub>T,i</sub> ΔR<sub>i</sub>
+                </div>
+                <ul>
+                    <li class="list-item">p<sub>T,i</sub> = transverse momentum</li>
+                    <li class="list-item">ΔR<sub>i</sub> = angular distance from jet axis</li>
+                    <li class="list-item">Example focusses on jet width. Method can be applied to other jet observables like charge, mass, etc.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_10">
+                <div class="row-container">
+                    <img src="./fig_4.png" style="width: 504px; height: 362px;" data-semantic="Histogram of trials vs x for jet width comparing truth, gen, and weighted gen.">
+                    <img src="./fig_5.png" style="width: 500px; height: 367px;" data-semantic="Loss curves for different moments of jet width, showing convergence to true values.">
+                </div>
+                <ul>
+                    <li class="list-item">First two moments of the reweighted generation match truth well</li>
+                    <li class="list-item">Full distributions not statistically identical</li>
+                    <li class="list-item">This is because higher moments are relevant and are not the same between truth and generation.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_11">
+                <h2 class="section-header">Conclusions and Outlook</h2>
+                <ul>
+                    <li class="list-item">Proposed Moment Unfolding as a novel, flexible, unbinned, and non-iterative reweighting-based deconvolution method</li>
+                    <li class="list-item">Showed promising results when applied to both Gaussian datasets as well as detector data from the LHC</li>
+                    <li class="list-item">Future work – whether this method could be used to unfold infinitely many moments, i.e. entire probability density</li>
+                    <li class="list-item">Important questions about partition function normalization, stability, and overlapping support</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

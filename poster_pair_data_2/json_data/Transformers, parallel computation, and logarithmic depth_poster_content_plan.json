@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "title": "Transformers, Parallel Computation, and Logarithmic Depth",
+    "authors": [
+      "Clayton Sanford",
+      "Daniel Hsu",
+      "Matus Telgarsky"
+    ],
+    "organizations": [
+      "Columbia University",
+      "New York University",
+      "Spotlight Paper"
+    ],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "logo_icml",
+        "description": "ICML Conference Logo",
+        "figure_width": 120,
+        "figure_height": 40
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Motivation",
+      "content": [
+        "Motivating question:How can transformers be understood as models of parallel computation (e.g. MPC)?",
+        "Representational powers of depth?",
+        "Multi-step reasoning capabilities?",
+        "Comparisons with other models (state-space models, sub-quadratic attention transformers, GNNs)?"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Transformer Architecture",
+      "content": [
+        "Self-attention unit: f(X) = softmax(XQKᵀXᵀ)XV",
+        "Multi-headed attention: L(X) = X + Σ h_i(X)",
+        "Arbitrary element-wise encoding (MLP + positional encoding)",
+        "Full transformer: T(X) = (φ_D ∘ L_D ∘ ... ∘ L_1 ∘ φ_0)(X)"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Massively Parallel Computation (MPC)",
+      "content": [
+        "Theoretical model of MapReduce by Karloff, et al '10.",
+        "N-bit input divided among q machines with local memory s.",
+        "For round r = 1, ..., R: Each machine performs computation and communicates.",
+        "(γ, δ)-MPC protocols have local memory s = O(N^δ) and global memory qs = O(N^{1+γ})."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "Conjecture (1-cycle vs 2-cycle; Ghaffari, et al '19)",
+      "content": [
+        "Any (γ, δ)-MPC protocol with δ ∈ (0, 1) that distinguishes one length-N cycle from two length-N/2 cycles uses R = Ω(log N) rounds."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "k-Hop Induction Heads",
+      "content": [
+        "Induction Heads:Toy task to complete bigram via previous occurrence: IH(baebcabebdea) = b.",
+        "Occurs naturally in trained transformers; useful primitive for mechanistic interpretability.",
+        "Two-step logical reasoning task with natural two-layer transformer construction.",
+        "k-hop Induction Heads:Iterated variant of IH to capture k-step reasoning."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Theory Result #1: Near-equivalence of Transformers & MPC",
+      "content": [],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "Theory Result #2: Efficient Multi-Step Reasoning Representations",
+      "content": [
+        "Construction:Transformers of depth L = ⌊log₂ k⌋ + 2 and width m = O(1) can solve k-IH.",
+        "First two layers solve induction heads for each input.",
+        "Subsequent layers employ \"pointer doubling\" to chain together solutions."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_8",
+      "title": "Theory Result #3: Sub-optimality of Other Architectures",
+      "content": [
+        "Graph Neural Networks:Solving graph connectivity requires L√m = Õ(N^{1/4}).",
+        "State-Space Models:RNN, LSTM, Mamba solutions to k-IH require depth L ≥ k or width m = Ω(N/k⁶).",
+        "Sub-Quadratic Attention Transformers:Every kernel-based or masking-based transformer variant that solves k-IH has either depth L ≥ k or near-quadratic computation."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_9",
+      "title": "Empirical Result #1: Log-depth k-Hop Induction Heads",
+      "content": [
+        "Task:Multi-task k-IH for k = 0, ..., 16; sequence length N = 100.",
+        "Result:Low error when L ≤ ⌊log₂ k⌋, as predicted by theory."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Line graph showing classification error vs k for different transformer depths L, demonstrating that error drops as depth increases logarithmically with k.",
+          "figure_width": 494,
+          "figure_height": 351,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_10",
+      "title": "Empirical Result #2: Interpretability of Learned Models",
+      "content": [
+        "16-IH attention matriceswith colored partial solutions.",
+        "Yes.Close correspondence between self-attention matrices and partial solutions to k-IH."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "Attention matrix for Layer 2, 1-IH",
+          "figure_width": 120,
+          "figure_height": 116,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Attention matrix for Layer 4, 2-IH",
+          "figure_width": 120,
+          "figure_height": 116,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Attention matrix for Layer 6, 8-IH",
+          "figure_width": 120,
+          "figure_height": 116,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Heatmap showing the correspondence between empirical attention matrices and theoretical j-IH maps across layers and heads.",
+          "figure_width": 450,
+          "figure_height": 406,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_11",
+      "title": "Paper Links",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_8",
+          "description": "QR code for prior communication paper",
+          "figure_width": 90,
+          "figure_height": 88,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_9",
+          "description": "QR code for this paper",
+          "figure_width": 90,
+          "figure_height": 88,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_10",
+          "description": "QR code for graph algorithms application",
+          "figure_width": 90,
+          "figure_height": 88,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

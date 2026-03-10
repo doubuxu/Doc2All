@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "title": "Generation Probabilities are Not Enough: Improving Error Highlighting in AI Code Suggestions",
+    "authors": [
+      "Helena Vasconcelos",
+      "Gagan Bansal",
+      "Adam Fourney",
+      "Vera Liao",
+      "Jennifer Wortman Vaughan"
+    ],
+    "organizations": [
+      "Microsoft Research"
+    ],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "fig_1",
+        "description": "Microsoft Research and Stanford University Logo",
+        "figure_width": 93,
+        "figure_height": 136
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "",
+      "content": [
+        "Programmers increasingly use AI generated code (e.g., from CoPilot) in IDEs!",
+        "However, generated code may be erroneous!We need to help programmers double-check AI code and identify when and where it may be incorrect."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "",
+      "content": [
+        "We explore two options to highlight uncertain, potentially erroneous regions:",
+        "Usegeneration probabilitiesor \"confidence scores\" to show where the model is uncertain",
+        "Learn anedit modelto show where programmers are most likely to make edits"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "",
+      "content": [
+        "Mixed-methods, within-subjects study with 30 programmers showed thatedit model leads to:",
+        "Significantlyfastertask completion time",
+        "Significantlymore localized edits",
+        "Strongerpreference",
+        "compared to the generation probability and no-highlights"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Bar chart showing task completion time: Prediction, Generation Probability, and Edit Model",
+          "figure_width": 362,
+          "figure_height": 233,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Bar chart showing survival of tokens for highlighted vs non-highlighted code",
+          "figure_width": 372,
+          "figure_height": 235,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Bar chart showing user preference for Edit Model over Generation Probability",
+          "figure_width": 361,
+          "figure_height": 237,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

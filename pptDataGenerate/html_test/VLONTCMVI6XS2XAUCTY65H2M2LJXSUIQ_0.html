@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT Slide - Case Study 5</title>
+    <style>
+        /* 基础重置 */
+        .ppt-slide * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", "Helvetica", sans-serif;
+        }
+
+        /* 页面作用域容器 */
+        .ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* 画布容器 - 4:3 比例 */
+        .ppt-slide #ppt-canvas {
+            width: 1200px;
+            height: 900px;
+            background-color: white;
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* 左侧装饰条 */
+        .ppt-slide .sidebar-decoration {
+            width: 12.5%; /* 约 150px */
+            height: 100%;
+            background-color: #4d4d4d;
+            flex-shrink: 0;
+        }
+
+        /* 主体内容区 */
+        .ppt-slide .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+        }
+
+        /* 顶部装饰条容器 */
+        .ppt-slide .top-decoration-bar {
+            margin-top: 200px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ppt-slide .gradient-block {
+            width: 350px;
+            height: 100%;
+            background: linear-gradient(to right, #4d4d4d, #999999);
+        }
+
+        .ppt-slide .square-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .ppt-slide .gray-square {
+            width: 35px;
+            height: 35px;
+            background-color: #7f7f7f;
+        }
+
+        /* 头部元数据 */
+        .ppt-slide header {
+            position: absolute;
+            top: 60px;
+            right: 60px;
+            text-align: right;
+        }
+
+        .ppt-slide .ppt-title {
+            font-size: 100px;
+            font-weight: 900;
+            color: #333;
+            text-shadow: 4px 4px 0px #ffff00; /* 模拟黄色阴影/描边 */
+            letter-spacing: -2px;
+        }
+
+        /* 逻辑区块 */
+        .ppt-slide main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding-right: 60px;
+            padding-bottom: 100px;
+        }
+
+        .ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .ppt-slide .text-block {
+            font-size: 110px;
+            font-weight: 900;
+            color: #333;
+            text-align: right;
+            line-height: 1.0;
+            text-shadow: 4px 4px 0px #ffff00;
+        }
+
+        /* 页脚信息 */
+        .ppt-slide footer {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            font-family: "Times New Roman", serif;
+            color: #333;
+        }
+
+        .ppt-slide .footer-info {
+            text-align: left;
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        .ppt-slide .page-number {
+            font-size: 28px;
+        }
+
+        /* 协议要求的占位类名 */
+        .ppt-slide .ppt-authors, 
+        .ppt-slide .header-logos,
+        .ppt-slide .section-header {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ppt-slide">
+    <div id="ppt-canvas">
+        <!-- 左侧装饰 -->
+        <div class="sidebar-decoration"></div>
+
+        <!-- 右侧主区域 -->
+        <div class="main-content">
+            <!-- 头部元数据 -->
+            <header>
+                <h1 class="ppt-title">Case Study 5:</h1>
+                <!-- 协议占位 -->
+                <p class="ppt-authors"></p>
+                <div class="header-logos"></div>
+            </header>
+
+            <!-- 顶部装饰条 -->
+            <div class="top-decoration-bar">
+                <div class="gradient-block"></div>
+                <div class="square-container">
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                    <div class="gray-square"></div>
+                </div>
+            </div>
+
+            <!-- 逻辑区块 -->
+            <main>
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Main Title</h2>
+                    <p class="text-block">L-Reactor Thermal</p>
+                    <p class="text-block">Effluent</p>
+                </section>
+            </main>
+
+            <!-- 页脚 -->
+            <footer>
+                <div class="footer-info">
+                    Case S-5_L-R<br>eactor
+                </div>
+                <div class="page-number">1</div>
+            </footer>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

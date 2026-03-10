@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Uni[MASK] Academic Poster</title>
+    <style>
+        :root {
+            --primary-blue: #005596;
+            --bg-gray: #f8f9fa;
+            --border-color: #ddd;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1920px;
+            height: 1080px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 40px;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 4px solid var(--primary-blue);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 48px;
+            color: var(--primary-blue);
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 22px;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .header-logos div {
+            margin: 0 15px;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: 30px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .column-left {
+            flex: 0 0 38%;
+        }
+
+        .column-right {
+            flex: 1;
+        }
+
+        .layout-block {
+            background: white;
+            border-radius: 8px;
+        }
+
+        .section-header {
+            font-size: 28px;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin: 0 0 15px 0;
+        }
+
+        .text-block {
+            font-size: 18px;
+            line-height: 1.4;
+            margin: 0 0 10px 0;
+            color: #222;
+        }
+
+        .list-item {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .grid-8 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .results-grid {
+            display: flex;
+            gap: 20px;
+        }
+
+        .highlight-box {
+            background-color: #f0f7ff;
+            padding: 15px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .footer-row {
+            display: flex;
+            gap: 30px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">Uni[MASK]: Unified Inference In Sequential Decision Problems</h1>
+        <p class="poster-authors">Micah Carroll, Orr Paradise, Jessy Lin, Raluca Georgescu, Mingfei Sun, David Bignell, Stephanie Milani, Katja Hofmann, Matthew Hausknecht, Anca Dragan, Sam Devlin</p>
+        <div class="header-logos">
+            <div style="display: flex; align-items: center;">
+                <img src="./logo_berkeley.png" style="width: 120px; height: 40px;" data-semantic="UC Berkeley Logo">
+                <img src="./logo_microsoft.png" style="width: 120px; height: 40px;" data-semantic="Microsoft Logo">
+                <div>UC Berkeley, Microsoft Research, Carnegie Mellon University</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div>github.com/micahcarroll/unimask</div>
+                <div style="text-align: center;">
+                    <img src="./qr_code.png" style="width: 60px; height: 60px;" data-semantic="Project QR Code">
+                    <div style="font-size: 12px;">Full paper here</div>
+                </div>
+                <div style="font-weight: bold; color: var(--primary-blue); font-size: 24px;">Accepted as Oral</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column column-left">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Background: BERT and Randomized Masking</h2>
+                <div class="row-container">
+                    <div style="flex: 1;">
+                        <p class="text-block">In NLP, having the model <i>predict masked input words</i> has been a powerful idea for learning general-purpose representations of language.</p>
+                        <p class="text-block"><b>Can the same idea be useful in sequential decision problems?</b></p>
+                    </div>
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_1.jpg" style="width: 288px; height: 110px;" data-semantic="BERT masking example in NLP">
+                    </div>
+                </div>
+                <div class="row-container" style="margin-top: 15px;">
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_2.jpg" style="width: 346px; height: 224px;" data-semantic="Bidirectional Transformer architecture for sequential data">
+                    </div>
+                    <div style="flex: 1;">
+                        <p class="text-block">Tokens are states, actions, and rewards. Training for predicting masked inputs amounts to training on different <i>inference tasks</i> (e.g. BC, future prediction, etc.).</p>
+                        <p class="text-block"><b>Our question:</b> by training on random mask prediction tasks, can we train a single multi-task model for any task in a sequential decision problem?</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Inference Tasks as Masking Schemes</h2>
+                <p class="text-block"><b>Key idea:</b> any inference in sequential decision problems <i>can be expressed as a sequence masking</i>. The model receives a subset of observed tokens and has to predict some other subset.</p>
+                <div class="grid-8">
+                    <div style="text-align: center;"><div style="font-size: 12px;">Behavioral Cloning</div><img src="./fig_3.jpg" style="width: 140px; height: 75px;" data-semantic="Behavioral Cloning masking scheme"></div>
+                    <div style="text-align: center;"><div style="font-size: 12px;">Reward-conditioned</div><img src="./fig_4.jpg" style="width: 140px; height: 75px;" data-semantic="Reward-conditioned masking scheme"></div>
+                    <div style="text-align: center;"><div style="font-size: 12px;">Goal-conditioned</div><img src="./fig_5.jpg" style="width: 140px; height: 75px;" data-semantic="Goal-conditioned masking scheme"></div>
+                    <div style="text-align: center;"><div style="font-size: 12px;">Waypoint-conditioned</div><img src="./fig_6.jpg" style="width: 140px; height: 75px;" data-semantic="Waypoint-conditioned masking scheme"></div>
+                    <div style="text-align: center;"><div style="font-size: 12px;">Past inference</div><img src="./fig_7.jpg" style="width: 140px; height: 75px;" data-semantic="Past inference masking scheme"></div>
+                    <div style="text-align: center;"><div style="font-size: 12px;">Future inference</div><img src="./fig_8.jpg" style="width: 140px; height: 75px;" data-semantic="Future inference masking scheme"></div>
+                    <div style="text-align: center;"><div style="font-size: 12px;">Forward Dynamics</div><img src="./fig_9.jpg" style="width: 140px; height: 75px;" data-semantic="Forward Dynamics masking scheme"></div>
+                    <div style="text-align: center;"><div style="font-size: 12px;">Inverse Dynamics</div><img src="./fig_10.jpg" style="width: 140px; height: 75px;" data-semantic="Inverse Dynamics masking scheme"></div>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Many possible training regimes...</h2>
+                <div class="row-container" style="justify-content: space-around; align-items: center;">
+                    <div style="width: 150px;"><p class="text-block">Train <i>specialized multi-task</i>, or <i>any-task</i> models with a single, unified architecture</p></div>
+                    <img src="./fig_11.jpg" style="width: 100px; height: 200px;" data-semantic="Single-task training regime diagram">
+                    <img src="./fig_12.jpg" style="width: 100px; height: 200px;" data-semantic="Multi-task training regime diagram">
+                    <img src="./fig_13.jpg" style="width: 220px; height: 200px;" data-semantic="Random-mask pre-training and finetuning diagram">
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column column-right">
+            <div style="display: flex; gap: 20px;">
+                <section class="layout-block" data-section-id="section_4" style="flex: 1;">
+                    <h2 class="section-header" style="font-size: 20px;">1. Can one train on all possible tasks?</h2>
+                    <p class="text-block" style="font-size: 16px;">Training a single model on all tasks (via random masking) not only works, but can do as well or better than specialized models!</p>
+                </section>
+                <section class="layout-block" data-section-id="section_5" style="flex: 1;">
+                    <h2 class="section-header" style="font-size: 20px;">2. Which training regime is best for one task?</h2>
+                    <p class="text-block" style="font-size: 16px;">While pre-training on multiple maskings does well, fine-tuning this general model one can improve performance further.</p>
+                </section>
+                <section class="layout-block" data-section-id="section_6" style="flex: 1;">
+                    <h2 class="section-header" style="font-size: 20px;">3. Which training regime is best for n tasks?</h2>
+                    <p class="text-block" style="font-size: 16px;">Training on all possible tasks (with random masking) can sometimes enable to do better than training on the n tasks of interest.</p>
+                </section>
+            </div>
+
+            <section class="layout-block" data-section-id="section_7" style="background: #f9f9f9; padding: 20px; border: 1px solid #eee;">
+                <h2 class="section-header" style="text-align: center; border: none;">Results: a single set of model parameters for <i>all</i> tasks</h2>
+                
+                <div class="results-grid">
+                    <div style="flex: 1.2;">
+                        <h3 style="font-size: 20px; color: #444; margin-bottom: 10px;">Discrete Minigrid Environment</h3>
+                        <div class="figure-container" style="gap: 5px;">
+                            <img src="./fig_14.jpg" style="width: 75px; height: 70px;" data-semantic="Minigrid state 1">
+                            <img src="./fig_15.jpg" style="width: 75px; height: 70px;" data-semantic="Minigrid state 2">
+                            <img src="./fig_16.jpg" style="width: 75px; height: 70px;" data-semantic="Minigrid state 3">
+                            <img src="./fig_17.jpg" style="width: 75px; height: 70px;" data-semantic="Minigrid state 4">
+                            <img src="./fig_18.jpg" style="width: 75px; height: 70px;" data-semantic="Minigrid state 5">
+                        </div>
+                        <div class="row-container" style="align-items: center;">
+                            <img src="./fig_19.jpg" style="width: 400px; height: 310px;" data-semantic="Normalized validation loss heatmap across tasks">
+                            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                                <div style="font-size: 14px; text-align: center;">random masking pre-training + finetuning</div>
+                                <img src="./fig_20.jpg" style="width: 33px; height: 25px;" data-semantic="Greater than symbol">
+                                <div style="font-size: 14px; text-align: center;">Specialized models</div>
+                            </div>
+                        </div>
+                        <p class="text-block" style="font-style: italic; text-align: center; margin-top: 10px;">A single Uni[MASK] model can be used for arbitrary inference tasks out-of-the-box when trained on random masking.</p>
+                    </div>
+
+                    <div style="flex: 1; border-left: 1px solid #ccc; padding-left: 20px;">
+                        <h3 style="font-size: 20px; color: #444; margin-bottom: 10px;">Continuous Control (Mujoco Maze2D)</h3>
+                        <div class="figure-container">
+                            <img src="./fig_21.jpg" style="width: 350px; height: 221px;" data-semantic="Mujoco Maze2D environment visualization">
+                        </div>
+                        <div class="figure-container">
+                            <img src="./table_1.png" style="width: 500px; height: 180px;" data-semantic="Performance comparison table on Mujoco Maze2D">
+                        </div>
+                        <p class="text-block" style="font-size: 16px; margin-top: 10px;">Pre-training and fine-tuning on single-tasks achieves the best performance among Uni[MASK] regimes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="footer-row">
+                <section class="layout-block" data-section-id="section_8" style="flex: 1;">
+                    <h2 class="section-header">Limitations and Future Work</h2>
+                    <ul>
+                        <li class="list-item">Scale up to more complex environments</li>
+                        <li class="list-item">Systematically investigate how multi-task performance varies with larger context windows</li>
+                        <li class="list-item">Train models to roll out trajectories conditioned on other useful properties (e.g., style-matching).</li>
+                    </ul>
+                </section>
+                <section class="layout-block" data-section-id="section_9" style="flex: 1; background: #eef; padding: 15px;">
+                    <h2 class="section-header">Conclusions:</h2>
+                    <p class="text-block">The Uni[MASK] framework enables models to:</p>
+                    <ul>
+                        <li class="list-item">1. Naturally represent any inference task</li>
+                        <li class="list-item">2. Easily perform multi-task training with no architecture changes</li>
+                        <li class="list-item">3. Train single models to do <i>all tasks</i> with random-mask pre-training, which perform similarly to specialized models and often surpass them after fine-tuning.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

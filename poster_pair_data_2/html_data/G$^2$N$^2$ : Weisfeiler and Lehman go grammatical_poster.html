@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>G2N2 Academic Poster</title>
+    <style>
+        :root {
+            --primary-blue: #1a467a;
+            --accent-green: #6ba332;
+            --bg-light: #ffffff;
+            --section-bg: #f0f4f8;
+            --header-blue: #4a76a8;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            background-color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .poster-title {
+            color: var(--primary-blue);
+            font-size: 36px;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 18px;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .header-logos div {
+            font-size: 14px;
+            color: #666;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .column-left { flex: 1.2; }
+        .column-middle { flex: 2; }
+        .column-right { flex: 1.2; }
+
+        .layout-block {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            background: white;
+        }
+
+        .section-header {
+            font-size: 20px;
+            color: var(--accent-green);
+            margin: 0 0 10px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        .blue-block {
+            background-color: var(--header-blue);
+            color: white;
+        }
+        .blue-block .section-header {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+
+        .text-block {
+            font-size: 13px;
+            line-height: 1.4;
+            margin: 8px 0;
+            color: #333;
+        }
+
+        ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .list-item {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+            gap: 5px;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            gap: 5px;
+        }
+
+        .references-text {
+            font-size: 11px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .highlight-box {
+            border: 1px solid #ccc;
+            padding: 8px;
+            background: #f9f9f9;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">G²N² : Weisfeiler and Lehman go grammatical</h1>
+        <p class="poster-authors">Jason Piquenot, Aldo Moscatelli, Maxime Bérar, Pierre Héroux, Jean-Yves Ramel, Romain Raveaux, Sébastien Adam</p>
+        <div class="header-logos">
+            <div>LITIS Lab, University of Rouen Normandy, France</div>
+            <div>LIFAT Lab, University of Tours, France</div>
+            <div>github.com/reproducibility-project</div>
+            <img src="./fig_1.png" style="width: 77px; height: 124px;" data-semantic="Université de Rouen Logo">
+            <img src="./fig_2.png" style="width: 206px; height: 127px;" data-semantic="Université de Tours Logo">
+            <img src="./fig_3.png" style="width: 97px; height: 111px;" data-semantic="LITIS Lab Logo">
+            <img src="./fig_4.png" style="width: 299px; height: 164px;" data-semantic="LIFAT Lab Logo">
+            <img src="./fig_5.png" style="width: 81px; height: 72px;" data-semantic="ANR Logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column column-left">
+            <section class="layout-block blue-block" data-section-id="section_1">
+                <h2 class="section-header">Contributions</h2>
+                <ul>
+                    <li class="list-item">A generic framework to design a GNN from any fragment of an algebraic language.</li>
+                    <li class="list-item">The instantiation of the framework on ML(L3) resulting in G2N2, a provably 3-WL GNN.</li>
+                    <li class="list-item">Experiments demonstrating that G2N2 outperforms existing 3-WL GNNs on various downstream tasks.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">MATLANG and WL</h2>
+                <p class="text-block"><strong>Definition 1:</strong> MATLANG is a matrix language with operation set {+, ·, ⊙, T, Tr, diag, 1, ×, f}.</p>
+                <p class="text-block">Restricting operations to a subset L defines a fragment of MATLANG ML(L).</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Context-Free Grammar</h2>
+                <p class="text-block"><strong>Definition 2:</strong> A Context-Free Grammar (CFG) G = (V, Σ, R, S) with a finite set of variables.</p>
+                <div class="figure-container">
+                    <img src="./fig_6.png" style="width: 713px; height: 326px;" data-semantic="CFG Rules and derivation tree diagram">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Grammar of literature GNNs</h2>
+                <p class="text-block">Variables: S scalar, Vc/Vr column/row vector, M matrix.</p>
+                <div class="highlight-box">
+                    GCN: Vc -> CVc | 1 <br>
+                    PPGN: M -> MM | diag(1) | A
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column column-middle">
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Framework</h2>
+                <div class="row-container">
+                    <img src="./fig_7.png" style="width: 252px; height: 170px;" data-semantic="Language input box">
+                    <img src="./fig_8.png" style="width: 160px; height: 172px;" data-semantic="Step 1 Definition icon">
+                    <img src="./fig_9.png" style="width: 210px; height: 172px;" data-semantic="Exhaustive CFG box">
+                    <img src="./fig_10.png" style="width: 164px; height: 172px;" data-semantic="Step 2 Reduction icon">
+                    <img src="./fig_11.png" style="width: 178px; height: 172px;" data-semantic="Reduced CFG box">
+                    <img src="./fig_12.png" style="width: 203px; height: 172px;" data-semantic="Step 3 Translation icon">
+                    <img src="./fig_13.png" style="width: 175px; height: 172px;" data-semantic="GNN layer box">
+                </div>
+                <p class="text-block" style="text-align: center; font-weight: bold; color: var(--accent-green);">From ML(L3) to the 3-WL G²N²</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Step 3: Parallelised rules generation in r-GL3</h2>
+                <div class="figure-container">
+                    <img src="./fig_14.png" style="width: 1642px; height: 1060px;" data-semantic="Detailed architecture of parallelised rules generation showing iterations k-1, k, and k+1 with matrix and vector memory updates">
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column column-right">
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">Overview of G²N²</h2>
+                <div class="figure-container">
+                    <img src="./fig_15.png" style="width: 774px; height: 450px;" data-semantic="High-level overview of G2N2 architecture including edge features, node features, and readout functions">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_8">
+                <h2 class="section-header">Regression task: QM9 dataset (MAE ↓)</h2>
+                <div class="row-container">
+                    <img src="./table_1.png" style="width: 316px; height: 429px;" data-semantic="QM9 regression results table part 1 comparing PPGN and G2N2">
+                    <img src="./table_2.png" style="width: 224px; height: 429px;" data-semantic="QM9 regression results table part 2 comparing PPGN and G2N2">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_9">
+                <h2 class="section-header">Acknowledgments</h2>
+                <p class="text-block">The authors acknowledge the support of the French Agence Nationale de la Recherche (ANR) under grant ANR-21-CE23-0025 (CoDeGNN project).</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_10">
+                <h2 class="section-header">GITHUB link</h2>
+                <div class="figure-container">
+                    <img src="./fig_16.png" style="width: 286px; height: 264px;" data-semantic="GitHub repository QR code">
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

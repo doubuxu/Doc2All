@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PPT 合并演示文稿</title>
+    <style>
+        body, html { margin: 0; padding: 0; background: #1a1a1a; width: 100%; height: 100%; overflow: hidden; }
+        
+        /* 16:9 主容器 */
+        .presentation-root {
+            width: 100vw; height: 56.25vw; 
+            max-width: 177.78vh; max-height: 100vh;
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000; overflow: hidden;
+            container-type: size;
+        }
+
+        .merged-slide {
+            display: none !important; width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0;
+        }
+        
+        .merged-slide.active {
+            display: flex !important;
+        }
+
+        /* 缩放适配层：确保不同px定义的画布能自适应 */
+        .slide-scaler-wrapper {
+            width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center;
+            transform-origin: center;
+        }
+
+        /* 注入各页隔离样式 */
+        #slide-1.ppt-slide * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", "Helvetica", sans-serif;
+        }#slide-1.ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }#slide-1.ppt-slide #ppt-canvas {
+            width: 1200px;
+            height: 900px;
+            background-color: white;
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }#slide-1.ppt-slide .sidebar-decoration {
+            width: 12.5%; 
+            height: 100%;
+            background-color: #4d4d4d;
+            flex-shrink: 0;
+        }#slide-1.ppt-slide .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+        }#slide-1.ppt-slide .top-decoration-bar {
+            margin-top: 200px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }#slide-1.ppt-slide .gradient-block {
+            width: 350px;
+            height: 100%;
+            background: linear-gradient(to right, #4d4d4d, #999999);
+        }#slide-1.ppt-slide .square-container {
+            display: flex;
+            gap: 8px;
+        }#slide-1.ppt-slide .gray-square {
+            width: 35px;
+            height: 35px;
+            background-color: #7f7f7f;
+        }#slide-1.ppt-slide header {
+            position: absolute;
+            top: 60px;
+            right: 60px;
+            text-align: right;
+        }#slide-1.ppt-slide .ppt-title {
+            font-size: 100px;
+            font-weight: 900;
+            color: #333;
+            text-shadow: 4px 4px 0px #ffff00; 
+            letter-spacing: -2px;
+        }#slide-1.ppt-slide main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding-right: 60px;
+            padding-bottom: 100px;
+        }#slide-1.ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }#slide-1.ppt-slide .text-block {
+            font-size: 110px;
+            font-weight: 900;
+            color: #333;
+            text-align: right;
+            line-height: 1.0;
+            text-shadow: 4px 4px 0px #ffff00;
+        }#slide-1.ppt-slide footer {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            font-family: "Times New Roman", serif;
+            color: #333;
+        }#slide-1.ppt-slide .footer-info {
+            text-align: left;
+            font-size: 24px;
+            line-height: 1.2;
+        }#slide-1.ppt-slide .page-number {
+            font-size: 28px;
+        }#slide-1.ppt-slide .ppt-authors, 
+        #slide-1.ppt-slide .header-logos,
+        #slide-1.ppt-slide .section-header {
+            display: none;
+        }
+     #slide-2.ppt-slide {
+            width: 1280px;
+            height: 720px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }#slide-2.ppt-slide #ppt-canvas {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+        }#slide-2.ppt-slide .sidebar-decoration {
+            width: 130px;
+            height: 100%;
+            background-color: #4d4d4d;
+            flex-shrink: 0;
+        }#slide-2.ppt-slide .content-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            position: relative;
+        }#slide-2.ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }#slide-2.ppt-slide .ppt-title {
+            font-size: 72px;
+            font-weight: 900;
+            color: #333333;
+            margin: 0;
+            text-align: right;
+            line-height: 1.1;
+            text-shadow: 3px 3px 0px #888;
+            font-family: 'Arial Black', sans-serif;
+        }#slide-2.ppt-slide .ppt-authors {
+            display: none; 
+        }#slide-2.ppt-slide .header-logos {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-top: 15px;
+            width: 100%;
+        }#slide-2.ppt-slide .title-deco-row {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            width: 100%;
+            margin-top: 10px;
+        }#slide-2.ppt-slide .deco-rect-long {
+            width: 350px;
+            height: 35px;
+            background-color: #7b7b7b;
+        }#slide-2.ppt-slide .deco-rect-small {
+            width: 45px;
+            height: 35px;
+            background-color: #7b7b7b;
+        }#slide-2.ppt-slide main {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }#slide-2.ppt-slide .column {
+            display: flex;
+            flex-direction: column;
+        }#slide-2.ppt-slide .layout-block {
+            margin-top: 20px;
+        }#slide-2.ppt-slide .section-header {
+            display: none; 
+        }#slide-2.ppt-slide .text-block {
+            font-size: 38px;
+            font-weight: bold;
+            font-style: italic;
+            color: #000000;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            font-family: 'Times New Roman', serif;
+            max-width: 850px;
+        }#slide-2.ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            margin-bottom: 20px;
+            position: relative;
+        }#slide-2.ppt-slide .figure-container img {
+            object-fit: contain;
+        }#slide-2.ppt-slide .footer-info {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            display: flex;
+            align-items: flex-end;
+            gap: 40px;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }#slide-2.ppt-slide .case-text {
+            font-size: 18px;
+            text-align: left;
+            line-height: 1.2;
+        }#slide-2.ppt-slide .page-number {
+            font-size: 22px;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="presentation-root" id="presentation">
+        <div class="ppt-slide merged-slide active" id="slide-1">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- 左侧装饰 -->
+<div class="sidebar-decoration"></div>
+<!-- 右侧主区域 -->
+<div class="main-content">
+<!-- 头部元数据 -->
+<header>
+<h1 class="ppt-title">Case Study 5:</h1>
+<!-- 协议占位 -->
+<p class="ppt-authors"></p>
+<div class="header-logos"></div>
+</header>
+<!-- 顶部装饰条 -->
+<div class="top-decoration-bar">
+<div class="gradient-block"></div>
+<div class="square-container">
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+<div class="gray-square"></div>
+</div>
+</div>
+<!-- 逻辑区块 -->
+<main>
+<section class="layout-block" data-section-id="section_1">
+<h2 class="section-header">Main Title</h2>
+<p class="text-block">L-Reactor Thermal</p>
+<p class="text-block">Effluent</p>
+</section>
+</main>
+<!-- 页脚 -->
+<footer>
+<div class="footer-info">
+                    Case S-5_L-R<br/>eactor
+                </div>
+<div class="page-number">1</div>
+</footer>
+</div>
+</div>
+</div>
+</div> <div class="ppt-slide merged-slide" id="slide-2">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- Left Sidebar Decoration -->
+<div class="sidebar-decoration"></div>
+<!-- Main Content Area -->
+<div class="content-area">
+<header>
+<h1 class="ppt-title">Meeting the CWA<br/>Challenge</h1>
+<p class="ppt-authors"></p>
+<div class="header-logos">
+<div class="title-deco-row">
+<div class="deco-rect-long"></div>
+<div class="deco-rect-small"></div>
+<div class="deco-rect-small"></div>
+<div class="deco-rect-small"></div>
+<div class="deco-rect-small"></div>
+<div class="deco-rect-small"></div>
+<div class="deco-rect-small"></div>
+<div class="deco-rect-small"></div>
+</div>
+</div>
+</header>
+<main>
+<div class="column">
+<section class="layout-block" data-section-id="section_1">
+<p class="text-block">
+                            The Clean Water Act (CWA) established a comprehensive Federal/State scheme for controlling the introduction of pollutants into the Nation's water.
+                        </p>
+<div class="figure-container">
+<img data-semantic="Illustration of a fisherman catching a large green fish jumping out of water against a pink circular sun background." src="./slide_1_image_1.png" style="width: 500px; height: 480px;"/>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Information -->
+<div class="footer-info">
+<div class="case-text">
+                    Case S-5_L-R<br/>eactor
+                </div>
+<div class="page-number">2</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.merged-slide');
+        let current = 0;
+
+        function show(index) {
+            slides[current].classList.remove('active');
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add('active');
+        }
+
+        document.getElementById('presentation').onclick = () => show(current + 1);
+        
+        document.onkeydown = (e) => {
+            if(e.key === "ArrowRight" || e.key === " ") show(current + 1);
+            if(e.key === "ArrowLeft") show(current - 1);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "title": "Inverse Approximation Theory for Nonlinear Recurrent Neural Networks",
+    "authors": [
+      "Shida Wang1",
+      "Zhong Li2and Qianxiao Li1"
+    ],
+    "organizations": [
+      "1Department of Mathematics, National University of Singapore",
+      "2Microsoft Research Asia"
+    ],
+    "github": "",
+    "figures": []
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Abstract",
+      "content": [
+        "We prove an inverse approximation theorem for the approximation of nonlinear sequence-to-sequence relationships using recurrent neural networks (RNNs). This is a so-called Bernstein-type result in approximation theory, which deduces properties of a target function under the assumption that it can be effectively approximated by a hypothesis space. In particular, we show that nonlinear sequence relationships that can be stably approximated by nonlinear RNNs must have an exponential decaying memory structure - a notion that can be made precise."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Recurrent neural networks",
+      "content": [
+        "Let m be the hidden dimension. With trainable weights c, W, U and activation σ,\n                    hk+1= σ(Whk+ Uxk), h0= 0 (1)\n                    yk= cThk(2)\n                    Here x are the inputs and y are the outputs."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Stable approximation",
+      "content": [
+        "Definition 1 (Stable approximation via parameterized models). Let β0> 0. We say a target functional sequence H admits a β0-stable approximation under {H(m)}, if there exists a sequence of parameterized approximants Hm= H(·, θm), θm∈ Θmwhich are continuous in input x in point-wise topology.",
+        "The following two graphs are perturbation errors for exponential decaying memory and polynomial decaying memory."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Perturbation error for exponential decaying memory showing stable region below beta_0",
+          "figure_width": 170,
+          "figure_height": 110,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "Perturbation error for polynomial decaying memory showing instability as beta increases",
+          "figure_width": 170,
+          "figure_height": 110,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Memory function",
+      "content": [
+        "Definition 2 (Memory function of nonlinear functional sequences). For continuous, causal, regular and time-homogeneous functional sequences H, define the memory function of H over bounded Heaviside input uτ.",
+        "This memory function definition is a natural extension for the function ρ in linear functional. For continuous, causal, regular and time-homogeneous functional sequences H, we say it has a decaying memory if the limit of the memory function goes to zero as t approaches infinity."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "Main theorems",
+      "content": [
+        "Theorem 3 (Approximation Theorem - Curse of memory in nonlinear RNNs). Assume H is a sequence of continuous, causal, regular and time-homogeneous functionals on X with decaying memory. Suppose there exists a sequence of hardtanh RNNs stably approximating H. Then, the memory function of the nonlinear functional decays exponentially."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Curse of memory phenomenon in nonlinear RNNs",
+      "content": [
+        "For nonlinear functionals with polynomial decaying memory function and tanh RNNs:"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Graph showing perturbation error E(beta) vs perturbation beta for different hidden dimensions m, illustrating the curse of memory",
+          "figure_width": 300,
+          "figure_height": 200,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "Reparameterization enables stable approximation",
+      "content": [
+        "For linear RNNs, stable approximation of target functionals with polynomial decaying memory can be achieved via reparameterization of the recurrent weight matrix W. Exponential parameterization W = -eMand softplus parameterization W = -log(eM+ I) are shown:"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "Perturbation error plot for exponential reparameterization",
+          "figure_width": 170,
+          "figure_height": 110,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Perturbation error plot for softplus reparameterization",
+          "figure_width": 170,
+          "figure_height": 110,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_8",
+      "title": "Conclusion",
+      "content": [
+        "We derive the first known Bernstein-type result in the setting of sequence modelling using nonlinear RNNs. We show that, assuming a given target sequence relationship can be stably approximated by RNNs with hardtanh/tanh-like activations, then the target functional sequence's memory structure must be exponentially decreasing."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_9",
+      "title": "References",
+      "content": [
+        "Shida Wang, Zhong Li, and Qianxiao Li. \"Inverse Approximation Theory for Nonlinear Recurrent Neural Networks.\" In The Twelfth International Conference on Learning Representations. 2023.Haotian Jiang, Qianxiao Li, Zhong Li, and Shida Wang. (2023). A Brief Survey on the Approximation Theory for Sequence Modelling. Journal of Machine Learning. 2 (1). 1-30. doi:10.4208/jml.221221Wang, Shida, and Qianxiao Li. \"StableSSM: Alleviating the Curse of Memory in State-Space Models Through Stable Reparameterization.\" arXiv preprint arXiv:2311.14495 (2023)."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

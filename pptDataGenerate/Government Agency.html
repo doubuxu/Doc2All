@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Government Agency Poster</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        #poster-canvas {
+            width: 2940px;
+            height: 1688px;
+            background-color: #e5e2dd;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Decorative Red Bars */
+        .side-bar {
+            width: 51px;
+            height: 1688px;
+            flex-shrink: 0;
+        }
+
+        header {
+            position: absolute;
+            top: 430px;
+            left: 160px;
+            z-index: 10;
+            width: 1600px;
+        }
+
+        .poster-authors {
+            color: #a51d1d;
+            font-size: 64px;
+            margin: 0 0 100px 0;
+            font-weight: 500;
+        }
+
+        .poster-title {
+            color: #a51d1d;
+            font-size: 380px;
+            line-height: 0.85;
+            margin: 0;
+            font-weight: 900;
+            text-transform: none;
+            word-wrap: break-word;
+            width: 1500px;
+        }
+
+        .header-logos {
+            display: none; /* No logos present in the source image */
+        }
+
+        main {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .column-left {
+            flex: 1935;
+            height: 100%;
+            background-image: url('./group_3.jpg');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-left: 160px;
+            padding-bottom: 240px;
+        }
+
+        .column-right {
+            flex: 1005;
+            height: 100%;
+            background-color: #243c34;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .layout-block {
+            width: 100%;
+        }
+
+        .text-block {
+            color: #243c34;
+            font-size: 82px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .circular-frame {
+            width: 942px;
+            height: 1351px;
+            border-radius: 500px;
+            border: 15px solid #a51d1d;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .building-img {
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <!-- Leftmost Red Bar -->
+        <img src="./group_4.jpg" class="side-bar" style="width: 51px; height: 1688px;" data-semantic="左侧红色装饰条">
+
+        <header>
+            <p class="poster-authors">Presented by Alexandra Taro</p>
+            <h1 class="poster-title">Governme nt Agency</h1>
+            <div class="header-logos">
+                <!-- Protocol placeholder -->
+            </div>
+        </header>
+
+        <main>
+            <!-- Left Content Column -->
+            <div class="column column-left">
+                <section class="layout-block" data-section-id="section_1">
+                    <p class="text-block">PRESENTATION DESIGN</p>
+                </section>
+            </div>
+
+            <!-- Middle Red Bar -->
+            <img src="./group_5.jpg" class="side-bar" style="width: 51px; height: 1688px;" data-semantic="中间红色装饰条">
+
+            <!-- Right Visual Column -->
+            <div class="column column-right">
+                <section class="layout-block" data-section-id="section_2">
+                    <div class="figure-container">
+                        <div class="circular-frame">
+                            <img src="./image_2.jpg" class="building-img" style="width: 942px; height: 1351px;" data-semantic="圆形构图中的古典圆顶建筑">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Rightmost Red Bar -->
+        <img src="./group_6.jpg" class="side-bar" style="width: 51px; height: 1688px;" data-semantic="右侧红色装饰条">
+    </div>
+</body>
+</html>

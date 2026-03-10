@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Butterfly Effects of SGD Noise Poster</title>
+    <style>
+        :root {
+            --primary-purple: #7b2cbf;
+            --accent-red: #e63946;
+            --accent-green: #2d6a4f;
+            --bg-light-red: #fff0f0;
+            --bg-light-green: #f0fff4;
+            --border-gray: #ddd;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 3px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 36px;
+            margin: 0;
+            color: #000;
+            line-height: 1.2;
+            max-width: 80%;
+        }
+
+        .poster-authors {
+            font-size: 20px;
+            color: #444;
+            margin: 15px 0 5px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .header-logos div {
+            font-size: 14px;
+            color: #666;
+        }
+
+        main {
+            display: flex;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .layout-block {
+            margin-bottom: 15px;
+        }
+
+        .section-header {
+            font-size: 22px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .text-block {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 8px 0;
+            color: #333;
+        }
+
+        .list-item {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .figure-container img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        /* Special Highlight Boxes */
+        .highlight-box-red {
+            background-color: var(--bg-light-red);
+            border: 2px solid var(--accent-red);
+            border-radius: 8px;
+            padding: 15px;
+            color: var(--accent-red);
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .highlight-box-green {
+            background-color: var(--bg-light-green);
+            border: 2px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 15px;
+            color: var(--accent-green);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .equation-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+        }
+
+        .q-box {
+            background-color: #e7f3ff;
+            padding: 10px;
+            border-radius: 5px;
+            color: #0056b3;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .purple-text { color: var(--primary-purple); }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">Butterfly Effects of SGD Noise: <br> Error Amplification in Behavior Cloning and Autoregression</h1>
+        <p class="poster-authors">Adam Block, Dylan Foster, Akshay Krishnamurthy, Max Simchowitz, Cyril Zhang</p>
+        <div class="header-logos">
+            <div>MIT</div>
+            <div>Microsoft Research NYC</div>
+            <img src="./mit_logo.png" style="width: 60px; height: 60px;" data-semantic="MIT校徽">
+            <img src="./ms_logo.png" style="width: 60px; height: 60px;" data-semantic="微软校徽">
+            <img src="./qr_code.png" style="width: 80px; height: 80px;" data-semantic="项目GitHub二维码">
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Behavior cloning & <span class="purple-text">feedback loops</span></h2>
+                <div class="figure-container">
+                    <img src="./fig_1.jpg" style="width: 945px; height: 364px;" data-semantic="行为克隆反馈循环示意图，展示状态、策略与动作的交互">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <p class="text-block"><strong>BC:</strong> fit θ to a collection of demonstrations from expert policy π*, minimizing 1-step loss</p>
+                <div class="equation-box">
+                    ℓ<sub>BC</sub>(θ) = E<sub>expert's (s,a)</sub> [ ||π<sub>θ</sub>(s<sub>t</sub>) - π*(s<sub>t</sub>)||<sup>2</sup> ]
+                </div>
+                <p class="text-block"><strong>Usual view:</strong> BC reduces offline imitation learning to supervised learning</p>
+                <div class="row-container">
+                    <div class="equation-box" style="flex:1">ℓ<sub>BC</sub>(θ) ≤ ε <br><small>train on 1-step loss</small></div>
+                    <div style="font-size: 24px;">→</div>
+                    <div class="equation-box" style="flex:1">J<sub>H</sub>(π<sub>θ</sub>) ≥ J<sub>H</sub>(π*) - C·ε <br><small>evaluate multi-step rollout rewards</small></div>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <div class="q-box">Q1: When BC works, how big is C in practice?</div>
+                <div class="q-box">Q2: When BC fails, must we improve the data? Or can we improve upon standard training?</div>
+                
+                <h2 class="section-header" style="margin-top:20px;">Special case: pretraining vs. generation in LLMs</h2>
+                <ul>
+                    <li class="list-item">s<sub>t</sub> : sequence of t tokens</li>
+                    <li class="list-item">a<sub>t</sub> : append a single token</li>
+                    <li class="list-item">π<sub>θ</sub> : autoregressive language model</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Gradient <u>V</u>ariance <u>A</u>mplification</h2>
+                <div class="highlight-box-red">
+                    A1: Long-horizon rollouts can be extremely sensitive to small SGD fluctuations.
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">GVA: an empirical pathology in BC with NNs</h2>
+                <div class="row-container" style="justify-content: flex-start;">
+                    <img src="./fig_2.jpg" style="width: 73px; height: 66px;" data-semantic="蝴蝶图标，象征蝴蝶效应">
+                    <p class="text-block">small changes in θ due to minibatch noise</p>
+                </div>
+                <div class="row-container" style="justify-content: flex-start; padding-left: 30px;">
+                    <img src="./fig_3.jpg" style="width: 71px; height: 68px;" data-semantic="云朵图标，象征微小扰动">
+                    <p class="text-block">...causing small changes in 1-step ℓ<sub>BC</sub>(θ)...</p>
+                </div>
+                <div class="row-container" style="justify-content: flex-start; padding-left: 60px;">
+                    <img src="./fig_4.jpg" style="width: 66px; height: 69px;" data-semantic="龙卷风图标，象征混沌结果">
+                    <p class="text-block">...and <strong>chaotic</strong> long-rollout rewards J<sub>H</sub>(π<sub>θ</sub>)</p>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Evidence: (across locomotion tasks & archs)</h2>
+                <div class="row-container">
+                    <div class="figure-container">
+                        <img src="./fig_5.jpg" style="width: 494px; height: 421px;" data-semantic="分形奖励景观图，展示参数微调对奖励的剧烈影响">
+                        <p class="text-block"><strong>fractal reward landscape</strong></p>
+                    </div>
+                    <div class="figure-container">
+                        <img src="./fig_6.jpg" style="width: 473px; height: 409px;" data-semantic="训练过程中的震荡曲线图">
+                        <p class="text-block"><strong>oscillations during training</strong></p>
+                    </div>
+                </div>
+                <p class="text-block" style="text-align: center; font-style: italic;">(in the paper: accompanying quantitative studies)</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">Theory: vignettes in toy models</h2>
+                <ul>
+                    <li class="list-item">- marginally stable linear dynamics, linear π, π*</li>
+                    <li class="list-item">- "CliffLQR": halfspace reward → GVA</li>
+                    <li class="list-item">- SDE limit: EMA & LR schedules both work</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_8">
+                <h2 class="section-header">Algorithmic mitigations for GVA</h2>
+                <div class="highlight-box-green">
+                    A2: Variance reduction techniques mitigate the oscillations; EMA is highly effective.
+                </div>
+                <div class="figure-container">
+                    <img src="./fig_7.jpg" style="width: 1058px; height: 472px;" data-semantic="不同架构和正则化方法下的训练步数与奖励对比图，突出EMA的效果">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_9">
+                <h2 class="section-header">Exponential Moving Average</h2>
+                <div class="equation-box">
+                    θ<sub>t+1</sub> ← θ<sub>t</sub> - η<sub>t</sub> ∇<sub>θ</sub>ℓ<sub>BC</sub>(θ) (or Adam, etc.) <br>
+                    <span style="color: green;">θ̄<sub>t+1</sub> ← (1 - β<sub>t</sub>)θ̄<sub>t</sub> + β<sub>t</sub> · θ<sub>t</sub></span> , &nbsp;&nbsp; use θ̄<sub>t</sub> for inference
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_10">
+                <h2 class="section-header">Bonus: GVA & EMA in language generation</h2>
+                <div class="figure-container">
+                    <img src="./fig_8.jpg" style="width: 1066px; height: 488px;" data-semantic="TinyStories语言模型在12层Transformer下的验证损失曲线，对比LM loss与EMA LM loss">
+                </div>
+                <p class="text-block" style="color: var(--accent-green); font-weight: bold; text-align: center;">
+                    EMA improves & stabilizes LM iterates before learning rate cooldown
+                </p>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

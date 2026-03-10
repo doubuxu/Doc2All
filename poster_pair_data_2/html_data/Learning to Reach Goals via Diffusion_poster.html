@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning to Reach Goals via Diffusion Poster</title>
+    <style>
+        :root {
+            --mila-purple: #6a2a7e;
+            --mcgill-red: #ed1b2e;
+            --bg-gray: #f5f5f5;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        #poster-canvas {
+            width: 1200px;
+            background-color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--mila-purple);
+            padding-bottom: 10px;
+        }
+        .header-center {
+            text-align: center;
+            flex: 1;
+        }
+        .poster-title {
+            color: var(--mila-purple);
+            font-size: 32px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .poster-authors {
+            font-size: 20px;
+            margin: 10px 0 0 0;
+            font-weight: 500;
+        }
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .header-logos div {
+            font-size: 14px;
+            color: #555;
+        }
+        .summary-bar {
+            background-color: #f3e5f5;
+            border: 2px solid var(--mila-purple);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .summary-text {
+            color: var(--mila-purple);
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0;
+        }
+        main {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            flex: 1;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .column-left { flex: 0 0 30%; }
+        .column-center { flex: 0 0 35%; }
+        .column-right { flex: 0 0 35%; }
+
+        .layout-block {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .section-header {
+            background-color: var(--mila-purple);
+            color: white;
+            margin: -10px -10px 10px -10px;
+            padding: 8px;
+            font-size: 18px;
+            border-radius: 4px 4px 0 0;
+            text-align: center;
+        }
+        .text-block {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+        }
+        .list-item {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+        }
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .comparison-table {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            font-weight: bold;
+        }
+        .qr-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <div class="header-logos">
+                <img src="./mila_logo.png" style="width: 150px; height: 60px;" data-semantic="Mila Research Institute Logo">
+            </div>
+            <div class="header-center">
+                <h1 class="poster-title">Learning to Reach Goals via Diffusion</h1>
+                <p class="poster-authors">Vineet Jain, Siamak Ravanbakhsh</p>
+            </div>
+            <div class="header-logos">
+                <div>McGill University</div>
+                <div>github.com/vjain/merlin</div>
+                <img src="./mcgill_logo.png" style="width: 150px; height: 60px;" data-semantic="McGill University Logo">
+            </div>
+        </header>
+
+        <section class="layout-block" data-section-id="section_1" style="background-color: #f3e5f5; border: 2px solid var(--mila-purple);">
+            <p class="text-block" style="text-align: center; font-size: 22px; font-weight: bold; color: var(--mila-purple);">
+                Generate trajectories that "diffuse away" from potential goals, and train a policy to reverse them
+            </p>
+        </section>
+
+        <main>
+            <!-- Column 1 -->
+            <div class="column column-left">
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Denoising Diffusion Models</h2>
+                    <div class="figure-container">
+                        <img src="./fig_1.jpg" style="width: 990px; height: 239px;" data-semantic="Denoising Diffusion process showing noise sample transitioning to a target dog image">
+                    </div>
+                    <h2 class="section-header" style="margin-top: 10px;">Goal-conditioned Reinforcement Learning</h2>
+                    <div class="figure-container">
+                        <img src="./fig_2.jpg" style="width: 963px; height: 458px;" data-semantic="Diagram of goal-conditioned RL showing forward and reverse diffusion paths between initial and goal states">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Goal Conditioned RL as Diffusion</h2>
+                    <p class="text-block"><b>Diffusion models:</b> map any point from Gaussian &rarr; data manifold</p>
+                    <p class="text-block"><b>Goal-conditioned RL:</b> learn optimal path from any state &rarr; goal state</p>
+                    <div class="figure-container">
+                        <img src="./fig_3.jpg" style="width: 1095px; height: 330px;" data-semantic="Mathematical state transition diagram comparing diffusion model and GCRL processes">
+                    </div>
+                    <div class="comparison-table">
+                        <div style="flex: 1; text-align: center;">diffusion model</div>
+                        <div style="flex: 1; text-align: center;">GCRL (Merlin)</div>
+                    </div>
+                    <div class="comparison-table" style="font-weight: normal; border: none;">
+                        <div style="flex: 1; text-align: center;">target dataset</div>
+                        <div style="flex: 1; text-align: center;">goal states</div>
+                    </div>
+                    <div class="comparison-table" style="font-weight: normal; border: none;">
+                        <div style="flex: 1; text-align: center;">score function</div>
+                        <div style="flex: 1; text-align: center;">policy</div>
+                    </div>
+                    <div class="comparison-table" style="font-weight: normal; border: none;">
+                        <div style="flex: 1; text-align: center;">forward process</div>
+                        <div style="flex: 1; text-align: center;">q(s_t | s_{t+1})</div>
+                    </div>
+                    <div class="comparison-table" style="font-weight: normal; border: none;">
+                        <div style="flex: 1; text-align: center;">reverse process</div>
+                        <div style="flex: 1; text-align: center;">P(s_{t+1} | s_t)</div>
+                    </div>
+                    <p class="text-block" style="background: #eee; padding: 5px; margin-top: 10px; text-align: center; border-radius: 5px;">
+                        Actions that lead us away from the goal in place of Gaussian noise; Policy that reverses these actions in place of score function
+                    </p>
+                </section>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column column-center">
+                <section class="layout-block" data-section-id="section_4">
+                    <h2 class="section-header">A Simple 2D Navigation Problem</h2>
+                    <ul>
+                        <li class="list-item"><b>Task:</b> Navigate to goal X; <b>States:</b> (x,y); <b>Actions:</b> unit length displacement</li>
+                        <li class="list-item"><b>Forward process:</b> Take random actions starting from goal</li>
+                        <li class="list-item"><b>Reverse process:</b> Train policy to reverse the forward trajectories</li>
+                    </ul>
+                    <div class="row-container">
+                        <img src="./fig_4.jpg" style="width: 388px; height: 324px;" data-semantic="Visualization of forward diffusion trajectories starting from goal X">
+                        <img src="./fig_5.jpg" style="width: 335px; height: 324px;" data-semantic="Sampled actions from Merlin diffusion policy">
+                        <img src="./fig_6.jpg" style="width: 333px; height: 324px;" data-semantic="Mean actions from GCSL policy for comparison">
+                    </div>
+                    <p class="text-block" style="text-align: center; font-style: italic;">(a) Visualization of trajectories, (b) Merlin policy actions, (c) GCSL policy actions</p>
+                    <p class="text-block" style="background: #eee; padding: 5px; text-align: center; border-radius: 5px;">Backward view of diffusion gives us control over the goal distribution</p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_5">
+                    <h2 class="section-header">Effect of Time Conditioning</h2>
+                    <ul>
+                        <li class="list-item">Analogous to the score function in diffusion, the Merlin policy is conditioned on time</li>
+                        <li class="list-item">This time indicates how "noisy" current state is, or how far we are from target</li>
+                        <li class="list-item">Policy takes optimal action far from goal and becomes uncertain as it approaches</li>
+                    </ul>
+                    <div class="row-container">
+                        <img src="./fig_7.jpg" style="width: 266px; height: 252px;" data-semantic="Policy uncertainty at h=1">
+                        <img src="./fig_8.jpg" style="width: 261px; height: 252px;" data-semantic="Policy uncertainty at h=5">
+                        <img src="./fig_9.jpg" style="width: 267px; height: 252px;" data-semantic="Policy uncertainty at h=10">
+                        <img src="./fig_10.jpg" style="width: 271px; height: 252px;" data-semantic="Policy uncertainty at h=20">
+                    </div>
+                    <p class="text-block" style="text-align: center; font-weight: bold;">The time conditioning affects policy uncertainty based on expected number of steps to reach the goal</p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_6">
+                    <h2 class="section-header">Optimization Objective</h2>
+                    <p class="text-block">Given an offline dataset D, we view trajectories as forward diffusion chains.</p>
+                    <p class="text-block">Behavior cloning maximizes the probability of reaching goal states:</p>
+                    <p class="text-block" style="text-align: center; font-family: serif; font-size: 18px;">&theta;* = arg max E [log &pi;<sub>&theta;</sub>(a | s, g)]</p>
+                    <div style="border: 1px solid #aaa; padding: 10px; background: #fafafa;">
+                        <p class="text-block"><b>Theorem:</b> Given dataset D and goal distribution p(g), behavior cloning using a goal-conditioned policy maximizes a lower bound on the log-likelihood of goal states.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column column-right">
+                <section class="layout-block" data-section-id="section_7">
+                    <h2 class="section-header">Constructing the Forward Process</h2>
+                    <ul>
+                        <li class="list-item"><b>Merlin:</b> Use pre-collected offline trajectories, train policy using BC</li>
+                        <li class="list-item"><b>Merlin-P:</b> Learn reverse dynamics model to simulate trajectories backward</li>
+                        <li class="list-item"><b>Merlin-NP:</b> Use proposed trajectory stitching method</li>
+                    </ul>
+                    <div class="figure-container">
+                        <img src="./fig_11.jpg" style="width: 900px; height: 417px;" data-semantic="Visualization of trajectory stitching for constructing backward trajectories">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_8">
+                    <h2 class="section-header">Experimental Results</h2>
+                    <div class="row-container" style="flex-wrap: wrap;">
+                        <img src="./fig_12.jpg" style="width: 354px; height: 358px;" data-semantic="Point mass environment">
+                        <img src="./fig_13.jpg" style="width: 172px; height: 358px;" data-semantic="Obstacle environment">
+                        <img src="./fig_14.jpg" style="width: 174px; height: 358px;" data-semantic="Ant environment">
+                        <img src="./fig_15.jpg" style="width: 182px; height: 358px;" data-semantic="Kitchen environment">
+                    </div>
+                    <div class="row-container" style="margin-top: 10px;">
+                        <img src="./fig_16.jpg" style="width: 538px; height: 310px;" data-semantic="Bar chart showing Merlin outperforms others in normalized returns">
+                        <img src="./fig_17.jpg" style="width: 549px; height: 304px;" data-semantic="Bar chart showing Merlin inference time efficiency">
+                    </div>
+                    <p class="text-block" style="text-align: center; font-weight: bold; background: #e8f5e9; padding: 5px;">Merlin outperforms previous methods, while being highly-efficient!</p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_9">
+                    <h2 class="section-header">Conclusions and future work</h2>
+                    <ul>
+                        <li class="list-item">Merlin constructs trajectories that "diffuse away" from goals and trains a policy to reverse them</li>
+                        <li class="list-item">Simple training dynamics indicate potential for scalability as shown by denoising diffusion models</li>
+                        <li class="list-item">Future work includes extending to online setting and partially observable environments</li>
+                    </ul>
+                    <div class="row-container" style="margin-top: 10px;">
+                        <div class="qr-box">
+                            <span>paper</span>
+                            <img src="./fig_18.jpg" style="width: 195px; height: 197px;" data-semantic="QR code for paper">
+                        </div>
+                        <div class="qr-box">
+                            <span>code</span>
+                            <img src="./fig_19.jpg" style="width: 193px; height: 197px;" data-semantic="QR code for code">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

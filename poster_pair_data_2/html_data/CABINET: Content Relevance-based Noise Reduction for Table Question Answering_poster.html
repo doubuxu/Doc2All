@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CABINET Poster Replicate</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #poster-canvas {
+            width: 2400px;
+            height: 1550px;
+            background-color: white;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .header-left-logos {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 150px;
+        }
+        .header-center {
+            flex: 1;
+            text-align: center;
+        }
+        .poster-title {
+            font-size: 64px;
+            margin: 0;
+            font-weight: 900;
+            color: #000;
+        }
+        .poster-title span {
+            text-decoration: underline;
+        }
+        .poster-authors {
+            font-size: 32px;
+            margin: 15px 0 5px 0;
+            font-style: italic;
+            color: #333;
+        }
+        .header-logos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 24px;
+            color: #555;
+        }
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 250px;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            gap: 40px;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .column-left { flex: 28%; }
+        .column-middle { flex: 44%; }
+        .column-right { flex: 28%; }
+
+        .layout-block {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        .section-header {
+            font-size: 34px;
+            color: #d00000;
+            border-bottom: 2px solid #d00000;
+            margin: 0 0 15px 0;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+        .text-block {
+            font-size: 20px;
+            line-height: 1.4;
+            margin: 5px 0;
+        }
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        img {
+            object-fit: contain;
+        }
+        .legend-text {
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <div class="header-left-logos">
+                <img src="./adobe_logo.png" style="width: 120px; height: 120px;" data-semantic="Adobe Logo">
+                <img src="./iclr_logo.png" style="width: 120px; height: 60px;" data-semantic="ICLR Conference Logo">
+            </div>
+            <div class="header-center">
+                <h1 class="poster-title">CABINET: <u>C</u>ontent <u>R</u>elevance <u>B</u>ased <u>N</u>oise <u>R</u>eduction for Table Question Answering</h1>
+                <p class="poster-authors">Sohan Patnaik, Heril Changwal, Milan Aggarwal, Sumit Bhatia, Yaman Kumar, Balaji Krishnamurthy</p>
+                <div class="header-logos">
+                    <div>Media and Data Science Research Lab, Adobe, India</div>
+                    <div>github.com/adobe-research/CABINET</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="./qr_code.png" style="width: 100px; height: 100px;" data-semantic="QR Code for paper link">
+                <div class="header-logos">
+                    <div style="font-weight: bold; margin-top: 10px;">Contact: milaggar@adobe.com</div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Column 1 -->
+            <div class="column column-left">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">LLMs have been used for Table Understanding</h2>
+                    <div class="figure-container">
+                        <img src="./fig_1.jpg" style="width: 600px; height: 352px;" data-semantic="LLM table understanding tasks: QA, Fact Verification, and Dialogue examples">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Large Tabular Data degrades LLM Performance</h2>
+                    <div class="figure-container">
+                        <img src="./fig_2.jpg" style="width: 600px; height: 158px;" data-semantic="Bar charts showing accuracy drop as number of table cells increases across WikiTQ, FeTaQA, and WikiSQL">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Hard Decomposition can cause Information Loss</h2>
+                    <div class="figure-container">
+                        <img src="./fig_3.jpg" style="width: 600px; height: 258px;" data-semantic="Comparison between DATER decomposer and CABINET showing how relevance scoring prevents information loss">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column column-middle">
+                <section class="layout-block" data-section-id="section_4">
+                    <h2 class="section-header">Our Approach: CABINET assigns Relevance Score to Tabular Data Tokens through Two Modules - 1) Unsupervised Relevance Scorer and 2) Weakly Supervised Relevant Cell Highlighter</h2>
+                    <div class="figure-container">
+                        <img src="./fig_4.jpg" style="width: 1000px; height: 320px;" data-semantic="CABINET model architecture showing URS and Cell Highlighter modules processing flattened tables">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_5">
+                    <h2 class="section-header">CABINET (despite having less #params) outperforms several SoTA Methods</h2>
+                    <div class="figure-container">
+                        <img src="./table_1.png" style="width: 1000px; height: 182px;" data-semantic="Performance comparison table showing CABINET outperforming OmniTab, TAPEX, and DATER on WikiTQ, FeTaQA, and WikiSQL">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_6">
+                    <h2 class="section-header">CABINET is more Robust to Noise and Table Perturbations</h2>
+                    <div class="row-container">
+                        <img src="./fig_5.jpg" style="width: 280px; height: 130px;" data-semantic="Performance drop on WikiTQ under noise">
+                        <img src="./fig_6.jpg" style="width: 280px; height: 130px;" data-semantic="Performance drop on FeTaQA under noise">
+                        <img src="./fig_7.jpg" style="width: 280px; height: 130px;" data-semantic="Performance drop on WikiSQL under noise">
+                        <div style="display: flex; flex-direction: column;">
+                            <p class="text-block legend-text">RA – Row Addition</p>
+                            <p class="text-block legend-text">RP – Row Permutation</p>
+                            <p class="text-block legend-text">CP – Column Permutation</p>
+                            <p class="text-block legend-text">CR – Cell Replacement</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_7">
+                    <h2 class="section-header">CABINET is more Performant while Handling Irrelevant Data in Large Tables</h2>
+                    <div class="row-container">
+                        <img src="./fig_8.jpg" style="width: 300px; height: 133px;" data-semantic="Accuracy vs table size on WikiTQ comparing OmniTab and CABINET">
+                        <img src="./fig_9.jpg" style="width: 300px; height: 133px;" data-semantic="S-BLEU vs table size on FeTaQA comparing OmniTab and CABINET">
+                        <img src="./fig_10.jpg" style="width: 300px; height: 133px;" data-semantic="Accuracy vs table size on WikiSQL comparing ReasTAP and CABINET">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column column-right">
+                <section class="layout-block" data-section-id="section_8">
+                    <h2 class="section-header">Clustering URS Output Representations is Helpful</h2>
+                    <div class="figure-container">
+                        <img src="./fig_11.jpg" style="width: 500px; height: 358px;" data-semantic="t-SNE visualization showing clear separation between relevant and non-relevant tokens in URS output">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_9">
+                    <h2 class="section-header">Ablation Study</h2>
+                    <div class="figure-container">
+                        <img src="./table_2.png" style="width: 508px; height: 181px;" data-semantic="Ablation study table showing the impact of different loss components (Clu, Sep, Sparse) on performance">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_10">
+                    <h2 class="section-header">Using Both Modules gives Best Performance</h2>
+                    <div class="figure-container">
+                        <img src="./table_3.png" style="width: 519px; height: 196px;" data-semantic="Table showing the impact of balancing unsupervised and cell highlighter modules using lambda weights">
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

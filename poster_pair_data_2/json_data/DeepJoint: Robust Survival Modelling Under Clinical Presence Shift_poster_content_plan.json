@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "title": "DeepJoint: Robust Survival Modelling Under Clinical Presence Shift",
+    "authors": [
+      "Vincent Jeanselme¹",
+      "Glen Martin²",
+      "Matthew Sperrin²",
+      "Niels Peek²",
+      "Brian Tom¹ and Jessica Barrett¹"
+    ],
+    "organizations": [
+      "¹ MRC Biostatistics Unit, University of Cambridge",
+      "² Health e-Research Centre, University of Manchester"
+    ],
+    "github": "github.com/vjeanselme/DeepJoint",
+    "figures": [
+      {
+        "fig_id": "logo_cambridge",
+        "description": "University of Cambridge Logo",
+        "figure_width": 150,
+        "figure_height": 40
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Motivation",
+      "content": [
+        "Observations'timesandtypesreflect the patient'sconditionand the clinical staff's assessment of what was needed and when.",
+        "Predictive models have eitherpartially leveragedthisclinical presenceprocess for improved performance or assumed ituninformative.",
+        "Although practitioners justifyignoringclinical presence to avoid leveraging a changeable and unpredictable process, no work has explored the impact of handling clinical presence on robustness.",
+        "Our work explores (i) how state-of-the-art methodologies behave under clinical presence shifts, and (ii) how to leverage clinical presence for improved transportability."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Methodology",
+      "content": [
+        "We studyin-ICU mortalityprediction in MIMIC III leveraginglaboratory testsafter a 24-hour observation period.",
+        "Motivated by thedifference in the counts of tests(Fig. 3) performed on patients admitted on weekends and weekdays, we hypothesise thatpracticemightdifferbetweenweekendsandweekdays.",
+        "Last- DeepSurv multi-layer perceptron relying on the last observation.",
+        "Count- Concatenate the 24-hour count of each observation to the last observation.",
+        "Ignore- An LSTM leveraging the data while ignoring its irregularity.",
+        "Resample- An LSTM with regularly resampled data.",
+        "GRU-D- Data concatenated with missingness indicators as inputs to a GRU-D.",
+        "Feature- An LSTM leveraging missingness and time elapsed since previous observation as inputs.",
+        "DeepJoint- The proposed methodology (Fig. 1) leveraging the same input as Feature."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "DeepJoint model architecture showing joint modelling of clinical presence and survival outcome",
+          "figure_width": 477,
+          "figure_height": 319,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Violin plot showing difference in tests ordered stratified by admission day and outcome",
+          "figure_width": 264,
+          "figure_height": 194,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "Legend for admission day showing Weekday and Weekend colors",
+          "figure_width": 96,
+          "figure_height": 52,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "Scatter plots showing robustness performance on weekdays admissions across different horizons",
+          "figure_width": 797,
+          "figure_height": 204,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Legend for models and horizons used in the robustness scatter plots",
+          "figure_width": 105,
+          "figure_height": 206,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Results",
+      "content": [
+        "Figure 4 presents the transportability performance onpatients admitted on weekdaysmeasured through time-dependent C-index at three time horizons.",
+        "Insight 1- Missingness and observation times are informative of short-term outcomes.",
+        "Insight 2- Ignoring clinical presence might not only reduce performance but also hurt transportability.",
+        "Insight 3- Explicit modelling of clinical presence improves performance and robustness."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Conclusions",
+      "content": [
+        "Learning from medical data without sufficientconsiderationof the potentialinformativenessofclinical presenceonoutcomecould impair performance and transportability.",
+        "We invite practitioners to:",
+        "Explore thepractitioner-patient interactionprocess to identify clinical presence patterns.",
+        "Report theassumptionsmade on the clinical presence process.",
+        "Leverageinformative observation process.",
+        "Evaluate transportability:internallyandexternally."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "title": "Conformal Semantic Keypoint Detection with Statistical Guarantees",
+    "authors": [
+      "Heng Yang",
+      "Marco Pavone"
+    ],
+    "organizations": [],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "nvidia_logo",
+        "description": "NVIDIA 公司 Logo",
+        "figure_width": 280,
+        "figure_height": 60
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Object Pose Estimation: why untrustworthy?",
+      "content": [
+        "Current pipelines rely onheuristic predictionwhich are not guaranteed to be close to groundtruth. \n                    Popular heuristics (e.g., RANSAC) get trapped in local minima and fail without notice."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "物体姿态估计流程图，展示了关键点检测和优化阶段，以及启发式方法可能失败的案例。",
+          "figure_width": 1755,
+          "figure_height": 759,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Our method: conformal keypoint detection",
+      "content": [
+        "Paradigm shift:fromheuristic predictiontoprobabilistically correct prediction sets.",
+        "Key ingredient:inductive conformal prediction (ICP) — finite-sample uncertainty quantificationwithout assumptionson the data distribution or the prediction model.",
+        "Requirement #1: Calibration set",
+        "Requirement #2: Nonconformity function",
+        "Guarantee: Cover the true keypoints with a user-specified probability (e.g., 90%)"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "符合性关键点检测框架图，包含校准集、非符合性函数和最终的符合性预测输出。",
+          "figure_width": 1617,
+          "figure_height": 567,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Experiments: works out of the box!",
+      "content": [
+        "Setup:200 images for calibration, 1214 images for testing.",
+        "User:give me 90% and 95% coverage of the true keypoints.",
+        "The results demonstratevalid coverage(90%, 95%) andsmall sizeof the prediction sets across various objects in the LineMOD Occluded dataset."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "实验结果图表，展示了在LineMOD数据集上的覆盖率直方图和ICP半径的累积分布函数(CDF)。",
+          "figure_width": 1455,
+          "figure_height": 1228,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "定性结果展示，不同物体在不同视角下的关键点预测集合可视化。",
+          "figure_width": 1127,
+          "figure_height": 487,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

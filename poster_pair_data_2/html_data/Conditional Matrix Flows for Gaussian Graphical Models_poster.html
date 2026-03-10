@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional Matrix Flows Poster</title>
+    <style>
+        :root {
+            --bg-blue: #d9e8f5;
+            --benefit-green: #d4edda;
+            --limitation-red: #f8d7da;
+            --header-font: 'Arial', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #poster-canvas {
+            width: 1600px;
+            height: 1131px; /* A4 aspect ratio approx */
+            background-color: white;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .header-text {
+            flex: 2;
+        }
+        .poster-title {
+            font-size: 48px;
+            margin: 0;
+            color: #000;
+            font-weight: bold;
+        }
+        .poster-authors {
+            font-size: 22px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .header-logos {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            font-size: 18px;
+        }
+        .header-logos img {
+            object-fit: contain;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            gap: 30px;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .column-left { flex: 1.2; }
+        .column-center { flex: 2.5; }
+        .column-right { flex: 0.5; }
+
+        .layout-block {
+            background-color: var(--bg-blue);
+            border-radius: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .section-header {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: 5px;
+        }
+        .text-block {
+            font-size: 16px;
+            line-height: 1.4;
+            margin: 10px 0;
+        }
+        .list-item {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 15px 0;
+            width: 100%;
+        }
+        .row-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            width: 100%;
+            gap: 10px;
+        }
+        .benefit-box {
+            background-color: var(--benefit-green);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .limitation-box {
+            background-color: var(--limitation-red);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .references-text {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.2;
+        }
+        .approach-table {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #999;
+            background: white;
+        }
+        .approach-row {
+            display: flex;
+            border-bottom: 1px solid #999;
+        }
+        .approach-cell-label {
+            width: 150px;
+            padding: 10px;
+            background: #eee;
+            font-weight: bold;
+            font-size: 14px;
+            border-right: 1px solid #999;
+        }
+        .approach-cell-content {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <div class="header-text">
+                <h1 class="poster-title">Conditional Matrix Flows for Gaussian Graphical Models</h1>
+                <p class="poster-authors">Marcello Massimo Negri, Fabricio Arend Torres, Volker Roth</p>
+                <div class="header-logos">
+                    <div>Department of Computer Science, University of Basel, Switzerland</div>
+                    <div>marcellomassimo.negri@unibas.ch</div>
+                </div>
+            </div>
+            <div class="header-logos">
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <img src="./logo_unibas.png" style="width: 150px; height: 60px;" data-semantic="University of Basel Logo">
+                    <img src="./logo_neurips.png" style="width: 150px; height: 60px;" data-semantic="NeurIPS Logo">
+                </div>
+                <div>github.com/unibas-dmi-hpc/cmf</div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Left Column -->
+            <div class="column column-left">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Gaussian Graphical Models: Graphical Lasso</h2>
+                    <div class="figure-container">
+                        <img src="./fig_1.png" style="width: 450px; height: 125px;" data-semantic="GGM and Graphical Lasso visualization showing observation matrix, precision matrix and graphical model">
+                    </div>
+                    <ul>
+                        <li class="list-item">GGMs provide <b>structural information</b>: Ωij = 0 implies conditional independence of features i and j given all remaining features</li>
+                        <li class="list-item">Maximum likelihood estimate of Ω is not sparse and for d > n is not unique → <b>penalized likelihood</b> to encourage sparse Ω</li>
+                    </ul>
+                    <p class="text-block" style="text-align: center; font-family: serif;">argmax<sub>Ω>0</sub> {log det Ω - Tr(1/n SΩ) - λ||Ω||<sub>1</sub>}</p>
+                    <p class="text-block"><b>Intractable</b> because the objective is highly non-convex</p>
+                    <p class="text-block"><b>Graphical Lasso:</b> use convex relaxation ||Ω||<sub>0</sub> → ||Ω||<sub>1</sub></p>
+                    
+                    <div class="benefit-box">
+                        <p class="text-block"><b>Benefits</b></p>
+                        <ul>
+                            <li class="list-item"><b>Solution path:</b> frequentist approach provides solutions as a function of λ</li>
+                        </ul>
+                    </div>
+                    <div class="limitation-box">
+                        <p class="text-block"><b>Limitations</b></p>
+                        <ul>
+                            <li class="list-item"><b>Over-shrinking:</b> l1 norm causes well-known over-shrinking of features</li>
+                            <li class="list-item"><b>No credibility interval</b></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Bayesian Graphical Lasso</h2>
+                    <ul>
+                        <li class="list-item">Bayesian approach: p(Ω|S, λ) ∝ p(S|Ω) p(Ω|λ)</li>
+                        <li class="list-item">Encourage sparsity with double exponential prior (DE)</li>
+                    </ul>
+                    <p class="text-block" style="font-family: serif; font-size: 14px;">
+                        p(S|Ω) ∝ Wd(n, Ω⁻¹)<br>
+                        p(Ω|λ) ∝ Wd(d + 1, λ1d) ∏ DE(ωij|λ) I[Ω > 0]
+                    </p>
+                    <div class="benefit-box">
+                        <p class="text-block"><b>Benefits</b></p>
+                        <ul>
+                            <li class="list-item"><b>Credibility interval:</b> can be computed within Bayesian framework</li>
+                        </ul>
+                    </div>
+                    <div class="limitation-box">
+                        <p class="text-block"><b>Limitations</b></p>
+                        <ul>
+                            <li class="list-item"><b>Expensive posterior sampling:</b> needs Gibbs sampler</li>
+                            <li class="list-item"><b>Over-shrinking:</b> prior cannot be generalized to sub-l1 pseudo-norms</li>
+                            <li class="list-item"><b>Expensive solution path:</b> independent Markov chains for each λ value</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Center Column -->
+            <div class="column column-center">
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Conditional Matrix Flow for Gaussian Graphical Models</h2>
+                    <p class="text-block" style="text-align: center; background: #fff; padding: 5px; border-radius: 5px;">
+                        Goal: <b>unify benefits</b> of frequentist and Bayesian frameworks while <b>overcoming limitations</b>
+                    </p>
+                    <p class="text-block">We propose a general framework for <b>variational inference</b> with matrix-variate Normalizing Flows in GGMs. As a key improvement on previous work, we train with one flow a continuum of sparse regression models jointly for all regularization parameters λ and all lq norms, including non-convex <b>sub-l1 pseudo-norms</b>.</p>
+                    
+                    <div class="approach-table">
+                        <div class="approach-row">
+                            <div class="approach-cell-label">VARIATIONAL INFERENCE</div>
+                            <div class="approach-cell-content">
+                                <ul>
+                                    <li class="list-item">Posterior approximation and efficient sampling via <b>Normalizing Flow</b></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="approach-row">
+                            <div class="approach-cell-label">SUB-lq PSEUDO-NORMS</div>
+                            <div class="approach-cell-content">
+                                <ul>
+                                    <li class="list-item">Generalized Gaussian Distributions (GGD) as sparsity-inducing priors</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="approach-row">
+                            <div class="approach-cell-label">CONDITIONAL FLOW</div>
+                            <div class="approach-cell-content">
+                                <ul>
+                                    <li class="list-item">Condition the Normalizing Flow on λ and q to obtain <b>solution paths</b></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="figure-container">
+                        <h3 style="font-size: 18px; margin: 10px 0;">ARCHITECTURE</h3>
+                        <img src="./fig_2.png" style="width: 785px; height: 185px;" data-semantic="Architecture diagram of the Conditional Matrix Flow showing Hypernetwork, Bijections, and Cholesky product steps">
+                    </div>
+                </section>
+
+                <div class="row-container">
+                    <div class="benefit-box" style="flex: 1;">
+                        <p class="text-block"><b>Combine benefits</b></p>
+                        <ul>
+                            <li class="list-item">Credibility intervals: sample-based</li>
+                            <li class="list-item">Solution paths: recover Bayesian GL</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-box" style="flex: 1; background-color: #e2e3e5;">
+                        <p class="text-block"><b>Overcome limitations</b></p>
+                        <ul>
+                            <li class="list-item">Cheap posterior sampling: no Gibbs</li>
+                            <li class="list-item">No over-shrinking: GGD prior</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row-container" style="margin-top: 20px; background: white; padding: 15px; border-radius: 15px;">
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_3.png" style="width: 200px; height: 150px;" data-semantic="Bayesian solution path at T=1 and model selection plot">
+                    </div>
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_4.png" style="width: 200px; height: 150px;" data-semantic="Frequentist solution path at T approaching 0">
+                    </div>
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_5.png" style="width: 200px; height: 150px;" data-semantic="Solution path in sub-l1 regime">
+                    </div>
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_6.png" style="width: 200px; height: 150px;" data-semantic="Credibility intervals in sub-l1 regime showing no over-shrinking">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="column column-right">
+                <section class="layout-block" data-section-id="section_4" style="background: none; padding: 0;">
+                    <div class="figure-container">
+                        <img src="./fig_7.png" style="width: 150px; height: 150px;" data-semantic="QR code for project repository">
+                    </div>
+                    <h2 class="section-header" style="font-size: 18px;">References</h2>
+                    <div class="references-text">
+                        <p>N. Meinshausen and P. Bühlmann (2006). "High-dimensional graphs and variable selection with the Lasso". In: Institute of Mathematical Statistics</p>
+                        <p>H. Wang (2012). "Bayesian Graphical Lasso Models and Efficient Posterior Computation." In: Bayesian Anal. 7 (4)</p>
+                        <p>G. Papamakarios et al (2021). "Normalizing Flows for Probabilistic Modeling and Inference." In: Journal of Machine Learning Research 22</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

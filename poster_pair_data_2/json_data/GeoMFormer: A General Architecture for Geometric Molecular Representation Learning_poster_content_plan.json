@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "title": "GeoMFormer: A General Architecture for Geometric Molecular Representation Learning",
+    "authors": [
+      "Tianlang Chen1*",
+      "Shengjie Luo1*",
+      "Di He1",
+      "Shuxin Zheng2",
+      "Tie-Yan Liu2",
+      "Liwei Wang1"
+    ],
+    "organizations": [
+      "1. Peking University; 2. Microsoft Research AI4Science"
+    ],
+    "github": "github.com/c-tl/GeoMFormer",
+    "figures": [
+      {
+        "fig_id": "logo_pku",
+        "description": "北京大学校徽",
+        "figure_width": 150,
+        "figure_height": 40
+      },
+      {
+        "fig_id": "logo_ms",
+        "description": "微软Logo",
+        "figure_width": 120,
+        "figure_height": 30
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Background",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "分子表示学习背景、不变性与等变性示意图",
+          "figure_width": 650,
+          "figure_height": 143,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "GeoMFormer",
+      "content": [],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Instantiation",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "不变性与等变性注意力机制及前馈网络的详细实例化图解",
+          "figure_width": 650,
+          "figure_height": 194,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Experiments",
+      "content": [
+        "Invariant: OC20 IS2RE(Energy Prediction)"
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "OC20 IS2RE 数据集上的能量预测结果对比表",
+          "table_width": 500,
+          "table_height": 140,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    }
+  ]
+}

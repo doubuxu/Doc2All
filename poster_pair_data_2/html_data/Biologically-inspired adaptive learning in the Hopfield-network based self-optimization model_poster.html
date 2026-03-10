@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Poster - Biologically-inspired adaptive learning</title>
+    <style>
+        :root {
+            --primary-red: #b32017;
+            --light-pink: #f9e6e6;
+            --bg-white: #ffffff;
+            --text-dark: #333333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            height: 1697px; /* A-series proportion */
+            background-color: var(--bg-white);
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        header {
+            padding: 40px 60px 20px 60px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        .poster-title {
+            font-size: 42px;
+            color: var(--primary-red);
+            margin: 0 0 15px 0;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .poster-authors {
+            font-size: 20px;
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .header-logos .qr-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .qr-item {
+            text-align: center;
+            font-size: 12px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 40px;
+            gap: 20px;
+        }
+
+        .row-container {
+            display: flex;
+            width: 100%;
+            gap: 30px;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .layout-block {
+            margin-bottom: 10px;
+        }
+
+        .section-header {
+            background-color: var(--light-pink);
+            color: #000;
+            padding: 8px 15px;
+            font-size: 24px;
+            margin: 0 0 15px 0;
+            border-radius: 2px;
+        }
+
+        .text-block {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0 0 10px 0;
+        }
+
+        .list-item {
+            font-size: 16px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Special Banner Style */
+        .highlight-banner {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .highlight-banner p {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .references-text {
+            font-size: 11px;
+            color: #444;
+            line-height: 1.3;
+        }
+
+        .ack-box {
+            font-size: 11px;
+            border-left: 1px solid #ccc;
+            padding-left: 15px;
+        }
+
+        footer {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .footer-logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .footer-subtext {
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .comparison-grid {
+            display: flex;
+            gap: 20px;
+        }
+
+        .comparison-col {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-logos" style="justify-content: flex-start; margin-bottom: -40px;">
+            <img src="./logo_nips.png" style="width: 200px; height: 80px;" data-semantic="Neural Information Processing Systems Logo">
+        </div>
+        <h1 class="poster-title">Biologically-inspired adaptive learning in the Hopfield-network based self-optimization model</h1>
+        <p class="poster-authors">Aisha Belhadi</p>
+        <div class="header-logos">
+            <div>Embodied Cognitive Science Unit, Okinawa Institute of Science and Technology Graduate University</div>
+            <div class="qr-group">
+                <div class="qr-item">
+                    <img src="./qr_paper.png" style="width: 80px; height: 80px;" data-semantic="QR code for the paper">
+                    <div>Paper</div>
+                </div>
+                <div class="qr-item">
+                    <img src="./qr_zoom.png" style="width: 80px; height: 80px;" data-semantic="QR code for Zoom link">
+                    <div>Join me on Zoom!</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Top Row -->
+        <div class="row-container">
+            <div class="column">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Biological learning is different from machine learning in key ways</h2>
+                    <div class="comparison-grid">
+                        <div class="comparison-col">
+                            <p class="text-block"><strong>Biological systems operate with:</strong></p>
+                            <ul>
+                                <li class="list-item">sparse data</li>
+                                <li class="list-item">lower/efficient energy use</li>
+                                <li class="list-item">minimal/variable training</li>
+                                <li class="list-item">trade-offs <strong>driving adaptation</strong></li>
+                            </ul>
+                        </div>
+                        <div class="comparison-col">
+                            <p class="text-block"><strong>Machine learning operates with:</strong></p>
+                            <ul>
+                                <li class="list-item">large datasets</li>
+                                <li class="list-item">high energy use</li>
+                                <li class="list-item">extensive training</li>
+                                <li class="list-item">trade-offs causing <strong>failure</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-block" style="font-size: 20px; margin-top: 15px;">What <strong>biological mechanisms</strong> could help <strong>enhance</strong> ML?</p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Self-optimization (SO) model</h2>
+                    <p class="text-block">The SO model is a Hopfield network with:</p>
+                    <ul>
+                        <li class="list-item">updating of weights based on a Hebbian learning rule</li>
+                        <li class="list-item">periodic resets of network states</li>
+                    </ul>
+                    <p class="text-block">Able to <strong>combine optimization</strong> and memory <strong>stabilization</strong>?</p>
+                </section>
+            </div>
+
+            <div class="column">
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Example: learning rate as a function of energy</h2>
+                    <p class="text-block">1. Weight update rule (α: learning rate; s_i, s_j: states of nodes i and j)</p>
+                    <p class="text-block" style="text-align: center; font-style: italic;">w_ij(t + 1) = w_ij(t) + dw_ij(t), &nbsp;&nbsp; dw_ij = α s_i s_j</p>
+                    <p class="text-block">2. Learning rate α as a function of energy E:</p>
+                    <p class="text-block" style="text-align: center;">α = { a / (ΔE + ε_0) if γ ≠ 1; α_0 if γ = 1 }</p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_4">
+                    <p class="text-block">SO model results for map-coloring problem. From left to right, E=5, E=8, E=12, E=20 (only the two middle results are valid maps).</p>
+                    <div class="figure-container">
+                        <img src="./fig_1.png" style="width: 109px; height: 119px;" data-semantic="Map coloring result E=5">
+                        <img src="./fig_2.png" style="width: 108px; height: 117px;" data-semantic="Map coloring result E=8">
+                        <img src="./fig_3.png" style="width: 107px; height: 117px;" data-semantic="Map coloring result E=12">
+                        <img src="./fig_4.png" style="width: 107px; height: 117px;" data-semantic="Map coloring result E=20">
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Middle Banner -->
+        <section class="layout-block highlight-banner" data-section-id="section_5">
+            <p class="text-block">Implementing mechanisms used by <strong>living systems</strong> to <strong>adapt</strong> to their environment may help <strong>solve trade-offs</strong> inherent to machine learning.</p>
+        </section>
+
+        <!-- Bottom Row -->
+        <div class="row-container">
+            <div class="column">
+                <section class="layout-block" data-section-id="section_6">
+                    <h2 class="section-header">Translating adaptive biological mechanisms into a Hopfield network</h2>
+                    <div class="figure-container">
+                        <img src="./fig_5.png" style="width: 550px; height: 440px;" data-semantic="Diagram of biological mechanisms like Metaplasticity, Homeostasis, and Modularity mapped to network functions">
+                    </div>
+                </section>
+            </div>
+
+            <div class="column">
+                <section class="layout-block" data-section-id="section_7">
+                    <div class="figure-container">
+                        <img src="./fig_6.png" style="width: 224px; height: 152px;" data-semantic="Energy distribution histogram for gamma=1">
+                        <img src="./fig_7.png" style="width: 225px; height: 150px;" data-semantic="Energy distribution histogram for gamma=0.1">
+                    </div>
+                    <p class="text-block">Energy distributions at the end of learning for 1000 runs. A slight difference can be observed between γ=1 (learning rate α constant) and γ=0.1 (variable learning rate), but not obviously significant.</p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_8">
+                    <h2 class="section-header">What next?</h2>
+                    <ul>
+                        <li class="list-item">Test further implementations of variable learning rate: as function of weights, trigonometric function</li>
+                        <li class="list-item">Test "forgetting": weight decay, inhibition</li>
+                        <li class="list-item">Applications in continuous learning, creativity, robotics</li>
+                        <li class="list-item">Modeling biological systems</li>
+                    </ul>
+                </section>
+
+                <div class="row-container" style="gap: 15px; margin-top: 10px;">
+                    <section class="layout-block" data-section-id="section_9" style="flex: 2;">
+                        <h2 class="section-header" style="font-size: 16px;">References</h2>
+                        <div class="references-text">
+                            W. C. Abraham. Metaplasticity: Tuning synapses and networks for plasticity. Nat Rev Neurosci, 9(5):387–387, 2008-05<br>
+                            H. Kitano. Biological robustness. Nat Rev Genet, 5(11):826–837, 2004-11<br>
+                            R. A. Watson, C. L. Buckley, and R. Mills. Optimization in "self-modeling" complex adaptive systems. Complexity, 16(5):17–26, 2011
+                        </div>
+                    </section>
+                    <section class="layout-block ack-box" data-section-id="section_10" style="flex: 1;">
+                        <h2 class="section-header" style="font-size: 16px; background: none; padding: 0;">Acknowledgments</h2>
+                        <p class="text-block" style="font-size: 11px;">I would like to sincerely thank Natalya Weber (OIST) for her work on the implementation example and for producing the figures in this poster.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <img src="./oist_logo_white.png" style="width: 80px; height: 80px;" data-semantic="OIST Logo">
+        <div>
+            <div class="footer-logo-text">OIST</div>
+            <div class="footer-subtext">Okinawa Institute of Science and Technology Graduate University</div>
+            <div class="footer-subtext">沖縄科学技術大学院大学</div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

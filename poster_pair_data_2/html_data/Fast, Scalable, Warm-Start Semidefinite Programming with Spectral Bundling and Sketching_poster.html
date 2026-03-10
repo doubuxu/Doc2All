@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Poster - Fast, Scalable, Warm-Start SDP</title>
+    <style>
+        :root {
+            --primary-blue: #003d79;
+            --secondary-blue: #005a9c;
+            --bg-gray: #f0f0f0;
+            --text-white: #ffffff;
+            --text-black: #333333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1800px;
+            background-color: var(--bg-gray);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: var(--text-white);
+            padding: 40px;
+            text-align: center;
+            border-bottom: 10px solid var(--secondary-blue);
+        }
+
+        .poster-title {
+            font-size: 56px;
+            margin: 0 0 20px 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 24px;
+            margin-top: 15px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 20px;
+        }
+
+        .layout-block {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            background-color: var(--secondary-blue);
+            color: white;
+            margin: 0;
+            padding: 15px 25px;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .text-block {
+            padding: 10px 25px;
+            font-size: 20px;
+            line-height: 1.4;
+            margin: 5px 0;
+        }
+
+        .list-item {
+            font-size: 20px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            gap: 10px;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        .references-text {
+            padding: 15px 25px;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .sub-label {
+            font-weight: bold;
+            color: var(--secondary-blue);
+            text-align: center;
+            width: 100%;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">Fast, Scalable, Warm-Start Semidefinite Programming with Spectral Bundling and Sketching</h1>
+        <p class="poster-authors">Rico Angell, Andrew McCallum</p>
+        <div class="header-logos">
+            <div>University of Massachusetts Amherst</div>
+            <div>github.com/iesl/usbs</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Motivation</h2>
+                <ul>
+                    <li class="list-item">Semidefinite programming (SDP) is an important tool for many applications</li>
+                </ul>
+                <div class="row-container">
+                    <div class="figure-container">
+                        <img src="./fig_1.png" style="width: 336px; height: 257px;" data-semantic="Max-Cut graph visualization showing nodes and edges">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./fig_2.png" style="width: 266px; height: 207px;" data-semantic="Sparse matrix representation for matrix completion">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./fig_3.png" style="width: 263px; height: 205px;" data-semantic="Dense matrix representation for matrix completion">
+                    </div>
+                </div>
+                <div class="row-container">
+                    <div class="figure-container">
+                        <img src="./fig_4.png" style="width: 262px; height: 259px;" data-semantic="Vector field plot showing stability of linear dynamical systems">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./fig_5.png" style="width: 278px; height: 264px;" data-semantic="Polynomial optimization curve with local and global minima">
+                    </div>
+                </div>
+                <ul>
+                    <li class="list-item">Many existing methods for solving or approximately solving SDPs</li>
+                    <li class="list-item">Need for a method that is fast, scalable, and provably correct for massive SDPs</li>
+                    <li class="list-item">Need a method where hyperparameters can modulate memory, accuracy, speed, and scalability of solving general SDPs</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Problem Setup</h2>
+                <p class="text-block">
+                    max &lt;C, X&gt; <br>
+                    s.t. A_i X = b_i <br>
+                    A_i X &le; b_i <br>
+                    X &ge; 0
+                </p>
+                <div class="figure-container">
+                    <img src="./fig_6.png" style="width: 482px; height: 382px;" data-semantic="Geometric representation of SDP feasible region and objective function contours">
+                </div>
+                <ul>
+                    <li class="list-item">Want to solve general SDPs with both equality and inequality constraints</li>
+                    <li class="list-item">Want to have theoretical guarantees about convergence to optimal solution</li>
+                    <li class="list-item">Assume cost matrix C is sparse and a upper bound &alpha; &ge; tr(X*) exists</li>
+                    <li class="list-item">Assume the number of constraints is small compared to the problem size</li>
+                    <li class="list-item">Want to be able to solve SDPs where X will not fit in memory</li>
+                    <li class="list-item">Want solver to be able to take advantage of a warm-start initialization</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Unified Spectral Bundling</h2>
+                <p class="text-block">Reformulated SDP as a the following penalized dual objective:</p>
+                <p class="text-block" style="text-align: center; font-style: italic;">
+                    f(y) := &alpha; [&lambda;_max(C - A*y)]_+ + &lt;b, y&gt; + &iota;_y(y)
+                </p>
+                <ul>
+                    <li class="list-item">Solve the SDP by minimizing f using a proximal bundle method</li>
+                </ul>
+                <div class="figure-container">
+                    <img src="./fig_7.png" style="width: 815px; height: 223px;" data-semantic="Mathematical decomposition of the spectral update directions in the bundle method">
+                </div>
+                <ul>
+                    <li class="list-item">The size of V determines the rank k of each update, specified by the user</li>
+                    <li class="list-item">Only update y_t+1 if progress is sufficient</li>
+                    <li class="list-item">Always use y_t+1 to create X_t+1, V_t+1 is the top-k eigenvectors of C - A*y_t+1</li>
+                    <li class="list-item">Analytical solution to the proximal bundle method lead to the following updates</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Scaling with Matrix Sketching</h2>
+                <ul>
+                    <li class="list-item">Only need to keep track of projections of X such as &lt;C, X&gt; and AX</li>
+                    <li class="list-item">All of the memoization can be done efficiently due to linearity of operations</li>
+                    <li class="list-item">Apply low-rank matrix sketching techniques to enable scaling to problems where X cannot fit in memory — track projection P instead of X</li>
+                </ul>
+                <div class="figure-container">
+                    <img src="./fig_8.png" style="width: 988px; height: 334px;" data-semantic="Matrix sketching process showing the projection of large matrices into lower dimensional space">
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Results</h2>
+                
+                <p class="text-block" style="text-align:center; font-weight:bold;">Max-Cut</p>
+                <div class="figure-container">
+                    <img src="./fig_9.png" style="width: 1054px; height: 395px;" data-semantic="Bar chart comparing solve times for Max-Cut problems across different datasets and solvers">
+                </div>
+
+                <p class="text-block" style="text-align:center; font-weight:bold;">Traveling Salesman Problem</p>
+                <div class="figure-container">
+                    <img src="./fig_10.png" style="width: 1056px; height: 264px;" data-semantic="Line charts showing the relative gap and best relative gap over time for the Traveling Salesman Problem">
+                </div>
+
+                <p class="text-block" style="text-align:center; font-weight:bold;">Clustering with &exist;-constraints</p>
+                <div class="figure-container">
+                    <img src="./fig_11.png" style="width: 1071px; height: 291px;" data-semantic="Cumulative SDP solve time comparison for clustering problems with constraints">
+                </div>
+
+                <div class="row-container" style="margin-top: 40px; align-items: flex-end;">
+                    <div style="flex: 2; padding-left: 20px;">
+                        <p class="text-block" style="font-size: 28px; font-weight: bold; color: var(--primary-blue); margin: 0;">UMassAmherst</p>
+                        <p class="text-block" style="font-size: 18px; margin: 0;">Manning College of Information & Computer Sciences</p>
+                    </div>
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_12.png" style="width: 227px; height: 226px;" data-semantic="QR code linking to the project GitHub repository">
+                    </div>
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_13.png" style="width: 283px; height: 170px;" data-semantic="JAX library logo indicating implementation framework">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

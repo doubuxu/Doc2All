@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "CW-ERM: Improving Autonomous Driving Planning with Closed-loop Weighted Empirical Risk Minimization",
+    "authors": [
+      "Eesha Kumar",
+      "Yiming Zhang",
+      "Stefano Pini",
+      "Simon Stent",
+      "Ana Sofia Rufino Ferreira",
+      "Sergey Zagoruyko",
+      "Christian S. Perone"
+    ],
+    "organizations": [
+      "Woven Planet United Kingdom Limited, Woven Planet North America, Inc."
+    ],
+    "github": "github.com/woven-planet/cw-erm",
+    "figures": [
+      {
+        "fig_id": "fig_1",
+        "description": "Neural Information Processing Systems (NeurIPS) Logo",
+        "figure_width": 504,
+        "figure_height": 223
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Main Ideas and Motivation",
+      "content": [
+        "Behavior Cloning (BC) algorithms for training self-driving vehicles via pure Empirical Risk Minimization (ERM) biases policy towards matching open-loop behavior.",
+        "We debias the policy network by identifying important samples via a closed-loop evaluator.",
+        "Training in three phases:Open-loop identification phaseError set construction and evaluation phaseUpsampling training phase",
+        "Open-loop identification phase",
+        "Error set construction and evaluation phase",
+        "Upsampling training phase"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Our Contributions",
+      "content": [
+        "Motivate and propose a technique that leverages closed-loop evaluation metrics acquired from policy rollouts in a simulator to debias the policy network and reduce distributional differences.",
+        "Evaluate CW-ERM on a challenging urban driving dataset in a closed-loop fashion to show significant improvements without requiring complex training methods.",
+        "Show an important connection of our method to a family of methods that addresses covariate shift through density ratio estimation."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Methodology",
+      "content": [
+        "Stage 1 (Identification Policy):Train policy network via BC in open-loop using ERM.",
+        "Stage 2 (Closed-Loop Simulation):Perform rollouts in closed-loop simulator. Collect metrics and identify the error set E.",
+        "Stage 3 (Final Policy):Train new policy where scenes belonging to the error set are upweighted by a factor w."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "References",
+      "content": [
+        "1. Liu et al. (2021). Just Train Twice: Improving Group Robustness without Training Group Information. ICML.2. Vitelli et al. (2022). Safetynet: Safe planning for real-world self-driving vehicles using machine-learned policies. ICRA.3. Scheel et al. (2022). Urban driver: Learning to drive from real-world demonstrations using policy gradients. CoRL."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

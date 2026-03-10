@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "title": "Agnostic Learnability of Halfspaces via Logistic Loss",
+    "authors": [
+      "Ziwei Ji (UIUC)",
+      "Kwangjun Ahn (MIT)",
+      "Pranjal Awasthi (Google Research)",
+      "Satyen Kale (Google Research)",
+      "Stefani Karp (Google Research & CMU)"
+    ],
+    "organizations": [
+      "University of Illinois Urbana-Champaign",
+      "Massachusetts Institute of Technology",
+      "Google Research",
+      "Carnegie Mellon University"
+    ],
+    "github": "",
+    "figures": []
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Setting.",
+      "content": [
+        "Binary classification:given by distribution P on Rd× {-1, +1}; we have i.i.d. samples from P.",
+        "Linear classifier:x ↦ ⟨x, w⟩.",
+        "Goal:compete with the optimal solution ū, where",
+        "Logistic regression (LR):let ℓlog(z) := ln(1 + e-z), and let",
+        "denote the population logistic risk of w over P."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "Contributions.",
+      "content": [
+        "General P: 1 - OPT lower bound (Ben-David et al., 2012).",
+        "Isotropic log-concave distributions: Ω(OPT) lower bound (Diakonikolas et al., 2020).",
+        "\"Well-behaved\" sub-exponential distributions: O(√OPT) upper bound with SGD (Frei et al., 2021).",
+        "Standard concentration and anti-concentration conditions.",
+        "Example: a mixture of log-concave dist. (e.g., Gaussian).",
+        "Ω(√OPT) lower bound for well-behaved sub-exp dist.; matching O(√OPT) upper bound from (Frei et al., 2021).",
+        "O(OPT) upper bound with \"radial Lipschitzness.\"",
+        "Diakonikolas et al. (2020) designed a nonconvex SGD that achieves O(OPT) + ε risk using O(d/ε4) samples.",
+        "Other prior algorithms achieving O(OPT) + ε risk involve solving multiple rounds of convex program.",
+        "We design a simple two-phase convex program that achieves O(OPT ln(1/OPT)) + ε risk using O(d/ε2) samples,withoutradial Lipschitzness."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Lower bound.",
+      "content": [
+        "We construct a distribution Q with three parts Q1, Q2, Q4.",
+        "1. Q1consists of two squares with edge length √OPT/2 and density 1; one has center (√2/2, -√2/2) and label -1, the other has center (-√2/2, √2/2) and label +1.",
+        "2. Q2is supported on [0, √OPT] × [0, 1] and [-√OPT, 0] × [-1, 0] with density 1, and the label is given by sign(x1).",
+        "3. Q4is the uniform distribution over the unit ball with density q4and label sign(x1).",
+        "To minimize Rlogon Q4, we should go to infinity along (1, 0).",
+        "Q1keeps w* bounded with ||w*|| = O(1/√OPT).",
+        "Q2drags w* above by an angle of Ω(√OPT)."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Geometric construction of distribution Q showing regions Q1, Q2 and the unit ball for the lower bound proof.",
+          "figure_width": 250,
+          "figure_height": 218,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Upper bound: radial Lipschitzness.",
+      "content": [
+        "To exclude Q and overcome the lower bound, we make the following assumption for LR.",
+        "Radial Lipschitzness:There exists a measurable function κ : R+→ R+such that for any two-dimensional subspace V, letting pVdenote the density of the projection of feature distribution onto V, then",
+        "Holds if pVis Lipschitz, even non-log-concave ones (e.g., Gaussian mixtures).",
+        "Does not hold for general log-concave distributions.",
+        "Does not hold for Q, non-Lipschitz near the vertical axis."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "Upper bound: logistic regression.",
+      "content": [
+        "Projected gradient descent (PGD):let w0:= 0, and",
+        "Proof ideas:under the given conditions, suppose ŵ satisfies Rlog(ŵ) ≤ Rlog(||w̄||ū) + ε', then",
+        "Cκ= O(ln(1/OPT)2) for Lipschitz density.",
+        "The global optimizer w* of Rlogsatisfies ||w*|| = Ω(1/√OPT); PGD also ensures wthas small ε' and ||wt|| = Ω(1/√OPT)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Upper bound: two-phase convex program.",
+      "content": [
+        "However, the global minimizer of Rhis 0; if we find ŵ by global minimization, as ε' gets small, ||ŵ|| also gets small.",
+        "LR finds unit v that is Õ(√OPT) away from ū.",
+        "Then minimize Rhover D := {w | ⟨w, v⟩ ≥ 1}.∀w ∈ D, ||w|| ≥ 1.||w̄||ū may not in D, but (1 + Õ(OPT))||w̄||ū ∈ D!",
+        "∀w ∈ D, ||w|| ≥ 1.",
+        "||w̄||ū may not in D, but (1 + Õ(OPT))||w̄||ū ∈ D!",
+        "Use SGD for better sample complexity."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

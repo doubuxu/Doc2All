@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "InfinityGAN: Towards Infinite-Pixel Image Synthesis",
+    "authors": [
+      "Chieh Hubert Lin",
+      "Hsin-Ying Lee",
+      "Yen-Chi Cheng",
+      "Sergey Tulyakov",
+      "Ming-Hsuan Yang"
+    ],
+    "organizations": [
+      "1UC Merced",
+      "2Snap Research",
+      "3CMU",
+      "4Google Research",
+      "5Yonsei University"
+    ],
+    "github": "github.com/hubert0527/infinityGAN",
+    "figures": []
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Synthesizing infinite-pixel images from finite-sized training data.",
+      "content": [
+        "A 1024x2048 image composed of 242 patches, independently synthesized by InfinityGAN with spatial fusion of two styles. \n                    The generator is trained on 101x101 patches sampled from 197x197 real images."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Large scale landscape synthesis showing style blending and patch-based generation",
+          "figure_width": 1326,
+          "figure_height": 723,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "InfinityGAN architecture diagram including Structure Synthesizer, Texture Synthesizer, and Discriminator",
+          "figure_width": 1368,
+          "figure_height": 476,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Without carefully taming the positional information in the generator, other frameworks cannot generalize to extended image sizes at testing.",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Comparison table showing InfinityGAN vs COCO-GAN, SinGAN, and StyleGAN+NCI at different resolutions",
+          "table_width": 1140,
+          "table_height": 490,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "InfinityGAN + GAN-inversion (In&Out @ CVPR'22) = Seamless and arbitrarily-length image outpainting / inbetweening",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "Comparison of Boundless, NS-outpaint, In&Out, and In&Out+InfinityGAN",
+          "figure_width": 720,
+          "figure_height": 323,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "Arbitrary-length inbetweening and cyclic panorama results",
+          "figure_width": 1116,
+          "figure_height": 342,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "More samples from models trained at higher-resolution settings.",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_6",
+          "description": "High resolution landscape sample 1",
+          "figure_width": 696,
+          "figure_height": 346,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "High resolution landscape sample 2",
+          "figure_width": 339,
+          "figure_height": 344,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "High resolution landscape sample 3",
+          "figure_width": 346,
+          "figure_height": 346,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "We show that the two sets of latent variables learn different and diverse appearances.",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Grid showing variations in styles and local latent variables",
+          "figure_width": 714,
+          "figure_height": 484,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_9",
+          "description": "QR codes for Project Page and PyTorch code repository",
+          "figure_width": 168,
+          "figure_height": 363,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

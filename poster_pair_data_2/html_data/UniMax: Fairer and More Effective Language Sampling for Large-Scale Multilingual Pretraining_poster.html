@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UniMax Poster Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #poster-canvas {
+            width: 2400px;
+            height: 1700px;
+            background-color: white;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .poster-title {
+            font-size: 64px;
+            color: #202124;
+            margin: 0 0 15px 0;
+        }
+
+        .poster-authors {
+            font-size: 32px;
+            color: #5f6368;
+            margin: 0 0 10px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 24px;
+            color: #1a73e8;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: 30px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .column-left { flex: 1.2; }
+        .column-center { flex: 1.5; }
+        .column-right { flex: 1.3; }
+
+        .layout-block {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            font-size: 28px;
+            color: #202124;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .text-block {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #3c4043;
+            margin: 0 0 10px 0;
+        }
+
+        .figure-container, .row-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .list-item {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .references-text {
+            font-size: 14px;
+            color: #70757a;
+        }
+
+        .algorithm-box {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #dadce0;
+            font-size: 16px;
+            white-space: pre;
+        }
+
+        /* Top Row spanning across */
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">UniMax: Fairer and More Effective Language Sampling for Large-Scale Multilingual Pretraining</h1>
+        <p class="poster-authors">Hyung Won Chung, Xavier Garcia, Adam Roberts, Yi Tay, Orhan Firat, Sharan Narang, Noah Constant</p>
+        <div class="header-logos">
+            <div>Google Research</div>
+            <div>h.w.chung27@gmail.com, {nconstant, xgarcia}@google.com</div>
+            <img src="./google_logo.png" style="width: 250px; height: 60px;" data-semantic="Google Research Logo">
+        </div>
+    </header>
+
+    <section class="layout-block" data-section-id="section_1">
+        <div class="top-row">
+            <div class="figure-container">
+                <img src="./fig_1.png" style="width: 765px; height: 575px;" data-semantic="Pie chart showing language distribution in the training set, dominated by English at 46.2%">
+            </div>
+            <div class="figure-container">
+                <img src="./fig_2.png" style="width: 564px; height: 455px;" data-semantic="Plot of number of training epochs vs language rank for different budgets">
+                <p class="text-block" style="font-size: 14px; width: 500px;">(a) Number of training epochs for each language. Temperature sampling results in a large number of data repeats for low-resource languages, whereas UniMax explicitly caps repeats.</p>
+            </div>
+            <div class="figure-container">
+                <img src="./fig_3.png" style="width: 564px; height: 463px;" data-semantic="Pretraining sampling rate distribution across language ranks">
+                <p class="text-block" style="font-size: 14px; width: 500px;">(b) Pretraining sampling distribution. Temperature sampling results in poorly balanced distributions, whereas UniMax provides more uniform distributions without excessive upsampling.</p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Left Column: Formulas, Temperature Table, Algorithm -->
+        <div class="column column-left">
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Sampling Strategy</h2>
+                <p class="text-block">
+                    Standard temperature sampling: $p_l \propto n_l^{1/\tau}$. <br>
+                    UniMax sampling: $q_l = \frac{p'_l}{\sum_{l' \in L} p'_{l'}}$ where $p'_l$ is capped.
+                </p>
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 735px; height: 266px;" data-semantic="Table showing temperature settings for various multilingual models like mBERT, XLM, and mT5">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Algorithm 1: UniMax</h2>
+                <div class="algorithm-box">
+Algorithm 1: UNIMAX
+Inputs : Character count $c_l$ of each language $l$ in all the languages $L$ of the training corpus
+         Total character budget $C$
+         The number of epochs per language $N$
+Output: Sampling distribution $p_l$ of each language
+// Sort the languages by increasing number of character counts
+$L \leftarrow sortByCount(L)$
+$B \leftarrow C$ // Initialize the remaining budget to the total character budget
+$i \leftarrow 0$
+for $l$ in $L$ do
+    $b_l \leftarrow \frac{B}{len(L)-i}$ // Compute the remaining budget per-language
+    if $b_l > c_l \times N$ then
+        // If per-language budget exceeds $N$ epochs of $l$, use $N$ epochs
+        $U_l \leftarrow c_l \times N$
+    else
+        $U_l \leftarrow b_l$ // Otherwise use uniform per-language budget
+    end if
+    $B \leftarrow B - U_l$ // Update the remaining budget
+    $i \leftarrow i + 1$
+end for
+$p \leftarrow normalize(U)$
+return $p$
+                </div>
+            </section>
+        </div>
+
+        <!-- Center Column: Loss Curves (Fig 4-6) and TyDi QA (Fig 7-9) -->
+        <div class="column column-center">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Training Dynamics</h2>
+                <div class="row-container">
+                    <img src="./fig_4.png" style="width: 411px; height: 379px;" data-semantic="Loss curve for tau=1">
+                    <img src="./fig_5.png" style="width: 408px; height: 366px;" data-semantic="Loss curve for tau=3.33">
+                    <img src="./fig_6.png" style="width: 410px; height: 370px;" data-semantic="Loss curve for UniMax">
+                </div>
+                <p class="text-block" style="font-size: 14px;">Figure 2: Pretraining cross-entropy loss on the held-out data over the training steps. With too-low temperature, low-resource languages are sampled too little, and their losses are relatively high. With higher temperature, overfitting becomes more severe with increasing model size.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Downstream Performance (TyDi QA)</h2>
+                <div class="row-container">
+                    <img src="./fig_7.png" style="width: 381px; height: 310px;" data-semantic="TyDi QA performance: All languages">
+                    <img src="./fig_8.png" style="width: 380px; height: 310px;" data-semantic="TyDi QA performance: Higher-resource">
+                    <img src="./fig_9.png" style="width: 381px; height: 310px;" data-semantic="TyDi QA performance: Lower-resource">
+                </div>
+                <p class="text-block" style="font-size: 14px;">Figure 4: Average TyDi QA GoldP performance across three model sizes. Overall, UNIMAX outperforms both baselines at all model sizes considered. Breakdowns on higher-resource (top-5) and lower-resource (bottom-4) languages show UNIMAX outperforms tau=3.33 on both high- and low-resource, and only underperforms tau=1 on high-resource at large model scales.</p>
+            </section>
+        </div>
+
+        <!-- Right Column: Long Training (Fig 10-12), Main Results Table, Resources -->
+        <div class="column column-right">
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Long-term Training (1M Steps)</h2>
+                <div class="row-container">
+                    <img src="./fig_10.png" style="width: 397px; height: 335px;" data-semantic="1M step loss curve for tau=1">
+                    <img src="./fig_11.png" style="width: 403px; height: 315px;" data-semantic="1M step loss curve for tau=3.33">
+                    <img src="./fig_12.png" style="width: 402px; height: 323px;" data-semantic="1M step loss curve for UniMax">
+                </div>
+                <p class="text-block" style="font-size: 14px;">Figure 3: Pretraining cross-entropy loss on the held-out data over 1M training steps. With the sequence length of 512, this corresponds to 1/2 character budget. The overfitting behavior emerges only after sufficient number of training steps for tau=3.33.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">Main Results</h2>
+                <p class="text-block">Table 3: Comparison to mT5. XNLI and PAWS-X show average per-language accuracy; the rest show average per-language EM/F1. We use the translate-train setting except for TyDi QA.</p>
+                <div class="figure-container">
+                    <img src="./table_2.png" style="width: 1719px; height: 296px;" data-semantic="Main results table comparing UniMax (umT5) to mT5 across XNLI, PAWS-X, XQuAD, MLQA, and TyDi QA benchmarks">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_8">
+                <h2 class="section-header">Resources</h2>
+                <ul>
+                    <li class="list-item">mC4 3.1.0, available via HuggingFace</li>
+                    <li class="list-item">umT5 checkpoints, available via T5X repo</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "title": "G²N² : Weisfeiler and Lehman go grammatical",
+    "authors": [
+      "Jason Piquenot",
+      "Aldo Moscatelli",
+      "Maxime Bérar",
+      "Pierre Héroux",
+      "Jean-Yves Ramel",
+      "Romain Raveaux",
+      "Sébastien Adam"
+    ],
+    "organizations": [
+      "LITIS Lab, University of Rouen Normandy, France",
+      "LIFAT Lab, University of Tours, France"
+    ],
+    "github": "github.com/reproducibility-project",
+    "figures": [
+      {
+        "fig_id": "fig_1",
+        "description": "Université de Rouen Logo",
+        "figure_width": 77,
+        "figure_height": 124
+      },
+      {
+        "fig_id": "fig_2",
+        "description": "Université de Tours Logo",
+        "figure_width": 206,
+        "figure_height": 127
+      },
+      {
+        "fig_id": "fig_3",
+        "description": "LITIS Lab Logo",
+        "figure_width": 97,
+        "figure_height": 111
+      },
+      {
+        "fig_id": "fig_4",
+        "description": "LIFAT Lab Logo",
+        "figure_width": 299,
+        "figure_height": 164
+      },
+      {
+        "fig_id": "fig_5",
+        "description": "ANR Logo",
+        "figure_width": 81,
+        "figure_height": 72
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Contributions",
+      "content": [
+        "A generic framework to design a GNN from any fragment of an algebraic language.",
+        "The instantiation of the framework on ML(L3) resulting in G2N2, a provably 3-WL GNN.",
+        "Experiments demonstrating that G2N2 outperforms existing 3-WL GNNs on various downstream tasks."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "MATLANG and WL",
+      "content": [
+        "Definition 1:MATLANG is a matrix language with operation set {+, ·, ⊙, T, Tr, diag, 1, ×, f}.",
+        "Restricting operations to a subset L defines a fragment of MATLANG ML(L)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Context-Free Grammar",
+      "content": [
+        "Definition 2:A Context-Free Grammar (CFG) G = (V, Σ, R, S) with a finite set of variables."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_6",
+          "description": "CFG Rules and derivation tree diagram",
+          "figure_width": 713,
+          "figure_height": 326,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Grammar of literature GNNs",
+      "content": [
+        "Variables: S scalar, Vc/Vr column/row vector, M matrix."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "Framework",
+      "content": [
+        "From ML(L3) to the 3-WL G²N²"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "Language input box",
+          "figure_width": 252,
+          "figure_height": 170,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "Step 1 Definition icon",
+          "figure_width": 160,
+          "figure_height": 172,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_9",
+          "description": "Exhaustive CFG box",
+          "figure_width": 210,
+          "figure_height": 172,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_10",
+          "description": "Step 2 Reduction icon",
+          "figure_width": 164,
+          "figure_height": 172,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_11",
+          "description": "Reduced CFG box",
+          "figure_width": 178,
+          "figure_height": 172,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_12",
+          "description": "Step 3 Translation icon",
+          "figure_width": 203,
+          "figure_height": 172,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_13",
+          "description": "GNN layer box",
+          "figure_width": 175,
+          "figure_height": 172,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Step 3: Parallelised rules generation in r-GL3",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_14",
+          "description": "Detailed architecture of parallelised rules generation showing iterations k-1, k, and k+1 with matrix and vector memory updates",
+          "figure_width": 1642,
+          "figure_height": 1060,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "Overview of G²N²",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_15",
+          "description": "High-level overview of G2N2 architecture including edge features, node features, and readout functions",
+          "figure_width": 774,
+          "figure_height": 450,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_8",
+      "title": "Regression task: QM9 dataset (MAE ↓)",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "QM9 regression results table part 1 comparing PPGN and G2N2",
+          "table_width": 316,
+          "table_height": 429,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_2",
+          "description": "QM9 regression results table part 2 comparing PPGN and G2N2",
+          "table_width": 224,
+          "table_height": 429,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_9",
+      "title": "Acknowledgments",
+      "content": [
+        "The authors acknowledge the support of the French Agence Nationale de la Recherche (ANR) under grant ANR-21-CE23-0025 (CoDeGNN project)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_10",
+      "title": "GITHUB link",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_16",
+          "description": "GitHub repository QR code",
+          "figure_width": 286,
+          "figure_height": 264,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

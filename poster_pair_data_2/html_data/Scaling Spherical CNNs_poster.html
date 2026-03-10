@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Scaling Spherical CNNs Poster</title>
+    <style>
+        :root {
+            --primary-red: #e84c3d;
+            --primary-green: #27ae60;
+            --primary-yellow: #f1c40f;
+            --primary-blue: #2980b9;
+            --bg-gray: #f5f5f5;
+            --text-dark: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-gray);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        #poster-canvas {
+            width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 56px;
+            margin: 0;
+            color: var(--text-dark);
+            font-weight: 800;
+        }
+
+        .poster-authors {
+            font-size: 20px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+            font-size: 16px;
+            color: var(--primary-blue);
+        }
+
+        .qr-code {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        main {
+            display: flex;
+            gap: 30px;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .layout-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            color: white;
+            padding: 10px 20px;
+            margin: 0 0 15px 0;
+            font-size: 24px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        /* Section Colors */
+        [data-section-id="section_1"] .section-header { background-color: var(--primary-red); }
+        [data-section-id="section_2"] .section-header { background-color: var(--primary-green); }
+        [data-section-id="section_3"] .section-header { background-color: var(--primary-yellow); }
+        [data-section-id="section_4"] .section-header { background-color: var(--primary-blue); }
+
+        .text-block {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 5px 0;
+            color: #444;
+        }
+
+        ul {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .list-item {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        .figure-container, .row-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .figure-caption {
+            font-size: 11px;
+            color: #777;
+            text-align: center;
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        .sub-block {
+            margin-bottom: 15px;
+        }
+
+        .sub-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .references-text {
+            font-size: 11px;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <h1 class="poster-title">Scaling Spherical CNNs</h1>
+            <p class="poster-authors">Carlos Esteves, Jean-Jacques Slotine, Ameesh Makadia</p>
+            <div class="header-logos">
+                <div>Google Research</div>
+                <div>MIT</div>
+                <div>machc@google.com</div>
+                <div>jjs@mit.edu</div>
+                <div>makadia@google.com</div>
+                <div>github.com/google-research/spherical-cnn</div>
+            </div>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://github.com/google-research/spherical-cnn" style="width: 80px; height: 80px;" data-semantic="项目源码二维码">
+            </div>
+        </header>
+
+        <main>
+            <!-- Left Column -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Introduction</h2>
+                    
+                    <div class="sub-block">
+                        <span class="sub-title">Spherical CNNs</span>
+                        <ul>
+                            <li class="list-item">Principled way of learning from spherical signals, using spherical convolutions computed spectrally.</li>
+                            <li class="list-item">Equivariant to 3D rotations.</li>
+                            <li class="list-item">Respects spherical topology, robust to sampling.</li>
+                        </ul>
+                        <div class="row-container">
+                            <div style="display:flex; flex-direction:column; align-items:center;">
+                                <img src="./fig_1.png" style="width: 175px; height: 80px;" data-semantic="宇宙辐射球极投影图">
+                                <p class="figure-caption">Cosmic radiation</p>
+                            </div>
+                            <div style="display:flex; flex-direction:column; align-items:center;">
+                                <img src="./fig_2.png" style="width: 173px; height: 79px;" data-semantic="气旋轨迹全球分布图">
+                                <p class="figure-caption">Cyclone tracks</p>
+                            </div>
+                        </div>
+                        <div class="row-container">
+                            <div style="display:flex; flex-direction:column; align-items:center;">
+                                <img src="./fig_3.png" style="width: 175px; height: 156px;" data-semantic="海平面温度球形分布">
+                                <p class="figure-caption">Sea surface temperature</p>
+                            </div>
+                            <div style="display:flex; flex-direction:column; align-items:center;">
+                                <img src="./fig_4.png" style="width: 194px; height: 86px;" data-semantic="室内全景球形展开图">
+                                <p class="figure-caption">Spherical panorama (SUN360)</p>
+                            </div>
+                        </div>
+                        <div class="row-container">
+                            <img src="./fig_5.png" style="width: 190px; height: 31px;" data-semantic="分子结构模型序列">
+                            <img src="./fig_6.png" style="width: 168px; height: 29px;" data-semantic="3D CAD 椅子模型序列">
+                        </div>
+                    </div>
+
+                    <div class="sub-block">
+                        <span class="sub-title">Contributions</span>
+                        <ul>
+                            <li class="list-item">Spherical CNNs 100x larger than previously possible.</li>
+                            <li class="list-item">More expressive and efficient layers and activations.</li>
+                            <li class="list-item">Application-specific modeling for molecules and weather.</li>
+                        </ul>
+                        <div class="figure-container">
+                            <img src="./fig_7.png" style="width: 315px; height: 216px;" data-semantic="特征图大小与卷积数量的关系散点图，展示了本方法在规模上的提升">
+                        </div>
+                    </div>
+
+                    <div class="sub-block">
+                        <span class="sub-title">Related work</span>
+                        <div class="references-text">
+                            Cohen et al (ICLR'18), Esteves et al (ECCV'18, NeurIPS'20), Kondor et al (NeurIPS'18), Cobb et al (ICLR'21), McEwen et al (ICLR'22), Ocampo et al (ICLR'23).
+                        </div>
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Method</h2>
+                    <ul>
+                        <li class="list-item">Based on spin-weighted SCNNs (Esteves et al, NeurIPS'20).</li>
+                        <li class="list-item">Phase collapse activation: x₀ ← W₁x₀ + W₂|x| + b</li>
+                        <li class="list-item">Efficient spin-weighted spherical harmonics on TPUs.</li>
+                        <li class="list-item">Spectral batch normalization, pooling and residual connection.</li>
+                    </ul>
+                    <div class="figure-container">
+                        <img src="./fig_8.png" style="width: 500px; height: 57px;" data-semantic="光谱残差块架构流程图">
+                    </div>
+                    <div class="row-container" style="align-items: flex-start;">
+                        <div style="flex: 1;">
+                            <img src="./fig_9.png" style="width: 240px; height: 158px;" data-semantic="自旋加权球形卷积作为向量场的示意图">
+                            <p class="figure-caption">Spin-weighted spherical convolution as a vector field</p>
+                        </div>
+                        <div style="flex: 1;">
+                            <img src="./table_1.png" style="width: 252px; height: 125px;" data-semantic="消融实验数据表，对比了不同实现方式的步长和均方根误差">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Molecular property regression</h2>
+                    <ul>
+                        <li class="list-item">Represent a molecule as a set of spheres per atom, regress a set of properties.</li>
+                        <li class="list-item">One feature channel per atom type.</li>
+                        <li class="list-item">Use directional attributes only (no radius).</li>
+                    </ul>
+                    <p class="text-block" style="text-align: center; font-style: italic;">
+                        f_{iz}(x) = \sum_{z_j=z} \frac{z_i z_j}{|r_{ij}|^p} e^{-\frac{(x-r_{ij})^2}{\beta |r_{ij}|}}
+                    </p>
+                    <div class="figure-container">
+                        <img src="./fig_10.png" style="width: 450px; height: 180px;" data-semantic="分子原子球形表示示意图">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./table_2.png" style="width: 550px; height: 155px;" data-semantic="QM9数据集分子属性回归结果对比表">
+                    </div>
+                </section>
+
+                <section class="layout-block" data-section-id="section_4">
+                    <h2 class="section-header">Weather forecasting</h2>
+                    <ul>
+                        <li class="list-item">Take a set of atmospheric variables like temperature, wind, humidity, and predict their future values.</li>
+                        <li class="list-item">WeatherBench (Rasp et al): predict directly 3 or 5 days ahead.</li>
+                        <li class="list-item">Keisler (arXiv'22): predict iteratively in 6h increments.</li>
+                    </ul>
+                    <div class="figure-container" style="flex-direction: column; align-items: center;">
+                        <img src="./fig_11.png" style="width: 500px; height: 73px;" data-semantic="850 hPa 湿度预测与误差全球分布图">
+                        <img src="./fig_12.png" style="width: 500px; height: 65px;" data-semantic="850 hPa 温度预测与误差全球分布图">
+                        <img src="./fig_13.png" style="width: 500px; height: 67px;" data-semantic="500 hPa 位势高度预测与误差全球分布图">
+                    </div>
+                    <div class="row-container">
+                        <img src="./table_3.png" style="width: 280px; height: 61px;" data-semantic="与Keisler(2022)在1/3/5天预测上的对比表">
+                        <img src="./table_4.png" style="width: 280px; height: 140px;" data-semantic="在不同预测因子数量下的天气预报性能对比表">
+                    </div>
+                    <div class="row-container" style="justify-content: flex-start; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 5px;">
+                        <img src="./fig_14.png" style="width: 24px; height: 26px;" data-semantic="循环箭头图标">
+                        <p class="text-block" style="margin-left: 10px;">Similar patterns may appear at different positions and orientations; equivariance allows filter reuse.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Poster - mSGD and AdaGrad Convergence</title>
+    <style>
+        :root {
+            --primary-blue: #1a4a8e;
+            --divider-color: #b0c4de;
+            --text-main: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: "Times New Roman", serif;
+        }
+
+        #poster-canvas {
+            width: 1600px;
+            height: 900px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .header-left {
+            flex: 2;
+        }
+
+        .poster-title {
+            font-size: 42px;
+            margin: 0;
+            color: #000;
+            font-weight: normal;
+        }
+
+        .poster-authors {
+            font-size: 20px;
+            margin: 10px 0 0 0;
+            color: #333;
+        }
+
+        .header-logos {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 18px;
+            gap: 5px;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: 40px;
+            overflow: hidden;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 垂直分割线 */
+        .column:not(:last-child) {
+            border-right: 1px dashed var(--divider-color);
+            padding-right: 20px;
+        }
+
+        .layout-block {
+            margin-bottom: 15px;
+        }
+
+        .section-header {
+            font-size: 28px;
+            color: #000;
+            margin: 0 0 15px 0;
+            font-weight: bold;
+        }
+
+        .text-block {
+            font-size: 16px;
+            line-height: 1.4;
+            margin: 0 0 10px 0;
+            text-align: justify;
+        }
+
+        .list-item {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .figure-container {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .row-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .math-block {
+            font-style: italic;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .references-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-left">
+            <h1 class="poster-title">On the convergence of mSGD and AdaGrad for stochastic optimization</h1>
+            <p class="poster-authors">Ruinan Jin, Yu Xing, Xingkang He</p>
+        </div>
+        <div class="header-logos">
+            <div class="row-container" style="justify-content: flex-end; gap: 20px;">
+                <div>UCAS</div>
+                <div>KTH</div>
+                <div>University of Notre Dame</div>
+            </div>
+            <div style="margin-top: 10px;">github.com/optimization-research</div>
+            <img src="./logo_placeholder.png" style="width: 60px; height: 60px;" data-semantic="机构校徽图标">
+        </div>
+    </header>
+
+    <main>
+        <!-- 第一栏 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Algorithms:</h2>
+                <div class="figure-container">
+                    <img src="./fig_algorithms.png" style="width: 450px; height: 180px;" data-semantic="SGD, mSGD, and AdaGrad update rules mathematical formulas">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Contributions:</h2>
+                <ul>
+                    <li class="list-item">We prove that the iterates of mSGD are asymptotically convergent to a connected set of stationary points for possibly non-convex loss function almost surely.</li>
+                    <li class="list-item">We quantify the convergence rate of mSGD for the loss functions. Through this convergence rate we can get a theoretical explanation of why mSGD can be seen as an acceleration of SGD.</li>
+                    <li class="list-item">We prove the iterates of AdaGrad are asymptotically convergent to a connected set of stationary points almost surely for possible non-convex loss functions.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Main assumptions:</h2>
+                <p class="text-block"><strong>Assumption 1</strong> Noise sequence {ξn} are mutually independent and independent of θ1 and v0, such that g(x) = Eξn(g(x, ξn)) for any x ∈ ℝN.</p>
+                <p class="text-block"><strong>Assumption 2 (Loss function assumption)</strong> Loss function g(θ) satisfies the following conditions: 1) g(θ) is non-negative and continuously differentiable. 2) The set of stationary points is not empty. 3) ∇g(θ) satisfies Lipschitz condition. 4) There is a scalar M > 0 for any θ and positive integer n.</p>
+                <div class="figure-container">
+                    <img src="./fig_assumption_2_math.png" style="width: 400px; height: 60px;" data-semantic="Assumption 2 mathematical inequality">
+                </div>
+                <p class="text-block"><strong>Assumption 3</strong> Momentum coefficient α ∈ (0,1) and the sequence of step size εn is positive, monotonically decreasing to zero.</p>
+                <p class="text-block"><strong>Assumption 4 (Loss function assumption)</strong> Loss function g(θ) satisfies the following conditions: 1) g(θ) is non-negative and continuously differentiable. 2) For any i ∈ {1,2,...,n}, it holds that...</p>
+            </section>
+        </div>
+
+        <!-- 第二栏 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_4">
+                <p class="text-block"><strong>Assumption 5</strong> Loss function g(θ) in equation 5 satisfies the following conditions: 1) g(θ) is non-negative and continuously differentiable. 2) The gradient ∇g(θ) satisfies the Lipschitz condition. 3) There are two constants M' > 0 and a > 0.</p>
+                <div class="figure-container">
+                    <img src="./fig_assumption_5_math.png" style="width: 450px; height: 80px;" data-semantic="Assumption 5 mathematical conditions and equation 11">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Main results:</h2>
+                <p class="text-block"><strong>Theorem 1</strong> Consider the mSGD in equation 3. If Assumptions 1-3 hold, then for ∀θ1 ∈ ℝN and ∀v0 ∈ ℝN, there exists a connected set J* ⊆ J such that the iterate θn is convergent to the set J* almost surely.</p>
+                <div class="figure-container">
+                    <img src="./fig_theorem_1_math.png" style="width: 300px; height: 40px;" data-semantic="Theorem 1 convergence limit formula">
+                </div>
+                
+                <p class="text-block"><strong>Theorem 2</strong> Consider the mSGD in equation 3 with the noise following a uniform sampling distribution. If Assumptions 1-4 hold, for ∀v0 ∈ ℝN and ∀θ1 ∈ ℝN, it holds that:</p>
+                <div class="figure-container">
+                    <img src="./fig_theorem_2_math.png" style="width: 450px; height: 100px;" data-semantic="Theorem 2 convergence rate formula and equation 10">
+                </div>
+
+                <p class="text-block"><strong>Theorem 3</strong> Consider the AdaGrad in equation 5. If Assumptions 1 and 5 hold, then for ∀θ1 ∈ ℝN and S0 = 0, there exists a connected component of the set J* ⊆ J, such that the estimate θn is convergent to the set J* almost surely.</p>
+                <div class="figure-container">
+                    <img src="./fig_theorem_3_math.png" style="width: 300px; height: 40px;" data-semantic="Theorem 3 convergence limit formula">
+                </div>
+            </section>
+        </div>
+
+        <!-- 第三栏 -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Proof outline for Theorems 1-2:</h2>
+                <p class="text-block">The proof is in light of the Lyapunov method. We aim to prove that g(θn) is convergent a.s., and then to prove ∇g(θn) → 0 a.s. With these two results, we are able to get θn → J* a.s.</p>
+                
+                <p class="text-block"><strong>Step 1:</strong> We prove mSGD is a stable algorithm, i.e., E(g(θn)) < +∞, ∀n, in Lemma 1. The idea is to prove that a weighted sum of the loss function value, i.e.,</p>
+                <div class="figure-container">
+                    <img src="./fig_proof_step1.png" style="width: 450px; height: 60px;" data-semantic="Proof Step 1 Lyapunov function definition">
+                </div>
+                <p class="text-block">is bounded through a recursion formula (a rough form).</p>
+
+                <p class="text-block"><strong>Step 2:</strong> From Lemma 1 and Lemma 8, we are able to prove that ΣA(n)||vn||² < +∞, we are able to prove that Σ||vn||² and Σ||∇g(θn)||² are convergent a.s. respectively, as stated in Lemma 7 and Lemma 8.</p>
+
+                <p class="text-block"><strong>Step 3:</strong> We divide g(θn) into three terms:</p>
+                <div class="figure-container">
+                    <img src="./fig_proof_step3.png" style="width: 450px; height: 80px;" data-semantic="Proof Step 3 decomposition of the loss function">
+                </div>
+
+                <p class="text-block"><strong>Step 4:</strong> By Lemma 9 and the convergence of g(θn) in martingale-difference sum (Lemma 5), we prove that ΣCn(∇g(θn, ξn) - ∇g(θn)) is convergent a.s. Then we prove g(θn) is convergent a.s.</p>
+
+                <p class="text-block"><strong>Step 5:</strong> After the proof of the convergence of mSGD, we analyze the iterates of Fn. Then under a new assumption lim inf ||∇g(θ)||²/ (g(θ) - gi) ≥ s > 0, we are able to obtain the convergent rate of mSGD.</p>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

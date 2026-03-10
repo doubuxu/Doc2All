@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "title": "Mechanistic Lens on Mode Connectivity",
+    "authors": [
+      "Ekdeep Singh Lubana",
+      "Eric J. Bigelow",
+      "Robert P. Dick",
+      "David Krueger",
+      "Hidenori Tanaka"
+    ],
+    "organizations": [],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "logo_michigan",
+        "description": "密歇根大学校徽",
+        "figure_width": 120,
+        "figure_height": 80
+      },
+      {
+        "fig_id": "logo_cambridge",
+        "description": "剑桥大学校徽",
+        "figure_width": 120,
+        "figure_height": 80
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Connectivity of Minimizers from a Given Dataset",
+      "content": [
+        "Mode Connectivity: Minimizers of modern NNs retrieved using SGD on a dataset can be connected via simple paths of zero loss.",
+        "Linear:tθ₁ + (1 - t)θ₂;Quadratic:t²θ₁ + 2t(1 - t)θₘ + (1 - t)²θ₂."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "ResNet-164在CIFAR-100上的训练损失地形图，展示了连接两个极小值的简单路径。",
+          "figure_width": 443,
+          "figure_height": 270,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Motivating Problem: Are Minimizers Retrieved from Different Datasets of a Task Connected?",
+      "content": [
+        "Q1: Are mechanistically dissimilar models, which rely on different input attributes to make predictions, connected?",
+        "Q2: Can we exploit this connectivity?"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "背景极小值与形状极小值之间是否存在线性或二次路径的示意图。",
+          "figure_width": 832,
+          "figure_height": 297,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Towards a Definition of Mechanistic Similarity",
+      "content": [
+        "We use shared invariances to interventions on the data-generating process to define a notion ofMechanistic Similaritybetween two models."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "通过语义干预和噪声干预定义机制相似性的流程图。",
+          "figure_width": 863,
+          "figure_height": 480,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Synthetically Inducing Mechanistically Dissimilar Models",
+      "content": [
+        "A data-generating process that synthetically embeds controllable, partially predictive cues in the data.",
+        "Evaluation: Counterfactuals that break predictivity of label by altering synthetic versus natural attributes.",
+        "Goal: Analyze connectivity of models that rely vs. ignore spurious attributes."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_4",
+          "description": "合成数据生成过程中的潜在变量关系图。",
+          "figure_width": 294,
+          "figure_height": 442,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "包含CIFAR-10/100和Fashion-MNIST的合成数据集示例，展示了不同类型的提示（Cue）。",
+          "figure_width": 994,
+          "figure_height": 535,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Result 1: Are Mechanistically Dissimilar Minimizers Connected? Yes!",
+      "content": [
+        "Proposition. (Mode Connectivity under Mechanistic Dissimilarity.)Assume θ₁, θ₂ are minimizers of the loss on a dataset D and induce mechanistically dissimilar models. Given sufficient over-parameterization, there exists a continuous path along which the minimizers are mode connected."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_6",
+          "description": "在不同提示比例下，ResNet-18模型在二次路径上的训练准确率曲线。",
+          "figure_width": 1116,
+          "figure_height": 352,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Result 2: Is Mechanistic Similarity and Simplicity of Connectivity Paths Related? Yes!",
+      "content": [
+        "Conjecture. (Lack of Linear Connectivity implies Mechanistic Dissimilarity.)If two minimizers θ₁ and θ₂ cannot be linear mode connected, their induced models must be mechanistically dissimilar."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "小学习率下的测试准确率连接路径。",
+          "figure_width": 961,
+          "figure_height": 269,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "中等学习率下的测试准确率连接路径。",
+          "figure_width": 957,
+          "figure_height": 206,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_9",
+          "description": "大学习率下的测试准确率连接路径。",
+          "figure_width": 957,
+          "figure_height": 199,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "Result 3: Altering Mechanisms via Lack of Linear Connectivity",
+      "content": [
+        "Connectivity-Based Fine-Tuning (CBFT): Find a minimizer that lacks linear connectivity but is invariant to the undesirable attribute.",
+        "* ResNet-18 models trained on located cue CIFAR-10 (C) and fine-tuned on data w/o cue (FT) show linear connectivity under small-medium learning rates."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "不同微调方法（FTm, FTs, LLR, LPFT, CBFT）在不同提示数据比例下的性能对比表。",
+          "table_width": 1243,
+          "table_height": 237,
+          "table_caption": []
+        }
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_10",
+          "description": "展示损失壁垒（Barrier）与不变性（Invariance）之间关系的示意图。",
+          "figure_width": 473,
+          "figure_height": 309,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

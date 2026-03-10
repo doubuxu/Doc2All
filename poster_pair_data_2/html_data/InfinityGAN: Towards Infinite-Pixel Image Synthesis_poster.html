@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InfinityGAN Poster</title>
+    <style>
+        :root {
+            --poster-bg: #001f3f; /* Dark blue background from header */
+            --content-bg: #ffffff;
+            --accent-yellow: #f1c40f;
+            --text-main: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #555;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 3360px; /* Based on high-res poster scale */
+            height: 1890px;
+            background-color: #003366; /* Overall background */
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 90px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 40px;
+            margin: 15px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            font-size: 30px;
+            width: 100%;
+        }
+
+        .header-logos div {
+            margin: 0 10px;
+        }
+
+        .logo-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .tldr-bar {
+            background-color: white;
+            color: black;
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-size: 35px;
+            margin: 20px 0;
+            align-self: flex-start;
+            font-weight: bold;
+        }
+
+        .tldr-bar span {
+            background-color: var(--accent-yellow);
+            padding: 2px 10px;
+            margin-right: 10px;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: 30px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .column-left { flex: 1.3; }
+        .column-mid { flex: 1.2; }
+        .column-right { flex: 0.8; }
+
+        .layout-block {
+            background-color: white;
+            color: black;
+            border: 8px solid var(--accent-yellow);
+            border-radius: 25px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .text-block {
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            width: 100%;
+        }
+
+        img {
+            object-fit: contain;
+            max-width: 100%;
+        }
+
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">InfinityGAN: Towards Infinite-Pixel Image Synthesis</h1>
+        <p class="poster-authors">Chieh Hubert Lin, Hsin-Ying Lee, Yen-Chi Cheng, Sergey Tulyakov, Ming-Hsuan Yang</p>
+        <div class="header-logos">
+            <div><sup>1</sup>UC Merced</div>
+            <div><sup>2</sup>Snap Research</div>
+            <div><sup>3</sup>CMU</div>
+            <div><sup>4</sup>Google Research</div>
+            <div><sup>5</sup>Yonsei University</div>
+            <div style="margin-left: 50px;">github.com/hubert0527/infinityGAN</div>
+        </div>
+        <div class="logo-container">
+            <img src="./logo_ucm.png" style="width: 120px; height: 120px;" data-semantic="UC Merced Logo">
+            <img src="./logo_cmu.png" style="width: 120px; height: 120px;" data-semantic="CMU Logo">
+            <img src="./logo_yonsei.png" style="width: 120px; height: 120px;" data-semantic="Yonsei University Logo">
+            <img src="./logo_snap.png" style="width: 120px; height: 120px;" data-semantic="Snap Inc Logo">
+        </div>
+    </header>
+
+    <div class="tldr-bar">
+        <span>TL;DR</span> We tackle the problem of synthesizing images at arbitrarily sizes, up to infinitely large.
+    </div>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column column-left">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Synthesizing infinite-pixel images from finite-sized training data.</h2>
+                <p class="text-block">
+                    A 1024x2048 image composed of 242 patches, independently synthesized by InfinityGAN with spatial fusion of two styles. 
+                    The generator is trained on 101x101 patches sampled from 197x197 real images.
+                </p>
+                <div class="figure-container">
+                    <img src="./fig_1.jpg" style="width: 1326px; height: 723px;" data-semantic="Large scale landscape synthesis showing style blending and patch-based generation">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <div class="figure-container">
+                    <img src="./fig_2.jpg" style="width: 1368px; height: 476px;" data-semantic="InfinityGAN architecture diagram including Structure Synthesizer, Texture Synthesizer, and Discriminator">
+                </div>
+            </section>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="column column-mid">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Without carefully taming the positional information in the generator, other frameworks cannot generalize to extended image sizes at testing.</h2>
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 1140px; height: 490px;" data-semantic="Comparison table showing InfinityGAN vs COCO-GAN, SinGAN, and StyleGAN+NCI at different resolutions">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">InfinityGAN + GAN-inversion (In&Out @ CVPR'22) = Seamless and arbitrarily-length image outpainting / inbetweening</h2>
+                <div class="row-container">
+                    <img src="./fig_4.jpg" style="width: 720px; height: 323px;" data-semantic="Comparison of Boundless, NS-outpaint, In&Out, and In&Out+InfinityGAN">
+                    <img src="./fig_5.jpg" style="width: 1116px; height: 342px;" data-semantic="Arbitrary-length inbetweening and cyclic panorama results">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">More samples from models trained at higher-resolution settings.</h2>
+                <div class="row-container">
+                    <div style="flex: 1;">
+                        <p class="text-block">A 256x10240 image ↓ ↓ ↓ ↓ ↓</p>
+                    </div>
+                    <img src="./fig_6.jpg" style="width: 696px; height: 346px;" data-semantic="High resolution landscape sample 1">
+                    <img src="./fig_7.jpg" style="width: 339px; height: 344px;" data-semantic="High resolution landscape sample 2">
+                    <img src="./fig_8.jpg" style="width: 346px; height: 346px;" data-semantic="High resolution landscape sample 3">
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column column-right">
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">We show that the two sets of latent variables learn different and diverse appearances.</h2>
+                <div class="figure-container">
+                    <img src="./fig_3.jpg" style="width: 714px; height: 484px;" data-semantic="Grid showing variations in styles and local latent variables">
+                </div>
+            </section>
+
+            <div class="qr-section">
+                <section class="layout-block" data-section-id="section_7" style="border: none; background: transparent;">
+                    <div class="figure-container">
+                        <img src="./fig_9.jpg" style="width: 168px; height: 363px;" data-semantic="QR codes for Project Page and PyTorch code repository">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+{
+  "metadata": {
+    "title": "VectorMapNet: End-to-end Vectorized HD Map Learning",
+    "authors": [
+      "Yicheng Liu",
+      "Tianyuan Yuan",
+      "Yue Wang",
+      "Yilun Wang",
+      "Hang Zhao"
+    ],
+    "organizations": [
+      "Tsinghua University"
+    ],
+    "github": "github.com/tsinghua-mars/VectorMapNet",
+    "figures": [
+      {
+        "fig_id": "logo_icml",
+        "description": "ICML Conference Logo",
+        "figure_width": 150,
+        "figure_height": 80
+      },
+      {
+        "fig_id": "qr_code",
+        "description": "Project QR Code",
+        "figure_width": 100,
+        "figure_height": 100
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Motivations",
+      "content": [
+        "Autonomous driving systems require an understanding of map elements on the road, including lanes, pedestrian crossing, and traffic signs, to navigate around the world.",
+        "In contrast, we focus on using onboard sensors, including LiDARs and cameras, to estimate map elements on-the-fly."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Traditional HD map annotation pipeline showing manual labor and complexity",
+          "figure_width": 609,
+          "figure_height": 179,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "Sad face icon",
+          "figure_width": 60,
+          "figure_height": 36,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Sad face icon",
+          "figure_width": 60,
+          "figure_height": 36,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Sad face icon",
+          "figure_width": 60,
+          "figure_height": 37,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_5",
+          "description": "VectorMapNet end-to-end pipeline overview from sensor data to vectorized map",
+          "figure_width": 550,
+          "figure_height": 170,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Happy face icon",
+          "figure_width": 49,
+          "figure_height": 36,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Happy face icon",
+          "figure_width": 49,
+          "figure_height": 39,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "Happy face icon",
+          "figure_width": 49,
+          "figure_height": 37,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Contributions",
+      "content": [
+        "VectorMapNet is an end-to-end mapping approach.",
+        "We utilizepolylineto accommodate the heterogeneous nature of map elements.",
+        "Our method achieves promising performance in online semantic HD map learning tasks."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Problem Formulation",
+      "content": [
+        "Similar to HDMapNet, our task is to generate vectorized map elements using data from onboard sensors of autonomous vehicle, such as RGB cameras and/or LiDARs. These map elements include:",
+        "Lane dividers: boundaries dividing lanes on the road, usually straight lines.",
+        "Road boundaries: boundaries of roads separating roads and sidewalks, typically irregularly-shaped curves of arbitrary lengths.",
+        "Pedestrian crossings: regions with white markings indicating legal pedestrian crossing points, typically represented as polygons.",
+        "Centerlines: line segments that commonly used for driving direction, vehicle positioning, and navigation."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "Why use polyline to represent maps?",
+      "content": [
+        "Using polylines to represent map elements has three main advantages:",
+        "Polylines are aflexible primitivethat can represent complex geometric elements in HD maps.",
+        "The order of polyline vertices is a natural way to encodethe direction of map elements.",
+        "The polyline representation has beenwidely used by downstream tasks, such as motion forecasting."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_5",
+      "title": "VectorMapNet",
+      "content": [
+        "VectorMapNet, an end-to-end model, is designed to represent amapwith a sparse set ofpolylinesthus formulating the task as a sparse set detection problem. In our approach, we divide the task into three distinct components:",
+        "(1) ABEV Feature Extractor (A variant of IPM)that lifts various sensor modality inputs into a canonical feature space (BEV space).",
+        "(2) Amap element detector (DETR-like Transformer decoder)that locates and classifies all map elements by predicting element keypoints Aiand their class labels li.",
+        "(3) APolyline Generator (Vanilla Transformer decoder)that produces a sequence of ordered polyline vertices which describes the local geometry of each detected map element Ai, li."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_9",
+          "description": "Detailed architecture of VectorMapNet including BEV Feature Extractor, Map Element Detector, and Polyline Generator",
+          "figure_width": 1224,
+          "figure_height": 503,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_10",
+          "description": "Comparison of different keypoint representation methods: Bounding Box, SME, and Extreme Points",
+          "figure_width": 703,
+          "figure_height": 86,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "VectorMapNet for Motion Forecasting",
+      "content": [
+        "To evaluate the capacity of our method and to investigate its usefulness in downstream tasks, we put our predicted HD map to the test within a motion forecasting task."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Motion forecasting performance table comparing Trajectory only, Trajectory with Ground Truth Map, and Trajectory with Predicted Map",
+          "table_width": 574,
+          "table_height": 146,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "Quantitative Results",
+      "content": [
+        "We report the average precision that uses Chamfer distance and Fréchet Distance as the threshold."
+      ],
+      "tables": [
+        {
+          "table_id": "table_2",
+          "description": "Quantitative results on nuScenes dataset comparing various methods like STSU, HDMapNet, and VectorMapNet variants",
+          "table_width": 599,
+          "table_height": 238,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_3",
+          "description": "Comparison of keypoint representations using Fréchet and Chamfer distances",
+          "table_width": 847,
+          "table_height": 126,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_8",
+      "title": "Qualitative Results",
+      "content": [
+        "Using polylines as primitives has brought us two benefits compared with baselines:",
+        "Polylines effectively encode the detailed map geometries, e.g., the corners of boundaries (red ellipses).",
+        "Polyline representations prevent Model from generating ambiguous results, as it consistently encodes direction information. In contrast, Rasterized methods are prone to falsely generating loopy curves (blue ellipses)."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_11",
+          "description": "Grid of multi-view camera images from the dataset",
+          "figure_width": 339,
+          "figure_height": 542,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_12",
+          "description": "Qualitative comparison of map generation results between Ground Truth, HDMapNet, STSU, and VectorMapNet",
+          "figure_width": 682,
+          "figure_height": 556,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_9",
+      "title": "Centerline Generation",
+      "content": [
+        "To demonstrate the flexibility of polyline, we expand VectorMapNet to predict centerlines.",
+        "A benefit of posing map learning as a detection problem: The model can identify pedestrian crossings at intersections that are missed in the annotations of the HD map provided by the dataset."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_13",
+          "description": "Visualization of centerline prediction across different camera views",
+          "figure_width": 475,
+          "figure_height": 183,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_14",
+          "description": "Comparison of Ground Truth, HDMapNet, and VectorMapNet for centerline generation",
+          "figure_width": 469,
+          "figure_height": 97,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_15",
+          "description": "Detailed visualization of centerline generation results compared to Ground Truth",
+          "figure_width": 514,
+          "figure_height": 293,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_10",
+      "title": "Reference",
+      "content": [
+        "HDMapNet: An Online HD Map Construction and Evaluation Framework, Li et al., ICRA2022Structured bird's-eye-view traffic scene understanding from onboard images, Can et al., ICCV 2021"
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>MuSc Academic Poster</title>
+    <style>
+        :root {
+            --primary-blue: #004a99;
+            --secondary-blue: #eef6ff;
+            --header-bg: #0056b3;
+            --text-color: #333;
+            --border-color: #ccc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 3368px; /* A0 width at 96dpi approx */
+            height: 2381px; /* A0 height */
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            padding: 40px 60px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .poster-title {
+            font-size: 80px;
+            margin: 0 0 20px 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 45px;
+            margin: 10px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 30px;
+        }
+
+        .header-logos div {
+            margin: 0 20px;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            padding: 40px;
+            gap: 40px;
+            background-color: #f0f0f0;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .column-left { flex: 1; }
+        .column-center { flex: 2; }
+        .column-right { flex: 1; }
+
+        .layout-block {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            background-color: var(--primary-blue);
+            color: white;
+            margin: 0;
+            padding: 20px 30px;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+        .text-block {
+            padding: 20px 30px;
+            font-size: 32px;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        ul {
+            padding: 10px 60px;
+            margin: 0;
+        }
+
+        .list-item {
+            font-size: 32px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .figure-container, .row-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .references-text {
+            padding: 20px 30px;
+            font-size: 22px;
+            color: #555;
+            line-height: 1.2;
+        }
+
+        .formula {
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            text-align: center;
+            padding: 10px;
+            font-size: 34px;
+        }
+
+        .qr-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .qr-item {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation with Mutual Scoring of the Unlabeled Images</h1>
+        <p class="poster-authors">Xurui Li<sup>1,*</sup>, Ziming Huang<sup>1,*</sup>, Feng Xue<sup>3</sup>, Yu Zhou<sup>1,2</sup></p>
+        <div class="header-logos">
+            <div><sup>1</sup>Huazhong University of Science and Technology, <sup>2</sup>Artificial Intelligence Research Institute, Wuhan JingCe Electronic Group Co.,LTD, <sup>3</sup>University of Trento</div>
+            <div>github.com/hustvl/MuSc</div>
+            <img src="./logo.png" style="width: 150px; height: 150px;" data-semantic="University and Conference Logos">
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1 -->
+        <div class="column column-left">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Motivation</h2>
+                <p class="text-block">A <b>rich amount</b> of normal information implicit in unlabeled test images can be exploited for anomaly detection.</p>
+                <div class="row-container">
+                    <img src="./fig_1.jpg" style="width: 200px; height: 128px;" data-semantic="MVTec AD dataset normal vs abnormal pixel distribution pie chart">
+                    <img src="./fig_2.jpg" style="width: 200px; height: 123px;" data-semantic="VisA dataset normal vs abnormal pixel distribution pie chart">
+                </div>
+                <p class="text-block">A <b>discriminative characteristic</b>: the normal image patches could find a relatively large number of similar patches in other unlabeled images, while the abnormal ones only have a few similar patches.</p>
+                <div class="figure-container">
+                    <img src="./fig_3.jpg" style="width: 312px; height: 332px;" data-semantic="Visual comparison of normal and abnormal patches across different objects">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Contributions</h2>
+                <ul>
+                    <li class="list-item">The <b>first method</b> that <b>only uses the unlabeled test images</b> for industrial anomaly detection.</li>
+                    <li class="list-item">We reveal the potential capability of normal and abnormal patches contained in unlabeled images.</li>
+                    <li class="list-item"><b>21.1% PRO gains</b> and <b>21.9% seg-AP gains</b> on MVTec AD and <b>19.4% seg-AP gains</b> on VisA.</li>
+                </ul>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Experiments</h2>
+                <p class="text-block">Comparison with 0-shot methods</p>
+                <div class="figure-container">
+                    <img src="./table_1.png" style="width: 767px; height: 280px;" data-semantic="Zero-shot performance comparison table on MVTec and VisA datasets">
+                </div>
+                <p class="text-block">Comparison with 4-shot methods</p>
+                <div class="figure-container">
+                    <img src="./table_2.png" style="width: 767px; height: 277px;" data-semantic="Few-shot performance comparison table on MVTec and VisA datasets">
+                </div>
+                <div class="figure-container">
+                    <img src="./fig_9.jpg" style="width: 928px; height: 888px;" data-semantic="Qualitative visualization of anomaly segmentation results compared to other methods">
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column column-center">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Framework</h2>
+                <div class="figure-container">
+                    <img src="./fig_4.jpg" style="width: 1575px; height: 748px;" data-semantic="Overall architecture of MuSc showing feature extraction, LNAMD, and Mutual Scoring Mechanism">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Mutual Scoring Mechanism</h2>
+                <p class="text-block">Image I<sub>j</sub> assigns a score to each aggregated patch token of image I<sub>i</sub></p>
+                <div class="formula">a<sub>i,l</sub><sup>m,r</sup>(I<sub>j</sub>) = min<sub>n</sub> || p̂<sub>i,l</sub><sup>m,r</sup> - p̂<sub>j,l</sub><sup>n,r</sup> ||<sub>2</sub></div>
+                <p class="text-block">Interval Average (minimum 30%)</p>
+                <div class="formula">ā<sub>i,l</sub><sup>m,r</sup> = (1/K) Σ<sub>k∈[1,K]</sub> a<sub>i,l</sub><sup>m,r</sup>(I<sub>k</sub>)</div>
+                <div class="figure-container">
+                    <img src="./fig_8.jpg" style="width: 763px; height: 291px;" data-semantic="Histograms of anomaly scores showing separation between normal and abnormal patches">
+                </div>
+                <p class="text-block">Mean: r and l</p>
+                <div class="formula">a<sub>i</sub><sup>m</sup> = (1/L) Σ<sub>l∈{1,...,L}</sub> (1/3) Σ<sub>r∈{1,3,5}</sub> ā<sub>i,l</sub><sup>m,r</sup></div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">RsCIN</h2>
+                <p class="text-block">Image-level feature F<sub>i</sub> extracted by ViT. Similarity matrix W<sub>i,j</sub> = F<sub>i</sub> · F<sub>j</sub></p>
+                <p class="text-block">Multi-window Mask M<sub>k</sub>(i,j)</p>
+                <p class="text-block">Re-Scoring D(i,i) = Σ M<sub>k</sub> ⊙ W(i,j)</p>
+                <p class="text-block">Universal module for other AD methods</p>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column column-right">
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">LNAMD</h2>
+                <ul>
+                    <li class="list-item">Neighborhood range: 1x1, 3x3, 5x5</li>
+                    <li class="list-item">Aggregate function: Adaptive average pooling</li>
+                    <li class="list-item">Multi-degree aggregation: To segment abnormal regions of varying sizes.</li>
+                </ul>
+                <div class="row-container">
+                    <div style="text-align:center">
+                        <img src="./fig_5.jpg" style="width: 157px; height: 154px;" data-semantic="LNAMD visualization 1x1">
+                        <div style="font-size:24px">1 x 1</div>
+                    </div>
+                    <div style="text-align:center">
+                        <img src="./fig_6.jpg" style="width: 152px; height: 154px;" data-semantic="LNAMD visualization 3x3">
+                        <div style="font-size:24px">3 x 3</div>
+                    </div>
+                    <div style="text-align:center">
+                        <img src="./fig_7.jpg" style="width: 158px; height: 154px;" data-semantic="LNAMD visualization 5x5">
+                        <div style="font-size:24px">5 x 5</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_8">
+                <h2 class="section-header">References</h2>
+                <div class="references-text">
+                    [1] Jeong J, Zou Y, Kim T, et al. Winclip: Zero-/few-shot anomaly classification and segmentation[C]//CVPR 2023.<br>
+                    [2] Chen X, Han Y, Zhang J. A zero-/few-shot anomaly classification and segmentation method for cvpr 2023 challenge.<br>
+                    [3] Li A, Qiu C, Kloft M, et al. Zero-shot anomaly detection via batch normalization[J]. Advances in Neural Information Processing Systems, 2024.<br>
+                    [4] Roth K, Pemula L, Zepeda J, et al. Towards total recall in industrial anomaly detection[C]//CVPR 2022.
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_9">
+                <div class="qr-section">
+                    <div class="qr-item">
+                        <p>Paper</p>
+                        <img src="./fig_10.jpg" style="width: 234px; height: 229px;" data-semantic="QR code for the paper">
+                    </div>
+                    <div class="qr-item">
+                        <p>Code</p>
+                        <img src="./fig_11.jpg" style="width: 231px; height: 232px;" data-semantic="QR code for the GitHub repository">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

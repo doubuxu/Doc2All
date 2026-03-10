@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "DARTFormer: Finding The Best Type Of Attention",
+    "authors": [
+      "Jason Ross Brown",
+      "Yiren Zhao",
+      "Ilia Shumailov",
+      "Robert D. Mullins"
+    ],
+    "organizations": [
+      "University of Cambridge, Imperial College London, University of Oxford",
+      "jrb239@cam.ac.uk, a.zhao@imperial.ac.uk, ilia.shumailov@chch.ox.ac.uk, robert.mullins@cl.cam.ac.uk"
+    ],
+    "github": "github.com/jasonrossbrown/dartformer",
+    "figures": []
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Motivation",
+      "content": [
+        "There is a wide range of efficient Transformer attention mechanisms whose relative performance often depends on the task",
+        "Different attention heads are supposed to pick up different patterns",
+        "DARTS-like neural architecture search is highly effective at finding good network topologies"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_2",
+      "title": "DARTFormer",
+      "content": [],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Attention Search",
+      "content": [
+        "Idea: Can we apply a DARTS-like method to identify good and bad attention mechanisms?",
+        "By training a supernetwork with heads that have different attention types in each layer, we can then use masked validation to identify the current best and worse attention type for that layer."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Diagram of the DARTFormer attention search supernetwork showing multiple heads with different attention types being aggregated to an output.",
+          "figure_width": 859,
+          "figure_height": 501,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Optimal Homogeneous Attention",
+      "content": [
+        "Applying the attention search idea to a single layer Transformer and picking the best performing attention, we can hope to identify the best attention for that task when operating in a full Transformer model."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Flowchart showing the search process for Bigbird and Synthesizer attention types.",
+          "figure_width": 530,
+          "figure_height": 476,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_3",
+          "description": "Flowchart showing the search process for Performer attention types across multiple layers.",
+          "figure_width": 388,
+          "figure_height": 463,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Optimal Heterogenous Attention",
+      "content": [
+        "Method 1: Attention search on a single layer pruning the worst heads until we have the right size for a single layer. Stack this layer and retrain from scratch.",
+        "Method 2: Attention search on a single layer and then take the top 4 scoring mechanisms. Stack a uniform mix and retrain from scratch.",
+        "Method 3: Attention search across many layers, picking the best attention in each one. Retrain from scratch with possible different attention in each layer"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "Experimental Results",
+      "content": [
+        "Homogeneous search works on 2/3 tasks",
+        "Heterogeneous attention fails to outperform the best homogeneous models"
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Table comparing accuracy and scores of various attention types (Bigbird, Linformer, Performer, etc.) across Text Classification, Listops, and Document Matching tasks.",
+          "table_width": 1205,
+          "table_height": 437,
+          "table_caption": []
+        },
+        {
+          "table_id": "table_2",
+          "description": "Table comparing the best homogeneous models against proposed Methods 1, 2, and 3 across different classification and matching tasks.",
+          "table_width": 1205,
+          "table_height": 192,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_7",
+      "title": "Conclusion",
+      "content": [
+        "A DARTS-like method can often be used to find the best attention for a task by training only a single layer",
+        "Searching for and using heterogeneous 'mixed attention' Transformers does not give good results.",
+        "Perhaps different mechanisms do not provide as large functional biases, or the biases are less useful for learning good representations in the attention layer than was previously thought"
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

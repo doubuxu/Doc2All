@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "title": "Langevin Autoencoders for Learning Deep Latent Variable Models",
+    "authors": [
+      "Shohei Taniguchi",
+      "Yusuke Iwasawa",
+      "Wataru Kumagai",
+      "Yutaka Matsuo"
+    ],
+    "organizations": [
+      "The University of Tokyo"
+    ],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "logo_tokyo",
+        "description": "University of Tokyo Logo",
+        "figure_width": 100,
+        "figure_height": 100
+      },
+      {
+        "fig_id": "logo_nips",
+        "description": "NIPS Conference Logo",
+        "figure_width": 200,
+        "figure_height": 60
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Motivation",
+      "content": [
+        "Learning deep latent variable models",
+        "Latent variable models: p(x; θ) = ∫ p(x | z; θ)p(z)dz",
+        "Gradient over model parameters: ∇θ E_p_data(x)[log p(x; θ)] ≈ 1/n Σ ∇θ log p(x_i, z_i; θ)",
+        "To learn a latent variable model via gradient ascent, we need to approximate the expectation over the latent posterior p(z | x; θ).",
+        "Variational inference is a dominant approach but the approximation power is limited.",
+        "Markov chain Monte Carlo (MCMC) is capable of complex posteriors but is slow due to datapoint-wise iterations.",
+        "How can we amortize the cost of datapoint-wise iterations?"
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Variational inference posterior density visualization showing Gaussian approximation",
+          "figure_width": 371,
+          "figure_height": 248,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_2",
+          "description": "Langevin dynamics posterior density visualization showing MCMC sampling",
+          "figure_width": 360,
+          "figure_height": 248,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Preliminary",
+      "content": [
+        "Langevin dynamics",
+        "Langevin dynamics [2] is a gradient-based MCMC.",
+        "z' ~ q(z' | z) = N(z'; z + η∇z log p(x, z; θ), 2ηI)",
+        "By repeating this iterative update, the samples asymptotically approach the true posterior p(z | x; θ)."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_3",
+      "title": "Method",
+      "content": [
+        "Amortized Langevin dynamics",
+        "In our amortized Langevin dynamics (ALD), we prepare an encoder that maps the observed data into the latent variable, and run MCMC on its parameter space.",
+        "Markov chain on the latent space is implicitly performed by collecting the output of the encoder.",
+        "Our main theorem shows that the ALD is valid as MCMC if the encoder takes the form of: f_z|x(x; Φ) = Φg(x).",
+        "Langevin Autoencoder",
+        "ALD can be applied to the training of deep latent variable models (DLVMs) by slightly modifying the learning algorithm of traditional autoencoders.",
+        "We call this learning algorithm of DLVMs theLangevin autoencoder (LAE)."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Amortized Langevin dynamics encoder architecture showing the mapping from data to latent space",
+          "figure_width": 557,
+          "figure_height": 360,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Update logic diagram showing implicit MCMC over latents",
+          "figure_width": 223,
+          "figure_height": 154,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_4",
+      "title": "Results",
+      "content": [
+        "Toy example",
+        "VI fails to capture the multimodality of the true posterior.",
+        "Our ALD can approximate complex multimodal posteriors in toy examples.",
+        "Image density estimation",
+        "Our LAE consistently outperforms VI-based methods such as the VAE and other existing MCMC-based methods."
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Likelihood evaluation for test data comparing VAE, VAE-flow, Hoffman, and LAE (ours) across MNIST, SVHN, CIFAR-10, and CelebA datasets",
+          "table_width": 970,
+          "table_height": 186,
+          "table_caption": []
+        }
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "True posterior distribution visualization for toy example",
+          "figure_width": 293,
+          "figure_height": 295,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Variational approximation distribution visualization for toy example",
+          "figure_width": 292,
+          "figure_height": 295,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Our ALD method distribution visualization for toy example",
+          "figure_width": 234,
+          "figure_height": 291,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Future works",
+      "content": [
+        "How can we remove the bias of finite-step MCMC samples?",
+        "Is it possible to apply the ALD (and LAE) to the state-of-the-art DLVMs, such as NVAE [5]?"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_6",
+      "title": "References",
+      "content": [
+        "[1] Diederik P Kingma and Max Welling (2013). \"Auto-encoding variational bayes.\" In: arXiv preprint arXiv:1312.6114.[2] Radford M Neal (2011). \"MCMC using hamiltonian dynamics.\" In: Handbook of Markov Chain Monte Carlo.[3] Matthew D Hoffman (2017). \"Learning deep latent gaussian models with markov chain monte carlo.\" In: ICML.[4] Pierre E Jacob et al. (2020). \"Unbiased markov chain monte carlo with couplings.\" In: JRSSB.[5] Arash Vahdat and Jan Kautz (2020). \"Nvae: A deep hierarchical variational autoencoder.\" In: NeurIPS."
+      ],
+      "tables": [],
+      "figures": []
+    }
+  ]
+}

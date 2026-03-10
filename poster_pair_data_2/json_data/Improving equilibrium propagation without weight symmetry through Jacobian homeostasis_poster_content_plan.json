@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "title": "Improving Equilibrium Propagation Without Weight Symmetry Through Jacobian Homeostasis",
+    "authors": [
+      "Axel Laborieux",
+      "Friedemann Zenke"
+    ],
+    "organizations": [
+      "Friedrich Miescher Institute for Biomedical Research",
+      "Faculty of Natural Sciences, University of Basel",
+      "ICLR 2023"
+    ],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "logo_fmi",
+        "description": "FMI Logo",
+        "figure_width": 80,
+        "figure_height": 40
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Generalized Equilibrium Propagation [1]",
+      "content": [
+        "Goal: Local gradients for Neurobiology and Neuromorphics."
+      ],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_1",
+          "description": "Neural network architecture diagram showing weight symmetry notation between layers",
+          "figure_width": 207,
+          "figure_height": 327,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_2",
+      "title": "Non-symmetric",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Weight matrix visualization showing non-symmetric block structure",
+          "figure_width": 252,
+          "figure_height": 248,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_3",
+      "title": "Our contributions:",
+      "content": [
+        "Disentangle the two sources of bias in non-symmetric EP",
+        "Extend holomorphic EP [2] to non symmetric networks",
+        "New homeostatic loss promotes Jacobian symmetry"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_4",
+      "title": "Accurate computation of the EP error vector",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Complex plane representation of the teaching signal phase",
+          "figure_width": 325,
+          "figure_height": 333,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Graph showing cosine similarity of error vectors for different EP methods",
+          "figure_width": 465,
+          "figure_height": 346,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_5",
+      "title": "Continuous-in-time estimation of the gradient",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "Membrane potential oscillation over time showing raw and averaged signals",
+          "figure_width": 413,
+          "figure_height": 289,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Online first mode estimation of membrane potential compared to true gradient",
+          "figure_width": 412,
+          "figure_height": 287,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_6",
+      "title": "Isolated effect of Jacobian asymmetry",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_7",
+          "description": "Density distribution of Jacobian symmetry for L2 layer showing decreasing symmetry",
+          "figure_width": 437,
+          "figure_height": 308,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_8",
+          "description": "Network diagram illustrating Jacobian asymmetry effects across layers",
+          "figure_width": 486,
+          "figure_height": 304,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_9",
+          "description": "Density distribution of Jacobian symmetry for L1 layer",
+          "figure_width": 437,
+          "figure_height": 271,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_7",
+      "title": "New homeostatic loss:",
+      "content": [
+        "L_homeo := E[||Jf ε||^2 - ε^T Jf^2 ε]"
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_8",
+      "title": "Benefits of the homeostatic loss on learning",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_10",
+          "description": "Validation error curves for Fashion MNIST and CIFAR-10 comparing models with and without homeostatic loss",
+          "figure_width": 910,
+          "figure_height": 703,
+          "figure_caption": []
+        }
+      ]
+    },
+    {
+      "id": "section_9",
+      "title": "",
+      "content": [],
+      "tables": [
+        {
+          "table_id": "table_1",
+          "description": "Comparison table of Top-1 and Top-5 accuracy on CIFAR-10 and ImageNet datasets",
+          "table_width": 791,
+          "table_height": 359,
+          "table_caption": []
+        }
+      ],
+      "figures": []
+    },
+    {
+      "id": "section_10",
+      "title": "References",
+      "content": [
+        "[1] Scellier, et al. Generalization of equilibrium propagation to vector field dynamics. arXiv:1808.04873, 2018.[2] Laborieux and Zenke. Holomorphic equilibrium propagation computes exact gradients through finite size oscillations. NeurIPS 2022."
+      ],
+      "tables": [],
+      "figures": []
+    },
+    {
+      "id": "section_11",
+      "title": "Funding",
+      "content": [],
+      "tables": [],
+      "figures": [
+        {
+          "fig_id": "fig_11",
+          "description": "Swiss National Science Foundation logo",
+          "figure_width": 91,
+          "figure_height": 91,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_12",
+          "description": "European Union Horizon 2020 research and innovation logo",
+          "figure_width": 98,
+          "figure_height": 66,
+          "figure_caption": []
+        },
+        {
+          "fig_id": "fig_13",
+          "description": "QR code linking to the full research paper",
+          "figure_width": 154,
+          "figure_height": 151,
+          "figure_caption": []
+        }
+      ]
+    }
+  ]
+}

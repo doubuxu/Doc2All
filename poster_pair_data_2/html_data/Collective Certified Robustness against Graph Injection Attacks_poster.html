@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collective Certified Robustness Against Graph Injection Attacks Poster</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+        }
+
+        #poster-canvas {
+            width: 1600px;
+            height: 900px;
+            background-color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 32px;
+            color: #333;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 18px;
+            color: #444;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .header-logos .logo-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .header-logos .logo-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .column-left { flex: 0.28; }
+        .column-mid { flex: 0.38; }
+        .column-right { flex: 0.34; }
+
+        .layout-block {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            background-color: #c00000;
+            color: white;
+            font-size: 18px;
+            padding: 5px 20px;
+            border-radius: 15px;
+            margin: 0 auto 10px auto;
+            width: fit-content;
+            text-align: center;
+        }
+
+        .text-block {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 5px 0;
+            color: #222;
+            text-align: justify;
+        }
+
+        .list-item {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .figure-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .row-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .references-text {
+            font-size: 11px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .math-block {
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            text-align: center;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-logos">
+            <div class="logo-left">
+                <img src="./poly_logo.png" style="width: 250px; height: 60px;" data-semantic="香港理工大学校徽">
+            </div>
+            <div class="logo-right">
+                <img src="./icml_logo.png" style="width: 150px; height: 60px;" data-semantic="ICML 会议 Logo">
+            </div>
+        </div>
+        <h1 class="poster-title">Collective Certified Robustness Against Graph Injection Attacks</h1>
+        <p class="poster-authors">Yuni Lai 1, Bailin Pan 2, Kaihuang Chen 2, Yancheng Yuan 2, Kai Zhou 1</p>
+        <div class="header-logos" style="justify-content: center; gap: 40px;">
+            <div>1. Department of Computing, The Hong Kong Polytechnic University</div>
+            <div>2. Department of Applied Mathematics, The Hong Kong Polytechnic University</div>
+            <div style="display:none;">github.com/project-placeholder</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column column-left">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Introduction</h2>
+                <p class="text-block">Deep Graph Learning (DGL) has emerged as a crucial technique across various domains. However, recent studies have exposed vulnerabilities in DGL models, such as susceptibility to graph injection attacks (GIAs). Existing research only provides sample-wise certificates by verifying each node independently, leading to very limited certifying performance. In this paper, we present the first collective certificate against GIAs, which certifies a set of target nodes simultaneously.</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Randomized Smoothing</h2>
+                <p class="text-block">For any node classifier f(·), its smoothed classifier g(·) is created by:</p>
+                <ul>
+                    <li class="list-item">1. Node-aware Bi-Smoothing (Y. Lai. et. al. S&P2024): φ(G) = (φe(G), φn(G))</li>
+                    <li class="list-item">2. Majority vote: gv(G) := arg max P(fv(φ(G)) = y)</li>
+                </ul>
+                <p class="text-block">The goal of certified robustness is to verify: gv(G) = gv(G'), ∀ G' ∈ Bρ,τ(G).</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Collective Certificate Problem</h2>
+                <p class="text-block">Bρ,τ(G): the attacker can inject ρ malicious nodes, with τ malicious edges per node.</p>
+                <p class="text-block">T: A set of target nodes.</p>
+                <p class="text-block" style="text-align: center; font-weight: bold;">min |T| - Σ I{gv(G') ≠ gv(G)}</p>
+                <p class="text-block" style="text-align: center;">s.t. |Ṽ| ≤ ρ, δ(ṽ) ≤ τ, ∀ ṽ ∈ Ṽ</p>
+                <div class="figure-container">
+                    <img src="./fig_3.jpg" style="width: 112px; height: 109px;" data-semantic="向下指示箭头">
+                </div>
+            </section>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="column column-mid">
+            <section class="layout-block" data-section-id="section_4">
+                <div class="figure-container">
+                    <img src="./fig_1.jpg" style="width: 580px; height: 250px;" data-semantic="样本级与集体认证框架对比图，展示了线性规划和认证鲁棒性的流程">
+                    <p class="text-block" style="font-size: 12px; font-style: italic;">Figure 1: While the sample-wise certificate verifies target nodes one by one, our collective certificate verifies a set of target nodes simultaneously by linear programming.</p>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <div class="row-container" style="align-items: flex-start;">
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="./fig_2.jpg" style="width: 230px; height: 180px;" data-semantic="恶意消息在图神经网络中被拦截的概率示意图">
+                        <p class="text-block" style="font-size: 11px; font-style: italic;">Figure 2: Malicious message has probability to be intercepted in the Node-aware Bi-smoothing.</p>
+                    </div>
+                    <div style="flex: 1; padding-left: 10px;">
+                        <p class="text-block">Let p(Ev) denotes the probability that the malicious messages is NOT intercepted, then we have that the absolute change of prediction probability is bounded by p(Ev):</p>
+                        <p class="text-block" style="text-align: center; font-weight: bold;">|pv,y(G) - pv,y(G')| ≤ p(Ev)</p>
+                    </div>
+                </div>
+                <div class="figure-container">
+                    <img src="./fig_3.jpg" style="width: 112px; height: 109px;" data-semantic="向下指示箭头">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">Collective Certificate via Optimization</h2>
+                <p class="text-block">p(Ev): the probability that the malicious messages is not intercepted.</p>
+                <p class="text-block">cv := pv,y*(G) - max pv,y(G).</p>
+                <p class="text-block" style="text-align: center; font-weight: bold;">max Σ I{p(Ev) ≥ cv/2}</p>
+                <p class="text-block" style="text-align: center;">s.t. |Ṽ| ≤ ρ, δ(ṽ) ≤ τ, ∀ ṽ ∈ Ṽ</p>
+                <p class="text-block">The remaining |T| - M* nodes are certified robust.</p>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column column-right">
+            <section class="layout-block" data-section-id="section_7">
+                <h2 class="section-header">Sample-wise v.s. Collective Certificate</h2>
+                <p class="text-block">Sample-wise certificates essentially verify the prediction for a node one by one, assuming that the attacker can craft a different perturbed graph each time to attack every single node (Figure 1, top).</p>
+                <p class="text-block">However, in reality, the attacker can only produce a single perturbed graph to simultaneously disrupt all predictions for a set of target nodes (Figure 1, bottom).</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_8">
+                <div class="figure-container">
+                    <div class="row-container">
+                        <img src="./fig_4.jpg" style="width: 210px; height: 180px;" data-semantic="Cora-ML数据集下认证比例随rho变化的折线图">
+                        <img src="./fig_5.jpg" style="width: 280px; height: 180px;" data-semantic="Citeseer数据集下认证比例随rho变化的折线图及图例">
+                    </div>
+                    <div class="row-container" style="margin-top: 5px;">
+                        <img src="./fig_6.jpg" style="width: 210px; height: 180px;" data-semantic="Cora-ML数据集下认证比例与干净准确率的散点对比图">
+                        <img src="./fig_7.jpg" style="width: 290px; height: 180px;" data-semantic="Citeseer数据集下认证比例与干净准确率的散点对比图及图例">
+                    </div>
+                    <p class="text-block" style="font-size: 12px; font-style: italic; text-align: center;">Figure 3: Certified ratio comparison (GCN model).</p>
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_9">
+                <h2 class="section-header">Evaluation Results</h2>
+                <p class="text-block">With the same smoothing parameter, both proposed collective certificates achieve a higher certifiable radius (Figure 3), outperforming the sample-wise approach significantly when the ρ is large. For example, in the Citeseer dataset, when ρ = 140, our Collective-LP1 and Collective-LP2 have the certified ratios of 73.0%, and 81.2%, while sample-wise can certify 0.0% nodes.</p>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
