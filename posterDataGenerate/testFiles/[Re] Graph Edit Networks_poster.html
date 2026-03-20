@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Re] Graph Edit Networks Poster</title>
+    <style>
+        :root {
+            --primary-red: #b04a4a;
+            --bg-gray: #f4f4f4;
+            --text-dark: #333;
+            --gutter: 20px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #555;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        #poster-canvas {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 4px solid var(--primary-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .poster-title {
+            font-size: 3.5rem;
+            margin: 0;
+            color: #000;
+            font-weight: 800;
+        }
+
+        .poster-authors {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .header-logos img {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Main Layout */
+        main {
+            display: flex;
+            gap: var(--gutter);
+            align-items: flex-start;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gutter);
+        }
+
+        .column-left { flex: 3; }
+        .column-mid { flex: 3.5; }
+        .column-right { flex: 3; }
+
+        /* Section Styles */
+        .layout-block {
+            margin-bottom: 10px;
+        }
+
+        .section-header {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 8px 15px;
+            font-size: 1.4rem;
+            margin: 0 0 15px 0;
+            border-radius: 4px;
+        }
+
+        .text-block {
+            font-size: 0.95rem;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .list-item {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+
+        /* Figure & Table Containers */
+        .figure-container, .row-container {
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .caption {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 8px;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .references-text {
+            font-size: 0.7rem;
+            color: #555;
+            line-height: 1.2;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            main {
+                flex-direction: column;
+            }
+            .column {
+                width: 100%;
+            }
+            .poster-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">[Re] Graph Edit Networks</h1>
+        <p class="poster-authors">Vid Stropnik, Maruša Oražem</p>
+        <div class="header-logos">
+            <div>University of Ljubljana, Faculty of Computer and Information Science</div>
+            <div>Data Science @UL-FRI</div>
+            <div>github.com/vidstropnik/re-gen</div>
+            <img src="./logo_nips.jpg" data-semantic="Neural Information Processing Systems Logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column column-left">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Reproduced: Paaßen et. al. (ICLR, 2021)</h2>
+                <p class="text-block">
+                    The reproduced paper [bpa21] proposes a novel output layer for graph neural networks (GNNs), the graph edit network called (GEN). This layer yields a sequence of graph edits: node insertions, node deletions, node replacements, edge insertions and edge deletions.
+                </p>
+                <div class="figure-container">
+                    <img src="./fig_1.jpg" data-semantic="GEN model architecture showing original graph G, GNN, GEN layers, node/edge scores, and predicted graph" style="aspect-ratio: 958/192;">
+                </div>
+                <p class="text-block">
+                    The authors empirically underpin their theoretical claims about GENs by showing that they perform well in a series of graph time-series prediction tests.
+                </p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">DGPs & Tests</h2>
+                <p class="text-block">
+                    The paper evaluated several key claims on synthetic datasets, generated with data generating rules, interpreted in the following figures.
+                </p>
+                <div class="figure-container">
+                    <img src="./fig_2.jpg" data-semantic="Graph cycles: A trivial set of user defined graph transformations" style="aspect-ratio: 980/145;">
+                    <div class="caption">Graph cycles: A trivial set of user defined graph transformations without any logical rules.</div>
+                </div>
+                <div class="figure-container">
+                    <img src="./fig_3.jpg" data-semantic="Degree rules: A set of rules for node and edge insertions" style="aspect-ratio: 980/262;">
+                    <div class="caption">Degree rules: A set of rules for node & edge insertions. (nodes with degree ≥ 3 are deleted; nodes with common neighbor are connected)</div>
+                </div>
+                <div class="figure-container">
+                    <img src="./fig_4.jpg" data-semantic="Conway's Game of Life: A series based on node edits on a lattice grid" style="aspect-ratio: 699/159;">
+                    <div class="caption">Conway's Game of Life: A series based on node edits on a lattice grid.</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="column column-mid">
+            <div class="figure-container">
+                <img src="./fig_5.jpg" data-semantic="Boolean Formulae: Random Boolean formulae simplified with rules" style="aspect-ratio: 1012/230;">
+                <div class="caption">Boolean Formulae: Random Boolean formulae, simplified with rules like x ∧ ¬x → ⊥.</div>
+            </div>
+            <div class="figure-container">
+                <img src="./fig_6.jpg" data-semantic="Peano Addition: Series of tree graphs modelling addition problems" style="aspect-ratio: 908/161;">
+                <div class="caption">Peano Addition: Series of tree graphs, modelling addition problems via Peano's definition of addition.</div>
+            </div>
+
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">[Re] Original experimental claims</h2>
+                <p class="text-block">
+                    [bpa21] makes three experimental conclusions based on a series of experiments. Checkmarks denote a successful reproduction of results.
+                </p>
+                <ul>
+                    <li class="list-item">✓ GENs outperform baselines (Variational Graph Autoencoders & Variational Graph Recurrent Nets) on time-series prediction tasks.</li>
+                    <li class="list-item">✓ GENs achieve 100% accuracy on time-series prediction tasks on graphs generated from Boolean Formulae & Peano Addition DGPs.</li>
+                    <li class="list-item">? The runtime of forward passes of a GEN scales sub-quadratically as the number of nodes in a graph increases.</li>
+                </ul>
+                <div class="figure-container">
+                    <img src="./fig_7.jpg" data-semantic="Runtime scale dependence graphs for flexible and constant forward/backward passes" style="aspect-ratio: 990/330;">
+                    <div class="caption">The runtime of graph scale dependence. Results for the backward passes are not consistent with the claim.</div>
+                </div>
+                <div class="figure-container">
+                    <img src="./table_2.jpg" data-semantic="Table showing log-log linear slope fit for forward and backward passes" style="aspect-ratio: 960/145;">
+                </div>
+                <div class="figure-container">
+                    <img src="./fig_8.jpg" data-semantic="Loss iteration curve showing training instability" style="aspect-ratio: 473/253;">
+                    <div class="caption">While the focus here is speed, we have to note that the experiment in the original paper fails to optimize the criterion loss.</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column column-right">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Improving the experimental setup</h2>
+                <p class="text-block">
+                    The facts that graph-to-graph transitions are deterministic and that the space of unique graphs generated by DGPs is limited arose some concern.
+                </p>
+                <div class="figure-container">
+                    <img src="./table_3.jpg" data-semantic="Table of unique graphs count for different DGPs" style="aspect-ratio: 960/145;">
+                </div>
+                <p class="text-block">We reproduced the claims with the following adjustments:</p>
+                <ul>
+                    <li class="list-item">Increased cardinality of test time series (5 -> 100)</li>
+                    <li class="list-item">Ensured no duplicates between train & test set</li>
+                    <li class="list-item">Used established random graph generation methods</li>
+                </ul>
+                <p class="text-block" style="color: var(--primary-red); font-weight: bold;">
+                    Results were generally worse, but still within a reasonable margin of error.
+                </p>
+                <div class="row-container">
+                    <img src="./fig_9.jpg" data-semantic="Distribution of sampled TS lengths for boolean and peano DGPs" style="aspect-ratio: 948/334;">
+                    <img src="./table_1.jpg" data-semantic="Probability of sampling unique and simplifyable trees" style="aspect-ratio: 455/252;">
+                </div>
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Concluding reproduction notes</h2>
+                <p class="text-block">
+                    Our experimental results conclusively show that most of the claims in the original work hold. However, our work beyond the original paper emphasizes the need to pay attention to the experimental setup, especially when working with synthetically generated data.
+                </p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_6">
+                <h2 class="section-header">References</h2>
+                <div class="references-text">
+                    [bpa21] Paaßen, Benjamin, et al. "Graph edit networks." In: International Conference on Learning Representations. 2020.<br>
+                    [Gar70] Martin Gardner. "The fantastic combinations of John Conway's new solitaire game of life." In: Sc. Am., 223:20-123, 1970<br>
+                    [KW16] Thomas N. Kipf and Max Welling. "Variational graph auto-encoders" In: Proceedings of the NIPS 2016 Workshop on Bayesian Deep Learning, 2016
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

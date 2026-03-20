@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Rate-Distortion View of Uncertainty Quantification</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true } };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="font-sans">
+
+<header data-type="metadata" class="w-full">
+  <div class="flex flex-col lg:flex-row items-start lg:items-center gap-4 p-4">
+    <div class="flex flex-col gap-1 shrink-0">
+      <div class="font-bold text-lg leading-tight">Carnegie</div>
+      <div class="font-bold text-base leading-tight">Mellon</div>
+      <div class="font-bold text-lg leading-tight">University</div>
+      <div class="font-bold text-base leading-tight mt-1">Auton Lab</div>
+    </div>
+    <div class="flex flex-col gap-1 shrink-0">
+      <div class="font-bold text-base leading-tight"></div>
+      <div class="font-bold text-base leading-tight"></div>
+      <div class="font-bold text-base leading-tight">Sony CSL</div>
+    </div>
+    <div class="flex-1 text-center">
+      <h1 class="font-bold text-3xl lg:text-4xl leading-tight">A Rate-Distortion View of Uncertainty Quantification</h1>
+      <p class="text-base lg:text-lg mt-2"></p>
+      <p class="text-sm mt-1">https://github.com/ifiaposto/Distance_Aware_Bottleneck</p>
+    </div>
+    <div class="shrink-0 flex flex-col items-center gap-1">
+      <div class="font-bold text-base"></div>
+    </div>
+  </div>
+</header>
+
+<main class="w-full px-4 pb-4">
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+    <!-- Left + Center column: Problem section -->
+    <div class="lg:col-span-2 flex flex-col gap-4">
+
+      <section id="section_1" data-type="section" class="w-full">
+        <h2 class="font-bold text-xl mb-2">Problem: Efficient Uncertainty Quantification</h2>
+        <div class="flex flex-col md:flex-row gap-4">
+          <div data-type="figure" data-fig-id="fig_1" class="shrink-0 w-full md:w-48 lg:w-56">
+            <img src="./fig_1.jpg" alt="Problem illustration figure" class="w-full h-auto object-contain">
+          </div>
+          <div class="flex-1">
+            <p class="text-base mb-2">Goal: reliable &amp; lightweight models that "know what they know." </p>
+            <ul class="list-disc pl-5 space-y-1 text-base">
+              <li>· Principled: How much evidence? </li>
+              <li>·Efficient: Single Model &amp; Sampling-Free </li>
+              <li>· Post-hoc: Works on pre-trained models </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="section_2" data-type="section" class="w-full">
+        <h2 class="font-bold text-xl mb-2">Our Method: Distance-Aware Bottleneck (DAB)</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="flex flex-col gap-1">
+            <div data-type="figure" data-fig-id="fig_3">
+              <img src="./fig_3.jpg" alt="DAB step 1: training dataset as source" class="w-full h-auto object-contain">
+            </div>
+            <p class="text-xs italic text-center">1&gt; Treat the training dataset as a source generating training examples. </p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <div data-type="figure" data-fig-id="fig_4">
+              <img src="./fig_4.jpg" alt="DAB step 2: stochastic encoder mapping" class="w-full h-auto object-contain">
+            </div>
+            <p class="text-xs italic text-center">$^ { 2 > }$ Map each datapoint to a distribution through a stochastic encoder. </p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <div data-type="figure" data-fig-id="fig_5">
+              <img src="./fig_5.jpg" alt="DAB step 3: codebook and uncertainty formula" class="w-full h-auto object-contain">
+            </div>
+            <p class="text-xs italic text-center">3&gt; The codebook contains the centroids of the encoders in terms of a statistical distance. Uncertainty is quantified by the expected distance from the codebook: uncertainty $\cdot ( x _ { \mathrm { t e s t } } ) = \mathbb { E } [ D ( p ( z \mid x _ { \mathrm { t e s t } } ; \theta ) , q _ { \kappa } ( z ; \phi ) ) ]$ </p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <div data-type="figure" data-fig-id="fig_6">
+              <img src="./fig_6.jpg" alt="DAB step 4: distance to codebook visualization" class="w-full h-auto object-contain">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section_3" data-type="section" class="w-full">
+        <h2 class="font-bold text-xl mb-2">DAB's performance on ImageNet 1-K</h2>
+        <div data-type="table" data-fig-id="table_1" class="w-full">
+          <img src="./table_1.jpg" alt="DAB performance table on ImageNet 1-K" class="w-full h-auto object-contain">
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 mt-2 text-sm">
+          <div data-type="figure" data-fig-id="fig_8" class="shrink-0">
+            <img src="./fig_8.jpg" alt="Performance annotation figure" class="h-16 w-auto object-contain">
+          </div>
+          <p>predicting misclassifications! </p>
+          <p>DAB can better distinguish out-of-distribution images. </p>
+          <p>parameters! </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Right column: Key Idea + Codebook + References -->
+    <div class="lg:col-span-1 flex flex-col gap-4">
+
+      <section id="section_4" data-type="section" class="w-full">
+        <h2 class="font-bold text-xl mb-2">Key Idea: Distance-Awareness</h2>
+        <div data-type="figure" data-fig-id="fig_2">
+          <img src="./fig_2.jpg" alt="Key idea: distance-awareness bar chart" class="w-full h-auto object-contain">
+        </div>
+      </section>
+
+      <section id="section_5" data-type="section" class="w-full">
+        <h2 class="font-bold text-xl mb-2">Codebook Visualization</h2>
+        <div data-type="figure" data-fig-id="fig_7">
+          <img src="./fig_7.jpg" alt="Codebook visualization heatmaps across epochs" class="w-full h-auto object-contain">
+        </div>
+        <p class="text-xs italic mt-1">Number of CIFAR-10 test datapoints assigned to each centroid during training. Each centroid progressively attracts datapoints of the same class. </p>
+      </section>
+
+      <section id="section_6" data-type="reference" class="w-full">
+        <h2 class="font-bold text-xl mb-2">References</h2>
+        <ul class="list-disc pl-5 space-y-1 text-xs">
+          <li>[1] Alemi, A.A., Fischer, I., Dillon, J.V., and Murphy, K. Deep variational information bottleneck. In International Conference on Learning Representations, 2017. </li>
+          <li>[2] Alemi, A.A., Fischer, I., and Dillon, J.V. Uncertainty in the variational information bottleneck. arXiv preprint arXiv:1807.00906, 2018 </li>
+          <li>[3] Liu, J., Lin, Z., Padhy, S., Tran, D., Bedrax Weiss, T., and Lakshminarayanan, B. Simple and principled uncertainty estimation with deterministic deep learning via distance awareness. Advances in Neural Information Processing Systems, 2020. </li>
+          <li>[4] Banerjee, A., Merugu, S., Dhillon, I.S., Ghosh, J., and Lafferty, J. Clustering with Bregman divergences. Journal of Machine Learning Research, 2005. </li>
+          <li>[5] Van Amersfoort, J., Smith, L., Teh, Y.W., and Gal, Y. Uncertainty estimation using a single deep deterministic neural network. In International Conference on Machine Learning, 2020. </li>
+        </ul>
+      </section>
+
+    </div>
+
+  </div>
+
+</main>
+
+</body>
+</html>

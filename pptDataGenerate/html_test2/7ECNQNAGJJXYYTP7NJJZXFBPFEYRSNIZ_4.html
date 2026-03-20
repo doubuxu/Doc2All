@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Replicas</title>
+    <style>
+        /* 浏览器重置 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }
+
+        /* 视口容器 */
+        .ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 画布容器 - 固定尺寸 1280x720 (标准16:9) */
+        .ppt-slide #ppt-canvas {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* 头部元数据样式 */
+        .ppt-slide header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .ppt-slide .ppt-title {
+            font-size: 42px;
+            color: #008000; /* 绿色标题 */
+            text-decoration: underline;
+            margin: 0;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        /* 逻辑区块样式 */
+        .ppt-slide main {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ppt-slide .layout-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 图表容器 */
+        .ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .ppt-slide .figure-container img {
+            object-fit: contain;
+            /* 保持比例缩放以适应画布 */
+        }
+
+        /* 正文文本/图注样式 */
+        .ppt-slide .text-block {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        /* 颜色高亮 */
+        .ppt-slide .text-blue {
+            color: #8e94c5; /* 对应图中浅蓝色 */
+            font-weight: bold;
+        }
+
+        .ppt-slide .text-pink {
+            color: #c594ac; /* 对应图中粉色 */
+            font-weight: bold;
+        }
+
+        .ppt-slide .text-violet {
+            color: #8b5a8e; /* 对应图中紫色 */
+            font-weight: bold;
+        }
+
+        /* 页码 */
+        .ppt-slide .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* 隐藏未使用的协议元素 */
+        .ppt-slide .ppt-authors, 
+        .ppt-slide .header-logos {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ppt-slide">
+    <div id="ppt-canvas">
+        <!-- 头部元数据 -->
+        <header>
+            <h1 class="ppt-title">Simulation results: action distribution</h1>
+            <p class="ppt-authors"></p>
+            <div class="header-logos"></div>
+        </header>
+
+        <!-- 主体内容 -->
+        <main>
+            <section class="layout-block" data-section-id="section_1">
+                <!-- 图表区域 -->
+                <div class="figure-container">
+                    <img src="./slide_4_fig_1.jpg" 
+                         style="width: 900px; height: 538px;" 
+                         data-semantic="Action distribution histogram comparing initial state t=0 and final state t=Tsim, showing the overlap in violet.">
+                </div>
+
+                <!-- 图注文本 -->
+                <p class="text-block">
+                    Fig. 1. Initial (<span class="text-blue">blue</span>) and final (<span class="text-pink">pink</span>) distributions over action. Overlapping area is <span class="text-violet">violet</span>.
+                </p>
+            </section>
+        </main>
+
+        <!-- 页码 -->
+        <div class="page-number">5</div>
+    </div>
+</div>
+
+</body>
+</html>

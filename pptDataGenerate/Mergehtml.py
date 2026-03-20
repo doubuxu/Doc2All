@@ -145,6 +145,6 @@ def merge_html_files(input_folder, output_file):
 # merge_ppt_html('./input_slides', './output/my_presentation.html')
 
 if __name__=="__main__":
-    input_html_path="./html_test"
-    output_path='./merge.html'
+    input_html_path="./html_test2"
+    output_path='./merge2.html'
     merge_html_files(input_html_path,output_path)

@@ -274,16 +274,9 @@ from pathlib import Path
 
 def patch_equation_paths_from_middle(content_json_path: str, middle_json_path: str):
     """
-    从 middle.json 中提取 equation 的 image_path，
-    按出现顺序补全 content_list.json 中的 equation img_path。
-
-    支持：
-    - middle 顶层是 list（你现在的结构）
-    - middle 顶层是 dict（兼容老版本）
-    - 重复公式
-    - 自动添加 images/ 前缀
+    专门针对公式（equation）进行路径补全。
+    匹配逻辑：从 middle.json 的 pdf_info[0]['para_blocks'] 中寻找 type='interline_equation' 的 span
     """
-
     import json
     from pathlib import Path
 
@@ -295,47 +288,47 @@ def patch_equation_paths_from_middle(content_json_path: str, middle_json_path: s
         content_list = json.load(f)
 
     with open(middle_json_path, "r", encoding="utf-8") as f:
-        middle = json.load(f)
+        middle_data = json.load(f)
 
-    # ===== 兼容 middle 两种结构 =====
-    """
-    if isinstance(middle, list):
-        pages = middle
-    elif isinstance(middle, dict):
-        pages = middle.get("pdf_info", {}).get("pages", [])
-    else:
-        print("⚠ Unexpected middle.json structure")
-        pages = []
-    """
-    pages = middle["pdf_info"]
-    # ===== 收集 equation image_path =====
+    # ===== 提取 middle.json 中的公式图片路径 =====
+    # 根据你提供的结构：middle_data['pdf_info'] 是一个列表
     equation_image_paths = []
+    
+    pdf_info = middle_data.get("pdf_info", [])
+    for page in pdf_info:
+        blocks = page.get("para_blocks", [])
+        for block in blocks:
+            # 仅处理行间公式类型
+            if block.get("type") == "interline_equation":
+                lines = block.get("lines", [])
+                for line in lines:
+                    spans = line.get("spans", [])
+                    for span in spans:
+                        # 提取 span 里的 image_path
+                        img_p = span.get("image_path")
+                        if img_p:
+                            equation_image_paths.append(img_p)
 
-    for page in pages:
-        layout_dets = page.get("layout_dets", [])
-        for det in layout_dets:
-            if det.get("type") == "equation":
-                image_path = det.get("image_path")
-                if image_path:
-                    equation_image_paths.append(image_path)
-
-    # ===== 按顺序回填 =====
+    # ===== 将路径回填至 content_list.json =====
     eq_index = 0
     total_middle_eq = len(equation_image_paths)
 
     for item in content_list:
+        # 只处理 content_list 中类型为 equation 的条目
         if item.get("type") == "equation":
             if eq_index < total_middle_eq:
+                # 保持与你后续 reorganize_path 逻辑一致的前缀
                 item["img_path"] = f"images/{equation_image_paths[eq_index]}"
                 eq_index += 1
             else:
+                # 如果 middle 里的公式用完了，设为空防止指向错误
                 item["img_path"] = ""
 
-    # ===== 写回 =====
+    # ===== 写回文件 =====
     with open(content_json_path, "w", encoding="utf-8") as f:
         json.dump(content_list, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Patched {eq_index}/{total_middle_eq} equation paths.")
+    print(f"✅ 公式路径补全完成: 已匹配 {eq_index} 个，Middle中共找到 {total_middle_eq} 个。")
     return content_list
 
 def fix_paths_in_content_list(json_path: str):
@@ -513,8 +506,8 @@ def mineru_process(pdf_files_path,output_dir):
 if __name__ == '__main__':
     # args
     #__dir__ = os.path.dirname(os.path.abspath(__file__))
-    pdf_files_path = './pdfs/ByteEdit_Generative_Image_Editing.pdf'
-    output_dir = './output'
+    pdf_files_path = '../posterData/'
+    output_dir = '../posterData/mineru_output_with_eq'
     pdf_suffixes = ["pdf"]
     image_suffixes = ["png", "jpeg", "jp2", "webp", "gif", "bmp", "jpg"]
 
@@ -527,9 +520,13 @@ if __name__ == '__main__':
     # os.environ['MINERU_MODEL_SOURCE'] = "modelscope"
 
     """Use hybrid mode and local computing power to parse documents"""
-    doc_path_list=[pdf_files_path]
-    parse_doc(doc_path_list, output_dir, backend="hybrid-auto-engine")
-    reorganize_path(doc_path_list,output_dir)
+    for item in os.listdir(Path(pdf_files_path)):
+        if item.lower().endswith(('.jpg', '.jpeg')):
+            file_path = os.path.join(pdf_files_path, item)
+
+            doc_path_list=[file_path]
+            parse_doc(doc_path_list, output_dir, backend="hybrid-auto-engine")
+            reorganize_path(doc_path_list,output_dir)
     """Other backends for parsing documents, you can uncomment and try"""
     # parse_doc(doc_path_list, output_dir, backend="pipeline")  # more general.
     # parse_doc(doc_path_list, output_dir, backend="vlm-auto-engine")  # high accuracy via local computing power.

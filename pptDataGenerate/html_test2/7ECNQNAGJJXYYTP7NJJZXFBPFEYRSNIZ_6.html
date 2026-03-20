@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Replicate - Slide 7</title>
+    <style>
+        /* 浏览器重置 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #333;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }
+
+        /* 视口容器 */
+        .ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 画布容器 - 固定尺寸 1000x750 (4:3比例) */
+        .ppt-slide #ppt-canvas {
+            width: 1000px;
+            height: 750px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 50px;
+            box-sizing: border-box;
+        }
+
+        /* 头部元数据 */
+        .ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .ppt-slide .ppt-title {
+            font-size: 32px;
+            color: #008000; /* 绿色标题 */
+            text-decoration: underline;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .ppt-slide .ppt-authors {
+            display: none; /* 本页无作者信息 */
+        }
+
+        .ppt-slide .header-logos {
+            display: none; /* 本页无Logo信息 */
+        }
+
+        /* 主体内容布局 */
+        .ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .ppt-slide .layout-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* 图表容器 */
+        .ppt-slide .figure-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .ppt-slide .figure-container img {
+            border: 2px solid #555;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            object-fit: contain;
+        }
+
+        /* 文本块样式 */
+        .ppt-slide .text-block {
+            margin: 0;
+            line-height: 1.4;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        /* 蓝色文本 */
+        .ppt-slide .text-blue {
+            color: #0000FF;
+        }
+
+        /* 红色文本 */
+        .ppt-slide .text-red {
+            color: #FF0000;
+            margin-top: 10px;
+        }
+
+        /* 页码 */
+        .ppt-slide .footer-info {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        /* 列表与参考（本页未使用但保留协议类名） */
+        .ppt-slide .list-item { list-style: none; }
+        .ppt-slide .references-text { display: none; }
+        .ppt-slide .section-header { display: none; }
+
+    </style>
+</head>
+<body>
+
+<div class="ppt-slide">
+    <div id="ppt-canvas">
+        <!-- 头部标题 -->
+        <header>
+            <h1 class="ppt-title">First studies (C.Y. Tan)</h1>
+            <p class="ppt-authors"></p>
+            <div class="header-logos"></div>
+        </header>
+
+        <!-- 核心逻辑区块 -->
+        <main>
+            <section class="layout-block" data-section-id="section_1">
+                <!-- 示波器图表 -->
+                <div class="figure-container">
+                    <img src="./slide_6_fig_1.jpg" 
+                         style="width: 600px; height: 498px;" 
+                         data-semantic="显示RF相位抖动和相干衰减的GxSC快速时间图表">
+                </div>
+
+                <!-- 描述文本 1 (蓝色) -->
+                <p class="text-block text-blue">
+                    RF phase shaking at Tevatron: 4.5° (at ~ 50-75 s) and 1° (at 225 s) 
+                    at 87.47 Hz (measured synchrotron frequency).
+                </p>
+
+                <!-- 描述文本 2 (红色) -->
+                <p class="text-block text-red">
+                    Note immediate coherent decay at 75 s when the shaker got off.
+                </p>
+            </section>
+        </main>
+
+        <!-- 页码 -->
+        <div class="footer-info">7</div>
+    </div>
+</div>
+
+</body>
+</html>

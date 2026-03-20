@@ -8,6 +8,7 @@ from pdf2image import convert_from_path
 
 def emu_to_px(emu):
     if emu is None: return 0
+    # 这里的 9144 是一个约数，后续会根据 PDF 实际像素进行 scale 缩放
     return int(emu / 9144)
 
 def ppt_to_pdf_libreoffice(ppt_path, output_dir):
@@ -30,36 +31,42 @@ def crop_and_save(big_img, box, save_path):
         cropped = big_img.crop((l, t, r, b))
         cropped.save(save_path, "PNG")
 
+def get_table_html(shape):
+    """将 PPT 表格对象转换为 HTML 字符串"""
+    table = shape.table
+    html = "<table>"
+    for row in table.rows:
+        html += "<tr>"
+        for cell in row.cells:
+            # 简单的单元格合并逻辑处理 (如果有)
+            # 这里默认处理基础单元格内容
+            html += f"<td>{cell.text_frame.text.strip()}</td>"
+        html += "</tr>"
+    html += "</table>"
+    return html
+
 def process_batch_ppts(input_folder, base_output_path):
     """
     批量处理文件夹下的所有 PPT/PPTX
-    - 统一命名：非表格/非文本的视觉元素统一命名为 image_n.png
-    - 兼容性：自动将旧版 .ppt 转换为 .pptx 进行解析
     """
-    
     os.makedirs(base_output_path, exist_ok=True)
     ppt_files = [f for f in os.listdir(input_folder) if f.lower().endswith(('.pptx', '.ppt'))]
     print(f"找到 {len(ppt_files)} 个待处理文件。")
-
+    index=0
     for ppt_file in ppt_files:
         ppt_path = os.path.join(input_folder, ppt_file)
         ppt_stem = os.path.splitext(ppt_file)[0]
         
-        # 创建 PPT 同名根目录
         ppt_root_dir = os.path.join(base_output_path, ppt_stem)
         os.makedirs(ppt_root_dir, exist_ok=True)
         
         print(f"\n>>> 正在处理文件: {ppt_file}")
-
-        # 临时工作目录，用于存放转换后的 PDF 和中间 PPTX
         temp_worker_dir = os.path.join(ppt_root_dir, "temp_worker")
         os.makedirs(temp_worker_dir, exist_ok=True)
 
         try:
-            # --- 兼容性处理：如果是旧版 .ppt，先转为 .pptx ---
             if ppt_file.lower().endswith('.ppt'):
                 print(f"  [Wait] 检测到旧版 PPT，正在预转换为 PPTX...")
-                # 使用 LibreOffice 转换为 pptx
                 convert_cmd = [
                     'libreoffice', '--headless', '--convert-to', 'pptx',
                     '--outdir', temp_worker_dir, os.path.abspath(ppt_path)
@@ -69,10 +76,7 @@ def process_batch_ppts(input_folder, base_output_path):
             else:
                 working_ppt_path = ppt_path
 
-            # 1. 生成 PDF 用于切图
             pdf_path = ppt_to_pdf_libreoffice(ppt_path, temp_worker_dir)
-            
-            # 2. 解析 PPT 结构
             prs = Presentation(working_ppt_path)
             total_slides = len(prs.slides)
             print(f"  [Step 2] 检测到 {total_slides} 页内容，开始逐页解析...")
@@ -84,7 +88,6 @@ def process_batch_ppts(input_folder, base_output_path):
                 os.makedirs(images_dir, exist_ok=True)
                 os.makedirs(tables_dir, exist_ok=True)
 
-                # 提取 PDF 当前页高清图
                 images = convert_from_path(
                     pdf_path, dpi=300, 
                     first_page=page_index + 1, 
@@ -99,81 +102,127 @@ def process_batch_ppts(input_folder, base_output_path):
                 scale_x = big_w / emu_to_px(prs.slide_width)
                 scale_y = big_h / emu_to_px(prs.slide_height)
 
-                layout_data = {
-                    "ppt_name": ppt_stem,
-                    "page_index": page_index,
-                    "full_image": "full_slide.png",
-                    "canvas_size": {"width": big_w, "height": big_h},
-                    "elements": []
-                }
-
-                # 统一计数器
+                # 最终输出的列表格式
+                final_json_elements = []
                 img_idx, table_idx = 1, 1
                 slide = prs.slides[page_index]
-
+                slide_width_emu = prs.slide_width
+                slide_height_emu = prs.slide_height
                 for shape in slide.shapes:
-                    shape_type_code = int(shape.shape_type)
-                    
-                    # 过滤不需要的类型（如 Chart）
-                    if shape_type_code == 3: continue
-                    if shape_type_code == 14 and not shape.has_table: continue
-
-                    l_px = int(emu_to_px(shape.left) * scale_x)
-                    t_px = int(emu_to_px(shape.top) * scale_y)
-                    w_px = int(emu_to_px(shape.width) * scale_x)
-                    h_px = int(emu_to_px(shape.height) * scale_y)
-
-                    element = {"bbox": {"left": l_px, "top": t_px, "width": w_px, "height": h_px}}
-
-                    # --- 分类处理逻辑 ---
-                    
-                    # 1. 表格处理
-                    if shape.has_table:
-                        element["type"] = "table"
-                        save_name = f"slide_{page_index}_table_{table_idx}.png"
-                        crop_and_save(big_img, (l_px, t_px, l_px + w_px, t_px + h_px), os.path.join(tables_dir, save_name))
-                        element["id"] = f"slide_{page_index}_table_{table_idx}"
-                        element["path"] = f"tables/{save_name}"
-                        table_idx += 1
-                        layout_data["elements"].append(element)
-
-                    # 2. 视觉元素处理 (图片 13, 组合 6, SmartArt 24, 形状等)
-                    # 只要不是纯文本，且不是表格，都作为 image 导出
-                    elif shape_type_code in [6, 13, 24] or (not shape.has_text_frame):
-                        element["type"] = "image"
-                        # 记录原始类型方便追溯
-                        element["sub_type"] = "group" if shape_type_code == 6 else "picture"
+                    try:
+                        # 获取基本坐标
+                        x0 = int((shape.left / slide_width_emu) * big_w)
+                        y0 = int((shape.top / slide_height_emu) * big_h)
+                        x1 = int(((shape.left + shape.width) / slide_width_emu) * big_w)
+                        y1 = int(((shape.top + shape.height) / slide_height_emu) * big_h)
                         
-                        save_name = f"slide_{page_index}_image_{img_idx}.png"
-                        crop_and_save(big_img, (l_px, t_px, l_px + w_px, t_px + h_px), os.path.join(images_dir, save_name))
-                        element["id"] = f"slide_{page_index}_image_{img_idx}"
-                        element["path"] = f"images/{save_name}"
-                        img_idx += 1
-                        layout_data["elements"].append(element)
+                        bbox = [x0, y0, x1, y1]
+                        #x0 = int(emu_to_px(shape.left) * scale_x)
+                        #y0 = int(emu_to_px(shape.top) * scale_y)
+                        #x1 = x0 + int(emu_to_px(shape.width) * scale_x)
+                        #y1 = y0 + int(emu_to_px(shape.height) * scale_y)
+                        #bbox = [x0, y0, x1, y1]
 
-                    # 3. 纯文本处理
-                    elif shape.has_text_frame and shape.text.strip():
-                        element["type"] = "text"
-                        element["content"] = shape.text.strip()
-                        layout_data["elements"].append(element)
+                        # --- 1. 表格处理 ---
+                        if shape.has_table:
+                            save_name = f"slide_{page_index}_table_{table_idx}.jpg"
+                            rel_path = f"slide_{page_index}_tables/{save_name}"
+                            crop_and_save(big_img, (x0, y0, x1, y1), os.path.join(tables_dir, save_name))
+                            
+                            final_json_elements.append({
+                                "type": "table",
+                                "img_path": f"../posterData/mineru_output/{ppt_stem}/visuals/{rel_path}",
+                                "table_caption": [],
+                                "table_footnote": [],
+                                "table_body": get_table_html(shape),
+                                "bbox": bbox
+                            })
+                            table_idx += 1
+                            continue 
 
-                # 保存 JSON
+                        # --- 2. 文本处理 ---
+                        if shape.has_text_frame and shape.text.strip():
+                            paragraphs = [p for p in shape.text_frame.paragraphs if p.text.strip()]
+                            
+                            # 默认不认为是列表，除非满足条件
+                            is_list = any(p.level > 0 for p in paragraphs) or len(paragraphs) > 1
+                            t_level = None
+
+                            # 安全地检查占位符类型
+                            if shape.is_placeholder:
+                                try:
+                                    ph_type = shape.placeholder_format.type
+                                    if ph_type in [1, 3]: # 1: Title, 3: Center Title
+                                        is_list = False
+                                        t_level = 1
+                                except (ValueError, AttributeError):
+                                    pass # 如果获取占位符详情失败，按普通文本处理
+
+                            if not t_level and paragraphs and paragraphs[0].font.bold:
+                                t_level = 1
+
+                            if is_list:
+                                final_json_elements.append({
+                                    "type": "list",
+                                    "sub_type": "text",
+                                    "list_items": [p.text.strip() for p in paragraphs],
+                                    "bbox": bbox
+                                })
+                            else:
+                                text_item = {
+                                    "type": "text",
+                                    "text": shape.text.strip(),
+                                    "bbox": bbox
+                                }
+                                if t_level:
+                                    text_item["text_level"] = t_level
+                                final_json_elements.append(text_item)
+                            continue
+
+                        # --- 3. 视觉元素处理 ---
+                        shape_type_code = int(shape.shape_type)
+                        # 6: Group, 13: Picture, 24: Canvas/SmartArt
+                        if shape_type_code in [6, 13, 24] or not shape.has_text_frame:
+                            if (x1 - x0) < 5 or (y1 - y0) < 5:
+                                continue
+                                
+                            save_name = f"slide_{page_index}_fig_{img_idx}.jpg"
+                            rel_path = f"images/slide_{page_index}_{save_name}"
+                            crop_and_save(big_img, (x0, y0, x1, y1), os.path.join(images_dir, save_name))
+                            
+                            final_json_elements.append({
+                                "type": "image",
+                                "img_path": f"../posterData/mineru_output/{ppt_stem}/visuals/{rel_path}",
+                                "image_caption": [],
+                                "image_footnote": [],
+                                "bbox": bbox
+                            })
+                            img_idx += 1
+                            
+                    except Exception as shape_err:
+                        # 打印单个 shape 的错误，但不中断整页解析
+                        print(f"      [Warning] 解析第 {page_index} 页的某个元素时跳过: {shape_err}")
+                        continue
+                # 保存为该页的 layout.json
                 with open(os.path.join(page_dir, "layout.json"), "w", encoding="utf-8") as f:
-                    json.dump(layout_data, f, indent=4, ensure_ascii=False)
+                    json.dump(final_json_elements, f, indent=4, ensure_ascii=False)
 
             print(f"  [Done] 文件 {ppt_file} 处理完毕。")
 
         except Exception as e:
             print(f"  [Error] 处理文件 {ppt_file} 时出错: {e}")
+            import traceback
+            traceback.print_exc()
 
         finally:
-            # 清理临时转换文件
             if os.path.exists(temp_worker_dir):
                 shutil.rmtree(temp_worker_dir)
-            break
+             # 如果需要批量处理所有文件，请注释掉这一行
+            index+=1
+            if index>100:
+                break
+
 if __name__ == "__main__":
-    # 配置你的路径
     INPUT_DIR = "../pptOriginalData"
     OUTPUT_DIR = "../pptDataOutput"
-    
     process_batch_ppts(INPUT_DIR, OUTPUT_DIR)

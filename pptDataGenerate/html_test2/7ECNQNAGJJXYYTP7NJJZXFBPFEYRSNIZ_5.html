@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Slide Replication</title>
+    <style>
+        /* 视口适配与页面作用域 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }
+
+        .ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 画布容器约束 */
+        .ppt-slide #ppt-canvas {
+            width: 1600px;
+            height: 900px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* 头部元数据样式 */
+        .ppt-slide header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .ppt-slide .ppt-title {
+            color: #008000; /* 绿色标题 */
+            font-size: 48px;
+            font-weight: normal;
+            margin: 0;
+            text-decoration: underline;
+        }
+
+        /* 主体布局结构 */
+        .ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .ppt-slide .row-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        /* 逻辑区块样式 */
+        .ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 上半部分布局 */
+        .ppt-slide .top-row {
+            height: 45%;
+        }
+
+        .ppt-slide .top-left {
+            flex: 0 0 65%;
+        }
+
+        .ppt-slide .top-right {
+            flex: 0 0 30%;
+            padding-top: 80px;
+        }
+
+        /* 下半部分布局 */
+        .ppt-slide .bottom-row {
+            height: 45%;
+            align-items: center;
+        }
+
+        .ppt-slide .bottom-left {
+            flex: 0 0 65%;
+        }
+
+        .ppt-slide .bottom-right {
+            flex: 0 0 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding-left: 20px;
+        }
+
+        /* 文本块样式 */
+        .ppt-slide .text-block {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .ppt-slide .blue-text {
+            color: #0000FF;
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        /* 图片容器样式 */
+        .ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .ppt-slide img {
+            object-fit: contain;
+        }
+
+        /* 页码 */
+        .ppt-slide .footer-page {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 32px;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ppt-slide">
+        <div id="ppt-canvas">
+            <!-- 头部标题 -->
+            <header>
+                <h1 class="ppt-title">Excited centroid motion</h1>
+            </header>
+
+            <main>
+                <!-- 第一行：直方图与描述文字 -->
+                <div class="row-container top-row">
+                    <section class="layout-block top-left" data-section-id="section_1">
+                        <div class="figure-container">
+                            <img src="./slide_5_fig_1.jpg" 
+                                 style="width: 850px; height: 380px;" 
+                                 data-semantic="相位分布直方图，展示了t=0和t=Tsim时刻的PDF对比">
+                        </div>
+                    </section>
+                    
+                    <section class="layout-block top-right" data-section-id="section_2">
+                        <p class="text-block blue-text">
+                            Phase distribution shows some coherent excitation.
+                        </p>
+                    </section>
+                </div>
+
+                <!-- 第二行：哈密顿量曲线与公式 -->
+                <div class="row-container bottom-row">
+                    <section class="layout-block bottom-left" data-section-id="section_3">
+                        <div class="figure-container">
+                            <img src="./slide_5_fig_2.jpg" 
+                                 style="width: 850px; height: 400px;" 
+                                 data-semantic="质心哈密顿量随时间变化的曲线图，包含公式H(<z>,<p>)和图注Fig 3">
+                        </div>
+                    </section>
+
+                    <section class="layout-block bottom-right" data-section-id="section_4">
+                        <div class="figure-container">
+                            <img src="./slide_5_fig_4.jpg" 
+                                 style="width: 400px; height: 60px;" 
+                                 data-semantic="平均哈密顿量近似公式">
+                        </div>
+                        <div class="figure-container">
+                            <img src="./slide_5_fig_5.jpg" 
+                                 style="width: 420px; height: 60px;" 
+                                 data-semantic="极限哈密顿量计算公式">
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- 页码 -->
+            <div class="footer-page">6</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1009 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PPT 合并演示文稿</title>
+    <style>
+        body, html { margin: 0; padding: 0; background: #1a1a1a; width: 100%; height: 100%; overflow: hidden; }
+        
+        /* 16:9 主容器 */
+        .presentation-root {
+            width: 100vw; height: 56.25vw; 
+            max-width: 177.78vh; max-height: 100vh;
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000; overflow: hidden;
+            container-type: size;
+        }
+
+        .merged-slide {
+            display: none !important; width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0;
+        }
+        
+        .merged-slide.active {
+            display: flex !important;
+        }
+
+        /* 缩放适配层：确保不同px定义的画布能自适应 */
+        .slide-scaler-wrapper {
+            width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center;
+            transform-origin: center;
+        }
+
+        /* 注入各页隔离样式 */
+        #slide-1.ppt-slide html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #333;
+            font-family: "Arial", "Helvetica", sans-serif;
+        }#slide-1.ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }#slide-1.ppt-slide #ppt-canvas {
+            width: 1024px;
+            height: 768px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 40px;
+        }#slide-1.ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            width: 100%;
+            position: relative;
+        }#slide-1.ppt-slide .header-logos {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }#slide-1.ppt-slide .header-logos img {
+            object-fit: contain;
+        }#slide-1.ppt-slide .ppt-title {
+            color: #000080; 
+            font-size: 42px;
+            font-weight: normal;
+            text-align: center;
+            margin: 0 0 60px 0;
+            width: 90%;
+            line-height: 1.2;
+        }#slide-1.ppt-slide .ppt-authors {
+            color: #000000;
+            font-size: 36px;
+            font-family: "Times New Roman", serif;
+            margin: 0;
+            text-align: center;
+        }#slide-1.ppt-slide main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 200px; 
+        }#slide-1.ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }#slide-1.ppt-slide .text-block {
+            margin: 0;
+            padding: 0;
+            font-size: 28px;
+            color: #000000;
+            text-align: center;
+        }#slide-1.ppt-slide .date-container {
+            margin-top: 40px;
+        }#slide-1.ppt-slide .footer-info {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            display: flex;
+            justify-content: flex-end;
+            width: 100px;
+        }#slide-1.ppt-slide .page-number {
+            font-size: 20px;
+            color: #000000;
+        }#slide-1.ppt-slide .column {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+     #slide-2.ppt-slide html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #333;
+            font-family: 'Arial', sans-serif;
+        }#slide-2.ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }#slide-2.ppt-slide #ppt-canvas {
+            width: 960px;
+            height: 720px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }#slide-2.ppt-slide header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }#slide-2.ppt-slide .ppt-title {
+            color: #008000; 
+            font-size: 36px;
+            font-weight: normal;
+            text-decoration: underline;
+            margin: 0;
+            padding: 0;
+        }#slide-2.ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }#slide-2.ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }#slide-2.ppt-slide ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: none;
+        }#slide-2.ppt-slide .list-item {
+            color: #0000FF; 
+            font-size: 28px;
+            line-height: 1.3;
+            margin-bottom: 45px;
+            position: relative;
+            padding-left: 30px;
+        }#slide-2.ppt-slide .list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0000FF;
+        }#slide-2.ppt-slide .math-text {
+            font-style: italic;
+            font-family: "Times New Roman", serif;
+        }#slide-2.ppt-slide .footer-info {
+            position: absolute;
+            bottom: 30px;
+            right: 50px;
+            color: #000;
+            font-size: 24px;
+        }@media (max-height: 720px) {#slide-2.ppt-slide .list-item {
+                margin-bottom: 30px;
+                font-size: 26px;
+            }
+        }
+     #slide-3.ppt-slide html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }#slide-3.ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }#slide-3.ppt-slide #ppt-canvas {
+            width: 1280px;
+            height: 960px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }#slide-3.ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }#slide-3.ppt-slide .ppt-title {
+            color: #008000; 
+            font-size: 48px;
+            font-weight: normal;
+            text-decoration: underline;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }#slide-3.ppt-slide .ppt-authors {
+            display: none; 
+        }#slide-3.ppt-slide .header-logos {
+            display: none; 
+        }#slide-3.ppt-slide main {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }#slide-3.ppt-slide .layout-block {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }#slide-3.ppt-slide .section-header {
+            display: none; 
+        }#slide-3.ppt-slide ul {
+            margin: 0;
+            padding-left: 40px;
+        }#slide-3.ppt-slide .list-item {
+            color: #0000FF; 
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 35px;
+            list-style-type: disc;
+        }#slide-3.ppt-slide .text-block {
+            color: #0000FF;
+            font-size: 34px;
+            margin: 0;
+        }#slide-3.ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+        }#slide-3.ppt-slide .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }#slide-3.ppt-slide .equation-main {
+            margin-top: 20px;
+        }#slide-3.ppt-slide .equation-sub {
+            margin-top: 40px;
+        }#slide-3.ppt-slide .footer-page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 28px;
+            color: #333;
+        }#slide-3.ppt-slide .inline-symbol {
+            vertical-align: middle;
+            display: inline-block;
+        }
+     #slide-4.ppt-slide html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }#slide-4.ppt-slide #ppt-canvas {
+            width: 1280px;
+            height: 960px;
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            padding: 60px 80px;
+            box-sizing: border-box;
+        }#slide-4.ppt-slide header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }#slide-4.ppt-slide .ppt-title {
+            color: #008000;
+            font-size: 54px;
+            font-weight: normal;
+            margin: 0;
+            text-decoration: underline;
+        }#slide-4.ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }#slide-4.ppt-slide .layout-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }#slide-4.ppt-slide ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }#slide-4.ppt-slide .list-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }#slide-4.ppt-slide .list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #0000FF;
+            font-size: 48px;
+            line-height: 1;
+        }#slide-4.ppt-slide .text-block {
+            color: #0000FF;
+            font-size: 36px;
+            line-height: 1.4;
+            margin: 0;
+            display: inline;
+        }#slide-4.ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            width: 100%;
+        }#slide-4.ppt-slide .row-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }#slide-4.ppt-slide .page-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 32px;
+            color: #000;
+        }#slide-4.ppt-slide i {
+            font-style: italic;
+        }
+     #slide-5.ppt-slide html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }#slide-5.ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }#slide-5.ppt-slide #ppt-canvas {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }#slide-5.ppt-slide header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }#slide-5.ppt-slide .ppt-title {
+            font-size: 42px;
+            color: #008000; 
+            text-decoration: underline;
+            margin: 0;
+            font-weight: normal;
+            text-align: center;
+        }#slide-5.ppt-slide main {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }#slide-5.ppt-slide .layout-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }#slide-5.ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }#slide-5.ppt-slide .figure-container img {
+            object-fit: contain;
+            
+        }#slide-5.ppt-slide .text-block {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 1.4;
+        }#slide-5.ppt-slide .text-blue {
+            color: #8e94c5; 
+            font-weight: bold;
+        }#slide-5.ppt-slide .text-pink {
+            color: #c594ac; 
+            font-weight: bold;
+        }#slide-5.ppt-slide .text-violet {
+            color: #8b5a8e; 
+            font-weight: bold;
+        }#slide-5.ppt-slide .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 24px;
+            color: #333;
+        }#slide-5.ppt-slide .ppt-authors, 
+        #slide-5.ppt-slide .header-logos {
+            display: none;
+        }
+     #slide-6.ppt-slide html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }#slide-6.ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }#slide-6.ppt-slide #ppt-canvas {
+            width: 1600px;
+            height: 900px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }#slide-6.ppt-slide header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }#slide-6.ppt-slide .ppt-title {
+            color: #008000; 
+            font-size: 48px;
+            font-weight: normal;
+            margin: 0;
+            text-decoration: underline;
+        }#slide-6.ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }#slide-6.ppt-slide .row-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-start;
+        }#slide-6.ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+        }#slide-6.ppt-slide .top-row {
+            height: 45%;
+        }#slide-6.ppt-slide .top-left {
+            flex: 0 0 65%;
+        }#slide-6.ppt-slide .top-right {
+            flex: 0 0 30%;
+            padding-top: 80px;
+        }#slide-6.ppt-slide .bottom-row {
+            height: 45%;
+            align-items: center;
+        }#slide-6.ppt-slide .bottom-left {
+            flex: 0 0 65%;
+        }#slide-6.ppt-slide .bottom-right {
+            flex: 0 0 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding-left: 20px;
+        }#slide-6.ppt-slide .text-block {
+            margin: 0;
+            line-height: 1.4;
+        }#slide-6.ppt-slide .blue-text {
+            color: #0000FF;
+            font-size: 32px;
+            font-weight: 500;
+        }#slide-6.ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }#slide-6.ppt-slide img {
+            object-fit: contain;
+        }#slide-6.ppt-slide .footer-page {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 32px;
+            color: #333;
+        }
+
+     #slide-7.ppt-slide html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #333;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }#slide-7.ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }#slide-7.ppt-slide #ppt-canvas {
+            width: 1000px;
+            height: 750px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 50px;
+            box-sizing: border-box;
+        }#slide-7.ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }#slide-7.ppt-slide .ppt-title {
+            font-size: 32px;
+            color: #008000; 
+            text-decoration: underline;
+            margin: 0;
+            font-weight: normal;
+        }#slide-7.ppt-slide .ppt-authors {
+            display: none; 
+        }#slide-7.ppt-slide .header-logos {
+            display: none; 
+        }#slide-7.ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }#slide-7.ppt-slide .layout-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }#slide-7.ppt-slide .figure-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }#slide-7.ppt-slide .figure-container img {
+            border: 2px solid #555;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            object-fit: contain;
+        }#slide-7.ppt-slide .text-block {
+            margin: 0;
+            line-height: 1.4;
+            font-size: 22px;
+            font-weight: 500;
+        }#slide-7.ppt-slide .text-blue {
+            color: #0000FF;
+        }#slide-7.ppt-slide .text-red {
+            color: #FF0000;
+            margin-top: 10px;
+        }#slide-7.ppt-slide .footer-info {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 20px;
+            color: #333;
+        }#slide-7.ppt-slide .list-item { list-style: none; }#slide-7.ppt-slide .references-text { display: none; }#slide-7.ppt-slide .section-header { display: none; }
+
+     #slide-8.ppt-slide html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }#slide-8.ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }#slide-8.ppt-slide #ppt-canvas {
+            width: 960px;
+            height: 720px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }#slide-8.ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            width: 100%;
+        }#slide-8.ppt-slide .ppt-title {
+            font-size: 42px;
+            color: #008000; 
+            text-decoration: underline;
+            margin: 0;
+            font-weight: normal;
+            text-align: center;
+        }#slide-8.ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }#slide-8.ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+        }#slide-8.ppt-slide ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }#slide-8.ppt-slide .list-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 35px;
+            font-size: 28px;
+            line-height: 1.3;
+            font-weight: 500;
+        }#slide-8.ppt-slide .list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 40px;
+            line-height: 1;
+            top: -5px;
+        }#slide-8.ppt-slide .text-blue {
+            color: #0000FF;
+        }#slide-8.ppt-slide .text-red {
+            color: #FF0000;
+        }#slide-8.ppt-slide .footer-page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 24px;
+            color: #000;
+        }#slide-8.ppt-slide .header-logos, #slide-8.ppt-slide .ppt-authors {
+            display: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="presentation-root" id="presentation">
+        <div class="ppt-slide merged-slide active" id="slide-1">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- 头部区域：包含Logo、标题和作者 -->
+<header>
+<div class="header-logos">
+<img data-semantic="Fermilab 机构标志" src="./slide_0_fig_1.jpg" style="width: 100px; height: 100px;"/>
+</div>
+<h1 class="ppt-title">RF phase shaking for bunch distribution modification</h1>
+<p class="ppt-authors">Alexey Burov</p>
+</header>
+<!-- 主体区域：包含日期 -->
+<main>
+<div class="column">
+<section class="layout-block" data-section-id="section_1">
+<div class="date-container">
+<p class="text-block">June 11, 2010</p>
+</div>
+</section>
+</div>
+</main>
+<!-- 底部区域：页码 -->
+<div class="footer-info">
+<p class="text-block page-number">1</p>
+</div>
+</div>
+</div>
+</div> <div class="ppt-slide merged-slide" id="slide-2">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- 头部元数据 -->
+<header>
+<h1 class="ppt-title">Motivation</h1>
+</header>
+<!-- 核心内容区域 -->
+<main>
+<section class="layout-block" data-section-id="section_1">
+<ul>
+<li class="list-item">
+                        Tevatron bunches are known to demonstrate longitudinal instability sometimes called as “dancing bunches” [1]. Similar phenomena happen at other machines as well.
+                    </li>
+<li class="list-item">
+                        There are some theoretical indications showing that this instability is sensitive to a derivative of the phase space density <span class="math-text">f '(J)=df/dJ</span> at small actions, <span class="math-text">f '(J→0)</span>.
+                    </li>
+<li class="list-item">
+                        Distributions with flat or even positive slope of the distribution density at small actions appear to be more beneficial [2].
+                    </li>
+<li class="list-item">
+                        However, IBS always tries to make this derivative negative, <span class="math-text">df/dJ ≈ -f/J<sub>rms</sub></span>. Thus, the problem emerges - is it possible to zero this derivative or even change its sign by one or another meaning?
+                    </li>
+</ul>
+</section>
+</main>
+<!-- 页码 -->
+<div class="footer-info">
+            2
+        </div>
+</div>
+</div>
+</div> <div class="ppt-slide merged-slide" id="slide-3">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- 头部元数据 -->
+<header>
+<h1 class="ppt-title">RF phase shaking</h1>
+<p class="ppt-authors"></p>
+<div class="header-logos"></div>
+</header>
+<!-- 主体内容 -->
+<main>
+<!-- 第一部分：文字描述 -->
+<section class="layout-block" data-section-id="section_1">
+<ul>
+<li class="list-item">
+                        It is known that the distribution function tends to flatten inside resonance separatrices. Thus, the desired change of the distribution may be achieved by introducing a proper resonance for small amplitude particles. Due to nonlinearity of the synchrotron motion, large amplitude particles could be only slightly disturbed by that.
+                    </li>
+<li class="list-item">
+                        Technically, easiest way for that would be modulation of the RF phase with a synchrotron frequency for small amplitude particles. Then, a width of the affected area is determined by an amplitude of that phase modulation 
+                        <img class="inline-symbol" data-semantic="相位调制幅度符号phi_0" src="./slide_2_fig_1.jpg" style="width: 30px; height: 38px;"/> .
+                    </li>
+</ul>
+</section>
+<!-- 第二部分：核心公式组 -->
+<section class="layout-block" data-section-id="section_2">
+<div class="figure-container equation-main">
+<img data-semantic="同步运动离散差分方程组" src="./slide_2_fig_2.jpg" style="width: 647px; height: 213px;"/>
+</div>
+</section>
+<!-- 第三部分：辅助公式 -->
+<section class="layout-block" data-section-id="section_3">
+<div class="figure-container equation-sub">
+<img data-semantic="时间步长定义公式delta_t" src="./slide_2_fig_3.jpg" style="width: 250px; height: 90px;"/>
+</div>
+</section>
+</main>
+<!-- 页码 -->
+<div class="footer-page-number">3</div>
+</div>
+</div>
+</div> <div class="ppt-slide merged-slide" id="slide-4">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- 头部元数据 -->
+<header>
+<h1 class="ppt-title">Simulations</h1>
+</header>
+<!-- 逻辑区块 -->
+<main>
+<section class="layout-block" data-section-id="section_1">
+<ul>
+<li class="list-item">
+<p class="text-block">
+                                To see how this mapping changes the distribution function, tracking of N=10<sup>4</sup> particles was simulated on a base of <i>Mathematica</i>. Original distribution over unperturbed actions J was taken as
+                            </p>
+<div class="figure-container">
+<img data-semantic="分布函数 f(J) 的数学公式" src="./slide_3_fig_1.jpg" style="width: 688px; height: 93px;"/>
+</div>
+<div class="row-container">
+<p class="text-block">with the total emittance</p>
+<img data-semantic="发射度参数 J_lim = 2" src="./slide_3_fig_2.jpg" style="width: 168px; height: 78px;"/>
+<p class="text-block">, close to the bucket acceptance</p>
+</div>
+<div class="figure-container">
+<img data-semantic="最大动作 J_max 的计算公式" src="./slide_3_fig_3.jpg" style="width: 429px; height: 74px;"/>
+</div>
+</li>
+<li class="list-item">
+<div class="row-container">
+<p class="text-block">The amplitude of the RF phase modulation was taken</p>
+<img data-semantic="RF相位调制幅度 phi_0 = 0.05" src="./slide_3_fig_4.jpg" style="width: 222px; height: 84px;"/>
+<p class="text-block">. The</p>
+</div>
+<p class="text-block">
+                                synchrotron phase advance was taken as , and the simulation time Tsim=500 synchrotron radians = 80 synchrotron periods.
+                            </p>
+</li>
+</ul>
+</section>
+</main>
+<!-- 页码 -->
+<div class="page-number">4</div>
+</div>
+</div>
+</div> <div class="ppt-slide merged-slide" id="slide-5">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- 头部元数据 -->
+<header>
+<h1 class="ppt-title">Simulation results: action distribution</h1>
+<p class="ppt-authors"></p>
+<div class="header-logos"></div>
+</header>
+<!-- 主体内容 -->
+<main>
+<section class="layout-block" data-section-id="section_1">
+<!-- 图表区域 -->
+<div class="figure-container">
+<img data-semantic="Action distribution histogram comparing initial state t=0 and final state t=Tsim, showing the overlap in violet." src="./slide_4_fig_1.jpg" style="width: 900px; height: 538px;"/>
+</div>
+<!-- 图注文本 -->
+<p class="text-block">
+                    Fig. 1. Initial (<span class="text-blue">blue</span>) and final (<span class="text-pink">pink</span>) distributions over action. Overlapping area is <span class="text-violet">violet</span>.
+                </p>
+</section>
+</main>
+<!-- 页码 -->
+<div class="page-number">5</div>
+</div>
+</div>
+</div> <div class="ppt-slide merged-slide" id="slide-6">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- 头部标题 -->
+<header>
+<h1 class="ppt-title">Excited centroid motion</h1>
+</header>
+<main>
+<!-- 第一行：直方图与描述文字 -->
+<div class="row-container top-row">
+<section class="layout-block top-left" data-section-id="section_1">
+<div class="figure-container">
+<img data-semantic="相位分布直方图，展示了t=0和t=Tsim时刻的PDF对比" src="./slide_5_fig_1.jpg" style="width: 850px; height: 380px;"/>
+</div>
+</section>
+<section class="layout-block top-right" data-section-id="section_2">
+<p class="text-block blue-text">
+                            Phase distribution shows some coherent excitation.
+                        </p>
+</section>
+</div>
+<!-- 第二行：哈密顿量曲线与公式 -->
+<div class="row-container bottom-row">
+<section class="layout-block bottom-left" data-section-id="section_3">
+<div class="figure-container">
+<img data-semantic="质心哈密顿量随时间变化的曲线图，包含公式H(&lt;z&gt;,&lt;p&gt;)和图注Fig 3" src="./slide_5_fig_2.jpg" style="width: 850px; height: 400px;"/>
+</div>
+</section>
+<section class="layout-block bottom-right" data-section-id="section_4">
+<div class="figure-container">
+<img data-semantic="平均哈密顿量近似公式" src="./slide_5_fig_4.jpg" style="width: 400px; height: 60px;"/>
+</div>
+<div class="figure-container">
+<img data-semantic="极限哈密顿量计算公式" src="./slide_5_fig_5.jpg" style="width: 420px; height: 60px;"/>
+</div>
+</section>
+</div>
+</main>
+<!-- 页码 -->
+<div class="footer-page">6</div>
+</div>
+</div>
+</div> <div class="ppt-slide merged-slide" id="slide-7">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<!-- 头部标题 -->
+<header>
+<h1 class="ppt-title">First studies (C.Y. Tan)</h1>
+<p class="ppt-authors"></p>
+<div class="header-logos"></div>
+</header>
+<!-- 核心逻辑区块 -->
+<main>
+<section class="layout-block" data-section-id="section_1">
+<!-- 示波器图表 -->
+<div class="figure-container">
+<img data-semantic="显示RF相位抖动和相干衰减的GxSC快速时间图表" src="./slide_6_fig_1.jpg" style="width: 600px; height: 498px;"/>
+</div>
+<!-- 描述文本 1 (蓝色) -->
+<p class="text-block text-blue">
+                    RF phase shaking at Tevatron: 4.5° (at ~ 50-75 s) and 1° (at 225 s) 
+                    at 87.47 Hz (measured synchrotron frequency).
+                </p>
+<!-- 描述文本 2 (红色) -->
+<p class="text-block text-red">
+                    Note immediate coherent decay at 75 s when the shaker got off.
+                </p>
+</section>
+</main>
+<!-- 页码 -->
+<div class="footer-info">7</div>
+</div>
+</div>
+</div> <div class="ppt-slide merged-slide" id="slide-8">
+<div class="slide-scaler-wrapper">
+<div id="ppt-canvas">
+<header>
+<h1 class="ppt-title">Conclusions</h1>
+<p class="ppt-authors"></p>
+<div class="header-logos"></div>
+</header>
+<main>
+<section class="layout-block" data-section-id="section_1">
+<ul>
+<li class="list-item text-blue">
+                            RF phase modulation is clearly working tool for flattening of the distribution function. From this point of view, it should help to stabilize longitudinal instability [2].
+                        </li>
+<li class="list-item text-blue">
+                            Although RF phase modulation itself excites coherent motion at some level, it should not make a significant problem. Indeed, this RF modulation is needed only for ~ 100 synchrotron revolutions or so, and after that it has to be switched off. The provided distribution should be stable, so any coherent motion should decay.
+                        </li>
+<li class="list-item text-blue">
+                            The simulation mapping does not take into account the wake field. Wakes lead to potential well distortion, depressing synchrotron frequencies, so slightly reducing the required frequency of the RF modulation.
+                        </li>
+<li class="list-item text-red">
+                            Continuing beam studies are needed with the bunch profile measurements.
+                        </li>
+</ul>
+</section>
+</main>
+<div class="footer-page-number">8</div>
+</div>
+</div>
+</div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.merged-slide');
+        let current = 0;
+
+        function show(index) {
+            slides[current].classList.remove('active');
+            current = (index + slides.length) % slides.length;
+            slides[current].classList.add('active');
+        }
+
+        document.getElementById('presentation').onclick = () => show(current + 1);
+        
+        document.onkeydown = (e) => {
+            if(e.key === "ArrowRight" || e.key === " ") show(current + 1);
+            if(e.key === "ArrowLeft") show(current - 1);
+        };
+    </script>
+</body>
+</html>

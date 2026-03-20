@@ -1,0 +1,110 @@
+由于您尚未提供 `content_list.json` 的具体文本内容，我将基于您提供的海报视觉逻辑、子图信息以及学术海报的标准三栏布局结构，为您构建符合协议的 HTML/CSS 框架。
+
+您可以将具体的文本内容填充到对应的 `<p>` 和 `<ul>` 标签中。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A View From Somewhere: Human-Centric Face Representations</title>
+    <style>
+        :root { --gap: 20px; --bg: #ffffff; }
+        body { font-family: sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
+        #poster-canvas { width: 100%; max-width: 1200px; margin: auto; background: var(--bg); padding: 40px; display: flex; flex-direction: column; gap: var(--gap); }
+        
+        header { border-bottom: 2px solid #000; padding-bottom: 20px; }
+        .poster-title { font-size: 2.5rem; margin: 0; }
+        .poster-authors { font-size: 1.2rem; color: #555; }
+        .header-logos { display: flex; gap: 20px; align-items: center; margin-top: 10px; }
+        
+        main { display: flex; gap: var(--gap); }
+        .column { flex: 1; display: flex; flex-direction: column; gap: var(--gap); }
+        
+        .layout-block { display: flex; flex-direction: column; gap: 10px; }
+        .section-header { border-left: 5px solid #000; padding-left: 10px; font-size: 1.5rem; margin: 10px 0; }
+        .text-block { line-height: 1.6; margin: 0; }
+        
+        .figure-container { width: 100%; margin: 10px 0; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        @media (max-width: 992px) {
+            main { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <h1 class="poster-title">A View From Somewhere: Human-Centric Face Representations</h1>
+            <p class="poster-authors">Jerone T. A. Andrews, Przemyslaw Joniak, Alice Xiang</p>
+            <div class="header-logos">
+                <div>Sony AI, Tokyo; University of Tokyo; Sony AI, New York</div>
+                <div>github.com/sony/human-centric-face</div>
+                <img src="./logo.jpg" data-semantic="Sony AI Logo">
+            </div>
+        </header>
+
+        <main>
+            <!-- Column 1 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Motivation</h2>
+                    <p class="text-block">Dataset bias can result in models that are discriminatory...</p>
+                    <div class="figure-container">
+                        <img src="./fig_1.jpg" data-semantic="Dataset bias visualization">
+                    </div>
+                    <p class="text-block">Parity and Diversity...</p>
+                    <div class="figure-container">
+                        <img src="./fig_4.jpg" data-semantic="Diversity representation chart">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Contributions</h2>
+                    <p class="text-block">Motivated by issues inherent to categorical labels...</p>
+                    <div class="figure-container">
+                        <img src="./fig_6.jpg" data-semantic="FAX Dataset structure">
+                    </div>
+                </section>
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">Model of Conditional Decision-Making</h2>
+                    <div class="figure-container">
+                        <img src="./fig_7.jpg" data-semantic="Model architecture diagram">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./fig_8.jpg" data-semantic="Loss function formula">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_4">
+                    <h2 class="section-header">Results</h2>
+                    <div class="figure-container">
+                        <img src="./fig_3.jpg" data-semantic="Interpretability dimension examples">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./table_1.jpg" data-semantic="Predicting Novel Similarity Judgments table">
+                    </div>
+                    <div class="figure-container">
+                        <img src="./table_3.jpg" data-semantic="Comparative Diversity Auditing table">
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+```
+
+### 布局说明：
+1.  **语义化结构**：严格按照 `<header>` -> `<main>` -> `<section>` 的层级嵌套。
+2.  **Flexbox 布局**：使用 `main { display: flex; }` 配合 `.column { flex: 1; }` 实现三栏等宽布局，并在 `< 992px` 时通过媒体查询自动堆叠。
+3.  **图片处理**：所有图片均通过 `max-width: 100%` 约束，确保在容器内自适应，且未设置固定宽高。
+4.  **扩展性**：您可以根据 `content_list.json` 中的 `bbox` 顺序，将对应的文本段落插入到对应的 `section` 中。如果需要插入未列出的子图（如 `fig_9` 到 `fig_14`），只需在对应的 `figure-container` 中添加 `<img>` 标签即可。

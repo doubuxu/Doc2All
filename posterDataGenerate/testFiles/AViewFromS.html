@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A View From Somewhere: Human-Centric Face Representations</title>
+    <style>
+        :root {
+            --primary-bg: #ffffff;
+            --header-bg: #000000;
+            --text-color: #333333;
+            --accent-color: #0056b3;
+            --gap: 1.5rem;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        #poster-canvas {
+            width: 100%;
+            max-width: 2400px; /* 参考原图宽度 */
+            margin: 0 auto;
+            background-color: var(--primary-bg);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            padding: 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+        }
+
+        .poster-authors {
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+            color: #cccccc;
+        }
+
+        .header-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .header-logos div {
+            border-right: 1px solid #555;
+            padding-right: 2rem;
+        }
+
+        .header-logos div:last-of-type {
+            border-right: none;
+        }
+
+        .header-logos img {
+            height: 60px;
+            margin-left: auto;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            padding: var(--gap);
+            gap: var(--gap);
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap);
+        }
+
+        .layout-block {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .section-header {
+            font-size: 1.8rem;
+            color: #000;
+            border-bottom: 3px solid #000;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            text-transform: uppercase;
+        }
+
+        .text-block {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .list-item {
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .figure-container, .row-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1rem 0;
+            gap: 0.5rem;
+        }
+
+        .row-container {
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            width: 100%;
+        }
+
+        @media (max-width: 992px) {
+            main {
+                flex-direction: column;
+            }
+            .poster-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">A View From Somewhere: Human-Centric Face Representations</h1>
+        <p class="poster-authors">Jerone T. A. Andrews, Przemyslaw Joniak, Alice Xiang</p>
+        <div class="header-logos">
+            <div>Sony AI, Tokyo</div>
+            <div>University of Tokyo, Tokyo</div>
+            <div>Sony AI, New York</div>
+            <div>jerone.andrews@sony.com</div>
+            <img src="./logo.jpg" data-semantic="Sony AI Corporate Logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1: Motivation -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Motivation</h2>
+                <p class="text-block"><strong>Dataset Bias:</strong> Dataset bias can result in models that are discriminatory or depend on spurious correlations. For instance, a face image restoration model may "hallucinate" features correlated with oversampled subgroups.</p>
+                
+                <div class="row-container">
+                    <img src="./fig_1.jpg" data-semantic="Upsampling via latent space exploration of StyleGAN2 showing face restoration bias" style="aspect-ratio: 462/176;">
+                    <img src="./fig_2.jpg" data-semantic="Downsampling and upsampling comparison across different ethnicities" style="aspect-ratio: 449/174;">
+                </div>
+
+                <p class="text-block"><strong>Parity and Diversity:</strong> The canonical approach is to categorize people using demographic labels. However, evaluating diversity by examining counts across subgroups fails to reflect the continuous nature of human phenotypic diversity.</p>
+                
+                <div class="figure-container">
+                    <img src="./fig_3.jpg" data-semantic="Grid of faces illustrating visual diversity within demographic subgroups" style="aspect-ratio: 934/423;">
+                </div>
+
+                <p class="text-block"><strong>Unknown Label Distributions:</strong> Most human-centric image datasets are web-scraped, lacking ground-truth information about the image subjects. Observational labels risk reifying stereotypes.</p>
+                
+                <div class="figure-container">
+                    <img src="./fig_4.jpg" data-semantic="Flowchart showing an unlabeled image being processed by an annotator to produce metadata" style="aspect-ratio: 962/198;">
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 2: Contributions -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Contributions</h2>
+                <p class="text-block">Motivated by issues inherent to categorical labels, we aim to develop a tool that can evaluate the visual diversity of faces in unlabeled datasets.</p>
+                
+                <p class="text-block"><strong>Face Similarity (FAX) Dataset:</strong> We introduce a novel dataset, FAX, containing 638,180 odd-one-out face similarity judgments over 4,921 faces. Judgments correspond to the odd-one-out face in a triplet.</p>
+                
+                <div class="figure-container">
+                    <img src="./fig_5.jpg" data-semantic="FAX Dataset structure showing triplets and annotator metadata" style="aspect-ratio: 1001/378;">
+                </div>
+
+                <p class="text-block"><strong>Model of Conditional Decision-Making:</strong> We introduce a model that learns to predict human judgments of face similarity conditioned on the annotator who generated the judgment.</p>
+                
+                <div class="figure-container">
+                    <img src="./fig_6.jpg" data-semantic="Architecture of the conditional decision-making model with face and annotator encoders" style="aspect-ratio: 1009/387;">
+                </div>
+
+                <div class="figure-container">
+                    <img src="./fig_7.jpg" data-semantic="Mathematical formulation of the loss function including classification, sparsity, and mask loss" style="aspect-ratio: 885/116;">
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 3: Results -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Results</h2>
+                <p class="text-block"><strong>Interpretability:</strong> From learning on FAX, we note the materialization of distinct dimensions coinciding with commonly defined demographic subgroups.</p>
+                
+                <div class="sub-grid">
+                    <img src="./fig_8.jpg" data-semantic="South Asian subgroup faces" style="aspect-ratio: 147/69;">
+                    <img src="./fig_9.jpg" data-semantic="Female subgroup faces" style="aspect-ratio: 154/67;">
+                    <img src="./fig_10.jpg" data-semantic="Smiling subgroup faces" style="aspect-ratio: 66/67;">
+                    <img src="./fig_11.jpg" data-semantic="Wide Face subgroup faces" style="aspect-ratio: 162/67;">
+                    <img src="./fig_12.jpg" data-semantic="Elderly subgroup faces" style="aspect-ratio: 140/67;">
+                    <img src="./fig_13.jpg" data-semantic="Balding subgroup faces" style="aspect-ratio: 137/67;">
+                    <img src="./fig_14.jpg" data-semantic="Additional demographic subgroup faces" style="aspect-ratio: 147/67;">
+                </div>
+
+                <p class="text-block"><strong>Predicting Novel Similarity Judgments:</strong></p>
+                <div class="figure-container">
+                    <img src="./table_1.jpg" data-semantic="Table 1: Performance comparison of different models on similarity prediction" style="aspect-ratio: 494/225;">
+                </div>
+
+                <p class="text-block"><strong>Annotator Bias:</strong></p>
+                <div class="figure-container">
+                    <img src="./table_2.jpg" data-semantic="Table 2: Annotator attribute distribution and AUROC scores" style="aspect-ratio: 582/168;">
+                </div>
+
+                <p class="text-block"><strong>Comparative Diversity Auditing:</strong></p>
+                <div class="figure-container">
+                    <img src="./table_3.jpg" data-semantic="Table 3: Detailed comparative diversity auditing and binary attribute classification results" style="aspect-ratio: 1002/608;">
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

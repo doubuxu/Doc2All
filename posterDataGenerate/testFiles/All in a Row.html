@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All in a Row: Compressed Convolution Networks for Graphs</title>
+    <style>
+        :root {
+            --primary-blue: #000080;
+            --bg-light-blue: #f0f4f8;
+            --header-bg: #ffffff;
+            --gap: 20px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        #poster-canvas {
+            width: 100%;
+            max-width: 2500px; /* Based on typical high-res poster width */
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap);
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-blue);
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .poster-title {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        .poster-authors {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .header-logos div {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .header-logos img {
+            height: 60px;
+            object-fit: contain;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            gap: var(--gap);
+            align-items: flex-start;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap);
+        }
+
+        /* Middle column is slightly wider in this specific layout */
+        .column:nth-child(2) {
+            flex: 1.5;
+        }
+
+        .layout-block {
+            background-color: var(--bg-light-blue);
+            border-radius: 8px;
+            padding: 20px;
+            border-top: 8px solid var(--primary-blue);
+            height: 100%;
+        }
+
+        .section-header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 20px;
+            margin: -20px -20px 20px -20px;
+            border-radius: 0;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .text-block {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .row-container > * {
+            flex: 1;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        .list-item {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .highlight {
+            color: #6a0dad;
+            font-weight: bold;
+        }
+
+        /* Responsive Breakpoint */
+        @media (max-width: 992px) {
+            main {
+                flex-direction: column;
+            }
+            .row-container {
+                flex-direction: column;
+            }
+            .poster-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">All in a Row: Compressed Convolution Networks for Graphs</h1>
+        <p class="poster-authors">Junshu Sun<sup>1,2</sup>, Shuhui Wang<sup>1,3</sup>, Xinzhe Han<sup>1,2</sup>, Zhe Xue<sup>4</sup>, Qingming Huang<sup>1,2,3</sup></p>
+        <div class="header-logos">
+            <div>1: Key Laboratory of Intelligent Information Processing, ICT, CAS</div>
+            <div>github.com/sunjunshu/CoCN</div>
+            <img src="./fig_0.jpg" data-semantic="University and Institute Logos" style="height: 80px;">
+        </div>
+    </header>
+
+    <main>
+        <!-- Left Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Motivation</h2>
+                <p class="text-block">
+                    Compared to Euclidean convolution, existing graph convolution methods generally fail to learn diverse convolution operators under limited parameter scales and depend on additional treatments of multi-scale feature extraction. In this paper, we want to bridge the gap between Euclidean space and graph space, and therefore <span class="highlight">generalize Euclidean convolution to graphs</span>.
+                </p>
+                <p class="text-block">
+                    Generalizing Euclidean convolution to graphs faces challenges from two aspects. From the graph perspective, they generally have <span class="highlight">irregular local structures</span>, different from the grid data in Euclidean space.
+                </p>
+                
+                <div class="row-container">
+                    <div style="text-align: center;">
+                        <img src="./fig_1.jpg" data-semantic="Regular Local Structure Grid" style="aspect-ratio: 365/231;">
+                        <p>Regular Local Structure</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="./fig_2.jpg" data-semantic="Irregular Local Structure Graph" style="aspect-ratio: 262/269;">
+                        <p>Irregular Local Structure</p>
+                    </div>
+                </div>
+
+                <p class="text-block">
+                    From the Euclidean convolution perspective, it is <span class="highlight">sensitive to the local spatial order</span>, while GNNs should preserve permutation invariance, i.e., produce the same node representations regardless of the order of the nodes.
+                </p>
+                
+                <img src="./fig_3.jpg" data-semantic="Permutation Invariance and Equivariance Diagram" style="aspect-ratio: 787/266;">
+                <p style="text-align: center; font-style: italic;">Permutation Invariance / Equivariance</p>
+            </section>
+
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Notations</h2>
+                <img src="./table_2.jpg" data-semantic="Mathematical Notations Table" style="aspect-ratio: 676/325;">
+            </section>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Method</h2>
+                
+                <div class="row-container" style="align-items: flex-start;">
+                    <div style="flex: 2;">
+                        <img src="./fig_4.jpg" data-semantic="Position Regression and Permutation Generation Pipeline" style="aspect-ratio: 1103/310;">
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="./fig_5.jpg" data-semantic="CoConv Layer and Pooling Architecture" style="aspect-ratio: 416/422;">
+                    </div>
+                </div>
+
+                <div class="row-container">
+                    <div>
+                        <h3 style="color: var(--primary-blue);">Regularization on Graphs</h3>
+                        <p class="text-block">
+                            We propose to regularize graph-structured data through <span class="highlight">learnable permutations</span> for end-to-end GNNs.
+                        </p>
+                        <p class="text-block">
+                            <span class="highlight">Position Regression:</span> Nodes with similar features or short paths in between will get closer position prediction.
+                        </p>
+                        <p style="text-align: center; font-weight: bold;">r<sub>A</sub> = Ã MLP(X), r = sgn(r<sub>A</sub>1<sup>T</sup> - 1r<sub>A</sub><sup>T</sup>) 1</p>
+                        <p class="text-block">
+                            <span class="highlight">Permutation Matrix Generation:</span> We resort to the cyclic shift to generate permutation matrices.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-blue);">Compressed Convolution Network</h3>
+                        <p class="text-block">
+                            Learnable permutations <span class="highlight">decouple the input order and the follow-up module</span>, therefore we can apply either permutation-sensitive or permutation-invariant operators on graphs.
+                        </p>
+                        <ul class="text-block">
+                            <li class="list-item">Diagonal convolution learns both node features and structure features explicitly.</li>
+                            <li class="list-item">Diagonal convolution performs diagonal sliding on structure features.</li>
+                            <li class="list-item">CoCNs directly apply hierarchical feature learning on graphs.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <img src="./fig_6.jpg" data-semantic="3D Visualization of Permute and Convolution Process" style="aspect-ratio: 1141/279;">
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">Main Results</h2>
+                <h3 style="text-align: center;">Comparison with State-of-the-Arts</h3>
+                <p style="text-align: center; font-weight: bold;">Table 1. Graph Classification Results (accuracy: %)</p>
+                <img src="./table_1.jpg" data-semantic="Graph Classification Performance Table" style="aspect-ratio: 696/64; width: 100%;">
+                
+                <p style="text-align: center; font-weight: bold; margin-top: 20px;">Table 2. Node Classification Results (accuracy: %)</p>
+                <img src="./table_3.jpg" data-semantic="Node Classification Performance Table" style="aspect-ratio: 679/250; width: 100%;">
+            </section>
+
+            <section class="layout-block" data-section-id="section_5">
+                <h2 class="section-header">Partial Model Study and Key Conclusions</h2>
+                <p class="text-block">Ablation studies on the number of permutations, and output similarity among different permutation heads during training.</p>
+                
+                <img src="./fig_7.jpg" data-semantic="Ablation Study Accuracy and Similarity Plots" style="aspect-ratio: 585/167;">
+
+                <h3 style="color: var(--primary-blue);">Takeaways:</h3>
+                <ul>
+                    <li class="list-item">Permutation module can permute input nodes with little information loss.</li>
+                    <li class="list-item">CoCNs learn complementary feature representations under different permutations.</li>
+                    <li class="list-item">CoCNs achieve better performance as the receptive field size increases.</li>
+                    <li class="list-item">Both node features and structure features generally contribute to the model prediction.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    
+    <footer style="text-align: center; padding: 10px; font-size: 0.9rem; color: #777;">
+        Poster presented at ICML 2023 in Hawaii.
+    </footer>
+</div>
+
+</body>
+</html>

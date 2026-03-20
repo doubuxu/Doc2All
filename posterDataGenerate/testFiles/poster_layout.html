@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #c8c8c8;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  #poster {
+    position: relative;
+    width: 3456px;
+    height: 2304px;
+    background: #fff;
+    box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+  .blk {
+    position: absolute;
+    overflow: hidden;
+    word-wrap: break-word;
+    line-height: 1.25;
+  }
+  .t-header  { font-weight: bold; }
+  .t-title   { font-weight: bold; }
+  .t-footer  { color: #888; }
+  .t-text    { color: #111; }
+  .t-caption {
+    font-style: italic;
+    color: #444;
+    text-align: center;
+    font-size: 9px;
+    line-height: 1.3;
+  }
+  .t-list { color: #111; }
+  ul { list-style-type: disc; padding-left: 1.3em; margin: 0; }
+  li { margin-bottom: 2px; }
+  img { width: 100%; height: 100%; object-fit: contain; display: block; }
+</style>
+</head>
+<body>
+<div id="poster">
+<div class="blk t-title" style="left:96.0px;top:347.0px;width:868.0px;height:51.0px;font-size:40px;line-height:1.2;">Reproduced: Paaβen et. al. (ICLR, 2021) </div>
+<div class="blk t-text" style="left:86.0px;top:412.0px;width:964.0px;height:357.0px;font-size:31px;line-height:1.3;">Thereproduced paper [bpa21] proposesanovel output layer for graph neural networks (GNNs),the graph edit network called (GEN).This layer yieldsa sequence of graph edits:node insertions,node deletions,node replacements,edge insertionsand edgedeletions.These finite sequences of edits,alsoreferred toasedit scriptsare general enough todescribe any graph-to-graph transformationand are not only veryinterpretablefor humans,but also computationallyefficient.These properties establish GENsasauseful tool forwork in the domainof graph timeseries prediction under the Markovianassumption. </div>
+<div class="blk t-visual" style="left:100.0px;top:775.4px;width:946.0px;height:189.0px;"><img src="./fig_1.jpg" alt=""></div>
+<div class="blk t-text" style="left:86.0px;top:976.0px;width:964.0px;height:238.0px;font-size:31px;line-height:1.3;">Theauthors empirically underpin their theoretical claims about GENs by showing that they perform wellina series of graph time-series prediction tests.They define several data generating processes (DGPs),from which the GEN attempts to learn the user-defined mapping functions.Ourwork reproduces these experiments and evaluates the suitability of the DGPs for the conclusions made in the original paper. </div>
+<div class="blk t-title" style="left:96.0px;top:1262.0px;width:308.0px;height:46.0px;font-size:36px;line-height:1.2;">DGPs & Tests </div>
+<div class="blk t-text" style="left:96.0px;top:1327.0px;width:926.0px;height:78.0px;font-size:30px;line-height:1.3;">Thepaperevaluated several keyclaimsonsyntheticdatasets,generated withdata generatingrules,interpreted in the following figures. </div>
+<div class="blk t-visual" style="left:95.8px;top:1425.8px;width:968.2px;height:143.1px;"><img src="./fig_2.jpg" alt=""></div>
+<div class="blk t-caption" style="left:237.5px;top:1582.8px;width:687.6px;height:22.2px;">Graphcycles:Atrivial set of userdefined graph transformations without any logical rules. </div>
+<div class="blk t-visual" style="left:95.8px;top:1618.9px;width:968.2px;height:258.5px;"><img src="./fig_3.jpg" alt=""></div>
+<div class="blk t-caption" style="left:107.0px;top:1891.3px;width:943.2px;height:48.6px;">Degreerules:Asetofrules fornode&edgeinsertions.(nodeswithdegree≥3aredeleted;noeswithcommonneighbor </div>
+<div class="blk t-visual" style="left:213.9px;top:1983.0px;width:690.4px;height:157.0px;"><img src="./fig_4.jpg" alt=""></div>
+<div class="blk t-caption" style="left:113.9px;top:2155.3px;width:922.3px;height:47.2px;">Conway'sGameofLife:Aseriesbasedonnodeedits(editingAlive/Deadbinaryfeature)onalaticegraph,adhering to Conway'sGameofLife[Gar70]. </div>
+<div class="blk t-visual" style="left:1229.3px;top:337.7px;width:998.7px;height:226.5px;"><img src="./fig_5.jpg" alt=""></div>
+<div class="blk t-caption" style="left:1271.0px;top:568.4px;width:889.0px;height:27.8px;">BooleanFormulae:RandomBoolean formulae,simplifiedwithruleslikexA-x→⊥,untiltreecannotbe simplified. </div>
+<div class="blk t-visual" style="left:1264.1px;top:665.6px;width:895.9px;height:158.4px;"><img src="./fig_6.jpg" alt=""></div>
+<div class="blk t-caption" style="left:1264.1px;top:861.6px;width:898.7px;height:47.2px;">PeanoAddition:Seriesoftreegraphs,modelingadditionproblemsviaPeano'sdefinitionofaddition(m+succ(n)= succ（m）+nand $m + { \cal { O } } = m )$ using one-hot node features. </div>
+<div class="blk t-title" style="left:1237.0px;top:958.0px;width:726.0px;height:51.0px;font-size:40px;line-height:1.2;">[Re] Original experimental claims </div>
+<div class="blk t-text" style="left:1233.0px;top:1050.0px;width:996.0px;height:76.0px;font-size:30px;line-height:1.3;">[bpa21] makes three experimental conclusions based on a series of experiments.√symbols below denotea successful reproduction of results. </div>
+<div class="blk t-list" style="left:1237.0px;top:1131.0px;width:985.0px;height:320.0px;font-size:31px;line-height:1.3;"><ul><li>GENsoutperform baselines (Variational Graph Autoencoders[KW16]& Variational Graph Recurrent nets [HHN19]) on time-series prediction tasks, generated from Graph Cycles,Degree Rules&Game of Life DGPs. </li><li>GENs achieve $100 \%$ accuracy on time-series prediction tasks on graphs, generatedfrom Boolean Formulae&Peano Addition DGPs. </li><li>？Theruntime of forward passes of a GEN scales sub-quadratically as the number of nodes ina graph increases.The runtime of training back-passes scalesapproximatelylinearly. </li></ul></div>
+<div class="blk t-visual" style="left:1240.4px;top:1474.4px;width:977.9px;height:326.6px;"><img src="./fig_7.jpg" alt=""></div>
+<div class="blk t-caption" style="left:1308.5px;top:1819.0px;width:833.4px;height:27.8px;">Theruntime of graph scale dependence.Results forthe backwardpasses are not consistent with the claim. </div>
+<div class="blk t-visual" style="left:1271.0px;top:1906.6px;width:450.1px;height:248.7px;"><img src="./table_1.jpg" alt=""></div>
+<div class="blk t-text" style="left:1275.0px;top:2181.0px;width:428.0px;height:65.0px;font-size:17px;line-height:1.3;">Theruntime scaling evaluation was carried out on the ArXivcitationnetwork[LKF05]withthegraphvariants generatedbyadifferentnumber ofmonthsconsidered. </div>
+<div class="blk t-visual" style="left:1730.8px;top:1919.1px;width:466.7px;height:250.1px;"><img src="./fig_8.jpg" alt=""></div>
+<div class="blk t-text" style="left:1762.0px;top:2181.0px;width:432.0px;height:67.0px;font-size:17px;line-height:1.3;">While the focus here is speed,we have to note that the experiment intheoriginalpaperfailstooptimize the criterion loss,thus castingdoubt on theresults. </div>
+<div class="blk t-title" style="left:2401.0px;top:347.0px;width:740.0px;height:56.0px;font-size:44px;line-height:1.2;">Improving the experimental setup </div>
+<div class="blk t-text" style="left:2398.0px;top:426.0px;width:947.0px;height:198.0px;font-size:31px;line-height:1.3;">Thefacts that graph-to-graph transitionsare deterministic and that the space of unique graphs that may be generated by the DGPs is limited (as shown in the table below),arose some concern about the experimental setup:Does the solver generalize,or does it simply memorize the graphto-graph transitions? </div>
+<div class="blk t-visual" style="left:2404.5px;top:635.1px;width:947.3px;height:143.1px;"><img src="./table_2.jpg" alt=""></div>
+<div class="blk t-text" style="left:2401.0px;top:794.0px;width:861.0px;height:37.0px;font-size:29px;line-height:1.3;">We reproduced the claims (1)and (2) with the following adjustments: </div>
+<div class="blk t-list" style="left:2405.0px;top:838.0px;width:919.0px;height:115.0px;font-size:30px;line-height:1.3;"><ul><li>Increased cardinality of test time series $( 5 \to 1 0 0 )$ </li><li>Ensured no duplicates between train& test set </li><li>·Used established random graph generation methods (ie.Erdäs-Renyi) </li></ul></div>
+<div class="blk t-text" style="left:2401.0px;top:969.0px;width:937.0px;height:79.0px;font-size:31px;line-height:1.3;">Wenoticed that most sampled graphsin the tree dynamic graph experimentswereun-simplifyable,soconstraintswererelaxed here. </div>
+<div class="blk t-visual" style="left:2404.5px;top:1145.1px;width:936.2px;height:330.7px;"><img src="./fig_9.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2401.7px;top:1063.1px;width:894.6px;height:76.4px;">Results were generally worse,but still within a reasonable margin of error. </div>
+<div class="blk t-title" style="left:2401.0px;top:1529.0px;width:688.0px;height:51.0px;font-size:40px;line-height:1.2;">Concluding reproduction notes </div>
+<div class="blk t-text" style="left:2395.0px;top:1605.0px;width:943.0px;height:199.0px;font-size:31px;line-height:1.3;">Our experimental results conclusively show that most of the claims in the original work hold.However，our work beyond the original paper emphasizes theneed to payattention to the experimental setup,especially whenworking with synthetically generated data，sampled from functions, rather than gathered froman external system. </div>
+<div class="blk t-title" style="left:2401.0px;top:1857.0px;width:180.0px;height:32.0px;font-size:25px;line-height:1.2;">References </div>
+<div class="blk t-list" style="left:2405.0px;top:1893.0px;width:701.0px;height:166.0px;font-size:26px;line-height:1.3;"><ul><li>[bpa21] PaaBen,Benjamin,etal."Graphedit networks."In: International Conference </li><li>[Gar70] Martin Gardner.“The fantastic combinations of John Conway's newsolitaire gameoflife.In:Sc.Am.,223:20-123,1970 </li><li>[KW16] ThomasN.Kipfand MaxWeling.“Variational graphauto-encoders"In: Proceedings of the NIPS2016Workshop onBayesian Deep Learning，2016 </li></ul></div>
+<div class="blk t-text" style="left:2401.0px;top:2068.0px;width:712.0px;height:81.0px;font-size:63px;line-height:1.3;">[HHN19] Hajiramezanali,Ehsan,et.al.“Variational graph recurrent neural networks.” </div>
+<div class="blk t-text" style="left:2401.0px;top:2158.0px;width:716.0px;height:109.0px;font-size:28px;line-height:1.3;">[LKF05]Leskovec,Jure,Jon Kleinberg,and Christos Faloutsos."Graphs over time: densification laws，shrinkingdiametersandpossibleexplanations."ln:Proceedingsof theeleventh ACM SIGKDD international conference on Knowledge discovery indata </div>
+<div class="blk t-header" style="left:93.0px;top:129.0px;width:847.0px;height:82.0px;font-size:64px;line-height:1.2;">[Re] Graph Edit Networks </div>
+<div class="blk t-header" style="left:1814.0px;top:101.0px;width:422.0px;height:150.0px;font-size:39px;line-height:1.2;">ta Science @UL-FRI </div>
+<div class="blk t-header" style="left:2502.0px;top:149.0px;width:342.0px;height:102.0px;font-size:40px;line-height:1.2;">University ofLjubljana Faculty of Computer and </div>
+<div class="blk t-header" style="left:2878.0px;top:62.0px;width:495.0px;height:216.0px;font-size:84px;line-height:1.2;">NEURALINFORMATION PROCESSINGSYSTEMS </div>
+<div class="blk t-header" style="left:93.0px;top:248.0px;width:380.0px;height:37.0px;font-size:29px;line-height:1.2;">Vid Stropnik,Marusa Orazem </div>
+<div class="blk t-footer" style="left:3200.0px;top:2071.0px;width:217.0px;height:214.0px;font-size:83px;">1 </div>
+</div>
+</body>
+</html>

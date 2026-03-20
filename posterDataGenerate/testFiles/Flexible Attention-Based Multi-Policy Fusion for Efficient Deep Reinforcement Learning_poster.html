@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <title>Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning</title>
+</head>
+<body class="bg-gray-100 p-4 lg:p-8">
+  <div id="poster" class="max-w-7xl mx-auto bg-white shadow-2xl overflow-hidden">
+    
+    <!-- Header / Metadata -->
+    <header data-type="metadata" class="p-8 border-b text-center">
+      <div class="flex justify-between items-center mb-4">
+        <div class="text-left">
+          <p class="font-bold text-sm">NEURAL INFORMATION PROCESSING SYSTEMS</p>
+        </div>
+        <div class="flex gap-4">
+          <img data-fig-id="logo_1" src="./fig_14.jpg" alt="UCSD Logo" class="h-12 w-auto">
+          <img data-fig-id="logo_2" src="./fig_15.jpg" alt="UCSB Logo" class="h-12 w-auto">
+        </div>
+      </div>
+      <h1 class="text-3xl lg:text-5xl font-bold mb-4">Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning</h1>
+      <p class="text-xl mb-2">Zih-Yun Chiu*, Yi-Lin Tuan*, William Yang Wang, Michael C. Yip</p>
+      <p class="text-lg text-gray-600">University of California San Diego, University of California Santa Barbara</p>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-4 gap-6 p-6">
+      
+      <!-- Column 1: Introduction -->
+      <div class="space-y-6">
+        <section id="section_1" data-type="abstract" class="bg-red-50 p-4 rounded-lg">
+          <h2 class="text-2xl font-bold mb-4">Why Knowledge-Grounded Reinforcement Learning?</h2>
+          <div class="space-y-4">
+            <ul class="list-disc pl-5 space-y-2">
+              <li>What learning capabilities do humans possess, yet RL agents still missing? [1,2]</li>
+              <li>Knowledge-Acquirable: Develop unique policies by observing.</li>
+              <li>Compositional: Combine policies from multiple sources to form a knowledge set.</li>
+            </ul>
+            <div class="grid grid-cols-2 gap-2" data-type="figure">
+              <img data-fig-id="table_1" src="./table_1.jpg" alt="Policy Observation">
+              <img data-fig-id="table_2" src="./table_2.jpg" alt="Policy Combination">
+            </div>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Incremental: Arbitrarily remove outdated policies or add new ones, no need to relearn how to navigate the entire knowledge set from scratch.</li>
+              <li>Sample-Efficient: Require fewer interactions.</li>
+              <li>Generalizable: Be able to apply previously learned policies to unseen tasks.</li>
+              <li>KGRL: An RL paradigm aiming to learn with external policies and achieve the five properties above.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- Column 2: Methodology -->
+      <div class="space-y-6">
+        <section id="section_2" data-type="section" class="bg-orange-50 p-4 rounded-lg">
+          <h2 class="text-2xl font-bold mb-2">Method: Knowledge-Inclusive Attention Network (KIAN)</h2>
+          <p class="mb-4">KIAN: An actor that separates knowledge representations from their selection mechanism.</p>
+          
+          <h3 class="text-xl font-bold mb-2">Model Architecture:</h3>
+          <div class="flex flex-col lg:flex-row gap-4 mb-4">
+            <ul class="list-disc pl-5">
+              <li>Inner Actor</li>
+              <li>Knowledge Keys</li>
+              <li>Query</li>
+            </ul>
+            <div data-type="figure" class="flex-1">
+              <img data-fig-id="fig_1" src="./fig_1.jpg" alt="KIAN Architecture">
+            </div>
+          </div>
+
+          <p class="mb-2">Naive policy fusion leads to challenges:</p>
+          <div class="bg-white p-2 rounded mb-4 overflow-x-auto">
+            $$ \pi (\cdot | \mathbf {s} _ {t}) = \hat {w} _ {i n} \pi_ {i n} (\cdot | \mathbf {s} _ {t}) + \Sigma_ {j = 1} ^ {n} \hat {w} _ {g _ {j}} \pi_ {g _ {j}} (\cdot | \mathbf {s} _ {t}) $$
+          </div>
+          
+          <ul class="list-disc pl-5 mb-4">
+            <li>Discrete vs Continuous action space</li>
+            <li>Entropy Imbalance in maximum entropy KGRL</li>
+          </ul>
+
+          <div class="grid grid-cols-2 gap-2 mb-4" data-type="figure">
+            <div>
+              <h3 class="text-sm font-bold">P1: always inner actor</h3>
+              <img data-fig-id="fig_2" src="./fig_2.jpg" alt="Inner Actor Bias">
+            </div>
+            <div>
+              <h3 class="text-sm font-bold">P2: distant means</h3>
+              <img data-fig-id="fig_3" src="./fig_3.jpg" alt="Distant Means">
+            </div>
+          </div>
+
+          <h3 class="text-lg font-bold text-center">Discrete Action Policy</h3>
+          <div class="bg-white p-2 rounded mb-4 overflow-x-auto">
+            $$ \begin{array}{l} \pi (\cdot | \mathbf {s} _ {t}) = \boxed {\hat {w} _ {t, i n}} \pi_ {i n} (\cdot | \mathbf {s} _ {t}) + \Sigma_ {j = 1} ^ {n} \boxed {\hat {w} _ {t, g _ {j}}} \operatorname {s o f t m a x} \left(\beta_ {t, g _ {j}} \pi_ {g _ {j}} (\cdot | \mathbf {s} _ {t})\right) \\ w _ {t, g _ {j}} = \Phi (\mathbf {s} _ {t}) \cdot \mathbf {k} _ {g _ {j}} / \beta_ {t, g _ {j}} \quad \beta_ {t, g _ {j}} = \| \Phi (\mathbf {s} _ {t}) \| _ {2} \| \mathbf {k} _ {g _ {j}} \| _ {2} \\ \end{array} $$
+          </div>
+
+          <h3 class="text-lg font-bold text-center">Continuous Action Prediction</h3>
+          <div class="bg-white p-2 rounded mb-4 overflow-x-auto">
+            $$ \pi_ {i n} (\cdot | \mathbf {s} _ {t}) = \mathcal {N} \left(\boldsymbol {\mu} _ {t, i n}, \boldsymbol {\sigma} _ {t, i n} ^ {2}\right), \pi_ {g _ {j}} (\cdot | \mathbf {s} _ {t}) = \mathcal {N} \left(\boldsymbol {\mu} _ {t, g _ {j}}, \boldsymbol {\sigma} _ {t, g _ {j}} ^ {2}\right) $$
+            $$ e \sim \text {g u m b e l} _ {\text {s o f t m a x}} \left(\left[ \hat {w} _ {t, i n}, \hat {w} _ {t, g _ {1}}, \dots , \hat {w} _ {t, g _ {n}} \right] ^ {\top}\right) \quad \mathbf {a} _ {t} \sim \pi_ {e} (\cdot | \mathbf {s} _ {t}) $$
+          </div>
+
+          <h3 class="text-lg font-bold text-center">Continuous Probability Distribution</h3>
+          <div class="bg-white p-2 rounded overflow-x-auto">
+            $$ \pi (\mathbf {a} _ {t} | \mathbf {s} _ {t}) = \hat {w} _ {i n} \pi_ {i n} (\boxed {\mathbf {a} _ {t, i n}} \mathbf {s} _ {t}) + \Sigma_ {j = 1} ^ {n} \hat {w} _ {g _ {j}} \pi_ {g _ {j}} (\boldsymbol {\mu} _ {t, g _ {j}} | \mathbf {s} _ {t}) $$
+          </div>
+        </section>
+      </div>
+
+      <!-- Column 3: Experiments -->
+      <div class="space-y-6">
+        <section id="section_3" data-type="section" class="bg-blue-50 p-4 rounded-lg">
+          <h2 class="text-2xl font-bold mb-4">How well are the KGRL properties satisfied?</h2>
+          <p class="font-bold">Environments:</p>
+          <ul class="list-disc pl-5 mb-4">
+            <li>Discrete decision making (MiniGrid)</li>
+            <li>Continuous control (OpenAI-Robotics)</li>
+          </ul>
+          
+          <div class="grid grid-cols-3 gap-2 mb-4" data-type="figure">
+            <figure>
+              <img data-fig-id="fig_4" src="./fig_4.jpg" alt="Dynamic-Obstacles">
+              <figcaption class="text-xs text-center italic">Dynamic-Obstacles</figcaption>
+            </figure>
+            <figure>
+              <img data-fig-id="fig_5" src="./fig_5.jpg" alt="KeyCorridor">
+              <figcaption class="text-xs text-center italic">KeyCorridor</figcaption>
+            </figure>
+            <figure>
+              <img data-fig-id="fig_6" src="./fig_6.jpg" alt="OpenAI-Robotics">
+              <figcaption class="text-xs text-center italic">OpenAI-Robotics</figcaption>
+            </figure>
+          </div>
+
+          <ul class="list-disc pl-5 mb-4">
+            <li>RL algorithms: proximal policy optimization (PPO) and soft actor critic (SAC)</li>
+            <li>Main Results:</li>
+          </ul>
+
+          <h3 class="text-lg font-bold mb-2">Sample Efficiency & Compositional</h3>
+          <div data-type="figure" class="mb-4">
+            <img data-fig-id="fig_7" src="./fig_7.jpg" alt="Sample Efficiency Results">
+          </div>
+
+          <h3 class="text-lg font-bold mb-2">Generalizability</h3>
+          <p class="text-sm mb-2">Zero-shot transfer policies from simple to more complex tasks</p>
+          <div data-type="table" class="mb-4">
+            <img data-fig-id="table_3" src="./table_3.jpg" alt="Generalizability Table">
+          </div>
+
+          <h3 class="text-lg font-bold mb-2">Compositional & Incremental</h3>
+          <p class="text-sm mb-2">Combine previously learned knowledge keys and inner policies to learn a new task</p>
+          <div class="grid grid-cols-2 gap-2" data-type="figure">
+            <img data-fig-id="fig_8" src="./fig_8.jpg" alt="Incremental Learning 1">
+            <img data-fig-id="fig_9" src="./fig_9.jpg" alt="Incremental Learning 2">
+          </div>
+        </section>
+      </div>
+
+      <!-- Column 4: Entropy & References -->
+      <div class="space-y-6">
+        <section id="section_4" data-type="section" class="bg-green-50 p-4 rounded-lg">
+          <h2 class="text-2xl font-bold mb-4">How entropy imbalance affects?</h2>
+          <p class="text-lg mb-4">Addressing entropy imbalance is important!</p>
+          <div class="space-y-4" data-type="figure">
+            <img data-fig-id="fig_10" src="./fig_10.jpg" alt="Entropy Analysis 1">
+            <div class="grid grid-cols-2 gap-2">
+              <img data-fig-id="fig_11" src="./fig_11.jpg" alt="Entropy Analysis 2">
+              <img data-fig-id="fig_12" src="./fig_12.jpg" alt="Entropy Analysis 3">
+            </div>
+            <img data-fig-id="fig_13" src="./fig_13.jpg" alt="Entropy Analysis 4">
+          </div>
+          <div class="mt-4 text-center">
+            <p class="text-sm font-bold">UCSB NLP GROUP</p>
+          </div>
+        </section>
+
+        <section id="section_5" data-type="reference" class="bg-gray-50 p-4 rounded-lg">
+          <h2 class="text-xl font-bold mb-4">References</h2>
+          <ul class="text-xs space-y-2">
+            <li>[1] A. Bandura. Social Learning Theory. Prentice-Hall series in social learning theory. Prentice Hall, 1977. ISBN 9780138167516.</li>
+            <li>[2] Leslie Pack Kaelbling. The foundation of efficient robot learning. Science, 369(6506):915-916, 2020.</li>
+            <li>[3] Peng Zhang, Jianye Hao, Weixun Wang, Hongyao Tang, Yi Ma, Yihai Duan, and Yan Zheng. Kogun: Accelerating deep reinforcement learning via integrating human suboptimal knowledge. In International Joint Conference on Artificial Intelligence, 2020.</li>
+            <li>[4] Janarthanan Rajendran, Aravind Lakshminarayanan, Mitesh M. Khapra, Prasanna P, and Balaraman Ravindran. Attend, adapt and transfer: Attentive deep architecture for adaptive transfer from multiple sources in the same domain. In International Conference on Learning Representations, 2017.</li>
+          </ul>
+        </section>
+      </div>
+
+    </main>
+
+    <footer data-type="metadata" class="p-4 border-t flex justify-center items-center gap-8">
+      <div class="flex items-center gap-2">
+        <img data-fig-id="qr_1" src="./fig_11.jpg" alt="QR Code 1" class="h-16 w-16">
+        <span class="text-xs">arXiv</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <img data-fig-id="qr_2" src="./fig_12.jpg" alt="QR Code 2" class="h-16 w-16">
+        <span class="text-xs">Code</span>
+      </div>
+      <div class="text-right">
+        <p class="text-xs font-bold">ARClab</p>
+        <p class="text-[10px]">UCSD Advanced Robotics and Controls</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

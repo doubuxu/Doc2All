@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Attention-Based Multi-Policy Fusion Poster</title>
+    <style>
+        :root {
+            --bg-red: #a3261f;
+            --bg-orange: #d97b29;
+            --bg-blue: #3a7ca5;
+            --bg-green: #4a7c59;
+            --bg-light: #f4f4f4;
+            --text-white: #ffffff;
+            --text-dark: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0e0e0;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        #poster-canvas {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--bg-blue);
+            padding-bottom: 15px;
+        }
+
+        .header-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .poster-title {
+            font-size: 2.5rem;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .poster-authors {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-logos img {
+            height: 80px;
+            object-fit: contain;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .layout-block {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            padding: 12px 20px;
+            color: var(--text-white);
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .block-content {
+            padding: 15px;
+            flex: 1;
+        }
+
+        /* Column Specific Colors */
+        .col-red { background-color: #fdf2f2; }
+        .col-red .section-header { background-color: var(--bg-red); }
+        
+        .col-orange { background-color: #fff8f2; }
+        .col-orange .section-header { background-color: var(--bg-orange); }
+
+        .col-blue { background-color: #f2f8fd; }
+        .col-blue .section-header { background-color: var(--bg-blue); }
+
+        .col-green { background-color: #f2fdf5; }
+        .col-green .section-header { background-color: var(--bg-green); }
+
+        .text-block {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .list-item {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .references {
+            font-size: 0.75rem;
+            background: #eee;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 992px) {
+            main {
+                flex-direction: column;
+            }
+            .row-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <div class="header-content">
+            <h1 class="poster-title">Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning</h1>
+            <p class="poster-authors">Zih-Yun Chiu*, Yi-Lin Tuan*, William Yang Wang, Michael C. Yip</p>
+            <div class="header-logos">
+                <div>University of California San Diego, University of California Santa Barbara</div>
+            </div>
+        </div>
+        <div class="header-logos">
+            <img src="./fig_14.jpg" data-semantic="ARCLab logo" style="height: 40px;">
+            <img src="./fig_15.jpg" data-semantic="UCSB NLP Group logo" style="height: 60px;">
+        </div>
+    </header>
+
+    <main>
+        <!-- Column 1: Why KGRL -->
+        <div class="column col-red">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Why Knowledge-Grounded Reinforcement Learning?</h2>
+                <div class="block-content">
+                    <ul class="text-block">
+                        <li class="list-item">What learning capabilities do humans possess, yet RL agents still missing? [1,2]</li>
+                        <li class="list-item"><strong>Knowledge-Acquirable:</strong> Develop unique policies by observing.</li>
+                        <li class="list-item"><strong>Compositional:</strong> Combine policies from multiple sources to form a knowledge set.</li>
+                    </ul>
+                    <div class="row-container">
+                        <img src="./fig_13.jpg" data-semantic="The image illustrates a conceptual framework linking Policy to observed outcomes (Amy and Jack) and solutions (skateboard and bicycle)" style="aspect-ratio: 375/232; width: 48%;">
+                        <img src="./fig_13.jpg" data-semantic="This image illustrates a decision-making framework comparing different policies applied to observed data" style="aspect-ratio: 346/227; width: 48%;">
+                    </div>
+                    <ul class="text-block">
+                        <li class="list-item"><strong>Incremental:</strong> Arbitrarily remove outdated policies or add new ones, no need to relearn how to navigate the entire knowledge set from scratch.</li>
+                        <li class="list-item"><strong>Sample-Efficient:</strong> Require fewer interactions.</li>
+                        <li class="list-item"><strong>Generalizable:</strong> Be able to apply previously learned policies to unseen tasks.</li>
+                        <li class="list-item"><strong>KGRL:</strong> An RL paradigm aiming to learn with external policies and achieve the five properties above.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 2: Method -->
+        <div class="column col-orange">
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Method: Knowledge-Inclusive Attention Network (KIAN)</h2>
+                <div class="block-content">
+                    <p class="text-block"><strong>KIAN:</strong> An actor that separates knowledge representations from their selection mechanism.</p>
+                    <p class="text-block">Model Architecture:</p>
+                    <img src="./fig_1.jpg" data-semantic="The image illustrates a KIAN architecture where an inner actor generates actions based on input knowledge and state" style="aspect-ratio: 406/384; margin-bottom: 15px;">
+                    
+                    <p class="text-block">Naive policy fusion leads to challenges:</p>
+                    <ul class="text-block">
+                        <li class="list-item">Discrete vs Continuous action space</li>
+                        <li class="list-item">Entropy Imbalance in maximum entropy KGRL</li>
+                    </ul>
+                    
+                    <div class="row-container">
+                        <img src="./fig_2.jpg" data-semantic="The image illustrates a process where an Inner Actor generates parameters and applies them via function Φ" style="aspect-ratio: 406/84; width: 45%;">
+                        <img src="./fig_3.jpg" data-semantic="The image compares three normal distribution curves representing success rates" style="aspect-ratio: 406/181; width: 45%;">
+                    </div>
+
+                    <p class="text-block" style="text-align: center; font-weight: bold;">Discrete Action Policy</p>
+                    <p class="text-block" style="font-family: serif; font-size: 0.8rem;">π(·|s_t) = ŵ_t,in π_in(·|s_t) + Σ ŵ_t,gj softmax(β_t,gj π_gj(·|s_t))</p>
+                    
+                    <p class="text-block" style="text-align: center; font-weight: bold;">Continuous Action Prediction</p>
+                    <p class="text-block" style="font-family: serif; font-size: 0.8rem;">π_in(·|s_t) = N(μ_t,in, σ²_t,in), π_gj(·|s_t) = N(μ_t,gj, σ²_t,gj)</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 3: Results -->
+        <div class="column col-blue">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">How well are the KGRL properties satisfied?</h2>
+                <div class="block-content">
+                    <p class="text-block">Environments:</p>
+                    <div class="row-container">
+                        <img src="./fig_4.jpg" data-semantic="Grid interface with blue dots" style="width: 30%; aspect-ratio: 165/168;">
+                        <img src="./fig_5.jpg" data-semantic="Grid puzzle interface" style="width: 30%; aspect-ratio: 206/168;">
+                        <img src="./fig_6.jpg" data-semantic="Robotic arm" style="width: 30%; aspect-ratio: 197/168;">
+                    </div>
+                    <p class="text-block">Main Results: Sample Efficiency & Compositional</p>
+                    <img src="./fig_7.jpg" data-semantic="Multiple line graphs comparing RL algorithms" style="aspect-ratio: 822/420; margin-bottom: 10px;">
+                    
+                    <p class="text-block">Generalizability:</p>
+                    <img src="./table_1.jpg" data-semantic="Comparative evaluation table" style="aspect-ratio: 790/173; margin-bottom: 10px;">
+                    
+                    <p class="text-block">Compositional & Incremental:</p>
+                    <div class="row-container">
+                        <img src="./fig_8.jpg" data-semantic="DoorKey learning curve" style="width: 48%; aspect-ratio: 293/232;">
+                        <img src="./fig_9.jpg" data-semantic="Push task reward progression" style="width: 48%; aspect-ratio: 315/219;">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 4: Entropy & QR -->
+        <div class="column col-green">
+            <section class="layout-block" data-section-id="section_4">
+                <h2 class="section-header">How entropy imbalance affects?</h2>
+                <div class="block-content">
+                    <p class="text-block">Addressing entropy imbalance is important!</p>
+                    <img src="./fig_10.jpg" data-semantic="Line graphs comparing PPO+KIAN and SAC+KIAN" style="aspect-ratio: 683/272; margin-bottom: 20px;">
+                    
+                    <div class="row-container">
+                        <div style="text-align: center;">
+                            <img src="./fig_11.jpg" data-semantic="arXiv QR code" style="width: 80px;">
+                            <p style="font-size: 0.8rem;">arXiv</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="./fig_12.jpg" data-semantic="GitHub QR code" style="width: 80px;">
+                            <p style="font-size: 0.8rem;">github.com</p>
+                        </div>
+                    </div>
+
+                    <div class="references">
+                        <p><strong>References</strong></p>
+                        <p>[1] A. Bandura. Social Learning Theory. 1977.</p>
+                        <p>[2] Leslie Pack Kaelbling. The foundation of efficient robot learning. Science, 2020.</p>
+                        <p>[3] Peng Zhang et al. KoGuN: Accelerating deep reinforcement learning. IJCAI, 2020.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

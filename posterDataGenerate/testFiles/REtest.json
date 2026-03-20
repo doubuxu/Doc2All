@@ -1,0 +1,479 @@
+[
+  {
+    "type": "text",
+    "text": "Reproduced: Paaβen et. al. (ICLR, 2021) ",
+    "text_level": 1,
+    "bbox": [
+      96,
+      347,
+      964,
+      398
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Thereproduced paper [bpa21] proposesanovel output layer for graph neural networks (GNNs),the graph edit network called (GEN).This layer yieldsa sequence of graph edits:node insertions,node deletions,node replacements,edge insertionsand edgedeletions.These finite sequences of edits,alsoreferred toasedit scriptsare general enough todescribe any graph-to-graph transformationand are not only veryinterpretablefor humans,but also computationallyefficient.These properties establish GENsasauseful tool forwork in the domainof graph timeseries prediction under the Markovianassumption. ",
+    "bbox": [
+      86,
+      412,
+      1050,
+      769
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_1.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      96,
+      774,
+      1043,
+      963
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theauthors empirically underpin their theoretical claims about GENs by showing that they perform wellina series of graph time-series prediction tests.They define several data generating processes (DGPs),from which the GEN attempts to learn the user-defined mapping functions.Ourwork reproduces these experiments and evaluates the suitability of the DGPs for the conclusions made in the original paper. ",
+    "bbox": [
+      86,
+      976,
+      1050,
+      1214
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "DGPs & Tests ",
+    "text_level": 1,
+    "bbox": [
+      96,
+      1262,
+      404,
+      1308
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Thepaperevaluated several keyclaimsonsyntheticdatasets,generated withdata generatingrules,interpreted in the following figures. ",
+    "bbox": [
+      96,
+      1327,
+      1022,
+      1405
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_2.jpg",
+    "image_caption": [
+      "Graphcycles:Atrivial set of userdefined graph transformations without any logical rules. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      93,
+      1423,
+      1060,
+      1566
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_3.jpg",
+    "image_caption": [
+      "Degreerules:Asetofrules fornode&edgeinsertions.(nodeswithdegree≥3aredeleted;noeswithcommonneighbor "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      93,
+      1617,
+      1060,
+      1875
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_4.jpg",
+    "image_caption": [
+      "Conway'sGameofLife:Aseriesbasedonnodeedits(editingAlive/Deadbinaryfeature)onalaticegraph,adhering to Conway'sGameofLife[Gar70]. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      210,
+      1981,
+      902,
+      2138
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_5.jpg",
+    "image_caption": [
+      "BooleanFormulae:RandomBoolean formulae,simplifiedwithruleslikexA-x→⊥,untiltreecannotbe simplified. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      1226,
+      336,
+      2225,
+      562
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_6.jpg",
+    "image_caption": [
+      "PeanoAddition:Seriesoftreegraphs,modelingadditionproblemsviaPeano'sdefinitionofaddition(m+succ(n)= succ（m）+nand $m + { \\cal { O } } = m )$ using one-hot node features. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      1261,
+      663,
+      2160,
+      822
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[Re] Original experimental claims ",
+    "text_level": 1,
+    "bbox": [
+      1237,
+      958,
+      1963,
+      1009
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[bpa21] makes three experimental conclusions based on a series of experiments.√symbols below denotea successful reproduction of results. ",
+    "bbox": [
+      1233,
+      1050,
+      2229,
+      1126
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "GENsoutperform baselines (Variational Graph Autoencoders[KW16]& Variational Graph Recurrent nets [HHN19]) on time-series prediction tasks, generated from Graph Cycles,Degree Rules&Game of Life DGPs. ",
+      "GENs achieve $100 \\%$ accuracy on time-series prediction tasks on graphs, generatedfrom Boolean Formulae&Peano Addition DGPs. ",
+      "？Theruntime of forward passes of a GEN scales sub-quadratically as the number of nodes ina graph increases.The runtime of training back-passes scalesapproximatelylinearly. "
+    ],
+    "bbox": [
+      1237,
+      1131,
+      2222,
+      1451
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_7.jpg",
+    "image_caption": [
+      "Theruntime of graph scale dependence.Results forthe backwardpasses are not consistent with the claim. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      1237,
+      1472,
+      2215,
+      1799
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/tables/table_1.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>Pass direction</td><td>Edge filtering</td><td>Log-log linear slope fit</td></tr><tr><td rowspan=\"2\">Forward</td><td>Flexible</td><td>1.38 ± 0.02</td></tr><tr><td>Constant</td><td>1.31 ± 0.02</td></tr><tr><td rowspan=\"2\">Backward</td><td>Flexible</td><td>1.30 ± 0.01</td></tr><tr><td>Constant</td><td>1.69 ± 0.10</td></tr></table>",
+    "bbox": [
+      1268,
+      1905,
+      1717,
+      2154
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Theruntime scaling evaluation was carried out on the ArXivcitationnetwork[LKF05]withthegraphvariants generatedbyadifferentnumber ofmonthsconsidered. ",
+    "bbox": [
+      1275,
+      2181,
+      1703,
+      2246
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "bbox": [
+      1728,
+      1916,
+      2194,
+      2168
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "While the focus here is speed,we have to note that the experiment intheoriginalpaperfailstooptimize the criterion loss,thus castingdoubt on theresults. ",
+    "bbox": [
+      1762,
+      2181,
+      2194,
+      2248
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Improving the experimental setup ",
+    "text_level": 1,
+    "bbox": [
+      2401,
+      347,
+      3141,
+      403
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Thefacts that graph-to-graph transitionsare deterministic and that the space of unique graphs that may be generated by the DGPs is limited (as shown in the table below),arose some concern about the experimental setup:Does the solver generalize,or does it simply memorize the graphto-graph transitions? ",
+    "bbox": [
+      2398,
+      426,
+      3345,
+      624
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/tables/table_2.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td></td><td>Graph cycles</td><td>Degree rules</td><td>Game of life</td><td>Boolean formulae</td><td>Peano addition</td></tr><tr><td># unique graphs</td><td>9</td><td>12346</td><td>2100</td><td>10788</td><td>34353</td></tr></table>",
+    "bbox": [
+      2401,
+      633,
+      3348,
+      776
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "We reproduced the claims (1)and (2) with the following adjustments: ",
+    "bbox": [
+      2401,
+      794,
+      3262,
+      831
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "Increased cardinality of test time series $( 5 \\to 1 0 0 )$ ",
+      "Ensured no duplicates between train& test set ",
+      "·Used established random graph generation methods (ie.Erdäs-Renyi) "
+    ],
+    "bbox": [
+      2405,
+      838,
+      3324,
+      953
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Wenoticed that most sampled graphsin the tree dynamic graph experimentswereun-simplifyable,soconstraintswererelaxed here. ",
+    "bbox": [
+      2401,
+      969,
+      3338,
+      1048
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "../posterData/mineru_output/[Re] Graph Edit Networks_poster/visuals/images/fig_9.jpg",
+    "image_caption": [
+      "Results were generally worse,but still within a reasonable margin of error. "
+    ],
+    "image_footnote": [],
+    "bbox": [
+      2401,
+      1142,
+      3338,
+      1474
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Concluding reproduction notes ",
+    "text_level": 1,
+    "bbox": [
+      2401,
+      1529,
+      3089,
+      1580
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "Our experimental results conclusively show that most of the claims in the original work hold.However，our work beyond the original paper emphasizes theneed to payattention to the experimental setup,especially whenworking with synthetically generated data，sampled from functions, rather than gathered froman external system. ",
+    "bbox": [
+      2395,
+      1605,
+      3338,
+      1804
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "References ",
+    "text_level": 1,
+    "bbox": [
+      2401,
+      1857,
+      2581,
+      1889
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "list",
+    "sub_type": "text",
+    "list_items": [
+      "[bpa21] PaaBen,Benjamin,etal.\"Graphedit networks.\"In: International Conference ",
+      "[Gar70] Martin Gardner.“The fantastic combinations of John Conway's newsolitaire gameoflife.In:Sc.Am.,223:20-123,1970 ",
+      "[KW16] ThomasN.Kipfand MaxWeling.“Variational graphauto-encoders\"In: Proceedings of the NIPS2016Workshop onBayesian Deep Learning，2016 "
+    ],
+    "bbox": [
+      2405,
+      1893,
+      3106,
+      2059
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[HHN19] Hajiramezanali,Ehsan,et.al.“Variational graph recurrent neural networks.” ",
+    "bbox": [
+      2401,
+      2068,
+      3113,
+      2149
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "[LKF05]Leskovec,Jure,Jon Kleinberg,and Christos Faloutsos.\"Graphs over time: densification laws，shrinkingdiametersandpossibleexplanations.\"ln:Proceedingsof theeleventh ACM SIGKDD international conference on Knowledge discovery indata ",
+    "bbox": [
+      2401,
+      2158,
+      3117,
+      2267
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "[Re] Graph Edit Networks ",
+    "bbox": [
+      93,
+      129,
+      940,
+      211
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "ta Science @UL-FRI ",
+    "bbox": [
+      1814,
+      101,
+      2236,
+      251
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "University ofLjubljana Faculty of Computer and ",
+    "bbox": [
+      2502,
+      149,
+      2844,
+      251
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "NEURALINFORMATION PROCESSINGSYSTEMS ",
+    "bbox": [
+      2878,
+      62,
+      3373,
+      278
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "Vid Stropnik,Marusa Orazem ",
+    "bbox": [
+      93,
+      248,
+      473,
+      285
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "1 ",
+    "bbox": [
+      3200,
+      2071,
+      3417,
+      2285
+    ],
+    "page_idx": 0
+  }
+]

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Attention-Based Multi-Policy Fusion Poster</title>
+    <style>
+        :root {
+            --primary-blue: #1a5a96;
+            --bg-light: #f4f4f4;
+            --section-bg-1: #e8f1f8;
+            --section-bg-2: #fff0f0;
+            --text-dark: #333;
+            --header-height: 320px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #666;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        #poster-canvas {
+            width: 100%;
+            max-width: 4073px;
+            margin: 0 auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        header {
+            background-color: white;
+            padding: 40px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 8px solid var(--primary-blue);
+        }
+
+        .header-top {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .poster-title {
+            color: var(--primary-blue);
+            font-size: 85px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .poster-authors {
+            font-size: 45px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            font-size: 35px;
+            font-weight: 500;
+        }
+
+        .header-logos img {
+            height: 120px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            padding: 40px;
+            gap: 40px;
+            background-color: #fff;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .layout-block {
+            border-radius: 20px;
+            padding: 30px;
+            height: fit-content;
+        }
+
+        /* Column Specific Backgrounds */
+        [data-section-id="section_1"] { background-color: #fde9e9; border: 4px dashed #cc0000; }
+        [data-section-id="section_2"] { background-color: #fff4e6; border: 4px dashed #ff9900; }
+        [data-section-id="section_3"] { background-color: #e7f3ff; border: 4px dashed #3399ff; }
+        [data-section-id="section_4"] { background-color: #f0fff0; border: 4px dashed #33cc33; }
+
+        .section-header {
+            font-size: 55px;
+            color: #fff;
+            background-color: #a52a2a;
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        [data-section-id="section_2"] .section-header { background-color: #ff8c00; }
+        [data-section-id="section_3"] .section-header { background-color: #1e90ff; }
+        [data-section-id="section_4"] .section-header { background-color: #2e8b57; }
+
+        .text-block {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .list-item {
+            font-size: 32px;
+            margin-left: 40px;
+            margin-bottom: 15px;
+            list-style-type: disc;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .formula {
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+            font-size: 36px;
+            text-align: center;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .references {
+            font-size: 22px;
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 992px) {
+            main { flex-direction: column; }
+            .row-container { flex-direction: column; }
+            #poster-canvas { max-width: 100%; }
+            .poster-title { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <header>
+            <div class="header-top">
+                <img src="./neurips_logo.jpg" data-semantic="NeurIPS Logo" style="height: 80px;">
+                <div style="text-align: right;">
+                    <div class="header-logos">
+                        <div>University of California San Diego</div>
+                        <div>University of California Santa Barbara</div>
+                        <img src="./ucsd_logo.jpg" data-semantic="UCSD Logo">
+                        <img src="./ucsb_logo.jpg" data-semantic="UCSB Logo">
+                    </div>
+                </div>
+            </div>
+            <h1 class="poster-title">Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning</h1>
+            <p class="poster-authors">Zih-Yun Chiu*, Yi-Lin Tuan*, William Yang Wang, Michael C. Yip</p>
+        </header>
+
+        <main>
+            <!-- Column 1 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_1">
+                    <h2 class="section-header">Why Knowledge-Grounded Reinforcement Learning?</h2>
+                    <ul>
+                        <li class="list-item">What learning capabilities do humans possess, yet RL agents still missing? [1,2]</li>
+                        <li class="list-item"><strong>Knowledge-Acquirable:</strong> Develop unique policies by observing.</li>
+                        <li class="list-item"><strong>Compositional:</strong> Combine policies from multiple sources to form a knowledge set.</li>
+                    </ul>
+                    <div class="row-container">
+                        <img src="./table_1.jpg" data-semantic="The image illustrates a conceptual framework linking Policy to observed outcomes and solutions" style="aspect-ratio: 375/232; width: 48%;">
+                        <img src="./table_2.jpg" data-semantic="The image illustrates a decision-making framework comparing different agents" style="aspect-ratio: 346/227; width: 48%;">
+                    </div>
+                    <ul>
+                        <li class="list-item"><strong>Incremental:</strong> Arbitrarily remove outdated policies or add new ones, no need to relearn how to navigate the entire knowledge set from scratch.</li>
+                        <li class="list-item"><strong>Sample-Efficient:</strong> Require fewer interactions.</li>
+                        <li class="list-item"><strong>Generalizable:</strong> Be able to apply previously learned policies to unseen tasks.</li>
+                        <li class="list-item"><strong>KGRL:</strong> An RL paradigm aiming to learn with external policies and achieve the five properties above.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_2">
+                    <h2 class="section-header">Method: Knowledge-Inclusive Attention Network (KIAN)</h2>
+                    <p class="text-block"><strong>KIAN:</strong> An actor that separates knowledge representations from their selection mechanism.</p>
+                    
+                    <div class="row-container">
+                        <div style="width: 45%;">
+                            <p class="text-block">Model Architecture:</p>
+                            <ul>
+                                <li class="list-item" style="color: #a52a2a;">Inner Actor</li>
+                                <li class="list-item" style="color: #2e8b57;">Knowledge Keys</li>
+                                <li class="list-item" style="color: #1e90ff;">Query</li>
+                            </ul>
+                        </div>
+                        <img src="./fig_1.jpg" data-semantic="The image illustrates a KIAN architecture where an inner actor generates actions based on input knowledge and state representations" style="aspect-ratio: 406/384; width: 50%;">
+                    </div>
+
+                    <p class="text-block">Naive policy fusion leads to challenges:</p>
+                    <div class="formula">π(·|s_t) = ŵ_t,in π_in(·|s_t) + Σ ŵ_t,gj π_gj(·|s_t)</div>
+                    
+                    <ul>
+                        <li class="list-item">Discrete vs Continuous action space</li>
+                        <li class="list-item">Entropy Imbalance in maximum entropy KGRL</li>
+                    </ul>
+
+                    <div class="row-container">
+                        <div style="text-align: center;">
+                            <p class="text-block">P1: always inner actor</p>
+                            <img src="./fig_2.jpg" data-semantic="Inner Actor process with prohibition symbols" style="aspect-ratio: 406/84; width: 100%;">
+                        </div>
+                        <div style="text-align: center;">
+                            <p class="text-block">P2: distant means</p>
+                            <img src="./fig_3.jpg" data-semantic="Comparison of three normal distribution curves" style="aspect-ratio: 406/181; width: 100%;">
+                        </div>
+                    </div>
+
+                    <h3 class="text-block" style="text-align: center; font-weight: bold;">Discrete Action Policy</h3>
+                    <div class="formula">π(·|s_t) = ŵ_t,in π_in(·|s_t) + Σ ŵ_t,gj softmax(β_t,gj π_gj(·|s_t))</div>
+                    
+                    <h3 class="text-block" style="text-align: center; font-weight: bold;">Continuous Action Prediction</h3>
+                    <div class="formula">π_in(·|s_t) = N(μ_t,in, σ²_t,in), π_gj(·|s_t) = N(μ_t,gj, σ²_t,gj)</div>
+                    <div class="formula">e ~ gumbel_softmax([ŵ_t,in, ŵ_t,g1, ..., ŵ_t,gn]ᵀ) a_t ~ π_e(·|s_t)</div>
+                    
+                    <h3 class="text-block" style="text-align: center; font-weight: bold;">Continuous Probability Distribution</h3>
+                    <div class="formula">π(a_t|s_t) = ŵ_t,in π_in(a_t|s_t) + Σ ŵ_t,gj π_gj(μ_t,gj|s_t)</div>
+                </section>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_3">
+                    <h2 class="section-header">How well are the KGRL properties satisfied?</h2>
+                    <ul>
+                        <li class="list-item">Environments:
+                            <ul>
+                                <li class="list-item" style="list-style-type: circle;">Discrete decision making (MiniGrid)</li>
+                                <li class="list-item" style="list-style-type: circle;">Continuous control (OpenAI-Robotics)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="row-container">
+                        <img src="./fig_4.jpg" data-semantic="Grid-based interface with blue dots" style="width: 30%; aspect-ratio: 165/168;">
+                        <img src="./fig_5.jpg" data-semantic="Grid-based puzzle interface" style="width: 30%; aspect-ratio: 206/168;">
+                        <img src="./fig_6.jpg" data-semantic="Robotic arm above a workbench" style="width: 30%; aspect-ratio: 197/168;">
+                    </div>
+                    <ul>
+                        <li class="list-item">RL algorithms: proximal policy optimization (PPO) and soft actor critic (SAC)</li>
+                        <li class="list-item">Main Results: <u>Sample Efficiency & Compositional</u></li>
+                    </ul>
+                    <img src="./fig_7.jpg" data-semantic="Multiple line graphs comparing performance of RL algorithms" style="aspect-ratio: 822/420; margin-bottom: 20px;">
+                    
+                    <p class="text-block"><u>Generalizability</u></p>
+                    <ul>
+                        <li class="list-item">Zero-shot transfer policies from simple to more complex tasks</li>
+                    </ul>
+                    <img src="./table_3.jpg" data-semantic="Comparative evaluation table of various models" style="aspect-ratio: 790/173; margin-bottom: 20px;">
+
+                    <p class="text-block"><u>Compositional & Incremental</u></p>
+                    <ul>
+                        <li class="list-item">Combine previously learned knowledge keys and inner policies to learn a new task</li>
+                    </ul>
+                    <div class="row-container">
+                        <img src="./fig_8.jpg" data-semantic="Learning curve of DoorKey-8x8" style="width: 48%; aspect-ratio: 293/232;">
+                        <img src="./fig_9.jpg" data-semantic="Reward progression for Push -> Pick-and-Place" style="width: 48%; aspect-ratio: 315/219;">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="column">
+                <section class="layout-block" data-section-id="section_4">
+                    <h2 class="section-header">How entropy imbalance affects?</h2>
+                    <ul>
+                        <li class="list-item">Addressing entropy imbalance is important!</li>
+                    </ul>
+                    <img src="./fig_10.jpg" data-semantic="Line graphs comparing PPO+KIAN and SAC+KIAN" style="aspect-ratio: 683/272; margin-bottom: 40px;">
+                    
+                    <div class="row-container">
+                        <div style="text-align: center;">
+                            <img src="./fig_11.jpg" data-semantic="arXiv QR code" style="width: 200px; aspect-ratio: 269/275;">
+                            <p style="font-size: 24px;">arXiv</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="./fig_12.jpg" data-semantic="GitHub QR code" style="width: 200px; aspect-ratio: 265/272;">
+                            <p style="font-size: 24px;">github.com</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="./fig_13.jpg" data-semantic="YouTube QR code" style="width: 200px; aspect-ratio: 273/274;">
+                            <p style="font-size: 24px;">YouTube</p>
+                        </div>
+                    </div>
+
+                    <div class="row-container" style="margin-top: 40px;">
+                        <img src="./fig_14.jpg" data-semantic="ARC lab logo" style="height: 100px;">
+                        <img src="./fig_15.jpg" data-semantic="UCSB NLP logo" style="height: 150px;">
+                    </div>
+
+                    <div class="references" style="margin-top: 40px;">
+                        <h3 style="font-size: 32px; margin-bottom: 10px; text-align: center;">References</h3>
+                        <p>[1] A. Bandura. Social Learning Theory. Prentice-Hall series in social learning theory. Prentice Hall, 1977. ISBN 9780138167516.</p>
+                        <p>[2] Leslie Pack Kaelbling. The foundation of efficient robot learning. Science, 369(6506):915–916, 2020.</p>
+                        <p>[3] Peng Zhang, Jianye Hao, Weixun Wang, Hongyao Tang, Yi Ma, Yihai Duan, and Yan Zheng. Kogun: Accelerating deep reinforcement learning via integrating human suboptimal knowledge. In International Joint Conference on Artificial Intelligence, 2020.</p>
+                        <p>[4] Janarthanan Rajendran, Aravind Lakshminarayanan, Mitesh M. Khapra, Prasanna P, and Balaraman Ravindran. Attend, adapt and transfer: Attentive deep architecture for adaptive transfer from multiple sources in the same domain. In International Conference on Learning Representations, 2017.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

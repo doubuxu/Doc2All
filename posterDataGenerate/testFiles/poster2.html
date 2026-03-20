@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #c8c8c8;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  #poster {
+    position: relative;
+    width: 3368px;
+    height: 2379px;
+    background: #fff;
+    box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+  .blk {
+    position: absolute;
+    overflow: hidden;
+    word-wrap: break-word;
+    line-height: 1.25;
+  }
+  .t-header  { font-weight: bold; }
+  .t-title   { font-weight: bold; }
+  .t-footer  { color: #888; }
+  .t-text    { color: #111; }
+  .t-caption {
+    font-style: italic;
+    color: #444;
+    text-align: center;
+    font-size: 9px;
+    line-height: 1.3;
+  }
+  .t-list { color: #111; }
+  ul { list-style-type: disc; padding-left: 1.3em; margin: 0; }
+  li { margin-bottom: 2px; }
+  img { width: 100%; height: 100%; object-fit: contain; display: block; }
+</style>
+</head>
+<body>
+<div id="poster">
+<div class="blk t-title" style="left:94.0px;top:102.0px;width:2768.0px;height:104.0px;font-size:81px;line-height:1.2;">A View From Somewhere: Human-Centric Face Representations </div>
+<div class="blk t-text" style="left:107.0px;top:235.0px;width:990.0px;height:52.0px;font-size:41px;line-height:1.3;">Jerone T. A.Andrews1,Przemys law Joniak², Alice Xiang3 </div>
+<div class="blk t-text" style="left:107.0px;top:290.0px;width:1162.0px;height:52.0px;font-size:41px;line-height:1.3;">1Sony Al,Tokyo2University of Tokyo,Tokyo3SonyAl,New York </div>
+<div class="blk t-text" style="left:121.0px;top:361.0px;width:306.0px;height:33.0px;font-size:26px;line-height:1.3;">jerone.andrews@sony.com </div>
+<div class="blk t-title" style="left:2916.0px;top:387.0px;width:357.0px;height:103.0px;font-size:80px;line-height:1.2;">Sony Al </div>
+<div class="blk t-title" style="left:101.0px;top:535.0px;width:208.0px;height:40.0px;font-size:31px;line-height:1.2;">Motivation </div>
+<div class="blk t-title" style="left:101.0px;top:613.0px;width:165.0px;height:31.0px;font-size:24px;line-height:1.2;">Dataset Bias </div>
+<div class="blk t-text" style="left:97.0px;top:661.0px;width:943.0px;height:90.0px;font-size:23px;line-height:1.3;">Dataset bias can result in models that are discriminatory or depend on spurious correlations. Forinstance,a face image restorationmodel may“hallucinate"featurescorrelatedwith oversampled subgroups,resulting in theerasure ofminority groups. </div>
+<div class="blk t-visual" style="left:116.7px;top:793.5px;width:444.6px;height:169.5px;"><img src="./fig_1.jpg" alt=""></div>
+<div class="blk t-caption" style="left:113.9px;top:762.9px;width:400.2px;height:29.2px;">Upsamplingvia latent space exploration of StyleGAN2 </div>
+<div class="blk t-caption" style="left:215.4px;top:965.8px;width:97.3px;height:20.8px;">Downsample </div>
+<div class="blk t-visual" style="left:625.2px;top:799.0px;width:432.1px;height:166.8px;"><img src="./fig_2.jpg" alt=""></div>
+<div class="blk t-caption" style="left:712.8px;top:967.2px;width:98.7px;height:19.5px;">Downsample </div>
+<div class="blk t-caption" style="left:885.1px;top:967.2px;width:77.8px;height:19.5px;">Upsample </div>
+<div class="blk t-text" style="left:97.0px;top:1046.0px;width:970.0px;height:31.0px;font-size:24px;line-height:1.3;">Priorto learning,human-centricimagedataset users shouldevaluate thediversityof thedata. </div>
+<div class="blk t-title" style="left:97.0px;top:1113.0px;width:256.0px;height:33.0px;font-size:26px;line-height:1.2;">Parity and Diversity </div>
+<div class="blk t-text" style="left:97.0px;top:1158.0px;width:970.0px;height:124.0px;font-size:24px;line-height:1.3;">Thecanonical approach istocategorizepeople usingdemographic labels. However,evaluating diversity by examining counts across subgroupsfails to reflect thecontinuous nature of human phenotypicdiversity (e.g.,skin tone isoften reduced tolight vs.dark).Moreover,such approaches often denymulti-groupmembership (e.g.,erasingmulti-ethnic individuals). </div>
+<div class="blk t-visual" style="left:113.9px;top:1288.2px;width:899.0px;height:407.2px;"><img src="./fig_3.jpg" alt=""></div>
+<div class="blk t-title" style="left:101.0px;top:1731.0px;width:370.0px;height:34.0px;font-size:27px;line-height:1.2;">Unknown Label Distributions </div>
+<div class="blk t-text" style="left:97.0px;top:1779.0px;width:960.0px;height:214.0px;font-size:24px;line-height:1.3;">Mosthuman-centricimagedatasetsareweb-scraped,lackingground-truth informationabout theimage subjects.Therefore,researchers typically choose certainattributes they considerto berelevantfor humandiversityandusehumanannotatorstoinfer them.This isdifficult for ill-defined and highlychangeable social constructs suchas raceand gender.Observational labelsrisk not only encoding stereotypes,butreifyingandpropagating thembeyond“their culturalcontext".Furthermore,discrepancies between observed and self-identifiedattributes can invalidatean image subject'sself-imageand identity. </div>
+<div class="blk t-visual" style="left:107.0px;top:2038.5px;width:926.8px;height:190.4px;"><img src="./fig_4.jpg" alt=""></div>
+<div class="blk t-title" style="left:1195.0px;top:535.0px;width:256.0px;height:40.0px;font-size:31px;line-height:1.2;">Contributions </div>
+<div class="blk t-text" style="left:1192.0px;top:616.0px;width:953.0px;height:92.0px;font-size:24px;line-height:1.3;">Motivatedby issues inherenttocategoricallabels,weaimtodevelopatoolthatcanevaluate thevisual diversityoffaces inunlabeled datasets.Wedosowithout everaskinganannotator toexplicitly categorizea person. </div>
+<div class="blk t-title" style="left:1192.0px;top:739.0px;width:367.0px;height:36.0px;font-size:28px;line-height:1.2;">Face Similarity (FAX) Dataset </div>
+<div class="blk t-text" style="left:1188.0px;top:789.0px;width:957.0px;height:122.0px;font-size:24px;line-height:1.3;">Weintroduceanoveldataset,FAX,containing638,18oodd-one-outfacesimilarityjudgments over4,921faces (stimulus set).Judgments correspond to theodd-one-out (i.e.,least similar) faceina triplet,andareassociatedwiththeidentifieranddemographicattributesof the annotator who made the judgment. </div>
+<div class="blk t-visual" style="left:1197.7px;top:917.1px;width:964.3px;height:364.1px;"><img src="./fig_5.jpg" alt=""></div>
+<div class="blk t-title" style="left:1192.0px;top:1315.0px;width:492.0px;height:38.0px;font-size:30px;line-height:1.2;">Model of Conditional Decision-Making </div>
+<div class="blk t-text" style="left:1192.0px;top:1365.0px;width:970.0px;height:64.0px;font-size:25px;line-height:1.3;">Weintroduceamodel that learns topredicthuman judgments of face similarity conditioned on theannotatorwho generated the judgment.The conditionsare realized usingannotatormasks. </div>
+<div class="blk t-visual" style="left:1197.7px;top:1436.8px;width:971.2px;height:372.4px;"><img src="./fig_6.jpg" alt=""></div>
+<div class="blk t-text" style="left:1192.0px;top:1850.0px;width:966.0px;height:96.0px;font-size:25px;line-height:1.3;">Afacecan exhibit certain characteristics toa greateror lesser extent than others,even within thesamesubpopulation.Therefore,weconstrainourmodelto learn face embeddingsthatare continuous,non-negative (human-interpretable),and sparse byminimizing: </div>
+<div class="blk t-visual" style="left:1249.1px;top:1959.3px;width:851.7px;height:112.6px;"><img src="./fig_7.jpg" alt=""></div>
+<div class="blk t-text" style="left:1192.0px;top:2088.0px;width:886.0px;height:60.0px;font-size:23px;line-height:1.3;">where ${ \hat { p } } ( k \mid a )$ isthepredictedprobabilitythat face ${ \bf x } _ { k }$ is the odd-one-out accordingto annotator $^ { a }$ </div>
+<div class="blk t-title" style="left:2286.0px;top:535.0px;width:138.0px;height:40.0px;font-size:31px;line-height:1.2;">Results </div>
+<div class="blk t-title" style="left:2286.0px;top:613.0px;width:202.0px;height:31.0px;font-size:24px;line-height:1.2;">Interpretability </div>
+<div class="blk t-text" style="left:2286.0px;top:661.0px;width:943.0px;height:150.0px;font-size:23px;line-height:1.3;">From learning on FAX,we note the materialization ofdistinct dimensions coinciding with commonlydefineddemographic subgroups,i.e.,Male,Female,Black,White,East Asian, SouthAsian,andElderly.Inaddition,separatedimensionssurfaceforfaceand hair morphology,i.e.,Wide Face,Long Face,Smiling Expression,Neutral Expression, Balding,Facial Hair,and Dyed Hair. </div>
+<div class="blk t-text" style="left:2293.0px;top:825.0px;width:148.0px;height:29.0px;font-size:23px;line-height:1.3;">Dimension1/22 </div>
+<div class="blk t-visual" style="left:2299.5px;top:856.0px;width:141.7px;height:66.7px;"><img src="./fig_8.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2303.7px;top:926.9px;width:107.0px;height:22.2px;">South Asian </div>
+<div class="blk t-text" style="left:2455.0px;top:827.0px;width:121.0px;height:29.0px;font-size:23px;line-height:1.3;">Dimension 4/22 </div>
+<div class="blk t-visual" style="left:2457.9px;top:858.8px;width:148.7px;height:63.9px;"><img src="./fig_9.jpg" alt=""></div>
+<div class="blk t-text" style="left:2465.0px;top:925.0px;width:47.0px;height:21.0px;font-size:16px;line-height:1.3;">Femal Femal </div>
+<div class="blk t-text" style="left:2616.0px;top:827.0px;width:122.0px;height:29.0px;font-size:23px;line-height:1.3;">Dimension 5/22 </div>
+<div class="blk t-visual" style="left:2457.9px;top:858.8px;width:148.7px;height:63.9px;"><img src="./fig_10.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2457.9px;top:922.7px;width:148.7px;height:16.0px;"></div>
+<div class="blk t-visual" style="left:2619.1px;top:858.8px;width:155.6px;height:63.9px;"><img src="./fig_11.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2623.3px;top:926.9px;width:59.7px;height:22.2px;">Smiling </div>
+<div class="blk t-text" style="left:2778.0px;top:827.0px;width:135.0px;height:29.0px;font-size:23px;line-height:1.3;">Dimension 10/22 </div>
+<div class="blk t-visual" style="left:2781.7px;top:858.8px;width:134.8px;height:63.9px;"><img src="./fig_12.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2781.7px;top:926.9px;width:83.4px;height:22.2px;">Wide Face </div>
+<div class="blk t-text" style="left:2933.0px;top:827.0px;width:131.0px;height:29.0px;font-size:23px;line-height:1.3;">Dimension 11/22 </div>
+<div class="blk t-visual" style="left:2935.9px;top:858.8px;width:132.0px;height:63.9px;"><img src="./fig_13.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2935.9px;top:926.9px;width:70.9px;height:19.5px;">Elderly </div>
+<div class="blk t-text" style="left:3091.0px;top:827.0px;width:132.0px;height:29.0px;font-size:23px;line-height:1.3;">Dimension 18/22 </div>
+<div class="blk t-visual" style="left:3094.3px;top:858.8px;width:141.7px;height:63.9px;"><img src="./fig_14.jpg" alt=""></div>
+<div class="blk t-caption" style="left:3094.3px;top:926.9px;width:73.6px;height:22.2px;">Balding </div>
+<div class="blk t-text" style="left:2286.0px;top:1001.0px;width:967.0px;height:62.0px;font-size:24px;line-height:1.3;">Moreover,wevalidate thatFAX dimensions can be used to directly collect continuous attribute valuesfornovel faces,sidesteppingthe limitsofcategorical definitions. </div>
+<div class="blk t-visual" style="left:2292.6px;top:1147.8px;width:475.2px;height:216.8px;"><img src="./table_1.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2289.8px;top:1097.8px;width:478.0px;height:36.1px;">Predicting Novel Similarity Judgments </div>
+<div class="blk t-text" style="left:2792.0px;top:1156.0px;width:461.0px;height:45.0px;font-size:18px;line-height:1.3;">From56images，we generate(5)possible tripletswith 2-3 unique judgmentsper triplet(8o,3oo judgments). </div>
+<div class="blk t-text" style="left:2792.0px;top:1203.0px;width:461.0px;height:155.0px;font-size:17px;line-height:1.3;">Wereportodd-one-outpredictive accuracy;and，Spearman's rbetween thestrictlyupper triangularmodel-and humangenerated similaritymatrices.Entry(i,j）inthehumangeneratedsimilaritymatrixcorrespondstothefractionof triplets containing(i,j)，where neitherwas judged as the odd-one-out. Entry(i,j)inamodel-generated similaritymatrixcorrespondsto themean ρ(k)over alltriplets containing(i,j). </div>
+<div class="blk t-visual" style="left:2292.6px;top:1460.5px;width:559.9px;height:161.2px;"><img src="./table_2.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2289.8px;top:1417.4px;width:194.5px;height:27.8px;">AnnotatorBias </div>
+<div class="blk t-text" style="left:2889.0px;top:1505.0px;width:364.0px;height:69.0px;font-size:18px;line-height:1.3;">Using1o-fold crossvalidation，we train linearSVMs todiscriminate betweenannotatormasks from twodifferentannotator subgroups. </div>
+<div class="blk t-visual" style="left:2292.6px;top:1718.9px;width:964.3px;height:585.0px;"><img src="./table_3.jpg" alt=""></div>
+<div class="blk t-caption" style="left:2289.8px;top:1668.9px;width:821.2px;height:36.1px;">Comparative Diversity Auditingand Binary Attribute Classification </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Layout Replication</title>
+    <style>
+        /* 基础重置 */
+        .ppt-slide * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Times New Roman", serif;
+        }
+
+        /* 画布约束 */
+        .ppt-slide #ppt-canvas {
+            width: 1600px;
+            height: 1200px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* 左侧装饰条 */
+        .ppt-slide .sidebar-decoration {
+            width: 200px;
+            height: 100%;
+            background-color: #4d4d4d;
+            flex-shrink: 0;
+        }
+
+        /* 主内容区 */
+        .ppt-slide .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            position: relative;
+        }
+
+        /* 头部元数据 */
+        .ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .ppt-slide .ppt-title {
+            font-family: Arial, sans-serif;
+            font-size: 110px;
+            font-weight: 900;
+            color: #333333;
+            text-align: right;
+            line-height: 0.9;
+            text-shadow: 6px 6px 0px #f1c40f; /* 黄色阴影 */
+            margin-bottom: 20px;
+        }
+
+        .ppt-slide .ppt-authors {
+            display: none; /* 视觉中未出现作者，但协议要求存在 */
+        }
+
+        .ppt-slide .header-logos {
+            display: none; /* 视觉中未出现Logo，但协议要求存在 */
+        }
+
+        /* 装饰性横条 */
+        .ppt-slide .decorative-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            margin-left: -60px; /* 延伸到边缘 */
+        }
+
+        .ppt-slide .bar-segment-long {
+            width: 500px;
+            height: 45px;
+            background-color: #666666;
+        }
+
+        .ppt-slide .bar-segment-square {
+            width: 45px;
+            height: 45px;
+            background-color: #666666;
+        }
+
+        /* 逻辑区块布局 */
+        .ppt-slide main {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .ppt-slide .text-block {
+            font-size: 58px;
+            font-weight: bold;
+            font-style: italic;
+            color: #1a1a1a;
+            line-height: 1.2;
+            max-width: 1100px;
+            margin-bottom: 20px;
+        }
+
+        /* 图表容器 */
+        .ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto; /* 推到底部 */
+            padding-bottom: 60px;
+        }
+
+        .ppt-slide .figure-container img {
+            object-fit: contain;
+        }
+
+        /* 页脚信息 */
+        .ppt-slide .footer-info {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            display: flex;
+            align-items: flex-end;
+            gap: 80px;
+            font-family: Arial, sans-serif;
+            font-size: 32px;
+            color: #333;
+        }
+
+        .ppt-slide .case-text {
+            text-align: left;
+            line-height: 1.1;
+        }
+
+        .ppt-slide .page-number {
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ppt-slide">
+    <div id="ppt-canvas">
+        <!-- 左侧灰色装饰柱 -->
+        <div class="sidebar-decoration"></div>
+
+        <!-- 右侧主内容 -->
+        <div class="main-content">
+            <header>
+                <h1 class="ppt-title">Meeting the CWA<br>Challenge</h1>
+                <p class="ppt-authors"></p>
+                <div class="header-logos"></div>
+            </header>
+
+            <!-- 装饰横条 -->
+            <div class="decorative-bar">
+                <div class="bar-segment-long"></div>
+                <div class="bar-segment-square"></div>
+                <div class="bar-segment-square"></div>
+                <div class="bar-segment-square"></div>
+                <div class="bar-segment-square"></div>
+                <div class="bar-segment-square"></div>
+                <div class="bar-segment-square"></div>
+                <div class="bar-segment-square"></div>
+            </div>
+
+            <main>
+                <section class="layout-block" data-section-id="section_1">
+                    <p class="text-block">
+                        The Clean Water Act (CWA) established a comprehensive Federal/State scheme for controlling the introduction of pollutants into the Nation’s water.
+                    </p>
+                </section>
+
+                <section class="layout-block" data-section-id="section_2">
+                    <div class="figure-container">
+                        <img src="./fig_1.png" 
+                             style="width: 750px; height: 720px;" 
+                             data-semantic="插图显示一名渔夫在粉色圆形背景前钓鱼，一条大鱼正从水中跃起">
+                    </div>
+                </section>
+            </main>
+
+            <!-- 页脚 -->
+            <div class="footer-info">
+                <div class="case-text">
+                    Case S-5_L-R<br>eactor
+                </div>
+                <div class="page-number">2</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poster Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            width: 3000px;
+            height: 2000px;
+            box-sizing: border-box;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 60px 80px;
+        }
+        .title-area h1 {
+            font-size: 90px;
+            margin: 0;
+        }
+        .title-area p {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-placeholder {
+            width: 250px;
+            height: 120px;
+            border: 1px solid #ccc;
+            margin-left: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+        }
+        .main-content {
+            display: flex;
+            padding: 0 80px;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        .section-header {
+            background-color: #c0504d;
+            color: white;
+            font-size: 42px;
+            padding: 15px 20px;
+            margin: 30px 0 20px 0;
+            font-weight: bold;
+        }
+        .text-block {
+            font-size: 26px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .caption {
+            font-size: 18px;
+            line-height: 1.3;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+        .ref-block {
+            font-size: 18px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title-area">
+            <h1>[Re] Graph Edit Networks</h1>
+            <p>Vid Stropnik, Maruša Oražem</p>
+        </div>
+        <div class="logo-area">
+            <div class="logo-placeholder">Data Science @ UL-FRI</div>
+            <div class="logo-placeholder">University of Ljubljana</div>
+            <div class="logo-placeholder">NEURAL INFORMATION PROCESSING SYSTEMS</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Column 1 -->
+        <div class="column" style="width: 980px; margin-right: 60px;">
+            <div class="section-header">Reproduced: Paaßen et. al. (ICLR, 2021)</div>
+            <div class="text-block">
+                The reproduced paper [bpa21] proposes a novel output layer for graph neural networks (GNNs), the graph edit network called (GEN). This layer yields a sequence of graph edits: node insertions, node deletions, node replacements, edge insertions and edge deletions. These finite sequences of edits, also referred to as edit scripts are general enough to describe any graph-to-graph transformation and are not only very interpretable for humans, but also computationally efficient. These properties establish GENs as a useful tool for work in the domain of graph time series prediction under the Markovian assumption.
+            </div>
+            <img src="./fig_1.jpg" style="width: 958px; height: 192px;">
+            <div class="text-block" style="margin-top: 30px;">
+                The authors empirically underpin their theoretical claims about GENs by showing that they perform well in a series of graph time-series prediction tests. They define several data generating processes (DGPs), from which the GEN attempts to learn the user-defined mapping functions. Our work reproduces these experiments and evaluates the suitability of the DGPs for the conclusions made in the original paper.
+            </div>
+            <div class="section-header">DGPs & Tests</div>
+            <div class="text-block">
+                The paper evaluated several key claims on synthetic datasets, generated with data generating rules, interpreted in the following figures.
+            </div>
+            <img src="./fig_2.jpg" style="width: 980px; height: 145px;">
+            <div class="caption">Graph cycles: A trivial set of user defined graph transformations without any logical rules.</div>
+            <img src="./fig_3.jpg" style="width: 980px; height: 262px;">
+            <div class="caption">Degree rules: A set of rules for node & edge insertions. (nodes with degree ≥ 3 are deleted; nodes with common neighbor are connected; where these do not apply, add a new neighboring node.)</div>
+            <img src="./fig_4.jpg" style="width: 699px; height: 159px; align-self: center;">
+            <div class="caption">Conway's Game of Life: A series based on node edits (editing Alive/Dead binary feature) on a lattice graph, adhering to Conway's Game of Life [Gar70].</div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column" style="width: 1012px; margin-right: 60px;">
+            <img src="./fig_5.jpg" style="width: 1012px; height: 230px;">
+            <div class="caption">Boolean Formulae: Random Boolean formulae, simplified with rules like x ∧ ¬x → ⊥, until tree cannot be simplified.</div>
+            <img src="./fig_6.jpg" style="width: 908px; height: 161px; align-self: center;">
+            <div class="caption">Peano Addition: Series of tree graphs, modelling addition problems via Peano's definition of addition (m + succ(n) = succ(m) + n and m + 0 = m) using one-hot node features.</div>
+            <div class="section-header">[Re] Original experimental claims</div>
+            <div class="text-block">
+                [bpa21] makes three experimental conclusions based on a series of experiments. ✓ symbols below denote a successful reproduction of results.<br>
+                ✓ GENs outperform baselines (Variational Graph Autoencoders [KW16] & Variational Graph Recurrent nets [HHN19]) on time-series prediction tasks, generated from Graph Cycles, Degree Rules & Game of Life DGPs.<br>
+                ✓ GENs achieve 100% accuracy on time-series prediction tasks on graphs, generated from Boolean Formulae & Peano Addition DGPs.<br>
+                ? The runtime of forward passes of a GEN scales sub-quadratically as the number of nodes in a graph increases. The runtime of training back-passes scales approximately linearly.
+            </div>
+            <img src="./fig_7.jpg" style="width: 990px; height: 330px;">
+            <div class="caption">The runtime of graph scale dependence. Results for the backward passes are not consistent with the claim.</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <div style="width: 455px;">
+                    <img src="./table_1.jpg" style="width: 455px; height: 252px;">
+                    <div class="caption" style="text-align: left; font-size: 16px;">The runtime scaling evaluation was carried out on the ArXiv citation network [LKF05] with the graph variants generated by a different number of months considered.</div>
+                </div>
+                <div style="width: 473px;">
+                    <img src="./fig_8.jpg" style="width: 473px; height: 253px;">
+                    <div class="caption" style="text-align: left; font-size: 16px;">While the focus here is speed, we have to note that the experiment in the original paper fails to optimize the criterion loss, thus casting doubt on the results.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column" style="width: 980px;">
+            <div class="section-header">Improving the experimental setup</div>
+            <div class="text-block">
+                The facts that graph-to-graph transitions are deterministic and that the space of unique graphs that may be generated by the DGPs is limited (as shown in the table below), arose some concern about the experimental setup: Does the solver generalize, or does it simply memorize the graph-to-graph transitions?
+            </div>
+            <img src="./table_2.jpg" style="width: 960px; height: 145px;">
+            <div class="text-block" style="margin-top: 20px;">
+                We reproduced the claims (1) and (2) with the following adjustments:<br>
+                • Increased cardinality of test time series (5 -> 100)<br>
+                • Ensured no duplicates between train & test set<br>
+                • Used established random graph generation methods (ie. Erdős–Rényi)
+            </div>
+            <div class="text-block">
+                We noticed that most sampled graphs in the tree dynamic graph experiments were un-simplifyable, so constraints were relaxed here.
+            </div>
+            <div class="text-block" style="color: #c0504d; font-weight: bold; text-align: center; font-size: 32px;">
+                Results were generally worse, but still within a reasonable margin of error.
+            </div>
+            <img src="./fig_9.jpg" style="width: 948px; height: 334px;">
+            <div class="section-header">Concluding reproduction notes</div>
+            <div class="text-block">
+                Our experimental results conclusively show that most of the claims in the original work hold. However, our work beyond the original paper emphasizes the need to pay attention to the experimental setup, especially when working with synthetically generated data, sampled from functions, rather than gathered from an external system.
+            </div>
+            <div style="margin-top: 30px;">
+                <div style="font-size: 28px; font-weight: bold; margin-bottom: 15px;">References</div>
+                <div class="ref-block">[bpa21] Paaßen, Benjamin, et al. "Graph edit networks." In: International Conference on Learning Representations. 2020</div>
+                <div class="ref-block">[Gar70] Martin Gardner. "The fantastic combinations of John Conway's new solitaire game of life." In: Sc. Am., 223:20-123, 1970</div>
+                <div class="ref-block">[KW16] Thomas N. Kipf and Max Welling. "Variational graph auto-encoders" In: Proceedings of the NIPS 2016 Workshop on Bayesian Deep Learning, 2016</div>
+                <div class="ref-block">[HHN19] Hajiramezanali, Ehsan, et. al. "Variational graph recurrent neural networks." In: Proceedings of the 32nd International Conference on Advances in Neural Information Processing Systems (NeurIPS 2019), pp. 10700-10710, 2019</div>
+                <div class="ref-block">[LKF05] Leskovec, Jure, Jon Kleinberg, and Christos Faloutsos. "Graphs over time: densification laws, shrinking diameters and possible explanations." In: Proceedings of the eleventh ACM SIGKDD international conference on Knowledge discovery in data mining. 2005.</div>
+            </div>
+            <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                <div style="width: 180px; height: 180px; border: 1px solid #000; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 12px;">QR Code Placeholder</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A View From Somewhere: Human-Centric Face Representations</title>
+    <style>
+        :root {
+            --primary-bg: #ffffff;
+            --section-gap: 30px;
+            --column-gap: 40px;
+            --text-color: #000000;
+            --header-font-size: 48px;
+            --section-header-size: 28px;
+            --body-font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+
+        #poster-canvas {
+            max-width: 2400px; /* Based on typical high-res poster width */
+            width: 100%;
+            margin: 0 auto;
+            background-color: var(--primary-bg);
+            padding: 60px;
+            box-sizing: border-box;
+            box-shadow: 0 0 50px rgba(0,0,0,0.2);
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 4px solid #000;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .poster-title {
+            font-size: var(--header-font-size);
+            margin: 0 0 15px 0;
+            font-weight: bold;
+        }
+
+        .poster-authors {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 18px;
+        }
+
+        .header-logos .affiliations {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-logos .contact {
+            font-family: monospace;
+            margin-top: 10px;
+        }
+
+        .brand-logo {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 80px;
+        }
+
+        /* Layout Grid */
+        .main-layout {
+            display: flex;
+            flex-direction: row;
+            gap: var(--column-gap);
+            align-items: flex-start;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--section-gap);
+        }
+
+        /* Section Styles */
+        .layout-block {
+            width: 100%;
+        }
+
+        .section-header {
+            font-size: var(--section-header-size);
+            border-bottom: 2px solid #ccc;
+            margin: 0 0 15px 0;
+            padding-bottom: 5px;
+            color: #000;
+            text-transform: none;
+        }
+
+        .text-block {
+            font-size: var(--body-font-size);
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .text-block b {
+            font-weight: bold;
+        }
+
+        /* Row Container for Horizontal Layouts */
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        /* Figure Styles */
+        .figure-container {
+            width: 100%;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .figure-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .figure-caption {
+            font-size: 14px;
+            color: #444;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* List Styles */
+        ul {
+            margin: 0 0 15px 20px;
+            padding: 0;
+        }
+
+        .list-item {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .main-layout {
+                flex-direction: column;
+            }
+            .row-container {
+                flex-direction: column;
+            }
+            #poster-canvas {
+                padding: 20px;
+            }
+            .poster-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">A View From Somewhere: Human-Centric Face Representations</h1>
+        <p class="poster-authors">Jerone T. A. Andrews<sup>1</sup>, Przemyslaw law Joniak<sup>2</sup>, Alice Xiang<sup>3</sup></p>
+        <div class="header-logos">
+            <div class="affiliations">
+                <span><sup>1</sup>Sony AI, Tokyo</span>
+                <span><sup>2</sup>University of Tokyo, Tokyo</span>
+                <span><sup>3</sup>Sony AI, New York</span>
+            </div>
+        </div>
+        <div class="contact">jerone.andrews@sony.com</div>
+        <!-- Visual补全: Sony AI Logo -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Sony_logo.svg/1200px-Sony_logo.svg.png" alt="Sony AI" class="brand-logo" style="filter: grayscale(1) brightness(0);">
+        <div style="position:absolute; right:0; top:60px; font-weight:bold; font-size:40px;">Sony AI</div>
+    </header>
+
+    <main class="main-layout">
+        <!-- Column 1: Motivation -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_1">
+                <h2 class="section-header">Motivation</h2>
+                
+                <h3 style="font-size: 20px; margin: 10px 0;">Dataset Bias</h3>
+                <p class="text-block">
+                    Dataset bias can result in models that are discriminatory or depend on spurious correlations. For instance, a face image restoration model may "hallucinate" features correlated with oversampled subgroups, resulting in the erasure of minority groups.
+                </p>
+                
+                <div class="row-container">
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="fig_1" alt="Upsampling via latent space exploration" style="aspect-ratio: 462/176;">
+                    </div>
+                    <div class="figure-container" style="flex: 1;">
+                        <img src="fig_2" alt="Downsample and Upsample comparison" style="aspect-ratio: 449/174;">
+                    </div>
+                </div>
+                <p class="text-block" style="font-size: 14px; font-style: italic;">
+                    Prior to learning, human-centric image dataset users should <b>evaluate the diversity of the data</b>.
+                </p>
+
+                <h3 style="font-size: 20px; margin: 20px 0 10px 0;">Parity and Diversity</h3>
+                <p class="text-block">
+                    The canonical approach is to categorize people using demographic labels. However, evaluating diversity by examining counts across subgroups <b>fails to reflect the continuous nature of human phenotypic diversity</b> (e.g., skin tone is often reduced to light vs. dark). Moreover, such approaches often <b>deny multi-group membership</b> (e.g., erasing multi-ethnic individuals).
+                </p>
+                
+                <div class="figure-container">
+                    <img src="fig_3" alt="Subgroup diversity representation" style="aspect-ratio: 934/423;">
+                </div>
+
+                <h3 style="font-size: 20px; margin: 20px 0 10px 0;">Unknown Label Distributions</h3>
+                <p class="text-block">
+                    Most human-centric image datasets are web-scraped, lacking ground-truth information about the image subjects. Therefore, researchers typically choose certain attributes they consider to be relevant for human diversity and use human annotators to infer them. This is difficult for ill-defined and highly changeable social constructs such as race and gender. <b>Observational labels risk not only encoding stereotypes, but reifying and propagating them beyond "their cultural context"</b>. Furthermore, discrepancies between observed and self-identified attributes can <b>invalidate an image subject's self-image and identity</b>.
+                </p>
+                
+                <div class="figure-container">
+                    <img src="fig_4" alt="Annotator labeling process" style="aspect-ratio: 962/198;">
+                </div>
+            </section>
+        </div>
+
+        <!-- Column 2: Contributions -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_2">
+                <h2 class="section-header">Contributions</h2>
+                <p class="text-block">
+                    Motivated by issues inherent to categorical labels, we aim to develop a tool that can evaluate the <b>visual diversity</b> of faces in unlabeled datasets. We do so without ever asking an annotator to explicitly categorize a person.
+                </p>
+
+                <h3 style="font-size: 20px; margin: 10px 0;">Face Similarity (FAX) Dataset</h3>
+                <p class="text-block">
+                    We introduce a novel dataset, FAX, containing 638,180 odd-one-out face similarity judgments over 4,921 faces (stimulus set). Judgments correspond to the odd-one-out (i.e., least similar) face in a triplet, and are associated with the identifier and demographic attributes of the annotator who made the judgment.
+                </p>
+                
+                <div class="figure-container">
+                    <img src="fig_5" alt="FAX Dataset Triplet and Annotator Info" style="aspect-ratio: 1001/378;">
+                </div>
+
+                <h3 style="font-size: 20px; margin: 20px 0 10px 0;">Model of Conditional Decision-Making</h3>
+                <p class="text-block">
+                    We introduce a model that learns to predict human judgments of face similarity conditioned on the annotator who generated the judgment. The conditions are realized using annotator masks.
+                </p>
+                
+                <div class="figure-container">
+                    <img src="fig_6" alt="Model Architecture" style="aspect-ratio: 1009/387;">
+                </div>
+
+                <div class="figure-container">
+                    <img src="fig_7" alt="Loss Function Equation" style="aspect-ratio: 885/116;">
+                </div>
+
+                <p class="text-block">
+                    A face can exhibit certain characteristics to a greater or lesser extent than others, even within the same subpopulation. Therefore, we constrain our model to learn face embeddings that are <b>continuous, non-negative (human-interpretable), and sparse</b> by minimizing:
+                </p>
+                <p class="text-block" style="text-align: center; font-style: italic;">
+                    where p(k|a) is the predicted probability that face x_k is the odd-one-out according to annotator a.
+                </p>
+            </section>
+        </div>
+
+        <!-- Column 3: Results -->
+        <div class="column">
+            <section class="layout-block" data-section-id="section_3">
+                <h2 class="section-header">Results</h2>
+                
+                <h3 style="font-size: 20px; margin: 10px 0;">Interpretability</h3>
+                <p class="text-block">
+                    From learning on FAX, we note the materialization of distinct dimensions coinciding with commonly defined <b>demographic subgroups</b>, i.e., Male, Female, Black, White, East Asian, South Asian, and Elderly. In addition, separate dimensions surface for <b>face and hair morphology</b>, i.e., Wide Face, Long Face, Smiling Expression, Neutral Expression, Balding, Facial Hair, and Dyed Hair.
+                </p>
+                
+                <div class="row-container" style="gap: 5px; flex-wrap: wrap; justify-content: center;">
+                    <div class="figure-container" style="width: 14%;"><img src="fig_8" alt="South Asian"><div class="figure-caption">South Asian</div></div>
+                    <div class="figure-container" style="width: 14%;"><img src="fig_9" alt="Female"><div class="figure-caption">Female</div></div>
+                    <div class="figure-container" style="width: 14%;"><img src="fig_10" alt="Smiling"><div class="figure-caption">Smiling</div></div>
+                    <div class="figure-container" style="width: 14%;"><img src="fig_11" alt="Wide Face"><div class="figure-caption">Wide Face</div></div>
+                    <div class="figure-container" style="width: 14%;"><img src="fig_12" alt="Elderly"><div class="figure-caption">Elderly</div></div>
+                    <div class="figure-container" style="width: 14%;"><img src="fig_13" alt="Balding"><div class="figure-caption">Balding</div></div>
+                </div>
+
+                <h3 style="font-size: 20px; margin: 20px 0 10px 0;">Predicting Novel Similarity Judgments</h3>
+                <div class="row-container">
+                    <div class="figure-container" style="flex: 1.5;">
+                        <img src="table_1" alt="Model Performance Table" style="aspect-ratio: 494/225;">
+                    </div>
+                    <div class="text-block" style="flex: 1; font-size: 13px;">
+                        We report odd-one-out predictive accuracy; and, Spearman's r between the strictly upper triangular model- and human-generated similarity matrices. Entry (i,j) in the human-generated similarity matrix corresponds to the fraction of triplets containing (i,j), where neither was judged as the odd-one-out.
+                    </div>
+                </div>
+
+                <h3 style="font-size: 20px; margin: 20px 0 10px 0;">Annotator Bias</h3>
+                <div class="row-container">
+                    <div class="figure-container" style="flex: 1.5;">
+                        <img src="table_2" alt="Annotator Attribute Table" style="aspect-ratio: 582/168;">
+                    </div>
+                    <div class="text-block" style="flex: 1; font-size: 13px;">
+                        Using 10-fold cross validation, we train linear SVMs to discriminate between annotator masks from two different annotator subgroups.
+                    </div>
+                </div>
+
+                <h3 style="font-size: 20px; margin: 20px 0 10px 0;">Comparative Diversity Auditing and Binary Attribute Classification</h3>
+                <div class="figure-container">
+                    <img src="table_3" alt="Comparative Diversity Auditing Table" style="aspect-ratio: 1002/608;">
+                </div>
+                <p class="text-block" style="font-size: 13px;">
+                    FAX dimensions result in the identification of data subsets with competitive attribute disparity scores. In particular, Spearman's r evidences that FAX disparity scores are highly correlated with the ground-truth label disparity.
+                </p>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Replicated Slide</title>
+    <style>
+        /* 浏览器重置 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }
+
+        /* 视口容器 */
+        .ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 画布容器 - 固定尺寸 1280x960 (4:3比例) */
+        .ppt-slide #ppt-canvas {
+            width: 1280px;
+            height: 960px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* 头部元数据样式 */
+        .ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .ppt-slide .ppt-title {
+            color: #008000; /* 绿色标题 */
+            font-size: 48px;
+            font-weight: normal;
+            text-decoration: underline;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .ppt-slide .ppt-authors {
+            display: none; /* 本页无作者信息 */
+        }
+
+        .ppt-slide .header-logos {
+            display: none; /* 本页无Logo信息 */
+        }
+
+        /* 逻辑区块样式 */
+        .ppt-slide main {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .ppt-slide .layout-block {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ppt-slide .section-header {
+            display: none; /* 本页无二级标题 */
+        }
+
+        /* 列表与文本样式 */
+        .ppt-slide ul {
+            margin: 0;
+            padding-left: 40px;
+        }
+
+        .ppt-slide .list-item {
+            color: #0000FF; /* 蓝色正文 */
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 35px;
+            list-style-type: disc;
+        }
+
+        .ppt-slide .text-block {
+            color: #0000FF;
+            font-size: 34px;
+            margin: 0;
+        }
+
+        /* 图表与公式容器 */
+        .ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .ppt-slide .row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* 公式图片特定样式 */
+        .ppt-slide .equation-main {
+            margin-top: 20px;
+        }
+
+        .ppt-slide .equation-sub {
+            margin-top: 40px;
+        }
+
+        /* 页码 */
+        .ppt-slide .footer-page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        /* 辅助类：行内公式对齐 */
+        .ppt-slide .inline-symbol {
+            vertical-align: middle;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ppt-slide">
+    <div id="ppt-canvas">
+        <!-- 头部元数据 -->
+        <header>
+            <h1 class="ppt-title">RF phase shaking</h1>
+            <p class="ppt-authors"></p>
+            <div class="header-logos"></div>
+        </header>
+
+        <!-- 主体内容 -->
+        <main>
+            <!-- 第一部分：文字描述 -->
+            <section class="layout-block" data-section-id="section_1">
+                <ul>
+                    <li class="list-item">
+                        It is known that the distribution function tends to flatten inside resonance separatrices. Thus, the desired change of the distribution may be achieved by introducing a proper resonance for small amplitude particles. Due to nonlinearity of the synchrotron motion, large amplitude particles could be only slightly disturbed by that.
+                    </li>
+                    <li class="list-item">
+                        Technically, easiest way for that would be modulation of the RF phase with a synchrotron frequency for small amplitude particles. Then, a width of the affected area is determined by an amplitude of that phase modulation 
+                        <img src="./slide_2_fig_1.jpg" class="inline-symbol" style="width: 30px; height: 38px;" data-semantic="相位调制幅度符号phi_0"> .
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 第二部分：核心公式组 -->
+            <section class="layout-block" data-section-id="section_2">
+                <div class="figure-container equation-main">
+                    <img src="./slide_2_fig_2.jpg" style="width: 647px; height: 213px;" data-semantic="同步运动离散差分方程组">
+                </div>
+            </section>
+
+            <!-- 第三部分：辅助公式 -->
+            <section class="layout-block" data-section-id="section_3">
+                <div class="figure-container equation-sub">
+                    <img src="./slide_2_fig_3.jpg" style="width: 250px; height: 90px;" data-semantic="时间步长定义公式delta_t">
+                </div>
+            </section>
+        </main>
+
+        <!-- 页码 -->
+        <div class="footer-page-number">3</div>
+    </div>
+</div>
+
+</body>
+</html>

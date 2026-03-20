@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Slide Replicated</title>
+    <style>
+        /* 浏览器重置与视口适配 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 视口容器：确保画布居中 */
+        .ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 画布容器：固定尺寸与物理布局 */
+        .ppt-slide #ppt-canvas {
+            width: 960px;
+            height: 720px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* 头部元数据样式 */
+        .ppt-slide header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .ppt-slide .ppt-title {
+            color: #008000; /* 绿色标题 */
+            font-size: 36px;
+            font-weight: normal;
+            text-decoration: underline;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 逻辑区块样式 */
+        .ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* 列表项目样式 */
+        .ppt-slide ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        .ppt-slide .list-item {
+            color: #0000FF; /* 蓝色正文 */
+            font-size: 28px;
+            line-height: 1.3;
+            margin-bottom: 45px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        /* 自定义项目符号 */
+        .ppt-slide .list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0000FF;
+        }
+
+        /* 数学公式微调 */
+        .ppt-slide .math-text {
+            font-style: italic;
+            font-family: "Times New Roman", serif;
+        }
+
+        /* 页码样式 */
+        .ppt-slide .footer-info {
+            position: absolute;
+            bottom: 30px;
+            right: 50px;
+            color: #000;
+            font-size: 24px;
+        }
+
+        /* 响应式压缩：防止溢出 */
+        @media (max-height: 720px) {
+            .ppt-slide .list-item {
+                margin-bottom: 30px;
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="ppt-slide">
+    <div id="ppt-canvas">
+        <!-- 头部元数据 -->
+        <header>
+            <h1 class="ppt-title">Motivation</h1>
+        </header>
+
+        <!-- 核心内容区域 -->
+        <main>
+            <section class="layout-block" data-section-id="section_1">
+                <ul>
+                    <li class="list-item">
+                        Tevatron bunches are known to demonstrate longitudinal instability sometimes called as “dancing bunches” [1]. Similar phenomena happen at other machines as well.
+                    </li>
+                    <li class="list-item">
+                        There are some theoretical indications showing that this instability is sensitive to a derivative of the phase space density <span class="math-text">f '(J)=df/dJ</span> at small actions, <span class="math-text">f '(J&rarr;0)</span>.
+                    </li>
+                    <li class="list-item">
+                        Distributions with flat or even positive slope of the distribution density at small actions appear to be more beneficial [2].
+                    </li>
+                    <li class="list-item">
+                        However, IBS always tries to make this derivative negative, <span class="math-text">df/dJ &approx; -f/J<sub>rms</sub></span>. Thus, the problem emerges - is it possible to zero this derivative or even change its sign by one or another meaning?
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- 页码 -->
+        <div class="footer-info">
+            2
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

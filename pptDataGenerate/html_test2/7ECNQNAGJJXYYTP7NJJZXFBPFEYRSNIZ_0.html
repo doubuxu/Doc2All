@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Replicate</title>
+    <style>
+        /* 浏览器重置 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #333;
+            font-family: "Arial", "Helvetica", sans-serif;
+        }
+
+        /* 视口容器 */
+        .ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 画布容器 - 固定尺寸 1024x768 (标准 4:3 比例) */
+        .ppt-slide #ppt-canvas {
+            width: 1024px;
+            height: 768px;
+            position: relative;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 40px;
+        }
+
+        /* 头部元数据样式 */
+        .ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            width: 100%;
+            position: relative;
+        }
+
+        /* Logo 布局 - 位于左上角 */
+        .ppt-slide .header-logos {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ppt-slide .header-logos img {
+            object-fit: contain;
+        }
+
+        /* 标题样式 */
+        .ppt-slide .ppt-title {
+            color: #000080; /* 深蓝色 */
+            font-size: 42px;
+            font-weight: normal;
+            text-align: center;
+            margin: 0 0 60px 0;
+            width: 90%;
+            line-height: 1.2;
+        }
+
+        /* 作者样式 */
+        .ppt-slide .ppt-authors {
+            color: #000000;
+            font-size: 36px;
+            font-family: "Times New Roman", serif;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* 逻辑区块样式 */
+        .ppt-slide main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 200px; /* 固定高度防止溢出 */
+        }
+
+        .ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .ppt-slide .text-block {
+            margin: 0;
+            padding: 0;
+            font-size: 28px;
+            color: #000000;
+            text-align: center;
+        }
+
+        /* 日期特定样式 */
+        .ppt-slide .date-container {
+            margin-top: 40px;
+        }
+
+        /* 页码样式 */
+        .ppt-slide .footer-info {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            display: flex;
+            justify-content: flex-end;
+            width: 100px;
+        }
+
+        .ppt-slide .page-number {
+            font-size: 20px;
+            color: #000000;
+        }
+
+        /* 辅助类 */
+        .ppt-slide .column {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ppt-slide">
+    <div id="ppt-canvas">
+        <!-- 头部区域：包含Logo、标题和作者 -->
+        <header>
+            <div class="header-logos">
+                <img src="./slide_0_fig_1.jpg" style="width: 100px; height: 100px;" data-semantic="Fermilab 机构标志">
+            </div>
+            
+            <h1 class="ppt-title">RF phase shaking for bunch distribution modification</h1>
+            
+            <p class="ppt-authors">Alexey Burov</p>
+        </header>
+
+        <!-- 主体区域：包含日期 -->
+        <main>
+            <div class="column">
+                <section class="layout-block" data-section-id="section_1">
+                    <div class="date-container">
+                        <p class="text-block">June 11, 2010</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- 底部区域：页码 -->
+        <div class="footer-info">
+            <p class="text-block page-number">1</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Slide - Conclusions</title>
+    <style>
+        /* 浏览器重置 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 视口容器 */
+        .ppt-slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 画布容器 - 固定尺寸 960x720 (4:3) */
+        .ppt-slide #ppt-canvas {
+            width: 960px;
+            height: 720px;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* 头部元数据 */
+        .ppt-slide header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .ppt-slide .ppt-title {
+            font-size: 42px;
+            color: #008000; /* 绿色 */
+            text-decoration: underline;
+            margin: 0;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        /* 逻辑区块 */
+        .ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ppt-slide .layout-block {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+        }
+
+        /* 列表样式 */
+        .ppt-slide ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ppt-slide .list-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 35px;
+            font-size: 28px;
+            line-height: 1.3;
+            font-weight: 500;
+        }
+
+        /* 自定义圆点 */
+        .ppt-slide .list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 40px;
+            line-height: 1;
+            top: -5px;
+        }
+
+        /* 颜色区分 */
+        .ppt-slide .text-blue {
+            color: #0000FF;
+        }
+
+        .ppt-slide .text-red {
+            color: #FF0000;
+        }
+
+        /* 页码 */
+        .ppt-slide .footer-page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 24px;
+            color: #000;
+        }
+
+        /* 辅助类：隐藏不必要的容器 */
+        .ppt-slide .header-logos, .ppt-slide .ppt-authors {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="ppt-slide">
+        <div id="ppt-canvas">
+            <header>
+                <h1 class="ppt-title">Conclusions</h1>
+                <p class="ppt-authors"></p>
+                <div class="header-logos"></div>
+            </header>
+
+            <main>
+                <section class="layout-block" data-section-id="section_1">
+                    <ul>
+                        <li class="list-item text-blue">
+                            RF phase modulation is clearly working tool for flattening of the distribution function. From this point of view, it should help to stabilize longitudinal instability [2].
+                        </li>
+                        <li class="list-item text-blue">
+                            Although RF phase modulation itself excites coherent motion at some level, it should not make a significant problem. Indeed, this RF modulation is needed only for ~ 100 synchrotron revolutions or so, and after that it has to be switched off. The provided distribution should be stable, so any coherent motion should decay.
+                        </li>
+                        <li class="list-item text-blue">
+                            The simulation mapping does not take into account the wake field. Wakes lead to potential well distortion, depressing synchrotron frequencies, so slightly reducing the required frequency of the RF modulation.
+                        </li>
+                        <li class="list-item text-red">
+                            Continuing beam studies are needed with the bunch profile measurements.
+                        </li>
+                    </ul>
+                </section>
+            </main>
+
+            <div class="footer-page-number">8</div>
+        </div>
+    </div>
+</body>
+</html>

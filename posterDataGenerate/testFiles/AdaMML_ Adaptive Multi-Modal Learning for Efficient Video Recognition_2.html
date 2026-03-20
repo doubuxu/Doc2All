@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdaMML Academic Poster</title>
+    <style>
+        :root {
+            --primary-blue: #1a4a7c;
+            --text-dark: #333;
+            --bg-white: #ffffff;
+            --section-gap: 2.5rem;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        #poster-canvas {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: var(--section-gap);
+        }
+
+        .poster-title {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin: 0 0 1rem 0;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .poster-authors {
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #666;
+            width: 100%;
+        }
+
+        .header-logos div {
+            padding: 0 10px;
+        }
+
+        /* Main Layout */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: var(--section-gap);
+        }
+
+        .layout-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-header {
+            font-size: 2.5rem;
+            border-bottom: none;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .text-block {
+            font-size: 1.25rem;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Figure & Table Containers */
+        .figure-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .references-text {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .references-text p {
+            margin: 0.3rem 0;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            #poster-canvas {
+                padding: 20px;
+            }
+            .poster-title {
+                font-size: 2.2rem;
+            }
+            .section-header {
+                font-size: 1.8rem;
+            }
+            .row-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="poster-canvas">
+    <header>
+        <h1 class="poster-title">AdaMML: Adaptive Multi-Modal Learning for Efficient Video Recognition</h1>
+        <p class="poster-authors">Rameswar Panda, Chun-Fu (Richard) Chen, Quanfu Fan, Ximeng Sun, Kate Saenko, Aude Oliva, Rogerio Feris</p>
+        <div class="header-logos">
+            <div>MIT-IBM Watson AI Lab</div>
+            <div>Boston University</div>
+            <div>MIT</div>
+            <div>ICCV 2021</div>
+            <div>github.com/IBM/AdaMML</div>
+            <img src="./fig_1.jpg" data-semantic="Main architecture diagram showing Policy Network and Recognition Network with multi-modal inputs (RGB, Difference, Audio, Optical Flow)" style="aspect-ratio: 1594/854; margin-top: 2rem;">
+        </div>
+    </header>
+
+    <main>
+        <section class="layout-block" data-section-id="section_1">
+            <h2 class="section-header">Abstract</h2>
+            <p class="text-block">
+                Multi-modal learning, which focuses on utilizing various modalities to improve the performance of a model, is widely used in video recognition. While traditional multi-modal learning offers excellent recognition results, its computational expense limits its impact for many real-world applications. In this paper, we propose an adaptive multi-modal learning framework, called AdaMML, that selects on-the-fly the optimal modalities for each segment conditioned on the input for efficient video recognition. Specifically, given a video segment, a multi-modal policy network is used to decide what modalities should be used for processing by the recognition model, with the goal of improving both accuracy and efficiency. We efficiently train the policy network jointly with the recognition model using standard back-propagation. Extensive experiments on four challenging diverse datasets demonstrate that our proposed adaptive approach yields 35%-55% reduction in computation when compared to the traditional baseline that simply uses all the modalities irrespective of the input, while also achieving consistent improvements in accuracy over the state-of-the-art methods.
+            </p>
+        </section>
+
+        <section class="layout-block" data-section-id="section_2">
+            <h2 class="section-header">Qualitative Results</h2>
+            <div class="figure-container">
+                <img src="./fig_2.jpg" data-semantic="Qualitative examples of AdaMML selecting different modalities (RGB, Audio, Flow) for various actions like Fencing, Playing Piano, Chopping Wood, Ripping Paper, and Playing Accordion" style="aspect-ratio: 1599/860;">
+            </div>
+            <p class="text-block" style="text-align: center; font-style: italic;">
+                Qualitative examples showing the effectiveness of AdaMML in selecting the right modalities per video segment (marked by green borders)
+            </p>
+        </section>
+
+        <section class="layout-block" data-section-id="section_3">
+            <h2 class="section-header">Paper & Code</h2>
+            <div class="row-container">
+                <div class="figure-container" style="flex: 0 0 400px;">
+                    <img src="./fig_3.jpg" data-semantic="Thumbnail of the AdaMML architecture diagram" style="aspect-ratio: 453/132;">
+                </div>
+                <div class="references-text" style="flex: 1;">
+                    <p><strong>Rameswar Panda*, Chun-Fu (Richard) Chen*, Quanfu Fan, Ximeng Sun, Kate Saenko, Aude Oliva, Rogerio Feris</strong></p>
+                    <p style="color: var(--primary-blue); font-weight: bold;">AdaMML: Adaptive Multi-Modal Learning for Efficient Video Recognition</p>
+                    <p><em>International Conference on Computer Vision (ICCV), 2021</em></p>
+                    <p>[PDF] [Supp] [Poster] [Slides] [Code]</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>

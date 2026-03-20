@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Poster Layout</title>
+    <style>
+        body { margin: 0; padding: 0; background: #f0f0f0; }
+        #poster-canvas {
+            position: relative;
+            width: 4073px;
+            height: 2880px;
+            background: #FFFFFF;
+            font-family: sans-serif;
+            color: #000000;
+            overflow: hidden;
+        }
+        p, h1, h2, h3, span { margin: 0; padding: 0; line-height: 1.2; }
+        img { object-fit: contain; }
+    </style>
+</head>
+<body>
+    <div id="poster-canvas">
+        <!-- Main Title -->
+        <h1 data-type="header" data-raw-bbox="[280, 40, 3800, 150]" 
+            style="position: absolute; left: 280px; top: 40px; width: 3520px; height: 110px; font-size: 95px; text-align: center; font-weight: bold;">
+            Flexible Attention-Based Multi-Policy Fusion for Efficient Deep Reinforcement Learning
+        </h1>
+        
+        <!-- Authors and Affiliations -->
+        <p data-type="text" data-raw-bbox="[1300, 160, 2800, 210]" 
+           style="position: absolute; left: 1300px; top: 160px; width: 1500px; height: 50px; font-size: 48px; text-align: center;">
+            Zih-Yun Chiu*, Yi-Lin Tuan*, William Yang Wang, Michael C. Yip
+        </p>
+        <p data-type="text" data-raw-bbox="[1100, 220, 3000, 270]" 
+           style="position: absolute; left: 1100px; top: 220px; width: 1900px; height: 50px; font-size: 42px; text-align: center;">
+            University of California San Diego, &nbsp; University of California Santa Barbara
+        </p>
+
+        <!-- Column 1: Why Knowledge-Grounded Reinforcement Learning? -->
+        <div data-type="header" data-raw-bbox="[40, 350, 1050, 650]" 
+             style="position: absolute; left: 40px; top: 350px; width: 1010px; height: 300px; font-size: 75px; font-weight: bold;">
+            Why Knowledge-Grounded Reinforcement Learning?
+        </div>
+        
+        <p data-type="text" data-raw-bbox="[80, 750, 1000, 850]" 
+           style="position: absolute; left: 80px; top: 750px; width: 920px; height: 100px; font-size: 45px;">
+            • What learning capabilities do humans possess, yet RL agents still missing? [1,2]
+        </p>
+        <p data-type="text" data-raw-bbox="[80, 880, 1000, 980]" 
+           style="position: absolute; left: 80px; top: 880px; width: 920px; height: 100px; font-size: 45px;">
+            • <b>Knowledge-Acquirable:</b> Develop unique policies by observing.
+        </p>
+        <p data-type="text" data-raw-bbox="[80, 1010, 1000, 1150]" 
+           style="position: absolute; left: 80px; top: 1010px; width: 920px; height: 140px; font-size: 45px;">
+            • <b>Compositional:</b> Combine policies from multiple sources to form a knowledge set.
+        </p>
+
+        <img data-type="table" data-raw-bbox="[61, 1362, 496, 1632]" data-semantic="The image illustrates a conceptual framework linking 'Policy' to observed outcomes and solutions with emotional states."
+             src="./fig_table_1.jpg" style="position: absolute; left: 61px; top: 1362px; width: 435px; height: 270px;">
+        
+        <img data-type="table" data-raw-bbox="[529, 1362, 932, 1627]" data-semantic="This image illustrates a decision-making framework comparing different agents (Amy, Jack, Myself) across Policy, Observed from, and Solved for."
+             src="./fig_table_2.jpg" style="position: absolute; left: 529px; top: 1362px; width: 403px; height: 265px;">
+
+        <p data-type="text" data-raw-bbox="[80, 1750, 1000, 1950]" 
+           style="position: absolute; left: 80px; top: 1750px; width: 920px; height: 200px; font-size: 45px;">
+            • <b>Incremental:</b> Arbitrarily remove outdated policies or add new ones, no need to relearn how to navigate the entire knowledge set from scratch.
+        </p>
+        <p data-type="text" data-raw-bbox="[80, 2200, 1000, 2300]" 
+           style="position: absolute; left: 80px; top: 2200px; width: 920px; height: 100px; font-size: 45px;">
+            • <b>Sample-Efficient:</b> Require fewer interactions.
+        </p>
+        <p data-type="text" data-raw-bbox="[80, 2350, 1000, 2500]" 
+           style="position: absolute; left: 80px; top: 2350px; width: 920px; height: 150px; font-size: 45px;">
+            • <b>Generalizable:</b> Be able to apply previously learned policies to unseen tasks.
+        </p>
+        <p data-type="text" data-raw-bbox="[80, 2550, 1000, 2750]" 
+           style="position: absolute; left: 80px; top: 2550px; width: 920px; height: 200px; font-size: 45px;">
+            • <b>KGRL:</b> An RL paradigm aiming to learn with external policies and achieve the five properties above.
+        </p>
+
+        <!-- Column 2: Method: Knowledge-Inclusive Attention Network (KIAN) -->
+        <div data-type="header" data-raw-bbox="[1100, 350, 2150, 650]" 
+             style="position: absolute; left: 1100px; top: 350px; width: 1050px; height: 300px; font-size: 75px; font-weight: bold;">
+            Method: Knowledge-Inclusive Attention Network (KIAN)
+        </div>
+
+        <p data-type="text" data-raw-bbox="[1150, 750, 2100, 850]" 
+           style="position: absolute; left: 1150px; top: 750px; width: 950px; height: 100px; font-size: 45px;">
+            • <b>KIAN:</b> An actor that separates knowledge representations from their selection mechanism.
+        </p>
+
+        <img data-type="image" data-raw-bbox="[1633, 904, 2105, 1350]" data-semantic="The image illustrates a KIAN (Knowledge-Informed Actor Network) architecture where an inner actor generates actions based on knowledge representations (g1, g2, g3)."
+             src="./fig_1.jpg" style="position: absolute; left: 1633px; top: 904px; width: 472px; height: 446px;">
+
+        <p data-type="text" data-raw-bbox="[1150, 1450, 2100, 1550]" 
+           style="position: absolute; left: 1150px; top: 1450px; width: 950px; height: 100px; font-size: 45px;">
+            • Naive policy fusion leads to challenges:
+        </p>
+        <p data-type="text" data-raw-bbox="[1200, 1550, 2100, 1650]" 
+           style="position: absolute; left: 1200px; top: 1550px; width: 900px; height: 100px; font-size: 40px;">
+            π(·|st) = w_in π_in(·|st) + Σ w_gj π_gj(·|st)
+        </p>
+        <p data-type="text" data-raw-bbox="[1150, 1680, 2100, 1730]" 
+           style="position: absolute; left: 1150px; top: 1680px; width: 950px; height: 50px; font-size: 40px;">
+            o Discrete vs Continuous action space
+        </p>
+        <p data-type="text" data-raw-bbox="[1150, 1750, 2100, 1800]" 
+           style="position: absolute; left: 1150px; top: 1750px; width: 950px; height: 50px; font-size: 40px;">
+            o Entropy Imbalance in maximum entropy KGRL
+        </p>
+
+        <img data-type="image" data-raw-bbox="[1152, 1897, 1625, 1995]" data-semantic="The image illustrates a process where an 'Inner Actor' generates parameters followed by three sequential steps that are explicitly marked as prohibited."
+             src="./fig_2.jpg" style="position: absolute; left: 1152px; top: 1897px; width: 473px; height: 98px;">
+
+        <img data-type="image" data-raw-bbox="[1645, 1820, 2117, 2030]" data-semantic="The image compares three normal distribution curves illustrating how varying success rates affect the shape and spread of probability distributions."
+             src="./fig_3.jpg" style="position: absolute; left: 1645px; top: 1820px; width: 472px; height: 210px;">
+
+        <p data-type="text" data-raw-bbox="[1150, 2250, 2100, 2350]" 
+           style="position: absolute; left: 1150px; top: 2250px; width: 950px; height: 100px; font-size: 50px; font-weight: bold; text-align: center;">
+            Discrete Action Policy
+        </p>
+        <p data-type="text" data-raw-bbox="[1150, 2450, 2100, 2550]" 
+           style="position: absolute; left: 1150px; top: 2450px; width: 950px; height: 100px; font-size: 50px; font-weight: bold; text-align: center;">
+            Continuous Action Prediction
+        </p>
+        <p data-type="text" data-raw-bbox="[1150, 2650, 2100, 2750]" 
+           style="position: absolute; left: 1150px; top: 2650px; width: 950px; height: 100px; font-size: 50px; font-weight: bold; text-align: center;">
+            Continuous Probability Distribution
+        </p>
+
+        <!-- Column 3: How well are the KGRL properties satisfied? -->
+        <div data-type="header" data-raw-bbox="[2200, 350, 3150, 650]" 
+             style="position: absolute; left: 2200px; top: 350px; width: 950px; height: 300px; font-size: 75px; font-weight: bold;">
+            How well are the KGRL properties satisfied?
+        </div>
+
+        <p data-type="text" data-raw-bbox="[2250, 750, 3100, 800]" 
+           style="position: absolute; left: 2250px; top: 750px; width: 850px; height: 50px; font-size: 45px;">
+            • Environments:
+        </p>
+        <img data-type="image" data-raw-bbox="[2333, 846, 2525, 1042]" data-semantic="The image displays a grid-based interface with blue dots, a red dot, and a green square, suggesting a pathfinding environment."
+             src="./fig_4.jpg" style="position: absolute; left: 2333px; top: 846px; width: 192px; height: 196px;">
+        <img data-type="image" data-raw-bbox="[2545, 846, 2785, 1042]" data-semantic="The image displays a grid-based puzzle interface with various colored tiles."
+             src="./fig_5.jpg" style="position: absolute; left: 2545px; top: 846px; width: 240px; height: 196px;">
+        <img data-type="image" data-raw-bbox="[2814, 846, 3042, 1042]" data-semantic="A robotic arm with blue and white segments is positioned above a white workbench."
+             src="./fig_6.jpg" style="position: absolute; left: 2814px; top: 846px; width: 228px; height: 196px;">
+
+        <p data-type="text" data-raw-bbox="[2250, 1100, 3100, 1200]" 
+           style="position: absolute; left: 2250px; top: 1100px; width: 850px; height: 100px; font-size: 40px;">
+            • RL algorithms: proximal policy optimization (PPO) and soft actor critic (SAC)
+        </p>
+
+        <img data-type="image" data-raw-bbox="[2195, 1316, 3152, 1805]" data-semantic="The image displays multiple line graphs comparing the performance of various reinforcement learning algorithms across different environments."
+             src="./fig_7.jpg" style="position: absolute; left: 2195px; top: 1316px; width: 957px; height: 489px;">
+
+        <img data-type="table" data-raw-bbox="[2207, 1987, 3128, 2188]" data-semantic="This table presents a comparative evaluation of various models across multiple tasks and different training/test conditions."
+             src="./fig_table_3.jpg" style="position: absolute; left: 2207px; top: 1987px; width: 921px; height: 201px;">
+
+        <img data-type="image" data-raw-bbox="[2329, 2445, 2671, 2715]" data-semantic="The graph shows the learning curve of the DoorKey-8x8 environment using MultiRoom-N4-S5."
+             src="./fig_8.jpg" style="position: absolute; left: 2329px; top: 2445px; width: 342px; height: 270px;">
+        <img data-type="image" data-raw-bbox="[2692, 2453, 3058, 2710]" data-semantic="The graph shows the reward progression over timesteps for a 'Push -> Pick-and-Place' task."
+             src="./fig_9.jpg" style="position: absolute; left: 2692px; top: 2453px; width: 366px; height: 257px;">
+
+        <!-- Column 4: How entropy imbalance affects? -->
+        <div data-type="header" data-raw-bbox="[3200, 350, 4030, 650]" 
+             style="position: absolute; left: 3200px; top: 350px; width: 830px; height: 300px; font-size: 75px; font-weight: bold;">
+            How entropy imbalance affects?
+        </div>
+
+        <p data-type="text" data-raw-bbox="[3250, 750, 4000, 820]" 
+           style="position: absolute; left: 3250px; top: 750px; width: 750px; height: 70px; font-size: 45px;">
+            • Addressing entropy imbalance is important!
+        </p>
+
+        <img data-type="image" data-raw-bbox="[3205, 843, 3999, 1160]" data-semantic="The image displays multiple line graphs comparing the performance of PPO+KIAN and SAC+KIAN algorithms against baseline methods."
+             src="./fig_10.jpg" style="position: absolute; left: 3205px; top: 843px; width: 794px; height: 317px;">
+
+        <!-- QR Codes and Logos -->
+        <img data-type="image" data-raw-bbox="[3250, 1330, 3563, 1650]" data-semantic="This is a QR code with the word 'arXiv' displayed in its center."
+             src="./fig_11.jpg" style="position: absolute; left: 3250px; top: 1330px; width: 313px; height: 320px;">
+        <img data-type="image" data-raw-bbox="[3645, 1327, 3954, 1644]" data-semantic="This is a QR code featuring the GitHub logo at its center."
+             src="./fig_12.jpg" style="position: absolute; left: 3645px; top: 1327px; width: 309px; height: 317px;">
+        <img data-type="image" data-raw-bbox="[3250, 1722, 3567, 2041]" data-semantic="This is a QR code with a YouTube logo overlaid in the center."
+             src="./fig_13.jpg" style="position: absolute; left: 3250px; top: 1722px; width: 317px; height: 319px;">
+        
+        <img data-type="image" data-raw-bbox="[3669, 1713, 3950, 1782]" data-semantic="The image displays the logo for 'ARC lab'."
+             src="./fig_14.jpg" style="position: absolute; left: 3669px; top: 1713px; width: 281px; height: 69px;">
+        <img data-type="image" data-raw-bbox="[3669, 1800, 3950, 2013]" data-semantic="The image depicts a stylized brain with circuit-like patterns."
+             src="./fig_15.jpg" style="position: absolute; left: 3669px; top: 1800px; width: 281px; height: 213px;">
+
+        <!-- References -->
+        <div data-type="text" data-raw-bbox="[3200, 2200, 4000, 2800]" 
+             style="position: absolute; left: 3200px; top: 2200px; width: 800px; height: 600px; font-size: 28px; background: #f9f9f9; padding: 20px;">
+            <h3 style="font-size: 40px; margin-bottom: 20px;">References</h3>
+            <p>[1] A. Bandura. Social Learning Theory. Prentice-Hall series in social learning theory. Prentice Hall, 1977. ISBN 9780138167516.</p>
+            <p>[2] Leslie Pack Kaelbling. The foundation of efficient robot learning. Science, 369(6506):915-916, 2020.</p>
+            <p>[3] Peng Zhang, Jianye Hao, Weixun Wang, Hongyao Tang, Yi Ma, Yihai Duan, and Yan Zheng. Kogur: Accelerating deep reinforcement learning via integrating human suboptimal knowledge. In International Joint Conference on Artificial Intelligence, 2020.</p>
+            <p>[4] Janarthanan Rajendran, Aravind Lakshminarayanan, Mitesh M. Khapra, Prasanna P, and Balaraman Ravindran. Attend, adapt and transfer: Attentive deep architecture for adaptive transfer from multiple sources in the same domain. In International Conference on Learning Representations, 2017.</p>
+        </div>
+    </div>
+</body>
+</html>

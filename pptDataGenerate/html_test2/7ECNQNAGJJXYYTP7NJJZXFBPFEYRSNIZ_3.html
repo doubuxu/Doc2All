@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>PPT Slide Reproduction</title>
+    <style>
+        /* 视口适配与页面作用域 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 画布容器 */
+        .ppt-slide #ppt-canvas {
+            width: 1280px;
+            height: 960px;
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            padding: 60px 80px;
+            box-sizing: border-box;
+        }
+
+        /* 头部样式 */
+        .ppt-slide header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .ppt-slide .ppt-title {
+            color: #008000;
+            font-size: 54px;
+            font-weight: normal;
+            margin: 0;
+            text-decoration: underline;
+        }
+
+        /* 主体布局 */
+        .ppt-slide main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ppt-slide .layout-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 列表样式 */
+        .ppt-slide ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ppt-slide .list-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ppt-slide .list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #0000FF;
+            font-size: 48px;
+            line-height: 1;
+        }
+
+        /* 文本块样式 */
+        .ppt-slide .text-block {
+            color: #0000FF;
+            font-size: 36px;
+            line-height: 1.4;
+            margin: 0;
+            display: inline;
+        }
+
+        /* 容器样式 */
+        .ppt-slide .figure-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .ppt-slide .row-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        /* 页码样式 */
+        .ppt-slide .page-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 32px;
+            color: #000;
+        }
+
+        /* 辅助样式 */
+        .ppt-slide i {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="ppt-slide">
+        <div id="ppt-canvas">
+            <!-- 头部元数据 -->
+            <header>
+                <h1 class="ppt-title">Simulations</h1>
+            </header>
+
+            <!-- 逻辑区块 -->
+            <main>
+                <section class="layout-block" data-section-id="section_1">
+                    <ul>
+                        <li class="list-item">
+                            <p class="text-block">
+                                To see how this mapping changes the distribution function, tracking of N=10<sup>4</sup> particles was simulated on a base of <i>Mathematica</i>. Original distribution over unperturbed actions J was taken as
+                            </p>
+                            
+                            <div class="figure-container">
+                                <img src="./slide_3_fig_1.jpg" style="width: 688px; height: 93px;" data-semantic="分布函数 f(J) 的数学公式">
+                            </div>
+
+                            <div class="row-container">
+                                <p class="text-block">with the total emittance</p>
+                                <img src="./slide_3_fig_2.jpg" style="width: 168px; height: 78px;" data-semantic="发射度参数 J_lim = 2">
+                                <p class="text-block">, close to the bucket acceptance</p>
+                            </div>
+
+                            <div class="figure-container">
+                                <img src="./slide_3_fig_3.jpg" style="width: 429px; height: 74px;" data-semantic="最大动作 J_max 的计算公式">
+                            </div>
+                        </li>
+
+                        <li class="list-item">
+                            <div class="row-container">
+                                <p class="text-block">The amplitude of the RF phase modulation was taken</p>
+                                <img src="./slide_3_fig_4.jpg" style="width: 222px; height: 84px;" data-semantic="RF相位调制幅度 phi_0 = 0.05">
+                                <p class="text-block">. The</p>
+                            </div>
+                            <p class="text-block">
+                                synchrotron phase advance was taken as , and the simulation time Tsim=500 synchrotron radians = 80 synchrotron periods.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+
+            <!-- 页码 -->
+            <div class="page-number">4</div>
+        </div>
+    </div>
+</body>
+</html>
