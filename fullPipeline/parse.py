@@ -81,7 +81,7 @@ def do_parse(
             _ocr_enable = ocr_enabled_list[idx]
 
             #标准中间输出
-            middle_json = pipeline_result_to_middle_json(model_list, images_list, pdf_doc, image_writer,image_writer,image_writer,image_writer ,_lang, _ocr_enable, formula_enable)
+            middle_json = pipeline_result_to_middle_json(model_list, images_list, pdf_doc, image_writer, _lang, _ocr_enable, formula_enable)
 
             pdf_info = middle_json["pdf_info"]
 

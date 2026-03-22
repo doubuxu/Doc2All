@@ -207,6 +207,83 @@ def responsiveHTMLGenerate(image_path,mineru_path):
 以下是原始绝对定位 HTML 代码：
 {absolute_html}
 """
+    prompt_content = f"""
+你是一位顶级的全栈工程师，专精于将复杂的视觉网页逆向工程为"结构化、语义化"的响应式 HTML。你的目标是确保生成的代码不仅在视觉上完美还原，且能通过脚本轻松提取为学术 PlanJSON 格式。
+
+### 输入数据
+1. **前端网页原图**：作为布局和语义逻辑的最终判定标准。
+2. **绝对定位 HTML 源码**：提供原始内容、图片 ID (data-fig-id) 及像素级坐标参考。
+
+### 任务要求：遵循以下 Chain-of-Thought (CoT) 逻辑分析
+
+#### 步骤 1：空间与并列关系扫描
+- **全局分栏识别**：通过图片识别网页的大框架,确认网页的panel布局(例如单栏布局、多栏布局等)。
+- **全局分块尺寸识别**:通过上一步识别出网页的整体布局后，你需要通过网页图片来分析各个布局的大小比例关系，不能简单的认为是均分或相等关系。
+- **横向并列判定**：针对网页中的文本框或图片等元素，你需要仔细观察图片信息，并在必要时检查 HTML 源码中元素的坐标信息来确认元素之间的相对位置关系是横向排列还是纵向排列，严禁不经观察就将相邻元素进行纵向排列。
+- **语义分块**：根据原图标题，将网页划分为 Introduction, Methodology 等逻辑章节。
+
+#### 步骤 2：字体层级视觉估算（新增）
+基于网页原图进行字体大小的视觉推断，建立全局字体比例体系，**不得凭空假设，必须以图片为唯一视觉依据**：
+
+- **基准确立**：
+  - 识别网页中占据最大面积的正文段落文字，将其视觉高度定义为基准字号 `1rem`（通常对应实际渲染的 `14px` 或 `16px`）。
+  - 在 HTML `<html>` 根元素上通过内联样式或 Tailwind 的 `text-base` 锚定这一基准。
+
+- **层级比例推断**：观察原图，按以下顺序逐级推断各类文字与基准正文的**视觉高度倍率**，并映射为对应的 Tailwind 字号类：
+
+  | 层级 | 典型元素 | 推断方式 | 映射 Tailwind 类 |
+  |---|---|---|---|
+  | 网页主标题 | `<h1>` | 目测约为正文的 N 倍高 | `text-4xl` / `text-5xl` |
+  | 网页标题 | `<h2>` | 目测约为正文的 N 倍高 | `text-2xl` / `text-3xl` |
+  | 子标题 | `<h3>` | 目测约为正文的 N 倍高 | `text-xl` / `text-lg` |
+  | 正文段落 | `<p>` | 基准 1 倍 | `text-sm` / `text-base` |
+  | 图注/参考文献 | `<figcaption>`, ref | 目测小于正文 | `text-xs` / `text-sm` |
+
+- **字重与间距感知**：
+  - 若原图中标题文字笔画明显粗于正文，对应元素添加 `font-bold` 或 `font-semibold`。
+  - 若原图中段落行间距视觉宽松，对应元素添加 `leading-relaxed` 或 `leading-loose`；若紧凑，使用 `leading-tight`。
+
+- **一致性约束**：同一语义层级的所有元素必须使用相同字号类，禁止同层级出现两种不同 `text-*` 大小。
+
+#### 步骤 3：结构化 HTML 约束 (面向 PlanJSON 提取)
+- **容器化 (Wrapping)**：必须使用 `<section id="section_n">` 包裹每个独立章节。
+- **层级分明**：章节标题统一使用 `<h2>`，子标题使用 `<h3>`，正文使用 `<p>`。
+- **数据锚点注入**：
+    - 必须为每个 `<img>` 或其容器保留原始的 `data-fig-id`。
+    - 在关键容器上标注 `data-type` (如 "abstract", "reference", "figure")。
+- **数学公式渲染**：必须在 <head> 中配置 MathJax 以解析 LaTeX 公式。请务必包含以下脚本：
+    <script>
+      window.MathJax = {{ tex: {{ inlineMath: [['$', '$'], ['\\\\(', '\\\\)']], displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']], processEscapes: true }} }};
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+- **线性阅读顺序**：确保源码中的元素顺序符合人类逻辑，而非 OCR 识别的随机顺序。
+
+#### 步骤 4：响应式布局实现 (Tailwind CSS)
+- 移除所有 `position: absolute`。
+- 使用 `grid` 或 `flex` 替代坐标。在桌面端 (lg) 强制保留横向并排结构，在移动端 (md 以下) 自动垂直堆叠。
+- **字体应用**：将步骤 2 中推断出的字号类、字重类、行高类完整应用到对应元素上，不得遗漏。
+
+### 输出约束
+- 关注 **Layout**（布局、间距、对齐）和 **Typography**（字号、字重、行高）。
+- 忽略颜色、背景、边框等装饰性样式。
+- **严禁删除任何原始文本内容。**
+
+### ⚠️ 面向 PlanJSON 提取的终极硬约束：
+1. **语义树结构**：HTML 必须呈现 [Header(Metadata)] -> [Main(Sections)] -> [Footer(References)] 的层级。
+2. **章节唯一性**：每个学术章节必须包裹在 <section id="section_n"> 中，其中 n 是从 1 开始的递增整数。
+3. **图文关联**：所有的图片 (<img>) 必须带有原始的 data-fig-id，且必须物理嵌套在它所属的 <section> 标签内。
+4. **属性完整性**：在关键容器上强制使用 data-type 属性，取值范围仅限：["metadata", "abstract", "section", "figure", "table", "reference"]。
+
+### ⚠️ 严格输出限制（违反将被视为失败）
+- **仅输出 HTML 代码**：严禁输出任何解释性文字、开场白（如 "Here is the code..."）、结束语或思维过程。
+- **禁止 Markdown 格式**：不要将代码包裹在 ```html 或 ``` 块中，直接以 <!DOCTYPE html> 开头输出纯文本。
+- **内容保全**：严禁删除、修改或简化任何原始文本内容。
+- **单一文件**：通过 CDN 引入 Tailwind，输出为一个独立的 HTML 文件。
+
+---
+以下是原始绝对定位 HTML 代码：
+{absolute_html}
+"""
     base64_image = get_verified_base64_image(image_path)
     message = [
     {

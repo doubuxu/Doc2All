@@ -92,8 +92,8 @@ def _describe_image(abs_path: str, context: str = "") -> str:
 
     system_prompt = (
         "You are an assistant that writes concise, accurate descriptions for figures "
-        "in academic posters. Respond with ONE sentence (≤30 words) in English, "
-        "describing what the image shows. No preamble, no trailing punctuation."
+        "in academic posters. Respond with ONE sentence  in English, "
+        "describing what the image shows."
     )
 
     user_text = (
@@ -161,10 +161,10 @@ def _enrich_entry(entry: dict, json_dir: str, context: str,
         print(f"  [SIZE] {label}: {w}×{h}")
 
     # 补全描述
-    if not entry.get("description", "").strip():
-        desc = _describe_image(abs_path, context=context)
-        entry["description"] = desc
-        print(f"  [DESC] {label}: {desc}")
+    
+    desc = _describe_image(abs_path, context=context)
+    entry["description"] = desc
+    print(f"  [DESC] {label}: {desc}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────

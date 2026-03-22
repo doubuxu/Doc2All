@@ -138,8 +138,8 @@ def batch_generate(image_dir: str, mineru_path: str, output_path: str) -> None:
     print(f"[batch] 全部处理完毕，输出目录: {output_path}")
 
 if __name__=="__main__":
-    image_path="../posterData"
-    mineru_path="../posterData/mineru_output_with_eq"
-    output_path="../pair_data3"
+    image_path="../webData/imgs_2/"
+    mineru_path="../webData/mineru_output_with_eq"
+    output_path="../webData/pair_data2"
     #single_data_generate(image_path,mineru_path,output_path)
     batch_generate(image_path,mineru_path,output_path)

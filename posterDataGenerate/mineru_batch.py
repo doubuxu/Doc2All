@@ -2,6 +2,8 @@
 import copy
 import json
 import os
+# 将显存占用率从 0.5 降低到 0.2 或 0.3
+os.environ['MINERU_VLLM_GPU_MEM'] = "0.1"
 from pathlib import Path
 import shutil
 
@@ -440,7 +442,7 @@ def reorganize_path(doc_path_list,output_path):
             #print(f"new_path:{dst}")
             shutil.move(str(file),str(dst))
             old_rel = os.path.relpath(file, md_dir)
-            new_rel = os.path.relpath(dst, md_dir)
+            new_rel = Path(str(dst).replace("/hybrid_auto/", "/")).as_posix()
             images_list[index]["path"]=str(dst)
             content_list_index=images_list[index]["content_list_index"]
             content_list[content_list_index]["img_path"]=str(dst)#替换content_list中的图片路径
@@ -453,7 +455,7 @@ def reorganize_path(doc_path_list,output_path):
                     #print(f"new_path:{dst}")
             shutil.move(str(file),str(dst))
             old_rel = os.path.relpath(file, md_dir)
-            new_rel = os.path.relpath(dst, md_dir)
+            new_rel = Path(str(dst).replace("/hybrid_auto/", "/")).as_posix()
             tables_list[index]["path"]=str(dst)
             content_list_index=tables_list[index]["content_list_index"]
             content_list[content_list_index]["img_path"]=str(dst)
@@ -466,7 +468,7 @@ def reorganize_path(doc_path_list,output_path):
             #print(f"new_path:{dst}")
             shutil.move(str(file),str(dst))
             old_rel = os.path.relpath(file, md_dir)
-            new_rel = os.path.relpath(dst, md_dir)
+            new_rel = Path(str(dst).replace("/hybrid_auto/", "/")).as_posix()
             equations_list[index]["path"]=str(dst)
             content_list_index=equations_list[index]["content_list_index"]
             content_list[content_list_index]["img_path"]=str(dst)
@@ -506,8 +508,8 @@ def mineru_process(pdf_files_path,output_dir):
 if __name__ == '__main__':
     # args
     #__dir__ = os.path.dirname(os.path.abspath(__file__))
-    pdf_files_path = '../posterData/'
-    output_dir = '../posterData/mineru_output_with_eq'
+    pdf_files_path = '../webData/imgs_2/'
+    output_dir = '../webData/mineru_output_with_eq'
     pdf_suffixes = ["pdf"]
     image_suffixes = ["png", "jpeg", "jp2", "webp", "gif", "bmp", "jpg"]
 
@@ -521,7 +523,7 @@ if __name__ == '__main__':
 
     """Use hybrid mode and local computing power to parse documents"""
     for item in os.listdir(Path(pdf_files_path)):
-        if item.lower().endswith(('.jpg', '.jpeg')):
+        if item.lower().endswith(('.jpg', '.jpeg','.png')):
             file_path = os.path.join(pdf_files_path, item)
 
             doc_path_list=[file_path]

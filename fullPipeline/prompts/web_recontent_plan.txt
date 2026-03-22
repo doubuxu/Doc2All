@@ -15,35 +15,58 @@
 你的任务是仔细阅读上述文档原始内容，综合考虑现有的规划内容和针对当前规划内容的需修改意见，重新生成一份更合理的规划内容，并以下方的json格式输出。
 
 ## 输出格式(JSON)
+```json
 {
   "metadata":{
-    "title":网页的标题
-    "description":对网页内容的简短描述
+    "title":网页的主标题（参考文档标题给出）
+    "authors":按照文档中的顺序给出所有的作者
+    "github":如果文档中提供了相关的GitHub连接，则填入本字段，否则留空，例如"github":""。
+    "figures":metadata区域的图片，格式与正文保持一致，如果没有则置空
   }
   "sections": [
     {
       "id": "section1",
       "title": section标题,
-      "content": ["",""],content字段输出一个列表，列表的一个元素是一段文本，通过不同的元素实现分段
-      "tables": [],
-      "figures": []
+      "content": ["",""],content部分以一个list给出，list的每个元素是一段正文文本，不同元素表示不同分段
+      "figures": [
+        {
+          "fig_id":"fig_1",#与md文件中的图片描述数据中的id一致 
+          "description":xxx,图片的语义信息,与md文件中的图片描述数据中的llm_description字段一致
+          "img_path":与fig_id保持一致，设为./fig_1.jpg
+          "figure_width": 959px,#与md文件中的图片描述数据中的宽度字段一致
+          "figure_height": 192px,#与md文件中的图片描述数据中的高度字段一致
+          "figure_caption": []#填入图片的caption或置空
+        }
+      ],
+      "tables": [
+        {
+          "table_id": "table_1",#与md文件中的表格描述数据中的id一致 
+          "description": 表格的语义信息,与md文件中的表格描述数据中的llm_description字段一致,
+          "img_path": "./table_1.jpg",#与table_id保持一致，设为./table_1.jpg
+          "table_width": 455,#与md文件中的表格描述数据中的宽度字段一致
+          "table_height": 252,#与md文件中的表格描述数据中的高度字段一致
+          "table_caption": []#填入图片的caption或置空
+        }
+      ],
+      
     },
     {
       "id": "section2",
       "title": "",
       "content": ["",""],
       "tables": [],
-      "figures": [{"fig_id": "fig_2","figure_weight":"","figure_height":""}]
+      "figures": []
     },
     {
       "id": "section3",
       "title": "",
       "content": ["",""],
-      "tables": [{"table_id": "table_1","table_weight":"","table_height":""}],
-      "figures": []
+      "figures": [],
+      "tables": []
     }
   ]
 }
+```
 
 
 ## 关键要求

@@ -3,14 +3,14 @@ from pathlib import Path
 import sys
 import json
 from mineru_batch import mineru_process
-from contentlistTojson import transform
-from htmlDataGenerate import singele_poster_process
+from Document2All.posterDataGenerate.DataGenerate1.contentlistTojson import transform
+from Document2All.posterDataGenerate.DataGenerate1.htmlDataGenerate import singele_poster_process
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 sys.path.insert(0, parent_dir)
 from utils.JsonTools import load_json,save_json
 from utils.htmlTools import save_html
-from html_to_json import html_to_content_plan
+from Document2All.posterDataGenerate.DataGenerate1.html_to_json import html_to_content_plan
 def single_poster_data_generate(poster_pdf_path,poster_img_path,output_dir):
     """
     输入海报的pdf路径让mineru处理，指定输出路径，得到content_list.json文件和分割后的子图

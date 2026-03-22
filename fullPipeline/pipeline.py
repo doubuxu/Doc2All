@@ -12,7 +12,7 @@ from contentPlan import content_plan,content_plan_with_check
 from jinja2 import Environment
 from jinja2 import Template
 import json
-from visualsProcess import getCaption,postProcessImages
+from visualsProcess import getCaption,postProcessImages,insertDictInMD
 from utils.JsonTools import load_json,save_json
 from htmlGenerate import htmlCodeWithbase64
 from utils.htmlTools import load_html,save_html
@@ -26,6 +26,8 @@ from utils.logo_fetch import LogoFetcher
 from utils.download_logo import download_logo_simple
 import requests
 from urllib.parse import urlparse
+from htmlGenerateLocal import htmlGenerate
+from posterDataGenerate.mineru_batch import mineru_process
 dotenv.load_dotenv()
 #pdf_path=""
 #parse_doc()
@@ -140,16 +142,30 @@ def ppt_generate2(input_path,output_path,mode,log):#baselineModel2
     save_html(html_path,html_code)
     log.info("Html code generation completed.")
     token_sum(output_path,file_name)
-def presentation_generate(input_path,output_path,mode):
+
+
+def presentation_generate(input_path,output_path,mode,log):
+
     input_path=Path(arg.doc_path).resolve()
     output_path=Path(arg.output).resolve()
     file_name=input_path.stem
     log.info("Start document parsing...")
-    parse_doc(input_path,output_path)
+    #parse_doc(input_path,output_path)
+    mineru_process(input_path,output_path)
+    postProcessImages(output_path,file_name)
+    insertDictInMD(output_path,file_name)
     log.info("Document parsing completed.")
 
+    log.info("start planing slides content...")
+    content_plan=content_plan_with_check(output_path,file_name,"",max_try=1,mode=mode,log=log)
+    save_json(content_plan,Path(output_path)/file_name/"contentPlan"/"final_content_plan.json")
+    log.info("Slides content planning completed.")
+    log.info("Start html code generation...")
+    html_code = htmlGenerate(content_plan,data_type=mode)
+    save_html(Path(output_path)/file_name/f"{file_name}.html",html_code)
 
-
+    log.info("html code generation finished")
+    token_sum(output_path,file_name)
 
 if __name__=="__main__":
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -161,7 +177,8 @@ if __name__=="__main__":
     file_name=input_path.stem
     log = get_logger(output_path,file_name,__name__)
     log.info(f"Processing document: {input_path}, output to: {output_path},file_name: {file_name}")
-    ppt_generate2(input_path,output_path,mode=mode,log=log)
+    #ppt_generate2(input_path,output_path,mode=mode,log=log)
+    presentation_generate(input_path,output_path,mode,log)
     new_path=output_path/f"{timestamp}_{file_name}_{mode}"
     shutil.move(output_path/file_name,new_path)
     """
