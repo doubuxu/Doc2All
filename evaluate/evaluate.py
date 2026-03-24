@@ -7,6 +7,7 @@ from CodeRightness import is_html_syntax_valid
 from ImgPathCheck import calculate_image_path_ratio
 from CSSCheck import is_css_valid
 from VLMEvaluate import JudgeByVLM
+
 class Evaluate:
     def __init__(self,target_path,file_name):
         self.target_path=target_path
@@ -17,10 +18,13 @@ class Evaluate:
         asyncio.run(my_eval_task(self.html_path,self.view_img_path))
 
         #生成html提取内容
+        #目前生成的html由于字段随机暂不支持json数据提取，因此要便于识别内容，只能把html输入到大模型
+        """
         self.content_extract_path = Path(target_path)/"htmlContentExtract.json"
         parse_html_to_content_plan(self.html_path,self.target_path)
+        """
 
-        self.evaluate_aspect=["contentComplete","contentLogic","layoutRobustness","spaceEfficiency","visualFlow"]
+        self.evaluate_aspect=["contentComplete","contentLogic","layoutRobustness","spaceEfficiency","visualFlow","visualHierarchy","visualAlign"]
 
     def evaluate(self):
         result=[]

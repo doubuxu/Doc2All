@@ -23,15 +23,15 @@ def JudgeByVLM(target_path, file_name, evaluate_aspect):
         with open(md_path, "r", encoding="utf-8") as f:
             template_vars["original_document_text"] = f.read()
         # 加载 json
-        json_path = os.path.join(target_path, "htmlContentExtract.json")
-        with open(json_path, "r", encoding="utf-8") as f:
-            template_vars["extracted_content_json"] = json.dumps(json.load(f), ensure_ascii=False, indent=2)
+        html_path = os.path.join(target_path, f"{file_name}.html")
+        with open(html_path, "r", encoding="utf-8") as f:
+            template_vars["html_code"] = f.read()
 
     elif evaluate_aspect == "contentLogic":
         # 加载 json
-        json_path = os.path.join(target_path, "htmlContentExtract.json")
-        with open(json_path, "r", encoding="utf-8") as f:
-            template_vars["extracted_content_json"] = json.dumps(json.load(f), ensure_ascii=False, indent=2)
+        html_path = os.path.join(target_path, f"{file_name}.html")
+        with open(html_path, "r", encoding="utf-8") as f:
+            template_vars["html_code"] = f.read()
 
     # 其余三种角度不需要文本文件，template_vars 保持空字典
 
