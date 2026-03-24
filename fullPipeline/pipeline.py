@@ -28,6 +28,7 @@ import requests
 from urllib.parse import urlparse
 from htmlGenerateLocal import htmlGenerate
 from posterDataGenerate.mineru_batch import mineru_process
+from changeHTMLPath import changeHTML
 dotenv.load_dotenv()
 #pdf_path=""
 #parse_doc()
@@ -162,6 +163,7 @@ def presentation_generate(input_path,output_path,mode,log):
     log.info("Slides content planning completed.")
     log.info("Start html code generation...")
     html_code = htmlGenerate(content_plan,data_type=mode)
+    html_code = changeHTML(html_code)
     save_html(Path(output_path)/file_name/f"{file_name}.html",html_code)
 
     log.info("html code generation finished")
