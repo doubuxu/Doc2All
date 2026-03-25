@@ -37,6 +37,8 @@ def htmlGenerate(content_plan, data_type):
         
         model_path = "../finetune/LLaMA-Factory/models/qwen2.5_7b_merged"
         
+        #与微调前的baseline对比模型
+        #model_path = "/home/huangyc/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
         # 加载分词器
         _MODEL_CACHE["tokenizer"] = AutoTokenizer.from_pretrained(
             model_path, 

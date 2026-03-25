@@ -146,7 +146,7 @@ def ppt_generate2(input_path,output_path,mode,log):#baselineModel2
 
 
 def presentation_generate(input_path,output_path,mode,log):
-
+    #timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     input_path=Path(arg.doc_path).resolve()
     output_path=Path(arg.output).resolve()
     file_name=input_path.stem
@@ -168,6 +168,9 @@ def presentation_generate(input_path,output_path,mode,log):
 
     log.info("html code generation finished")
     token_sum(output_path,file_name)
+    #new_path=output_path/f"{timestamp}_{file_name}_{mode}"
+    #shutil.move(output_path/file_name,new_path)
+
 
 if __name__=="__main__":
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
