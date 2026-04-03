@@ -1,13 +1,15 @@
 """
 create_dataset.py
 -----------------
-将海报（poster）和/或网页（web）数据整合为微调数据集 JSON 文件。
+将海报（poster）和/或网页（web）数据整合为微调数据集 JSON 文件（支持负样本纠错）。
+
+新增功能：
+1. 若存在 negative_poster.html，则自动生成纠错任务
+2. 自动读取 negative_reason.txt 并注入 instruction
+3. 最终数据集全局随机打乱
 
 对外接口：
     create_dataset(poster_path, web_path, output_path)
-        poster_path : 海报数据根目录（可为 None 或空字符串）
-        web_path    : 网页数据根目录（可为 None 或空字符串）
-        output_path : 输出 JSON 文件路径（每行一条 JSON，即 JSONL 格式）
 """
 
 import json
@@ -125,19 +127,47 @@ _INSTRUCTION = {
 }
 
 
+# ✅ 新增：纠错 instruction 模板（支持错误注入）
+def build_correction_instruction(reasons: list[str]) -> str:
+    reason_text = "\n".join([f"- {r}" for r in reasons]) if reasons else "- 未知错误"
+
+    return f"""
+你是一个严格的 HTML 纠错与对齐专家。
+
+你的任务是：
+根据 JSON 数据修复输入的错误 HTML，使其完全正确。
+
+该 HTML 存在以下问题：
+{reason_text}
+
+【任务要求】
+
+1. 所有内容必须严格来自 JSON（禁止捏造）
+2. 所有文本必须逐字一致（禁止改写）
+3. 所有 figure/table：
+   - 必须出现且仅出现一次
+   - 必须位于正确的 section
+4. 不允许新增或删除 section
+5. 修复所有：
+   - 内容缺失
+   - 图像错位
+   - 文本修改
+   - 重复内容
+6. 保证 HTML 结构完整、标签闭合
+7. 尽量保留原有布局，仅修正错误
+
+【输出要求】
+
+- 仅输出修复后的 HTML
+- 不要输出解释
+"""
+
+
 # ─────────────────────────────────────────────────────────────────────────────
-# 工具函数
+# 工具函数（核心修改在这里）
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _load_samples_from_dir(root: str, data_type: str) -> list[dict]:
-    """
-    遍历 root 下所有子文件夹，每个子文件夹中：
-      - 找到唯一的 .json 文件作为 input
-      - 找到唯一的 .html 文件作为 output
-    返回样本列表，每条样本为微调格式的 dict。
-
-    data_type : "poster" 或 "web"，决定使用哪条 instruction。
-    """
     root_p = Path(root)
     if not root_p.is_dir():
         raise ValueError(f"路径不存在或不是文件夹: {root}")
@@ -149,45 +179,83 @@ def _load_samples_from_dir(root: str, data_type: str) -> list[dict]:
         if not sub.is_dir():
             continue
 
-        # 找唯一 json 和 html
         json_files = list(sub.glob("*.json"))
         html_files = list(sub.glob("*.html"))
 
         if len(json_files) != 1:
-            print(f"  [SKIP] {sub.name}: 找到 {len(json_files)} 个 JSON 文件，跳过")
+            print(f"[SKIP] {sub.name}: JSON 文件数量异常")
             continue
-        if len(html_files) != 1:
-            print(f"  [SKIP] {sub.name}: 找到 {len(html_files)} 个 HTML 文件，跳过")
+        if len(html_files) < 1:
+            print(f"[SKIP] {sub.name}: 没有 HTML 文件")
             continue
 
         json_path = json_files[0]
-        html_path = html_files[0]
+
+        # 找正确 HTML
+        html_path = None
+        for f in html_files:
+            if f.name in ["poster.html", "web.html"]:
+                html_path = f
+                break
+        if html_path is None:
+            html_path = html_files[0]
+
+        negative_html_path = sub / "negative_poster.html"
+        reason_path = sub / "negative_reason.txt"
 
         try:
             with open(json_path, "r", encoding="utf-8") as f:
                 json_content = json.load(f)
+
             with open(html_path, "r", encoding="utf-8") as f:
                 html_content = f.read()
+
         except Exception as e:
-            print(f"  [SKIP] {sub.name}: 读取失败 — {e}")
+            print(f"[SKIP] {sub.name}: 读取失败 {e}")
             continue
 
+        # ───── 正样本（保持不变） ─────
         samples.append({
             "instruction": instruction,
-            "input":       json.dumps(json_content, ensure_ascii=False),
-            "output":      html_content,
+            "input": json.dumps(json_content, ensure_ascii=False),
+            "output": html_content,
         })
 
-    print(f"  [{data_type}] 共加载 {len(samples)} 条样本，来源: {root}")
+        # ───── 负样本纠错（新增） ─────
+        if negative_html_path.exists():
+            try:
+                with open(negative_html_path, "r", encoding="utf-8") as f:
+                    negative_html = f.read()
+
+                # 读取错误原因
+                reasons = []
+                if reason_path.exists():
+                    with open(reason_path, "r", encoding="utf-8") as f:
+                        reasons = [line.strip() for line in f if line.strip()]
+
+                correction_instruction = build_correction_instruction(reasons)
+
+                correction_input = (
+                    "【JSON】\n"
+                    + json.dumps(json_content, ensure_ascii=False)
+                    + "\n\n【错误HTML】\n"
+                    + negative_html
+                )
+
+                samples.append({
+                    "instruction": correction_instruction,
+                    "input": correction_input,
+                    "output": html_content,
+                })
+
+            except Exception as e:
+                print(f"[WARN] {sub.name}: 负样本读取失败 {e}")
+
+    print(f"[{data_type}] 加载 {len(samples)} 条（含纠错）")
     return samples
 
 
 def _interleave(a: list, b: list) -> list:
-    """
-    将两个列表交错合并，确保 a、b 的数据穿插出现。
-    若长度不等，剩余部分追加在末尾。
-    示例：[a1,a2,a3] + [b1,b2] → [a1,b1,a2,b2,a3]
-    """
     result = []
     for pair in zip(a, b):
         result.extend(pair)
@@ -197,51 +265,41 @@ def _interleave(a: list, b: list) -> list:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 对外接口
+# 主函数（仅增加最后 shuffle）
 # ─────────────────────────────────────────────────────────────────────────────
 
 def create_dataset(poster_path: str | None,
                    web_path: str | None,
                    output_path: str) -> None:
-    """
-    构建微调数据集并保存为 JSONL 文件（每行一条 JSON）。
 
-    参数
-    ----
-    poster_path : 海报数据根目录，为空则不加载海报数据
-    web_path    : 网页数据根目录，为空则不加载网页数据
-    output_path : 输出 JSONL 文件路径
-    """
     has_poster = bool(poster_path and poster_path.strip())
-    has_web    = bool(web_path    and web_path.strip())
+    has_web = bool(web_path and web_path.strip())
 
     if not has_poster and not has_web:
         raise ValueError("poster_path 和 web_path 不能同时为空")
 
-    # ── 加载数据 ──────────────────────────────────────────────────────────────
-    poster_samples: list[dict] = []
-    web_samples:    list[dict] = []
+    poster_samples = []
+    web_samples = []
 
     if has_poster:
         poster_samples = _load_samples_from_dir(poster_path, "poster")
     if has_web:
         web_samples = _load_samples_from_dir(web_path, "web")
 
-    # ── 组合数据 ──────────────────────────────────────────────────────────────
     if has_poster and has_web:
-        # 混合数据集：各自内部先打乱，再交错合并
         random.shuffle(poster_samples)
         random.shuffle(web_samples)
         all_samples = _interleave(poster_samples, web_samples)
-        print(f"  [merge] 混合后共 {len(all_samples)} 条，poster/web 交错排列")
+        print(f"[merge] 混合 {len(all_samples)} 条")
     elif has_poster:
         all_samples = poster_samples
-        print(f"  [merge] 单一 poster 数据集，共 {len(all_samples)} 条，不打乱")
     else:
         all_samples = web_samples
-        print(f"  [merge] 单一 web 数据集，共 {len(all_samples)} 条，不打乱")
 
-    # ── 写出 JSONL ────────────────────────────────────────────────────────────
+    # ✅ 新增：全局打乱
+    random.shuffle(all_samples)
+
+    # 保存
     output_p = Path(output_path)
     output_p.parent.mkdir(parents=True, exist_ok=True)
 
@@ -249,22 +307,16 @@ def create_dataset(poster_path: str | None,
         for sample in all_samples:
             f.write(json.dumps(sample, ensure_ascii=False) + "\n")
 
-    print(f"\n✅  数据集已保存: {output_path}  ({len(all_samples)} 条)")
+    print(f"\n✅ 数据集已保存: {output_path} ({len(all_samples)} 条)")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 命令行入口（可选）
+# 入口
 # ─────────────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    import sys
-
-    # 用法: python create_dataset.py <poster_path|""> <web_path|""> <output.jsonl>
-    poster_path="../finetuneData/poster/batchData1"
-    web_path="../finetuneData/web/pair_data2"
-    output_path="../finetune/LLaMA-Factory/data/web_data_original_new.jsonl"
     create_dataset(
-        None,
-        web_path,
-        output_path
+        poster_path="../finetuneData/poster/batchData1",
+        web_path="../finetuneData/web/pair_data2",
+        output_path="../finetune/LLaMA-Factory/data/mix_data_with_neg_and_longPrompt.jsonl"
     )

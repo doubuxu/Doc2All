@@ -26,7 +26,7 @@ from utils.logo_fetch import LogoFetcher
 from utils.download_logo import download_logo_simple
 import requests
 from urllib.parse import urlparse
-from htmlGenerateLocal import htmlGenerate
+from htmlGenerateLocal import htmlGenerate,htmlGenerateBaseline
 from posterDataGenerate.mineru_batch import mineru_process
 from changeHTMLPath import changeHTML
 dotenv.load_dotenv()
@@ -147,9 +147,9 @@ def ppt_generate2(input_path,output_path,mode,log):#baselineModel2
 
 def presentation_generate(input_path,output_path,mode,log):
     #timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    input_path=Path(arg.doc_path).resolve()
-    output_path=Path(arg.output).resolve()
-    file_name=input_path.stem
+    #input_path=Path(arg.doc_path).resolve()
+    #output_path=Path(arg.output).resolve()
+    file_name=Path(input_path).stem
     log.info("Start document parsing...")
     #parse_doc(input_path,output_path)
     mineru_process(input_path,output_path)
@@ -163,6 +163,7 @@ def presentation_generate(input_path,output_path,mode,log):
     log.info("Slides content planning completed.")
     log.info("Start html code generation...")
     html_code = htmlGenerate(content_plan,data_type=mode)
+    #html_code = htmlGenerateBaseline(content_plan,data_type=mode)
     html_code = changeHTML(html_code)
     save_html(Path(output_path)/file_name/f"{file_name}.html",html_code)
 

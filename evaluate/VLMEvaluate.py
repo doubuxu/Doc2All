@@ -1,6 +1,7 @@
 import os
 import json
 import base64
+from pathlib import Path
 import re
 import dotenv
 from openai import OpenAI
@@ -10,7 +11,9 @@ dotenv.load_dotenv()
 
 def JudgeByVLM(target_path, file_name, evaluate_aspect):
     # ── 1. 加载提示词模板 ──────────────────────────────────────────
-    prompt_path = f"./prompts/{evaluate_aspect}.txt"
+    current_file_dir = Path(__file__).resolve().parent
+    prompt_path = current_file_dir / "prompts" / f"{evaluate_aspect}.txt"
+    prompt_path = Path(prompt_path).resolve()
     with open(prompt_path, "r", encoding="utf-8") as f:
         prompt_template = f.read()
 

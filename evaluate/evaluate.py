@@ -1,6 +1,11 @@
 import asyncio
 from pathlib import Path
+import sys
 
+# 获取当前文件所在目录的父目录（即项目根目录）
+current_dir = Path(__file__).resolve().parent
+if str(current_dir) not in sys.path:
+    sys.path.insert(0, str(current_dir))
 from html2image import SimpleRenderer,my_eval_task
 from contentExtract import parse_html_to_content_plan
 from CodeRightness import is_html_syntax_valid
