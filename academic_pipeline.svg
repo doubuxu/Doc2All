@@ -1,27 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1280" viewBox="0 0 1800 1280" role="img" aria-labelledby="title desc">
-  <title id="title">Document2All Academic Pipeline</title>
-  <desc id="desc">Academic style flowchart describing the Document2All pipeline from document parsing to content planning and HTML generation.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980" role="img" aria-labelledby="title desc">
+  <title id="title">Academic Redraw of the Poster Generation Architecture</title>
+  <desc id="desc">Academic-style architecture diagram showing user requirements, blueprint creation, graphical background generation, and unified layout-text rendering.</desc>
 
   <defs>
-    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0%" stop-color="#f8fafc"/>
+    <linearGradient id="pageBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7f8fb"/>
       <stop offset="100%" stop-color="#eef2f7"/>
     </linearGradient>
-    <linearGradient id="headerGrad" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0%" stop-color="#1e3a5f"/>
-      <stop offset="100%" stop-color="#335c81"/>
+    <linearGradient id="panelFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbfcfe"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.10"/>
+    <linearGradient id="blueArrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7b95c8"/>
+      <stop offset="100%" stop-color="#4e6fa8"/>
+    </linearGradient>
+    <linearGradient id="purpleArrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9576c7"/>
+      <stop offset="100%" stop-color="#6f56a4"/>
+    </linearGradient>
+    <linearGradient id="greenArrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#87aa6d"/>
+      <stop offset="100%" stop-color="#557a42"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#1a2b43" flood-opacity="0.10"/>
     </filter>
-    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
-      <path d="M0,0 L14,7 L0,14 z" fill="#516b88"/>
+    <marker id="arrowBlue" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <path d="M0,0 L14,7 L0,14 z" fill="#5f7fb4"/>
     </marker>
+    <marker id="arrowPurple" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <path d="M0,0 L14,7 L0,14 z" fill="#7758a9"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <path d="M0,0 L14,7 L0,14 z" fill="#5e8648"/>
+    </marker>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#dde4ee" stroke-width="1"/>
+    </pattern>
     <style>
       text {
         font-family: "Times New Roman", "Noto Serif CJK SC", "Source Han Serif SC", serif;
-        fill: #14263a;
+        fill: #17304d;
       }
       .sans {
         font-family: "Helvetica Neue", Arial, "Noto Sans CJK SC", sans-serif;
@@ -29,213 +50,251 @@
       .title {
         font-size: 34px;
         font-weight: 700;
-        fill: #ffffff;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.2px;
       }
-      .subtitle {
-        font-size: 15px;
-        fill: #dbe7f2;
-      }
-      .phase-title {
-        font-size: 23px;
+      .section {
+        font-size: 18px;
         font-weight: 700;
       }
-      .phase-body {
-        font-size: 16px;
+      .panel-title {
+        font-size: 22px;
+        font-weight: 700;
       }
-      .mini-title {
+      .module-title {
         font-size: 15px;
         font-weight: 700;
       }
-      .mini-text {
-        font-size: 13px;
+      .body {
+        font-size: 14px;
+      }
+      .small {
+        font-size: 12.5px;
+      }
+      .tiny {
+        font-size: 11px;
       }
       .code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+      .caption {
         font-size: 13px;
+        font-style: italic;
       }
-      .legend {
-        font-size: 13px;
-      }
-      .tag {
-        font-family: "Helvetica Neue", Arial, "Noto Sans CJK SC", sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.6px;
-      }
-      .arrow {
-        stroke: #516b88;
-        stroke-width: 3.2;
+      .dash-blue {
         fill: none;
-        marker-end: url(#arrow);
+        stroke: #5677b1;
+        stroke-width: 2.6;
+        stroke-dasharray: 10 8;
       }
-      .guide {
-        stroke: #90a4b8;
-        stroke-width: 1.4;
-        stroke-dasharray: 7 6;
+      .dash-purple {
+        fill: none;
+        stroke: #7a59ac;
+        stroke-width: 2.6;
+        stroke-dasharray: 10 8;
+      }
+      .dash-green {
+        fill: none;
+        stroke: #64894f;
+        stroke-width: 2.6;
+        stroke-dasharray: 10 8;
+      }
+      .flow-blue {
+        fill: none;
+        stroke: url(#blueArrow);
+        stroke-width: 3.4;
+        marker-end: url(#arrowBlue);
+      }
+      .flow-purple {
+        fill: none;
+        stroke: url(#purpleArrow);
+        stroke-width: 3.4;
+        marker-end: url(#arrowPurple);
+      }
+      .flow-green {
+        fill: none;
+        stroke: url(#greenArrow);
+        stroke-width: 3.4;
+        marker-end: url(#arrowGreen);
       }
     </style>
   </defs>
 
-  <rect x="0" y="0" width="1800" height="1280" fill="url(#bg)"/>
-  <rect x="48" y="42" width="1704" height="1196" rx="30" fill="#fdfefe" stroke="#d7e0ea" stroke-width="2"/>
+  <rect x="0" y="0" width="1800" height="980" fill="url(#pageBg)"/>
+  <rect x="34" y="30" width="1732" height="920" rx="28" fill="url(#panelFill)" stroke="#d8e0ea" stroke-width="2"/>
+  <rect x="34" y="30" width="1732" height="920" rx="28" fill="url(#grid)" opacity="0.42"/>
 
-  <rect x="48" y="42" width="1704" height="112" rx="30" fill="url(#headerGrad)"/>
-  <text x="88" y="97" class="title sans">Document2All Main Pipeline</text>
-  <text x="88" y="126" class="subtitle sans">Document parsing, multimodal enrichment, content planning, and layout-to-HTML generation</text>
+  <text x="900" y="78" class="title" text-anchor="middle">Academic Poster Generation Framework</text>
+  <text x="900" y="108" class="caption" text-anchor="middle">A structured pipeline for requirement-grounded blueprint construction, background synthesis, and unified multimodal rendering</text>
 
-  <rect x="1360" y="72" width="334" height="54" rx="14" fill="#edf4fb" opacity="0.16"/>
-  <text x="1388" y="106" class="subtitle sans">Entry: fullPipeline/pipeline.py::presentation_generate</text>
+  <g filter="url(#softShadow)">
+    <rect x="76" y="150" width="300" height="300" rx="18" fill="#ffffff" stroke="#6a8ab5" stroke-width="2.4"/>
+    <text x="226" y="132" class="section" text-anchor="middle">User Requirement</text>
+    <circle cx="106" cy="117" r="16" fill="none" stroke="#152e49" stroke-width="3"/>
+    <path d="M89 144c5-18 29-18 34 0" fill="none" stroke="#152e49" stroke-width="3" stroke-linecap="round"/>
+    <path d="M129 86c0-11-9-20-20-20s-20 9-20 20 9 20 20 20h8l11 10-3-14c3-4 4-10 4-16z" fill="none" stroke="#152e49" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="101" cy="85" r="2.5" fill="#152e49"/>
+    <circle cx="109" cy="85" r="2.5" fill="#152e49"/>
+    <circle cx="117" cy="85" r="2.5" fill="#152e49"/>
 
-  <line x1="230" y1="180" x2="230" y2="1146" class="guide"/>
-  <line x1="620" y1="180" x2="620" y2="1146" class="guide"/>
-  <line x1="1030" y1="180" x2="1030" y2="1146" class="guide"/>
-  <line x1="1435" y1="180" x2="1435" y2="1146" class="guide"/>
-
-  <text x="86" y="200" class="legend sans" fill="#5a6f82">Input</text>
-  <text x="345" y="200" class="legend sans" fill="#5a6f82">Parsing and Enrichment</text>
-  <text x="760" y="200" class="legend sans" fill="#5a6f82">Content Planning</text>
-  <text x="1180" y="200" class="legend sans" fill="#5a6f82">Layout Synthesis</text>
-  <text x="1560" y="200" class="legend sans" fill="#5a6f82">Artifacts</text>
-
-  <g filter="url(#shadow)">
-    <rect x="88" y="248" width="260" height="178" rx="22" fill="#e8f1fb" stroke="#9ab6d1" stroke-width="2"/>
-    <rect x="88" y="248" width="260" height="40" rx="22" fill="#cfe0f3"/>
-    <text x="112" y="274" class="tag sans" fill="#214765">INPUT</text>
-    <text x="112" y="323" class="phase-title">Source Document</text>
-    <text x="112" y="353" class="phase-body">PDF / scientific paper / report</text>
-    <text x="112" y="384" class="mini-text code">type: Path | str</text>
-    <text x="112" y="408" class="mini-text code">arg: --doc_path</text>
+    <path d="M100 166h247v242h-210l-37 28v-28h0z" fill="#f8fbff" stroke="#5d80b6" stroke-width="2.2"/>
+    <text x="124" y="197" class="body sans">
+      <tspan x="124" dy="0">I need a 1080×1920 holiday poster</tspan>
+      <tspan x="124" dy="22">for the Dragon Boat Festival,</tspan>
+      <tspan x="124" dy="22">combining the national style with</tspan>
+      <tspan x="124" dy="22">traditional motifs such as dragon</tspan>
+      <tspan x="124" dy="22">boats, willow trees, and misty</tspan>
+      <tspan x="124" dy="22">landscapes. Use a teal-green palette,</tspan>
+      <tspan x="124" dy="22">show the festival title, date, holiday</tspan>
+      <tspan x="124" dy="22">arrangements, safety notes, and</tspan>
+      <tspan x="124" dy="22">contact information.</tspan>
+    </text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="386" y="228" width="560" height="228" rx="24" fill="#f5f8fc" stroke="#a9b9ca" stroke-width="2"/>
-    <rect x="386" y="228" width="560" height="44" rx="24" fill="#dfe7f0"/>
-    <text x="410" y="256" class="tag sans" fill="#314c67">STAGE 1</text>
-    <text x="414" y="316" class="phase-title">Document Parsing</text>
-    <text x="414" y="348" class="phase-body">`mineru_process(input_path, output_path)`</text>
-    <text x="414" y="381" class="mini-text">Transforms raw document pages into machine-readable multimodal assets.</text>
-    <text x="414" y="410" class="mini-text code">primary output: .md + content_list.json + dict/images.json + dict/tables.json</text>
+  <g filter="url(#softShadow)">
+    <rect x="434" y="136" width="938" height="368" rx="26" fill="#fcfdff" stroke="#597bb1" stroke-width="2.8" stroke-dasharray="10 8"/>
+    <text x="903" y="112" class="panel-title" text-anchor="middle">Stage 1: Blueprint Creation</text>
 
-    <rect x="692" y="292" width="222" height="132" rx="16" fill="#ffffff" stroke="#ccd7e2"/>
-    <text x="712" y="318" class="mini-title sans">Core data objects</text>
-    <text x="712" y="344" class="mini-text code">content_list: list[dict]</text>
-    <text x="712" y="366" class="mini-text code">images.json: list[ImageItem]</text>
-    <text x="712" y="388" class="mini-text code">tables.json: list[TableItem]</text>
-    <text x="712" y="410" class="mini-text code">md: str</text>
+    <rect x="470" y="176" width="860" height="94" rx="16" fill="#f4fbfb" stroke="#5ba3a3" stroke-width="2"/>
+    <text x="900" y="160" class="section" text-anchor="middle" fill="#256565">Key Information</text>
+
+    <rect x="490" y="193" width="180" height="28" rx="8" fill="#d9efef"/>
+    <rect x="676" y="193" width="210" height="28" rx="8" fill="#d9efef"/>
+    <rect x="892" y="193" width="198" height="28" rx="8" fill="#d9efef"/>
+    <rect x="1096" y="193" width="206" height="28" rx="8" fill="#d9efef"/>
+    <text x="503" y="212" class="module-title sans">Resolution</text>
+    <text x="699" y="212" class="module-title sans">Theme</text>
+    <text x="915" y="212" class="module-title sans">Element</text>
+    <text x="1118" y="212" class="module-title sans">Purpose</text>
+    <text x="579" y="247" class="body sans">1080 × 1920</text>
+    <text x="742" y="247" class="body sans">Dragon Boat Festival</text>
+    <text x="938" y="247" class="body sans">Calendar, dragon boat, willow, mist</text>
+    <text x="1168" y="247" class="body sans">Holiday notice poster</text>
+
+    <rect x="470" y="296" width="430" height="150" rx="16" fill="#fffaf0" stroke="#d2af48" stroke-width="2"/>
+    <text x="685" y="282" class="section" text-anchor="middle" fill="#8c6d17">Textual Content</text>
+    <rect x="490" y="316" width="100" height="28" rx="8" fill="#f6e6ad"/>
+    <rect x="490" y="352" width="100" height="28" rx="8" fill="#f6e6ad"/>
+    <rect x="490" y="388" width="100" height="28" rx="8" fill="#f6e6ad"/>
+    <text x="510" y="335" class="module-title sans">Title</text>
+    <text x="510" y="371" class="module-title sans">Subtitle</text>
+    <text x="510" y="407" class="module-title sans">Content</text>
+    <text x="614" y="335" class="body sans">端午放假通知 | DRAGON BOAT FESTIVAL</text>
+    <text x="614" y="371" class="body sans">Chinese Traditional Festival</text>
+    <text x="614" y="407" class="body sans">Holiday schedule, travel notice, and safety guidance</text>
+
+    <rect x="920" y="296" width="376" height="150" rx="16" fill="#f9f7f3" stroke="#bb8654" stroke-width="2"/>
+    <text x="1108" y="282" class="section" text-anchor="middle" fill="#8a5b32">Background Graphical Attributes</text>
+    <rect x="944" y="316" width="92" height="28" rx="8" fill="#f6e0cd"/>
+    <rect x="944" y="352" width="92" height="28" rx="8" fill="#f6e0cd"/>
+    <text x="968" y="335" class="module-title sans">Style</text>
+    <text x="960" y="371" class="module-title sans">Caption</text>
+    <text x="1050" y="335" class="body sans">Illustrative ink-wash composition</text>
+    <text x="1050" y="371" class="small sans">
+      <tspan x="1050" dy="0">Elegant Chinese-style waterscape with</tspan>
+      <tspan x="1050" dy="18">dragon boats gliding across layered</tspan>
+      <tspan x="1050" dy="18">mountains, morning mist, and soft reeds.</tspan>
+    </text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="386" y="500" width="560" height="170" rx="24" fill="#f7fbf7" stroke="#a6c4ac" stroke-width="2"/>
-    <rect x="386" y="500" width="560" height="44" rx="24" fill="#dceedd"/>
-    <text x="410" y="528" class="tag sans" fill="#325f41">STAGE 2</text>
-    <text x="414" y="586" class="phase-title">Visual Enrichment</text>
-    <text x="414" y="618" class="phase-body">`postProcessImages(output_path, file_name)`</text>
-    <text x="414" y="648" class="mini-text">Adds VLM captions and image dimensions for each figure/table item.</text>
+  <g filter="url(#softShadow)">
+    <rect x="1400" y="136" width="280" height="368" rx="24" fill="#fffdf9" stroke="#a4602b" stroke-width="2.8" stroke-dasharray="10 8"/>
+    <text x="1540" y="118" class="panel-title" text-anchor="middle" fill="#8d5628">LoRA Style Bank</text>
 
-    <rect x="681" y="552" width="233" height="92" rx="16" fill="#ffffff" stroke="#cadecf"/>
-    <text x="700" y="580" class="mini-title sans">Field augmentation</text>
-    <text x="700" y="603" class="mini-text code">llm_description: str</text>
-    <text x="700" y="624" class="mini-text code">weight / height: "1234px"</text>
+    <rect x="1438" y="186" width="204" height="52" rx="12" fill="#fae7d6"/>
+    <rect x="1438" y="258" width="204" height="52" rx="12" fill="#fae7d6"/>
+    <rect x="1438" y="330" width="204" height="52" rx="12" fill="#fae7d6"/>
+    <rect x="1438" y="402" width="204" height="52" rx="12" fill="#fae7d6"/>
+    <text x="1540" y="219" class="panel-title sans" text-anchor="middle">Design-Oriented</text>
+    <text x="1540" y="291" class="panel-title sans" text-anchor="middle">Illustrative</text>
+    <text x="1540" y="363" class="panel-title sans" text-anchor="middle">Photorealistic</text>
+    <text x="1540" y="435" class="panel-title sans" text-anchor="middle">Minimalistic</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="386" y="716" width="560" height="170" rx="24" fill="#fffaf2" stroke="#ceb993" stroke-width="2"/>
-    <rect x="386" y="716" width="560" height="44" rx="24" fill="#f4e6ca"/>
-    <text x="410" y="744" class="tag sans" fill="#7a5c1a">STAGE 3</text>
-    <text x="414" y="802" class="phase-title">Markdown Context Injection</text>
-    <text x="414" y="834" class="phase-body">`insertDictInMD(output_path, file_name)`</text>
-    <text x="414" y="864" class="mini-text">Replaces raw placeholders in markdown with structured figure/table JSON snippets.</text>
+  <g filter="url(#softShadow)">
+    <rect x="76" y="532" width="1120" height="322" rx="24" fill="#fdfcff" stroke="#7b59ac" stroke-width="2.8" stroke-dasharray="10 8"/>
+    <text x="636" y="892" class="panel-title" text-anchor="middle" fill="#6d4c9b">Stage 3: Unified Layout-Text Rendering</text>
 
-    <rect x="693" y="768" width="221" height="92" rx="16" fill="#ffffff" stroke="#ead9b4"/>
-    <text x="712" y="796" class="mini-title sans">Resulting MD</text>
-    <text x="712" y="819" class="mini-text code">str with embedded JSON</text>
-    <text x="712" y="840" class="mini-text">Better context for LLM planning</text>
+    <rect x="110" y="564" width="128" height="212" rx="14" fill="#ffffff" stroke="#c7d3e4" stroke-width="1.8"/>
+    <rect x="118" y="572" width="112" height="196" rx="10" fill="#eff6f9"/>
+    <rect x="128" y="586" width="92" height="18" rx="4" fill="#4e8ca1"/>
+    <text x="174" y="599" class="tiny sans" text-anchor="middle" fill="#ffffff">DRAGON BOAT FESTIVAL</text>
+    <rect x="130" y="618" width="88" height="96" rx="8" fill="#d9eff0"/>
+    <path d="M138 692c18-38 32-63 54-66 22-4 33 11 42 28v52h-96z" fill="#b6d9d8"/>
+    <path d="M144 700c26-9 46-8 70 2" fill="none" stroke="#79a6a6" stroke-width="2"/>
+    <path d="M160 683c18 3 28 10 36 18" fill="none" stroke="#3f7f7a" stroke-width="2"/>
+    <rect x="128" y="724" width="92" height="12" rx="4" fill="#c0d8d8"/>
+    <rect x="128" y="742" width="92" height="10" rx="4" fill="#d8e6e6"/>
+    <text x="174" y="797" class="small sans" text-anchor="middle">Poster Output</text>
+
+    <text x="342" y="704" class="panel-title" fill="#724fa6">HTML2Pix</text>
+    <rect x="470" y="548" width="286" height="258" rx="18" fill="#ffffff" stroke="#8c67bd" stroke-width="2"/>
+    <text x="613" y="573" class="tiny code" text-anchor="middle">&lt;div class="poster-container"&gt;</text>
+    <text x="500" y="603" class="tiny code">
+      <tspan x="500" dy="0">&lt;style&gt;#poster{width:1080px;height:1920px;</tspan>
+      <tspan x="500" dy="16">background-image:url(...);font-family:'Songti SC'}&lt;/style&gt;</tspan>
+      <tspan x="500" dy="26">&lt;h1&gt;端午放假通知&lt;/h1&gt;</tspan>
+      <tspan x="500" dy="16">&lt;h2&gt;Dragon Boat Festival&lt;/h2&gt;</tspan>
+      <tspan x="500" dy="16">&lt;section class="calendar"&gt;...&lt;/section&gt;</tspan>
+      <tspan x="500" dy="16">&lt;section class="notice"&gt;...</tspan>
+      <tspan x="500" dy="16">  日期：5月31日 - 6月2日</tspan>
+      <tspan x="500" dy="16">  出行提示：注意交通安全</tspan>
+      <tspan x="500" dy="16">  联系方式：001-12345678</tspan>
+      <tspan x="500" dy="16">&lt;/section&gt;</tspan>
+      <tspan x="500" dy="16">&lt;/div&gt;</tspan>
+    </text>
+
+    <rect x="916" y="574" width="114" height="70" rx="14" fill="#ece4f8" stroke="#b39ad8"/>
+    <text x="973" y="618" class="panel-title sans" text-anchor="middle">VLM</text>
+    <rect x="980" y="548" width="166" height="72" rx="12" fill="#ffffff" stroke="#b89fe0" stroke-width="1.8"/>
+    <text x="1063" y="577" class="module-title sans" text-anchor="middle">Structured prompt</text>
+    <text x="1063" y="598" class="small sans" text-anchor="middle">key info + text blocks</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="1058" y="308" width="562" height="318" rx="24" fill="#f8f5fc" stroke="#b7a9cf" stroke-width="2"/>
-    <rect x="1058" y="308" width="562" height="44" rx="24" fill="#e7e0f3"/>
-    <text x="1082" y="336" class="tag sans" fill="#5a4678">STAGE 4</text>
-    <text x="1086" y="396" class="phase-title">Content Planning</text>
-    <text x="1086" y="428" class="phase-body">`content_plan_with_check(raw_content_dir, file_name, mode)`</text>
-    <text x="1086" y="460" class="mini-text">Uses prompt templates plus enriched markdown to produce a display-oriented content plan.</text>
-    <text x="1086" y="490" class="mini-text">Optional branch: `content_check` and `content_replan` loop.</text>
+  <g filter="url(#softShadow)">
+    <rect x="1220" y="532" width="460" height="322" rx="24" fill="#fcfefb" stroke="#64894f" stroke-width="2.8" stroke-dasharray="10 8"/>
+    <text x="1450" y="892" class="panel-title" text-anchor="middle" fill="#5b7f46">Stage 2: Graphical Background Generation</text>
 
-    <rect x="1092" y="526" width="240" height="72" rx="16" fill="#ffffff" stroke="#d5cde4"/>
-    <text x="1112" y="552" class="mini-title sans">Input</text>
-    <text x="1112" y="575" class="mini-text code">md: str, mode: Literal["ppt"|"poster"|"web"]</text>
+    <rect x="1262" y="564" width="168" height="216" rx="14" fill="#ffffff" stroke="#c7d8c4" stroke-width="1.8"/>
+    <rect x="1272" y="574" width="148" height="196" rx="10" fill="#edf7f2"/>
+    <path d="M1274 698c26-58 55-92 91-96 26-3 43 11 55 29v139h-146z" fill="#cae7df"/>
+    <path d="M1272 652c26-45 48-68 82-72 31-4 47 12 66 32v50h-148z" fill="#b1d8d6"/>
+    <path d="M1282 724c20-18 40-21 62-18 18 2 35 10 54 26" fill="none" stroke="#7aa3a1" stroke-width="2"/>
+    <path d="M1298 745c14-14 22-19 34-24" fill="none" stroke="#3f7b76" stroke-width="2"/>
+    <path d="M1370 720c6 18 8 30 8 48" fill="none" stroke="#7fae8f" stroke-width="2"/>
+    <text x="1346" y="799" class="small sans" text-anchor="middle">Synthesized background</text>
 
-    <rect x="1360" y="526" width="226" height="72" rx="16" fill="#ffffff" stroke="#d5cde4"/>
-    <text x="1380" y="552" class="mini-title sans">Output</text>
-    <text x="1380" y="575" class="mini-text code">content_plan: dict</text>
+    <rect x="1530" y="646" width="126" height="70" rx="14" fill="#e0f0d8" stroke="#a9c58e"/>
+    <text x="1593" y="690" class="panel-title sans" text-anchor="middle">T2I</text>
+    <rect x="1532" y="740" width="122" height="38" rx="10" fill="#cceadf"/>
+    <text x="1593" y="765" class="module-title sans" text-anchor="middle">Resolution</text>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="1060" y="684" width="560" height="222" rx="24" fill="#f2f8ff" stroke="#9bb2d1" stroke-width="2"/>
-    <rect x="1060" y="684" width="560" height="44" rx="24" fill="#dbe7f6"/>
-    <text x="1084" y="712" class="tag sans" fill="#31577e">STAGE 5</text>
-    <text x="1088" y="772" class="phase-title">Layout-to-HTML Generation</text>
-    <text x="1088" y="804" class="phase-body">`htmlGenerate(content_plan, data_type=mode)`</text>
-    <text x="1088" y="836" class="mini-text">A local fine-tuned causal LM converts the structured plan into full HTML/CSS.</text>
-    <text x="1088" y="866" class="mini-text">Followed by `changeHTML(html_code)` for path or markup cleanup.</text>
+  <rect x="432" y="260" width="102" height="72" rx="14" fill="#eef3fb" stroke="#a7b8d3"/>
+  <text x="483" y="306" class="panel-title sans" text-anchor="middle">LLM</text>
 
-    <rect x="1376" y="742" width="210" height="124" rx="16" fill="#ffffff" stroke="#cad9ea"/>
-    <text x="1395" y="770" class="mini-title sans">Generation contract</text>
-    <text x="1395" y="793" class="mini-text code">input: dict | str</text>
-    <text x="1395" y="815" class="mini-text code">output: html_code: str</text>
-    <text x="1395" y="837" class="mini-text code">mode: poster | web</text>
-  </g>
+  <path d="M376 286H430" class="flow-blue"/>
+  <path d="M534 296H468" class="flow-blue" marker-end="url(#arrowBlue)"/>
+  <path d="M1372 338C1412 338 1424 334 1438 332" class="flow-blue"/>
+  <path d="M1200 446C1100 446 1044 493 980 590" class="flow-purple"/>
+  <path d="M1296 388C1395 388 1458 420 1530 676" class="flow-green"/>
+  <path d="M1498 558C1498 450 1542 350 1642 290" fill="none" stroke="#8b5d35" stroke-width="2.4"/>
 
-  <g filter="url(#shadow)">
-    <rect x="1455" y="958" width="210" height="208" rx="22" fill="#f7fafc" stroke="#b9c8d6" stroke-width="2"/>
-    <rect x="1455" y="958" width="210" height="40" rx="22" fill="#e4edf4"/>
-    <text x="1478" y="984" class="tag sans" fill="#36516a">OUTPUTS</text>
-    <text x="1478" y="1030" class="mini-title sans">Saved artifacts</text>
-    <text x="1478" y="1056" class="mini-text code">{file_name}.html</text>
-    <text x="1478" y="1080" class="mini-text code">contentPlan/final_content_plan.json</text>
-    <text x="1478" y="1104" class="mini-text code">dict/images.json</text>
-    <text x="1478" y="1128" class="mini-text code">dict/tables.json</text>
-  </g>
+  <path d="M1528 682H1438" class="flow-green"/>
+  <path d="M1240 683H1032" class="flow-purple"/>
+  <path d="M918 609H758" class="flow-purple"/>
+  <path d="M462 705H238" class="flow-purple"/>
 
-  <g filter="url(#shadow)">
-    <rect x="92" y="970" width="1290" height="170" rx="24" fill="#fbfcfd" stroke="#c8d2db" stroke-width="2"/>
-    <text x="122" y="1012" class="phase-title">Representative Data Schema</text>
-    <text x="122" y="1043" class="mini-text code">ImageItem = { fig_id: str, path: str, caption: str, content_list_index: int, llm_description: str, weight: str, height: str }</text>
-    <text x="122" y="1072" class="mini-text code">TableItem = { table_id: str, path: str, caption: str, table_body: str, content_list_index: int, llm_description: str, weight: str, height: str }</text>
-    <text x="122" y="1101" class="mini-text code">content_plan ~= { metadata: dict, sections: list[dict] }   or   { metadata: dict, slides: list[dict] }</text>
-  </g>
+  <rect x="430" y="612" width="92" height="48" rx="12" fill="#efe8fb" stroke="#b9a1df"/>
+  <text x="476" y="643" class="module-title sans" text-anchor="middle">HTML</text>
 
-  <path d="M348 337 L386 337" class="arrow"/>
-  <path d="M666 456 L666 500" class="arrow"/>
-  <path d="M666 670 L666 716" class="arrow"/>
-  <path d="M946 801 C1000 801 1000 468 1058 468" class="arrow"/>
-  <path d="M1340 626 L1340 684" class="arrow"/>
-  <path d="M1620 795 C1670 795 1670 1062 1665 1062" class="arrow"/>
+  <text x="1010" y="560" class="section" fill="#6e4ca0">Key information</text>
+  <text x="1010" y="586" class="section" fill="#6e4ca0">Textual content</text>
 
-  <path d="M1320 468 C1430 468 1450 468 1450 468 C1450 468 1450 602 1450 602 C1450 602 1220 602 1220 602" fill="none" stroke="#8f7cab" stroke-width="2.4" stroke-dasharray="8 6"/>
-  <text x="1462" y="538" class="mini-text sans" fill="#6a5888">check / replan loop</text>
+  <rect x="138" y="470" width="176" height="28" rx="10" fill="#edf4ff"/>
+  <text x="226" y="489" class="small sans" text-anchor="middle">Requirement prompt</text>
 
-  <rect x="108" y="454" width="220" height="112" rx="18" fill="#ffffff" stroke="#ced8e1"/>
-  <text x="128" y="483" class="mini-title sans">Control parameters</text>
-  <text x="128" y="507" class="mini-text code">mode: ppt | poster | web</text>
-  <text x="128" y="529" class="mini-text code">output: Path</text>
-  <text x="128" y="551" class="mini-text code">file_name = Path(doc).stem</text>
+  <text x="152" y="836" class="small sans" fill="#50677f">Rendered poster</text>
+  <text x="1294" y="836" class="small sans" fill="#5f7b54">Background image</text>
+  <text x="565" y="836" class="small sans" fill="#71519f">HTML/CSS layout specification</text>
 
-  <rect x="109" y="594" width="219" height="132" rx="18" fill="#ffffff" stroke="#ced8e1"/>
-  <text x="128" y="623" class="mini-title sans">Why this pipeline</text>
-  <text x="128" y="647" class="mini-text">1. Parse the source document.</text>
-  <text x="128" y="670" class="mini-text">2. Enrich visual evidence.</text>
-  <text x="128" y="693" class="mini-text">3. Reorganize content for presentation.</text>
-  <text x="128" y="716" class="mini-text">4. Render a target medium.</text>
-
-  <rect x="1490" y="230" width="210" height="168" rx="18" fill="#ffffff" stroke="#d1dbe4"/>
-  <text x="1510" y="260" class="mini-title sans">Mode semantics</text>
-  <text x="1510" y="286" class="mini-text"><tspan class="code">ppt</tspan> slide-structured plan</text>
-  <text x="1510" y="310" class="mini-text"><tspan class="code">poster</tspan> dense multi-column canvas</text>
-  <text x="1510" y="334" class="mini-text"><tspan class="code">web</tspan> scroll-based page layout</text>
-  <text x="1510" y="367" class="mini-text">All branches share the same</text>
-  <text x="1510" y="389" class="mini-text">parse-and-plan backbone.</text>
-
-  <text x="88" y="1190" class="legend sans" fill="#708295">Figure. Academic summary of the current Document2All execution pipeline and its principal intermediate data representations.</text>
 </svg>
