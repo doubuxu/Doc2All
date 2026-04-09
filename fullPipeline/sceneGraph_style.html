@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true } };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    :root {
+      --color-bg: #F8FAFC;
+      --color-card: #FFFFFF;
+      --color-heading: #1E293B;
+      --color-text: #334155;
+      --color-secondary: #64748B;
+      --color-emphasis: #10B981;
+      --color-link: #3B82F6;
+      --color-border: #E2E8F0;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 {
+      color: var(--color-heading);
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2.25rem;
+      letter-spacing: 0.025em;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 1.875rem;
+      letter-spacing: 0.025em;
+    }
+    h3, h4, h5 {
+      font-weight: 600;
+    }
+    p {
+      font-weight: 400;
+      letter-spacing: -0.015em;
+    }
+    .section-card {
+      background-color: var(--color-card);
+      border-radius: 0.75rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .section-card > h2 {
+      margin-bottom: 1.5rem;
+    }
+    .paper-enhanced-image {
+      border-radius: 0.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: zoom-in;
+    }
+    .paper-enhanced-image:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .paper-enhanced-image:focus {
+      outline: 2px solid var(--color-link);
+      outline-offset: 2px;
+    }
+    .figure-caption {
+      font-style: italic;
+      font-size: 0.875rem;
+      color: var(--color-secondary);
+      margin-top: 0.5rem;
+    }
+    .figure-caption .fig-label,
+    .figure-caption .table-label {
+      font-weight: 600;
+      color: var(--color-link);
+    }
+    .paper-toc-link {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      color: var(--color-text);
+      text-decoration: none;
+      border-radius: 0.375rem;
+      transition: background-color 0.2s;
+    }
+    .paper-toc-link:hover,
+    .paper-toc-link.is-active {
+      background-color: var(--color-card);
+      color: var(--color-link);
+      font-weight: 600;
+    }
+    #paper-toc-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: var(--color-card);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      padding: 0.5rem 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .paper-toc-inner {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0 1.5rem;
+    }
+    .paper-lightbox-close {
+      position: fixed;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    #paper-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 90;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    #paper-lightbox.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .paper-lightbox-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border: 2px solid white;
+      border-radius: 0.25rem;
+    }
+    .paper-copy-bibtex-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      padding: 0.375rem 0.75rem;
+      font-size: 0.75rem;
+      background-color: rgba(241, 245, 249, 0.8);
+      color: #475569;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .paper-copy-bibtex-btn:hover {
+      background-color: rgba(226, 232, 240, 0.9);
+    }
+    .paper-copy-bibtex-btn.is-copied {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: #059669;
+    }
+    .external-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 0.75rem;
+      background-color: #f1f5f9;
+      color: #475569;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: background-color 0.2s;
+    }
+    .external-link-btn:hover {
+      background-color: #e2e8f0;
+    }
+    .external-link-btn i {
+      font-size: 0.875rem;
+    }
+    .main-content {
+      margin-top: 4rem;
+    }
+    .has-paper-toc .main-content {
+      margin-top: 6rem;
+    }
+    sup.reimplemented {
+      font-size: 0.75rem;
+      color: #ca8a04;
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-900 leading-relaxed">
+
+  <header class="bg-white shadow p-6 mb-12">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-4xl font-bold">A Comprehensive Survey of Scene Graphs: Generation and Application</h1>
+      <p class="text-lg font-semibold text-blue-600">Xiaojun Chang, Pengzhen Ren, Pengfei Xu, Zhihui Li, Xiaojiang Chen, Alex Hauptmann</p>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 lg:px-12 main-content">
+    
+    <!-- Section 1 -->
+    <section id="section1" class="section-card">
+      <h2 class="text-3xl font-bold mb-6">Introduction</h2>
+      <p class="text-base leading-relaxed mb-4">
+        Scene graphs are structured representations that capture objects, attributes, and relationships in visual scenes. As computer vision advances beyond basic object detection, scene graphs enable higher-level understanding and reasoning—supporting tasks like visual relationship detection, image captioning, visual question answering (VQA), image editing, and retrieval.
+      </p>
+      <p class="text-base leading-relaxed">
+        Despite rapid growth in scene graph research, no comprehensive survey existed prior to this work. This paper fills that gap by systematically reviewing scene graph generation (SGG) methods, applications, datasets, evaluation metrics, and future directions.
+      </p>
+      <div class="mt-8">
+        <img src="./fig_1.jpg" alt="Classification of SGG methods and applications" class="w-full h-auto">
+        <p class="figure-caption"><span class="fig-label">Fig. 1.</span> A classification of the methods and applications of SGG.</p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="section2" class="section-card">
+      <h2 class="text-3xl font-bold mb-6">Scene Graph Definition and Construction</h2>
+      <p class="text-base leading-relaxed mb-4">
+        Formally, a scene graph \(SG = (O, R, E)\) is a directed graph where \(O\) is a set of detected objects (each with category and attributes), \(R\) represents relationships between object pairs, and \(E \subseteq O \times R \times O\) denotes edges. Relationships are typically expressed as \(\langle subject - predicate - object \rangle\) triplets.
+      </p>
+      <p class="text-base leading-relaxed">
+        The SGG pipeline involves three stages: (1) feature extraction (e.g., using Faster R-CNN to obtain bounding boxes and visual features), (2) contextualization (enhancing interactions between entities via object labels, visual features, or global context), and (3) graph construction and inference (predicting predicates to complete the graph). Two paradigms exist: bottom-up (detect objects then predict pairwise relationships) and top-down (jointly detect objects and relationships).
+      </p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <img src="./fig_2.jpg" alt="Scene graph generation pipeline" class="w-full h-auto">
+          <p class="figure-caption"><span class="fig-label">Fig. 2.</span> An example of scene graph construction. Upper right: The ground-truth scene graph of a given image. Bottom: An example of a complete scene graph.</p>
+        </div>
+        <div>
+          <img src="./fig_3.jpg" alt="Causal graph of SGG" class="w-full h-auto">
+          <p class="figure-caption"><span class="fig-label">Fig. 3.</span> The causal graph of SGG. Left: An abstract representation of a general SGG process. Right: An example of a general SGG process.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="section3" class="section-card">
+      <h2 class="text-3xl font-bold mb-6">Key Challenges in Scene Graph Generation</h2>
+      <p class="text-base leading-relaxed mb-4">
+        Three major challenges hinder SGG progress: (1) designing effective learning models for accurate and complete graph construction, (2) integrating useful prior knowledge (e.g., language, statistical, or commonsense knowledge) to compensate for data sparsity, and (3) addressing the severe long-tailed distribution of visual predicates—where common relationships (e.g., 'on', 'have') dominate, while rare but meaningful ones (e.g., 'walking on', 'lying on') are underrepresented.
+      </p>
+      <p class="text-base leading-relaxed">
+        Fig. 5 exemplifies the sparsity and variability of real-world relationships: training datasets may contain 'person riding horse' but not 'person riding dog', yet both are plausible. Models must generalize beyond observed combinations to handle unseen or rare relationships.
+      </p>
+      <div class="mt-8">
+        <img src="./fig_5.jpg" alt="Examples of sparsity and variability of visual relationships" class="w-full h-auto">
+        <p class="figure-caption"><span class="fig-label">Fig. 5.</span> Examples of the sparsity and variability of visual relationships.</p>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="section4" class="section-card">
+      <h2 class="text-3xl font-bold mb-6">SGG Methods and Applications</h2>
+      <p class="text-base leading-relaxed mb-4">
+        SGG methods fall into five categories: CRF-based (modeling statistical correlations), TransE-based (embedding relationships as vector translations), CNN-based (extracting local/global visual features), RNN/LSTM-based (capturing sequential context), and GNN-based (reasoning over graph structures). Prior knowledge—language, statistical, or knowledge graphs—further enhances performance, especially for rare relationships.
+      </p>
+      <p class="text-base leading-relaxed">
+        Applications span visual-textual tasks: image generation from scene graphs enables controllable layout synthesis; image/video captioning leverages structured semantics for richer descriptions; cross-modal retrieval uses scene graphs as interpretable query representations; VQA benefits from explicit relationship reasoning; 3D scene understanding extends graphs to spatial environments; and human-object/human-human interaction detection supports social scene analysis.
+      </p>
+      <div class="mt-8">
+        <img src="./fig_18.jpg" alt="Comprehensive framework for multimodal AI tasks" class="w-full h-auto">
+        <p class="figure-caption"><span class="fig-label">Fig. 18.</span> Examples of scene graph application scenarios. These applications include visual-textual transformers [139], [140], [141], image text retrieval [6], [3], [142], visual question answering [143], [144], image understanding and reasoning [145], [146], [147], 3D scene graphs [7], [148], and the detection and recognition of human-object and human-human interaction [149], [150], [132], [151], [152].</p>
+      </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="section5" class="section-card">
+      <h2 class="text-3xl font-bold mb-6">Datasets and Evaluation</h2>
+      <p class="text-base leading-relaxed mb-4">
+        Common SGG datasets include image-based benchmarks (e.g., Visual Genome, VRD, HCVRD), video datasets (e.g., Action Genome), and 3D scene graphs (e.g., 3DSSG). Evaluation focuses on three subtasks: Predicate Classification (PredCls), Scene Graph Classification (SGCls), and Scene Graph Detection (SGDet), measured by Recall@K (R@K) and mean Recall@K (mR@K) to account for long-tailed distributions.
+      </p>
+      <p class="text-base leading-relaxed">
+        Table 1 summarizes key dataset statistics, highlighting scale differences in objects, relationships, and predicates. Table 2 compares SGG method performance on VG150, showing that models incorporating priors (e.g., KERN, GB-Net) or advanced losses (e.g., EBM) outperform purely visual approaches, especially in mR@K which better reflects rare relationship handling.
+      </p>
+      <div class="mt-8">
+        <img src="./table_1.jpg" alt="Dataset statistics" class="w-full h-auto">
+        <p class="figure-caption"><span class="table-label">TABLE 1</span> Statistics of the scene graph dataset. ”-” indicates that this attribute is not released, and $\" \\mathbf { \\nabla } \\mathbf { x } \\cdot \\mathbf { \\nabla }$ indicates that the attribute is not applicable.</p>
+      </div>
+      <div class="mt-8">
+        <img src="./table_2.jpg" alt="Performance comparison of SGG methods" class="w-full h-auto">
+        <p class="figure-caption"><span class="table-label">TABLE 2</span> Performance comparison of the SGG method with graph constraints on VG150. [31]. ’-’ indicates that there is no corresponding result released in the paper. Note that some methods use multiple different types of networks or priors, and these are categorized according to the most prominent method they use. $^ \dagger$ denotes the re-implemented version from [68]. * indicates that the method evaluates on other datasets. The best performance is shown in bold.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 Scene Graph Research Group. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const headings = Array.from(document.querySelectorAll('section h2, section h3, main h2, main h3, article h2, article h3'))
+    .filter(el => el.textContent.trim().length > 0);
+  if (!headings.length) return;
+
+  const tocBar = document.createElement('div');
+  tocBar.id = 'paper-toc-bar';
+  tocBar.innerHTML = '<div class="paper-toc-inner"></div>';
+  document.body.prepend(tocBar);
+  const tocInner = tocBar.querySelector('.paper-toc-inner');
+
+  headings.forEach((heading, index) => {
+    if (!heading.id) heading.id = `paper-heading-${index + 1}`;
+    heading.style.scrollMarginTop = '96px';
+    const a = document.createElement('a');
+    a.href = `#${heading.id}`;
+    a.className = 'paper-toc-link';
+    a.textContent = heading.textContent.trim();
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    tocInner.appendChild(a);
+  });
+
+  document.body.classList.add('has-paper-toc');
+  const links = Array.from(tocInner.querySelectorAll('.paper-toc-link'));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      links.forEach(link => link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`));
+    });
+  }, { rootMargin: '-25% 0px -65% 0px', threshold: 0.01 });
+  headings.forEach(h => observer.observe(h));
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const images = Array.from(document.querySelectorAll('img')).filter(img => img.src);
+  if (!images.length) return;
+
+  const lightbox = document.createElement('div');
+  lightbox.id = 'paper-lightbox';
+  lightbox.innerHTML = `
+    <button type="button" class="paper-lightbox-close" aria-label="Close image viewer">&times;</button>
+    <div class="paper-lightbox-backdrop"></div>
+    <img class="paper-lightbox-image" alt="" />
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector('.paper-lightbox-image');
+  const close = () => lightbox.classList.remove('is-open');
+
+  images.forEach(img => {
+    img.classList.add('paper-enhanced-image');
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('click', () => {
+      lightboxImage.src = img.currentSrc || img.src;
+      lightboxImage.alt = img.alt || '';
+      lightbox.classList.add('is-open');
+    });
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        img.click();
+      }
+    });
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('paper-lightbox-backdrop')) close();
+  });
+  lightbox.querySelector('.paper-lightbox-close').addEventListener('click', close);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const blocks = Array.from(document.querySelectorAll('pre, code, .bibtex, [data-bibtex]')).filter(el => {
+    const text = el.textContent || '';
+    return /BibTeX|@article|@inproceedings|@misc|@book/i.test(text);
+  });
+
+  blocks.forEach((block) => {
+    if (block.dataset.copyReady === 'true') return;
+    block.dataset.copyReady = 'true';
+    block.classList.add('paper-bibtex-block');
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'paper-copy-bibtex-btn';
+    button.textContent = 'Copy BibTeX';
+    button.addEventListener('click', async () => {
+      const originalText = button.textContent;
+      await navigator.clipboard.writeText(block.textContent.trim());
+      button.textContent = 'Copied!';
+      button.classList.add('is-copied');
+      window.setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('is-copied');
+      }, 1800);
+    });
+
+    if (getComputedStyle(block).position === 'static') {
+      block.style.position = 'relative';
+    }
+    block.appendChild(button);
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const externalLinks = document.querySelectorAll('a[href*="github.com"], a[href*="arxiv.org"], a[href*="doi.org"]');
+  externalLinks.forEach(link => {
+    if (link.querySelector('.external-link-btn')) return;
+    
+    let iconClass = '';
+    let domain = '';
+    if (link.href.includes('github.com')) {
+      iconClass = 'fa-brands fa-github';
+      domain = 'GitHub';
+    } else if (link.href.includes('arxiv.org')) {
+      iconClass = 'fa-solid fa-file-lines';
+      domain = 'arXiv';
+    } else if (link.href.includes('doi.org')) {
+      iconClass = 'fa-solid fa-link';
+      domain = 'DOI';
+    }
+    
+    if (!iconClass) return;
+    
+    const btn = document.createElement('span');
+    btn.className = 'external-link-btn';
+    btn.innerHTML = `<i class="${iconClass}"></i> ${link.textContent}`;
+    link.textContent = '';
+    link.appendChild(btn);
+    link.style.display = 'inline-flex';
+  });
+});
+</script>
+
+</body>
+</html>
