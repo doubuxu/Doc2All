@@ -17,7 +17,6 @@ from utils.JsonTools import load_json,save_json
 from htmlGenerate import htmlCodeWithbase64
 from utils.htmlTools import load_html,save_html
 from logger import get_logger
-import arxiv
 import dotenv
 import time
 import datetime
@@ -29,6 +28,8 @@ from urllib.parse import urlparse
 from htmlGenerateLocal import htmlGenerate,htmlGenerateBaseline
 from posterDataGenerate.mineru_batch import mineru_process
 from changeHTMLPath import changeHTML
+from replaceTableImages import replace_table_images_with_html
+from metadata_enrich import enrich_content_plan_metadata
 dotenv.load_dotenv()
 #pdf_path=""
 #parse_doc()
@@ -48,6 +49,8 @@ def args_analyse():
     parser.add_argument('--doc_path', help='input Document path')
     parser.add_argument('-o', '--output', default='output', help='output path')
     parser.add_argument('--mode',required=True,choices=['ppt','poster','web'],help='choose the final output')
+    parser.add_argument('--github_url', default='', help='optional GitHub URL to override metadata.github')
+    parser.add_argument('--arxiv_url', default='', help='optional arXiv URL to override metadata.arxiv_id')
     #parser.add_argument('--overwrite', action='store_true', help='���������ļ�')
     args = parser.parse_args()
     return args
@@ -81,7 +84,7 @@ def ppt_generate(input_path,output_path):#baselineModel1
     html_path=Path(output_path)/file_name/f"{file_name}.html"
     save_html(html_path,html_code)
 
-def ppt_generate2(input_path,output_path,mode,log):#baselineModel2
+def ppt_generate2(input_path,output_path,mode,log,github_url="",arxiv_url=""):#baselineModel2
     input_path=Path(arg.doc_path).resolve()
     output_path=Path(arg.output).resolve()
     file_name=input_path.stem
@@ -91,42 +94,14 @@ def ppt_generate2(input_path,output_path,mode,log):#baselineModel2
 
     log.info("start planing slides content...")
     content_plan=content_plan_with_check(output_path,file_name,"",max_try=1,mode=mode,log=log)
-
-    #针对学术论文，搜索arxiv id并添加到metadata中
-    title=content_plan["metadata"]["title"]
-    client=arxiv.Client()
-    search=arxiv.Search(query=f'ti:"{title}"', max_results=1)
-    results = list(client.results(search))
-    if len(results)>0:
-        paper = results[0]
-        content_plan["metadata"]["arxiv_id"]=paper.entry_id
-        comment=paper.comment
-        print(f"comment:{comment}")
-    else:
-        content_plan["metadata"]["arxiv_id"]=""
-        paper = None
-        print("未找到arXiv论文")
-    if paper:  # 确保找到论文后才继续
-        fetcher = LogoFetcher()
-        institutions = content_plan["metadata"]["organizations"]
-        
-        for inst in institutions:
-            result = fetcher.fetch_logo(inst)
-            print(f"{result['name']}: {result['logo_url']}")
-            
-            if result["logo_url"]:
-                # 修复路径拼接
-                download_path = Path(output_path) / file_name / "logos"
-                download_path.mkdir(parents=True, exist_ok=True)
-                
-                download_logo_simple(
-                    result["logo_url"], 
-                    result["name"], 
-                    str(download_path)  # 转字符串或保持Path对象
-                )
-    
-
-    save_json(content_plan,Path(output_path)/file_name/"contentPlan"/"final_content_plan.json")
+    content_plan = enrich_content_plan_metadata(
+        content_plan,
+        output_path,
+        file_name,
+        log=log,
+        github_url=github_url,
+        arxiv_url=arxiv_url,
+    )
 
     log.info("Slides content planning completed.")
     log.info("Start html code generation...")
@@ -145,7 +120,7 @@ def ppt_generate2(input_path,output_path,mode,log):#baselineModel2
     token_sum(output_path,file_name)
 
 
-def presentation_generate(input_path,output_path,mode,log):
+def presentation_generate(input_path,output_path,mode,log,github_url="",arxiv_url=""):
     #timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     #input_path=Path(arg.doc_path).resolve()
     #output_path=Path(arg.output).resolve()
@@ -159,12 +134,25 @@ def presentation_generate(input_path,output_path,mode,log):
 
     log.info("start planing slides content...")
     content_plan=content_plan_with_check(output_path,file_name,"",max_try=1,mode=mode,log=log)
-    save_json(content_plan,Path(output_path)/file_name/"contentPlan"/"final_content_plan.json")
+    content_plan = enrich_content_plan_metadata(
+        content_plan,
+        output_path,
+        file_name,
+        log=log,
+        github_url=github_url,
+        arxiv_url=arxiv_url,
+    )
     log.info("Slides content planning completed.")
     log.info("Start html code generation...")
     html_code = htmlGenerate(content_plan,data_type=mode)
     #html_code = htmlGenerateBaseline(content_plan,data_type=mode)
-    html_code = changeHTML(html_code)
+    html_code = changeHTML(html_code)#修改图片引用路径
+    if mode == "web":
+        html_code = replace_table_images_with_html(
+            html_code,
+            Path(output_path) / file_name,
+            log=log,
+        )
     save_html(Path(output_path)/file_name/f"{file_name}.html",html_code)
 
     log.info("html code generation finished")
@@ -180,11 +168,20 @@ if __name__=="__main__":
     input_path=Path(arg.doc_path).resolve()
     output_path=Path(arg.output).resolve()
     mode=arg.mode
+    github_url=arg.github_url
+    arxiv_url=arg.arxiv_url
     file_name=input_path.stem
     log = get_logger(output_path,file_name,__name__)
     log.info(f"Processing document: {input_path}, output to: {output_path},file_name: {file_name}")
     #ppt_generate2(input_path,output_path,mode=mode,log=log)
-    presentation_generate(input_path,output_path,mode,log)
+    presentation_generate(
+        input_path,
+        output_path,
+        mode,
+        log,
+        github_url=github_url,
+        arxiv_url=arxiv_url,
+    )
     new_path=output_path/f"{timestamp}_{file_name}_{mode}"
     shutil.move(output_path/file_name,new_path)
     """
@@ -221,5 +218,3 @@ if __name__=="__main__":
     """
 
     
-
-
