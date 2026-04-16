@@ -24,8 +24,8 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 # 插入到路径列表的最前面（优先搜索）
 sys.path.insert(0, current_dir)
 from planJson3 import parse_html_to_content_plan
-from ImageInfo import enrich_content_plan
-from htmlGenerate3 import responsiveHTMLGenerate   # 调用方自行提供
+from ImageInfo import enrich_content_plan2
+from htmlGenerate4 import responsiveHTMLGenerate   # 调用方自行提供
 
 
 # 支持的图片扩展名
@@ -92,7 +92,7 @@ def single_data_generate(image_path: str, mineru_path: str, output_path: str) ->
 
     # ── 5. 补全 JSON（尺寸 + 语义）────────────────────────────────────────────
     print(f"[{image_name}] 补全 JSON 信息 ...")
-    enrich_content_plan(json_path=json_path)
+    enrich_content_plan2(json_path=json_path)
 
     print(f"[{image_name}] ✅ 完成\n")
 
@@ -138,8 +138,11 @@ def batch_generate(image_dir: str, mineru_path: str, output_path: str) -> None:
     print(f"[batch] 全部处理完毕，输出目录: {output_path}")
 
 if __name__=="__main__":
-    image_path="../webData/imgs_2/"
-    mineru_path="../webData/mineru_output_with_eq"
-    output_path="../webData/pair_data2"
+    image_path="../posterData/batch3/"
+    mineru_path="../posterData/batch3/mineru_output_with_eq"
+    output_path="../finetuneData/poster/batchData3"
+    #image_path="../posterData/batch2/A continuous benchmarking community challenge for COVID-19 outcome prediction.jpg"
+    #mineru_path="../posterData/batch2/mineru_output_with_eq"
+    #output_path="./"
     #single_data_generate(image_path,mineru_path,output_path)
     batch_generate(image_path,mineru_path,output_path)

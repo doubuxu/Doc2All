@@ -167,6 +167,32 @@ def _enrich_entry(entry: dict, json_dir: str, context: str,
     print(f"  [DESC] {label}: {desc}")
 
 
+def _enrich_entry_size_only(entry: dict, json_dir: str,
+                            width_key: str, height_key: str) -> None:
+    """
+    原地修改单个 figure 或 table 条目，仅补全尺寸信息：
+      - img_path 字段直接给出图片路径，以 json_dir 为基准解析
+      - width_key / height_key 为 0 时补全尺寸
+      - 不修改 description 等其他字段
+    """
+    img_path = entry.get("img_path", "")
+    if not img_path:
+        return
+
+    abs_path = _resolve_img_path(img_path, json_dir)
+    if not os.path.isfile(abs_path):
+        print(f"  [SKIP] 文件不存在: {abs_path}")
+        return
+
+    label = entry.get("fig_id") or entry.get("table_id") or img_path
+
+    if entry.get(width_key, 0) == 0 or entry.get(height_key, 0) == 0:
+        w, h = _get_image_size(abs_path)
+        entry[width_key] = w
+        entry[height_key] = h
+        print(f"  [SIZE] {label}: {w}×{h}")
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # 对外接口
 # ─────────────────────────────────────────────────────────────────────────────
@@ -212,6 +238,58 @@ def enrich_content_plan(json_path: str) -> None:
                           width_key="table_width", height_key="table_height")
 
     # 写回
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(plan, f, ensure_ascii=False, indent=2)
+
+    print(f"\n✅  已写回: {json_path}")
+
+
+def enrich_content_plan2(json_path: str) -> None:
+    """
+    仅补全 content_plan.json 中所有子图的尺寸信息，原地写回。
+
+    图片路径直接取自 JSON 条目的 img_path 字段，
+    相对路径以 JSON 文件所在目录为基准解析。
+
+    参数
+    ----
+    json_path : content_plan.json 的完整路径
+    """
+    json_dir = str(Path(json_path).parent)
+
+    with open(json_path, "r", encoding="utf-8") as f:
+        plan = json.load(f)
+
+    plan = copy.deepcopy(plan)
+
+    for entry in plan.get("metadata", {}).get("figures", []):
+        _enrich_entry_size_only(
+            entry,
+            json_dir,
+            width_key="figure_width",
+            height_key="figure_height",
+        )
+
+    for section in plan.get("sections", []):
+        sec_title = section.get("title", "")
+        print(f"\n[SECTION] {section.get('id', '')} — {sec_title}")
+
+        for entry in section.get("figures", []):
+            _enrich_entry_size_only(
+                entry,
+                json_dir,
+                width_key="figure_width",
+                height_key="figure_height",
+            )
+
+        for entry in section.get("tables", []):
+            _enrich_entry_size_only(
+                entry,
+                json_dir,
+                width_key="table_width",
+                height_key="table_height",
+            )
+
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(plan, f, ensure_ascii=False, indent=2)
 

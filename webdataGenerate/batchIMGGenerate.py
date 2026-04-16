@@ -175,7 +175,7 @@ if __name__ == "__main__":
     # 用法：python script.py data.csv ./output 10
 
     csv_path = "./url.csv"
-    out_dir = "../webData/batchData2"
+    out_dir = "../webData/batchData3"
     num_to_process = 100
 
     Path(out_dir).mkdir(parents=True, exist_ok=True)

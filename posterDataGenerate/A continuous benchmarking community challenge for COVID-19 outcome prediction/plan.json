@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "A Continuous Benchmarking Community Challenge for COVID-19 Outcome Prediction",
+    "authors": [
+      "Yao Yan",
+      "Thomas Schaffter",
+      "Timothy Bergquist",
+      "Thomas Yu",
+      "Vikas Pejaver",
+      "Noah Hammarlund",
+      "Justin Prosser",
+      "Justin Guinney",
+      "Sean Mooney"
+    ],
+    "organizations": [
+      "Sage Bionetworks",
+      "Seattle",
+      "WA; UW Medicine health system; University of Washington"
+    ],
+    "github": "",
+    "figures": [
+      {
+        "fig_id": "fig_1",
+        "description": "Community Logo and Organizational Icons",
+        "img_path": "./fig_1.jpg",
+        "figure_width": 684,
+        "figure_height": 315,
+        "figure_caption": []
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section_1",
+      "title": "Alternative approach for sensitive EHR data sharing",
+      "content": [
+        "Sensitive EHR data sharing is restricted under HIPAA to protect patient privacy, raising the threshold for researchers outside health institutions to access and utilize patient data to aid in the COVID-19 pandemic response.",
+        "Our solutions - Model-to-data paradigm",
+        "Containerized models submitted by participants are trained and evaluated on COVID-19 patient EHR datasets from UW Medicine health system in secure UW on-premises computing environment.",
+        "Only model performance scores Area Under the Receiver Operator Curve (AUROC) and Area Under Precision-Recall Curve (AUPRC) are returned to participants."
+      ],
+      "figures": [],
+      "tables": []
+    },
+    {
+      "id": "section_3",
+      "title": "EHR DREAM Challenge - COVID-19 Prediction",
+      "content": [
+        "Questions",
+        "Q1. For a patient who has received a COVID-19 test, how likely will he/she test positive?",
+        "Q2. For a patient who has tested positive during an outpatient visit, how likely will he/she be hospitalized within 21 days from COVID-19 test?",
+        "Data",
+        "Data are updated every 2-4 weeks. Six releases of the dataset in Q1 have been prepared over 25 weeks. The dataset in Q2 has been updated 3 times over 13 weeks.",
+        "The data were collected from the UW Medicine health system and were dated back to 2010.",
+        "As of late November 2020, the combined dataset included ~90,000 patients tested for COVID-19 since February 2020. ~3,500 patients have tested positive. ~120 have been hospitalized within 21 days after testing positive.",
+        "Participation",
+        "As of late November 2020, 482 participants have registered for the challenge.",
+        "We received 483 valid submissions from 65 teams for Q1 and 226 valid submissions from 25 teams for Q2.",
+        "The AUROC and AUPRC of the best-performing model so far are 0.827 and 0.303 seen in the dataset version $^\\dag 09-18-20^\\dag$ for Q1, and 0.982 and 0.897 for Q2 dataset version \"08-19-2020\"."
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_3",
+          "description": "Q1 Challenge submission performance and participation over weeks",
+          "img_path": "./fig_3.jpg",
+          "figure_width": 888,
+          "figure_height": 518,
+          "figure_caption": [
+            "Q1 Challenge submission performance (AUROC) and participation over weeks"
+          ]
+        },
+        {
+          "fig_id": "fig_4",
+          "description": "Q2 Challenge submission performance and participation over weeks",
+          "img_path": "./fig_4.jpg",
+          "figure_width": 888,
+          "figure_height": 543,
+          "figure_caption": [
+            "Q2 Challenge submission performance (AUROC) and participation over weeks"
+          ]
+        }
+      ],
+      "tables": []
+    },
+    {
+      "id": "section_2",
+      "title": "Model-to-Data Paradigm Workflow",
+      "content": [],
+      "figures": [
+        {
+          "fig_id": "fig_2",
+          "description": "Model-to-Data Paradigm Workflow Diagram showing Stage 1 Model Validation and Stage 2 Model Evaluation",
+          "img_path": "./fig_2.jpg",
+          "figure_width": 942,
+          "figure_height": 507,
+          "figure_caption": []
+        }
+      ],
+      "tables": []
+    },
+    {
+      "id": "section_4",
+      "title": "Post challenge analysis",
+      "content": [
+        "Experiment design",
+        "As of mid November, our accumulated datasets included ~90K patients who have tested for COVID-19. We split the datasets into training (patients who tested before July 2020, $50\\%$, ~45K patients) and evaluation datasets (patients who tested after July 2020, the other $50\\%$). We selected the top 5 models from the challenge Q1 and re-trained the models on the training datasets and evaluated the models using the evaluation datasets. We used bootstrapping to get models' performance on sub-datasets stratified by months when patients were tested, age and gender.",
+        "Conclusions",
+        "Some models might overfit to the training data and model's performance degrades over temporal evolving datasets while some are more resistant to performance degradation over time (UWisc-Madison-BMI).",
+        "Four out of the five best-performing models achieve a significantly higher AUROC value on female patients compared to male patients $(p < 0.0001)$.",
+        "The performance of models is the highest on the 25-49 age group among all other age groups."
+      ],
+      "figures": [
+        {
+          "fig_id": "fig_5",
+          "description": "Q1 submission performance on evolving datasets",
+          "img_path": "./fig_5.jpg",
+          "figure_width": 772,
+          "figure_height": 378,
+          "figure_caption": [
+            "Q1 submission performance on evolving datasets"
+          ]
+        },
+        {
+          "fig_id": "fig_6",
+          "description": "Q1 submission performance on different gender groups",
+          "img_path": "./fig_6.jpg",
+          "figure_width": 772,
+          "figure_height": 427,
+          "figure_caption": [
+            "Q1 submission performance on different gender groups"
+          ]
+        },
+        {
+          "fig_id": "fig_7",
+          "description": "Q1 submission performance on different age groups",
+          "img_path": "./fig_7.jpg",
+          "figure_width": 767,
+          "figure_height": 448,
+          "figure_caption": [
+            "Q1 submission performance on different age groups"
+          ]
+        }
+      ],
+      "tables": []
+    },
+    {
+      "id": "section_5",
+      "title": "Reference",
+      "content": [
+        "Guinney J, Saez-Rodriguez J. Alternative models for sharing confidential biomedical data. Nat Biotechnol 2018; 36:391-2. doi:10.1038/nbt.4128",
+        "Bergquist T, Yan Y, Schafter T, et al. Piloting a model-to-data approach to enable predictive analytics in health care through patient mortality prediction. J Am Med Inform Assoc 2020; 27:1393-400. doi:10.1093/jamia/ocaa083"
+      ],
+      "figures": [],
+      "tables": []
+    }
+  ]
+}

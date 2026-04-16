@@ -260,11 +260,11 @@ if __name__ == "__main__":
     import sys
 
     # 用法: python create_dataset.py <poster_path|""> <web_path|""> <output.jsonl>
-    poster_path="../finetuneData/poster/batchData1"
-    web_path="../finetuneData/web/pair_data2"
-    output_path="../finetune/LLaMA-Factory/data/web_data_original_new.jsonl"
+    poster_path="../finetuneData/poster/batchData3_filtered"
+    web_path="../finetuneData/web/pair_data2_filtered"
+    output_path="../finetune/LLaMA-Factory/data/mix_data_filtered.jsonl"
     create_dataset(
-        None,
-        web_path,
-        output_path
+        poster_path,
+        web_path=None,
+        output_path=output_path
     )

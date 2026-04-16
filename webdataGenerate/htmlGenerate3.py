@@ -284,6 +284,102 @@ def responsiveHTMLGenerate(image_path,mineru_path):
 以下是原始绝对定位 HTML 代码：
 {absolute_html}
 """
+    prompt_content=f""""
+你是一位顶级的全栈工程师，专精于将复杂的视觉网页逆向工程为"结构化、语义化"的响应式 HTML。你的目标是确保生成的代码不仅在视觉上完美还原，且能通过脚本轻松提取为学术 PlanJSON 格式。
+
+## 输入数据
+前端网页原图：作为布局和语义逻辑的最终判定标准。
+
+绝对定位 HTML 源码：提供原始内容、图片 ID (data-fig-id) 及像素级坐标参考。
+
+## 任务要求：遵循以下 Chain-of-Thought (CoT) 逻辑分析
+
+### 步骤 1：空间与并列关系扫描
+全局分栏识别：通过图片确认网页的 Panel 布局（如单栏、多栏等）。
+
+全局分块尺寸识别：通过图片分析各个布局的大小比例，严禁简单均分。
+
+横向并列判定：仔细观察图片并参考坐标，确认元素相对位置是横向排列还是纵向排列，严禁盲目垂直堆叠。
+
+语义分块：根据原图内容，将网页划分为 Metadata, Introduction, Methodology 等逻辑章节。
+
+### 步骤 2：字体层级视觉估算
+基于网页原图进行字体大小的视觉推断，建立全局字体比例体系：
+
+基准确立：识别正文段落，定义为 1rem（对应 text-base）。
+
+层级比例映射：
+
+主标题 <h1> -> text-4xl 或 text-5xl。
+
+章节标题 <h2> -> text-2xl 或 text-3xl。
+
+子标题 <h3> -> text-xl 或 text-lg。
+
+图注/参考文献 -> text-xs 或 text-sm。
+
+字重与间距：标题添加 font-bold；根据视觉宽松度添加 leading-relaxed 或 leading-tight。
+
+### 步骤 3：结构化 HTML 语义约束 (面向 PlanJSON 提取的核心硬约束)
+1. 整体架构：
+
+遵循 [Header(Metadata)] -> [Main(Sections)] 的扁平层级。
+
+Metadata 区块：使用 <header data-type="metadata">。
+
+标题：使用 <h1>。
+
+作者：使用 <div data-type="authors"> 包裹，每个作者必须用 <span> 独立分割（如 <span>Lilang Lin</span>）。
+
+机构：使用 <div data-type="organizations">。
+
+其他文本：Metadata 区域内的其他描述性文字（如会议名称、备注）必须包含在内，以便解析至 contents 字段。
+
+交互按钮：如 Github、Arxiv 链接，必须设置为 <nav> 块，内部使用若干 <a> 标签，href 统一使用 #。
+
+2. 章节 (Sections) 约束：
+
+除 Metadata 外，所有学术章节必须包裹在 <section id="section_n" data-type="section"> 中，n 是从 1 开始递增的整数。
+
+每个 Section 的标题统一使用 <h2>，子标题使用 <h3>。
+
+严禁使用 footer、label、input、button 等标签。所有的交互式组件、表单或页脚内容必须转换为普通的 <section> 块，其中的按钮或输入框提示文字必须处理为 <p> 标签。
+
+3. 正文与图文内容：
+
+文本提取：正文内容支持 <p>, <h3>, <h4>, <h5>, <h6> 以及 <pre>。对于代码或 BibTeX 引用，必须使用 <pre> 以保留格式。
+
+图表容器化：图片或表格必须包裹在 <div> 中。
+
+图表判定：根据内容判定 data-type 为 "figure" 或 "table"。
+
+标题绑定：标题文字必须包含在同一个 <div> 内，且标记为 <p data-type="caption">。
+
+组图规范：若是并排组图，图片容器标记为 data-type="figure-group"，标题容器标记为 data-type="caption-group"，确保内部元素索引对应。
+
+ID 保留：所有 <img> 必须保留原始的 data-fig-id。
+
+4. 数学公式：
+
+必须在 <head> 中配置 MathJax：
+
+步骤 4：响应式布局实现 (Tailwind CSS)
+移除所有 position: absolute，使用 grid 或 flex 替代坐标。
+
+在桌面端 (lg) 强制保留横向并排结构，在移动端自动垂直堆叠。
+
+⚠️ 严格输出限制
+仅输出 HTML 代码：严禁输出任何解释性文字、开场白或结束语。
+
+禁止 Markdown 格式：不要将代码包裹在 ``` 块中，直接以 <!DOCTYPE html> 开头输出。
+
+内容保全：严禁删除、修改或简化任何原始文本内容。
+
+单一文件：通过 CDN 引入 Tailwind，输出为一个独立的 HTML 文件。
+
+以下是原始绝对定位 HTML 代码：
+{absolute_html}
+    """
     base64_image = get_verified_base64_image(image_path)
     message = [
     {
