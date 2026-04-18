@@ -9,6 +9,7 @@ enrich_content_plan.py
 
 对外接口：
     enrich_content_plan(json_path) -> None
+    enrich_content_plan2(json_path) -> None
         json_path : content_plan.json 的完整路径，处理后原地写回
 
 环境变量：
@@ -161,7 +162,6 @@ def _enrich_entry(entry: dict, json_dir: str, context: str,
         print(f"  [SIZE] {label}: {w}×{h}")
 
     # 补全描述
-    
     desc = _describe_image(abs_path, context=context)
     entry["description"] = desc
     print(f"  [DESC] {label}: {desc}")
@@ -171,7 +171,7 @@ def _enrich_entry_size_only(entry: dict, json_dir: str,
                             width_key: str, height_key: str) -> None:
     """
     原地修改单个 figure 或 table 条目，仅补全尺寸信息：
-      - img_path 字段直接给出图片路径，以 json_dir 为基准解析
+      - 若本地找不到对应文件，直接跳过，不做任何操作。
       - width_key / height_key 为 0 时补全尺寸
       - 不修改 description 等其他字段
     """
@@ -180,6 +180,8 @@ def _enrich_entry_size_only(entry: dict, json_dir: str,
         return
 
     abs_path = _resolve_img_path(img_path, json_dir)
+    
+    # 【修改点】：如果文件不存在，直接 return，不修改 entry 中的任何字段（包括保留原本的 0）
     if not os.path.isfile(abs_path):
         print(f"  [SKIP] 文件不存在: {abs_path}")
         return
@@ -247,6 +249,7 @@ def enrich_content_plan(json_path: str) -> None:
 def enrich_content_plan2(json_path: str) -> None:
     """
     仅补全 content_plan.json 中所有子图的尺寸信息，原地写回。
+    遇到无法在本地找到对应文件的图片，不做任何操作，直接跳过。
 
     图片路径直接取自 JSON 条目的 img_path 字段，
     相对路径以 JSON 文件所在目录为基准解析。

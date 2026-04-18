@@ -1,29 +1,7 @@
-"""
-html_to_content_plan.py
------------------------
-将手动编码的 poster HTML 文件解析为 content_plan.json。
-
-对外接口：
-    parse_html_to_content_plan(html_path, output_dir) -> str
-        html_path  : HTML 文件路径
-        output_dir : 输出目录；JSON 文件名与 HTML 同名（扩展名替换为 .json）
-        返回值     : 生成的 JSON 文件完整路径
-
-解析规则：
-  - <header data-type="metadata">   → metadata（title / authors / organizations / figures）
-  - <section data-type="section">   → sections[]（id / title / content / figures / tables）
-  - <section data-type="reference"> → sections[]（title="References"，content 存文献条目）
-  - <img data-fig-id="table_*"> 或 src="./table_*.jpg"  → tables[]
-  - <img src="./equations_*.jpg">   → figures[]（公式图与普通图统一归入 figures）
-  - figure_width / figure_height / table_width / table_height → 0（HTML 中无尺寸信息）
-  - figure_caption / table_caption  → <figcaption> 文本，无则 []
-"""
-
 import os
 import json
 import re
 from bs4 import BeautifulSoup, Tag
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # 内部工具函数
@@ -35,263 +13,361 @@ def _clean_text(text: str) -> str:
 
 
 def _get_fig_id(img_tag: Tag) -> str:
-    """优先取 data-fig-id；否则从 src 文件名推断（去掉扩展名）。"""
+    """获取图片 ID。优先从 data-fig-id 属性取，否则从 src 文件名推导。"""
     fid = img_tag.get("data-fig-id", "")
-    if not fid:
-        src = img_tag.get("src", "")
-        fid = os.path.splitext(os.path.basename(src))[0]
-    return fid
+    if fid:
+        return fid
+    src = img_tag.get("src", "")
+    if src:
+        return os.path.splitext(os.path.basename(src))[0]
+    return ""
 
 
-def _is_table_img(img_tag: Tag) -> bool:
-    """data-fig-id 或 src 文件名以 'table_' 开头则视为 table。"""
-    fid = img_tag.get("data-fig-id", "")
-    src = os.path.basename(img_tag.get("src", ""))
-    return fid.startswith("table_") or src.startswith("table_")
+# ── Tailwind spacing 映射表（rem → px，1rem = 4px） ──
+_TAILWIND_SPACING = {
+    '0': 0, '0\\.5': 2, '1': 4, '1\\.5': 6, '2': 8, '2\\.5': 10,
+    '3': 12, '3\\.5': 14, '4': 16, '5': 20, '6': 24, '7': 28,
+    '8': 32, '9': 36, '10': 40, '11': 44, '12': 48, '14': 56,
+    '16': 64, '20': 80, '24': 96, '28': 112, '32': 128, '36': 144,
+    '40': 160, '44': 176, '48': 192, '52': 208, '56': 224,
+    '60': 240, '64': 256, '72': 288, '80': 320, '96': 384,
+}
+
+# ── 预编译正则 ──
+_RE_H_STD = re.compile(r'\bh-(\d+(?:\.\d+)?)(?!\[)')       # h-40
+_RE_W_STD = re.compile(r'\bw-(\d+(?:\.\d+)?)(?!\[)')       # w-60
+_RE_H_ARB = re.compile(r'\bh-\[(\d+)px\]')                 # h-[200px]
+_RE_W_ARB = re.compile(r'\bw-\[(\d+)px\]')                 # w-[300px]
+_RE_STYLE_W = re.compile(r'\bwidth\s*:\s*(\d+)\s*px', re.I) # style="width:300px"
+_RE_STYLE_H = re.compile(r'\bheight\s*:\s*(\d+)\s*px', re.I) # style="height:200px"
 
 
-def _make_figure_entry(img_tag: Tag, caption_texts: list | None = None) -> dict:
+def _parse_dimensions_from_tag(tag: Tag) -> tuple[int | None, int | None]:
+    """从标签及其所有祖先上解析宽高像素值。
+
+    优先级：style 属性 > Tailwind 任意值 h-[Xpx]/w-[Xpx] > Tailwind 标准 h-N/w-N。
+    只有两个维度都能解析到时才返回，否则返回 (None, None)。
+    """
+    height_px = None
+    width_px = None
+
+    for t in [tag] + (list(tag.parents) if tag else []):
+        if not isinstance(t, Tag):
+            continue
+
+        # ── 来源 1：style="width:300px; height:200px" ──
+        style = t.get("style") or ""
+        if style and (height_px is None or width_px is None):
+            if width_px is None:
+                m = _RE_STYLE_W.search(style)
+                if m:
+                    width_px = int(m.group(1))
+            if height_px is None:
+                m = _RE_STYLE_H.search(style)
+                if m:
+                    height_px = int(m.group(1))
+
+        # ── 来源 2：class 中的 Tailwind 值 ──
+        classes = t.get("class") or []
+        cls_str = " ".join(classes)
+
+        if height_px is None:
+            m_arb = _RE_H_ARB.search(cls_str)
+            if m_arb:
+                height_px = int(m_arb.group(1))
+            else:
+                m_std = _RE_H_STD.search(cls_str)
+                if m_std:
+                    height_px = _TAILWIND_SPACING.get(m_std.group(1))
+
+        if width_px is None:
+            m_arb = _RE_W_ARB.search(cls_str)
+            if m_arb:
+                width_px = int(m_arb.group(1))
+            else:
+                m_std = _RE_W_STD.search(cls_str)
+                if m_std:
+                    width_px = _TAILWIND_SPACING.get(m_std.group(1))
+
+        # 两个维度都解析到就可以提前退出
+        if height_px is not None and width_px is not None:
+            break
+
+    if height_px is not None and width_px is not None:
+        return height_px, width_px
+    return None, None
+
+
+def _is_formula(img_tag: Tag) -> bool:
+    """判断是否为公式图片（data-fig-id 以 equation 开头）。"""
+    fid = _get_fig_id(img_tag)
+    return fid.startswith("equation") if fid else False
+
+
+def _is_table(img_tag: Tag) -> bool:
+    """判断是否为表格图片。"""
+    dtype = (img_tag.get("data-type") or "").lower()
+    if dtype == "table":
+        return True
+    fid = _get_fig_id(img_tag)
+    if fid and fid.startswith("table_"):
+        return True
+    src = img_tag.get("src", "")
+    if src and os.path.basename(src).startswith("table_"):
+        return True
+    return False
+
+
+def _make_figure_entry(img_tag: Tag, caption_list: list | None = None) -> dict:
+    h, w = _parse_dimensions_from_tag(img_tag)
     return {
         "fig_id":         _get_fig_id(img_tag),
         "description":    _clean_text(img_tag.get("alt", "")),
         "img_path":       img_tag.get("src", ""),
-        "figure_width":   0,
-        "figure_height":  0,
-        "figure_caption": caption_texts or [],
+        "figure_width":   w if w is not None else 0,
+        "figure_height":  h if h is not None else 0,
+        "figure_caption": caption_list or [],
     }
 
 
-def _make_table_entry(img_tag: Tag, caption_texts: list | None = None) -> dict:
+def _make_table_entry(img_tag: Tag, caption_list: list | None = None) -> dict:
+    h, w = _parse_dimensions_from_tag(img_tag)
     return {
         "table_id":      _get_fig_id(img_tag),
         "description":   _clean_text(img_tag.get("alt", "")),
         "img_path":      img_tag.get("src", ""),
-        "table_width":   0,
-        "table_height":  0,
-        "table_caption": caption_texts or [],
+        "table_width":   w if w is not None else 0,
+        "table_height":  h if h is not None else 0,
+        "table_caption": caption_list or [],
     }
 
 
-def _find_caption(img_tag: Tag) -> list:
-    """在 img 父节点内查找 <figcaption>，返回文本列表（0 或 1 项）。"""
-    parent = img_tag.parent
-    if parent is None:
-        return []
-    figcap = parent.find("figcaption")
-    if figcap:
-        txt = _clean_text(figcap.get_text())
-        return [txt] if txt else []
-    return []
+def _make_equation_entry(img_tag: Tag, caption_list: list | None = None) -> dict:
+    h, w = _parse_dimensions_from_tag(img_tag)
+    return {
+        "eq_id":       _get_fig_id(img_tag),
+        "description": _clean_text(img_tag.get("alt", "")),
+        "img_path":    img_tag.get("src", ""),
+        "eq_width":    w if w is not None else 0,
+        "eq_height":   h if h is not None else 0,
+        "eq_caption":  caption_list or [],
+    }
+
+
+def _find_captions_for_img(img_tag: Tag) -> list:
+    """为单张 <img> 查找关联的 caption 文本。"""
+    captions = []
+
+    # 策略 1：<figure> → <figcaption>
+    figure_parent = img_tag.find_parent("figure")
+    if figure_parent:
+        for fc in figure_parent.find_all("figcaption"):
+            txt = _clean_text(fc.get_text())
+            if txt and txt not in captions:
+                captions.append(txt)
+
+    # 策略 2：data-type="caption"（兼容旧写法）
+    if not captions:
+        parent = img_tag.parent
+        depth = 0
+        while parent and depth < 5:
+            if isinstance(parent, Tag):
+                for cap in parent.find_all(attrs={"data-type": "caption"}):
+                    txt = _clean_text(cap.get_text())
+                    if txt and txt not in captions:
+                        captions.append(txt)
+            parent = parent.parent
+            depth += 1
+
+    return captions
+
+
+def _get_text_with_links(tag: Tag) -> str:
+    """智能文本提取：含 <a> 时返回 '文本 (URL)' 格式。"""
+    if tag.name == "a":
+        href = tag.get("href", "")
+        text = _clean_text(tag.get_text())
+        return f"{text} ({href})" if text and href else (text or href)
+
+    links = tag.find_all("a")
+    if links:
+        full_text = _clean_text(tag.get_text())
+        for link in links:
+            href = link.get("href", "")
+            link_text = _clean_text(link.get_text())
+            if link_text and href:
+                full_text = full_text.replace(link_text, f"{link_text} ({href})", 1)
+        return full_text
+
+    return _clean_text(tag.get_text())
+
+
+def _is_inside_figure_or_table_container(tag: Tag) -> bool:
+    """判断标签是否在 figure / table 相关容器内部。"""
+    for parent in tag.find_parents():
+        if isinstance(parent, Tag):
+            dt = (parent.get("data-type") or "").lower()
+            if dt in ("figure", "table"):
+                return True
+            if parent.name == "figure":
+                return True
+    return False
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 各区块解析
+# 各区块解析逻辑
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _parse_metadata(header_tag: Tag) -> dict:
-    """解析 <header data-type="metadata"> 块。"""
     meta = {
-        "title":         "",
-        "authors":       [],
-        "organizations": [],
-        "github":        "",
-        "figures":       [],
+        "title": "", "authors": [], "organizations": [], "github": "",
+        "figures": [], "content": []
     }
 
+    # ── 1. 基础信息 ──
     h1 = header_tag.find("h1")
     if h1:
         meta["title"] = _clean_text(h1.get_text())
 
-    author_div = header_tag.find("div", class_=re.compile(r"text-xl|text-2xl"))
-    if author_div:
-        raw = _clean_text(author_div.get_text())
-        meta["authors"] = [a.strip().rstrip("*") for a in raw.split(",") if a.strip()]
+    auth_div = header_tag.select_one('[data-type="authors"]')
+    if auth_div:
+        meta["authors"] = [a.strip() for a in _clean_text(auth_div.get_text()).split(",") if a.strip()]
 
-    org_div = header_tag.find("div", class_=re.compile(r"text-gray"))
+    org_div = header_tag.select_one('[data-type="organizations"]')
     if org_div:
-        raw = _clean_text(org_div.get_text())
-        meta["organizations"] = [o.strip() for o in raw.split(",") if o.strip()]
+        meta["organizations"] = [o.strip() for o in _clean_text(org_div.get_text()).split(",") if o.strip()]
 
+    # ── 2. 链接 ──
     for a_tag in header_tag.find_all("a"):
         href = a_tag.get("href", "")
-        if "github" in href.lower():
+        if "github.com" in href.lower() and href.startswith("http"):
             meta["github"] = href
-            break
 
+    # ── 3. 图片 ──
+    visited_srcs = set()
     for img in header_tag.find_all("img"):
-        meta["figures"].append(_make_figure_entry(img))
+        src = img.get("src", "")
+        if not src:
+            continue
+        visited_srcs.add(src)
+        caps = _find_captions_for_img(img)
+        meta["figures"].append(_make_figure_entry(img, caps))
+
+    # ── 4. Content 提取 ──
+    excluded_nodes = header_tag.select('h1, [data-type="authors"], [data-type="organizations"]')
+    excluded_texts = [_clean_text(n.get_text()) for n in excluded_nodes if _clean_text(n.get_text())]
+
+    for tag in header_tag.find_all(["p", "span", "a"]):
+        if tag.get("data-type") in ("authors", "organizations"):
+            continue
+        if tag.find_parent("figure"):
+            continue
+        if tag.find(["p", "span", "div", "a"]):
+            continue
+
+        raw_txt = tag.get_text(strip=True)
+        if not raw_txt:
+            continue
+        if any(raw_txt in ex for ex in excluded_texts):
+            continue
+
+        txt = _get_text_with_links(tag)
+        if txt and txt not in meta["content"]:
+            meta["content"].append(txt)
 
     return meta
 
 
-def _collect_content(tag: Tag, section: dict, visited_imgs: set):
-    """
-    深度优先遍历 tag，将内容分类填入 section：
-      - 文本（p / h3-h6 / li） → section["content"]
-      - 普通图 / 公式图        → section["figures"]
-      - table 图               → section["tables"]
-    """
-    for child in tag.children:
-        if not isinstance(child, Tag):
-            continue
-
-        tag_name = child.name.lower()
-
-        # 跳过 section 标题（已单独提取）
-        if tag_name == "h2":
-            continue
-
-        # 段落 / 小标题
-        if tag_name in ("p", "h3", "h4", "h5", "h6"):
-            if "hidden" in child.get("class", []):   # LaTeX 备注行，跳过
-                continue
-            txt = _clean_text(child.get_text())
-            if txt:
-                section["content"].append(txt)
-            continue
-
-        # 无序列表：每个 <li> 作为独立 content 条目
-        if tag_name == "ul":
-            for li in child.find_all("li", recursive=False):
-                txt = _clean_text(li.get_text())
-                if txt:
-                    section["content"].append(txt)
-            continue
-
-        # 裸 <img>
-        if tag_name == "img":
-            src = child.get("src", "")
-            if src in visited_imgs:
-                continue
-            visited_imgs.add(src)
-            cap = _find_caption(child)
-            if _is_table_img(child):
-                section["tables"].append(_make_table_entry(child, cap))
-            else:
-                section["figures"].append(_make_figure_entry(child, cap))
-            continue
-
-        # <figure> 包裹的图片
-        if tag_name == "figure":
-            img = child.find("img")
-            if img:
-                src = img.get("src", "")
-                if src not in visited_imgs:
-                    visited_imgs.add(src)
-                    figcap = child.find("figcaption")
-                    cap = [_clean_text(figcap.get_text())] if figcap else []
-                    if _is_table_img(img):
-                        section["tables"].append(_make_table_entry(img, cap))
-                    else:
-                        section["figures"].append(_make_figure_entry(img, cap))
-            continue
-
-        # 其他容器：递归
-        _collect_content(child, section, visited_imgs)
-
-
 def _parse_section(section_tag: Tag) -> dict:
-    """解析 <section data-type="section">。"""
     section = {
-        "id":      section_tag.get("id", ""),
-        "title":   "",
-        "content": [],
-        "figures": [],
-        "tables":  [],
+        "id": "", "title": "", "content": [],
+        "figures": [], "tables": [], "equations": []
     }
+    section["id"] = section_tag.get("id", "")
+
     h2 = section_tag.find("h2")
     if h2:
         section["title"] = _clean_text(h2.get_text())
-    _collect_content(section_tag, section, visited_imgs=set())
-    return section
 
+    # ── 1. 图片分类收集 ──
+    visited_srcs = set()
+    for img in section_tag.find_all("img"):
+        src = img.get("src", "")
+        if not src or src in visited_srcs:
+            continue
+        visited_srcs.add(src)
 
-def _parse_reference_section(section_tag: Tag) -> dict:
-    """解析 <section data-type="reference">，每条 <li> 作为 content 条目。"""
-    section = {
-        "id":      section_tag.get("id", "section_ref"),
-        "title":   "",
-        "content": [],
-        "figures": [],
-        "tables":  [],
-    }
-    h2 = section_tag.find("h2")
-    if h2:
-        section["title"] = _clean_text(h2.get_text())
-    for li in section_tag.find_all("li"):
-        txt = _clean_text(li.get_text())
-        if txt:
+        caps = _find_captions_for_img(img)
+
+        if _is_formula(img):
+            section["equations"].append(_make_equation_entry(img, caps))
+        elif _is_table(img):
+            section["tables"].append(_make_table_entry(img, caps))
+        else:
+            section["figures"].append(_make_figure_entry(img, caps))
+
+    # ── 2. 文本内容提取 ──
+    for tag in section_tag.find_all(["p", "h3", "h4", "h5", "h6", "li", "span", "a"]):
+        if tag.name == "figcaption":
+            continue
+        if (tag.get("data-type") or "").lower() == "caption":
+            continue
+        if _is_inside_figure_or_table_container(tag):
+            continue
+        if tag.name == "img":
+            continue
+
+        if tag.find(["p", "span", "div", "a"]):
+            is_independent_link = (
+                tag.name == "a"
+                and tag.parent
+                and tag.parent.name not in ("p", "li", "span", "figcaption")
+            )
+            if not is_independent_link:
+                continue
+
+        txt = _get_text_with_links(tag)
+        txt_stripped = txt.strip()
+        if txt_stripped and txt not in section["content"]:
             section["content"].append(txt)
+
     return section
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 对外接口
+# 对外接口（不修改）
 # ─────────────────────────────────────────────────────────────────────────────
 
 def parse_html_to_content_plan(html_path: str, output_dir: str) -> str:
-    """
-    将 poster HTML 文件解析为 content_plan.json 并保存。
+    if not os.path.exists(html_path):
+        raise FileNotFoundError(f"Missing: {html_path}")
 
-    参数
-    ----
-    html_path  : str — HTML 文件的完整路径
-    output_dir : str — 输出目录；若不存在则自动创建
-
-    返回
-    ----
-    str — 生成的 JSON 文件完整路径
-    """
-    # ── 读取并解析 HTML ───────────────────────────────────────────────────────
     with open(html_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f.read(), "html.parser")
 
     plan = {"metadata": {}, "sections": []}
 
-    # metadata
-    header = soup.find(lambda t: t.name == "header" and t.get("data-type") == "metadata")
+    header = soup.find("header", attrs={"data-type": "metadata"})
     if header:
         plan["metadata"] = _parse_metadata(header)
-    else:
-        title_tag = soup.find("title")
-        plan["metadata"] = {
-            "title":         _clean_text(title_tag.get_text()) if title_tag else "",
-            "authors":       [],
-            "organizations": [],
-            "github":        "",
-            "figures":       [],
-        }
 
-    # sections
-    for sec in soup.find_all("section", attrs={"data-type": True}):
-        dtype = sec.get("data-type", "")
-        if dtype == "section":
-            plan["sections"].append(_parse_section(sec))
-        elif dtype == "reference":
-            plan["sections"].append(_parse_reference_section(sec))
+    for sec_tag in soup.find_all("section", attrs={"data-type": "section"}):
+        plan["sections"].append(_parse_section(sec_tag))
 
-    # ── 确定输出路径 ──────────────────────────────────────────────────────────
-    html_stem = os.path.splitext(os.path.basename(html_path))[0]  # 去掉 .html
+    html_stem = os.path.splitext(os.path.basename(html_path))[0]
     os.makedirs(output_dir, exist_ok=True)
-    out_path = os.path.join(output_dir, html_stem + ".json")
+    out_path = os.path.join(output_dir, "plan.json")
 
-    # ── 写入 JSON ─────────────────────────────────────────────────────────────
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(plan, f, ensure_ascii=False, indent=2)
 
     return out_path
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# 命令行入口（可选）
-# ─────────────────────────────────────────────────────────────────────────────
-
 if __name__ == "__main__":
     import sys
-
     if len(sys.argv) < 3:
-        print("用法: python html_to_content_plan.py <input.html> <output_dir>")
-        sys.exit(1)
-
-    result_path = parse_html_to_content_plan(sys.argv[1], sys.argv[2])
-    print(f"✅  已生成: {result_path}")
+        print("Usage: python html_to_content_plan.py <input_html> <output_dir>")
+    else:
+        out = parse_html_to_content_plan(sys.argv[1], sys.argv[2])
+        print(f"✅ Success: {out}")

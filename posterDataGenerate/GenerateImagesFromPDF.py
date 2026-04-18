@@ -74,4 +74,4 @@ def batchGenerateIMG(pdf_dir, output_path, number):
 # batchGenerateIMG("./data/pdfs", "./data/outputs", 5)
 
 if __name__=="__main__":
-    batchGenerateIMG("../f1000_posters/", "../posterData/batch3", 300)
+    batchGenerateIMG("../f1000_posters/", "../posterData/batch6", 5)

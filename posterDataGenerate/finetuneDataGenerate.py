@@ -138,9 +138,9 @@ def batch_generate(image_dir: str, mineru_path: str, output_path: str) -> None:
     print(f"[batch] 全部处理完毕，输出目录: {output_path}")
 
 if __name__=="__main__":
-    image_path="../posterData/batch3/"
-    mineru_path="../posterData/batch3/mineru_output_with_eq"
-    output_path="../finetuneData/poster/batchData3"
+    image_path="../posterData/batch6/"
+    mineru_path="../posterData/batch6/mineru_output_with_eq"
+    output_path="../finetuneData/poster/batchData6"
     #image_path="../posterData/batch2/A continuous benchmarking community challenge for COVID-19 outcome prediction.jpg"
     #mineru_path="../posterData/batch2/mineru_output_with_eq"
     #output_path="./"

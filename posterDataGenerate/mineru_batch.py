@@ -508,8 +508,8 @@ def mineru_process(pdf_files_path,output_dir):
 if __name__ == '__main__':
     # args
     #__dir__ = os.path.dirname(os.path.abspath(__file__))
-    pdf_files_path = '../posterData/batch4/'
-    output_dir = '../posterData/batch4/mineru_output_with_eq'
+    pdf_files_path = '../posterData/batch6/'
+    output_dir = '../posterData/batch6/mineru_output_with_eq'
     pdf_suffixes = ["pdf"]
     image_suffixes = ["png", "jpeg", "jp2", "webp", "gif", "bmp", "jpg"]
 

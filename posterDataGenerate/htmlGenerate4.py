@@ -203,7 +203,10 @@ def build_html_generation_prompt(_: JsonDict) -> str:
 ##### content_list中不存在的元素
 - 对于海报中存在，但content_list中不存在的元素，你首先需要判断这个元素的类别
 - 如果是文本元素，你需要严格按照海报图片中的文本内容来还原，并且在html中使用<p>标签来承载这个文本内容
-- 如果是图片元素，你需要在html中使用<img>标签来承载这个图片元素，并且src属性指向这个图片的虚拟相对路径，例如"./logo.jpg",虚拟相对路径的文件名与这个子图的语义保持一致，你需要估算图片的大小，实际渲染一个矩形占位符来表示。
+- 如果是图片元素，你需要在html中使用<img>标签来承载这个图片元素，并且src属性指向这个图片的虚拟相对路径，例如"./logo.jpg",虚拟相对路径的文件名与这个子图的语义保持一致，你需要估算图片的大小，实际渲染一个矩形占位符来表示该图片，在代码中的表示示例为：
+    <img src="./logo_gobierno.jpg" 
+     alt="Gobierno de España" 
+     class="h-12 w-40 bg-gray-200 block" />(h和w需要你自己估计)
 
 #### 字体与间距的确定和识别
 - 字体大小和间距大小是影响布局的重要因素，我的输入信息中不包含具体的字体大小和间距数值，你需要根据输入的海报图片来估计和推断这些信息。
@@ -211,9 +214,9 @@ def build_html_generation_prompt(_: JsonDict) -> str:
 - 你需要确保推断出的字体大小和间距大小能够帮助你更好地还原海报的视觉布局和层级关系，并且能够在后续的html生成中得到体现。
 
 #### 海报风格属性的省略
-- 你的任务是还原海报的布局结构和阅读顺序，而不是复刻海报的视觉风格细节。因此，你不需要在html中复刻海报的背景色、边框、装饰性图形等纯视觉元素。
-- 针对字体或背景的颜色，你直接使用默认的白底黑字，不必关注色彩信息的还原。
-- 针对边框、分割线、装饰性图形等元素，如果它们在海报中没有承载文本或图表内容，也不影响海报的布局设计，则将这些属性或元素省略。
+- 你的任务是还原海报的布局结构和阅读顺序，而不是复刻海报的视觉风格细节。因此，禁止在html中复刻海报的背景色、边框、装饰性图形等纯视觉元素。
+- 针对字体或背景的颜色，必须使用默认的白底黑字，禁止关注色彩信息的还原。
+- 针对边框、分割线、装饰性图形等元素，如果它们在海报中没有承载文本或图表内容，也不影响海报的布局设计，则禁止在html中还原这些属性或元素，必须忽略。
 
 
 #### 步骤 3：结构化 HTML 设计
@@ -227,7 +230,7 @@ def build_html_generation_prompt(_: JsonDict) -> str:
 - 大屏固定： 使用一个 max-width 容器，在桌面端缩放减小时，布局保持居中且结构稳定不变，布局与原图保持一致。
 - 移动端响应： 使用 CSS Grid 或 Flexbox。当缩放放大（视口宽度小于某个值）时，触发响应式断点，将多列布局转变为单列堆叠布局。
 - 需要通过海报原图估计字体层级：主标题、章节标题、子标题、正文、图注、参考文献应有清晰的字号差异，但无需追求像素级一致。
-- 重点还原布局、阅读结构和 typography，不必复刻背景色、边框和纯装饰细节。
+- 重点还原布局、阅读结构和 typography.
 - 底部强制对齐：如果海报布局是规则的多栏，你必须识别出每一列（Column）中的最后一个节点，并为其添加 margin-top: auto; 或 flex-grow: 1; 的样式，以确保所有列的底部在视觉上严格对齐。
 
 ### 关键硬约束
@@ -237,8 +240,8 @@ def build_html_generation_prompt(_: JsonDict) -> str:
 4. 输出必须是独立的单文件 HTML，通过 CDN 引入 Tailwind。
 5. 最终输出只允许是 HTML 代码本身，不允许输出解释文字、注释性前言、Markdown 代码块或思维过程。
 
-### PlanJSON 兼容语义约束（新增，必须严格遵守）
-以下约束用于保证后续 `planJson3.py` 能稳定从 HTML 中提取结构化信息。你生成的 HTML 必须满足这些 DOM 级别的硬性要求，不能只做到“语义上接近”。
+### JSON解析兼容语义约束（必须严格遵守）
+以下约束用于保证后续 脚本能稳定从 HTML 中提取结构化信息。你生成的 HTML 必须满足这些 DOM 级别的硬性要求，不能只做到“语义上接近”。
 
 1. **Metadata 容器的唯一合法写法**
 - 海报标题、作者、机构、metadata 区域中的图片、GitHub 链接必须全部放在同一个 `<header data-type="metadata"> ... </header>` 容器内。
@@ -247,39 +250,51 @@ def build_html_generation_prompt(_: JsonDict) -> str:
 
 2. **标题、作者、机构的固定写法**
 - 海报主标题必须写为 metadata header 内的 `<h1>`。
-- 作者信息必须写为 metadata header 内的一个 `<div>`，并且这个 `<div>` 的 class 中必须包含 `text-xl` 或 `text-2xl`，作者姓名以逗号分隔，便于解析为 `authors` 数组。
-- 机构信息必须写为 metadata header 内的一个 `<div>`，并且这个 `<div>` 的 class 中必须包含 `text-gray`，机构名称以逗号分隔，便于解析为 `organizations` 数组。
+- 作者信息必须写为 metadata header 内的一个 `<div>`，并且这个 `<div>` 的 data-type必须是authors，作者姓名以逗号分隔，便于解析为 `authors` 数组。
+- 机构信息必须写为 metadata header 内的一个 `<div>`，并且这个 `<div>` 的 data-type必须是organizations，机构名称以逗号分隔，便于解析为 `organizations` 数组。
 - 如果存在 GitHub 链接，必须在 metadata header 内使用 `<a href="...github...">` 明确写出，不能只写文字说明。
 
 3. **Section 的固定写法**
-- 所有正文章节，包括 Abstract / Introduction / Method / Results / Conclusion 等，都必须写成 `<section id="section_n" data-type="section"> ... </section>`。
+- 所有海报内容，除了metadata之外的所有信息，包括 Abstract / Introduction / Method / Results / Conclusion 等，都必须写在 `<section id="section_n" data-type="section"> ... </section>`之内。
 - 其中 `n` 必须是从 1 开始递增的整数。
-- 不要把正文章节写成 `data-type="abstract"`；即使语义上是摘要，也必须使用 `data-type="section"`，否则 `planJson3.py` 不会提取它。
+- 不要把正文章节写成 `data-type="abstract"`；即使语义上是摘要，也必须使用 `data-type="section"`，否则脚本不会提取它。
 - 每个 section 的章节标题必须使用 `<h2>`，这样解析器才能提取 `title`。
 - section 正文内容必须主要放在 `<p>`、`<h3>`、`<h4>`、`<h5>`、`<h6>`、`<ul>/<li>` 中，避免把应当进入正文的文本放在纯 `<div>` 中导致无法进入 `content`。
 
-4. **References 的固定写法**
-- 参考文献必须单独放在 `<section id="section_n" data-type="reference"> ... </section>` 中。
-- 参考文献标题必须使用 `<h2>`。
-- 每一条参考文献必须写成 `<li>`，因为解析器只会从 reference section 中提取 `<li>` 作为内容项。
+4. **References等特殊章节的写法**
+- 最终的HTML中只能出现metadata和section，不能出现reference、footer等其他类型的区块，否则解析器会无法正确提取。
+- References区块也必须写成一个合法的section，例如<section id="section_5" data-type="section">，其余格式和正文section保持一致
+- Footer区块如果存在，也必须写成一个合法的section，例如<section id="section_6" data-type="section">，其余格式和正文section保持一致
+
 
 5. **图片、表格、公式的固定写法**
 - 所有子图、表格、公式都必须最终落到某个 `data-type="section"` 的 section 内，不能悬浮在 section 外。
-- 对于普通图片，使用 `<figure>` 包裹时，内部必须包含真正的 `<img>`；如果不用 `<figure>`，也必须至少输出 `<img>`。
-- 对于表格截图，也按图片方式输出，但 `<img>` 的 `data-fig-id` 或 `src` 文件名必须能明确体现 `table_*`，这样解析器才会把它归类为 `tables`。
-- 对于公式图片，也按普通图片处理，使用 `<img src="./equations_x.jpg" data-fig-id="equations_x" ...>`；后续 `planJson3.py` 会将其作为 `figures` 提取。
+- 对于普通图片，使用 `<img src="..." data-fig-id="..." data-type="figure" alt="...">` 来承载，data-figure-id与src中的文件名相对应，例如"./figure_1.jpg"的data-figure-id为"figure_1"， `alt` 属性必须提供可提取的语义描述。
+- 对于表格截图，也按图片方式输出，但div的data-type必须是table，且img标签必须有data-fig-id属性；例如`<img src="./table_2.jpg" data-fig-id="table_2" data-type="table" alt="语义解释">`。
+- 对于公式图片，完全按照普通图片的格式处理，但data-fig-id需要以equation开头，例如`<img src="./equation_1.jpg" data-fig-id="equation_1" data-type="figure" alt="语义解释">`。
 - `data-fig-id` 必须写在 `<img>` 标签本身上，不能只写在外层 `<figure>` 或 `<div>` 上。
+- 对于输入list中不存在的图片或表格，你需要根据海报图片进行判断和还原，并且为这些图片或表格生成合理的 `data-fig-id`，以保证它们在后续的 PlanJSON 提取中能够被正确识别和提取，并且你要估算他们的尺寸大小，在html中渲染一个矩形占位符来表示这些图片或表格，例如：
+    <img src="./figure_99.jpg" 
+     alt="This is a figure that is not in content_list but appears in the poster image, and its data-fig-id is figure_99" 
+     data-fig-id="figure_99" 
+     data-type="figure"
+     class="h-40 w-60 bg-gray-200 block" />
 
 6. **description / caption 的固定写法**
 - `planJson3.py` 的 `description` 字段来自 `<img>` 的 `alt` 属性，因此每一个子图、表格、公式图片都必须填写有意义的 `alt` 文本，不能省略，不能留空，不能只写“image”或“figure”。
-- 对于子图和表格，如有图注/表注，必须使用 `<figcaption>`；这样解析器才能提取 `figure_caption` 或 `table_caption`。
-- 如果一个 `<figure>` 中有多张图片，不利于稳定解析；优先一张图片对应一个 `<figure>`。
-- 对于没有独立 caption 的子图或表格，也必须至少保证 `<img alt="...">` 提供可提取的语义描述。
+- 对于没有独立 caption 的子图或表格，直接使用<img>标签来表示，并保证 `<img alt="...">` 提供可提取的语义描述。
+- 对于有独立 caption 的子图或表格，必须使用 `<figure>` 标签包裹 `<img>`，并且在 `<figure>` 内使用 `<figcaption>` 来承载图注文本，例如：
+<figure>
+  <img src="cat1.jpg" alt="猫在睡觉">
+  <figcaption>图1：小猫的一天日常</figcaption>
+</figure>
 
 7. **Metadata 图片与正文图片区分**
 - 出现在 metadata header 中的 `<img>` 会被解析到 `metadata.figures`；出现在 section 中的 `<img>` 会被解析到对应 section 的 `figures` 或 `tables`。
-- 因此 logo、header 中的机构图标、header 中的二维码若希望进入 metadata，必须放在 `<header data-type="metadata">` 内。
-- 不要把 footer 中的 logo、二维码、机构说明混入普通 section，否则解析器会把它们当成正文内容或正文图片。
+- 因此 logo、header 中的机构图标、header 中的二维码如果属于metadata，必须放在 `<header data-type="metadata">` 内。
+
+8. **超链接的固定写法**
+- 所有超链接必须使用 `<a href="..." >...</a>` 标签，并且 `href` 属性必须包含完整的 URL。
 
 ### MathJax 配置要求
 在 `<head>` 中必须包含以下脚本：

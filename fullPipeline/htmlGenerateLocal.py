@@ -134,7 +134,7 @@ def htmlGenerate(content_plan, data_type):
         # 强制指定显卡，确保与 MinerU 逻辑隔离（或在同一张卡顺序接力）
         os.environ["CUDA_VISIBLE_DEVICES"] = "0" 
         
-        model_path = "../finetune/LLaMA-Factory/models/mix_data_filtered"
+        model_path = "../finetune/LLaMA-Factory/models/poster_data_filtered"
         #model_path = "../finetune/LLaMA-Factory/models/poster_data_compare"
         #model_path = "../finetune/LLaMA-Factory/models/web_data_compare"
         
